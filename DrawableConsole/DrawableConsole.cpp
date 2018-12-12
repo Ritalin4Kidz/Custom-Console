@@ -17,6 +17,7 @@
 #include "AI.h"
 const int windowHeight = 15;
 const int windowWidth = 30;
+const string dir = "BrainFiles\\";
 ConsoleWindow window(windowHeight);
 
 bool isScene = true;
@@ -690,7 +691,7 @@ void playTicTacToe()
 	int gamesMax = 5;
 	while (gameNO < gamesMax || gamesMax <= 0)
 	{
-		TicTacToe(false, true, 1, "AIBrainO.txt", "AIBrainX.txt"); //AI Boolean, Offset On Board's Position
+		TicTacToe(false, true, 1, dir + "AIBrainO.txt", dir + "AIBrainX.txt"); //AI Boolean, Offset On Board's Position
 		gameNO++;
 		system("pause");
 	}
@@ -754,7 +755,7 @@ void nodePath()
 		nodePathBoard.setValueAt(player, 0);
 		int lastVal = value;
 		// GET OLD MOVES
-		ifstream newFile("PathFile.zz", ios::binary | ios::in);
+		ifstream newFile(dir + "PathFile.zz", ios::binary | ios::in);
 		string line;
 		vector<string> lines(0);
 		int lineNo = 0;
@@ -808,7 +809,7 @@ void nodePath()
 			player += moveVec;
 			value = nodePathBoard.getPieceAt(player).getValue();
 			window.setTextAtPoint(player, "*", BRIGHTRED);
-			ofstream moveFile("PathFile.zz");
+			ofstream moveFile(dir + "PathFile.zz");
 			if (lines.size() > 0)
 			{
 				if (lines[moveIndex] == "" || lines[moveIndex] == "\n")
@@ -849,7 +850,7 @@ int main()
 	//outputVar();
 	//playTicTacToe();
 	//window.ClearWindow(false);
-	//drawBrain("AIBrainO.txt");
+	//drawBrain(dir + "AIBrainO.txt");
 	while (!foundPath)
 	{
 		nodePath();

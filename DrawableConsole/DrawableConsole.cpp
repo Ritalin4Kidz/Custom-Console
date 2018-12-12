@@ -15,8 +15,8 @@
 #include <conio.h>
 #include <fstream>
 #include "AI.h"
-const int windowHeight = 15;
 const int windowWidth = 30;
+const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 ConsoleWindow window(windowHeight);
 
@@ -62,11 +62,11 @@ vector<string> Split(string a_String, char splitter)
 void generateTriangle()
 {
 	window.ClearWindow(true);
-	for (int i = 0; i < windowHeight; i++)
+	for (int l = 0; l < windowWidth; l++)
 	{
-		for (int j = 0; j < windowWidth; j++)
+		for (int m = 0; m < windowHeight; m++)
 		{
-			window.addToLine(j, " ", WHITE);
+			window.addToLine(m, " ", WHITE);
 		}
 	}
 	Vector2 pointA(3, 7);
@@ -99,11 +99,11 @@ void TicTacToe(bool isAIp1, bool isAIp2, int offset, string OBrain, string XBrai
 {
 	// INITIALIZE THE WINDOW FOR USAGE
 	window.ClearWindow(true);
-	for (int i = 0; i < windowHeight; i++)
+	for (int l = 0; l < windowWidth; l++)
 	{
-		for (int j = 0; j < windowWidth; j++)
+		for (int m = 0; m < windowHeight; m++)
 		{
-			window.addToLine(j, " ", WHITE);
+			window.addToLine(m, " ", WHITE);
 		}
 	}
 
@@ -445,7 +445,7 @@ void scenes()
 void Test()
 {
 	window.ClearWindow(true);
-	//window.setLine(0, "The quick brown fox jumped over the lazy dog", TESTCOLOUR);
+	window.setLine(0, "The quick brown fox jumped over the lazy dog", TESTCOLOUR);
 	window.writeConsole();
 
 }
@@ -603,11 +603,11 @@ void outputVar()
 }
 void drawBrain(string AIBrain)
 {
-	for (int i = 0; i < windowHeight; i++)
+	for (int l = 0; l < windowWidth; l++)
 	{
-		for (int j = 0; j < windowWidth; j++)
+		for (int m = 0; m < windowHeight; m++)
 		{
-			window.addToLine(j, " ", WHITE);
+			window.addToLine(m, " ", WHITE);
 		}
 	}
 	vector<BoardPiece> pieces = {
@@ -707,22 +707,46 @@ void nodePath()
 	// 1 = Path
 	// 2 = Finish Node
 	// 0 = Wall
-	vector<BoardPiece> pieces = {
-	BoardPiece(Vector2(0,0), 1), BoardPiece(Vector2(1,0), 0), BoardPiece(Vector2(2,0), 1), BoardPiece(Vector2(3,0), 1), BoardPiece(Vector2(4,0), 1), BoardPiece(Vector2(5,0), 0),  BoardPiece(Vector2(6,0), 1), BoardPiece(Vector2(7,0), 1), BoardPiece(Vector2(8,0), 1), BoardPiece(Vector2(9,0), 0), BoardPiece(Vector2(10,0), 1), BoardPiece(Vector2(11,0), 1), BoardPiece(Vector2(12,0), 1), BoardPiece(Vector2(13,0), 0),
-	BoardPiece(Vector2(0,1), 1), BoardPiece(Vector2(1,1), 0), BoardPiece(Vector2(2,1), 1), BoardPiece(Vector2(3,1), 0), BoardPiece(Vector2(4,1), 1), BoardPiece(Vector2(5,1), 0),  BoardPiece(Vector2(6,1), 1), BoardPiece(Vector2(7,1), 0), BoardPiece(Vector2(8,1), 1), BoardPiece(Vector2(9,1), 0), BoardPiece(Vector2(10,1), 1), BoardPiece(Vector2(11,1), 0), BoardPiece(Vector2(12,1), 1), BoardPiece(Vector2(13,1), 0),
-	BoardPiece(Vector2(0,2), 1), BoardPiece(Vector2(1,2), 0), BoardPiece(Vector2(2,2), 1), BoardPiece(Vector2(3,2), 0), BoardPiece(Vector2(4,2), 1), BoardPiece(Vector2(5,2), 0),  BoardPiece(Vector2(6,2), 1), BoardPiece(Vector2(7,2), 0), BoardPiece(Vector2(8,2), 1), BoardPiece(Vector2(9,2), 0), BoardPiece(Vector2(10,2), 1), BoardPiece(Vector2(11,2), 0), BoardPiece(Vector2(12,2), 1), BoardPiece(Vector2(13,2), 0),
-	BoardPiece(Vector2(0,3), 1), BoardPiece(Vector2(1,3), 0), BoardPiece(Vector2(2,3), 1), BoardPiece(Vector2(3,3), 0), BoardPiece(Vector2(4,3), 1), BoardPiece(Vector2(5,3), 0),  BoardPiece(Vector2(6,3), 1), BoardPiece(Vector2(7,3), 0), BoardPiece(Vector2(8,3), 1), BoardPiece(Vector2(9,3), 0), BoardPiece(Vector2(10,3), 1), BoardPiece(Vector2(11,3), 0), BoardPiece(Vector2(12,3), 1), BoardPiece(Vector2(13,3), 0),
-	BoardPiece(Vector2(0,4), 1), BoardPiece(Vector2(1,4), 1), BoardPiece(Vector2(2,4), 1), BoardPiece(Vector2(3,4), 0) ,BoardPiece(Vector2(4,4), 1), BoardPiece(Vector2(5,4), 1),  BoardPiece(Vector2(6,4), 1), BoardPiece(Vector2(7,4), 0), BoardPiece(Vector2(8,4), 1) ,BoardPiece(Vector2(9,4), 1), BoardPiece(Vector2(10,4), 1), BoardPiece(Vector2(11,4), 0), BoardPiece(Vector2(12,4), 1) ,BoardPiece(Vector2(13,4), 2)
-	};
 
+    // CREATING THE BOARDPIECES IN A FOR LOOP
+	vector<BoardPiece> pieces;
+	bool isWall = false;
+	bool top = false;
+	int heightVal = 5;
+	int widthVal = 25;
+	for (int xx = 0; xx < widthVal ; xx++)
+	{
+		for (int yy = 0; yy < heightVal; yy++)
+		{
+			int bValue = 1;
+			if (isWall)
+			{
+				if (!top && yy != heightVal - 1)
+				{
+					bValue = 0;
+				}
+				if (top && yy != 0)
+				{
+					bValue = 0;
+				}
+			}
+			pieces.push_back(BoardPiece(Vector2(xx, yy), bValue));
+		}
+		if (isWall)
+		{
+			top = !top;
+		}
+		isWall = !isWall;
+	}
+	pieces[pieces.size() - 1].setValue(2);
+	// ADD PIECES TO A NEWLY DECLARED BOARD
 	Board nodePathBoard(pieces,0,0);
-
 	// INITIALIZE THE CONSOLE WINDOW 
 	// SIZE WIDTH & HEIGHT DECLARED AT TOP OF FILE AS CONST
 	window.ClearWindow(true);
-	for (int l = 0; l < windowHeight; l++)
+	for (int l = 0; l < windowWidth; l++)
 	{
-		for (int m = 0; m < windowWidth; m++)
+		for (int m = 0; m < windowHeight; m++)
 		{
 			window.addToLine(m, " ", WHITE);
 		}
@@ -740,21 +764,24 @@ void nodePath()
 		{
 			nodePathBoard.setOccupierAt(nodePathBoard.getBoard()[l].getPos(), " ");
 		}
+		// SET THE WINDOW TEXT TO DISPLAY THE WALL
 		window.setTextAtPoint(nodePathBoard.getBoard()[l].getPos(), nodePathBoard.getBoard()[l].getOccupier(), BRIGHTWHITE);
 	}
 	window.setLine(10, "Attempts : " + to_string(generations), WHITE);
 	window.writeConsole();
 	window.ClearWindow(false);
+	// MARKER/POSITION FOR PLAYER
 	Vector2 player(0,0);
 	window.setTextAtPoint(player, "*", BRIGHTRED); // PLAYER MARKER
 	// GAME LOOP
 	int value = 1;
 	int moveIndex = 0;
+	// RUN INDEFINITELY UNTIL EITHER A. AN UNAVAILABLE NODE HAS BEEN HIT OR B. PLAYER MARKER HAS REACHED THE END NODE
 	while (true)
 	{
 		nodePathBoard.setValueAt(player, 0);
 		int lastVal = value;
-		// GET OLD MOVES
+		// SEARCH FOR PRE-EXISTING MOVES
 		ifstream newFile(dir + "PathFile.zz", ios::binary | ios::in);
 		string line;
 		vector<string> lines(0);
@@ -839,25 +866,34 @@ void nodePath()
 	//window.writeConsole();
 }
 
-
+// MAIN FUNCTION
 int main()
 {
 	srand(time(NULL));
+
 	//generateart();
+	
 	//scenes();
+
 	//generateTriangle();
-	//Test();
+	
+	Test();
+
 	//outputVar();
+	
 	//playTicTacToe();
 	//window.ClearWindow(false);
+	
 	//drawBrain(dir + "AIBrainO.txt");
-	while (!foundPath)
-	{
-		nodePath();
-		generations++;
-	}
-	window.setLine(10, "Attempts Required For Path : " + to_string(generations), WHITE);
-	window.ClearWindow(false);
-	window.writeConsole();
+	
+	//while (!foundPath)
+	//{
+	//	nodePath();
+	//	generations++;
+	//}
+	//window.setLine(10, "Attempts Required For Path : " + to_string(generations), WHITE);
+	//window.ClearWindow(false);
+	//window.writeConsole();
+
 	system("pause");
 }

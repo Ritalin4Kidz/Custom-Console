@@ -70,17 +70,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="AIBrain.txt" />
-    <Text Include="AIBrainX.txt" />
-    <Text Include="AIBrainO.txt" />
-    <Text Include="NoCombo.txt" />
-    <Text Include="NxCxmbx.txt" />
-    <Text Include="NewBrainX.txt" />
-    <Text Include="NewBrainO.txt" />
-    <Text Include="O_Test.txt" />
-    <Text Include="X_Test.txt" />
+    <Text Include="BrainFiles\AiAgainstPlayer.txt" />
+    <Text Include="BrainFiles\AIBrain.txt" />
+    <Text Include="BrainFiles\AIBrainO.txt" />
+    <Text Include="BrainFiles\AIBrainX.txt" />
+    <Text Include="BrainFiles\NewBrainO.txt" />
+    <Text Include="BrainFiles\NewBrainX.txt" />
+    <Text Include="BrainFiles\NoCombo.txt" />
+    <Text Include="BrainFiles\NxCxmbx.txt" />
+    <Text Include="BrainFiles\O_Test.txt" />
+    <Text Include="BrainFiles\X_Test.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PathFile.zz" />
+    <None Include="BrainFiles\PathFile.zz" />
   </ItemGroup>
 </Project>

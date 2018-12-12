@@ -1,0 +1,63 @@
+#include "pch.h"
+#include "Vector2.h"
+#include <cmath>
+Vector2 & Vector2::operator+(Vector2 other)
+{
+	//insert return statement here
+	Vector2* temp = &Vector2(this->x + other.getX(), this->y + other.getY());
+	return *temp;
+}
+Vector2 & Vector2::operator-(Vector2 other)
+{
+	Vector2* temp = &Vector2(this->x - other.getX(), this->y - other.getY());
+	return *temp;
+}
+Vector2 & Vector2::operator*(float other)
+{
+	Vector2* temp = &Vector2(this->x * other, this->y * other);
+	return *temp;
+}
+Vector2 & Vector2::operator=(Vector2 other)
+{
+	this->x = other.getX();
+	this->y = other.getY();
+	return *this;
+}
+
+Vector2 & Vector2::operator-=(Vector2 other)
+{
+	this->x -= other.getX();
+	this->y -= other.getY();
+	return *this;
+}
+
+Vector2 & Vector2::operator+=(Vector2 other)
+{
+	this->x += other.getX();
+	this->y += other.getY();
+	return *this;
+}
+
+Vector2 & Vector2::operator*=(float other)
+{
+	this->x *= other;
+	this->y *= other;
+	return *this;
+}
+
+Vector2 Vector2::offset(float offset)
+{
+	return Vector2(this->getX() + offset, this->getY() + offset);
+}
+
+bool Vector2::operator==(Vector2 other)
+{
+	return (x == other.x && y == other.y);
+}
+
+float Vector2::distance(Vector2 other)
+{
+	float xVar = powf(other.getX() - this->x, 2);
+	float yVar = powf(other.getY() -this->y, 2);
+	return sqrtf(xVar + yVar);
+}

@@ -1,0 +1,29 @@
+﻿  DrawableConsole.cpp
+c:\users\chands\source\repos\drawableconsole\drawableconsole\consolewindow.h(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\consolewindow.h(48): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\consolewindow.h(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(34): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(45): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(80): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(88): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(120): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(122): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(182): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(209): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(218): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(653): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(661): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(662): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(731): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(768): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(773): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(783): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(794): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(822): warning C4018: '<': signed/unsigned mismatch
+c:\users\chands\source\repos\drawableconsole\drawableconsole\drawableconsole.cpp(843): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  DrawableConsole.vcxproj -> c:\users\chands\source\repos\DrawableConsole\Debug\DrawableConsole.exe

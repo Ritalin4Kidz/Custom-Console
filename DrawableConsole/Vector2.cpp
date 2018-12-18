@@ -24,6 +24,7 @@ Vector2 & Vector2::operator=(Vector2 other)
 	return *this;
 }
 
+
 Vector2 & Vector2::operator-=(Vector2 other)
 {
 	this->x -= other.getX();
@@ -48,6 +49,23 @@ Vector2 & Vector2::operator*=(float other)
 Vector2 Vector2::offset(float offset)
 {
 	return Vector2(this->getX() + offset, this->getY() + offset);
+}
+
+bool Vector2::willHit(Vector2 other, Vector2 gravity)
+{
+	if (*this == other)
+	{
+		return true;
+	}
+	if (this->getY() > other.getY())
+	{
+		return false;
+	}
+	if (this->getY() + gravity.getY() > other.getY() && this->getX() == other.getX() + gravity.getX())
+	{
+		return true;
+	}
+	return false;
 }
 
 bool Vector2::operator==(Vector2 other)

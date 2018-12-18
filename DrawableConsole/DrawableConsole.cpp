@@ -15,11 +15,14 @@
 #include <conio.h>
 #include <fstream>
 #include "AI.h"
-const int windowWidth = 30;
+
+#include "PhysicsObject.h"
+#include "RigidBody.h"
+int windowWidth = 32;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 ConsoleWindow window(windowHeight);
-
+string levelBonus = "Intro";
 bool isScene = true;
 int XWins = 0;
 int OWins = 0;
@@ -57,7 +60,10 @@ vector<string> Split(string a_String, char splitter)
 	splitString[arraySize - 1] = a_String;
 	return splitString;
 }
-
+bool GetKeyDown(char KeyCode)
+{
+	return GetAsyncKeyState(KeyCode) && 0x8000;
+}
 
 void generateTriangle()
 {
@@ -445,10 +451,337 @@ void scenes()
 void Test()
 {
 	window.ClearWindow(true);
-	window.setLine(0, "The quick brown fox jumped over the lazy dog", TESTCOLOUR);
+	window.setLine(0, "The quick brown fox jumped over the lazy dog", BRIGHTWHITE_BRIGHTWHITE_BG);
 	window.writeConsole();
 
 }
+
+void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInner, ColourClass Meat, ColourClass Seed, ColourClass BG)
+{
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", WHITE);
+			window.setTextAtPoint(Vector2(l, m), " ", BG);
+		}
+	}
+	// DRAW PIXEL ART
+
+	//WATERMELON SKIN
+	window.setTextAtPoint(Vector2(1, 11), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(2, 11), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(1, 12), " ", skinOuter);
+	window.setTextAtPoint(Vector2(2, 12), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(3, 12), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(4, 12), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(3, 13), " ", skinOuter);
+	window.setTextAtPoint(Vector2(4, 13), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(5, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(6, 13), " ", skinMiddle);
+
+	window.setTextAtPoint(Vector2(7, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(8, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(7, 14), " ", skinOuter);
+	window.setTextAtPoint(Vector2(8, 14), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(9, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(10, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(9, 14), " ", skinOuter);
+	window.setTextAtPoint(Vector2(10, 14), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(11, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(12, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(11, 14), " ", skinOuter);
+	window.setTextAtPoint(Vector2(12, 14), " ", skinOuter);
+											 
+	window.setTextAtPoint(Vector2(13, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(14, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(13, 14), " ", skinOuter);
+	window.setTextAtPoint(Vector2(14, 14), " ", skinOuter);
+											 
+	window.setTextAtPoint(Vector2(15, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(16, 13), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(15, 14), " ", skinOuter);
+	window.setTextAtPoint(Vector2(16, 14), " ", skinOuter);
+											 
+	window.setTextAtPoint(Vector2(17, 12), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(18, 12), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(17, 13), " ", skinOuter);
+	window.setTextAtPoint(Vector2(18, 13), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(19, 11), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(20, 11), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(19, 12), " ", skinOuter);
+	window.setTextAtPoint(Vector2(20, 12), " ", skinOuter);
+	window.setTextAtPoint(Vector2(19, 13), " ", skinOuter);
+	window.setTextAtPoint(Vector2(20, 13), " ", skinOuter);
+											 
+	window.setTextAtPoint(Vector2(21, 10), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(22, 10), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(21, 11), " ", skinOuter);
+	window.setTextAtPoint(Vector2(22, 11), " ", skinOuter);
+	window.setTextAtPoint(Vector2(21, 12), " ", skinOuter);
+	window.setTextAtPoint(Vector2(22, 12), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(23, 9), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(24, 9), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(23, 10)," ", skinOuter);
+	window.setTextAtPoint(Vector2(24, 10)," ", skinOuter);
+	window.setTextAtPoint(Vector2(23, 11)," ", skinOuter);
+	window.setTextAtPoint(Vector2(24, 11)," ", skinOuter);
+	window.setTextAtPoint(Vector2(25, 9), " ", skinOuter);
+	window.setTextAtPoint(Vector2(26, 9), " ", skinOuter);
+										    
+	window.setTextAtPoint(Vector2(23, 8), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(24, 8), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(25, 8), " ", skinOuter);
+	window.setTextAtPoint(Vector2(26, 8), " ", skinOuter);
+										    
+	window.setTextAtPoint(Vector2(23, 7), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(24, 7), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(25, 7), " ", skinOuter);
+	window.setTextAtPoint(Vector2(26, 7), " ", skinOuter);
+										    
+	window.setTextAtPoint(Vector2(23, 6), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(24, 6), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(25, 6), " ", skinOuter);
+	window.setTextAtPoint(Vector2(26, 6), " ", skinOuter);
+										    
+	window.setTextAtPoint(Vector2(23, 5), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(24, 5), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(25, 5), " ", skinOuter);
+	window.setTextAtPoint(Vector2(26, 5), " ", skinOuter);
+
+	window.setTextAtPoint(Vector2(23, 4), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(24, 4), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(25, 4), " ", skinOuter);
+	window.setTextAtPoint(Vector2(26, 4), " ", skinOuter);
+										    
+	window.setTextAtPoint(Vector2(21, 3), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(22, 3), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(23, 3), " ", skinOuter);
+	window.setTextAtPoint(Vector2(24, 3), " ", skinOuter);
+										    
+	window.setTextAtPoint(Vector2(19, 2), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(20, 2), " ", skinMiddle);
+	window.setTextAtPoint(Vector2(21, 2), " ", skinOuter);
+	window.setTextAtPoint(Vector2(22, 2), " ", skinOuter);
+
+	//INSIDE LAYER OF SKIN
+	window.setTextAtPoint(Vector2(19, 3), " ", skinInner);
+	window.setTextAtPoint(Vector2(20, 3), " ", skinInner);
+													
+	window.setTextAtPoint(Vector2(19, 4), " ", skinInner);
+	window.setTextAtPoint(Vector2(20, 4), " ", skinInner);
+													
+	window.setTextAtPoint(Vector2(21, 4), " ", skinInner);
+	window.setTextAtPoint(Vector2(22, 4), " ", skinInner);
+	//9												
+	window.setTextAtPoint(Vector2(21, 5), " ", skinInner);
+	window.setTextAtPoint(Vector2(22, 5), " ", skinInner);
+													
+	window.setTextAtPoint(Vector2(21, 6), " ", skinInner);
+	window.setTextAtPoint(Vector2(22, 6), " ", skinInner);
+													
+	window.setTextAtPoint(Vector2(21, 7), " ", skinInner);
+	window.setTextAtPoint(Vector2(22, 7), " ", skinInner);
+													
+	window.setTextAtPoint(Vector2(21, 8), " ", skinInner);
+	window.setTextAtPoint(Vector2(22, 8), " ", skinInner);
+													 
+	window.setTextAtPoint(Vector2(21, 9), " ", skinInner);
+	window.setTextAtPoint(Vector2(22, 9), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(19, 9), " ", skinInner);
+	window.setTextAtPoint(Vector2(20, 9), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(19, 10), " ", skinInner);
+	window.setTextAtPoint(Vector2(20, 10), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(17, 11), " ", skinInner);
+	window.setTextAtPoint(Vector2(18, 11), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(15, 11), " ", skinInner);
+	window.setTextAtPoint(Vector2(16, 11), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(15, 12), " ", skinInner);
+	window.setTextAtPoint(Vector2(16, 12), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(13, 12), " ", skinInner);
+	window.setTextAtPoint(Vector2(14, 12), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(11, 12), " ", skinInner);
+	window.setTextAtPoint(Vector2(12, 12), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(9, 12), " ", skinInner);
+	window.setTextAtPoint(Vector2(10, 12), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(7, 12), " ", skinInner);
+	window.setTextAtPoint(Vector2(8, 12), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(5, 12), " ", skinInner);
+	window.setTextAtPoint(Vector2(6, 12), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(5, 11), " ", skinInner);
+	window.setTextAtPoint(Vector2(6, 11), " ", skinInner);
+
+	window.setTextAtPoint(Vector2(3, 11), " ", skinInner);
+	window.setTextAtPoint(Vector2(4, 11), " ", skinInner);
+
+	// ADD THE JUICY WATERMELON MEAT
+	window.setTextAtPoint(Vector2(7, 11), " ", Meat);
+	window.setTextAtPoint(Vector2(8, 11), " ", Meat);
+
+	window.setTextAtPoint(Vector2(9, 11), " ", Meat);
+	window.setTextAtPoint(Vector2(10, 11), " ", Meat);
+
+	window.setTextAtPoint(Vector2(11, 11), " ", Meat);
+	window.setTextAtPoint(Vector2(12, 11), " ", Meat);
+
+	window.setTextAtPoint(Vector2(13, 11), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 11), " ", Meat);
+
+	window.setTextAtPoint(Vector2(3, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(4, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(5, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(6, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(7, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(8, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(9, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(10, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(11, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(12, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(13, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(15, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(17, 10), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 10), " ", Meat);
+
+	window.setTextAtPoint(Vector2(5, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(6, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(7, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(8, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(9, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(10, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(11, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(12, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(13, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(15, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(17, 9), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 9), " ", Meat);
+
+	window.setTextAtPoint(Vector2(7, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(8, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(9, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(10, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(11, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(12, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(13, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(15, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(17, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(19, 8), " ", Meat);
+	window.setTextAtPoint(Vector2(20, 8), " ", Meat);
+
+	window.setTextAtPoint(Vector2(9, 7), " ", Meat);
+	window.setTextAtPoint(Vector2(10, 7), " ", Meat);
+
+	window.setTextAtPoint(Vector2(11, 7), " ", Meat);
+	window.setTextAtPoint(Vector2(12, 7), " ", Meat);
+
+	window.setTextAtPoint(Vector2(13, 7), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 7), " ", Meat);
+
+	window.setTextAtPoint(Vector2(15, 7), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 7), " ", Meat);
+
+	window.setTextAtPoint(Vector2(17, 7), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 7), " ", Meat);
+
+	window.setTextAtPoint(Vector2(19, 7), " ", Meat);
+	window.setTextAtPoint(Vector2(20, 7), " ", Meat);
+
+	window.setTextAtPoint(Vector2(11, 6), " ", Meat);
+	window.setTextAtPoint(Vector2(12, 6), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(13, 6), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 6), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(15, 6), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 6), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(17, 6), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 6), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(19, 6), " ", Meat);
+	window.setTextAtPoint(Vector2(20, 6), " ", Meat);
+
+	window.setTextAtPoint(Vector2(13, 5), " ", Meat);
+	window.setTextAtPoint(Vector2(14, 5), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(15, 5), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 5), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(17, 5), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 5), " ", Meat);
+									  
+	window.setTextAtPoint(Vector2(19, 5), " ", Meat);
+	window.setTextAtPoint(Vector2(20, 5), " ", Meat);
+
+	window.setTextAtPoint(Vector2(15, 4), " ", Meat);
+	window.setTextAtPoint(Vector2(16, 4), " ", Meat);
+
+	window.setTextAtPoint(Vector2(17, 4), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 4), " ", Meat);
+
+	window.setTextAtPoint(Vector2(17, 3), " ", Meat);
+	window.setTextAtPoint(Vector2(18, 3), " ", Meat);
+
+	// SEEDS
+	window.setTextAtPoint(Vector2(7, 10), " ", Seed);
+	window.setTextAtPoint(Vector2(8, 10), " ", Seed);
+
+	window.setTextAtPoint(Vector2(11, 9), " ", Seed);
+	window.setTextAtPoint(Vector2(12, 9), " ", Seed);
+
+	window.setTextAtPoint(Vector2(15, 7), " ", Seed);
+	window.setTextAtPoint(Vector2(16, 7), " ", Seed);
+
+	window.setTextAtPoint(Vector2(17, 5), " ", Seed);
+	window.setTextAtPoint(Vector2(18, 5), " ", Seed);
+
+	window.writeConsole();
+
+}
+
 
 // FOR GETTING ALL COMBOS
 void outputVar()
@@ -866,6 +1199,196 @@ void nodePath()
 	//window.writeConsole();
 }
 
+
+void PlayLevel(string level)
+{
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", WHITE);
+		}
+	}
+	vector<RigidBody> rbArr;
+
+	if (level == "Intro")
+	{
+		Vector2 startPosition(3, 14);
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
+
+		//HighGround
+		for (int i = 0; i < windowWidth - 5; i++)
+		{
+			rbArr.push_back(PhysicsObject("HighGround" + to_string(i), Vector2(i, 9), true, 0));
+		}
+		//LowerGround
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("LowerGround" + to_string(i), Vector2(i, 14), true, 0));
+		}
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(i, 18), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+
+		PhysicsObject door("Exit", Vector2(4, 3), true, 0);
+		door.setTrigger(true, "Watermelon");
+		rbArr.push_back(door);
+	}
+
+	else if (level == "Watermelon")
+	{
+		Vector2 startPosition(3, 14);
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
+
+		//HighGround
+		for (int i = 0; i < 6; i++)
+		{
+			rbArr.push_back(PhysicsObject("HighGround" + to_string(i), Vector2(i, 9), true, 0));
+		}
+		for (int i = 6; i < 9; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(i, 9), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+		for (int i = 3; i < 6; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(i, 5), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+		for (int i = 4; i < 8; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(i, 13), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+		for (int i = 0; i < 5; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(i, 11), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+		for (int i = 9; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("HighGround" + to_string(i), Vector2(i, 9), true, 0));
+		}
+		//LowerGround
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("LowerGround" + to_string(i), Vector2(i, 14), true, 0));
+		}
+		for (int i = 4; i < 15; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(15, i), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Trap" + to_string(i), Vector2(i, 18), true, 0));
+			rbArr[rbArr.size() - 1].setTrap(true);
+		}
+
+		PhysicsObject door("Exit", Vector2(4, 3), true, 0);
+		door.setTrigger(true, "Banana");
+		rbArr.push_back(door);
+
+		PhysicsObject door2("Exit", Vector2(20, 13), true, 0);
+		door2.setTrigger(true, "Strawberry");
+		rbArr.push_back(door2);
+	}
+
+	// Const Game Logic Variables
+	COORD start = { (SHORT)0, (SHORT)0 };
+	static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	cout.flush();
+	bool isJump = false;
+	Vector2 startPos = rbArr[0].getPos();
+
+	// GAME LOGIC
+	while (true)
+	{
+		// MAKE CONSOLE
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l,m), " ", WHITE);
+			}			
+		}
+		// WRITE CONSOLE
+		for (int i = 1; i < rbArr.size(); i++)
+		{
+			if (rbArr[i].getIsTrap())
+			{
+				window.setTextAtPoint(rbArr[i].getPos(), "M", LIGHTGREY);
+			}
+			else if (rbArr[i].getIsTrigger())
+			{
+				window.setTextAtPoint(rbArr[i].getPos(), "O", BRIGHTGREEN);
+			}
+			else
+			{
+				window.setTextAtPoint(rbArr[i].getPos(), "_", BRIGHTWHITE);
+			}
+		}
+		if (rbArr[0].getPos().getY() >= 0)
+		{
+			window.setTextAtPoint(rbArr[0].getPos(), "*", RED);
+		}
+		if (level == "Intro") window.setLine(windowHeight - 1, "Level: Intro---Jump:W|Left:A|Right:D|Down:S", WHITE);
+		else if (level == "Watermelon") window.setLine(windowHeight - 1, "Level: Watermelon---Beware The Spikes", WHITE);
+		window.writeConsole();
+		for (int i = 1; i < rbArr.size(); i++)
+		{
+			if (rbArr[i].getIsTrigger() && rbArr[0].getPos() == rbArr[i].getPos())
+			{
+				levelBonus = rbArr[i].getTriggerLevel();
+				return;
+			}
+			if (rbArr[i].getIsTrap() && rbArr[0].getPos() == rbArr[i].getPos())
+			{
+				rbArr[0].setPosition(startPos);
+				rbArr[0].setSpeed(0);
+				Sleep(2000);
+			}
+		}
+		// GRAVITY
+		for (int i = 0; i < rbArr.size(); i++)
+		{
+			rbArr[i].gravity(rbArr);
+		}
+		// MOVEMENT VARIABLES
+		if (GetKeyDown('D') && rbArr[0].getPos().getX() < windowWidth - 1)
+		{
+			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX() + 1, rbArr[0].getPos().getY()));
+		}
+		if (GetKeyDown('A') && rbArr[0].getPos().getX() > 0)
+		{
+			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX() - 1, rbArr[0].getPos().getY()));
+		}
+		if (GetKeyDown('W') && !isJump)
+		{
+			isJump = true;
+			if (rbArr[0].getSpeed() == 0)
+			{
+				rbArr[0].setSpeed(-3);
+			}
+		}
+		else
+		{
+			isJump = false;
+		}
+		if (GetKeyDown('S'))
+		{
+			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX(), rbArr[0].getPos().getY() + 1));
+		}
+		//Sleep(150);
+	}
+
+}
 // MAIN FUNCTION
 int main()
 {
@@ -877,8 +1400,19 @@ int main()
 
 	//generateTriangle();
 	
-	Test();
+	//Test();
 
+
+	PlayLevel(levelBonus);
+	// WATERMELON
+	PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
+	system("pause");
+	//Next Level, ETC
+	PlayLevel(levelBonus);
+	// select fruit based off level
+	//BOW BASED OFF WATERMELON
+	//PixelArt(BLACK, BLACK, YELLOW_YELLOW_BG, BLACK, BRIGHTWHITE_BRIGHTWHITE_BG, WHITE);
+	//Jump Simulation
 	//outputVar();
 	
 	//playTicTacToe();
@@ -894,6 +1428,5 @@ int main()
 	//window.setLine(10, "Attempts Required For Path : " + to_string(generations), WHITE);
 	//window.ClearWindow(false);
 	//window.writeConsole();
-
 	system("pause");
 }

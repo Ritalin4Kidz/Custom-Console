@@ -23,7 +23,7 @@ public:
 	Vector2& operator*=(float other);
 
 	Vector2 offset(float offset);
-
+	bool willHit(Vector2 other, Vector2 gravity);
 	bool operator==(Vector2 other);
 
 	float distance(Vector2 other);

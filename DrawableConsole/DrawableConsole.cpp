@@ -22,7 +22,9 @@ int windowWidth = 40;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 ConsoleWindow window(windowHeight);
-string levelBonus = "ColourTest";
+string levelBonus = "Bedroom";
+string command = "";
+string info = "";
 bool isScene = true;
 int XWins = 0;
 int OWins = 0;
@@ -34,7 +36,7 @@ bool foundPath = false;
 //GAME VALUES
 COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-Vector2 startPosition(3, 14);
+Vector2 startPosition(34, 18);
 string cutsceneStr = "NULL";
 
 using namespace std;
@@ -470,7 +472,7 @@ void Test()
 
 }
 
-void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInner, ColourClass Meat, ColourClass Seed, ColourClass BG)
+void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInner, ColourClass Meat, ColourClass Seed, ColourClass BG, string a_text)
 {
 	window.ClearWindow(true);
 	for (int l = 0; l < windowWidth; l++)
@@ -792,10 +794,60 @@ void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInn
 	window.setTextAtPoint(Vector2(17, 5), " ", Seed);
 	window.setTextAtPoint(Vector2(18, 5), " ", Seed);
 
-	window.setLine(16, "OOOO THAT WATERMELON LOOKS TASTY", WHITE);
+	window.setLine(16, a_text, WHITE);
 
 	window.writeConsole();
 
+}
+
+void Options(vector<string> options)
+{
+	window.ClearWindow(false);
+	for (int i = windowHeight; i > windowHeight - (options.size() + 3); i--)
+	{
+		for (int l = 0; l < windowWidth; l++)
+		{
+			window.setTextAtPoint(Vector2(l, i), " ", BLACK);
+		}
+	}
+	for (int i = 0; i < options.size(); i++)
+	{
+		string optionBegin;
+		if (i == 0) optionBegin = "A. ";
+		else if (i == 1) optionBegin = "B. ";
+		else if (i == 2) optionBegin = "C. ";
+		else if (i == 3) optionBegin = "D. ";
+		else if (i == 4) optionBegin = "E. ";
+
+		window.setLine(windowHeight - (i + 2), optionBegin + options[i], WHITE);
+	}
+	window.writeConsole();
+	system("pause");
+	if (GetKeyDown('A') && options.size() > 0)
+	{
+		command = options[0];
+		return;
+	}
+	if (GetKeyDown('B') && options.size() > 1)
+	{
+		command = options[1];
+		return;
+	}
+	if (GetKeyDown('C') && options.size() > 2)
+	{
+		command = options[2];
+		return;
+	}
+	if (GetKeyDown('D') && options.size() > 3)
+	{
+		command = options[3];
+		return;
+	}
+	if (GetKeyDown('E') && options.size() > 4)
+	{
+		command = options[4];
+		return;
+	}
 }
 
 void Cutscene()
@@ -806,9 +858,29 @@ void Cutscene()
 	}
 	if (cutsceneStr == "Watermelon")
 	{
-		PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
+		bool foundWatermelonInfo = false;
+		vector<string> information = Split(info, ';');
+		for (int i = 0; i < information.size(); i++)
+		{
+			if (information[i] == "atewatermelon")
+			{
+				PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BLACK, BLACK, WHITE, "MAN THAT WAS A TASTY WATERMELON");
+				system("pause");
+				foundWatermelonInfo = true;
+			}
+		}
+		if (!foundWatermelonInfo)
+		{
+			PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE, "OOOO THAT WATERMELON LOOKS TASTY!");
+			system("pause");
+			Options(vector<string> {"Eat Watermelon", "Leave Watermelon"});
+			if (command == "Eat Watermelon")
+			{
+				info += "atewatermelon;";
+			}
+			command = "";
+		}
 	}
-	system("pause");
 	cutsceneStr = "NULL";
 }
 
@@ -1343,6 +1415,50 @@ void PlayLevel(string level)
 		door.setTrigger(true, "Watermelon");
 		rbArr.push_back(door);
 	}
+
+	else if (level == "Bedroom")
+	{
+		// BUILD BACKGROUND
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
+			}
+		}
+
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
+		}
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Second Floor" + to_string(i), Vector2(i, 14), true, 0));
+		}
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Third Floor" + to_string(i), Vector2(i, 9), true, 0));
+		}
+
+		//Interactables
+		rbArr.push_back(PhysicsObject("Window", Vector2(7, 14), true, 0));
+		rbArr[rbArr.size() - 1].setInteract(true);
+		rbArr[rbArr.size() - 1].setInteractString("Watermelon");
+		rbArr[rbArr.size() - 1].setTrigger(false, "Bedroom");
+		rbArr[rbArr.size() - 1].setNewStartPos(rbArr[rbArr.size() - 1].getPos());
+		rbArr[rbArr.size() - 1].setColour(DARKBLUE);
+		rbArr.push_back(PhysicsObject("Door", Vector2(7, 19), true, 0));
+		rbArr[rbArr.size() - 1].setInteract(true);
+		rbArr[rbArr.size() - 1].setInteractString("Null");
+		rbArr[rbArr.size() - 1].setTrigger(false, "ColourTest");
+		rbArr[rbArr.size() - 1].setNewStartPos(Vector2(3, 14));
+		rbArr[rbArr.size() - 1].setColour(BRIGHTGREEN);
+
+
+	}
+
 
 	else if (level == "Watermelon")
 	{

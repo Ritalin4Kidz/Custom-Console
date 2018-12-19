@@ -18,11 +18,11 @@
 
 #include "PhysicsObject.h"
 #include "RigidBody.h"
-int windowWidth = 32;
+int windowWidth = 40;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 ConsoleWindow window(windowHeight);
-string levelBonus = "Intro";
+string levelBonus = "ColourTest";
 bool isScene = true;
 int XWins = 0;
 int OWins = 0;
@@ -30,7 +30,21 @@ int Draws = 0;
 
 int generations = 0;
 bool foundPath = false;
+
+//GAME VALUES
+COORD start = { (SHORT)0, (SHORT)0 };
+static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+Vector2 startPosition(3, 14);
+string cutsceneStr = "NULL";
+
 using namespace std;
+struct Background {
+	Background(ColourClass a_color, Vector2 a_pos, string text) { colour = a_color; pos = a_pos; mText = text; }
+	ColourClass colour;
+	Vector2 pos;
+	string mText;
+
+};
 // TRIANGLE GENERATION
 vector<string> Split(string a_String, char splitter)
 {
@@ -778,10 +792,25 @@ void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInn
 	window.setTextAtPoint(Vector2(17, 5), " ", Seed);
 	window.setTextAtPoint(Vector2(18, 5), " ", Seed);
 
+	window.setLine(16, "OOOO THAT WATERMELON LOOKS TASTY", WHITE);
+
 	window.writeConsole();
 
 }
 
+void Cutscene()
+{
+	if (cutsceneStr == "NULL")
+	{
+		return;
+	}
+	if (cutsceneStr == "Watermelon")
+	{
+		PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
+	}
+	system("pause");
+	cutsceneStr = "NULL";
+}
 
 // FOR GETTING ALL COMBOS
 void outputVar()
@@ -1199,7 +1228,84 @@ void nodePath()
 	//window.writeConsole();
 }
 
+ColourClass determineColour(ColourClass main, ColourClass bg)
+{
+	if (bg >= BLACK_BLUE_BG && bg < BLACK_GREEN_BG)
+	{
+		return (ColourClass) (main + BLACK_BLUE_BG);
+	}
 
+	if (bg >= BLACK_GREEN_BG && bg < BLACK_AQUA_BG)
+	{
+		return (ColourClass)(main + BLACK_GREEN_BG);
+	}
+
+	if (bg >= BLACK_AQUA_BG && bg < BLACK_RED_BG)
+	{
+		return (ColourClass)(main + BLACK_AQUA_BG);
+	}
+
+	if (bg >= BLACK_RED_BG && bg < BLACK_PURPLE_BG)
+	{
+		return (ColourClass)(main + BLACK_RED_BG);
+	}
+
+	if (bg >= BLACK_PURPLE_BG && bg < BLACK_YELLOW_BG)
+	{
+		return (ColourClass)(main + BLACK_PURPLE_BG);
+	}
+
+	if (bg >= BLACK_YELLOW_BG && bg < BLACK_WHITE_BG)
+	{
+		return (ColourClass)(main + BLACK_YELLOW_BG);
+	}
+
+	if (bg >= BLACK_WHITE_BG && bg < BLACK_LIGHTGREY_BG)
+	{
+		return (ColourClass)(main + BLACK_WHITE_BG);
+	}
+
+	if (bg >= BLACK_LIGHTGREY_BG && bg < BLACK_DARKBLUE_BG)
+	{
+		return (ColourClass)(main + BLACK_LIGHTGREY_BG);
+	}
+
+	if (bg >= BLACK_DARKBLUE_BG && bg < BLACK_BRIGHTGREEN_BG)
+	{
+		return (ColourClass)(main + BLACK_DARKBLUE_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTGREEN_BG && bg < BLACK_LIGHTBLUE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTGREEN_BG);
+	}
+
+	if (bg >= BLACK_LIGHTBLUE_BG && bg < BLACK_BRIGHTRED_BG)
+	{
+		return (ColourClass)(main + BLACK_LIGHTBLUE_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTRED_BG && bg < BLACK_LIGHTPURPLE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTRED_BG);
+	}
+
+	if (bg >= BLACK_LIGHTPURPLE_BG && bg < BLACK_BRIGHTYELLOW_BG)
+	{
+		return (ColourClass)(main + BLACK_LIGHTPURPLE_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTYELLOW_BG && bg < BLACK_BRIGHTWHITE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTYELLOW_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTWHITE_BG && bg <= BRIGHTWHITE_BRIGHTWHITE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTWHITE_BG);
+	}
+	return main;
+}
 void PlayLevel(string level)
 {
 	window.ClearWindow(true);
@@ -1211,10 +1317,9 @@ void PlayLevel(string level)
 		}
 	}
 	vector<RigidBody> rbArr;
-
+	vector<Background> bgArr;
 	if (level == "Intro")
 	{
-		Vector2 startPosition(3, 14);
 		PhysicsObject playerMk("player", startPosition, false, 0);
 		rbArr.push_back(playerMk);
 
@@ -1241,7 +1346,7 @@ void PlayLevel(string level)
 
 	else if (level == "Watermelon")
 	{
-		Vector2 startPosition(3, 14);
+		//Vector2 startPosition(3, 14);
 		PhysicsObject playerMk("player", startPosition, false, 0);
 		rbArr.push_back(playerMk);
 
@@ -1295,17 +1400,47 @@ void PlayLevel(string level)
 		rbArr.push_back(door);
 
 		PhysicsObject door2("Exit", Vector2(20, 13), true, 0);
-		door2.setTrigger(true, "Strawberry");
+		door2.setTrigger(true, "Bedroom");
 		rbArr.push_back(door2);
 	}
 
+	else if (level == "ColourTest")
+	{
+		ColourClass colour = BLACK;
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				bgArr.push_back(Background(colour, Vector2(l,m), " "));
+			}
+			colour = (ColourClass)(colour + 3);
+		}
+		//Vector2 startPosition(3, 12);
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
+
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("LowerGround" + to_string(i), Vector2(i, 14), true, 0));
+		}
+
+		rbArr.push_back(PhysicsObject("Interactable", Vector2(7, 14), true, 0));
+		rbArr[rbArr.size() - 1].setInteract(true);
+		rbArr[rbArr.size() - 1].setInteractString("Watermelon");
+		rbArr[rbArr.size() - 1].setTrigger(false, "ColourTest");
+		rbArr[rbArr.size() - 1].setNewStartPos(rbArr[rbArr.size() - 1].getPos());
+		rbArr[rbArr.size() - 1].setColour(BRIGHTGREEN);
+	}
+
 	// Const Game Logic Variables
-	COORD start = { (SHORT)0, (SHORT)0 };
-	static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
 	bool isJump = false;
 	Vector2 startPos = rbArr[0].getPos();
-
+	ColourClass playerColour = RED;
 	// GAME LOGIC
 	while (true)
 	{
@@ -1318,29 +1453,46 @@ void PlayLevel(string level)
 				window.setTextAtPoint(Vector2(l,m), " ", WHITE);
 			}			
 		}
+		for (int m = 0; m < bgArr.size(); m++)
+		{
+			window.setTextAtPoint(bgArr[m].pos, bgArr[m].mText, bgArr[m].colour);
+		}
 		// WRITE CONSOLE
 		for (int i = 1; i < rbArr.size(); i++)
 		{
+			ColourClass colorUse;
 			if (rbArr[i].getIsTrap())
 			{
-				window.setTextAtPoint(rbArr[i].getPos(), "M", LIGHTGREY);
+				colorUse = determineColour(LIGHTGREY, window.getTextColourAtPoint(rbArr[i].getPos()));
+				window.setTextAtPoint(rbArr[i].getPos(), "M", colorUse);
 			}
 			else if (rbArr[i].getIsTrigger())
 			{
-				window.setTextAtPoint(rbArr[i].getPos(), "O", BRIGHTGREEN);
+				colorUse = determineColour(BRIGHTGREEN, window.getTextColourAtPoint(rbArr[i].getPos()));
+				window.setTextAtPoint(rbArr[i].getPos(), "O", colorUse);
+			}
+			else if (rbArr[i].getInteract())
+			{
+				colorUse = determineColour(rbArr[i].getColour(), window.getTextColourAtPoint(rbArr[i].getPos()));
+				window.setTextAtPoint(rbArr[i].getPos(), "*", colorUse);
 			}
 			else
 			{
-				window.setTextAtPoint(rbArr[i].getPos(), "_", BRIGHTWHITE);
+				colorUse = determineColour(BRIGHTWHITE, window.getTextColourAtPoint(rbArr[i].getPos()));
+				window.setTextAtPoint(rbArr[i].getPos(), "_", colorUse);
 			}
 		}
 		if (rbArr[0].getPos().getY() >= 0)
 		{
-			window.setTextAtPoint(rbArr[0].getPos(), "*", RED);
+			playerColour = determineColour(BRIGHTRED, window.getTextColourAtPoint(rbArr[0].getPos()));
+			window.setTextAtPoint(rbArr[0].getPos(), "*",playerColour);
 		}
 		if (level == "Intro") window.setLine(windowHeight - 1, "Level: Intro---Jump:W|Left:A|Right:D|Down:S", WHITE);
 		else if (level == "Watermelon") window.setLine(windowHeight - 1, "Level: Watermelon---Beware The Spikes", WHITE);
+		else if (level == "Bedroom_001") window.setLine(windowHeight - 1, "Your Bedroom: Population 1", WHITE);
+		else if (level == "ColourTest") window.setLine(windowHeight - 1, "COLOURTEST -- TECH DEMO", WHITE);
 		window.writeConsole();
+		SetConsoleCursorPosition(hOut, start);
 		for (int i = 1; i < rbArr.size(); i++)
 		{
 			if (rbArr[i].getIsTrigger() && rbArr[0].getPos() == rbArr[i].getPos())
@@ -1369,6 +1521,10 @@ void PlayLevel(string level)
 		{
 			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX() - 1, rbArr[0].getPos().getY()));
 		}
+		if (GetKeyDown('P'))
+		{
+			system("pause");
+		}
 		if (GetKeyDown('W') && !isJump)
 		{
 			isJump = true;
@@ -1380,6 +1536,19 @@ void PlayLevel(string level)
 		else
 		{
 			isJump = false;
+		}
+		if (GetKeyDown('E'))
+		{
+			for (int i = 1; i < rbArr.size(); i++)
+			{
+				if (rbArr[i].getInteract() && rbArr[0].getPos() == rbArr[i].getPos())
+				{
+					cutsceneStr = rbArr[i].getInteractString();
+					levelBonus = rbArr[i].getTriggerLevel();
+					startPosition = rbArr[i].getNewStartPos();
+					return;
+				}
+			}
 		}
 		if (GetKeyDown('S'))
 		{
@@ -1403,12 +1572,33 @@ int main()
 	//Test();
 
 
-	PlayLevel(levelBonus);
-	// WATERMELON
-	PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
-	system("pause");
-	//Next Level, ETC
-	PlayLevel(levelBonus);
+	//PlayLevel(levelBonus);
+	//// WATERMELON
+	//PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
+	//system("pause");
+	////Next Level, ETC
+	//PlayLevel(levelBonus);
+
+	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
+	COORD NewSBSize;
+	int Status;
+
+	SMALL_RECT windowSize = { 0,0,windowWidth + 1,windowHeight};
+	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+
+	GetConsoleScreenBufferInfo(hOut, &SBInfo);
+	COORD scrollbar = {
+		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
+		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
+	};
+	SetConsoleScreenBufferSize(hOut, scrollbar);
+	LPCWSTR title = L"Syde"; //Think of title later
+	SetConsoleTitleW(title);
+	while (true)
+	{
+		Cutscene();
+		PlayLevel(levelBonus);
+	}
 	// select fruit based off level
 	//BOW BASED OFF WATERMELON
 	//PixelArt(BLACK, BLACK, YELLOW_YELLOW_BG, BLACK, BRIGHTWHITE_BRIGHTWHITE_BG, WHITE);

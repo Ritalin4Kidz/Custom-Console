@@ -190,6 +190,7 @@
     <Text Include="BrainFiles\NxCxmbx.txt" />
     <Text Include="BrainFiles\O_Test.txt" />
     <Text Include="BrainFiles\X_Test.txt" />
+    <Text Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BrainFiles\PathFile.zz" />

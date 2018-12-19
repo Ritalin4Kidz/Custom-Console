@@ -1,0 +1,15 @@
+*************************************
+*									*
+*              TO-DO				*
+*									*
+*************************************
+
+Draw up concept for map (FIRST AREA)
+
+size:	10 wide
+		3 high
+
+
+then implement the map (try for at least 3 grids a day)
+
+make impassable block (can't jump or drop from)

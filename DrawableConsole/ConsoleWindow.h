@@ -299,6 +299,8 @@ public:
 
 	void setTextAtPoint(Vector2 point, string text, ColourClass colour);
 
+	ColourClass getTextColourAtPoint(Vector2 point);
+
 	Line getLine(int index) { return m_Lines[index]; }
 
 	void writeConsole();

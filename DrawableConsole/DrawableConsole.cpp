@@ -11,6 +11,7 @@
 #include <stdlib.h> 
 #include <string>
 
+
 #include <windows.h>
 #include <conio.h>
 #include <fstream>
@@ -1674,6 +1675,502 @@ void PlayLevel(string level)
 	}
 
 }
+void introductionScript()
+{
+	string gameTitle = "Syde";
+	int scriptLoad = rand() % 3;
+	switch (scriptLoad)
+	{
+	case 0:
+		cout << "Initializing Window...%" << endl;
+		Sleep(250);
+		cout << "Loading Up Quake Engine...0%" << endl;
+		Sleep(40);
+		cout << "Quake Engine Load Failure @ 7%" << endl;
+		Sleep(40);
+		cout << "Loading Up Backup Engine...0%" << endl;
+		Sleep(40);
+		cout << "Backup Engine Load Failure @ 13%" << endl;
+		Sleep(40);
+		cout << "Loading Up Backup Backup Engine...0%" << endl;
+		Sleep(40);
+		cout << "Loading Up Backup Backup Engine...25%" << endl;
+		Sleep(40);
+		cout << "Loading Up Backup Backup Engine...50%" << endl;
+		Sleep(40);
+		cout << "Loading Up Backup Backup Engine...75%" << endl;
+		Sleep(40);
+		cout << "Loading Up Backup Backup Engine...100%" << endl;
+		Sleep(40);
+		cout << "Backup Backup Engine Load Success!%" << endl;
+		Sleep(40);
+		cout << "Generating Menus...%" << endl;
+		Sleep(70);
+		cout << "Generating Graphics...%" << endl;
+		Sleep(70);
+		cout << "Generating Levels...%" << endl;
+		Sleep(70);
+		cout << "Generating Fake Text...%" << endl;
+		Sleep(70);
+		cout << "Checking CPU Temperature For Some Reason%" << endl;
+		Sleep(40);
+		cout << "CPU Overheating For Some Reason%" << endl;
+		Sleep(40);
+		cout << "Decreasing Graphics Levels To Compensate%" << endl;
+		Sleep(80);
+		cout << "Removing Cool Features%" << endl;
+		Sleep(40);
+		cout << "Adding Extremely Bland Features%" << endl;
+		Sleep(40);
+		cout << "Adding A Jetpack & Grappling Hook%" << endl;
+		cout << "For Uniqueness%" << endl;
+		Sleep(40);
+		cout << "Adding Memes From 2006 To Sound Funny%" << endl;
+		Sleep(40);
+		cout << "Not Actually Doing Anything%" << endl;
+		Sleep(40);
+		cout << "Making It Look Like I Am%" << endl;
+		Sleep(40);
+		cout << "Finally Launching The Game!%" << endl;
+		Sleep(40);
+		break;
+	case 1:
+		cout << "Trying To Open The Terminal...%" << endl;
+		Sleep(250);
+		cout << "So No One Is Reading This%" << endl;
+		Sleep(40);
+		cout << "But It Looks Like A Boot Up%" << endl;
+		Sleep(40);
+		cout << "For That Good Ol' Retro Feel%" << endl;
+		Sleep(40);
+		cout << "Back When Holt Was Our Prime Minister%" << endl;
+		Sleep(40);
+		cout << "I Still Leave My Porch%" << endl;
+		Sleep(40);
+		cout << "Light On Every Night%" << endl;
+		Sleep(40);
+		cout << "Hawky Was A Better PM Though%" << endl;
+		Sleep(40);
+		cout << "Doing Kickflips To Win The Election%" << endl;
+		Sleep(40);
+		cout << "What A Top Bloke Honestly%" << endl;
+		Sleep(40);
+		cout << "Can't Believe That He Has So%" << endl;
+		Sleep(40);
+		cout << "Many Games Based Off Him%" << endl;
+		Sleep(40);
+		cout << "How Many Does George Bush Have?%" << endl;
+		Sleep(40);
+		cout << "Exactly...%" << endl;
+		Sleep(70);
+		cout << "Anyways Since No One Is Reading%" << endl;
+		Sleep(70);
+		cout << "............%" << endl;
+		Sleep(70);
+		cout << "Boobs%" << endl;
+		Sleep(70);
+		cout << "Oh Damn You Probably Saw That%" << endl;
+		Sleep(40);
+		cout << "Please Don't Tell Mum%" << endl;
+		Sleep(40);
+		cout << "Oh No Please Don't I Beg You%" << endl;
+		Sleep(80);
+		cout << "I Didn't Mean It!!!%" << endl;
+		Sleep(40);
+		cout << ".................%" << endl;
+		Sleep(40);
+		cout << "I'm In So Much Trouble%" << endl;
+		Sleep(40);
+		cout << "I Gotta Go Now, Have Fun Kiddo%" << endl;
+		Sleep(40);
+		cout << "Finally Launching The Game!%" << endl;
+		Sleep(40);
+		break;
+	default:
+		break;
+	}
+	cout << "Launching " << gameTitle << "...0%" << endl;
+	Sleep(100);		   
+	cout << "Launching " << gameTitle << "...25%" << endl;
+	Sleep(100);		   
+	cout << "Launching " << gameTitle << "...50%" << endl;
+	Sleep(100);		   
+	cout << "Launching " << gameTitle << "...75%" << endl;
+	Sleep(100);		   
+	cout << "Launching " << gameTitle << "...100%" << endl;
+	Sleep(100);
+	cout << "Starting...%" << endl;
+	Sleep(50);
+}
+void drawTitle(int baseY, int baseX)
+{
+	//LINE 1
+	window.setTextAtPoint(Vector2(baseX, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 2, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 18, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 19, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 24, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 25, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 26, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 27, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 28, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 29, baseY), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	//LINE 2
+	window.setTextAtPoint(Vector2(baseX, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 20, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 21, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 24, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 25, baseY + 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	//LINE 3
+	window.setTextAtPoint(Vector2(baseX, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 20, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 21, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 24, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 25, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 26, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 27, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 28, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 29, baseY + 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	//LINE 4
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 20, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 21, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 24, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 25, baseY + 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	//LINE 5
+	window.setTextAtPoint(Vector2(baseX, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 18, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 19, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 24, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 25, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 26, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 27, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 28, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 29, baseY + 4), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+}												   
+void introMenu()
+{
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", WHITE);
+		}
+	}
+
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE);
+			}
+		}
+		//DRAW TITLE 5 space on each side
+		//window.setTextAtPoint(Vector2(10, 5), "SYDE: PRESS 'A' TO PLAY!", BRIGHTWHITE);
+		drawTitle(3,5);
+		window.setTextAtPoint(Vector2(7, 8), "Something You Do Everytime", WHITE);
+		window.setTextAtPoint(Vector2(16, 10), "A. START", BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(16, 11), "B.  QUIT", BRIGHTWHITE);
+		window.writeConsole();
+		SetConsoleCursorPosition(hOut, start);
+		if (GetKeyDown('A'))
+		{
+			return;
+		}
+		if (GetKeyDown('B'))
+		{
+			exit(NULL);
+		}
+	}
+}
+void drawBee(int baseY, int baseX)
+{
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", WHITE_BRIGHTWHITE_BG);
+		}
+	}
+	//LINE 1
+	window.setTextAtPoint(Vector2(baseX + 2, baseY), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 10, baseY), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY), " ", BLACK);
+
+	//LINE 2
+	window.setTextAtPoint(Vector2(baseX , baseY + 1), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 1), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 1), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 1), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 1), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 1), " ", LIGHTGREY_WHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 1), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 1), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 1), " ",  LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 1), " ",  LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 1), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 1), " ", LIGHTGREY_WHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 1), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 1), " ", BLACK);
+
+	//LINE 3
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 2), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 2), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 2), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 2), " ", LIGHTGREY_WHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 2), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 2), " ", LIGHTGREY_WHITE_BG);
+																		
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 2), " ", BLACK);	
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 2), " ", BLACK);	
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 2), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 2), " ", LIGHTGREY_WHITE_BG);
+													  
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 2), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 2), " ", BLACK);
+
+	//LINE 4
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 3), " ", BLACK);
+													 		  
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 3), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 3), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 14, baseY + 3), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 15, baseY + 3), " ", BLACK);
+
+	//LINE 5
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 4), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 4), " ", LIGHTBLUE_DARKBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 4), " ", LIGHTBLUE_PURPLE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 4), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 4), " ", LIGHTBLUE_RED_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 4), " ", LIGHTBLUE_BRIGHTRED_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 4), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 14, baseY + 4), " ", LIGHTBLUE_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 15, baseY + 4), " ", LIGHTBLUE_BRIGHTGREEN_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 18, baseY + 4), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 19, baseY + 4), " ", BLACK);
+
+	//LINE 6
+	window.setTextAtPoint(Vector2(baseX, baseY + 5), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 5), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 5), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 5), " ", LIGHTBLUE_AQUA_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 5), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 5), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 5), " ", LIGHTBLUE_DARKBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 5), " ", LIGHTBLUE_PURPLE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 5), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 5), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 5), " ", LIGHTBLUE_RED_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 5), " ", LIGHTBLUE_BRIGHTRED_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 5), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 5), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 14, baseY + 5), " ", LIGHTBLUE_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 15, baseY + 5), " ", LIGHTBLUE_BRIGHTGREEN_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 5), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 5), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 18, baseY + 5), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 19, baseY + 5), " ", LIGHTGREY_WHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 20, baseY + 5), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 21, baseY + 5), " ", BLACK);
+
+	//LINE 7
+	window.setTextAtPoint(Vector2(baseX, baseY + 6), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 6), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 6), " ", LIGHTBLUE_AQUA_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 6), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 6), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 6), " ", LIGHTBLUE_DARKBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 6), " ", LIGHTBLUE_PURPLE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 6), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 6), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 6), " ", LIGHTBLUE_RED_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 6), " ", LIGHTBLUE_BRIGHTRED_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 6), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 6), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 14, baseY + 6), " ", LIGHTBLUE_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 15, baseY + 6), " ", LIGHTBLUE_BRIGHTGREEN_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 6), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 6), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 18, baseY + 6), " ", LIGHTGREY_WHITE_BG);
+	window.setTextAtPoint(Vector2(baseX + 19, baseY + 6), " ", LIGHTGREY_WHITE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 20, baseY + 6), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 21, baseY + 6), " ", BLACK);
+
+	//LINE 8
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 7), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 7), " ", LIGHTBLUE_DARKBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 7), " ", LIGHTBLUE_PURPLE_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 7), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 7), " ", LIGHTBLUE_RED_BG);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 7), " ", LIGHTBLUE_BRIGHTRED_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 7), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 14, baseY + 7), " ", LIGHTBLUE_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 15, baseY + 7), " ", LIGHTBLUE_BRIGHTGREEN_BG);
+
+	window.setTextAtPoint(Vector2(baseX + 16, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 17, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 18, baseY + 7), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 19, baseY + 7), " ", BLACK);
+
+	//LINE 9
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 8), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 8), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 10, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 11, baseY + 8), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 12, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 13, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 14, baseY + 8), " ", BLACK);
+	window.setTextAtPoint(Vector2(baseX + 15, baseY + 8), " ", BLACK);
+
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 10), "Team Freebee Games", BLACK_BRIGHTWHITE_BG);
+	window.writeConsole();
+	Sleep(5000);
+}
 // MAIN FUNCTION
 int main()
 {
@@ -1710,6 +2207,11 @@ int main()
 	SetConsoleScreenBufferSize(hOut, scrollbar);
 	LPCWSTR title = L"Syde"; //Think of title later
 	SetConsoleTitleW(title);
+
+	// OPENING
+	introductionScript();
+	drawBee(3,9);
+	introMenu();
 	while (true)
 	{
 		Cutscene();

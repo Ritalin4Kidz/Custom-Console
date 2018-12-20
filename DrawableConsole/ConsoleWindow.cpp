@@ -59,7 +59,7 @@ void ConsoleWindow::addLayerToLine(int index, string a_line, ColourClass colour,
 
 void ConsoleWindow::setTextAtPoint(Vector2 point, string text, ColourClass colour)
 {
-	if (point.getY() < m_Lines.size())
+	if (point.getY() < m_Lines.size() && point.getY() > 0)
 	{
 		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
 		{
@@ -70,7 +70,7 @@ void ConsoleWindow::setTextAtPoint(Vector2 point, string text, ColourClass colou
 
 ColourClass ConsoleWindow::getTextColourAtPoint(Vector2 point)
 {
-	if (point.getY() < m_Lines.size())
+	if (point.getY() < m_Lines.size() && point.getY() > 0)
 	{
 		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
 		{

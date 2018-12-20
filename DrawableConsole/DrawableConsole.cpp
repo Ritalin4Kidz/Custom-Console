@@ -1786,6 +1786,56 @@ void introductionScript()
 		cout << "Finally Launching The Game!%" << endl;
 		Sleep(40);
 		break;
+	case 2:
+		cout << "00001000%" << endl;
+		Sleep(250);
+		cout << "10100111%" << endl;
+		Sleep(40);
+		cout << "01010101%" << endl;
+		Sleep(40);
+		cout << "10011001%" << endl;
+		Sleep(40);
+		cout << "01000001%" << endl;
+		Sleep(40);
+		cout << "11110001%" << endl;
+		Sleep(40);
+		cout << "10101010%" << endl;
+		Sleep(40);
+		cout << "11001111%" << endl;
+		Sleep(40);
+		cout << "00111110%" << endl;
+		Sleep(40);
+		cout << "10010011%" << endl;
+		Sleep(40);
+		cout << "00000000%" << endl;
+		Sleep(40);
+		cout << "10110001%" << endl;
+		Sleep(70);
+		cout << "01111111%" << endl;
+		Sleep(70);
+		cout << "01110001%" << endl;
+		Sleep(70);
+		cout << "11111110%" << endl;
+		Sleep(70);
+		cout << "01100110%" << endl;
+		Sleep(40);
+		cout << "11100000%" << endl;
+		Sleep(40);
+		cout << "10001100%" << endl;
+		Sleep(80);
+		cout << "11010011%" << endl;
+		Sleep(40);
+		cout << "00110001%" << endl;
+		Sleep(40);
+		cout << "01011101%" << endl;
+		Sleep(40);
+		cout << "11010110%" << endl;
+		Sleep(40);
+		cout << "11211011%" << endl;
+		Sleep(40);
+		cout << "Wait Hold On I Screwed Up%" << endl;
+		Sleep(40);
+		break;
 	default:
 		break;
 	}
@@ -1912,12 +1962,13 @@ void drawTitle(int baseY, int baseX)
 }												   
 void introMenu()
 {
+	system("CLS");
 	window.ClearWindow(true);
 	for (int l = 0; l < windowWidth; l++)
 	{
 		for (int m = 0; m < windowHeight; m++)
 		{
-			window.addToLine(m, " ", WHITE);
+			window.addToLine(m, " ", BLACK);
 		}
 	}
 
@@ -2169,7 +2220,27 @@ void drawBee(int baseY, int baseX)
 
 	window.setTextAtPoint(Vector2(baseX + 2, baseY + 10), "Team Freebee Games", BLACK_BRIGHTWHITE_BG);
 	window.writeConsole();
-	Sleep(5000);
+	//Sleep(5000);
+}
+void introCreditsScript()
+{
+	window.ClearWindow(true);
+	cout << "SYDE" << endl;
+	Sleep(250);
+	cout << "Created By Callum Hands" << endl;
+	Sleep(250);
+	cout << "In Association With Team Freebee Games" << endl;
+	Sleep(250);
+	cout << "Programming & Art : Callum Hands" << endl;
+	Sleep(250);
+	cout << "Game Engine : Callum Hands" << endl;
+	Sleep(250);
+	cout << "Engine Made In Visual Studio" << endl;
+	Sleep(250);
+	cout << "Using C++" << endl;
+	Sleep(250);
+
+	system("pause");
 }
 // MAIN FUNCTION
 int main()
@@ -2208,9 +2279,22 @@ int main()
 	LPCWSTR title = L"Syde"; //Think of title later
 	SetConsoleTitleW(title);
 
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+
+
 	// OPENING
 	introductionScript();
-	drawBee(3,9);
+	introCreditsScript();
+	for (int i = -10; i < 5; i++)
+	{
+		drawBee(i, 9);
+		Sleep(100);
+	}
+	Sleep(2000);
 	introMenu();
 	while (true)
 	{

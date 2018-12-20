@@ -1,6 +1,8 @@
 // DrawableConsole.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+// CODE BY CALLUM HANDS
+// ritalin4kidz.github.io
+// callum@hands.net.au
 #include "pch.h"
 #include <iostream>
 #include "ConsoleWindow.h"
@@ -11,8 +13,8 @@
 #include <stdlib.h> 
 #include <string>
 
-
 #include <windows.h>
+#include <mmsystem.h>
 #include <conio.h>
 #include <fstream>
 #include "AI.h"
@@ -882,6 +884,26 @@ void Cutscene()
 			command = "";
 		}
 	}
+	else if (cutsceneStr == "Watermelon002")
+	{
+		bool foundWatermelonInfo = false;
+		vector<string> information = Split(info, ';');
+		for (int i = 0; i < information.size(); i++)
+		{
+			if (information[i] == "atewatermelon")
+			{
+				PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BLACK, BLACK, WHITE, "THE WATERMELON IS UPSET THAT YOU ATE IT");
+				system("pause");
+				foundWatermelonInfo = true;
+			}
+		}
+		if (!foundWatermelonInfo)
+		{
+			PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE, "THE WATERMELON IS HAPPY YOU LET IT LIVE");
+			system("pause");
+			command = "";
+		}
+	}
 	cutsceneStr = "NULL";
 }
 
@@ -1543,7 +1565,7 @@ void PlayLevel(string level)
 
 		rbArr.push_back(PhysicsObject("Interactable", Vector2(7, 14), true, 0));
 		rbArr[rbArr.size() - 1].setInteract(true);
-		rbArr[rbArr.size() - 1].setInteractString("Watermelon");
+		rbArr[rbArr.size() - 1].setInteractString("Watermelon002");
 		rbArr[rbArr.size() - 1].setTrigger(false, "ColourTest");
 		rbArr[rbArr.size() - 1].setNewStartPos(rbArr[rbArr.size() - 1].getPos());
 		rbArr[rbArr.size() - 1].setColour(BRIGHTGREEN);
@@ -1962,7 +1984,7 @@ void drawTitle(int baseY, int baseX)
 }												   
 void introMenu()
 {
-	system("CLS");
+	//Add Menu Music
 	window.ClearWindow(true);
 	for (int l = 0; l < windowWidth; l++)
 	{
@@ -2235,7 +2257,7 @@ void introCreditsScript()
 	Sleep(250);
 	cout << "Game Engine : Callum Hands" << endl;
 	Sleep(250);
-	cout << "Engine Made In Visual Studio" << endl;
+	cout << "'SYDE Engine' Made In Visual Studio" << endl;
 	Sleep(250);
 	cout << "Using C++" << endl;
 	Sleep(250);
@@ -2294,6 +2316,7 @@ int main()
 		drawBee(i, 9);
 		Sleep(100);
 	}
+	PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
 	Sleep(2000);
 	introMenu();
 	while (true)

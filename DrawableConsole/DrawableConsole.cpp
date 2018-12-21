@@ -2244,23 +2244,82 @@ void drawBee(int baseY, int baseX)
 	window.writeConsole();
 	//Sleep(5000);
 }
+void poweredBySYDEEngine(int baseY, int baseX)
+{
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", WHITE_BRIGHTWHITE_BG);
+		}
+	}
+	//LINE 1
+	window.setTextAtPoint(Vector2(baseX + 0, baseY), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 2, baseY), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	//LINE 2
+	window.setTextAtPoint(Vector2(baseX + 0, baseY + 1), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 1), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	//LINE 3
+	window.setTextAtPoint(Vector2(baseX + 0, baseY + 2), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 2), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 2), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 2), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 2), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 2), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 2), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 2), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 2), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 2), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	//LINE 4
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 3), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 3), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+	//LINE 5
+	window.setTextAtPoint(Vector2(baseX + 0, baseY + 4), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 1, baseY + 4), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 2, baseY + 4), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 3, baseY + 4), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 4), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 4), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 4), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 4), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 4), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 4), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	//LINE 6
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 5), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 5), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	//LINE 7															
+	window.setTextAtPoint(Vector2(baseX + 4, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 5, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 6, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 7, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 8, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(baseX + 9, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
+
+	window.setTextAtPoint(Vector2(baseX - 6, baseY + 9), "Powered by SYDE Engine", BLACK_BRIGHTWHITE_BG);
+	window.writeConsole();
+}
 void introCreditsScript()
 {
 	window.ClearWindow(true);
 	cout << "SYDE" << endl;
-	Sleep(250);
+	Sleep(25);
 	cout << "Created By Callum Hands" << endl;
-	Sleep(250);
+	Sleep(25);
 	cout << "In Association With Team Freebee Games" << endl;
-	Sleep(250);
+	Sleep(25);
 	cout << "Programming & Art : Callum Hands" << endl;
-	Sleep(250);
+	Sleep(25);
 	cout << "Game Engine : Callum Hands" << endl;
-	Sleep(250);
+	Sleep(25);
 	cout << "'SYDE Engine' Made In Visual Studio" << endl;
-	Sleep(250);
+	Sleep(25);
 	cout << "Using C++" << endl;
-	Sleep(250);
+	Sleep(25);
 
 	system("pause");
 }
@@ -2314,10 +2373,27 @@ int main()
 	for (int i = -10; i < 5; i++)
 	{
 		drawBee(i, 9);
-		Sleep(100);
+		Sleep(50);
 	}
 	PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
-	Sleep(2000);
+	Sleep(1250);
+	for (int i = 5; i < 22; i++)
+	{
+		drawBee(i, 9);
+		Sleep(50);
+	}
+	for (int i = -10; i < 5; i++)
+	{
+		poweredBySYDEEngine(i, 15);
+		Sleep(50);
+	}
+	PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
+	Sleep(1250);
+	for (int i = 5; i < 22; i++)
+	{
+		poweredBySYDEEngine(i, 15);
+		Sleep(50);
+	}
 	introMenu();
 	while (true)
 	{

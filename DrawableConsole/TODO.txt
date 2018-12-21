@@ -13,3 +13,5 @@ size:	10 wide
 then implement the map (try for at least 3 grids a day)
 
 make impassable block (can't jump or drop from)
+
+make sounds, replace placeholders

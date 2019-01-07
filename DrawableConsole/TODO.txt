@@ -6,12 +6,39 @@
 
 Draw up concept for map (FIRST AREA)
 
-size:	10 wide
-		3 high
+
+Police Station
+ _______    _______    _______   _______    _______    _______
+|		|  |	   |  |		  |	|		|  |	   |  |		  |
+| Break |  | Break |  |Holding|	| Break |  | Brief |  | Lift  |
+| Room1 |  | Room2 |  |  Cell |	| Room3 |  | Room  |  |       |
+|_______|  |_______|  |_______|	|_______|  |_______|  |_______| //LIFT TAKES YOU TO CARPARK
+
+User Flow:
+->Walk To Briefing Room
+->Talk To (Title To Person In Charge)
+->They Tell You To Investigate A Scene
+->Pick Up Keys From Break Room 1 (If Haven't Already)
+->Go To Lift
+
+Carpark
+Lift Takes You To Police Station
+ _______    _______  
+|		|  |	   |
+| Lift  |  | Car   |
+|       |  |       |
+|_______|  |_______| //CAR GIVES OPTION ON WHERE TO GO
+
+User Flow:
+->Walk To Car
+->Drive To Crime Scene
 
 
 then implement the map (try for at least 3 grids a day)
 
-make impassable block (can't jump or drop from)
+make impassable block (can't jump or drop from) - no longer neccessary
 
 make sounds, replace placeholders
+
+make character model, more than just the one pixel - tick
+apply hitbox to it as well - tick

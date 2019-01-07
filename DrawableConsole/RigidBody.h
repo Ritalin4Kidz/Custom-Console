@@ -40,6 +40,9 @@ public:
 	Vector2 getNewStartPos() {return startPos;}
 	Vector2 getPos() { return m_pos; }
 	ColourClass getColour() { return m_colour; }
+
+	void setTag(string a_tag) { tag = a_tag; }
+	string getTag() { return tag; }
 private:
 	ColourClass m_colour;
 	bool m_Kinematic = false;
@@ -54,4 +57,6 @@ private:
 	string id = "";
 	Vector2 startPos;
 	Vector2 m_pos;
+
+	string tag = "";
 };

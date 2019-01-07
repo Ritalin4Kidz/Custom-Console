@@ -25,9 +25,18 @@ int windowWidth = 40;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 ConsoleWindow window(windowHeight);
-string levelBonus = "Bedroom";
+string levelBonus = "Break_Room";
 string command = "";
 string info = "";
+string characterName1 = "Officer_Man";
+vector<ColourClass> charSkin1 = { DARKBLUE_DARKBLUE_BG, BLACK, BRIGHTYELLOW_BRIGHTYELLOW_BG, WHITE_WHITE_BG };
+string characterName2 = "Nude_Lunatic";
+vector<ColourClass> charSkin2 = { WHITE_WHITE_BG, WHITE_WHITE_BG, WHITE_WHITE_BG, WHITE_WHITE_BG };
+string characterName3 = "Sunday_Sport";
+vector<ColourClass> charSkin3 = { BRIGHTRED_BRIGHTRED_BG, LIGHTBLUE_PURPLE_BG, LIGHTBLUE_LIGHTBLUE_BG, WHITE_WHITE_BG };
+vector<vector<ColourClass>> charSkins{charSkin1, charSkin2, charSkin3};
+vector<string> charNames = { characterName1, characterName2, characterName3 };
+int skinNumber = 0;
 bool isScene = true;
 int XWins = 0;
 int OWins = 0;
@@ -39,7 +48,7 @@ bool foundPath = false;
 //GAME VALUES
 COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-Vector2 startPosition(34, 18);
+Vector2 startPosition(5, 19);
 string cutsceneStr = "NULL";
 
 using namespace std;
@@ -83,7 +92,86 @@ bool GetKeyDown(char KeyCode)
 {
 	return GetAsyncKeyState(KeyCode) && 0x8000;
 }
+void drawCharacter(Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin)
+{
+	//PANTS
+	for (int i = 0; i < 4; i++)
+	{
+		for (int ii = 0; ii < 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes2);
+		}
+	}
+	//SHIRT
+	for (int i = 3; i < 7; i++)
+	{
+		for (int ii = -2; ii < 6; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes1);
+		}
+	}
+	//HEAD
+	for (int i = 6; i < 8; i++)
+	{
+		for (int ii = 0; ii < 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Skin);
+		}
+	}
+	//BADGE
+	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() - 5), " ", Accessory);
+	window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 5), " ", Accessory);
+	//HANDS
+	window.setTextAtPoint(Vector2(point.getX() - 2, point.getY() - 3), " ", Skin);
+	window.setTextAtPoint(Vector2(point.getX() - 1, point.getY() - 3), " ", Skin);
 
+	window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 3), " ", Skin);
+	window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 3), " ", Skin);
+	if (charNames[skinNumber] == "Nude_Lunatic")
+	{
+		for (int x = -2; x < 6; x++)
+		{
+			for (int y = 2; y < 3; y++)
+			{
+				window.setTextAtPoint(Vector2(point.getX() + x, point.getY() - y), " ", BLACK);
+			}
+		}
+	}
+	//HAT
+	if (charNames[skinNumber] != "Nude_Lunatic")
+	{
+		for (int i = 8; i < 10; i++)
+		{
+			for (int ii = 0; ii < 4; ii++)
+			{
+				window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes1);
+			}
+		}
+		window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 8), " ", Clothes1);
+		window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 8), " ", Clothes1);
+	}
+	if (charNames[skinNumber] == "Nude_Lunatic")
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 0, point.getY() - 8), " ", Clothes1);
+		window.setTextAtPoint(Vector2(point.getX() + 1, point.getY() - 8), " ", Clothes1);
+		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() - 8), " ", Clothes1);
+		window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 8), " ", Clothes1);
+	}
+}
+bool charHitBoxCheck(Vector2 point, Vector2 obj,int startX, int endX, int startY, int endY)
+{
+	for (int x = point.getX() + startX; x < point.getX() + endX; x++)
+	{
+		for (int y = point.getY() + startY; y > point.getY() - endY; y--)
+		{
+			if (obj == Vector2(x, y))
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
 void generateTriangle()
 {
 	window.ClearWindow(true);
@@ -1401,7 +1489,7 @@ ColourClass determineColour(ColourClass main, ColourClass bg)
 	}
 	return main;
 }
-void PlayLevel(string level)
+void PlayLevel(string level, bool jumpAllowed)
 {
 	window.ClearWindow(true);
 	for (int l = 0; l < windowWidth; l++)
@@ -1439,7 +1527,7 @@ void PlayLevel(string level)
 		rbArr.push_back(door);
 	}
 
-	else if (level == "Bedroom")
+	else if (level == "BedroomTest")
 	{
 		// BUILD BACKGROUND
 		for (int l = 0; l < windowWidth; l++)
@@ -1481,8 +1569,378 @@ void PlayLevel(string level)
 
 
 	}
+	else if (level == "Holding_Cell")
+	{
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
+		//BACKGROUND
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
+			}
+		}
+		//GROUND
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
+			rbArr[rbArr.size() - 1].setTag("Floor");
+		}
+		//CELL
+		for (int l = 0; l < 10; l++)
+		{
+			for (int m = 13; m < 14; m++)
+			{
+				bgArr.push_back(Background(YELLOW_YELLOW_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 28; l < 38; l++)
+		{
+			for (int m = 13; m < 14; m++)
+			{
+				bgArr.push_back(Background(YELLOW_YELLOW_BG, Vector2(l, m), " "));
+			}
+		}
+		//TODO, ADD PERSON ON THE BENCH
+		//BARS
+		for (int l = 0; l < 2; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 4; l < 6; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 8; l < 10; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 12; l < 14; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 16; l < 18; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 20; l < 22; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 24; l < 26; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 28; l < 30; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 32; l < 34; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 36; l < 38; l++)
+		{
+			for (int m = 0; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		//Warp To Break_Room_002
+		PhysicsObject door("Exit", Vector2(-1, 19), true, 0);
+		door.setTrigger(true, "Break_Room_002");
+		door.setNewStartPos(Vector2(33, 19));
+		door.setTag("Floor");
+		rbArr.push_back(door);
+	}
+	else if (level == "Break_Room")
+	{
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
 
+		//BACKGROUND
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
+			}
+		}
+		//GROUND
+		for (int i = 0; i < windowWidth; i++)
+		{
+			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
+			rbArr[rbArr.size() - 1].setTag("Floor");
+		}
 
+		//BENCH LOWER
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 16; m < windowHeight - 1; m++)
+			{
+				bgArr.push_back(Background(YELLOW_YELLOW_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 15; m < 16; m++)
+			{
+				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
+			}
+		}
+		for (int m = 16; m < windowHeight - 1; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(0, m), " "));
+		}
+		bgArr.push_back(Background(BLACK, Vector2(8, 17), " "));
+		bgArr.push_back(Background(BLACK, Vector2(7, 17), " "));
+		for (int m = 16; m < windowHeight - 1; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(10, m), " "));
+		}
+		bgArr.push_back(Background(BLACK, Vector2(18, 17), " "));
+		bgArr.push_back(Background(BLACK, Vector2(17, 17), " "));
+		for (int m = 16; m < windowHeight - 1; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(20, m), " "));
+		}
+		bgArr.push_back(Background(BLACK, Vector2(28, 17), " "));
+		bgArr.push_back(Background(BLACK, Vector2(27, 17), " "));
+		for (int m = 16; m < windowHeight - 1; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(30, m), " "));
+		}
+		bgArr.push_back(Background(BLACK, Vector2(36, 17), " "));
+		bgArr.push_back(Background(BLACK, Vector2(37, 17), " "));
+		for (int m = 16; m < windowHeight - 1; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(39, m), " "));
+		}
+
+		//WINDOW
+		for (int l = 10; l < 30; l++)
+		{
+			for (int m = 6; m < 13; m++)
+			{
+				bgArr.push_back(Background(YELLOW_LIGHTBLUE_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 10; l < 30; l++)
+		{
+			for (int m = 5; m < 6; m++)
+			{
+				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 10; l < 30; l++)
+		{
+			for (int m = 9; m < 10; m++)
+			{
+				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 10; l < 30; l++)
+		{
+			for (int m = 13; m < 14; m++)
+			{
+				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 8; l < 10; l++)
+		{
+			for (int m = 5; m < 14; m++)
+			{
+				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+			}
+		}
+		for (int l = 30; l < 32; l++)
+		{
+			for (int m = 5; m < 14; m++)
+			{
+				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+			}
+		}
+
+		//TEST INTERACTABLE, DELETE LATER, BUILD ACTUAL ROOM
+		rbArr.push_back(PhysicsObject("Window", Vector2(7, 15), true, 0));
+		rbArr[rbArr.size() - 1].setInteract(true);
+		rbArr[rbArr.size() - 1].setInteractString("Watermelon");
+		rbArr[rbArr.size() - 1].setTrigger(false, "Break_Room");
+		//rbArr[rbArr.size() - 1].setNewStartPos(rbArr[rbArr.size() - 1].getPos());
+		rbArr[rbArr.size() - 1].setColour(RED);
+
+		//Warp To Break_Room_002
+		PhysicsObject door("Exit", Vector2(40, 19), true, 0);
+		door.setTrigger(true, "Break_Room_002");
+		door.setNewStartPos(Vector2(3,19));
+		door.setTag("Floor");
+		rbArr.push_back(door);
+
+	}
+	else if (level == "Break_Room_002")
+	{
+	PhysicsObject playerMk("player", startPosition, false, 0);
+	rbArr.push_back(playerMk);
+
+	//BACKGROUND
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
+		}
+	}
+	//GROUND
+	for (int i = 0; i < windowWidth; i++)
+	{
+		rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
+		rbArr[rbArr.size() - 1].setTag("Floor");
+	}
+	//WINDOW
+	for (int l = 10; l < 30; l++)
+	{
+		for (int m = 6; m < 13; m++)
+		{
+			bgArr.push_back(Background(YELLOW_LIGHTBLUE_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 10; l < 30; l++)
+	{
+		for (int m = 5; m < 6; m++)
+		{
+			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 10; l < 30; l++)
+	{
+		for (int m = 9; m < 10; m++)
+		{
+			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 10; l < 30; l++)
+	{
+		for (int m = 13; m < 14; m++)
+		{
+			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 8; l < 10; l++)
+	{
+		for (int m = 5; m < 14; m++)
+		{
+			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 30; l < 32; l++)
+	{
+		for (int m = 5; m < 14; m++)
+		{
+			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
+		}
+	}
+	//COUCH
+	for (int l = 6; l < 34; l++)
+	{
+		for (int m = 14; m < 19; m++)
+		{
+			bgArr.push_back(Background(YELLOW_BRIGHTRED_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 9; l < 10; l++)
+	{
+		for (int m = 14; m < 19; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(l, m), "|"));
+		}
+	}
+	for (int l = 30; l < 31; l++)
+	{
+		for (int m = 14; m < 19; m++)
+		{
+			bgArr.push_back(Background(BLACK, Vector2(l, m), "|"));
+		}
+	}
+	for (int l = 10; l < 30; l++)
+	{
+		for (int m = 17; m < 19; m++)
+		{
+			bgArr.push_back(Background(YELLOW_RED_BG, Vector2(l, m), " "));
+		}
+	}
+	for (int l = 10; l < 30; l++)
+	{
+		for (int m = 16; m < 17; m++)
+		{
+			bgArr.push_back(Background(BLACK_BRIGHTRED_BG, Vector2(l, m), "_"));
+		}
+	}
+	//PILLOWS
+	for (int l = 13; l < 18; l++)
+	{
+		for (int m = 15; m < 16; m++)
+		{
+			bgArr.push_back(Background(YELLOW_AQUA_BG, Vector2(l, m), " "));
+		}
+		for (int m = 16; m < 17; m++)
+		{
+			bgArr.push_back(Background(BLACK_AQUA_BG, Vector2(l, m), "_"));
+		}
+	}
+
+	for (int l = 21; l < 26; l++)
+	{
+		for (int m = 15; m < 16; m++)
+		{
+			bgArr.push_back(Background(YELLOW_PURPLE_BG, Vector2(l, m), " "));
+		}
+		for (int m = 16; m < 17; m++)
+		{
+			bgArr.push_back(Background(BLACK_PURPLE_BG, Vector2(l, m), "_"));
+		}
+	}
+
+	//Warp To Break_Room
+	PhysicsObject door("Exit", Vector2(-1, 19), true, 0);
+	door.setTrigger(true, "Break_Room");
+	door.setTag("Floor");
+	door.setNewStartPos(Vector2(33, 19));
+	rbArr.push_back(door);
+	//Warp To Holding Cell
+	PhysicsObject doorToCell("Exit", Vector2(40, 19), true, 0);
+	doorToCell.setTrigger(true, "Holding_Cell");
+	doorToCell.setNewStartPos(Vector2(3, 19));
+	doorToCell.setTag("Floor");
+	rbArr.push_back(doorToCell);
+	}
 	else if (level == "Watermelon")
 	{
 		//Vector2 startPosition(3, 14);
@@ -1608,23 +2066,30 @@ void PlayLevel(string level)
 			else if (rbArr[i].getIsTrigger())
 			{
 				colorUse = determineColour(BRIGHTGREEN, window.getTextColourAtPoint(rbArr[i].getPos()));
-				window.setTextAtPoint(rbArr[i].getPos(), "O", colorUse);
+				string ptext = "O";
+				if (rbArr[i].getTag() == "Floor") ptext = " ";
+				window.setTextAtPoint(rbArr[i].getPos(), ptext, colorUse);
 			}
 			else if (rbArr[i].getInteract())
 			{
 				colorUse = determineColour(rbArr[i].getColour(), window.getTextColourAtPoint(rbArr[i].getPos()));
-				window.setTextAtPoint(rbArr[i].getPos(), "*", colorUse);
+				string ptext = "*";
+				if (rbArr[i].getTag() == "Floor") ptext = " ";
+				window.setTextAtPoint(rbArr[i].getPos(), ptext, colorUse);
 			}
 			else
 			{
 				colorUse = determineColour(BRIGHTWHITE, window.getTextColourAtPoint(rbArr[i].getPos()));
-				window.setTextAtPoint(rbArr[i].getPos(), "_", colorUse);
+				string ptext = "_";
+				if (rbArr[i].getTag() == "Floor") ptext = " ";
+				window.setTextAtPoint(rbArr[i].getPos(), ptext, colorUse);
 			}
 		}
 		if (rbArr[0].getPos().getY() >= 0)
 		{
 			playerColour = determineColour(BRIGHTRED, window.getTextColourAtPoint(rbArr[0].getPos()));
-			window.setTextAtPoint(rbArr[0].getPos(), "*",playerColour);
+			//window.setTextAtPoint(rbArr[0].getPos(), "*",playerColour);
+			drawCharacter(rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3]);
 		}
 		if (level == "Intro") window.setLine(windowHeight - 1, "Level: Intro---Jump:W|Left:A|Right:D|Down:S", WHITE);
 		else if (level == "Watermelon") window.setLine(windowHeight - 1, "Level: Watermelon---Beware The Spikes", WHITE);
@@ -1634,12 +2099,13 @@ void PlayLevel(string level)
 		SetConsoleCursorPosition(hOut, start);
 		for (int i = 1; i < rbArr.size(); i++)
 		{
-			if (rbArr[i].getIsTrigger() && rbArr[0].getPos() == rbArr[i].getPos())
+			if (rbArr[i].getIsTrigger() && charHitBoxCheck(rbArr[0].getPos(), rbArr[i].getPos(), -2, 6, 0, 10))
 			{
 				levelBonus = rbArr[i].getTriggerLevel();
+				startPosition = rbArr[i].getNewStartPos();
 				return;
 			}
-			if (rbArr[i].getIsTrap() && rbArr[0].getPos() == rbArr[i].getPos())
+			if (rbArr[i].getIsTrap() && charHitBoxCheck(rbArr[0].getPos(), rbArr[i].getPos(), -2, 6, 0, 10))
 			{
 				rbArr[0].setPosition(startPos);
 				rbArr[0].setSpeed(0);
@@ -1664,7 +2130,7 @@ void PlayLevel(string level)
 		{
 			system("pause");
 		}
-		if (GetKeyDown('W') && !isJump)
+		if (GetKeyDown('W') && !isJump && jumpAllowed)
 		{
 			isJump = true;
 			if (rbArr[0].getSpeed() == 0)
@@ -1680,16 +2146,16 @@ void PlayLevel(string level)
 		{
 			for (int i = 1; i < rbArr.size(); i++)
 			{
-				if (rbArr[i].getInteract() && rbArr[0].getPos() == rbArr[i].getPos())
+				if (rbArr[i].getInteract() && charHitBoxCheck(rbArr[0].getPos(), rbArr[i].getPos(), -2, 6, 0, 10))
 				{
 					cutsceneStr = rbArr[i].getInteractString();
 					levelBonus = rbArr[i].getTriggerLevel();
-					startPosition = rbArr[i].getNewStartPos();
+					startPosition = rbArr[0].getPos();
 					return;
 				}
 			}
 		}
-		if (GetKeyDown('S'))
+		if (GetKeyDown('S') && jumpAllowed)
 		{
 			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX(), rbArr[0].getPos().getY() + 1));
 		}
@@ -1697,10 +2163,90 @@ void PlayLevel(string level)
 	}
 
 }
+string returnRandomNonsense()
+{
+	string pText = "";
+	int length = (rand() % 15) + 20;
+	for (int i = 0; i < length; i++)
+	{
+		int rNum = rand() % 21;
+		switch (rNum)
+		{
+		case 0:
+			pText += "#";
+			break;
+		case 1:
+			pText += "A";
+			break;
+		case 2:
+			pText += "$";
+			break;
+		case 3:
+			pText += "<";
+			break;
+		case 4:
+			pText += ")";
+			break;
+		case 5:
+			pText += "C";
+			break;
+		case 6:
+			pText += ">";
+			break;
+		case 7:
+			pText += "?";
+			break;
+		case 8:
+			pText += "4";
+			break;
+		case 9:
+			pText += "T";
+			break;
+		case 10:
+			pText += "@";
+			break;
+		case 11:
+			pText += "!";
+			break;
+		case 12:
+			pText += "Q";
+			break;
+		case 13:
+			pText += "&";
+			break;
+		case 14:
+			pText += "P";
+			break;
+		case 15:
+			pText += "6";
+			break;
+		case 16:
+			pText += "W";
+			break;
+		case 17:
+			pText += "^";
+			break;
+		case 18:
+			pText += "(";
+			break;
+		case 19:
+			pText += "B";
+			break;
+		case 20:
+			pText += "9";
+			break;
+		default:
+			pText += " ";
+			break;
+		}
+	}
+	pText += "%";
+	return pText;
+}
 void introductionScript()
 {
 	string gameTitle = "Syde";
-	int scriptLoad = rand() % 3;
+	int scriptLoad = rand() % 15;
 	switch (scriptLoad)
 	{
 	case 0:
@@ -1858,7 +2404,45 @@ void introductionScript()
 		cout << "Wait Hold On I Screwed Up%" << endl;
 		Sleep(40);
 		break;
+	case 3:
+		Sleep(40);
+		cout << "Loading Up 16-Bit Colour%" << endl;
+		Sleep(40);
+		cout << "Loading Up Terminal%" << endl;
+		Sleep(40);
+		cout << "Loading Up Load Up Jokes%" << endl;
+		Sleep(40);
+		cout << "Buying Fresh Stock Of % Signs%" << endl;
+		Sleep(40);
+		cout << "Launching Matrix%" << endl;
+		Sleep(40);
+		cout << "Benchmarking Graphics Card%" << endl;
+		Sleep(40);
+		cout << "Downloading Extra Colours...0%" << endl;
+		Sleep(40);
+		cout << "Downloading Extra Colours...2%" << endl;
+		Sleep(40);
+		cout << "Downloading Extra Colours...5%" << endl;
+		Sleep(40);
+		cout << "Downloading Extra Colours...3%" << endl;
+		Sleep(40);
+		cout << "Downloading Extra Colours...8%" << endl;
+		Sleep(40);
+		cout << "Downloading Extra Colours...13%" << endl;
+		Sleep(40);
+		cout << "Download Failure at 15%" << endl;
+		Sleep(40);
+		cout << "Reverting Back To 16-Bit Colour%" << endl;
+		Sleep(40);
+		cout << "Oh Well%" << endl;
+		Sleep(40);
+		break;
 	default:
+		for (int i = 0; i < 30; i++)
+		{
+			Sleep(40);
+			cout << returnRandomNonsense() << endl;
+		}
 		break;
 	}
 	cout << "Launching " << gameTitle << "...0%" << endl;
@@ -1999,7 +2583,6 @@ void introMenu()
 	cInfo.bVisible = false;
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
-
 	while (true)
 	{
 		SetConsoleCursorPosition(hOut, start);
@@ -2015,7 +2598,17 @@ void introMenu()
 		drawTitle(3,5);
 		window.setTextAtPoint(Vector2(7, 8), "Something You Do Everytime", WHITE);
 		window.setTextAtPoint(Vector2(16, 10), "A. START", BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(16, 11), "B.  QUIT", BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(16, 11), "B.  SKIN", BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(16, 12), "C.  QUIT", BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(12, 14), "Char: " + charNames[skinNumber], BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(16, 15), " ", charSkins[skinNumber][0]);
+		window.setTextAtPoint(Vector2(17, 15), " ", charSkins[skinNumber][0]);
+		window.setTextAtPoint(Vector2(18, 15), " ", charSkins[skinNumber][1]);
+		window.setTextAtPoint(Vector2(19, 15), " ", charSkins[skinNumber][1]);
+		window.setTextAtPoint(Vector2(20, 15), " ", charSkins[skinNumber][2]);
+		window.setTextAtPoint(Vector2(21, 15), " ", charSkins[skinNumber][2]);
+		window.setTextAtPoint(Vector2(22, 15), " ", charSkins[skinNumber][3]);
+		window.setTextAtPoint(Vector2(23, 15), " ", charSkins[skinNumber][3]);
 		window.writeConsole();
 		SetConsoleCursorPosition(hOut, start);
 		if (GetKeyDown('A'))
@@ -2023,6 +2616,14 @@ void introMenu()
 			return;
 		}
 		if (GetKeyDown('B'))
+		{
+			skinNumber++;
+			if (skinNumber >= charSkins.size())
+			{
+				skinNumber = 0;
+			}
+		}
+		if (GetKeyDown('C'))
 		{
 			exit(NULL);
 		}
@@ -2323,6 +2924,37 @@ void introCreditsScript()
 
 	system("pause");
 }
+void opening()
+{
+	// OPENING
+   introductionScript();
+   introCreditsScript();
+   for (int i = -10; i < 5; i++)
+   {
+   	drawBee(i, 9);
+   	Sleep(50);
+   }
+   PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
+   Sleep(1250);
+   for (int i = 5; i < 22; i++)
+   {
+   	drawBee(i, 9);
+   	Sleep(50);
+   }
+   for (int i = -10; i < 5; i++)
+   {
+   	poweredBySYDEEngine(i, 15);
+   	Sleep(50);
+   }
+   PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
+   Sleep(1250);
+   for (int i = 5; i < 22; i++)
+   {
+   	poweredBySYDEEngine(i, 15);
+   	Sleep(50);
+   }
+    introMenu();
+}
 // MAIN FUNCTION
 int main()
 {
@@ -2367,38 +2999,11 @@ int main()
 	cout.flush();
 
 
-	// OPENING
-	introductionScript();
-	introCreditsScript();
-	for (int i = -10; i < 5; i++)
-	{
-		drawBee(i, 9);
-		Sleep(50);
-	}
-	PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
-	Sleep(1250);
-	for (int i = 5; i < 22; i++)
-	{
-		drawBee(i, 9);
-		Sleep(50);
-	}
-	for (int i = -10; i < 5; i++)
-	{
-		poweredBySYDEEngine(i, 15);
-		Sleep(50);
-	}
-	PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
-	Sleep(1250);
-	for (int i = 5; i < 22; i++)
-	{
-		poweredBySYDEEngine(i, 15);
-		Sleep(50);
-	}
-	introMenu();
+	opening();
 	while (true)
 	{
 		Cutscene();
-		PlayLevel(levelBonus);
+		PlayLevel(levelBonus, false);
 	}
 	// select fruit based off level
 	//BOW BASED OFF WATERMELON

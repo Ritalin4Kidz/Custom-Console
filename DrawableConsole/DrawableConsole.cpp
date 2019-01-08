@@ -24,10 +24,13 @@
 int windowWidth = 40;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
+//WINDOW
 ConsoleWindow window(windowHeight);
+//SYDE VALUES
 string levelBonus = "Break_Room";
 string command = "";
 string info = "";
+//CHARACTER SKINS
 string characterName1 = "Officer_Man";
 vector<ColourClass> charSkin1 = { DARKBLUE_DARKBLUE_BG, BLACK, BRIGHTYELLOW_BRIGHTYELLOW_BG, WHITE_WHITE_BG };
 string characterName2 = "Nude_Lunatic";
@@ -37,6 +40,7 @@ vector<ColourClass> charSkin3 = { BRIGHTRED_BRIGHTRED_BG, LIGHTBLUE_PURPLE_BG, L
 vector<vector<ColourClass>> charSkins{charSkin1, charSkin2, charSkin3};
 vector<string> charNames = { characterName1, characterName2, characterName3 };
 int skinNumber = 0;
+//OTHER VALUES
 bool isScene = true;
 int XWins = 0;
 int OWins = 0;
@@ -1141,6 +1145,60 @@ void drawTruckCutScene(Vector2 point)
 		}
 	}
 	//FILL 2
+	for (int i = 1; i < 7; i++)
+	{
+			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", BLACK);
+			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 8), " ", BLACK);
+			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", BLACK);
+	}
+	for (int i = 1; i < 3; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 9), " ", BLACK);
+	}
+	for (int i = 5; i < 7; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 7), " ", BLACK);
+	}
+	for (int i = 7; i < 9; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", LIGHTGREY_LIGHTGREY_BG);
+	}
+	for (int i = 11; i < 13; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", LIGHTGREY_LIGHTGREY_BG);
+	}
+	for (int i = 7; i < 13; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 9), " ", LIGHTGREY_LIGHTGREY_BG);
+	}
+	for (int i = 6; i < 9; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 9, point.getY() - i), " ", LIGHTGREY_LIGHTGREY_BG);
+		window.setTextAtPoint(Vector2(point.getX() + 10, point.getY() - i), " ", LIGHTGREY_LIGHTGREY_BG);
+	}
+	for (int i = 13; i < 17; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", BLACK);
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", BLACK);
+	}
+	for (int i = 7; i < 10; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 13, point.getY() - i), " ", BLACK);
+		window.setTextAtPoint(Vector2(point.getX() + 14, point.getY() - i), " ", BLACK);
+		window.setTextAtPoint(Vector2(point.getX() + 17, point.getY() - i), " ", BLACK);
+		window.setTextAtPoint(Vector2(point.getX() + 18, point.getY() - i), " ", BLACK);
+	}
+	for (int i = 19; i < 25; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", LIGHTGREY_LIGHTGREY_BG);
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 8), " ", LIGHTGREY_LIGHTGREY_BG);
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", LIGHTGREY_LIGHTGREY_BG);
+	}
+	for (int i = 19; i < 21; i++)
+	{
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 9), " ", LIGHTGREY_LIGHTGREY_BG);
+		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 7), " ", LIGHTGREY_LIGHTGREY_BG);
+	}
 	//WHEELS 1
 	for (int i = 0; i < 6; i++)
 	{
@@ -1203,8 +1261,40 @@ void drawTruckCutScene(Vector2 point)
 			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
 		}
 	}
+	window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 4), "K", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 4), "i", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 4), "d", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 6, point.getY() - 4), "n", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 7, point.getY() - 4), "a", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 8, point.getY() - 4), "p", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 9, point.getY() - 4), "p", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 10, point.getY() - 4), "i", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 11, point.getY() - 4), "n", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 12, point.getY() - 4), "g", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 13, point.getY() - 4), " ", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 14, point.getY() - 4), "S", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 15, point.getY() - 4), "i", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 16, point.getY() - 4), "n", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 17, point.getY() - 4), "c", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 18, point.getY() - 4), "e", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 19, point.getY() - 4), " ", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 20, point.getY() - 4), "1", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 21, point.getY() - 4), "9", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 22, point.getY() - 4), "8", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 23, point.getY() - 4), "3", BLACK_BRIGHTWHITE_BG);
 	//FILL 1
+	for (int i = 31; i < 35; i++)
+	{
+		for (int ii = 6; ii < 10; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", AQUA_LIGHTBLUE_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(point.getX() + 31, point.getY() - 10), " ", AQUA_LIGHTBLUE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 32, point.getY() - 10), " ", AQUA_LIGHTBLUE_BG);
 
+	window.setTextAtPoint(Vector2(point.getX() + 41, point.getY() - 2), " ", AQUA_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 42, point.getY() - 2), " ", AQUA_BRIGHTYELLOW_BG);
 	//WHEELS
 	for (int i = 33; i < 39; i++)
 	{
@@ -1278,6 +1368,11 @@ void Cutscene()
 
 		//CUTSCENE
 		SetConsoleCursorPosition(hOut, start);
+		window.setTextAtPoint(Vector2(12, 10), "January 5th 2019", WHITE);
+		window.setTextAtPoint(Vector2(10, 11), "4:00pm - Diptio Park", WHITE);
+		window.writeConsole();
+		Sleep(3500);
+		SetConsoleCursorPosition(hOut, start);
 		BackGroundParkCutScene();
 		DrawParkGirlCutScene(Vector2(29, 17));
 		window.writeConsole();
@@ -1290,7 +1385,7 @@ void Cutscene()
 		bool drawGirl = true;
 		for (int XVal = -60; XVal < 80; XVal++)
 		{
-			if (XVal >= 25 && drawGirl)
+			if (XVal >= 27 && drawGirl)
 			{
 				drawGirl = false;
 			}
@@ -1306,6 +1401,23 @@ void Cutscene()
 		}
 		SetConsoleCursorPosition(hOut, start);
 		window.writeConsole();
+		SetConsoleCursorPosition(hOut, start);
+		window.setTextAtPoint(Vector2(9, 10),"SYDE : Episode One", WHITE);
+		window.setTextAtPoint(Vector2(4, 11), "Something You Do Everytime", WHITE);
+		window.writeConsole();
+		Sleep(5000);
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l,m), " ", WHITE);
+			}
+		}
+		window.setTextAtPoint(Vector2(12, 10), "January 6th 2019", WHITE);
+		window.setTextAtPoint(Vector2(9, 11), "10:00am - Police Station", WHITE);
+		window.writeConsole();
+		Sleep(3500);
 	}
 	if (cutsceneStr == "Watermelon")
 	{
@@ -3349,7 +3461,7 @@ int main()
 		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
 	};
 	SetConsoleScreenBufferSize(hOut, scrollbar);
-	LPCWSTR title = L"Syde"; //Think of title later
+	LPCWSTR title = L"Syde"; //GOOD TITLE, NO CHANGE NEEDED BOSS
 	SetConsoleTitleW(title);
 
 	CONSOLE_CURSOR_INFO cInfo;
@@ -3359,7 +3471,7 @@ int main()
 	cout.flush();
 
 
-	//opening();
+	opening();
 	while (true)
 	{
 		Cutscene();

@@ -49,7 +49,7 @@ bool foundPath = false;
 COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 Vector2 startPosition(5, 19);
-string cutsceneStr = "NULL";
+string cutsceneStr = "SYDE_Ep1_Intro";
 
 using namespace std;
 struct Background {
@@ -941,11 +941,62 @@ void Options(vector<string> options)
 	}
 }
 
+void BackGroundParkCutScene()
+{
+	//CLOUDS
+	window.setTextAtPoint(Vector2(0, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(1, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(2, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(3, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(0, 3), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(1, 3), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(19, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(20, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(21, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(22, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+
+	window.setTextAtPoint(Vector2(35, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(36, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(37, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(38, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(37, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(38, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
+	//TREE
+
+	//FENCE
+
+}
+
 void Cutscene()
 {
 	if (cutsceneStr == "NULL")
 	{
 		return;
+	}
+	if (cutsceneStr == "SYDE_Ep1_Intro")
+	{
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		window.ClearWindow(true);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.addToLine(m, " ", WHITE);
+				window.setTextAtPoint(Vector2(l, m), " ", LIGHTBLUE_LIGHTBLUE_BG);
+			}
+		}
+		SetConsoleCursorPosition(hOut, start);
+		BackGroundParkCutScene();
+		//GIRL
+
+		//TRUCK MOVING, GIRL DISAPPEARING
+		window.writeConsole();
+		system("pause");
 	}
 	if (cutsceneStr == "Watermelon")
 	{
@@ -2999,7 +3050,7 @@ int main()
 	cout.flush();
 
 
-	opening();
+	//opening();
 	while (true)
 	{
 		Cutscene();

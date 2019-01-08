@@ -6,6 +6,16 @@
 
 Draw up concept for map (FIRST AREA)
 
+POP UP A TIME & DATE, PLUS LOCATION (NOT THE USER'S)
+
+INTRO CUTSCENE:
+->Girl At A Park, Sitting On A Bench, Young
+->She Lets Out A Sigh
+->Van Drives Past, Once Gone, So Is The Girl
+
+GAME INTRODUCTION, TITLE POPS UP
+
+POP UP EPISODE 1 (GIVE CHAPTER A TITLE)
 
 Police Station
  _______    _______    _______   _______    _______    _______
@@ -31,7 +41,7 @@ Lift Takes You To Police Station
 
 User Flow:
 ->Walk To Car
-->Drive To Crime Scene
+->Drive To Crime Scene (Park)
 
 
 then implement the map (try for at least 3 grids a day)

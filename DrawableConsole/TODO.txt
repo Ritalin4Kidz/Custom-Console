@@ -17,6 +17,8 @@ GAME INTRODUCTION, TITLE POPS UP
 
 POP UP EPISODE 1 (GIVE CHAPTER A TITLE)
 
+SCENE:
+
 Police Station
  _______    _______    _______   _______    _______    _______
 |		|  |	   |  |		  |	|		|  |	   |  |		  |
@@ -37,12 +39,31 @@ Lift Takes You To Police Station
 |		|  |	   |
 | Lift  |  | Car   |
 |       |  |       |
-|_______|  |_______| //CAR GIVES OPTION ON WHERE TO GO
+|_______|  |_______|
 
 User Flow:
 ->Walk To Car
 ->Drive To Crime Scene (Park)
 
+SCENE:
+
+Diptio Park
+
+ _______	 _______	 _______   
+|		|  	|		|	|		|
+| Park  |  	| Park  |	| Park  |
+| Area1 |  	| Area2 |	| Area3 |
+|_______|  	|_______|	|_______|
+
+User Flow:
+->Search The Park For Clues
+-><CLUE IDEAS>
+--
+->Find Clue That Leads To Next Area
+->End Scene
+
+
+//TODO
 
 then implement the map (try for at least 3 grids a day)
 

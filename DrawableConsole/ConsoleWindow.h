@@ -300,10 +300,11 @@ public:
 	void setTextAtPoint(Vector2 point, string text, ColourClass colour);
 
 	ColourClass getTextColourAtPoint(Vector2 point);
-
+	void setOffset(Vector2 a_offset) { offset.setX(a_offset.getX()); offset.setY(a_offset.getY()); }
 	Line getLine(int index) { return m_Lines[index]; }
 
 	void writeConsole();
 private:
 	vector<Line> m_Lines;
+	Vector2 offset;
 };

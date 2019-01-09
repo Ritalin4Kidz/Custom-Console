@@ -45,6 +45,7 @@ bool isScene = true;
 int XWins = 0;
 int OWins = 0;
 int Draws = 0;
+bool watermelonIsCutScene = true;
 
 int generations = 0;
 bool foundPath = false;
@@ -569,14 +570,34 @@ void Test()
 
 void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInner, ColourClass Meat, ColourClass Seed, ColourClass BG, string a_text)
 {
-	window.ClearWindow(true);
-	for (int l = 0; l < windowWidth; l++)
+	if (!watermelonIsCutScene)
 	{
-		for (int m = 0; m < windowHeight; m++)
+		window.ClearWindow(true);
+		for (int l = 0; l < windowWidth; l++)
 		{
-			window.addToLine(m, " ", WHITE);
-			window.setTextAtPoint(Vector2(l, m), " ", BG);
+			for (int m = 0; m < windowHeight; m++)
+			{
+				if (!watermelonIsCutScene) { window.addToLine(m, " ", WHITE); }
+				window.setTextAtPoint(Vector2(l, m), " ", BG);
+			}
 		}
+	}
+	else
+	{
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE);
+			}
+		}
+		//window.writeConsole();
 	}
 	// DRAW PIXEL ART
 
@@ -889,7 +910,10 @@ void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInn
 	window.setTextAtPoint(Vector2(17, 5), " ", Seed);
 	window.setTextAtPoint(Vector2(18, 5), " ", Seed);
 
-	window.setLine(16, a_text, WHITE);
+	for (int i = 0; i < a_text.size(); i++)
+	{
+		window.setTextAtPoint(Vector2(i, 16), string(1, a_text[i]) , WHITE);
+	}
 
 	window.writeConsole();
 
@@ -897,7 +921,12 @@ void PixelArt(ColourClass skinOuter, ColourClass skinMiddle, ColourClass skinInn
 
 void Options(vector<string> options)
 {
-	window.ClearWindow(false);
+	//window.ClearWindow(false);
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
 	for (int i = windowHeight; i > windowHeight - (options.size() + 3); i--)
 	{
 		for (int l = 0; l < windowWidth; l++)
@@ -913,9 +942,16 @@ void Options(vector<string> options)
 		else if (i == 2) optionBegin = "C. ";
 		else if (i == 3) optionBegin = "D. ";
 		else if (i == 4) optionBegin = "E. ";
-
-		window.setLine(windowHeight - (i + 2), optionBegin + options[i], WHITE);
+		for (int ii = 0; ii < optionBegin.size(); ii++)
+		{
+			window.setTextAtPoint(Vector2(ii, windowHeight - (i + 2)), string(1, optionBegin[ii]), WHITE);
+		}
+		for (int ii = optionBegin.size(); ii < optionBegin.size() + options[i].size(); ii++)
+		{
+			window.setTextAtPoint(Vector2(ii, windowHeight - (i + 2)), string(1, options[i][ii - optionBegin.size()]), WHITE);
+		}
 	}
+	SetConsoleCursorPosition(hOut, start);
 	window.writeConsole();
 	system("pause");
 	if (GetKeyDown('A') && options.size() > 0)
@@ -1357,12 +1393,20 @@ void Cutscene()
 		cInfo.bVisible = false;
 		SetConsoleCursorInfo(hOut, &cInfo);
 		cout.flush();
-		window.ClearWindow(true);
+		//window.ClearWindow(true);
+		//for (int l = 0; l < windowWidth; l++)
+		//{
+		//	for (int m = 0; m < windowHeight; m++)
+		//	{
+		//		window.addToLine(m, " ", WHITE);
+		//	}
+		//}
+		SetConsoleCursorPosition(hOut, start);
 		for (int l = 0; l < windowWidth; l++)
 		{
 			for (int m = 0; m < windowHeight; m++)
 			{
-				window.addToLine(m, " ", WHITE);
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE);
 			}
 		}
 
@@ -1402,8 +1446,8 @@ void Cutscene()
 		SetConsoleCursorPosition(hOut, start);
 		window.writeConsole();
 		SetConsoleCursorPosition(hOut, start);
-		window.setTextAtPoint(Vector2(9, 10),"SYDE : Episode One", WHITE);
-		window.setTextAtPoint(Vector2(4, 11), "Something You Do Everytime", WHITE);
+		window.setTextAtPoint(Vector2(11, 10),"SYDE : Episode One", WHITE);
+		window.setTextAtPoint(Vector2(7, 11), "Something You Do Everytime", WHITE);
 		window.writeConsole();
 		Sleep(5000);
 		SetConsoleCursorPosition(hOut, start);
@@ -1963,12 +2007,19 @@ ColourClass determineColour(ColourClass main, ColourClass bg)
 }
 void PlayLevel(string level, bool jumpAllowed)
 {
-	window.ClearWindow(true);
+	//window.ClearWindow(true);
+	//for (int l = 0; l < windowWidth; l++)
+	//{
+	//	for (int m = 0; m < windowHeight; m++)
+	//	{
+	//		window.addToLine(m, " ", WHITE);
+	//	}
+	//}
 	for (int l = 0; l < windowWidth; l++)
 	{
 		for (int m = 0; m < windowHeight; m++)
 		{
-			window.addToLine(m, " ", WHITE);
+			window.setTextAtPoint(Vector2(l, m), " ", WHITE);
 		}
 	}
 	vector<RigidBody> rbArr;
@@ -3041,20 +3092,29 @@ void drawTitle(int baseY, int baseX)
 void introMenu()
 {
 	//Add Menu Music
-	window.ClearWindow(true);
-	for (int l = 0; l < windowWidth; l++)
-	{
-		for (int m = 0; m < windowHeight; m++)
-		{
-			window.addToLine(m, " ", BLACK);
-		}
-	}
+	//window.ClearWindow(true);
+	//for (int l = 0; l < windowWidth; l++)
+	//{
+	//	for (int m = 0; m < windowHeight; m++)
+	//	{
+	//		window.addToLine(m, " ", BLACK);
+	//	}
+	//}
 
 	CONSOLE_CURSOR_INFO cInfo;
 	GetConsoleCursorInfo(hOut, &cInfo);
 	cInfo.bVisible = false;
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
+	SetConsoleCursorPosition(hOut, start);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.setTextAtPoint(Vector2(l, m), " ", WHITE);
+		}
+	}
+	//window.writeConsole();
 	while (true)
 	{
 		SetConsoleCursorPosition(hOut, start);
@@ -3068,11 +3128,37 @@ void introMenu()
 		//DRAW TITLE 5 space on each side
 		//window.setTextAtPoint(Vector2(10, 5), "SYDE: PRESS 'A' TO PLAY!", BRIGHTWHITE);
 		drawTitle(3,5);
-		window.setTextAtPoint(Vector2(7, 8), "Something You Do Everytime", WHITE);
-		window.setTextAtPoint(Vector2(16, 10), "A. START", BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(16, 11), "B.  SKIN", BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(16, 12), "C.  QUIT", BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(12, 14), "Char: " + charNames[skinNumber], BRIGHTWHITE);
+
+		//window.setTextAtPoint(Vector2(7, 8), "Something You Do Everytime", WHITE);
+		string ptext = "Something You Do Everytime";
+		for (int i = 7; i < (7 + ptext.size()); i++)
+		{
+			window.setTextAtPoint(Vector2(i, 8), string(1, ptext[i - 7]), BRIGHTWHITE);
+		}
+		//window.setTextAtPoint(Vector2(16, 10), "A. START", BRIGHTWHITE);
+		string atext = "A. START";
+		for (int i = 16; i < (16 + atext.size()); i++)
+		{
+			window.setTextAtPoint(Vector2(i, 10), string(1, atext[i - 16]), BRIGHTWHITE);
+		}
+		//window.setTextAtPoint(Vector2(16, 11), "B.  SKIN", BRIGHTWHITE);
+		string btext = "B.  SKIN";
+		for (int i = 16; i < (16 + btext.size()); i++)
+		{
+			window.setTextAtPoint(Vector2(i, 11), string(1, btext[i - 16]), BRIGHTWHITE);
+		}
+		//window.setTextAtPoint(Vector2(16, 12), "C.  QUIT", BRIGHTWHITE);
+		string ctext = "C.  QUIT";
+		for (int i = 16; i < (16 + ctext.size()); i++)
+		{
+			window.setTextAtPoint(Vector2(i, 12), string(1, ctext[i - 16]), BRIGHTWHITE);
+		}
+		//window.setTextAtPoint(Vector2(12, 14), "Char: " + charNames[skinNumber], BRIGHTWHITE);
+		string dtext = "Char: " + charNames[skinNumber];
+		for (int i = 12; i < (12 + dtext.size()); i++)
+		{
+			window.setTextAtPoint(Vector2(i, 14), string(1, dtext[i - 12]), BRIGHTWHITE);
+		}
 		window.setTextAtPoint(Vector2(16, 15), " ", charSkins[skinNumber][0]);
 		window.setTextAtPoint(Vector2(17, 15), " ", charSkins[skinNumber][0]);
 		window.setTextAtPoint(Vector2(18, 15), " ", charSkins[skinNumber][1]);
@@ -3101,14 +3187,33 @@ void introMenu()
 		}
 	}
 }
-void drawBee(int baseY, int baseX)
+void drawBee(int baseY, int baseX, bool setUp)
 {
-	window.ClearWindow(true);
-	for (int l = 0; l < windowWidth; l++)
+	//window.ClearWindow(true);
+	if (setUp)
 	{
-		for (int m = 0; m < windowHeight; m++)
+		for (int l = 0; l < windowWidth; l++)
 		{
-			window.addToLine(m, " ", WHITE_BRIGHTWHITE_BG);
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.addToLine(m, " ", BLACK);
+			}
+		}
+	}
+	else
+	{
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE_BRIGHTWHITE_BG);
+			}
 		}
 	}
 	//LINE 1
@@ -3313,18 +3418,28 @@ void drawBee(int baseY, int baseX)
 	window.setTextAtPoint(Vector2(baseX + 14, baseY + 8), " ", BLACK);
 	window.setTextAtPoint(Vector2(baseX + 15, baseY + 8), " ", BLACK);
 
-	window.setTextAtPoint(Vector2(baseX + 2, baseY + 10), "Team Freebee Games", BLACK_BRIGHTWHITE_BG);
+	string ptext = "Team Freebee Games";
+	for (int i = baseX + 2; i < (baseX + 2 + ptext.size()); i++)
+	{
+		window.setTextAtPoint(Vector2(i, baseY + 10), string(1,ptext[i - (baseX + 2)]), BLACK_BRIGHTWHITE_BG);
+	}
+	//window.setTextAtPoint(Vector2(baseX + 2, baseY + 10), "Team Freebee Games", BLACK_BRIGHTWHITE_BG);
 	window.writeConsole();
 	//Sleep(5000);
 }
 void poweredBySYDEEngine(int baseY, int baseX)
 {
-	window.ClearWindow(true);
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+	SetConsoleCursorPosition(hOut, start);
 	for (int l = 0; l < windowWidth; l++)
 	{
 		for (int m = 0; m < windowHeight; m++)
 		{
-			window.addToLine(m, " ", WHITE_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(l, m), " ", WHITE_BRIGHTWHITE_BG);
 		}
 	}
 	//LINE 1
@@ -3373,7 +3488,12 @@ void poweredBySYDEEngine(int baseY, int baseX)
 	window.setTextAtPoint(Vector2(baseX + 8, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
 	window.setTextAtPoint(Vector2(baseX + 9, baseY + 6), " ", LIGHTBLUE_LIGHTBLUE_BG);
 
-	window.setTextAtPoint(Vector2(baseX - 6, baseY + 9), "Powered by SYDE Engine", BLACK_BRIGHTWHITE_BG);
+	//window.setTextAtPoint(Vector2(baseX - 6, baseY + 9), "Powered by SYDE Engine", BLACK_BRIGHTWHITE_BG);
+	string ptext = "Powered by SYDE Engine";
+	for (int i = baseX - 6; i < (baseX - 6 + ptext.size()); i++)
+	{
+		window.setTextAtPoint(Vector2(i, baseY + 9), string(1, ptext[i - (baseX - 6)]), BLACK_BRIGHTWHITE_BG);
+	}
 	window.writeConsole();
 }
 void introCreditsScript()
@@ -3401,16 +3521,18 @@ void opening()
 	// OPENING
    introductionScript();
    introCreditsScript();
+   bool setUp = true;
    for (int i = -10; i < 5; i++)
    {
-   	drawBee(i, 9);
+   	drawBee(i, 9, setUp);
+	setUp = false;
    	Sleep(50);
    }
    PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
    Sleep(1250);
    for (int i = 5; i < 22; i++)
    {
-   	drawBee(i, 9);
+   	drawBee(i, 9, setUp);
    	Sleep(50);
    }
    for (int i = -10; i < 5; i++)
@@ -3431,7 +3553,8 @@ void opening()
 int main()
 {
 	srand(time(NULL));
-
+	//CENTER THE WINDOW
+	window.setOffset(Vector2(2, 0));
 	//generateart();
 	
 	//scenes();
@@ -3470,11 +3593,31 @@ int main()
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
 
-
-	opening();
+	if (true)
+	{
+		opening();
+	}
+	else
+	{
+		window.ClearWindow(true);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.addToLine(m, " ", BLACK);
+			}
+		}
+	}
 	while (true)
 	{
 		Cutscene();
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l,m), " ", BLACK);
+			}
+		}
 		PlayLevel(levelBonus, false);
 	}
 	// select fruit based off level

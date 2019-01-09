@@ -82,8 +82,13 @@ ColourClass ConsoleWindow::getTextColourAtPoint(Vector2 point)
 
 void ConsoleWindow::writeConsole()
 {
+	Line blank;
+	for (int i = 0; i < offset.getY(); i++)
+	{
+		blank.writeLine();
+	}	
 	for (int i = 0; i < m_Lines.size(); i++)
 	{
-		m_Lines[i].writeLine();
+		m_Lines[i].writeLine(offset.getX());
 	}
 }

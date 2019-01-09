@@ -8,6 +8,7 @@ public:
 	virtual ~Line() {}
 
 	void writeLine();
+	void writeLine(int offsetX);
 	void addLine(string a_line, int colour);
 	void setLine(string a_line, int colour);
 	void setTextAtLine(int index, TextItem other) { m_Line[index] = other; }

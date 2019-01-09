@@ -30,6 +30,7 @@ ConsoleWindow window(windowHeight);
 string levelBonus = "Break_Room";
 string command = "";
 string info = "";
+string lookAngleStr = "Right";
 //CHARACTER SKINS
 string characterName1 = "Officer_Man";
 vector<ColourClass> charSkin1 = { DARKBLUE_DARKBLUE_BG, BLACK, BRIGHTYELLOW_BRIGHTYELLOW_BG, WHITE_WHITE_BG };
@@ -97,7 +98,7 @@ bool GetKeyDown(char KeyCode)
 {
 	return GetAsyncKeyState(KeyCode) && 0x8000;
 }
-void drawCharacter(Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin)
+void drawCharacter(Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin, string lookAngle)
 {
 	//PANTS
 	for (int i = 0; i < 4; i++)
@@ -152,8 +153,16 @@ void drawCharacter(Vector2 point, ColourClass Clothes1, ColourClass Clothes2, Co
 				window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes1);
 			}
 		}
-		window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 8), " ", Clothes1);
-		window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 8), " ", Clothes1);
+		if (lookAngle == "Right")
+		{
+			window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 8), " ", Clothes1);
+			window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 8), " ", Clothes1);
+		}
+		else if (lookAngle == "Left")
+		{
+			window.setTextAtPoint(Vector2(point.getX() - 1, point.getY() - 8), " ", Clothes1);
+			window.setTextAtPoint(Vector2(point.getX() - 2, point.getY() - 8), " ", Clothes1);
+		}
 	}
 	if (charNames[skinNumber] == "Nude_Lunatic")
 	{
@@ -1459,7 +1468,7 @@ void Cutscene()
 			}
 		}
 		window.setTextAtPoint(Vector2(12, 10), "January 6th 2019", WHITE);
-		window.setTextAtPoint(Vector2(9, 11), "10:00am - Police Station", WHITE);
+		window.setTextAtPoint(Vector2(3, 11), "10:00am - South York Police Station", WHITE);
 		window.writeConsole();
 		Sleep(3500);
 	}
@@ -2612,7 +2621,7 @@ void PlayLevel(string level, bool jumpAllowed)
 		{
 			playerColour = determineColour(BRIGHTRED, window.getTextColourAtPoint(rbArr[0].getPos()));
 			//window.setTextAtPoint(rbArr[0].getPos(), "*",playerColour);
-			drawCharacter(rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3]);
+			drawCharacter(rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3], lookAngleStr);
 		}
 		if (level == "Intro") window.setLine(windowHeight - 1, "Level: Intro---Jump:W|Left:A|Right:D|Down:S", WHITE);
 		else if (level == "Watermelon") window.setLine(windowHeight - 1, "Level: Watermelon---Beware The Spikes", WHITE);
@@ -2644,10 +2653,12 @@ void PlayLevel(string level, bool jumpAllowed)
 		if (GetKeyDown('D') && rbArr[0].getPos().getX() < windowWidth - 1)
 		{
 			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX() + 1, rbArr[0].getPos().getY()));
+			lookAngleStr = "Right";
 		}
 		if (GetKeyDown('A') && rbArr[0].getPos().getX() > 0)
 		{
 			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX() - 1, rbArr[0].getPos().getY()));
+			lookAngleStr = "Left";
 		}
 		if (GetKeyDown('P'))
 		{

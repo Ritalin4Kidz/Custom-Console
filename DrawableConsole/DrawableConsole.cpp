@@ -18,7 +18,7 @@
 #include <conio.h>
 #include <fstream>
 #include "AI.h"
-
+#include "Settings.h"
 #include "PhysicsObject.h"
 #include "RigidBody.h"
 int windowWidth = 40;
@@ -3565,7 +3565,8 @@ int main()
 {
 	srand(time(NULL));
 	//CENTER THE WINDOW
-	window.setOffset(Vector2(2, 0));
+	Settings config(dir + "configSettings.sc");
+	window.setOffset(config.getOffset());
 	//generateart();
 	
 	//scenes();
@@ -3581,7 +3582,6 @@ int main()
 	//system("pause");
 	////Next Level, ETC
 	//PlayLevel(levelBonus);
-
 	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
 	COORD NewSBSize;
 	int Status;

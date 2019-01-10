@@ -302,7 +302,8 @@ public:
 	ColourClass getTextColourAtPoint(Vector2 point);
 	void setOffset(Vector2 a_offset) { offset.setX(a_offset.getX()); offset.setY(a_offset.getY()); }
 	Line getLine(int index) { return m_Lines[index]; }
-
+	void eraseConsole();
+	void initialize(int width, int height);
 	void writeConsole();
 private:
 	vector<Line> m_Lines;

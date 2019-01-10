@@ -21,11 +21,16 @@
 #include "Settings.h"
 #include "PhysicsObject.h"
 #include "RigidBody.h"
+
+//INITIALIZING VARIABLES
 int windowWidth = 40;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
-//WINDOW
+Settings config(dir + "configSettings.sc");
 ConsoleWindow window(windowHeight);
+//CHEATS
+vector<string> cheatCodes;
+bool Cheat_CanJump = false;
 //SYDE VALUES
 string levelBonus = "Break_Room";
 string command = "";
@@ -56,6 +61,7 @@ COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 Vector2 startPosition(5, 19);
 string cutsceneStr = "SYDE_Ep1_Intro";
+bool consoleOpen = false;
 
 using namespace std;
 struct Background {
@@ -2014,7 +2020,7 @@ ColourClass determineColour(ColourClass main, ColourClass bg)
 	}
 	return main;
 }
-void PlayLevel(string level, bool jumpAllowed)
+void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 {
 	//window.ClearWindow(true);
 	//for (int l = 0; l < windowWidth; l++)
@@ -2689,7 +2695,7 @@ void PlayLevel(string level, bool jumpAllowed)
 				}
 			}
 		}
-		if (GetKeyDown('S') && jumpAllowed)
+		if (GetKeyDown('S') && dropAllowed)
 		{
 			rbArr[0].setPosition(Vector2(rbArr[0].getPos().getX(), rbArr[0].getPos().getY() + 1));
 		}
@@ -3200,9 +3206,9 @@ void introMenu()
 }
 void drawBee(int baseY, int baseX, bool setUp)
 {
-	//window.ClearWindow(true);
 	if (setUp)
 	{
+		window.ClearWindow(true);
 		for (int l = 0; l < windowWidth; l++)
 		{
 			for (int m = 0; m < windowHeight; m++)
@@ -3565,8 +3571,18 @@ int main()
 {
 	srand(time(NULL));
 	//CENTER THE WINDOW
-	Settings config(dir + "configSettings.sc");
 	window.setOffset(config.getOffset());
+
+	//INITIALIZE CHEAT VALUES
+	cheatCodes = config.ReturnCheats();
+	for (int i = 0; i < cheatCodes.size(); i++)
+	{
+		if (cheatCodes[i] == "JumpAllowed")
+		{
+			Cheat_CanJump = true;
+		}
+	}
+	//MAKE A SEPERATE WINDOW
 	//generateart();
 	
 	//scenes();
@@ -3586,7 +3602,7 @@ int main()
 	COORD NewSBSize;
 	int Status;
 
-	SMALL_RECT windowSize = { 0,0,windowWidth + 1,windowHeight};
+	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight()};
 	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
 
 	GetConsoleScreenBufferInfo(hOut, &SBInfo);
@@ -3629,7 +3645,7 @@ int main()
 				window.setTextAtPoint(Vector2(l,m), " ", BLACK);
 			}
 		}
-		PlayLevel(levelBonus, false);
+		PlayLevel(levelBonus, Cheat_CanJump, false);
 	}
 	// select fruit based off level
 	//BOW BASED OFF WATERMELON

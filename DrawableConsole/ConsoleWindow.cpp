@@ -80,6 +80,26 @@ ColourClass ConsoleWindow::getTextColourAtPoint(Vector2 point)
 	return BLACK;
 }
 
+void ConsoleWindow::eraseConsole()
+{
+	for (int i = 0; i < m_Lines.size(); i++)
+	{
+		// CHANGE LINE TEXT TO NOTHING
+		m_Lines[i].setLine("", WHITE);
+	}
+}
+
+void ConsoleWindow::initialize(int width, int height)
+{
+	for (int i = 0; i < height; i++)
+	{
+		for (int ii = 0; ii < width; ii++)
+		{
+			addToLine(i, "", WHITE);
+		}
+	}
+}
+
 void ConsoleWindow::writeConsole()
 {
 	Line blank;

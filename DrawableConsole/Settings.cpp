@@ -43,16 +43,27 @@ Settings::Settings(string settingsFile)
 		{
 			FileLines.push_back(SettingsSplitter(line, ':')[1]);
 		}
-		if (FileLines.size() != 2)
+		if (FileLines.size() < 5)
 		{
 			ofstream FileOut(settingsFile);
 			FileOut << "OffSetX:" + to_string(xOffset) << endl;
-			FileOut << "OffSetY:" + to_string(yOffset);
+			FileOut << "OffSetY:" + to_string(yOffset) << endl;
+			FileOut << "ConsoleSizeHeight:" + to_string(ConsoleSizeHeight) << endl;
+			FileOut << "ConsoleSizeWidth:" + to_string(ConsoleSizeWidth);
+			FileOut << "Cheats:" + cheats;
 		}
 		else
 		{
 			xOffset = stoi(FileLines[0]);
 			yOffset = stoi(FileLines[1]);
+			ConsoleSizeHeight = stoi(FileLines[2]);
+			ConsoleSizeWidth = stoi(FileLines[3]);
+			cheats = FileLines[4];
 		}
 	}
+}
+
+vector<string> Settings::ReturnCheats()
+{
+	return SettingsSplitter(cheats,';');
 }

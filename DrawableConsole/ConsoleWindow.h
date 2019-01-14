@@ -305,6 +305,8 @@ public:
 	void eraseConsole();
 	void initialize(int width, int height);
 	void writeConsole();
+
+	void operator=(ConsoleWindow other);
 private:
 	vector<Line> m_Lines;
 	Vector2 offset;

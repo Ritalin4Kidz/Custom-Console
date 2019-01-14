@@ -1,5 +1,5 @@
-OffSetX:6
-OffSetY:2
-ConsoleSizeHeight:24
-ConsoleSizeWidth:48
+OffSetX:2
+OffSetY:0
+ConsoleSizeHeight:20
+ConsoleSizeWidth:40
 Cheats:JumpAllowed;

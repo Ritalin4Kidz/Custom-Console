@@ -12,7 +12,6 @@
 #include "Board.h"
 #include <stdlib.h> 
 #include <string>
-
 #include <windows.h>
 #include <mmsystem.h>
 #include <conio.h>
@@ -21,6 +20,10 @@
 #include "Settings.h"
 #include "PhysicsObject.h"
 #include "RigidBody.h"
+#include "BackgroundObj.h"
+#include "Background.h"
+#include "Characters.h"
+#include "Artwork.h"
 
 //INITIALIZING VARIABLES
 int windowWidth = 40;
@@ -28,6 +31,10 @@ const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 Settings config(dir + "configSettings.sc");
 ConsoleWindow window(windowHeight);
+//DRAWING SETTINGS
+BackgroundClass bgVars;
+Characters charVars;
+Artwork artVars;
 //CHEATS
 vector<string> cheatCodes;
 bool Cheat_CanJump = false;
@@ -64,13 +71,6 @@ string cutsceneStr = "SYDE_Ep1_Intro";
 bool consoleOpen = false;
 
 using namespace std;
-struct Background {
-	Background(ColourClass a_color, Vector2 a_pos, string text) { colour = a_color; pos = a_pos; mText = text; }
-	ColourClass colour;
-	Vector2 pos;
-	string mText;
-
-};
 // TRIANGLE GENERATION
 vector<string> Split(string a_String, char splitter)
 {
@@ -103,80 +103,6 @@ vector<string> Split(string a_String, char splitter)
 bool GetKeyDown(char KeyCode)
 {
 	return GetAsyncKeyState(KeyCode) && 0x8000;
-}
-void drawCharacter(Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin, string lookAngle)
-{
-	//PANTS
-	for (int i = 0; i < 4; i++)
-	{
-		for (int ii = 0; ii < 4; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes2);
-		}
-	}
-	//SHIRT
-	for (int i = 3; i < 7; i++)
-	{
-		for (int ii = -2; ii < 6; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes1);
-		}
-	}
-	//HEAD
-	for (int i = 6; i < 8; i++)
-	{
-		for (int ii = 0; ii < 4; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Skin);
-		}
-	}
-	//BADGE
-	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() - 5), " ", Accessory);
-	window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 5), " ", Accessory);
-	//HANDS
-	window.setTextAtPoint(Vector2(point.getX() - 2, point.getY() - 3), " ", Skin);
-	window.setTextAtPoint(Vector2(point.getX() - 1, point.getY() - 3), " ", Skin);
-
-	window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 3), " ", Skin);
-	window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 3), " ", Skin);
-	if (charNames[skinNumber] == "Nude_Lunatic")
-	{
-		for (int x = -2; x < 6; x++)
-		{
-			for (int y = 2; y < 3; y++)
-			{
-				window.setTextAtPoint(Vector2(point.getX() + x, point.getY() - y), " ", BLACK);
-			}
-		}
-	}
-	//HAT
-	if (charNames[skinNumber] != "Nude_Lunatic")
-	{
-		for (int i = 8; i < 10; i++)
-		{
-			for (int ii = 0; ii < 4; ii++)
-			{
-				window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), " ", Clothes1);
-			}
-		}
-		if (lookAngle == "Right")
-		{
-			window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 8), " ", Clothes1);
-			window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 8), " ", Clothes1);
-		}
-		else if (lookAngle == "Left")
-		{
-			window.setTextAtPoint(Vector2(point.getX() - 1, point.getY() - 8), " ", Clothes1);
-			window.setTextAtPoint(Vector2(point.getX() - 2, point.getY() - 8), " ", Clothes1);
-		}
-	}
-	if (charNames[skinNumber] == "Nude_Lunatic")
-	{
-		window.setTextAtPoint(Vector2(point.getX() + 0, point.getY() - 8), " ", Clothes1);
-		window.setTextAtPoint(Vector2(point.getX() + 1, point.getY() - 8), " ", Clothes1);
-		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() - 8), " ", Clothes1);
-		window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 8), " ", Clothes1);
-	}
 }
 bool charHitBoxCheck(Vector2 point, Vector2 obj,int startX, int endX, int startY, int endY)
 {
@@ -497,7 +423,6 @@ void generateart()
 	window.writeConsole();
 
 }
-
 
 void scene1()
 {
@@ -996,405 +921,6 @@ void Options(vector<string> options)
 	}
 }
 
-void BackGroundParkCutScene()
-{
-	//CLOUDS
-	for (int l = 0; l < windowWidth; l++)
-	{
-		for (int m = 0; m < windowHeight; m++)
-		{
-			window.setTextAtPoint(Vector2(l, m), " ", LIGHTBLUE_LIGHTBLUE_BG);
-		}
-	}
-	window.setTextAtPoint(Vector2(0, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(1, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(2, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(3, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(0, 3), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(1, 3), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-
-	window.setTextAtPoint(Vector2(19, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(20, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(21, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(22, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-
-	window.setTextAtPoint(Vector2(35, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(36, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(37, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(38, 1), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(37, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(38, 2), " ", LIGHTBLUE_BRIGHTWHITE_BG);
-	//GRASS
-	for (int i = 0; i < 40; i ++)
-	{
-		for (int ii = 16; ii < 18; ii++)
-		{
-			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-		}
-	}
-	//SIDEWALK
-	for (int i = 0; i < 40; i++)
-	{
-		for (int ii = 18; ii < 21; ii++)
-		{
-			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTBLUE_LIGHTGREY_BG);
-		}
-	}
-	//TREE
-	for (int i = 0; i < 22; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 15), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 2; i < 20; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 14), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 2; i < 18; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 13), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 12), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 4; i < 16; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 11), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 10), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 6; i < 16; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 9), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 8), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 8; i < 20; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 7), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 8; i < 14; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 6), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 5), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 4), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 3), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 2), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 1), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 18; i < 24; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 6), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	//LEAVES
-	for (int i = 4; i < 18; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 1), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 4; i < 8; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 2), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-		window.setTextAtPoint(Vector2(i, 3), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 2; i < 4; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 3), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-		window.setTextAtPoint(Vector2(i, 4), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 6; i < 8; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 5), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-		window.setTextAtPoint(Vector2(i, 4), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 12; i < 18; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 2), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 14; i < 16; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 3), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-		window.setTextAtPoint(Vector2(i, 4), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 16; i < 18; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 4), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 22; i < 24; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 5), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-		window.setTextAtPoint(Vector2(i, 7), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	for (int i = 24; i < 26; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 6), " ", LIGHTBLUE_BRIGHTGREEN_BG);
-	}
-	//FENCE
-	for (int i = 0; i < 40; i+=4)
-	{
-		for (int ii = 12; ii < 17; ii ++ )
-		{
-			window.setTextAtPoint(Vector2(i + 0, ii), " ", LIGHTBLUE_LIGHTGREY_BG);
-			window.setTextAtPoint(Vector2(i + 1, ii), " ", LIGHTBLUE_LIGHTGREY_BG);
-		}
-	}
-	for (int i = 0; i < 40; i ++)
-	{
-		window.setTextAtPoint(Vector2(i, 13), " ", LIGHTBLUE_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(i, 15), " ", LIGHTBLUE_LIGHTGREY_BG);
-	}
-	//BENCH
-	for (int i = 25; i < 38; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 14), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 15), " ", LIGHTBLUE_YELLOW_BG);
-		window.setTextAtPoint(Vector2(i, 16), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 27; i < 36; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 14), " ", BLACK);
-		window.setTextAtPoint(Vector2(i, 15), " ", BLACK);
-	}
-	for (int i = 25; i < 27; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 17), " ", LIGHTBLUE_YELLOW_BG);
-	}
-	for (int i = 36; i < 38; i++)
-	{
-		window.setTextAtPoint(Vector2(i, 17), " ", LIGHTBLUE_YELLOW_BG);
-	}
-}
-void drawTruckCutScene(Vector2 point)
-{
-	//OUTLINE 1
-	for (int i = -2; i < 29; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 1), " ", BLACK);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 12), " ", BLACK);
-	}
-	for (int i = 27; i < 29; i++)
-	{
-		for (int ii = 1; ii < 13; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = -2; i < 0; i++)
-	{
-		for (int ii = 1; ii < 13; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = -2; i < 0; i++)
-	{
-		for (int ii = 1; ii < 13; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	//FILL 1
-	for (int i = 0; i < 27; i++)
-	{
-		for (int ii = 2; ii < 12; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
-		}
-	}
-	//FILL 2
-	for (int i = 1; i < 7; i++)
-	{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", BLACK);
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 8), " ", BLACK);
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", BLACK);
-	}
-	for (int i = 1; i < 3; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 9), " ", BLACK);
-	}
-	for (int i = 5; i < 7; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 7), " ", BLACK);
-	}
-	for (int i = 7; i < 9; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", LIGHTGREY_LIGHTGREY_BG);
-	}
-	for (int i = 11; i < 13; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", LIGHTGREY_LIGHTGREY_BG);
-	}
-	for (int i = 7; i < 13; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 9), " ", LIGHTGREY_LIGHTGREY_BG);
-	}
-	for (int i = 6; i < 9; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + 9, point.getY() - i), " ", LIGHTGREY_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(point.getX() + 10, point.getY() - i), " ", LIGHTGREY_LIGHTGREY_BG);
-	}
-	for (int i = 13; i < 17; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", BLACK);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", BLACK);
-	}
-	for (int i = 7; i < 10; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + 13, point.getY() - i), " ", BLACK);
-		window.setTextAtPoint(Vector2(point.getX() + 14, point.getY() - i), " ", BLACK);
-		window.setTextAtPoint(Vector2(point.getX() + 17, point.getY() - i), " ", BLACK);
-		window.setTextAtPoint(Vector2(point.getX() + 18, point.getY() - i), " ", BLACK);
-	}
-	for (int i = 19; i < 25; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 10), " ", LIGHTGREY_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 8), " ", LIGHTGREY_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", LIGHTGREY_LIGHTGREY_BG);
-	}
-	for (int i = 19; i < 21; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 9), " ", LIGHTGREY_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 7), " ", LIGHTGREY_LIGHTGREY_BG);
-	}
-	//WHEELS 1
-	for (int i = 0; i < 6; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 0), " ", LIGHTBLUE_WHITE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 2), " ", LIGHTBLUE_WHITE_BG);
-	}
-	window.setTextAtPoint(Vector2(point.getX() + 0, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 1, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	for (int i = 19; i < 25; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 0), " ", LIGHTBLUE_WHITE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 2), " ", LIGHTBLUE_WHITE_BG);
-	}
-	window.setTextAtPoint(Vector2(point.getX() + 19, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 20, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 23, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 24, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	//OUTLINE 2
-	for (int i = 29; i < 31; i++)
-	{
-		for (int ii = 1; ii < 13; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = 31; i < 33; i++)
-	{
-		for (int ii = 1; ii < 12; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = 33; i < 35; i++)
-	{
-		for (int ii = 1; ii < 11; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = 35; i < 37; i++)
-	{
-		for (int ii = 1; ii < 10; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = 37; i < 41; i++)
-	{
-		for (int ii = 1; ii < 7; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	for (int i = 41; i < 43; i++)
-	{
-		for (int ii = 2; ii < 6; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", BLACK);
-		}
-	}
-	window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 4), "K", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 4), "i", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 4), "d", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 6, point.getY() - 4), "n", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 7, point.getY() - 4), "a", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 8, point.getY() - 4), "p", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 9, point.getY() - 4), "p", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 10, point.getY() - 4), "i", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 11, point.getY() - 4), "n", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 12, point.getY() - 4), "g", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 13, point.getY() - 4), " ", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 14, point.getY() - 4), "S", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 15, point.getY() - 4), "i", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 16, point.getY() - 4), "n", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 17, point.getY() - 4), "c", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 18, point.getY() - 4), "e", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 19, point.getY() - 4), " ", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 20, point.getY() - 4), "1", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 21, point.getY() - 4), "9", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 22, point.getY() - 4), "8", BLACK_BRIGHTWHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 23, point.getY() - 4), "3", BLACK_BRIGHTWHITE_BG);
-	//FILL 1
-	for (int i = 31; i < 35; i++)
-	{
-		for (int ii = 6; ii < 10; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", AQUA_LIGHTBLUE_BG);
-		}
-	}
-	window.setTextAtPoint(Vector2(point.getX() + 31, point.getY() - 10), " ", AQUA_LIGHTBLUE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 32, point.getY() - 10), " ", AQUA_LIGHTBLUE_BG);
-
-	window.setTextAtPoint(Vector2(point.getX() + 41, point.getY() - 2), " ", AQUA_BRIGHTYELLOW_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 42, point.getY() - 2), " ", AQUA_BRIGHTYELLOW_BG);
-	//WHEELS
-	for (int i = 33; i < 39; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 0), " ", LIGHTBLUE_WHITE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 2), " ", LIGHTBLUE_WHITE_BG);
-	}
-	window.setTextAtPoint(Vector2(point.getX() + 33, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 34, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 37, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 38, point.getY() - 1), " ", LIGHTBLUE_WHITE_BG);
-}
-void DrawParkGirlCutScene(Vector2 point)
-{
-
-	window.setTextAtPoint(Vector2(point.getX() + 0, point.getY() + 0), " ", LIGHTBLUE_WHITE_BG);
-	for (int i = 0; i < 4; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 0), " ", LIGHTBLUE_WHITE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 1), " ", BLACK);
-		for (int ii = 2; ii < 5; ii++) 
-		{ 
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", LIGHTBLUE_GREEN_BG); 
-		}
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 5), " ", LIGHTBLUE_WHITE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", LIGHTBLUE_WHITE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 7), " ", LIGHTBLUE_DARKBLUE_BG);
-	}
-	for (int i = -2; i < 0; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 2), " ", LIGHTBLUE_WHITE_BG);
-		for (int ii = 3; ii < 5; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", LIGHTBLUE_GREEN_BG);
-		}
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 5), " ", LIGHTBLUE_DARKBLUE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", LIGHTBLUE_DARKBLUE_BG);
-	}
-	for (int i = 4; i < 6; i++)
-	{
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 2), " ", LIGHTBLUE_WHITE_BG);
-		for (int ii = 3; ii < 5; ii++)
-		{
-			window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - ii), " ", LIGHTBLUE_GREEN_BG);
-		}
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 5), " ", LIGHTBLUE_DARKBLUE_BG);
-		window.setTextAtPoint(Vector2(point.getX() + i, point.getY() - 6), " ", LIGHTBLUE_DARKBLUE_BG);
-	}
-}
-
 void Cutscene()
 {
 	if (cutsceneStr == "NULL")
@@ -1432,8 +958,9 @@ void Cutscene()
 		window.writeConsole();
 		Sleep(3500);
 		SetConsoleCursorPosition(hOut, start);
-		BackGroundParkCutScene();
-		DrawParkGirlCutScene(Vector2(29, 17));
+		//BackGroundParkCutScene();
+		window = bgVars.draw_diptio_park_cutscene_bg(window, windowWidth, windowHeight);
+		window = charVars.draw_girl_diptio_park(window, Vector2(29, 17));
 		window.writeConsole();
 		Sleep(3500);
 		SetConsoleCursorPosition(hOut, start);
@@ -1449,12 +976,12 @@ void Cutscene()
 				drawGirl = false;
 			}
 			SetConsoleCursorPosition(hOut, start);
-			BackGroundParkCutScene();
+			window = bgVars.draw_diptio_park_cutscene_bg(window, windowWidth, windowHeight);
 			if (drawGirl)
 			{
-				DrawParkGirlCutScene(Vector2(29, 17));
+				window = charVars.draw_girl_diptio_park(window, Vector2(29, 17));
 			}
-			drawTruckCutScene(Vector2(XVal, 17));
+			window = charVars.draw_truck_syde_001(window, Vector2(XVal, 17));
 			window.writeConsole();
 			Sleep(30);
 		}
@@ -2038,7 +1565,7 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		}
 	}
 	vector<RigidBody> rbArr;
-	vector<Background> bgArr;
+	vector<BackgroundObj> bgArr;
 	if (level == "Intro")
 	{
 		PhysicsObject playerMk("player", startPosition, false, 0);
@@ -2072,7 +1599,7 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		{
 			for (int m = 0; m < windowHeight; m++)
 			{
-				bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
+				bgArr.push_back(BackgroundObj(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
 			}
 		}
 
@@ -2111,107 +1638,13 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 	{
 		PhysicsObject playerMk("player", startPosition, false, 0);
 		rbArr.push_back(playerMk);
-		//BACKGROUND
-		for (int l = 0; l < windowWidth; l++)
-		{
-			for (int m = 0; m < windowHeight; m++)
-			{
-				bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
-			}
-		}
 		//GROUND
 		for (int i = 0; i < windowWidth; i++)
 		{
 			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
 			rbArr[rbArr.size() - 1].setTag("Floor");
 		}
-		//CELL
-		for (int l = 0; l < 10; l++)
-		{
-			for (int m = 13; m < 14; m++)
-			{
-				bgArr.push_back(Background(YELLOW_YELLOW_BG, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 28; l < 38; l++)
-		{
-			for (int m = 13; m < 14; m++)
-			{
-				bgArr.push_back(Background(YELLOW_YELLOW_BG, Vector2(l, m), " "));
-			}
-		}
-		//TODO, ADD PERSON ON THE BENCH
-		//BARS
-		for (int l = 0; l < 2; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 4; l < 6; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 8; l < 10; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 12; l < 14; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 16; l < 18; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 20; l < 22; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 24; l < 26; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 28; l < 30; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 32; l < 34; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 36; l < 38; l++)
-		{
-			for (int m = 0; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
+		bgArr = bgVars.draw_holding_cell(bgArr, windowWidth, windowHeight);
 		//Warp To Break_Room_002
 		PhysicsObject door("Exit", Vector2(-1, 19), true, 0);
 		door.setTrigger(true, "Break_Room_002");
@@ -2224,108 +1657,19 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		PhysicsObject playerMk("player", startPosition, false, 0);
 		rbArr.push_back(playerMk);
 
-		//BACKGROUND
-		for (int l = 0; l < windowWidth; l++)
-		{
-			for (int m = 0; m < windowHeight; m++)
-			{
-				bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
-			}
-		}
 		//GROUND
 		for (int i = 0; i < windowWidth; i++)
 		{
 			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
 			rbArr[rbArr.size() - 1].setTag("Floor");
 		}
-
-		//BENCH LOWER
-		for (int l = 0; l < windowWidth; l++)
+		//BENCH
+		for (int i = 0; i < windowWidth; i++)
 		{
-			for (int m = 16; m < windowHeight - 1; m++)
-			{
-				bgArr.push_back(Background(YELLOW_YELLOW_BG, Vector2(l, m), " "));
-			}
+			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 15), true, 0));
+			rbArr[rbArr.size() - 1].setTag("Floor");
 		}
-		for (int l = 0; l < windowWidth; l++)
-		{
-			for (int m = 15; m < 16; m++)
-			{
-				bgArr.push_back(Background(BLACK, Vector2(l, m), " "));
-			}
-		}
-		for (int m = 16; m < windowHeight - 1; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(0, m), " "));
-		}
-		bgArr.push_back(Background(BLACK, Vector2(8, 17), " "));
-		bgArr.push_back(Background(BLACK, Vector2(7, 17), " "));
-		for (int m = 16; m < windowHeight - 1; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(10, m), " "));
-		}
-		bgArr.push_back(Background(BLACK, Vector2(18, 17), " "));
-		bgArr.push_back(Background(BLACK, Vector2(17, 17), " "));
-		for (int m = 16; m < windowHeight - 1; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(20, m), " "));
-		}
-		bgArr.push_back(Background(BLACK, Vector2(28, 17), " "));
-		bgArr.push_back(Background(BLACK, Vector2(27, 17), " "));
-		for (int m = 16; m < windowHeight - 1; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(30, m), " "));
-		}
-		bgArr.push_back(Background(BLACK, Vector2(36, 17), " "));
-		bgArr.push_back(Background(BLACK, Vector2(37, 17), " "));
-		for (int m = 16; m < windowHeight - 1; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(39, m), " "));
-		}
-
-		//WINDOW
-		for (int l = 10; l < 30; l++)
-		{
-			for (int m = 6; m < 13; m++)
-			{
-				bgArr.push_back(Background(YELLOW_LIGHTBLUE_BG, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 10; l < 30; l++)
-		{
-			for (int m = 5; m < 6; m++)
-			{
-				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 10; l < 30; l++)
-		{
-			for (int m = 9; m < 10; m++)
-			{
-				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 10; l < 30; l++)
-		{
-			for (int m = 13; m < 14; m++)
-			{
-				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 8; l < 10; l++)
-		{
-			for (int m = 5; m < 14; m++)
-			{
-				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-			}
-		}
-		for (int l = 30; l < 32; l++)
-		{
-			for (int m = 5; m < 14; m++)
-			{
-				bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-			}
-		}
+		bgArr = bgVars.draw_break_room_001(bgArr, windowWidth, windowHeight);
 
 		//TEST INTERACTABLE, DELETE LATER, BUILD ACTUAL ROOM
 		rbArr.push_back(PhysicsObject("Window", Vector2(7, 15), true, 0));
@@ -2338,146 +1682,39 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		//Warp To Break_Room_002
 		PhysicsObject door("Exit", Vector2(40, 19), true, 0);
 		door.setTrigger(true, "Break_Room_002");
-		door.setNewStartPos(Vector2(3,19));
+		door.setNewStartPos(Vector2(3, 19));
 		door.setTag("Floor");
 		rbArr.push_back(door);
+		PhysicsObject door2("Exit", Vector2(40, 15), true, 0);
+		door2.setTrigger(true, "Break_Room_002");
+		door2.setNewStartPos(Vector2(3, 15));
+		door2.setTag("Floor");
+		rbArr.push_back(door2);
 
 	}
 	else if (level == "Break_Room_002")
 	{
-	PhysicsObject playerMk("player", startPosition, false, 0);
-	rbArr.push_back(playerMk);
-
-	//BACKGROUND
-	for (int l = 0; l < windowWidth; l++)
-	{
-		for (int m = 0; m < windowHeight; m++)
+		PhysicsObject playerMk("player", startPosition, false, 0);
+		rbArr.push_back(playerMk);
+		bgArr = bgVars.draw_break_room_002(bgArr, windowWidth, windowHeight);
+		//GROUND
+		for (int i = 0; i < windowWidth; i++)
 		{
-			bgArr.push_back(Background(YELLOW_LIGHTGREY_BG, Vector2(l, m), " "));
+			rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
+			rbArr[rbArr.size() - 1].setTag("Floor");
 		}
-	}
-	//GROUND
-	for (int i = 0; i < windowWidth; i++)
-	{
-		rbArr.push_back(PhysicsObject("Floor" + to_string(i), Vector2(i, 19), true, 0));
-		rbArr[rbArr.size() - 1].setTag("Floor");
-	}
-	//WINDOW
-	for (int l = 10; l < 30; l++)
-	{
-		for (int m = 6; m < 13; m++)
-		{
-			bgArr.push_back(Background(YELLOW_LIGHTBLUE_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 10; l < 30; l++)
-	{
-		for (int m = 5; m < 6; m++)
-		{
-			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 10; l < 30; l++)
-	{
-		for (int m = 9; m < 10; m++)
-		{
-			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 10; l < 30; l++)
-	{
-		for (int m = 13; m < 14; m++)
-		{
-			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 8; l < 10; l++)
-	{
-		for (int m = 5; m < 14; m++)
-		{
-			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 30; l < 32; l++)
-	{
-		for (int m = 5; m < 14; m++)
-		{
-			bgArr.push_back(Background(YELLOW_BRIGHTWHITE_BG, Vector2(l, m), " "));
-		}
-	}
-	//COUCH
-	for (int l = 6; l < 34; l++)
-	{
-		for (int m = 14; m < 19; m++)
-		{
-			bgArr.push_back(Background(YELLOW_BRIGHTRED_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 9; l < 10; l++)
-	{
-		for (int m = 14; m < 19; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(l, m), "|"));
-		}
-	}
-	for (int l = 30; l < 31; l++)
-	{
-		for (int m = 14; m < 19; m++)
-		{
-			bgArr.push_back(Background(BLACK, Vector2(l, m), "|"));
-		}
-	}
-	for (int l = 10; l < 30; l++)
-	{
-		for (int m = 17; m < 19; m++)
-		{
-			bgArr.push_back(Background(YELLOW_RED_BG, Vector2(l, m), " "));
-		}
-	}
-	for (int l = 10; l < 30; l++)
-	{
-		for (int m = 16; m < 17; m++)
-		{
-			bgArr.push_back(Background(BLACK_BRIGHTRED_BG, Vector2(l, m), "_"));
-		}
-	}
-	//PILLOWS
-	for (int l = 13; l < 18; l++)
-	{
-		for (int m = 15; m < 16; m++)
-		{
-			bgArr.push_back(Background(YELLOW_AQUA_BG, Vector2(l, m), " "));
-		}
-		for (int m = 16; m < 17; m++)
-		{
-			bgArr.push_back(Background(BLACK_AQUA_BG, Vector2(l, m), "_"));
-		}
-	}
-
-	for (int l = 21; l < 26; l++)
-	{
-		for (int m = 15; m < 16; m++)
-		{
-			bgArr.push_back(Background(YELLOW_PURPLE_BG, Vector2(l, m), " "));
-		}
-		for (int m = 16; m < 17; m++)
-		{
-			bgArr.push_back(Background(BLACK_PURPLE_BG, Vector2(l, m), "_"));
-		}
-	}
-
-	//Warp To Break_Room
-	PhysicsObject door("Exit", Vector2(-1, 19), true, 0);
-	door.setTrigger(true, "Break_Room");
-	door.setTag("Floor");
-	door.setNewStartPos(Vector2(33, 19));
-	rbArr.push_back(door);
-	//Warp To Holding Cell
-	PhysicsObject doorToCell("Exit", Vector2(40, 19), true, 0);
-	doorToCell.setTrigger(true, "Holding_Cell");
-	doorToCell.setNewStartPos(Vector2(3, 19));
-	doorToCell.setTag("Floor");
-	rbArr.push_back(doorToCell);
+		//Warp To Break_Room
+		PhysicsObject door("Exit", Vector2(-1, 19), true, 0);
+		door.setTrigger(true, "Break_Room");
+		door.setTag("Floor");
+		door.setNewStartPos(Vector2(33, 19));
+		rbArr.push_back(door);
+		//Warp To Holding Cell
+		PhysicsObject doorToCell("Exit", Vector2(40, 19), true, 0);
+		doorToCell.setTrigger(true, "Holding_Cell");
+		doorToCell.setNewStartPos(Vector2(3, 19));
+		doorToCell.setTag("Floor");
+		rbArr.push_back(doorToCell);
 	}
 	else if (level == "Watermelon")
 	{
@@ -2546,7 +1783,7 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		{
 			for (int m = 0; m < windowHeight; m++)
 			{
-				bgArr.push_back(Background(colour, Vector2(l,m), " "));
+				bgArr.push_back(BackgroundObj(colour, Vector2(l,m), " "));
 			}
 			colour = (ColourClass)(colour + 3);
 		}
@@ -2590,7 +1827,7 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		}
 		for (int m = 0; m < bgArr.size(); m++)
 		{
-			window.setTextAtPoint(bgArr[m].pos, bgArr[m].mText, bgArr[m].colour);
+			window.setTextAtPoint(bgArr[m].getPos(), bgArr[m].getText(), bgArr[m].getColour());
 		}
 		// WRITE CONSOLE
 		for (int i = 1; i < rbArr.size(); i++)
@@ -2627,7 +1864,7 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		{
 			playerColour = determineColour(BRIGHTRED, window.getTextColourAtPoint(rbArr[0].getPos()));
 			//window.setTextAtPoint(rbArr[0].getPos(), "*",playerColour);
-			drawCharacter(rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3], lookAngleStr);
+			window = charVars.draw_player(window, rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3], lookAngleStr, charNames[skinNumber]);
 		}
 		if (level == "Intro") window.setLine(windowHeight - 1, "Level: Intro---Jump:W|Left:A|Right:D|Down:S", WHITE);
 		else if (level == "Watermelon") window.setLine(windowHeight - 1, "Level: Watermelon---Beware The Spikes", WHITE);
@@ -3620,7 +2857,7 @@ int main()
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
 
-	if (true)
+	if (false)
 	{
 		opening();
 	}

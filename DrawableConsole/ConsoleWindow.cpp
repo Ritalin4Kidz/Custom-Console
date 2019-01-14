@@ -112,3 +112,9 @@ void ConsoleWindow::writeConsole()
 		m_Lines[i].writeLine(offset.getX());
 	}
 }
+
+void ConsoleWindow::operator=(ConsoleWindow other)
+{
+	m_Lines = other.m_Lines;
+	offset = other.offset;
+}

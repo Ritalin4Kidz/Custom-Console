@@ -305,7 +305,7 @@ public:
 	void eraseConsole();
 	void initialize(int width, int height);
 	void writeConsole();
-
+	ColourClass determineColourAtPoint(Vector2 point, ColourClass main, bool onlyFG);
 	void operator=(ConsoleWindow other);
 private:
 	vector<Line> m_Lines;

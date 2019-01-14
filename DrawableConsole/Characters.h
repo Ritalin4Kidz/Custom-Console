@@ -12,5 +12,6 @@ public:
 
 	//FIRST APPEARANCE, BREAK_ROOM_001
 	ConsoleWindow draw_player(ConsoleWindow window, Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin, string lookAngle, string charName);
+	ConsoleWindow draw_player_wireframe(ConsoleWindow window, Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin, string lookAngle, string charName);
 private:
 };

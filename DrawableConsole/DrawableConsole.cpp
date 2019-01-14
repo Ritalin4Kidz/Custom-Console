@@ -38,6 +38,7 @@ Artwork artVars;
 //CHEATS
 vector<string> cheatCodes;
 bool Cheat_CanJump = false;
+bool Cheat_Wireframe = false;
 //SYDE VALUES
 string levelBonus = "Break_Room";
 string command = "";
@@ -1864,7 +1865,14 @@ void PlayLevel(string level, bool jumpAllowed, bool dropAllowed)
 		{
 			playerColour = determineColour(BRIGHTRED, window.getTextColourAtPoint(rbArr[0].getPos()));
 			//window.setTextAtPoint(rbArr[0].getPos(), "*",playerColour);
-			window = charVars.draw_player(window, rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3], lookAngleStr, charNames[skinNumber]);
+			if (Cheat_Wireframe)
+			{
+				window = charVars.draw_player_wireframe(window, rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3], lookAngleStr, charNames[skinNumber]);
+			}
+			else
+			{
+				window = charVars.draw_player(window, rbArr[0].getPos(), charSkins[skinNumber][0], charSkins[skinNumber][1], charSkins[skinNumber][2], charSkins[skinNumber][3], lookAngleStr, charNames[skinNumber]);
+			}
 		}
 		if (level == "Intro") window.setLine(windowHeight - 1, "Level: Intro---Jump:W|Left:A|Right:D|Down:S", WHITE);
 		else if (level == "Watermelon") window.setLine(windowHeight - 1, "Level: Watermelon---Beware The Spikes", WHITE);
@@ -2817,6 +2825,10 @@ int main()
 		if (cheatCodes[i] == "JumpAllowed")
 		{
 			Cheat_CanJump = true;
+		}
+		else if (cheatCodes[i] == "Wireframe")
+		{
+			Cheat_Wireframe = true;
 		}
 	}
 	//MAKE A SEPERATE WINDOW

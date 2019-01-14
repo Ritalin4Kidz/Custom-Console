@@ -113,6 +113,144 @@ void ConsoleWindow::writeConsole()
 	}
 }
 
+ColourClass ConsoleWindow::determineColourAtPoint(Vector2 point, ColourClass main, bool onlyFG)
+{
+	ColourClass bg = getTextColourAtPoint(point);
+	if (onlyFG)
+	{
+		int colour = (int)main % 16;
+		//CHANGE MAIN TO ORIGINAL 16 COLOURS
+		switch (colour)
+		{
+		case 0:
+			main = BLACK;
+			break;
+		case 1:
+			main = BLUE;
+			break;
+		case 2:
+			main = GREEN;
+			break;
+		case 3:
+			main = AQUA;
+			break;
+		case 4:
+			main = RED;
+			break;
+		case 5:
+			main = PURPLE;
+			break;
+		case 6:
+			main = YELLOW;
+			break;
+		case 7:
+			main = WHITE;
+			break;
+		case 8:
+			main = LIGHTGREY;
+			break;
+		case 9:
+			main = DARKBLUE;
+			break;
+		case 10:
+			main = BRIGHTGREEN;
+			break;
+		case 11:
+			main = LIGHTBLUE;
+			break;
+		case 12:
+			main = BRIGHTRED;
+			break;
+		case 13:
+			main = LIGHTPURPLE;
+			break;
+		case 14:
+			main = BRIGHTYELLOW;
+			break;
+		case 15:
+			main = BRIGHTWHITE;
+			break;
+		default:
+			main = BLACK;
+		}
+	}
+	if (bg >= BLACK_BLUE_BG && bg < BLACK_GREEN_BG)
+	{
+		return (ColourClass)(main + BLACK_BLUE_BG);
+	}
+
+	if (bg >= BLACK_GREEN_BG && bg < BLACK_AQUA_BG)
+	{
+		return (ColourClass)(main + BLACK_GREEN_BG);
+	}
+
+	if (bg >= BLACK_AQUA_BG && bg < BLACK_RED_BG)
+	{
+		return (ColourClass)(main + BLACK_AQUA_BG);
+	}
+
+	if (bg >= BLACK_RED_BG && bg < BLACK_PURPLE_BG)
+	{
+		return (ColourClass)(main + BLACK_RED_BG);
+	}
+
+	if (bg >= BLACK_PURPLE_BG && bg < BLACK_YELLOW_BG)
+	{
+		return (ColourClass)(main + BLACK_PURPLE_BG);
+	}
+
+	if (bg >= BLACK_YELLOW_BG && bg < BLACK_WHITE_BG)
+	{
+		return (ColourClass)(main + BLACK_YELLOW_BG);
+	}
+
+	if (bg >= BLACK_WHITE_BG && bg < BLACK_LIGHTGREY_BG)
+	{
+		return (ColourClass)(main + BLACK_WHITE_BG);
+	}
+
+	if (bg >= BLACK_LIGHTGREY_BG && bg < BLACK_DARKBLUE_BG)
+	{
+		return (ColourClass)(main + BLACK_LIGHTGREY_BG);
+	}
+
+	if (bg >= BLACK_DARKBLUE_BG && bg < BLACK_BRIGHTGREEN_BG)
+	{
+		return (ColourClass)(main + BLACK_DARKBLUE_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTGREEN_BG && bg < BLACK_LIGHTBLUE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTGREEN_BG);
+	}
+
+	if (bg >= BLACK_LIGHTBLUE_BG && bg < BLACK_BRIGHTRED_BG)
+	{
+		return (ColourClass)(main + BLACK_LIGHTBLUE_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTRED_BG && bg < BLACK_LIGHTPURPLE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTRED_BG);
+	}
+
+	if (bg >= BLACK_LIGHTPURPLE_BG && bg < BLACK_BRIGHTYELLOW_BG)
+	{
+		return (ColourClass)(main + BLACK_LIGHTPURPLE_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTYELLOW_BG && bg < BLACK_BRIGHTWHITE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTYELLOW_BG);
+	}
+
+	if (bg >= BLACK_BRIGHTWHITE_BG && bg <= BRIGHTWHITE_BRIGHTWHITE_BG)
+	{
+		return (ColourClass)(main + BLACK_BRIGHTWHITE_BG);
+	}
+	return main;
+}
+
 void ConsoleWindow::operator=(ConsoleWindow other)
 {
 	m_Lines = other.m_Lines;

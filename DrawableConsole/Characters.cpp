@@ -316,3 +316,79 @@ ConsoleWindow Characters::draw_player(ConsoleWindow window, Vector2 point, Colou
 	}
 	return window;
 }
+
+ConsoleWindow Characters::draw_player_wireframe(ConsoleWindow window, Vector2 point, ColourClass Clothes1, ColourClass Clothes2, ColourClass Accessory, ColourClass Skin, string lookAngle, string charName)
+{
+	//PANTS
+	for (int i = 0; i < 4; i++)
+	{
+		for (int ii = 0; ii < 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), "#", window.determineColourAtPoint(Vector2(point.getX() + ii, point.getY() - i),Clothes2, true));
+		}
+	}
+	//SHIRT
+	for (int i = 3; i < 7; i++)
+	{
+		for (int ii = -2; ii < 6; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), "#", window.determineColourAtPoint(Vector2(point.getX() + ii, point.getY() - i), Clothes1, true));
+		}
+	}
+	//HEAD
+	for (int i = 6; i < 8; i++)
+	{
+		for (int ii = 0; ii < 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), "#", window.determineColourAtPoint(Vector2(point.getX() + ii, point.getY() - i), Skin, true));
+		}
+	}
+	//BADGE
+	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() - 5), "#", window.determineColourAtPoint(Vector2(point.getX() + 2, point.getY() - 5), Accessory, true));
+	window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 5), "#", window.determineColourAtPoint(Vector2(point.getX() + 3, point.getY() - 5), Accessory, true));
+	//HANDS
+	window.setTextAtPoint(Vector2(point.getX() - 2, point.getY() - 3), "#", window.determineColourAtPoint(Vector2(point.getX() - 2, point.getY() - 3), Skin, true));
+	window.setTextAtPoint(Vector2(point.getX() - 1, point.getY() - 3), "#", window.determineColourAtPoint(Vector2(point.getX() - 1, point.getY() - 3), Skin, true));
+																																					   
+	window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 3), "#", window.determineColourAtPoint(Vector2(point.getX() + 4, point.getY() - 3), Skin, true));
+	window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 3), "#", window.determineColourAtPoint(Vector2(point.getX() + 5, point.getY() - 3), Skin, true));
+	if (charName == "Nude_Lunatic")
+	{
+		for (int x = -2; x < 6; x++)
+		{
+			for (int y = 2; y < 3; y++)
+			{
+				window.setTextAtPoint(Vector2(point.getX() + x, point.getY() - y), "#", window.determineColourAtPoint(Vector2(point.getX() + x, point.getY() - y), BLACK, true));
+			}
+		}
+	}
+	//HAT
+	if (charName != "Nude_Lunatic")
+	{
+		for (int i = 8; i < 10; i++)
+		{
+			for (int ii = 0; ii < 4; ii++)
+			{
+				window.setTextAtPoint(Vector2(point.getX() + ii, point.getY() - i), "#", window.determineColourAtPoint(Vector2(point.getX() + ii, point.getY() - i), Clothes1, true));
+			}
+		}
+		if (lookAngle == "Right")
+		{
+			window.setTextAtPoint(Vector2(point.getX() + 4, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() + 4, point.getY() - 8), Clothes1, true));
+			window.setTextAtPoint(Vector2(point.getX() + 5, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() + 5, point.getY() - 8), Clothes1, true));
+		}
+		else if (lookAngle == "Left")
+		{
+			window.setTextAtPoint(Vector2(point.getX() - 1, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() - 1, point.getY() - 8), Clothes1, true));
+			window.setTextAtPoint(Vector2(point.getX() - 2, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() - 2, point.getY() - 8), Clothes1, true));
+		}
+	}
+	if (charName == "Nude_Lunatic")
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 0, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() + 0, point.getY() - 8), Clothes1, true));
+		window.setTextAtPoint(Vector2(point.getX() + 1, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() + 1, point.getY() - 8), Clothes1, true));
+		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() + 2, point.getY() - 8), Clothes1, true));
+		window.setTextAtPoint(Vector2(point.getX() + 3, point.getY() - 8), "#", window.determineColourAtPoint(Vector2(point.getX() + 3, point.getY() - 8), Clothes1, true));
+	}
+	return window;
+}

@@ -6,7 +6,7 @@
 using namespace std;
 class BackgroundObj {
 public:
-	BackgroundObj() {}
+	BackgroundObj();
 	BackgroundObj(ColourClass a_color, Vector2 a_pos, string text) { colour = a_color; pos = a_pos; mText = text; }
 	virtual ~BackgroundObj() {}
 

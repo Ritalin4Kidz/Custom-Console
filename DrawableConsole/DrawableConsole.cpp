@@ -24,6 +24,7 @@
 #include "Background.h"
 #include "Characters.h"
 #include "Artwork.h"
+#include "AssetsClass.h"
 
 //INITIALIZING VARIABLES
 int windowWidth = 40;
@@ -35,6 +36,8 @@ ConsoleWindow window(windowHeight);
 BackgroundClass bgVars;
 Characters charVars;
 Artwork artVars;
+//OTHER ASSETS
+AssetsClass astVars;
 //CHEATS
 vector<string> cheatCodes;
 bool Cheat_CanJump = false;
@@ -2556,47 +2559,13 @@ void opening()
    }
     introMenu();
 }
-// MAIN FUNCTION
-int main()
+void play_syde()
 {
-	srand(time(NULL));
-	//CENTER THE WINDOW
-	window.setOffset(config.getOffset());
-
-	//INITIALIZE CHEAT VALUES
-	cheatCodes = config.ReturnCheats();
-	for (int i = 0; i < cheatCodes.size(); i++)
-	{
-		if (cheatCodes[i] == "JumpAllowed")
-		{
-			Cheat_CanJump = true;
-		}
-		else if (cheatCodes[i] == "Wireframe")
-		{
-			Cheat_Wireframe = true;
-		}
-	}
-	//MAKE A SEPERATE WINDOW
-	//generateart();
-	
-	//scenes();
-
-	//generateTriangle();
-	
-	//Test();
-
-
-	//PlayLevel(levelBonus);
-	//// WATERMELON
-	//PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
-	//system("pause");
-	////Next Level, ETC
-	//PlayLevel(levelBonus);
 	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
 	COORD NewSBSize;
 	int Status;
 
-	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight()};
+	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
 	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
 
 	GetConsoleScreenBufferInfo(hOut, &SBInfo);
@@ -2636,22 +2605,69 @@ int main()
 		{
 			for (int m = 0; m < windowHeight; m++)
 			{
-				window.setTextAtPoint(Vector2(l,m), " ", BLACK);
+				window.setTextAtPoint(Vector2(l, m), " ", BLACK);
 			}
 		}
 		PlayLevel(levelBonus, Cheat_CanJump, false);
 	}
+}
+
+void bmp_test()
+{
+	vector<unsigned char> raw_data = astVars.get_data_from_bmp(astVars.get_test_bmp_path());
+	vector<vector<unsigned char>> data = astVars.convert_to_rgb_vector(raw_data); window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
+	}
+	//TO DO, CHECK TO SEE IF PIXEL COLOUR EXISTS AND DISPLAY IT
+	window.writeConsole();
+}
+// MAIN FUNCTION
+int main()
+{
+	srand(time(NULL));
+	//CENTER THE WINDOW
+	window.setOffset(config.getOffset());
+
+	//INITIALIZE CHEAT VALUES
+	cheatCodes = config.ReturnCheats();
+	for (int i = 0; i < cheatCodes.size(); i++)
+	{
+		if (cheatCodes[i] == "JumpAllowed")
+		{
+			Cheat_CanJump = true;
+		}
+		else if (cheatCodes[i] == "Wireframe")
+		{
+			Cheat_Wireframe = true;
+		}
+	}
+	//bmp_test();
+	play_syde();
+	/* REGION ENGINE TESTS
+	//MAKE A SEPERATE WINDOW
+	//generateart();
+	//scenes();
+	//generateTriangle();
+	//Test();
+	//PlayLevel(levelBonus);
+	//// WATERMELON
+	//PixelArt(GREEN_GREEN_BG, BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, BLACK, WHITE);
+	//system("pause");
+	////Next Level, ETC
+	//PlayLevel(levelBonus);
 	// select fruit based off level
 	//BOW BASED OFF WATERMELON
 	//PixelArt(BLACK, BLACK, YELLOW_YELLOW_BG, BLACK, BRIGHTWHITE_BRIGHTWHITE_BG, WHITE);
 	//Jump Simulation
-	//outputVar();
-	
+	//outputVar();	
 	//playTicTacToe();
-	//window.ClearWindow(false);
-	
+	//window.ClearWindow(false);	
 	//drawBrain(dir + "AIBrainO.txt");
-	
 	//while (!foundPath)
 	//{
 	//	nodePath();
@@ -2660,5 +2676,6 @@ int main()
 	//window.setLine(10, "Attempts Required For Path : " + to_string(generations), WHITE);
 	//window.ClearWindow(false);
 	//window.writeConsole();
+	*/
 	system("pause");
 }

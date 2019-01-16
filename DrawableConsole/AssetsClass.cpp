@@ -14,25 +14,26 @@ const int AssetsClass::get_file_size(char * filename)
 	int width = *(int*)&info[18];
 	int height = *(int*)&info[22];
 
-	const int size = 3 * width * height;
+	const int size = 4 * width * height;
 	return size;
 }
 
 vector<unsigned char> AssetsClass::get_data_from_bmp(char * filename)
 {
 	int i;
+	//PROPERLY CHECK FILE
 	FILE* f = fopen(filename, "rb");
-	unsigned char data[1200]; // allocate 3 bytes per pixel
-	fread(data, sizeof(unsigned char), 1200, f); // read the rest of the data at once
+	unsigned char data[1600]; // allocate 3 bytes per pixel
+	fread(data, sizeof(unsigned char), 1600, f); // read the rest of the data at once
 	vector<unsigned char> newdata;
 	fclose(f);
-	for (i = 0; i < 1200; i += 3)
+	for (i = 0; i < 1600; i += 4)
 	{
-		unsigned char tmp = data[i];
-		data[i] = data[i + 2];
-		data[i + 2] = tmp;
+		unsigned char tmp = data[i + 1];
+		data[i + 1] = data[i + 3];
+		data[i + 3] = tmp;
 	}
-	for (int ii = 0; ii < 1200; ii++)
+	for (int ii = 0; ii < 1600; ii++)
 	{
 		newdata.push_back(data[ii]);
 	}
@@ -42,9 +43,9 @@ vector<unsigned char> AssetsClass::get_data_from_bmp(char * filename)
 vector<vector<unsigned char>> AssetsClass::convert_to_rgb_vector(vector<unsigned char> data)
 {
 	vector<vector<unsigned char>> newData;
-	for (int i = 0; i < 1200; i += 3)
+	for (int i = 0; i < 1600; i += 4)
 	{
-		newData.push_back(vector<unsigned char>{data[i], data[i + 1], data[i + 2]});
+		newData.push_back(vector<unsigned char>{data[i + 1], data[i + 2], data[i + 3]});
 	}
 	return newData;
 }

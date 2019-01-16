@@ -15,7 +15,7 @@ public:
 	bool rgb_match(vector<int> rgb, int r, int g, int b);
 
 	char* get_test_bmp_path() { return test_bmp_path; }
-	char* get_electronic_chime_file_path() { return electronic_chime_file_path; }
+	string get_electronic_chime_file_path() { return electronic_chime_file_path; }
 
 	vector<int> get_BLACK_RGB() { return BLACK_RGB; }
 	vector<int> get_BLUE_RGB() { return BLUE_RGB; }
@@ -35,13 +35,13 @@ public:
 	vector<int> get_BRIGHTWHITE_RGB() { return BRIGHTWHITE_RGB; }
 
 private:
-	char* electronic_chime_file_path = (char*)"EngineFiles\\electronicchime.wav";
-	char* test_bmp_path = (char*)"EngineFiles\\testfile.bmp";
+	string electronic_chime_file_path = "EngineFiles\\electronicchime.wav";
+	char* test_bmp_path = (char*)"EngineFiles\\testfile2.bmp";
 
 
 	//BITMAP SETTINGS
 	vector<int> BLACK_RGB = { 12,12,12 };
-	vector<int> BLUE_RGB = { 0,55,2018 };
+	vector<int> BLUE_RGB = { 0,55,218 };
 	vector<int> GREEN_RGB = { 19,161,14 };
 	vector<int> AQUA_RGB = { 58,150,221 };
 	vector<int> RED_RGB = { 197,15,31 };

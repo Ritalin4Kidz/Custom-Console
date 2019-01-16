@@ -2526,6 +2526,18 @@ void introCreditsScript()
 
 	system("pause");
 }
+wstring s2ws(const string& s)
+{
+	wstring r;
+	int slength = s.length();
+	if (slength > 0)
+	{
+		int len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);
+		r.resize(len);
+		MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, &r[0], len);
+	}
+	return r;
+}
 void opening()
 {
 	// OPENING
@@ -2538,6 +2550,7 @@ void opening()
 	setUp = false;
    	Sleep(50);
    }
+   
    PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
    Sleep(1250);
    for (int i = 5; i < 22; i++)
@@ -2616,15 +2629,23 @@ void bmp_test()
 {
 	vector<unsigned char> raw_data = astVars.get_data_from_bmp(astVars.get_test_bmp_path());
 	vector<vector<unsigned char>> data = astVars.convert_to_rgb_vector(raw_data); window.ClearWindow(true);
-	for (int l = 0; l < windowWidth; l++)
-	{
-		for (int m = 0; m < windowHeight; m++)
-		{
-			window.addToLine(m, " ", BLACK);
-		}
-	}
+	//for (int l = 0; l < windowWidth; l++)
+	//{
+	//	for (int m = 0; m < windowHeight; m++)
+	//	{
+	//		window.addToLine(m, " ", BLACK);
+	//	}
+	//}
 	//TO DO, CHECK TO SEE IF PIXEL COLOUR EXISTS AND DISPLAY IT
-	window.writeConsole();
+	for (int i = 0; i < data.size(); i++)
+	{
+		cout << (int)data[i][0] << ",";
+		cout << (int)data[i][1] << ",";
+		cout << (int)data[i][2] << endl;
+	}
+	//delete[] &raw_data;
+	//delete[] &data;
+	//window.writeConsole();
 }
 // MAIN FUNCTION
 int main()

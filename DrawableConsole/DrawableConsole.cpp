@@ -25,7 +25,11 @@
 #include "Characters.h"
 #include "Artwork.h"
 #include "AssetsClass.h"
-
+#include <windows.h>
+#include <objidl.h>
+#include <gdiplus.h>
+using namespace std;
+using namespace Gdiplus;
 //INITIALIZING VARIABLES
 int windowWidth = 40;
 const int windowHeight = 20;
@@ -2551,7 +2555,7 @@ void opening()
    	Sleep(50);
    }
    
-   PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
+   PlaySound(astVars.get_electronic_chime_file_path(), NULL, SND_FILENAME | SND_ASYNC);
    Sleep(1250);
    for (int i = 5; i < 22; i++)
    {
@@ -2563,7 +2567,7 @@ void opening()
    	poweredBySYDEEngine(i, 15);
    	Sleep(50);
    }
-   PlaySound(TEXT("EngineFiles\\electronicchime.wav"), NULL, SND_FILENAME | SND_ASYNC);
+   PlaySound(astVars.get_electronic_chime_file_path(), NULL, SND_FILENAME | SND_ASYNC);
    Sleep(1250);
    for (int i = 5; i < 22; i++)
    {
@@ -2627,29 +2631,24 @@ void play_syde()
 
 void bmp_test()
 {
-	vector<unsigned char> raw_data = astVars.get_data_from_bmp(astVars.get_test_bmp_path());
-	vector<vector<unsigned char>> data = astVars.convert_to_rgb_vector(raw_data); window.ClearWindow(true);
-	//for (int l = 0; l < windowWidth; l++)
-	//{
-	//	for (int m = 0; m < windowHeight; m++)
-	//	{
-	//		window.addToLine(m, " ", BLACK);
-	//	}
-	//}
-	//TO DO, CHECK TO SEE IF PIXEL COLOUR EXISTS AND DISPLAY IT
-	for (int i = 0; i < data.size(); i++)
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
 	{
-		cout << (int)data[i][0] << ",";
-		cout << (int)data[i][1] << ",";
-		cout << (int)data[i][2] << endl;
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
 	}
-	//delete[] &raw_data;
-	//delete[] &data;
-	//window.writeConsole();
+	window = astVars.draw_bmp_on_window(window, L"EngineFiles\\testfile5.bmp", Vector2(0, 0), Vector2(0,0), windowWidth, windowHeight, 20, 20);
+	window.writeConsole();
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
 // MAIN FUNCTION
 int main()
 {
+	ULONG_PTR gdiplusToken;
+	GdiplusStartupInput startupInput;
+	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	//CENTER THE WINDOW
 	window.setOffset(config.getOffset());
@@ -2699,4 +2698,5 @@ int main()
 	//window.writeConsole();
 	*/
 	system("pause");
+	GdiplusShutdown(gdiplusToken);
 }

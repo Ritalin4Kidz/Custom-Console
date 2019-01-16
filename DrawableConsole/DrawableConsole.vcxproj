@@ -23,7 +23,7 @@
     <ProjectGuid>{BE11616C-7124-40EE-8D7A-2F2056BEE0C9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DrawableConsole</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -121,7 +121,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -154,20 +154,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AI.h" />
+    <ClInclude Include="Artwork.h" />
+    <ClInclude Include="AssetsClass.h" />
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="BackgroundObj.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="BoardPiece.h" />
+    <ClInclude Include="Characters.h" />
     <ClInclude Include="ConsoleWindow.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="RigidBody.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="TextItem.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AI.cpp" />
+    <ClCompile Include="Artwork.cpp" />
+    <ClCompile Include="AssetsClass.cpp" />
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BackgroundObj.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoardPiece.cpp" />
+    <ClCompile Include="Characters.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
     <ClCompile Include="DrawableConsole.cpp" />
     <ClCompile Include="Line.cpp" />
@@ -178,6 +189,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="RigidBody.cpp" />
+    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="TextItem.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
@@ -195,6 +207,7 @@
     <Text Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BrainFiles\configSettings.sc" />
     <None Include="BrainFiles\PathFile.zz" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

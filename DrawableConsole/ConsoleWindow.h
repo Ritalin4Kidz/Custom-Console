@@ -283,7 +283,9 @@ enum  ColourClass
 	BRIGHTRED_BRIGHTWHITE_BG,
 	LIGHTPURPLE_BRIGHTWHITE_BG,
 	BRIGHTYELLOW_BRIGHTWHITE_BG,
-	BRIGHTWHITE_BRIGHTWHITE_BG
+	BRIGHTWHITE_BRIGHTWHITE_BG,
+
+	NULLCOLOUR
 };
 using namespace std;
 class ConsoleWindow {
@@ -299,6 +301,7 @@ public:
 
 	void setTextAtPoint(Vector2 point, string text, ColourClass colour);
 
+	ColourClass _intToColour(int colour_int);
 	ColourClass getTextColourAtPoint(Vector2 point);
 	void setOffset(Vector2 a_offset) { offset.setX(a_offset.getX()); offset.setY(a_offset.getY()); }
 	Line getLine(int index) { return m_Lines[index]; }

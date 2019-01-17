@@ -32,6 +32,7 @@ public:
 	ConsoleWindow draw_bmp_on_window(ConsoleWindow window, const WCHAR* bmpFile, Vector2 bmpfilepoint, Vector2 point, int windowWidth, int windowHeight, int bmpWidth, int bmpHeight);
 
 	char* get_test_bmp_path() { return test_bmp_path; }
+	vector<ColourClass> get_bmp_as_direct_colour_class_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight);
 	LPCWSTR get_electronic_chime_file_path() { return electronic_chime_file_path; }
 
 	vector<string> get_BLACK_RGB() { return BLACK_RGB; }
@@ -52,8 +53,8 @@ public:
 	vector<string> get_BRIGHTWHITE_RGB() { return BRIGHTWHITE_RGB; }
 
 private:
-	LPCWSTR electronic_chime_file_path = L"EngineFiles\\electronicchime.wav";
-	char* test_bmp_path = (char*)"EngineFiles\\testfile2.bmp";
+	LPCWSTR electronic_chime_file_path = L"EngineFiles\\Sounds\\electronicchime.wav";
+	char* test_bmp_path = (char*)"EngineFiles\\TestBitmaps\\testfile2.bmp";
 
 
 	//BITMAP SETTINGS

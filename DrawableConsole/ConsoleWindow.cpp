@@ -63,9 +63,17 @@ void ConsoleWindow::setTextAtPoint(Vector2 point, string text, ColourClass colou
 	{
 		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
 		{
-			addLayerToLine((int)point.getY(), text, colour, NULL, (int)point.getX());
+			if (colour != NULLCOLOUR)
+			{
+				addLayerToLine((int)point.getY(), text, colour, NULL, (int)point.getX());
+			}
 		}
 	}
+}
+
+ColourClass ConsoleWindow::_intToColour(int colour_int)
+{
+	return (ColourClass)colour_int;
 }
 
 ColourClass ConsoleWindow::getTextColourAtPoint(Vector2 point)

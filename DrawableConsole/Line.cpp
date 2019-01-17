@@ -7,8 +7,8 @@ void Line::writeLine()
 {
 	for (int i = 0; i < m_Line.size(); i++)
 	{
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
-		cout << m_Line[i].getChar();
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
+			cout << m_Line[i].getChar();
 	}
 	cout << endl;
 }
@@ -22,8 +22,8 @@ void Line::writeLine(int offsetX)
 	}
 	for (int i = 0; i < m_Line.size(); i++)
 	{
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
-		cout << m_Line[i].getChar();
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
+			cout << m_Line[i].getChar();
 	}
 	cout << endl;
 }

@@ -25,6 +25,7 @@
 #include "Characters.h"
 #include "Artwork.h"
 #include "AssetsClass.h"
+#include "CustomAsset.h"
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
@@ -40,6 +41,9 @@ ConsoleWindow window(windowHeight);
 BackgroundClass bgVars;
 Characters charVars;
 Artwork artVars;
+//DECLARE CUSTOM ASSETS HERE
+CustomAsset testBmp;
+CustomAsset fieldTestBmp;
 //OTHER ASSETS
 AssetsClass astVars;
 //CHEATS
@@ -63,6 +67,9 @@ vector<ColourClass> charSkin4 = { BRIGHTGREEN_BRIGHTGREEN_BG, BRIGHTGREEN_BRIGHT
 vector<vector<ColourClass>> charSkins{charSkin1, charSkin2, charSkin3, charSkin4};
 vector<string> charNames = { characterName1, characterName2, characterName3, characterName4 };
 int skinNumber = 0;
+//GDI VALUES
+ULONG_PTR gdiplusToken;
+GdiplusStartupInput startupInput;
 //OTHER VALUES
 bool isScene = true;
 int XWins = 0;
@@ -2454,6 +2461,7 @@ void introMenu()
 		}
 		if (GetKeyDown('C'))
 		{
+			GdiplusShutdown(gdiplusToken);
 			exit(NULL);
 		}
 	}
@@ -2643,16 +2651,114 @@ void bmp_test()
 	window.writeConsole();
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
+void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
+{
+	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
+	COORD NewSBSize;
+	int Status;
+
+	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
+	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+
+	GetConsoleScreenBufferInfo(hOut, &SBInfo);
+	COORD scrollbar = {
+		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
+		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
+	};
+	SetConsoleScreenBufferSize(hOut, scrollbar);
+	LPCWSTR title = L"BitMapTest"; //GOOD TITLE, NO CHANGE NEEDED BOSS
+	SetConsoleTitleW(title);
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
+	}
+	window = asset_to_draw.draw_asset(window, Vector2(0,0)); //Draw Asset On Window At A Point
+	window.writeConsole(); //DONE
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
+
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+	int x = 0;
+	int y = 0;
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l,m), " ", BLACK);
+			}
+		}
+		if (GetKeyDown('D'))
+		{
+			x--;
+		}
+		if (GetKeyDown('A'))
+		{
+			x++;
+		}
+		if (GetKeyDown('W'))
+		{
+			y++;
+		}
+		if (GetKeyDown('S'))
+		{
+			y--;
+		}
+		window = asset_to_draw.draw_asset(window, Vector2(x, y));
+		window.setTextAtPoint(Vector2(0, 19), "W", determineColour(WHITE, window.getTextColourAtPoint(Vector2(0, 19))));
+		window.setTextAtPoint(Vector2(1, 19), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(1, 19))));
+		window.setTextAtPoint(Vector2(2, 19), "U", determineColour(WHITE, window.getTextColourAtPoint(Vector2(2, 19))));
+		window.setTextAtPoint(Vector2(3, 19), "P", determineColour(WHITE, window.getTextColourAtPoint(Vector2(3, 19))));
+		window.setTextAtPoint(Vector2(4, 19), ",", determineColour(WHITE, window.getTextColourAtPoint(Vector2(4, 19))));
+		window.setTextAtPoint(Vector2(5, 19), "A", determineColour(WHITE, window.getTextColourAtPoint(Vector2(5, 19))));
+		window.setTextAtPoint(Vector2(6, 19), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(6, 19))));
+		window.setTextAtPoint(Vector2(7, 19), "L", determineColour(WHITE, window.getTextColourAtPoint(Vector2(7, 19))));
+		window.setTextAtPoint(Vector2(8, 19), "E", determineColour(WHITE, window.getTextColourAtPoint(Vector2(8, 19))));
+		window.setTextAtPoint(Vector2(9, 19), "F", determineColour(WHITE, window.getTextColourAtPoint(Vector2(9, 19))));
+		window.setTextAtPoint(Vector2(10, 19), "T", determineColour(WHITE, window.getTextColourAtPoint(Vector2(10, 19))));
+		window.setTextAtPoint(Vector2(11, 19), ",", determineColour(WHITE, window.getTextColourAtPoint(Vector2(11, 19))));
+		window.setTextAtPoint(Vector2(12, 19), "S", determineColour(WHITE, window.getTextColourAtPoint(Vector2(12, 19))));
+		window.setTextAtPoint(Vector2(13, 19), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(13, 19))));
+		window.setTextAtPoint(Vector2(14, 19), "D", determineColour(WHITE, window.getTextColourAtPoint(Vector2(14, 19))));
+		window.setTextAtPoint(Vector2(15, 19), "O", determineColour(WHITE, window.getTextColourAtPoint(Vector2(15, 19))));
+		window.setTextAtPoint(Vector2(16, 19), "W", determineColour(WHITE, window.getTextColourAtPoint(Vector2(16, 19))));
+		window.setTextAtPoint(Vector2(17, 19), "N", determineColour(WHITE, window.getTextColourAtPoint(Vector2(17, 19))));
+		window.setTextAtPoint(Vector2(18, 19), ",", determineColour(WHITE, window.getTextColourAtPoint(Vector2(18, 19))));
+		window.setTextAtPoint(Vector2(19, 19), "D", determineColour(WHITE, window.getTextColourAtPoint(Vector2(19, 19))));
+		window.setTextAtPoint(Vector2(20, 19), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(20, 19))));
+		window.setTextAtPoint(Vector2(21, 19), "R", determineColour(WHITE, window.getTextColourAtPoint(Vector2(21, 19))));
+		window.setTextAtPoint(Vector2(22, 19), "I", determineColour(WHITE, window.getTextColourAtPoint(Vector2(22, 19))));
+		window.setTextAtPoint(Vector2(23, 19), "G", determineColour(WHITE, window.getTextColourAtPoint(Vector2(23, 19))));
+		window.setTextAtPoint(Vector2(24, 19), "H", determineColour(WHITE, window.getTextColourAtPoint(Vector2(24, 19))));
+		window.setTextAtPoint(Vector2(25, 19), "T", determineColour(WHITE, window.getTextColourAtPoint(Vector2(25, 19))));
+		window.writeConsole();
+	}
+}
+void set_up_custom_assets()
+{
+	//EG setAsset(assetheight * 2, assetWidth, rgbArray)
+	fieldTestBmp.setAsset(200, 500, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\TestBitmaps\\fieldAsset.bmp", 100, 500));
+	testBmp.setAsset(66, 33, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\TestBitmaps\\colourbitmap.bmp", 33, 33)); //Set The Values Of The Asset, With A Set BMP File
+}
 // MAIN FUNCTION
 int main()
 {
-	ULONG_PTR gdiplusToken;
-	GdiplusStartupInput startupInput;
+	//NECCESARY ON STARTUP
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	//CENTER THE WINDOW
 	window.setOffset(config.getOffset());
-
+	//INIT CUSTOMASSETS
+	set_up_custom_assets();
 	//INITIALIZE CHEAT VALUES
 	cheatCodes = config.ReturnCheats();
 	for (int i = 0; i < cheatCodes.size(); i++)
@@ -2666,8 +2772,9 @@ int main()
 			Cheat_Wireframe = true;
 		}
 	}
-	//bmp_test();
-	play_syde();
+	bmp_test2(testBmp);
+	//bmp_test2(fieldTestBmp);
+	//play_syde();
 	/* REGION ENGINE TESTS
 	//MAKE A SEPERATE WINDOW
 	//generateart();

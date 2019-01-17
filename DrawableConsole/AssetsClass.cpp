@@ -126,7 +126,7 @@ ColourClass AssetsClass::return_colour_from_RGB(string r, string g, string b)
 	{
 		return BRIGHTWHITE_BRIGHTWHITE_BG;
 	}
-	return BLACK;
+	return NULLCOLOUR;
 }
 
 ConsoleWindow AssetsClass::draw_bmp_on_window(ConsoleWindow window, const WCHAR* bmpFile, Vector2 bmpfilepoint, Vector2 point, int windowWidth, int windowHeight, int bmpWidth, int bmpHeight)
@@ -151,6 +151,24 @@ ConsoleWindow AssetsClass::draw_bmp_on_window(ConsoleWindow window, const WCHAR*
 		}
 	}
 	return window;
+}
+
+vector<ColourClass> AssetsClass::get_bmp_as_direct_colour_class_array(const WCHAR * bmpFile, int bmpWidth, int bmpHeight)
+{
+	Bitmap temp(bmpFile, FALSE);
+	vector<ColourClass> tempVec;
+	for (int i = 0; i < bmpHeight; i++)
+	{
+		for (int ii = 0; ii < bmpWidth; ii++)
+		{
+			Gdiplus::Color pixelColor;
+			temp.GetPixel(ii + 1, i, &pixelColor);
+			ColourClass colour_use = return_colour_from_RGB(to_string(pixelColor.GetR()), to_string(pixelColor.GetG()), to_string(pixelColor.GetB()));
+			tempVec.push_back(colour_use); //twice for one pixel
+			tempVec.push_back(colour_use);
+		}
+	}
+	return tempVec;
 }
 
 

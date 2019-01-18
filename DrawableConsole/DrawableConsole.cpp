@@ -41,11 +41,11 @@ ConsoleWindow window(windowHeight);
 BackgroundClass bgVars;
 Characters charVars;
 Artwork artVars;
+//OTHER ASSETS
+AssetsClass astVars;
 //DECLARE CUSTOM ASSETS HERE
 CustomAsset testBmp;
 CustomAsset fieldTestBmp;
-//OTHER ASSETS
-AssetsClass astVars;
 //CHEATS
 vector<string> cheatCodes;
 bool Cheat_CanJump = false;
@@ -2586,19 +2586,7 @@ void opening()
 }
 void play_syde()
 {
-	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
-	COORD NewSBSize;
-	int Status;
-
-	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
-	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
-
-	GetConsoleScreenBufferInfo(hOut, &SBInfo);
-	COORD scrollbar = {
-		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
-		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
-	};
-	SetConsoleScreenBufferSize(hOut, scrollbar);
+	
 	LPCWSTR title = L"Syde"; //GOOD TITLE, NO CHANGE NEEDED BOSS
 	SetConsoleTitleW(title);
 
@@ -2653,19 +2641,6 @@ void bmp_test()
 }
 void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 {
-	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
-	COORD NewSBSize;
-	int Status;
-
-	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
-	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
-
-	GetConsoleScreenBufferInfo(hOut, &SBInfo);
-	COORD scrollbar = {
-		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
-		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
-	};
-	SetConsoleScreenBufferSize(hOut, scrollbar);
 	LPCWSTR title = L"BitMapTest"; //GOOD TITLE, NO CHANGE NEEDED BOSS
 	SetConsoleTitleW(title);
 	window.ClearWindow(true);
@@ -2749,9 +2724,31 @@ void set_up_custom_assets()
 	fieldTestBmp.setAsset(200, 500, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\TestBitmaps\\fieldAsset.bmp", 100, 500));
 	testBmp.setAsset(66, 33, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\TestBitmaps\\colourbitmap.bmp", 33, 33)); //Set The Values Of The Asset, With A Set BMP File
 }
+void set_up_window_properties()
+{
+	//REMOVE FULLSCREEN, MINIMIZE AND RESIZING ABILITY (PREVENTS ERRORS CAUSE BY THE RESIZE)
+	HWND WINDOW_HWND = GetConsoleWindow();
+	DWORD WINDOW_STYLE = GetWindowLong(WINDOW_HWND, GWL_STYLE);
+	WINDOW_STYLE &= (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX);
+	SetWindowLong(WINDOW_HWND, GWL_STYLE, GetWindowLong(WINDOW_HWND, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_MINIMIZEBOX & ~WS_SIZEBOX);
+	SetWindowPos(WINDOW_HWND, NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED);
+	//REMOVE SCROLLBAR AND SET WINDOWSIZE
+	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
+	COORD NewSBSize;
+	int Status;
+	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
+	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+	GetConsoleScreenBufferInfo(hOut, &SBInfo);
+	COORD scrollbar = {
+		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
+		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
+	};
+	SetConsoleScreenBufferSize(hOut, scrollbar);
+}
 // MAIN FUNCTION
 int main()
 {
+	set_up_window_properties();
 	//NECCESARY ON STARTUP
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));

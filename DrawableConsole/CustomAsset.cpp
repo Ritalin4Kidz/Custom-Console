@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "CustomAsset.h"
 
+void CustomAsset::operator=(CustomAsset other)
+{
+	this->AssetVector = other.AssetVector;
+}
+
 ConsoleWindow CustomAsset::draw_asset(ConsoleWindow window, Vector2 point)
 {
 	for (int i = 0; i < AssetVector.size(); i++)

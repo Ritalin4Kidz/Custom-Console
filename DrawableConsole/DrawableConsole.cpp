@@ -35,7 +35,7 @@ using namespace Gdiplus;
 int windowWidth = 40;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
-Settings config(dir + "configSettings.sc");
+Settings config("EngineFiles\\Settings\\configSettings.sc");
 ConsoleWindow window(windowHeight);
 //DRAWING SETTINGS
 BackgroundClass bgVars;
@@ -2641,6 +2641,7 @@ void bmp_test()
 }
 void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 {
+	ColourClass BackgroundColourVariable = BLACK;
 	LPCWSTR title = L"BitMapTest"; //GOOD TITLE, NO CHANGE NEEDED BOSS
 	SetConsoleTitleW(title);
 	window.ClearWindow(true);
@@ -2669,7 +2670,7 @@ void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 		{
 			for (int m = 0; m < windowHeight; m++)
 			{
-				window.setTextAtPoint(Vector2(l,m), " ", BLACK);
+				window.setTextAtPoint(Vector2(l,m), " ", BackgroundColourVariable);
 			}
 		}
 		if (GetKeyDown('D'))
@@ -2688,7 +2689,36 @@ void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 		{
 			y--;
 		}
+		if (GetKeyDown('R'))
+		{
+			x = 0; 
+			y = 0;
+		}
+		if (GetKeyDown('F'))
+		{
+			if ((int)BackgroundColourVariable + (int)BLACK_BLUE_BG > 255)
+			{
+				BackgroundColourVariable = BLACK;
+			}
+			else {
+				BackgroundColourVariable = window._intToColour((int)BackgroundColourVariable + (int)BLACK_BLUE_BG);
+			}
+		}
 		window = asset_to_draw.draw_asset(window, Vector2(x, y));
+		//UI LINE 1
+		window.setTextAtPoint(Vector2(0, 18), "R", determineColour(WHITE, window.getTextColourAtPoint(Vector2(0, 18))));
+		window.setTextAtPoint(Vector2(1, 18), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(1, 18))));
+		window.setTextAtPoint(Vector2(2, 18), "R", determineColour(WHITE, window.getTextColourAtPoint(Vector2(2, 18))));
+		window.setTextAtPoint(Vector2(3, 18), "E", determineColour(WHITE, window.getTextColourAtPoint(Vector2(3, 18))));
+		window.setTextAtPoint(Vector2(4, 18), "P", determineColour(WHITE, window.getTextColourAtPoint(Vector2(4, 18))));
+		window.setTextAtPoint(Vector2(5, 18), "O", determineColour(WHITE, window.getTextColourAtPoint(Vector2(5, 18))));
+		window.setTextAtPoint(Vector2(6, 18), "S", determineColour(WHITE, window.getTextColourAtPoint(Vector2(6, 18))));
+		window.setTextAtPoint(Vector2(7, 18), "I", determineColour(WHITE, window.getTextColourAtPoint(Vector2(7, 18))));
+		window.setTextAtPoint(Vector2(8, 18), "T", determineColour(WHITE, window.getTextColourAtPoint(Vector2(8, 18))));
+		window.setTextAtPoint(Vector2(9, 18), "I", determineColour(WHITE, window.getTextColourAtPoint(Vector2(9, 18))));
+		window.setTextAtPoint(Vector2(10, 18), "O", determineColour(WHITE, window.getTextColourAtPoint(Vector2(10, 18))));
+		window.setTextAtPoint(Vector2(11, 18), "N", determineColour(WHITE, window.getTextColourAtPoint(Vector2(11, 18))));
+		//UI LINE 2
 		window.setTextAtPoint(Vector2(0, 19), "W", determineColour(WHITE, window.getTextColourAtPoint(Vector2(0, 19))));
 		window.setTextAtPoint(Vector2(1, 19), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(1, 19))));
 		window.setTextAtPoint(Vector2(2, 19), "U", determineColour(WHITE, window.getTextColourAtPoint(Vector2(2, 19))));
@@ -2715,6 +2745,16 @@ void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 		window.setTextAtPoint(Vector2(23, 19), "G", determineColour(WHITE, window.getTextColourAtPoint(Vector2(23, 19))));
 		window.setTextAtPoint(Vector2(24, 19), "H", determineColour(WHITE, window.getTextColourAtPoint(Vector2(24, 19))));
 		window.setTextAtPoint(Vector2(25, 19), "T", determineColour(WHITE, window.getTextColourAtPoint(Vector2(25, 19))));
+		window.setTextAtPoint(Vector2(26, 19), ",", determineColour(WHITE, window.getTextColourAtPoint(Vector2(26, 19))));
+		window.setTextAtPoint(Vector2(27, 19), "F", determineColour(WHITE, window.getTextColourAtPoint(Vector2(27, 19))));
+		window.setTextAtPoint(Vector2(28, 19), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(28, 19))));
+		window.setTextAtPoint(Vector2(29, 19), "C", determineColour(WHITE, window.getTextColourAtPoint(Vector2(29, 19))));
+		window.setTextAtPoint(Vector2(30, 19), "O", determineColour(WHITE, window.getTextColourAtPoint(Vector2(30, 19))));
+		window.setTextAtPoint(Vector2(31, 19), "L", determineColour(WHITE, window.getTextColourAtPoint(Vector2(31, 19))));
+		window.setTextAtPoint(Vector2(32, 19), "O", determineColour(WHITE, window.getTextColourAtPoint(Vector2(32, 19))));
+		window.setTextAtPoint(Vector2(33, 19), "U", determineColour(WHITE, window.getTextColourAtPoint(Vector2(33, 19))));
+		window.setTextAtPoint(Vector2(34, 19), "R", determineColour(WHITE, window.getTextColourAtPoint(Vector2(34, 19))));
+		//END UI
 		window.writeConsole();
 	}
 }

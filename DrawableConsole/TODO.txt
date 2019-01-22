@@ -73,3 +73,5 @@ make sounds, replace placeholders
 
 make character model, more than just the one pixel - tick
 apply hitbox to it as well - tick
+
+MOVE ALL THE OLD CODE TO SEPERATE FILES

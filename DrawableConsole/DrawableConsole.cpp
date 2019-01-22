@@ -2852,6 +2852,91 @@ void animation_test()
 	}
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
+void animation_test_turtle()
+{
+	LPCWSTR title = L"Animation Test"; //GOOD TITLE, NO CHANGE NEEDED BOSS
+	SetConsoleTitleW(title);
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
+	}
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+	testAnimation.setAsset(vector<CustomAsset> {CustomAsset(22,11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\TurtleAnimation\\turtle_frame_001.bmp", 11,11)),
+												CustomAsset(22,11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\TurtleAnimation\\turtle_frame_002.bmp", 11,11)),
+												CustomAsset(22,11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\TurtleAnimation\\turtle_frame_003.bmp", 11,11)),
+												CustomAsset(22,11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\TurtleAnimation\\turtle_frame_004.bmp", 11,11))});
+	testAnimation.setLooping(true);
+	CustomAnimationAsset turtle2;
+	turtle2 = testAnimation;
+	turtle2.setLooping(true);
+	//testAnimation.setPaused(true);
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+			}
+		}
+		if (GetKeyDown('Q'))
+		{
+			testAnimation.togglePaused();
+			turtle2.togglePaused();
+		}
+		if (GetKeyDown('W'))
+		{
+			testAnimation.toggleLooping();
+			turtle2.toggleLooping();
+		}
+		if (GetKeyDown('E'))
+		{
+			testAnimation.resetAnimation();
+			turtle2.resetAnimation();
+		}
+		window = testAnimation.draw_asset(window, Vector2(0, 5));
+		window = turtle2.draw_asset(window, Vector2(20, 5));
+		//UI LINE
+		window.setTextAtPoint(Vector2(0, 19), "Q", determineColour(BLACK, window.getTextColourAtPoint(Vector2(0, 19))));
+		window.setTextAtPoint(Vector2(1, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(1, 19))));
+		window.setTextAtPoint(Vector2(2, 19), "P", determineColour(BLACK, window.getTextColourAtPoint(Vector2(2, 19))));
+		window.setTextAtPoint(Vector2(3, 19), "A", determineColour(BLACK, window.getTextColourAtPoint(Vector2(3, 19))));
+		window.setTextAtPoint(Vector2(4, 19), "U", determineColour(BLACK, window.getTextColourAtPoint(Vector2(4, 19))));
+		window.setTextAtPoint(Vector2(5, 19), "S", determineColour(BLACK, window.getTextColourAtPoint(Vector2(5, 19))));
+		window.setTextAtPoint(Vector2(6, 19), "E", determineColour(BLACK, window.getTextColourAtPoint(Vector2(6, 19))));
+		window.setTextAtPoint(Vector2(7, 19), ",", determineColour(BLACK, window.getTextColourAtPoint(Vector2(7, 19))));
+		window.setTextAtPoint(Vector2(8, 19), "W", determineColour(BLACK, window.getTextColourAtPoint(Vector2(8, 19))));
+		window.setTextAtPoint(Vector2(9, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(9, 19))));
+		window.setTextAtPoint(Vector2(10, 19), "L", determineColour(BLACK, window.getTextColourAtPoint(Vector2(10, 19))));
+		window.setTextAtPoint(Vector2(11, 19), "O", determineColour(BLACK, window.getTextColourAtPoint(Vector2(11, 19))));
+		window.setTextAtPoint(Vector2(12, 19), "O", determineColour(BLACK, window.getTextColourAtPoint(Vector2(12, 19))));
+		window.setTextAtPoint(Vector2(13, 19), "P", determineColour(BLACK, window.getTextColourAtPoint(Vector2(13, 19))));
+		window.setTextAtPoint(Vector2(14, 19), ",", determineColour(BLACK, window.getTextColourAtPoint(Vector2(14, 19))));
+		window.setTextAtPoint(Vector2(15, 19), "E", determineColour(BLACK, window.getTextColourAtPoint(Vector2(15, 19))));
+		window.setTextAtPoint(Vector2(16, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(16, 19))));
+		window.setTextAtPoint(Vector2(17, 19), "R", determineColour(BLACK, window.getTextColourAtPoint(Vector2(17, 19))));
+		window.setTextAtPoint(Vector2(18, 19), "E", determineColour(BLACK, window.getTextColourAtPoint(Vector2(18, 19))));
+		window.setTextAtPoint(Vector2(19, 19), "S", determineColour(BLACK, window.getTextColourAtPoint(Vector2(19, 19))));
+		window.setTextAtPoint(Vector2(20, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(20, 19))));
+		window.setTextAtPoint(Vector2(21, 19), "A", determineColour(BLACK, window.getTextColourAtPoint(Vector2(21, 19))));
+		window.setTextAtPoint(Vector2(22, 19), "R", determineColour(BLACK, window.getTextColourAtPoint(Vector2(22, 19))));
+		window.setTextAtPoint(Vector2(23, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(23, 19))));
+		//END UI
+		window.writeConsole();
+		//TODO, ADD UI AND CONTROLS TO MANIPULATE ANIMATION FOR TECH DEMO
+		Sleep(100);
+	}
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
+}
 void set_up_custom_assets()
 {
 	//EG setAsset(assetheight * 2, assetWidth, rgbArray)
@@ -2903,7 +2988,7 @@ int main()
 			Cheat_Wireframe = true;
 		}
 	}
-	animation_test();
+	animation_test_turtle();
 	//bmp_test2(testBmp);
 	//bmp_test2(fieldTestBmp);
 	//play_syde();

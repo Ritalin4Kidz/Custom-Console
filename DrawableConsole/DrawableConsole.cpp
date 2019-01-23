@@ -2969,10 +2969,21 @@ void animation_test_player()
 												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Left\\player_left_003.bmp", 11, 11)),
 												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Left\\player_left_002.bmp", 11, 11))});
 	CustomAnimationAsset playerAsset = playerIdle;
+	CustomAnimationAsset playerDab;
+	playerDab.setAsset(vector<CustomAsset> {	CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Dab\\player_dab_001.bmp", 11, 11)) });
+	CustomAnimationAsset playertpose;
+	playertpose.setAsset(vector<CustomAsset> {	CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\T_Pose\\player_tpose_001.bmp", 11, 11)) });
+	CustomAnimationAsset playerfistpump;
+	playerfistpump.setAsset(vector<CustomAsset>{CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Fist_Pump\\player_fistpump_001.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Fist_Pump\\player_fistpump_002.bmp", 11, 11))});
+	vector<CustomAnimationAsset> tauntArray = { playerDab, playertpose, playerfistpump };
+	int tauntNumber = 0;
+	CustomAnimationAsset playerTaunt = tauntArray[tauntNumber];
 	playerAsset.setLooping(true);
 	while (true)
 	{
 		SetConsoleCursorPosition(hOut, start);
+
 		for (int l = 0; l < windowWidth; l++)
 		{
 			for (int m = 0; m < windowHeight; m++)
@@ -2980,31 +2991,6 @@ void animation_test_player()
 				window.setTextAtPoint(Vector2(l, m), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 			}
 		}
-		if (GetKeyDown('A'))
-		{
-			if (lastPress != "Left")
-			{
-				playerAsset = playerLeft;
-				lastPress = "Left";
-			}
-		}
-		else if (GetKeyDown('D'))
-		{
-			if (lastPress != "Right")
-			{
-				playerAsset = playerRight;
-				lastPress = "Right";
-			}
-		}
-		else
-		{
-			if (lastPress != "Null")
-			{
-				playerAsset = playerIdle;
-				lastPress = "Null";
-			}
-		}
-		window = playerAsset.draw_asset(window, Vector2(10, 5));
 		//UI LINE
 		window.setTextAtPoint(Vector2(0, 19), "A", determineColour(BLACK, window.getTextColourAtPoint(Vector2(0, 19))));
 		window.setTextAtPoint(Vector2(1, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(1, 19))));
@@ -3020,7 +3006,72 @@ void animation_test_player()
 		window.setTextAtPoint(Vector2(11, 19), "G", determineColour(BLACK, window.getTextColourAtPoint(Vector2(11, 19))));
 		window.setTextAtPoint(Vector2(12, 19), "H", determineColour(BLACK, window.getTextColourAtPoint(Vector2(12, 19))));
 		window.setTextAtPoint(Vector2(13, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(13, 19))));
+		window.setTextAtPoint(Vector2(14, 19), ",", determineColour(BLACK, window.getTextColourAtPoint(Vector2(14, 19))));
+		window.setTextAtPoint(Vector2(15, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(15, 19))));
+		window.setTextAtPoint(Vector2(16, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(16, 19))));
+		window.setTextAtPoint(Vector2(17, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(17, 19))));
+		window.setTextAtPoint(Vector2(18, 19), "A", determineColour(BLACK, window.getTextColourAtPoint(Vector2(18, 19))));
+		window.setTextAtPoint(Vector2(19, 19), "U", determineColour(BLACK, window.getTextColourAtPoint(Vector2(19, 19))));
+		window.setTextAtPoint(Vector2(20, 19), "N", determineColour(BLACK, window.getTextColourAtPoint(Vector2(20, 19))));
+		window.setTextAtPoint(Vector2(21, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(21, 19))));
+		window.setTextAtPoint(Vector2(22, 19), ",", determineColour(BLACK, window.getTextColourAtPoint(Vector2(22, 19))));
+		window.setTextAtPoint(Vector2(23, 19), "C", determineColour(BLACK, window.getTextColourAtPoint(Vector2(23, 19))));
+		window.setTextAtPoint(Vector2(24, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(24, 19))));
+		window.setTextAtPoint(Vector2(25, 19), "C", determineColour(BLACK, window.getTextColourAtPoint(Vector2(25, 19))));
+		window.setTextAtPoint(Vector2(26, 19), "H", determineColour(BLACK, window.getTextColourAtPoint(Vector2(26, 19))));
+		window.setTextAtPoint(Vector2(27, 19), "G", determineColour(BLACK, window.getTextColourAtPoint(Vector2(27, 19))));
+		window.setTextAtPoint(Vector2(28, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(28, 19))));
+		window.setTextAtPoint(Vector2(29, 19), "A", determineColour(BLACK, window.getTextColourAtPoint(Vector2(29, 19))));
+		window.setTextAtPoint(Vector2(30, 19), "U", determineColour(BLACK, window.getTextColourAtPoint(Vector2(30, 19))));
+		window.setTextAtPoint(Vector2(31, 19), "N", determineColour(BLACK, window.getTextColourAtPoint(Vector2(31, 19))));
+		window.setTextAtPoint(Vector2(32, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(32, 19))));
 		//END UI
+		if (GetKeyDown('A'))
+		{
+			if (lastPress != "Left")
+			{
+				playerAsset = playerLeft;
+				lastPress = "Left";
+			}
+			window.setTextAtPoint(Vector2(0, 19), "A", BLACK_BRIGHTRED_BG);
+		}
+		else if (GetKeyDown('D'))
+		{
+			if (lastPress != "Right")
+			{
+				playerAsset = playerRight;
+				lastPress = "Right";
+			}
+			window.setTextAtPoint(Vector2(7, 19), "D", BLACK_BRIGHTRED_BG);
+		}
+		else if (GetKeyDown('T'))
+		{
+			if (lastPress != "Taunt")
+			{
+				playerAsset = playerTaunt;
+				lastPress = "Taunt";
+			}
+			window.setTextAtPoint(Vector2(15, 19), "T", BLACK_BRIGHTRED_BG);
+		}
+		else
+		{
+			if (lastPress != "Null")
+			{
+				playerAsset = playerIdle;
+				lastPress = "Null";
+			}
+		}
+		if (GetKeyDown('C'))
+		{
+			tauntNumber++;
+			if (tauntNumber >= tauntArray.size())
+			{
+				tauntNumber = 0;
+			}
+			playerTaunt = tauntArray[tauntNumber];
+			window.setTextAtPoint(Vector2(23, 19), "C", BLACK_BRIGHTRED_BG);
+		}
+		window = playerAsset.draw_asset(window, Vector2(10, 5));
 		window.writeConsole();
 		//TODO, ADD UI AND CONTROLS TO MANIPULATE ANIMATION FOR TECH DEMO
 		Sleep(100);

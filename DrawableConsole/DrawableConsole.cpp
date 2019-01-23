@@ -2937,6 +2937,96 @@ void animation_test_turtle()
 	}
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
+void animation_test_player()
+{
+	string lastPress = "Null";
+	LPCWSTR title = L"Animation Test"; //GOOD TITLE, NO CHANGE NEEDED BOSS
+	SetConsoleTitleW(title);
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
+	}
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+	CustomAnimationAsset playerIdle;
+	playerIdle.setAsset(vector<CustomAsset> {	CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Idle\\player_idle_001.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Idle\\player_idle_002.bmp", 11, 11))});
+	CustomAnimationAsset playerRight;
+	playerRight.setAsset(vector<CustomAsset> {	CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Right\\player_right_001.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Right\\player_right_004.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Right\\player_right_003.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Right\\player_right_002.bmp", 11, 11))});
+	CustomAnimationAsset playerLeft;
+	playerLeft.setAsset(vector<CustomAsset> {	CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Left\\player_left_001.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Left\\player_left_004.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Left\\player_left_003.bmp", 11, 11)),
+												CustomAsset(22, 11, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\PlayerAnimations\\Left\\player_left_002.bmp", 11, 11))});
+	CustomAnimationAsset playerAsset = playerIdle;
+	playerAsset.setLooping(true);
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+			}
+		}
+		if (GetKeyDown('A'))
+		{
+			if (lastPress != "Left")
+			{
+				playerAsset = playerLeft;
+				lastPress = "Left";
+			}
+		}
+		else if (GetKeyDown('D'))
+		{
+			if (lastPress != "Right")
+			{
+				playerAsset = playerRight;
+				lastPress = "Right";
+			}
+		}
+		else
+		{
+			if (lastPress != "Null")
+			{
+				playerAsset = playerIdle;
+				lastPress = "Null";
+			}
+		}
+		window = playerAsset.draw_asset(window, Vector2(10, 5));
+		//UI LINE
+		window.setTextAtPoint(Vector2(0, 19), "A", determineColour(BLACK, window.getTextColourAtPoint(Vector2(0, 19))));
+		window.setTextAtPoint(Vector2(1, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(1, 19))));
+		window.setTextAtPoint(Vector2(2, 19), "L", determineColour(BLACK, window.getTextColourAtPoint(Vector2(2, 19))));
+		window.setTextAtPoint(Vector2(3, 19), "E", determineColour(BLACK, window.getTextColourAtPoint(Vector2(3, 19))));
+		window.setTextAtPoint(Vector2(4, 19), "F", determineColour(BLACK, window.getTextColourAtPoint(Vector2(4, 19))));
+		window.setTextAtPoint(Vector2(5, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(5, 19))));
+		window.setTextAtPoint(Vector2(6, 19), ",", determineColour(BLACK, window.getTextColourAtPoint(Vector2(6, 19))));
+		window.setTextAtPoint(Vector2(7, 19), "D", determineColour(BLACK, window.getTextColourAtPoint(Vector2(7, 19))));
+		window.setTextAtPoint(Vector2(8, 19), ":", determineColour(BLACK, window.getTextColourAtPoint(Vector2(8, 19))));
+		window.setTextAtPoint(Vector2(9, 19), "R", determineColour(BLACK, window.getTextColourAtPoint(Vector2(9, 19))));
+		window.setTextAtPoint(Vector2(10, 19), "I", determineColour(BLACK, window.getTextColourAtPoint(Vector2(10, 19))));
+		window.setTextAtPoint(Vector2(11, 19), "G", determineColour(BLACK, window.getTextColourAtPoint(Vector2(11, 19))));
+		window.setTextAtPoint(Vector2(12, 19), "H", determineColour(BLACK, window.getTextColourAtPoint(Vector2(12, 19))));
+		window.setTextAtPoint(Vector2(13, 19), "T", determineColour(BLACK, window.getTextColourAtPoint(Vector2(13, 19))));
+		//END UI
+		window.writeConsole();
+		//TODO, ADD UI AND CONTROLS TO MANIPULATE ANIMATION FOR TECH DEMO
+		Sleep(100);
+	}
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
+}
 void set_up_custom_assets()
 {
 	//EG setAsset(assetheight * 2, assetWidth, rgbArray)
@@ -2988,7 +3078,7 @@ int main()
 			Cheat_Wireframe = true;
 		}
 	}
-	animation_test_turtle();
+	animation_test_player();
 	//bmp_test2(testBmp);
 	//bmp_test2(fieldTestBmp);
 	//play_syde();

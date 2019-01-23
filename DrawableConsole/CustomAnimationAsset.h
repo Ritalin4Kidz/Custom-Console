@@ -13,7 +13,6 @@ public:
 	virtual ~CustomAnimationAsset() {}
 
 	void operator=(CustomAnimationAsset other);
-
 	void resetAnimation() { frame_number = 0; }
 
 	void setFrame(int aFrameNo);

@@ -7,6 +7,7 @@ void CustomAnimationAsset::operator=(CustomAnimationAsset other)
 	this->frame_number = 0;
 }
 
+
 void CustomAnimationAsset::setFrame(int aFrameNo)
 {
 	if (aFrameNo >= m_Frames.size() || aFrameNo < 0 )

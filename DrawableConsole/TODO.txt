@@ -75,3 +75,5 @@ make character model, more than just the one pixel - tick
 apply hitbox to it as well - tick
 
 MOVE ALL THE OLD CODE TO SEPERATE FILES
+
+TRANSFER PLAYER BMP TO MAIN GAME

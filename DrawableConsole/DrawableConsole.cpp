@@ -30,6 +30,7 @@
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+#include "ReiventTheWheel.h"
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
@@ -2585,7 +2586,7 @@ void opening()
    	poweredBySYDEEngine(i, 15);
    	Sleep(50);
    }
-    introMenu();
+   //introMenu();
 }
 void play_syde()
 {
@@ -3129,7 +3130,27 @@ int main()
 			Cheat_Wireframe = true;
 		}
 	}
-	animation_test_player();
+	//REInvent The Wheel
+	GAME_RTW m_ReinventTheWheel;
+	LPCWSTR title = L"Re-Invent The Wheel";
+	SetConsoleTitleW(title);
+	opening();
+	while (true)
+	{
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		SetConsoleCursorPosition(hOut, start);
+		window = m_ReinventTheWheel.window_draw_game(window, windowWidth, windowHeight);
+		window.writeConsole();
+		Sleep(30);
+	}
+
+
+	//animation_test_player();
+
 	//bmp_test2(testBmp);
 	//bmp_test2(fieldTestBmp);
 	//play_syde();

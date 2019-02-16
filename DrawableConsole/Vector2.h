@@ -13,6 +13,9 @@ public:
 	void setX(float a_X) { x = a_X; }
 	void setY(float a_Y) { y = a_Y; }
 
+	void addX(float a_X) { x += a_X; }
+	void addY(float a_Y) { y += a_Y; }
+
 	Vector2& operator+(Vector2 other);
 	Vector2& operator-(Vector2 other);
 	Vector2& operator*(float other);

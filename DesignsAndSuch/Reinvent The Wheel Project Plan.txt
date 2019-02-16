@@ -1,0 +1,33 @@
+Grid Size: 20x20
+
+Gameplay:
+
+Invent The Wheel:
+User will be able to create a wheel on a blank canvas
+
+- Draw
+16 Colours, player will select a:
+	-Colour, (Most likely with a colour wheel)
+	-Pixel on the grid, (use arrow keys to move, select with a blue highlighter)
+
+- Erase
+Select A Grid space, and then set it to a nullcolour,
+
+Play With The Wheel:
+In a test level, the wheel can be moved and played with
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

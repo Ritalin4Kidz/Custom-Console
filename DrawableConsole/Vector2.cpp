@@ -1,6 +1,28 @@
 #include "pch.h"
 #include "Vector2.h"
 #include <cmath>
+void Vector2::addXSafe(float a_X,float min, float max)
+{
+	x += a_X;
+	if (x > max)
+	{
+		x = max;
+	}
+	else if (x < min) {
+		x = min;
+	}
+}
+void Vector2::addYSafe(float a_Y,float min, float max)
+{
+	y += a_Y;
+	if (y > max)
+	{
+		y = max;
+	}
+	else if (y < min) {
+		y = min;
+	}
+}
 Vector2 & Vector2::operator+(Vector2 other)
 {
 	//insert return statement here

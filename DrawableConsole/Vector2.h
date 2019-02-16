@@ -16,6 +16,9 @@ public:
 	void addX(float a_X) { x += a_X; }
 	void addY(float a_Y) { y += a_Y; }
 
+	void addXSafe(float a_X, float min, float max);
+	void addYSafe(float a_Y, float min, float max);
+
 	Vector2& operator+(Vector2 other);
 	Vector2& operator-(Vector2 other);
 	Vector2& operator*(float other);

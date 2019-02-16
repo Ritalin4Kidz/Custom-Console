@@ -29,6 +29,19 @@
 using namespace std;
 using namespace Gdiplus;
 
+class GAME_RTW_KEYCODE {
+public:
+	GAME_RTW_KEYCODE(char a_keyCode) { keyCode = a_keyCode; }
+	virtual ~GAME_RTW_KEYCODE() {}
+	bool getIsPressed() { return isPressed; }
+	void setPressed(bool a_press) { isPressed = a_press; }
+
+	char getKeyCode() { return keyCode; }
+private:
+	bool isPressed = false;
+	char keyCode;
+};
+
 class GAME_RTW_PIXEL {
 public:
 	GAME_RTW_PIXEL();
@@ -55,15 +68,21 @@ public:
 	//GAME WINDOW
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight);
 	//Game Voids
-	void inputVoids();
+	void inputVoids(int windowWidth, int windowHeight);
+	void inputVoidsWheelTest(int windowWidth, int windowHeight);
 	void nextColour();
+	void setUpTest();
 	bool GetKey(char KeyCode);
+	bool GetKey(GAME_RTW_KEYCODE key);
 private:
 	int colourcode = 0;
+	string m_scene;
 	Vector2 m_CursorPoint;
 	vector<GAME_RTW_PIXEL> m_PaintingArray;
 	ColourClass m_PaintColour = BLACK;
 	vector<ColourClass> m_paintColours = { BLACK, BLUE_BLUE_BG, RED_RED_BG, YELLOW_YELLOW_BG, GREEN_GREEN_BG, PURPLE_PURPLE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, LIGHTBLUE_LIGHTBLUE_BG,
 											DARKBLUE_DARKBLUE_BG, BRIGHTRED_BRIGHTRED_BG, BRIGHTGREEN_BRIGHTGREEN_BG, BRIGHTYELLOW_BRIGHTYELLOW_BG, LIGHTPURPLE_LIGHTPURPLE_BG, LIGHTGREY_LIGHTGREY_BG,
 											NULLCOLOUR};
+	// KEYCODES
+	GAME_RTW_KEYCODE KeyCode_T = ('T');
 };

@@ -130,6 +130,9 @@ void GAME_RTW::inputVoids(int windowWidth, int windowHeight)
 	if (GetKey('C')) {
 		nextColour();
 	}
+	if (GetKey('O')) {
+		nextChar();
+	}
 	if (GetKey(KeyCode_T)) {
 		if (!KeyCode_T.getIsPressed()) {
 			setUpTest(windowWidth, windowHeight);
@@ -161,6 +164,14 @@ void GAME_RTW::nextColour()
 		colourcode = 0;
 	}
 	m_PaintColour = m_paintColours[colourcode];
+}
+
+void GAME_RTW::nextChar()
+{
+	charcode++;
+	if (charcode >= m_details.size()) {
+		charcode = 0;
+	}
 }
 
 void GAME_RTW::setUpTest(int windowWidth, int windowHeight)

@@ -72,6 +72,7 @@ public:
 	void inputVoids(int windowWidth, int windowHeight);
 	void inputVoidsWheelTest(int windowWidth, int windowHeight);
 	void nextColour();
+	void nextChar();
 	void setUpTest(int windowWidth, int windowHeight);
 	bool GetKey(char KeyCode);
 	bool GetKey(GAME_RTW_KEYCODE key);
@@ -86,6 +87,8 @@ private:
 	vector<ColourClass> m_paintColours = { BLACK, BLUE_BLUE_BG, RED_RED_BG, YELLOW_YELLOW_BG, GREEN_GREEN_BG, PURPLE_PURPLE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, LIGHTBLUE_LIGHTBLUE_BG,
 											DARKBLUE_DARKBLUE_BG, BRIGHTRED_BRIGHTRED_BG, BRIGHTGREEN_BRIGHTGREEN_BG, BRIGHTYELLOW_BRIGHTYELLOW_BG, LIGHTPURPLE_LIGHTPURPLE_BG, LIGHTGREY_LIGHTGREY_BG,
 											NULLCOLOUR};
+	int charcode = 0;
+	vector<vector<char>> m_details = { {' ', ' '}, {'*','*'}, {'(',')'} };
 	// KEYCODES
 	GAME_RTW_KEYCODE KeyCode_T = ('T');
 	CustomAsset wheel;

@@ -92,19 +92,18 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 				window.setTextAtPoint(Vector2(l, m), " ", WHITE_GREEN_BG);
 			}
 		}
-		for (int i = 0; i < rbPixelsPlayer; i++) {
-			if (showHitbox) {
-				window.setTextAtPoint(rbArr[i].getPos(), " ", BRIGHTWHITE_BRIGHTGREEN_BG);
-			}
-			playerRigidBody[i].gravity(rbArr);
-			playerRigidBody[i].gravity(playerRigidBody);
-		}
 		for (int i = 0; i < rbArr.size(); i++)
 		{
-			rbArr[i].gravity(rbArr);
+			//rbArr[i].gravity(rbArr);
 			//rbArr[i].gravity(playerRigidBody);
 			if (rbArr[i].getTag() == "Asterix") {
 				window.setTextAtPoint(rbArr[i].getPos(), "*", determineColour_RTW(RED, window.getTextColourAtPoint(rbArr[i].getPos())));
+			}
+			rbArr[i].gravity(rbArr);
+		}
+		for (int i = 0; i < rbPixelsPlayer; i++) {
+			if (rbArr[i].checkArrayForHit(rbArr)) {
+				rbArr[0].setSpeed(0);
 			}
 		}
 		window = wheel.draw_asset(window, Vector2(rbArr[0].getPos().getX(), rbArr[0].getPos().getY() - heightInt_Test));
@@ -112,6 +111,13 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 		for (int i = 0; i < windowWidth; i++)
 		{
 			window.setTextAtPoint(Vector2(i, windowHeight - 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+		}
+		for (int i = 0; i < rbPixelsPlayer; i++) {
+			if (showHitbox) {
+				window.setTextAtPoint(rbArr[i].getPos(), " ", BRIGHTWHITE_BRIGHTGREEN_BG);
+			}
+			//playerRigidBody[i].gravity(rbArr);
+			//playerRigidBody[i].gravity(playerRigidBody);
 		}
 		window.setTextAtPoint(Vector2(0, windowHeight - 1), "T:Draw,WAD:Move,H:Hitbox", BLACK_BRIGHTWHITE_BG);
 		// TODO: ADD Rigidbody array = all nullcolours
@@ -316,14 +322,12 @@ void GAME_RTW::setUpTest(int windowWidth, int windowHeight)
 				if (q > maxX_Test) {
 					maxX_Test = q;
 				}
-				playerRigidBody.push_back(PhysicsObject("playerRB", Vector2(q, m), false, 0));
+				//playerRigidBody.push_back(PhysicsObject("playerRB", Vector2(q, m), false, 0));
 				//rbArr.push_back(PhysicsObject("playerRB" + to_string(q) + "," + to_string(m), m_WheelPoint, false, 0));
-				rbArr.push_back(PhysicsObject("playerRB", m_WheelPoint, true, 0));
+				rbArr.push_back(PhysicsObject("playerRB", Vector2(q, m), false, 0));
 				if (rbPixelsPlayer != 0) {
 					rbArr[rbArr.size() - 1].setParentPos(rbArr[0].getPos());
-				}
-				else {
-					rbArr[rbArr.size() - 1].setKinematic(false);
+					rbArr[rbArr.size() - 1].setConstantSpeed(true, 0.0f);
 				}
 				rbPixelsPlayer++;
 			}
@@ -361,7 +365,7 @@ void GAME_RTW::setUpTest(int windowWidth, int windowHeight)
 	PhysicsObject testRb("Test_RigidBody", Vector2(26, windowHeight - 7), true, 0);
 	testRb.setTag("Asterix");
 	rbArr.push_back(testRb);
-
+	//RIGIDBOIES ON PLAYER ARE FUCKED YO
 }
 
 bool GAME_RTW::GetKey(char KeyCode)

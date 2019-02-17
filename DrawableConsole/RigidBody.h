@@ -11,6 +11,7 @@ public:
 	virtual ~RigidBody() {}
 
 	void gravity(vector<RigidBody> rigidbodyArray);
+	bool checkArrayForHit(vector<RigidBody> rbArr);
 
 	bool operator==(RigidBody rb);
 	bool operator!=(RigidBody rb);
@@ -31,6 +32,7 @@ public:
 	void setNewStartPos(Vector2 newPos) { startPos = newPos; }
 	void setColour(ColourClass a_col) { m_colour = a_col; }
 	void setParentPos(Vector2 a_Pos) { parent_Pos = a_Pos; differenceFromOrigin = Vector2(parent_Pos.getX() - m_pos.getX(),parent_Pos.getY() - m_pos.getY()); }
+	void setConstantSpeed(bool a_Constant, float speed) { constantspeed = a_Constant; constantSpeedFloat = speed; }
 
 	bool getIsTrap() { return m_isTrap; }
 	bool getIsTrigger() { return m_isTrigger; }
@@ -56,6 +58,8 @@ private:
 	string levelTrigger = "";
 	string interactTrigger = "";
 	bool m_solidBottom = false;
+	bool constantspeed = false;
+	float constantSpeedFloat = 0.0f;
 	float m_Speed = 0.0f;
 	string id = "";
 	Vector2 startPos;

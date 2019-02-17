@@ -43,7 +43,45 @@ void RigidBody::gravity(vector<RigidBody> rigidbodyArray)
 		{
 			m_Speed = 0;
 		}
+		if (constantspeed) {
+			m_Speed = constantSpeedFloat;
+		}
 	}
+}
+
+bool RigidBody::checkArrayForHit(vector<RigidBody> rbArr)
+{
+	float distanceAtStart = m_Speed;
+	float distance = distanceAtStart;
+	if (!m_Kinematic)
+	{
+		bool hasHit = false;
+		for (int i = 0; i < rbArr.size(); i++)
+		{
+			if (rbArr[i] != *this)
+			{
+				//if (rigidbodyArray[i].m_pos.getY() > this->m_pos.getY())
+				//{
+				//	if (distance + m_pos.getY() >= rigidbodyArray[i].m_pos.getY())
+				//	{
+				//		distance = abs(this->m_pos.getY() - rigidbodyArray[i].m_pos.getY());
+				//		m_Speed = 0;
+				//		hasHit = true;
+				//		//m_Kinematic = true;
+				//	}
+				//}
+				if (this->getPos().willHit(rbArr[i].getPos(), Vector2(0, m_Speed)))
+				{
+					if (distance + m_pos.getY() >= rbArr[i].m_pos.getY())
+					{
+						return true;
+						//m_Kinematic = true;
+					}
+				}
+			}
+		}
+	}
+	return false;
 }
 
 bool RigidBody::operator==(RigidBody rb)

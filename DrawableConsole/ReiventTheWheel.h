@@ -65,24 +65,35 @@ public:
 	void generalConstructor();
 	void setUpPaintArray(int windowWidth, int windowHeight);
 	void setPaintArrayAtPoint(Vector2 aPoint, ColourClass colour);
+	ColourClass getColourArrayAtPoint(Vector2 aPoint);
 	//GAME WINDOW
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight);
 	//Game Voids
 	void inputVoids(int windowWidth, int windowHeight);
 	void inputVoidsWheelTest(int windowWidth, int windowHeight);
 	void nextColour();
-	void setUpTest();
+	void setUpTest(int windowWidth, int windowHeight);
 	bool GetKey(char KeyCode);
 	bool GetKey(GAME_RTW_KEYCODE key);
 private:
 	int colourcode = 0;
 	string m_scene;
 	Vector2 m_CursorPoint;
+	Vector2 m_WheelPoint;
 	vector<GAME_RTW_PIXEL> m_PaintingArray;
 	ColourClass m_PaintColour = BLACK;
+	vector<RigidBody> rbArr;
 	vector<ColourClass> m_paintColours = { BLACK, BLUE_BLUE_BG, RED_RED_BG, YELLOW_YELLOW_BG, GREEN_GREEN_BG, PURPLE_PURPLE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, LIGHTBLUE_LIGHTBLUE_BG,
 											DARKBLUE_DARKBLUE_BG, BRIGHTRED_BRIGHTRED_BG, BRIGHTGREEN_BRIGHTGREEN_BG, BRIGHTYELLOW_BRIGHTYELLOW_BG, LIGHTPURPLE_LIGHTPURPLE_BG, LIGHTGREY_LIGHTGREY_BG,
 											NULLCOLOUR};
 	// KEYCODES
 	GAME_RTW_KEYCODE KeyCode_T = ('T');
+	CustomAsset wheel;
+
+	int minX_Test;
+	int maxX_Test;
+	int minY_Test;
+	int maxY_Test;
+	int widthInt_Test;
+	int heightInt_Test;
 };

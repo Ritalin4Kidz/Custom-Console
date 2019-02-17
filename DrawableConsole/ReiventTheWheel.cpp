@@ -29,6 +29,17 @@ void GAME_RTW::setPaintArrayAtPoint(Vector2 aPoint, ColourClass colour)
 	}
 }
 
+ColourClass GAME_RTW::getColourArrayAtPoint(Vector2 aPoint)
+{
+	for (int i = 0; i < m_PaintingArray.size(); i++)
+	{
+		if (m_PaintingArray[i].getPoint() == aPoint) {
+			return m_PaintingArray[i].getColour();
+		}
+	}
+	return NULLCOLOUR;
+}
+
 ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	if (m_scene == "Draw_Wheel")
@@ -67,6 +78,10 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 	else if (m_scene == "Test_Wheel")
 	{
 		inputVoidsWheelTest(windowWidth, windowHeight);
+		for (int i = 0; i < rbArr.size(); i++)
+		{
+			rbArr[i].gravity(rbArr);
+		}
 		for (int l = 0; l < windowWidth; l++)
 		{
 			for (int m = 0; m < windowHeight; m++)
@@ -74,6 +89,14 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 				window.setTextAtPoint(Vector2(l, m), " ", WHITE_LIGHTBLUE_BG);
 			}
 		}
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = windowHeight - 4; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE_GREEN_BG);
+			}
+		}
+		window = wheel.draw_asset(window, Vector2(rbArr[0].getPos().getX(), rbArr[0].getPos().getY() - heightInt_Test));
 		for (int i = 0; i < windowWidth; i++)
 		{
 			window.setTextAtPoint(Vector2(i, windowHeight - 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
@@ -109,7 +132,7 @@ void GAME_RTW::inputVoids(int windowWidth, int windowHeight)
 	}
 	if (GetKey(KeyCode_T)) {
 		if (!KeyCode_T.getIsPressed()) {
-			setUpTest();
+			setUpTest(windowWidth, windowHeight);
 			KeyCode_T.setPressed(true);
 		}
 	}
@@ -140,9 +163,67 @@ void GAME_RTW::nextColour()
 	m_PaintColour = m_paintColours[colourcode];
 }
 
-void GAME_RTW::setUpTest()
+void GAME_RTW::setUpTest(int windowWidth, int windowHeight)
 {
 	m_scene = "Test_Wheel";
+	rbArr = vector<RigidBody>();
+	
+	minX_Test = windowWidth;
+	maxX_Test = 0;
+	minY_Test = windowHeight;
+	maxY_Test = 0;
+
+	for (int q = 0; q < windowWidth; q++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			if (getColourArrayAtPoint(Vector2(q, m)) != NULLCOLOUR)
+			{
+				if (m < minY_Test) { 
+					minY_Test = m; 
+				}
+				if (m > maxY_Test) { 
+					maxY_Test = m; 
+				}
+				if (q < minX_Test) { 
+					minX_Test = q; 
+				}
+				if (q > maxX_Test) {
+					maxX_Test = q;
+				}
+			}
+		}
+	}
+	vector<ColourClass> wheelArray = vector<ColourClass>();
+	for (int z = minX_Test; z <= maxX_Test; z++)
+	{
+		for (int m = minY_Test; m <= maxY_Test; m++)
+		{
+			wheelArray.push_back(getColourArrayAtPoint(Vector2(z, m)));
+		}
+	}
+	vector<vector<TextItem>> temp_temp;
+	for (int i = minY_Test; i < maxY_Test + 1; i++)
+	{
+		vector<TextItem> temp;
+		for (int ii = minX_Test; ii < maxX_Test + 2; ii++)
+		{
+			temp.push_back(TextItem(' ', getColourArrayAtPoint(Vector2(ii, i))));
+		}
+		temp_temp.push_back(temp);
+	}
+	widthInt_Test = (maxX_Test - minX_Test);
+	heightInt_Test = (maxY_Test - minY_Test);
+	//wheel.setAsset(widthInt_Test + 1, heightInt_Test + 1, wheelArray);
+	//wheel.setAsset((maxX_Test - minX_Test) + 1, (maxY_Test - minY_Test) + 1, wheelArray);
+	wheel.setAsset(temp_temp);
+	m_WheelPoint = Vector2(10, 5);
+	rbArr.push_back(PhysicsObject("player_001", m_WheelPoint, false, 0));
+	for (int k = 0; k < windowWidth; k++)
+	{
+		rbArr.push_back(PhysicsObject("LowerGround" + to_string(k), Vector2(k, windowHeight - 5), true, 0));
+	}
+
 }
 
 bool GAME_RTW::GetKey(char KeyCode)

@@ -30,6 +30,7 @@ public:
 	void setInteractString(string a_val) { interactTrigger = a_val; }
 	void setNewStartPos(Vector2 newPos) { startPos = newPos; }
 	void setColour(ColourClass a_col) { m_colour = a_col; }
+	void setParentPos(Vector2 a_Pos) { parent_Pos = a_Pos; differenceFromOrigin = Vector2(parent_Pos.getX() - m_pos.getX(),parent_Pos.getY() - m_pos.getY()); }
 
 	bool getIsTrap() { return m_isTrap; }
 	bool getIsTrigger() { return m_isTrigger; }
@@ -40,6 +41,8 @@ public:
 	Vector2 getNewStartPos() {return startPos;}
 	Vector2 getPos() { return m_pos; }
 	ColourClass getColour() { return m_colour; }
+	Vector2 getParentPos() { return parent_Pos; }
+	Vector2 getDifference() { return differenceFromOrigin; }
 
 	void setTag(string a_tag) { tag = a_tag; }
 	string getTag() { return tag; }
@@ -57,6 +60,7 @@ private:
 	string id = "";
 	Vector2 startPos;
 	Vector2 m_pos;
-
+	Vector2 parent_Pos;
+	Vector2 differenceFromOrigin;
 	string tag = "";
 };

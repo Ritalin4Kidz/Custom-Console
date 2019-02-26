@@ -11,6 +11,7 @@ public:
 	virtual ~RigidBody() {}
 
 	void gravity(vector<RigidBody> rigidbodyArray);
+	void gravityChildren(vector<RigidBody> rigidbodyArray, vector<RigidBody> children);
 	bool checkArrayForHit(vector<RigidBody> rbArr);
 
 	bool operator==(RigidBody rb);

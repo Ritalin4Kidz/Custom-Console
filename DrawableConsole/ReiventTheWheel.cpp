@@ -77,6 +77,14 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 	}
 	else if (m_scene == "Test_Wheel")
 	{
+		//CHECK RIGIDBODY IS STABLE
+		vector<RigidBody> playerChildren;
+		for (int i = 1; i < rbPixelsPlayer; i++)
+		{
+			playerChildren.push_back(rbArr[i]);
+		}
+		rbArr[0].gravityChildren(rbArr, playerChildren);
+		//THEN CHECK INPUT, FOR GRAVITY LATER (DUE TO MANIPULATION OF SPEED)
 		inputVoidsWheelTest(windowWidth, windowHeight);
 		for (int l = 0; l < windowWidth; l++)
 		{
@@ -99,13 +107,14 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 			if (rbArr[i].getTag() == "Asterix") {
 				window.setTextAtPoint(rbArr[i].getPos(), "*", determineColour_RTW(RED, window.getTextColourAtPoint(rbArr[i].getPos())));
 			}
+
 			rbArr[i].gravity(rbArr);
 		}
-		for (int i = 0; i < rbPixelsPlayer; i++) {
-			if (rbArr[i].checkArrayForHit(rbArr)) {
-				rbArr[0].setSpeed(0);
-			}
-		}
+		//for (int i = 0; i < rbPixelsPlayer; i++) {
+		//	if (rbArr[i].checkArrayForHit(rbArr)) {
+		//		rbArr[0].setSpeed(0);
+		//	}
+		//}
 		window = wheel.draw_asset(window, Vector2(rbArr[0].getPos().getX(), rbArr[0].getPos().getY() - heightInt_Test));
 		rbArr = rbArrMove(rbArr, rbArr[0].getPos(), 1, rbPixelsPlayer);
 		for (int i = 0; i < windowWidth; i++)
@@ -119,7 +128,7 @@ ConsoleWindow GAME_RTW::window_draw_game(ConsoleWindow window, int windowWidth, 
 			//playerRigidBody[i].gravity(rbArr);
 			//playerRigidBody[i].gravity(playerRigidBody);
 		}
-		window.setTextAtPoint(Vector2(0, windowHeight - 1), "T:Draw,WAD:Move,H:Hitbox", BLACK_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(0, windowHeight - 1), "T:Draw,WAD:Move,H:Hitbox,Speed:" + to_string(rbArr[0].getSpeed()), BLACK_BRIGHTWHITE_BG);
 		// TODO: ADD Rigidbody array = all nullcolours
 		//		 TEST RIGIDBODYS
 	}
@@ -304,6 +313,7 @@ void GAME_RTW::setUpTest(int windowWidth, int windowHeight)
 	maxY_Test = 0;
 	playerRigidBody = vector<RigidBody>();
 	rbPixelsPlayer = 0;
+	//TODO, FIX HITBOX ALIGNMENT ON BIGGER DRAWINGS
 	for (int q = 0; q < windowWidth; q++)
 	{
 		for (int m = 0; m < windowHeight; m++)
@@ -328,6 +338,7 @@ void GAME_RTW::setUpTest(int windowWidth, int windowHeight)
 				if (rbPixelsPlayer != 0) {
 					rbArr[rbArr.size() - 1].setParentPos(rbArr[0].getPos());
 					rbArr[rbArr.size() - 1].setConstantSpeed(true, 0.0f);
+					rbArr[rbArr.size() - 1].setKinematic(true);
 				}
 				rbPixelsPlayer++;
 			}

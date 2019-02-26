@@ -30,7 +30,7 @@ void RigidBody::gravity(vector<RigidBody> rigidbodyArray)
 						m_Speed = 0;
 						hasHit = true;
 						//m_Kinematic = true;
-					}
+					}  
 				}
 			}
 		}
@@ -45,6 +45,24 @@ void RigidBody::gravity(vector<RigidBody> rigidbodyArray)
 		}
 		if (constantspeed) {
 			m_Speed = constantSpeedFloat;
+		}
+	}
+}
+
+void RigidBody::gravityChildren(vector<RigidBody> rigidbodyArray, vector<RigidBody> children)
+{
+	float distanceAtStart = m_Speed;
+	for (int ii = 0; ii < children.size(); ii++)
+	{
+		for (int i = 0; i < rigidbodyArray.size(); i++)
+		{
+			if (rigidbodyArray[i] != children[ii])
+			{
+				if (children[ii].getPos().willHit(rigidbodyArray[i].getPos(), Vector2(0, m_Speed)))
+				{
+					m_Speed = 0;
+				}
+			}
 		}
 	}
 }

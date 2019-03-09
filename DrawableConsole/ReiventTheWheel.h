@@ -23,7 +23,6 @@
 #include "AssetsClass.h"
 #include "CustomAsset.h"
 #include "CustomAnimationAsset.h"
-#include "Defaults.h"
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>

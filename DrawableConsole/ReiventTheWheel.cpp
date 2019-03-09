@@ -275,7 +275,7 @@ void GAME_RTW::inputVoidsWheelTest(int windowWidth, int windowHeight)
 		if (!KeyCode_W.getIsPressed()) {
 			if (rbArr[0].getSpeed() == 0)
 			{
-				rbArr[0].setSpeed(RTWDefaults::getJumpPower());
+				rbArr[0].setSpeed(-3);
 			}
 			KeyCode_T.setPressed(true);
 		}

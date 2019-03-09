@@ -3130,6 +3130,7 @@ int main()
 			Cheat_Wireframe = true;
 		}
 	}
+
 	//REInvent The Wheel
 	GAME_RTW m_ReinventTheWheel;
 	LPCWSTR title = L"Re-Invent The Wheel";

@@ -1,0 +1,20 @@
+********************
+*     CONCERTO     *
+********************
+
+Gameplay:
+Similar to most rhythm games, user has to hit a note that comes onto the screen
+
+The game will use note sheets, which will have a format of:
+
+..O.O		The O's represent a note
+..O.O		whilst the dots represent nothing
+..O.O
+..O.O		A player will have to hit the notes to score points
+.O.O.
+.O.O.
+O....
+O....
+.O...
+..O..
+...O.

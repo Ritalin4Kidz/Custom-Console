@@ -27,6 +27,7 @@
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+#include "SYDEWindowGame.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -58,7 +59,7 @@ private:
 	ColourClass m_color;
 };
 
-class GAME_RTW {
+class GAME_RTW : public SYDEWindowGame {
 public:
 	GAME_RTW() { generalConstructor(); setUpPaintArray(40,20); }
 	GAME_RTW(int windowWidth, int windowHeight) { generalConstructor(); setUpPaintArray(windowWidth, windowHeight); }
@@ -68,7 +69,7 @@ public:
 	void setPaintArrayAtPoint(Vector2 aPoint, ColourClass colour);
 	ColourClass getColourArrayAtPoint(Vector2 aPoint);
 	//GAME WINDOW
-	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	ColourClass determineColour_RTW(ColourClass main, ColourClass bg);
 	//Game Voids
 	void inputVoids(int windowWidth, int windowHeight);

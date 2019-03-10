@@ -31,6 +31,9 @@
 #include <objidl.h>
 #include <gdiplus.h>
 #include "ReiventTheWheel.h"
+#include "Concerto.h"
+#include "SYDEWindowGame.h"
+#include "SYDEGamePlay.h"
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
@@ -3131,8 +3134,21 @@ int main()
 		}
 	}
 
+	//Concerto
+	Concerto m_Concerto;
+	LPCWSTR title = L"Concerto";
+	SetConsoleTitleW(title);
+	opening();
+	while (true)
+	{
+		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight);
+		window.writeConsole();
+		Sleep(30);
+	}
+	//END CONCERTO
+
 	//REInvent The Wheel
-	GAME_RTW m_ReinventTheWheel;
+	/*GAME_RTW m_ReinventTheWheel;
 	LPCWSTR title = L"Re-Invent The Wheel";
 	SetConsoleTitleW(title);
 	opening();
@@ -3147,7 +3163,7 @@ int main()
 		window = m_ReinventTheWheel.window_draw_game(window, windowWidth, windowHeight);
 		window.writeConsole();
 		Sleep(30);
-	}
+	}*/
 	// END REINVENT THE WHEEL
 
 

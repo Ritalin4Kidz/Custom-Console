@@ -34,6 +34,8 @@
 #include "Concerto.h"
 #include "SYDEWindowGame.h"
 #include "SYDEGamePlay.h"
+#include "SYDETime.h"
+#include <chrono>
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
@@ -3112,6 +3114,14 @@ void set_up_window_properties()
 // MAIN FUNCTION
 int main()
 {
+	SYDETIME deltaTime;
+	deltaTime.initialise(std::chrono::high_resolution_clock::now());
+	//while (true) { //deltaTime test, comment out
+	//	deltaTime.refreshTime();
+	//	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	//	cout << to_string(SYDEDefaults::getDeltaTime()) << endl;
+	//	Sleep(200);
+	//}
 	set_up_window_properties();
 	//NECCESARY ON STARTUP
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
@@ -3141,7 +3151,7 @@ int main()
 	opening();
 	while (true)
 	{
-		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight);
+		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		window.writeConsole();
 		Sleep(30);
 	}

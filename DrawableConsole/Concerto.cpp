@@ -10,6 +10,7 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 			window.setTextAtPoint(Vector2(l, m), " ", WHITE_WHITE_BG);
 		}
 	}
-
+	//DELTATIME CHECKER
+	window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
 	return window;
 }

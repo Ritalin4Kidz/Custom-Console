@@ -3148,7 +3148,8 @@ int main()
 	Concerto m_Concerto;
 	LPCWSTR title = L"Concerto";
 	SetConsoleTitleW(title);
-	opening();
+	//opening();
+	SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	while (true)
 	{
 		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);

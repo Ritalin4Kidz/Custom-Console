@@ -40,6 +40,53 @@ void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const H
 	}
 	_activated = true;
 }
+void SYDEGamePlay::hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight, AssetsClass astVars)
+{
+	//SCENE 10
+	CustomAnimationAsset PIXAR;
+	PIXAR.setAsset(vector<CustomAsset> {	CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_001.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_002.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_003.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_004.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_005.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_006.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_007.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_008.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_009.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_010.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_011.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_012.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_013.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_013.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_013.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_013.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_013.bmp", 22, 20)),
+											CustomAsset(44, 20, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Animations\\DinseyPlanes\\Pixar\\Scene_013.bmp", 22, 20))
+	});
+	while (PIXAR.getFrame() < PIXAR.getFrameSize() - 1)
+	{
+		if (PIXAR.getFrame() == 9)
+		{
+			PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
+		}
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE_BRIGHTWHITE_BG);
+			}
+		}
+		window = PIXAR.draw_asset(window, SYDEDefaults::v2_Zero);
+		window.writeConsole();
+		Sleep(50);
+	}
+}
 ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight,  SYDETIME& deltaTime)
 {
 	deltaTime.refreshTime();

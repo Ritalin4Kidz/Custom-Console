@@ -19,4 +19,5 @@ public:
 
 private:
 	vector<vector<TextItem>> AssetVector;
+
 };

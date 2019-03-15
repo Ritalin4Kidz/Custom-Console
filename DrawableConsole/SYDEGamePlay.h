@@ -6,11 +6,17 @@
 #include <iostream>
 #include <string>
 #include "Artwork.h"
+#include "AssetsClass.h"
+#include "CustomAnimationAsset.h"
+#include "CustomAsset.h"
 #include "Activation.h"
 using namespace std;
 class SYDEGamePlay {
 public:
 	static void opening_splashscreens(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars);
+
+	static void hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, AssetsClass astVars);
+
 	static ConsoleWindow play_game(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 private:
 	static void _introductionScript();

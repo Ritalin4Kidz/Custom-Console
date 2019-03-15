@@ -36,11 +36,21 @@ public:
 
 private:
 	ConsoleWindow _MainMenu(ConsoleWindow window, int windowWidth, int windowHeight);
+	void _MainMenuInputVoids();
+	ConsoleWindow _LevelSelect(ConsoleWindow window, int windowWidth, int windowHeight);
+	void _LevelSelectInputVoids();
+
 	ConsoleWindow _PearlHarbour(ConsoleWindow window, int windowWidth, int windowHeight);
 
-	bool _startUp = true;
-	CustomAnimationAsset m_PearlHarbour;
 
+	bool _startUp = true;
+
+	int PearlHarbourScene = 0;
+
+	CustomAnimationAsset m_PearlHarbour;
+	CustomAsset m_Tutorial;
+	CustomAnimationAsset m_PearlHarbourFlyDown;
+	bool GetKey(char KeyCode);
 	CustomAsset m_DinseyPlanes_MainMenu;
 	std::string _LEVEL = "_MainMenu";
 };

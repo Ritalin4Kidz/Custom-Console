@@ -1,0 +1,14 @@
+
+*.suo
+*.ipch
+*.obj
+
+*.tlog
+*.log
+
+*Browse.VC*
+*Browse.VC.db
+*.db
+*.pdb
+*.ipdb
+*.iobj

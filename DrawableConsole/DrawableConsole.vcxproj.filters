@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Concerto">
+      <UniqueIdentifier>{15862a08-2aa1-4b9d-a50d-097016b03e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Concerto">
+      <UniqueIdentifier>{7f325ce2-b41b-4ecd-a5de-e7bc846c9139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Concerto">
+      <UniqueIdentifier>{50109be3-f93f-40a9-8b4f-a5bbe7dd25f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Activation">
+      <UniqueIdentifier>{1d7317a3-08cb-465d-a576-a6699797c001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Activation">
+      <UniqueIdentifier>{a1f9cac0-c184-4e45-be92-acbfbcb87d50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -75,6 +90,21 @@
     <ClInclude Include="ReiventTheWheel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Concerto.h">
+      <Filter>Header Files\Concerto</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEWindowGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEGamePlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDETime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Activation.h">
+      <Filter>Header Files\Activation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -134,6 +164,21 @@
     <ClCompile Include="ReiventTheWheel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Concerto.cpp">
+      <Filter>Source Files\Concerto</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEGamePlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDETime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Defaults.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Activation.cpp">
+      <Filter>Source Files\Activation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="BrainFiles\AiAgainstPlayer.txt" />
@@ -148,6 +193,9 @@
     <Text Include="BrainFiles\X_Test.txt" />
     <Text Include="TODO.txt">
       <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ConcertoDesign.txt">
+      <Filter>Resource Files\Concerto</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

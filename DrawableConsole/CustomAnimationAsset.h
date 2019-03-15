@@ -2,6 +2,7 @@
 #include <vector>
 #include "ConsoleWindow.h"
 #include "CustomAsset.h"
+#include <windows.h>
 
 using namespace std;
 
@@ -29,6 +30,8 @@ public:
 
 	ConsoleWindow draw_asset(ConsoleWindow window, Vector2 point);
 	void setAsset(vector<CustomAsset> frames);
+
+	void play_cutscene(ConsoleWindow& window, Vector2 point, float frame_rate);
 
 private:
 	vector<CustomAsset> m_Frames;

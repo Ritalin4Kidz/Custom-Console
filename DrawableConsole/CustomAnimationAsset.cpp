@@ -43,13 +43,3 @@ void CustomAnimationAsset::setAsset(vector<CustomAsset> frames)
 	m_Frames = frames;
 }
 
-void CustomAnimationAsset::play_cutscene(ConsoleWindow& window, Vector2 point, float frame_rate)
-{
-	frame_number = 0;
-	float _sleepTime = 1000 / frame_rate;
-		while (frame_number < m_Frames.size())
-		{
-			draw_asset(window, point);
-			Sleep(_sleepTime);
-	}
-}

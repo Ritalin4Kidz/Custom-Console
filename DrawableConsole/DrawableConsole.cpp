@@ -36,6 +36,7 @@
 #include "SYDEGamePlay.h"
 #include "SYDETime.h"
 #include <chrono>
+#include "DinseyPlanes.h"
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
@@ -3146,13 +3147,14 @@ int main()
 
 	//Concerto
 	Concerto m_Concerto;
-	LPCWSTR title = L"Concerto";
+	DinseyPlanes m_Planes(astVars);
+	LPCWSTR title = L"Dinsey Planes";
 	SetConsoleTitleW(title);
 	//opening();
 	SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	while (true)
 	{
-		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		window = SYDEGamePlay::play_game(&m_Planes, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		window.writeConsole();
 		Sleep(30);
 	}

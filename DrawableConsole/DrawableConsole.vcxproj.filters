@@ -28,6 +28,12 @@
     <Filter Include="Source Files\Activation">
       <UniqueIdentifier>{a1f9cac0-c184-4e45-be92-acbfbcb87d50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DinseyPlanes">
+      <UniqueIdentifier>{3634cb1c-be83-4f6a-8dd8-120295c798a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DinseyPlanes">
+      <UniqueIdentifier>{e40d038f-5d53-4719-b680-25ac93f74eb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -105,6 +111,9 @@
     <ClInclude Include="Activation.h">
       <Filter>Header Files\Activation</Filter>
     </ClInclude>
+    <ClInclude Include="DinseyPlanes.h">
+      <Filter>Header Files\DinseyPlanes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -178,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="Activation.cpp">
       <Filter>Source Files\Activation</Filter>
+    </ClCompile>
+    <ClCompile Include="DinseyPlanes.cpp">
+      <Filter>Source Files\DinseyPlanes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

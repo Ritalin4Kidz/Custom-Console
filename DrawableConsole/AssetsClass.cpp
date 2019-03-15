@@ -173,3 +173,4 @@ vector<ColourClass> AssetsClass::get_bmp_as_direct_colour_class_array(const WCHA
 
 
 
+

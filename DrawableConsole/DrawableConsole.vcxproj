@@ -167,6 +167,7 @@
     <ClInclude Include="CustomAnimationAsset.h" />
     <ClInclude Include="CustomAsset.h" />
     <ClInclude Include="Defaults.h" />
+    <ClInclude Include="DinseyPlanes.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PhysicsObject.h" />
@@ -194,6 +195,7 @@
     <ClCompile Include="CustomAnimationAsset.cpp" />
     <ClCompile Include="CustomAsset.cpp" />
     <ClCompile Include="Defaults.cpp" />
+    <ClCompile Include="DinseyPlanes.cpp" />
     <ClCompile Include="DrawableConsole.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="pch.cpp">

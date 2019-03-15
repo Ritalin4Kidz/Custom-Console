@@ -17,6 +17,8 @@ public:
 	void resetAnimation() { frame_number = 0; }
 
 	void setFrame(int aFrameNo);
+	int getFrame() { return frame_number; }
+	int getFrameSize() { return m_Frames.size(); }
 
 	void setLooping(bool aLoop) { m_looping = aLoop; }
 	void toggleLooping() { m_looping = !m_looping; }
@@ -30,8 +32,6 @@ public:
 
 	ConsoleWindow draw_asset(ConsoleWindow window, Vector2 point);
 	void setAsset(vector<CustomAsset> frames);
-
-	void play_cutscene(ConsoleWindow& window, Vector2 point, float frame_rate);
 
 private:
 	vector<CustomAsset> m_Frames;

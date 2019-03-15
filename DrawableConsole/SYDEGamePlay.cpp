@@ -29,7 +29,7 @@ void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const H
 	for (int i = -10; i < 5; i++)
 	{
 		_poweredBySYDEEngine(i, 15, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
-		Sleep(50);
+		Sleep(50); 
 	}
 	PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
 	Sleep(1250);

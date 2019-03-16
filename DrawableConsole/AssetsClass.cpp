@@ -9,6 +9,8 @@ using namespace std;
 using namespace Gdiplus;
 using namespace std;
 //LOOK AT BITMAP
+LPCWSTR AssetsClass::explosion_file_path = L"EngineFiles\\Sounds\\explosion.wav";
+
 const int AssetsClass::get_file_size(char * filename)
 {
 	FILE* f = fopen(filename, "rb");

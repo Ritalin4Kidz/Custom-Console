@@ -47,9 +47,14 @@ private:
 
 	int PearlHarbourScene = 0;
 
+	//Animations
 	CustomAnimationAsset m_PearlHarbour;
-	CustomAsset m_Tutorial;
 	CustomAnimationAsset m_PearlHarbourFlyDown;
+
+	//Assets
+	CustomAsset m_Tutorial;
+	CustomAsset m_Credits;
+
 	bool GetKey(char KeyCode);
 	CustomAsset m_DinseyPlanes_MainMenu;
 	std::string _LEVEL = "_MainMenu";

@@ -35,6 +35,7 @@ public:
 	vector<ColourClass> get_bmp_as_direct_colour_class_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight);
 	LPCWSTR get_electronic_chime_file_path() { return electronic_chime_file_path; }
 	LPCWSTR get_squish_file_path() { return squish_file_path; }
+	static LPCWSTR get_explosion_file_path() { return explosion_file_path; }
 
 	vector<string> get_BLACK_RGB() { return BLACK_RGB; }
 	vector<string> get_BLUE_RGB() { return BLUE_RGB; }
@@ -56,6 +57,7 @@ public:
 private:
 	LPCWSTR electronic_chime_file_path = L"EngineFiles\\Sounds\\electronicchime.wav";
 	LPCWSTR squish_file_path = L"EngineFiles\\Sounds\\squish.wav";
+	static LPCWSTR explosion_file_path;
 	char* test_bmp_path = (char*)"EngineFiles\\TestBitmaps\\testfile2.bmp";
 
 

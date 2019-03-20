@@ -26,14 +26,14 @@ void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const H
 		_drawBee(i, 9, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
 		Sleep(50);
 	}
-	for (int i = -10; i < 5; i++)
+	for (int i = -10; i < 6; i++)
 	{
 		_poweredBySYDEEngine(i, 15, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
-		Sleep(50); 
+		Sleep(50);
 	}
 	PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
 	Sleep(1250);
-	for (int i = 5; i < 22; i++)
+	for (int i = 6; i < 22; i++)
 	{
 		_poweredBySYDEEngine(i, 15, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
 		Sleep(50);
@@ -377,17 +377,31 @@ void SYDEGamePlay::_drawBee(int baseY, int baseX, bool setUp, COORD start, const
 
 void SYDEGamePlay::_poweredBySYDEEngine(int baseY, int baseX, bool setUp, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars)
 {
-	CONSOLE_CURSOR_INFO cInfo;
-	GetConsoleCursorInfo(hOut, &cInfo);
-	cInfo.bVisible = false;
-	SetConsoleCursorInfo(hOut, &cInfo);
-	cout.flush();
-	SetConsoleCursorPosition(hOut, start);
-	for (int l = 0; l < windowWidth; l++)
+	if (setUp)
 	{
-		for (int m = 0; m < windowHeight; m++)
+		window.ClearWindow(true);
+		for (int l = 0; l < windowWidth; l++)
 		{
-			window.setTextAtPoint(Vector2(l, m), " ", WHITE_BRIGHTWHITE_BG);
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.addToLine(m, " ", BLACK);
+			}
+		}
+	}
+	else
+	{
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		SetConsoleCursorPosition(hOut, start);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", WHITE_BRIGHTWHITE_BG);
+			}
 		}
 	}
 	window = artVars.draw_syde_engine_logo(window, baseX, baseY);

@@ -27,6 +27,7 @@
 #include <objidl.h>
 #include <gdiplus.h>
 #include "SYDEWindowGame.h"
+#include "SYDEKeyCode.h"
 class DinseyPlanes : public SYDEWindowGame {
 public:
 	DinseyPlanes(AssetsClass astVars);

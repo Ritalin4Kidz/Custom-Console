@@ -72,12 +72,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -175,6 +177,8 @@
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SYDEGamePlay.h" />
+    <ClInclude Include="SYDEKey.h" />
+    <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDETime.h" />
     <ClInclude Include="SYDEWindowGame.h" />
     <ClInclude Include="TextItem.h" />
@@ -208,6 +212,8 @@
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
+    <ClCompile Include="SYDEKey.cpp" />
+    <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />
     <ClCompile Include="Vector2.cpp" />

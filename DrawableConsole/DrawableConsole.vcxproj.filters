@@ -34,6 +34,12 @@
     <Filter Include="Source Files\DinseyPlanes">
       <UniqueIdentifier>{e40d038f-5d53-4719-b680-25ac93f74eb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\KeyCodes">
+      <UniqueIdentifier>{0f88346a-357d-42b5-9a30-a4e1ccf6e76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\KeyCodes">
+      <UniqueIdentifier>{5b674c29-d5b0-4d8c-b48a-08c8c7ac6dd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -114,6 +120,12 @@
     <ClInclude Include="DinseyPlanes.h">
       <Filter>Header Files\DinseyPlanes</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEKey.h">
+      <Filter>Header Files\KeyCodes</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEKeyCode.h">
+      <Filter>Header Files\KeyCodes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -190,6 +202,12 @@
     </ClCompile>
     <ClCompile Include="DinseyPlanes.cpp">
       <Filter>Source Files\DinseyPlanes</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEKey.cpp">
+      <Filter>Source Files\KeyCodes</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEKeyCode.cpp">
+      <Filter>Source Files\KeyCodes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

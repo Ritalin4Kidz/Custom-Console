@@ -15,6 +15,8 @@ public:
 	bool GetKeyDown(bool using_GetKeyUp);
 	bool GetKeyUp(bool using_GetKeyDown);
 
+	void Reset();
+
 	SYDEKey& operator=(char KeyCode);
 
 private:

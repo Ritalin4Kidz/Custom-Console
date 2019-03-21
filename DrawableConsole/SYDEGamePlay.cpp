@@ -9,9 +9,9 @@ bool SYDEGamePlay::_activated = false;
 
 void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars)
 {
+	bool setUp = true;
 	_introductionScript();
 	_introCreditsScript(window);
-	bool setUp = true;
 	for (int i = -10; i < 5; i++)
 	{
 		_drawBee(i, 9, setUp, start, hOut, window, windowWidth, windowHeight, artVars);

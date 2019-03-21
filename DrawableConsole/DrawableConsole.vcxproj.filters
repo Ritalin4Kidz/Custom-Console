@@ -40,6 +40,12 @@
     <Filter Include="Source Files\KeyCodes">
       <UniqueIdentifier>{5b674c29-d5b0-4d8c-b48a-08c8c7ac6dd7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{6d404771-e2e9-4315-a6fc-fc164741af60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{d9c744e6-49a1-43e4-bec5-5b039f4e7017}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -126,6 +132,12 @@
     <ClInclude Include="SYDEKeyCode.h">
       <Filter>Header Files\KeyCodes</Filter>
     </ClInclude>
+    <ClInclude Include="SYDETextBox.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEstdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -208,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="SYDEKeyCode.cpp">
       <Filter>Source Files\KeyCodes</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDETextBox.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -4,39 +4,7 @@
 // ritalin4kidz.github.io
 // callum@hands.net.au
 #include "pch.h"
-#include <iostream>
-#include "ConsoleWindow.h"
-#include <math.h>
-#include <time.h>
-#include "Vector2.h"
-#include "Board.h"
-#include <stdlib.h> 
-#include <string>
-#include <windows.h>
-#include <mmsystem.h>
-#include <conio.h>
-#include <fstream>
-#include "AI.h"
-#include "Settings.h"
-#include "PhysicsObject.h"
-#include "RigidBody.h"
-#include "BackgroundObj.h"
-#include "Background.h"
-#include "Characters.h"
-#include "Artwork.h"
-#include "AssetsClass.h"
-#include "CustomAsset.h"
-#include "CustomAnimationAsset.h"
-#include <windows.h>
-#include <objidl.h>
-#include <gdiplus.h>
-#include "ReiventTheWheel.h"
-#include "Concerto.h"
-#include "SYDEWindowGame.h"
-#include "SYDEGamePlay.h"
-#include "SYDETime.h"
-#include <chrono>
-#include "DinseyPlanes.h"
+#include "SYDEstdafx.h"
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
@@ -3155,7 +3123,7 @@ int main()
 	SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
 	while (true)
 	{
-		window = SYDEGamePlay::play_game(&m_Planes, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		window.writeConsole();
 		Sleep(30);
 	}

@@ -38,6 +38,11 @@ bool SYDEKey::GetKeyUp(bool using_GetKeyDown)
 	return false;
 }
 
+void SYDEKey::Reset()
+{
+	isPressed = false;
+}
+
 
 SYDEKey & SYDEKey::operator=(char KeyCode)
 {

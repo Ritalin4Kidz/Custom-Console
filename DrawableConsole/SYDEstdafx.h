@@ -1,5 +1,4 @@
 #pragma once
-#include "pch.h"
 #include <iostream>
 #include "ConsoleWindow.h"
 #include <math.h>
@@ -23,23 +22,14 @@
 #include "AssetsClass.h"
 #include "CustomAsset.h"
 #include "CustomAnimationAsset.h"
-#include "Defaults.h"
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+#include "ReiventTheWheel.h"
+#include "Concerto.h"
 #include "SYDEWindowGame.h"
-#include "SYDEKeyCode.h"
+#include "SYDEGamePlay.h"
+#include "SYDETime.h"
+#include <chrono>
 #include "SYDETextBox.h"
-using namespace std;
-using namespace Gdiplus;
-
-class Concerto : public SYDEWindowGame {
-public:
-	Concerto() {}
-	virtual ~Concerto() {}
-
-	//DRAW
-	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
-private:
-	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
-};
+#include "DinseyPlanes.h"

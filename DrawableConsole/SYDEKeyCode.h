@@ -31,4 +31,11 @@ public:
 	//Other Keys
 	static SYDEKey Return;
 	static SYDEKey Backspace;
+	static SYDEKey Space;
+	static SYDEKey ArrowLeft;
+	static SYDEKey ArrowRight;
+	static SYDEKey ArrowUp;
+	static SYDEKey ArrowDown;
+	static SYDEKey LeftShift;
+	static SYDEKey RightShift;
 };

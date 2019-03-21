@@ -30,3 +30,10 @@ SYDEKey SYDEKeyCode::Z = SYDEKey('Z');
 //Other Keys
 SYDEKey SYDEKeyCode::Return = SYDEKey(VK_RETURN);
 SYDEKey SYDEKeyCode::Backspace = SYDEKey(VK_BACK);
+SYDEKey SYDEKeyCode::Space = SYDEKey(VK_SPACE);
+SYDEKey SYDEKeyCode::ArrowLeft = SYDEKey(VK_LEFT);
+SYDEKey SYDEKeyCode::ArrowDown = SYDEKey(VK_DOWN);
+SYDEKey SYDEKeyCode::ArrowUp = SYDEKey(VK_UP);
+SYDEKey SYDEKeyCode::ArrowRight = SYDEKey(VK_RIGHT);
+SYDEKey SYDEKeyCode::LeftShift = SYDEKey(VK_LSHIFT);
+SYDEKey SYDEKeyCode::RightShift = SYDEKey(VK_RSHIFT);

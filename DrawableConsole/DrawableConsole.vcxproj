@@ -179,6 +179,8 @@
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
+    <ClInclude Include="SYDEstdafx.h" />
+    <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
     <ClInclude Include="SYDEWindowGame.h" />
     <ClInclude Include="TextItem.h" />
@@ -214,6 +216,7 @@
     <ClCompile Include="SYDEGamePlay.cpp" />
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />
+    <ClCompile Include="SYDETextBox.cpp" />
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />
     <ClCompile Include="Vector2.cpp" />

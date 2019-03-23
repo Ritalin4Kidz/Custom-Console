@@ -47,4 +47,5 @@ void SYDEKey::Reset()
 SYDEKey & SYDEKey::operator=(char KeyCode)
 {
 	this->keyCode = KeyCode;
+	return *this;
 }

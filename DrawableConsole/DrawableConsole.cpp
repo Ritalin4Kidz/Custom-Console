@@ -3123,9 +3123,9 @@ int main()
 	SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
 	while (true)
 	{
-		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		window = SYDEGamePlay::play_game(&m_Planes, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		window.writeConsole();
-		Sleep(30);
+		SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
 	}
 	//END CONCERTO
 

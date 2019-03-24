@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Concerto.h"
-
+#include <string>
 ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int l = 0; l < windowWidth; l++)
@@ -11,15 +11,22 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 		}
 	}
 	window = m_TextBox.draw_textbox(window);
-	if (SYDEKeyCode::Q.GetKeyDown(false))
+	if (SYDEKeyCode::Return.GetKeyDown(false))
 	{
 		m_TextBox.setActive(!m_TextBox.getActive());
 	}
-	if (SYDEKeyCode::A.GetKeyDown(false))
+	if (SYDEKeyCode::Backspace.GetKeyDown(false))
 	{
-		m_TextBox.addText("Hi");
+		m_TextBox.removeText(1);
 	}
+	//if (SYDEKeyCode::A.GetKeyDown(false))
+	//{
+	//	m_TextBox.addText("Hi");
+	//}
 	//DELTATIME CHECKER
+	std::string test = SYDEKeyCode::KeysDown();
+	m_TextBox.addText(test);
 	window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
 	return window;
+	//PICK ME UP GITHUBBY
 }

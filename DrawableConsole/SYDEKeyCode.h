@@ -1,33 +1,37 @@
 #pragma once
 #include "SYDEKey.h"
+#include <vector>
+#include <string>
 class SYDEKeyCode {
 public:
-	static SYDEKey A;
-	static SYDEKey B;
-	static SYDEKey C;
-	static SYDEKey D;
-	static SYDEKey E;
-	static SYDEKey F;
-	static SYDEKey G;
-	static SYDEKey H;
-	static SYDEKey I;
-	static SYDEKey J;
-	static SYDEKey K;
-	static SYDEKey L;
-	static SYDEKey M;
-	static SYDEKey N;
-	static SYDEKey O;
-	static SYDEKey P;
-	static SYDEKey Q;
-	static SYDEKey R;
-	static SYDEKey S;
-	static SYDEKey T;
-	static SYDEKey U;
-	static SYDEKey V;
-	static SYDEKey W;
-	static SYDEKey X;
-	static SYDEKey Y;
-	static SYDEKey Z;
+	static std::string KeysDown();
+	static std::vector<SYDEKey> KeyCodes;
+	static SYDEKey A; //0
+	static SYDEKey B; //1
+	static SYDEKey C; //2
+	static SYDEKey D; //3
+	static SYDEKey E; //4
+	static SYDEKey F; //5
+	static SYDEKey G; //6
+	static SYDEKey H; //7
+	static SYDEKey I; //8
+	static SYDEKey J; //9
+	static SYDEKey K; //10
+	static SYDEKey L; //11
+	static SYDEKey M; //12
+	static SYDEKey N; //13
+	static SYDEKey O; //14
+	static SYDEKey P; //15
+	static SYDEKey Q; //16
+	static SYDEKey R; //17
+	static SYDEKey S; //18
+	static SYDEKey T; //19
+	static SYDEKey U; //20
+	static SYDEKey V; //21
+	static SYDEKey W; //22
+	static SYDEKey X; //23
+	static SYDEKey Y; //24
+	static SYDEKey Z; //25
 	//Other Keys
 	static SYDEKey Return;
 	static SYDEKey Backspace;

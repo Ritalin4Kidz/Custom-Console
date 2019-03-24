@@ -94,12 +94,12 @@ ConsoleWindow DinseyPlanes::_MainMenu(ConsoleWindow window, int windowWidth, int
 
 void DinseyPlanes::_MainMenuInputVoids()
 {
-	if (SYDEKeyCode::A.GetKeyDown(false))
+	if (SYDEKeyCode::KeyCodes[0].GetKeyDown(false))
 	{
 		_LEVEL = "_Level_Select";
 	}
 
-	if (SYDEKeyCode::Z.GetKeyDown(false))
+	if (SYDEKeyCode::KeyCodes[25].GetKeyDown(false))
 	{
 		exit(NULL);
 	}
@@ -121,16 +121,16 @@ ConsoleWindow DinseyPlanes::_LevelSelect(ConsoleWindow window, int windowWidth, 
 
 void DinseyPlanes::_LevelSelectInputVoids()
 {
-	if (SYDEKeyCode::A.GetKeyDown(false))
+	if (SYDEKeyCode::KeyCodes[0].GetKeyDown(false))
 	{
 		//_LEVEL = "_Poland"; //NOT YET IMPLEMENTED
 	}
-	if (SYDEKeyCode::B.GetKeyDown(false))
+	if (SYDEKeyCode::KeyCodes[1].GetKeyDown(false))
 	{
 		_LEVEL = "_PearlHarbour";
 		PearlHarbourScene = 0;
 	}
-	if (SYDEKeyCode::Z.GetKeyDown(false))
+	if (SYDEKeyCode::KeyCodes[25].GetKeyDown(false))
 	{
 		_LEVEL = "_MainMenu";
 	}
@@ -150,7 +150,7 @@ ConsoleWindow DinseyPlanes::_PearlHarbour(ConsoleWindow window, int windowWidth,
 	}
 	else if (PearlHarbourScene == 1)
 	{
-		if (SYDEKeyCode::S.GetKeyDown(false))
+		if (SYDEKeyCode::KeyCodes[18].GetKeyDown(false))
 		{
 			PearlHarbourScene++;
 		}
@@ -178,7 +178,7 @@ ConsoleWindow DinseyPlanes::_PearlHarbour(ConsoleWindow window, int windowWidth,
 	}
 	else if (PearlHarbourScene == 3)
 	{
-		if (SYDEKeyCode::Q.GetKeyDown(false))
+		if (SYDEKeyCode::KeyCodes[16].GetKeyDown(false))
 		{
 			PearlHarbourScene++;
 		}

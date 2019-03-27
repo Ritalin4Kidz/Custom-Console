@@ -1,5 +1,12 @@
 #pragma once
 #include <windows.h>
+enum SYDEKeyState {
+	NONE,
+	KEYDOWN,
+	KEYUP,
+	KEY
+};
+
 class SYDEKey {
 public:
 	SYDEKey(char a_keyCode) { keyCode = a_keyCode; }
@@ -12,8 +19,13 @@ public:
 		GetKeyUp(bool using_GetKeyDown) - check if key is up on frame, set param to true if keyDown is used in same frame
 	*/
 	bool GetKey();
-	bool GetKeyDown(bool using_GetKeyUp);
-	bool GetKeyUp(bool using_GetKeyDown);
+	void GetKeyDown();
+	void GetKeyUp();
+
+	char getKeyCode() { return keyCode; }
+
+	SYDEKeyState _GETSTATE() { return _STATE; }
+	bool _CompareState(SYDEKeyState m_State);
 
 	void Reset();
 
@@ -22,4 +34,5 @@ public:
 private:
 	bool isPressed = false;
 	char keyCode;
+	SYDEKeyState _STATE = NONE;
 };

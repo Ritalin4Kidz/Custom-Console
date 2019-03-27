@@ -2,6 +2,7 @@
 #include "SYDEGamePlay.h"
 #include "SYDETime.h"
 #include "Defaults.h"
+#include "SYDEKeyCode.h"
 
 using namespace std;
 
@@ -89,6 +90,12 @@ void SYDEGamePlay::hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const 
 }
 ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight,  SYDETIME& deltaTime)
 {
+	for (int i = 0; i < SYDEKeyCode::KeyCodes.size(); i++)
+	{
+		// CHECKING THE STATE OF ALL INPUTS
+		SYDEKeyCode::KeyCodes[i].GetKeyDown();
+		SYDEKeyCode::KeyCodes[i].GetKeyUp();
+	}
 	deltaTime.refreshTime();
 	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
 	CONSOLE_CURSOR_INFO cInfo;

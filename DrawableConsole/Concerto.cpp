@@ -11,11 +11,11 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 		}
 	}
 	window = m_TextBox.draw_textbox(window);
-	if (SYDEKeyCode::Return.GetKeyDown(false))
+	if (SYDEKeyCode::get(VK_RETURN)._CompareState(KEYDOWN))
 	{
 		m_TextBox.setActive(!m_TextBox.getActive());
 	}
-	if (SYDEKeyCode::Backspace.GetKeyDown(false))
+	if (SYDEKeyCode::get(VK_BACK)._CompareState(KEYDOWN))
 	{
 		m_TextBox.removeText(1);
 	}
@@ -30,3 +30,4 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	return window;
 	//PICK ME UP GITHUBBY
 }
+

@@ -57,3 +57,14 @@ std::string SYDEKeyCode::KeysDown()
 	}
 	return m_return;
 }
+
+SYDEKey SYDEKeyCode::get(char KeyCode)
+{
+	for (int i = 0; i < KeyCodes.size(); i++)
+	{
+		if (KeyCodes[i].getKeyCode() == KeyCode) {
+			return KeyCodes[i];
+		}
+	}
+	return KeyCodes[0]; //TODO Create Null KeyCode
+}

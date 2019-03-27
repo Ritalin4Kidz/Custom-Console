@@ -6,36 +6,39 @@ bool SYDEKey::GetKey()
 	return GetAsyncKeyState(keyCode) && 0x8000;
 }
 
-bool SYDEKey::GetKeyDown(bool using_GetKeyUp)
+void SYDEKey::GetKeyDown()
 {
 	if (GetKey() && !isPressed)
 	{
 		isPressed = true;
-		return true;
+		_STATE = KEYDOWN;
+		return;
 	}
-	if (!using_GetKeyUp)
-	{
-		if (!GetKey()) {
-			isPressed = false;
-		}
+	else if (GetKey()) {
+		_STATE = KEY;
 	}
-	return false;
 }
 
-bool SYDEKey::GetKeyUp(bool using_GetKeyDown)
+void SYDEKey::GetKeyUp()
 {
 	if (!GetKey() && isPressed)
 	{
 		isPressed = false;
+		_STATE = KEYUP;
+		return;
+	}
+	else if (!GetKey()) {
+		_STATE = NONE;
+	}
+}
+
+bool SYDEKey::_CompareState(SYDEKeyState m_State)
+{
+	if (m_State == KEY && _STATE == KEYDOWN)
+	{
 		return true;
 	}
-	if (!using_GetKeyDown)
-	{
-		if (GetKey()) {
-			isPressed = true;
-		}
-	}
-	return false;
+	return m_State == _STATE;
 }
 
 void SYDEKey::Reset()

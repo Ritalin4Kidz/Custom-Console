@@ -138,6 +138,9 @@
     <ClInclude Include="SYDEstdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEUI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

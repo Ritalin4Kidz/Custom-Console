@@ -182,6 +182,7 @@
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
+    <ClInclude Include="SYDEUI.h" />
     <ClInclude Include="SYDEWindowGame.h" />
     <ClInclude Include="TextItem.h" />
     <ClInclude Include="Vector2.h" />

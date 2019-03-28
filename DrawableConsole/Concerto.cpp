@@ -19,6 +19,10 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	{
 		m_TextBox.removeText(1);
 	}
+	//if (m_TextBox._CompareTextState(TEXTCHANGED))
+	//{
+	//	m_TextBox.setActive(false);
+	//}
 	//if (SYDEKeyCode::A.GetKeyDown(false))
 	//{
 	//	m_TextBox.addText("Hi");

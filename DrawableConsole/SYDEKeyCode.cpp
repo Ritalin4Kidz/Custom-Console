@@ -66,5 +66,8 @@ SYDEKey SYDEKeyCode::get(char KeyCode)
 			return KeyCodes[i];
 		}
 	}
-	return KeyCodes[0]; //TODO Create Null KeyCode
+	KeyCodes.push_back(
+		SYDEKey(KeyCode) //KEY DOESN'T EXIST, HOW ABOUT WE ADD IT
+	);
+	return KeyCodes[KeyCodes.size() - 1];
 }

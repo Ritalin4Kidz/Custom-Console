@@ -88,6 +88,26 @@ void SYDEGamePlay::hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const 
 		Sleep(50);
 	}
 }
+void SYDEGamePlay::reset_void( COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight)
+{
+	if (SYDEKeyCode::get('R')._CompareState(KEYDOWN))
+	{
+		CONSOLE_CURSOR_INFO cInfo;
+		GetConsoleCursorInfo(hOut, &cInfo);
+		cInfo.bVisible = false;
+		SetConsoleCursorInfo(hOut, &cInfo);
+		cout.flush();
+		SetConsoleCursorPosition(hOut, start);
+		window.ClearWindow(true);
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.addToLine(m, " ", BLACK);
+			}
+		}
+	}
+}
 ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight,  SYDETIME& deltaTime)
 {
 	for (int i = 0; i < SYDEKeyCode::KeyCodes.size(); i++)
@@ -96,6 +116,7 @@ ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, co
 		SYDEKeyCode::KeyCodes[i].GetKeyDown();
 		SYDEKeyCode::KeyCodes[i].GetKeyUp();
 	}
+	//reset_void(start, hOut,  window, windowWidth, windowHeight); //IN CASE FUCKED UP SCREEN
 	deltaTime.refreshTime();
 	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
 	CONSOLE_CURSOR_INFO cInfo;

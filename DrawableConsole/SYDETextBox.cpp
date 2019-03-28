@@ -26,5 +26,6 @@ ConsoleWindow SYDETextBox::draw_textbox(ConsoleWindow window)
 			}
 		}
 	}
+	_CheckState();
 	return window;
 }

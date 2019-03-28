@@ -2,10 +2,13 @@
 #include <string>
 #include "ConsoleWindow.h"
 #include "Vector2.h"
+#include "SYDEUI.h"
 using namespace std;
-class SYDETextBox {
+
+class SYDETextBox : public SYDEUI {
 public:
-	SYDETextBox() {}
+	SYDETextBox() { m_Label = ""; }
+	SYDETextBox(string a_Label) { m_Label = a_Label; }
 	SYDETextBox(Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour);
 	virtual ~SYDETextBox() {}
 
@@ -19,7 +22,7 @@ public:
 	bool getActive() { return m_Active; }
 private:
 	bool m_Active = false;
-	string m_Text = "";
+	//string m_Text = "";
 
 	Vector2 m_Size = Vector2(0, 0);
 	Vector2 m_Pos = Vector2(0,0);

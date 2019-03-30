@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "Concerto.h"
 #include <string>
+void Concerto::Initialize()
+{
+	m_Label._WrapText(true);
+}
 ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int l = 0; l < windowWidth; l++)
@@ -11,6 +15,8 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 		}
 	}
 	window = m_TextBox.draw_textbox(window);
+	m_Label.setText("DeltaTime:" + to_string(SYDEDefaults::getDeltaTime()));
+	window = m_Label.draw_label(window);
 	if (SYDEKeyCode::get(VK_RETURN)._CompareState(KEYDOWN))
 	{
 		m_TextBox.setActive(!m_TextBox.getActive());
@@ -30,7 +36,7 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	//DELTATIME CHECKER
 	std::string test = SYDEKeyCode::KeysDown();
 	m_TextBox.addText(test);
-	window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
+	//window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
 	return window;
 	//PICK ME UP GITHUBBY
 }

@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -117,7 +117,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -179,6 +179,7 @@
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
+    <ClInclude Include="SYDELabel.h" />
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
@@ -217,6 +218,7 @@
     <ClCompile Include="SYDEGamePlay.cpp" />
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />
+    <ClCompile Include="SYDELabel.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />

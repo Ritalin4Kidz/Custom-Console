@@ -141,6 +141,9 @@
     <ClInclude Include="SYDEUI.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="SYDELabel.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -225,6 +228,9 @@
       <Filter>Source Files\KeyCodes</Filter>
     </ClCompile>
     <ClCompile Include="SYDETextBox.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDELabel.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>

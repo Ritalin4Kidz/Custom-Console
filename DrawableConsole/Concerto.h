@@ -30,16 +30,19 @@
 #include "SYDEWindowGame.h"
 #include "SYDEKeyCode.h"
 #include "SYDETextBox.h"
+#include "SYDELabel.h"
 using namespace std;
 using namespace Gdiplus;
 
 class Concerto : public SYDEWindowGame {
 public:
-	Concerto() {}
+	Concerto() { Initialize(); }
 	virtual ~Concerto() {}
 
 	//DRAW
+	void Initialize();
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
+	SYDELabel m_Label = SYDELabel("Test Text",  Vector2(4, 10), Vector2(10, 1), BLACK, true);
 };

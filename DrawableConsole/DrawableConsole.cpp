@@ -3083,42 +3083,47 @@ void set_up_window_properties()
 // MAIN FUNCTION
 int main()
 {
-	SYDETIME deltaTime;
-	deltaTime.initialise(std::chrono::high_resolution_clock::now());
 	//while (true) { //deltaTime test, comment out
 	//	deltaTime.refreshTime();
 	//	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
 	//	cout << to_string(SYDEDefaults::getDeltaTime()) << endl;
 	//	Sleep(200);
 	//}
-	set_up_window_properties();
-	//NECCESARY ON STARTUP
-	GdiplusStartup(&gdiplusToken, &startupInput, 0);
-	srand(time(NULL));
-	//CENTER THE WINDOW
-	window.setOffset(config.getOffset());
+	//set_up_window_properties();
+	////NECCESARY ON STARTUP
+	//GdiplusStartup(&gdiplusToken, &startupInput, 0);
+	//srand(time(NULL));
+	////CENTER THE WINDOW
+	//window.setOffset(config.getOffset());
+	
 	//INIT CUSTOMASSETS
 	set_up_custom_assets();
+	
 	//INITIALIZE CHEAT VALUES
-	cheatCodes = config.ReturnCheats();
-	for (int i = 0; i < cheatCodes.size(); i++)
-	{
-		if (cheatCodes[i] == "JumpAllowed")
-		{
-			Cheat_CanJump = true;
-		}
-		else if (cheatCodes[i] == "Wireframe")
-		{
-			Cheat_Wireframe = true;
-		}
-	}
+	//cheatCodes = config.ReturnCheats();
+	//for (int i = 0; i < cheatCodes.size(); i++)
+	//{
+	//	if (cheatCodes[i] == "JumpAllowed")
+	//	{
+	//		Cheat_CanJump = true;
+	//	}
+	//	else if (cheatCodes[i] == "Wireframe")
+	//	{
+	//		Cheat_Wireframe = true;
+	//	}
+	//}
 
 	//Concerto
+	SYDETIME deltaTime;
+	deltaTime.initialise(std::chrono::high_resolution_clock::now());
 	Concerto m_Concerto;
 	DinseyPlanes m_Planes(astVars);
 	LPCWSTR title = L"Concerto";
+	SYDECredits::_GAMETITLE = "Concerto";
+	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
 	SetConsoleTitleW(title);
 	//opening();
+	SYDEGamePlay::initialize_window(hOut, window);
 	SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
 	while (true)
@@ -3183,6 +3188,5 @@ int main()
 	//window.ClearWindow(false);
 	//window.writeConsole();
 	*/
-	system("pause");
-	GdiplusShutdown(gdiplusToken);
+	//system("pause");
 }

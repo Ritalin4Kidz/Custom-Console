@@ -176,6 +176,7 @@
     <ClInclude Include="ReiventTheWheel.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="SYDECredits.h" />
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
@@ -215,6 +216,7 @@
     <ClCompile Include="ReiventTheWheel.cpp" />
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="SYDECredits.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />

@@ -8,6 +8,54 @@ using namespace std;
 
 bool SYDEGamePlay::_activated = false;
 
+vector<string> SYDEGamePlay::cheatCodes = vector<string>();
+
+ULONG_PTR SYDEGamePlay::gdiplusToken;
+GdiplusStartupInput SYDEGamePlay::startupInput;
+
+void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
+{
+	//REMOVE FULLSCREEN, MINIMIZE AND RESIZING ABILITY (PREVENTS ERRORS CAUSE BY THE RESIZE)
+	HWND WINDOW_HWND = GetConsoleWindow();
+	DWORD WINDOW_STYLE = GetWindowLong(WINDOW_HWND, GWL_STYLE);
+	WINDOW_STYLE &= (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX);
+	SetWindowLong(WINDOW_HWND, GWL_STYLE, GetWindowLong(WINDOW_HWND, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_MINIMIZEBOX & ~WS_SIZEBOX);
+	SetWindowPos(WINDOW_HWND, NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED);
+	//REMOVE SCROLLBAR AND SET WINDOWSIZE
+	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
+	COORD NewSBSize;
+	int Status;
+	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
+	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+	GetConsoleScreenBufferInfo(hOut, &SBInfo);
+	COORD scrollbar = {
+		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
+		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
+	};
+	SetConsoleScreenBufferSize(hOut, scrollbar);
+	//NECCESARY ON STARTUP
+	GdiplusStartup(&gdiplusToken, &startupInput, 0);
+	srand(time(NULL));
+	//CENTER THE WINDOW
+	window.setOffset(config.getOffset());
+	//CHEATS
+	cheatCodes = config.ReturnCheats();
+	//for (int i = 0; i < cheatCodes.size(); i++)
+	//{
+	//	if (cheatCodes[i] == "JumpAllowed")
+	//	{
+	//		Cheat_CanJump = true;
+	//	}
+	//	else if (cheatCodes[i] == "Wireframe")
+	//	{
+	//		Cheat_Wireframe = true;
+	//	}
+	//}
+
+}
+
+Settings SYDEGamePlay::config = Settings("EngineFiles\\Settings\\configSettings.sc");
+
 void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars)
 {
 	bool setUp = true;
@@ -351,15 +399,12 @@ void SYDEGamePlay::_introductionScript()
 void SYDEGamePlay::_introCreditsScript(ConsoleWindow& window)
 {
 	window.ClearWindow(true);
-	cout << "SYDE" << endl;
+	cout << SYDECredits::_GAMETITLE << endl;
 	Sleep(25);
-	cout << "Created By Callum Hands" << endl;
+	cout << "Created By " + SYDECredits::_ORGANISATION << endl;
 	Sleep(25);
-	cout << "In Association With Team Freebee Games" << endl;
-	Sleep(25);
-	cout << "Programming & Art : Callum Hands" << endl;
-	Sleep(25);
-	cout << "Game Engine : Callum Hands" << endl;
+	cout << SYDECredits::_OTHERCREDITS << endl;
+	cout << "SYDE Engine : Callum Hands \n" << "In Association With Freebee Games" << endl;
 	Sleep(25);
 	cout << "'SYDE Engine' Made In Visual Studio" << endl;
 	Sleep(25);

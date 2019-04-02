@@ -3097,7 +3097,7 @@ int main()
 	//window.setOffset(config.getOffset());
 	
 	//INIT CUSTOMASSETS
-	set_up_custom_assets();
+	//set_up_custom_assets();
 	
 	//INITIALIZE CHEAT VALUES
 	//cheatCodes = config.ReturnCheats();
@@ -3114,15 +3114,15 @@ int main()
 	//}
 
 	//Concerto
-	SYDETIME deltaTime;
-	deltaTime.initialise(std::chrono::high_resolution_clock::now());
-	Concerto m_Concerto;
 	DinseyPlanes m_Planes(astVars);
 	LPCWSTR title = L"Concerto";
 	SYDECredits::_GAMETITLE = "Concerto";
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
 	SetConsoleTitleW(title);
 	//opening();
+	SYDETIME deltaTime;
+	deltaTime.initialise(std::chrono::high_resolution_clock::now());
+	Concerto m_Concerto;
 	SYDEGamePlay::initialize_window(hOut, window);
 	SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);

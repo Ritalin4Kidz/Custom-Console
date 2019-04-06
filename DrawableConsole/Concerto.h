@@ -31,6 +31,7 @@
 #include "SYDEKeyCode.h"
 #include "SYDETextBox.h"
 #include "SYDELabel.h"
+#include "SYDEButton.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -41,8 +42,13 @@ public:
 
 	//DRAW
 	void Initialize();
+	void m_Button_Press();
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
 	SYDELabel m_Label = SYDELabel("Test Text",  Vector2(4, 10), Vector2(10, 1), BLACK, true);
+	SYDEButton m_Button;
+	
+	string m_LabelText = "Test Text";
+	void(buttonPressFunc)() { m_Button_Press(); }
 };

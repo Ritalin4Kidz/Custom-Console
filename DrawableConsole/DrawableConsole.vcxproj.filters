@@ -153,6 +153,9 @@
     <ClInclude Include="SYDECredits.h">
       <Filter>Header Files\SYDECredits</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEButton.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -244,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="SYDECredits.cpp">
       <Filter>Source Files\SYDECredits</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEButton.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

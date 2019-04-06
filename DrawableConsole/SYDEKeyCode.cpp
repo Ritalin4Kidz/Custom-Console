@@ -37,12 +37,13 @@ SYDEKey SYDEKeyCode::ArrowUp = SYDEKey(VK_UP);
 SYDEKey SYDEKeyCode::ArrowRight = SYDEKey(VK_RIGHT);
 SYDEKey SYDEKeyCode::LeftShift = SYDEKey(VK_LSHIFT);
 SYDEKey SYDEKeyCode::RightShift = SYDEKey(VK_RSHIFT);
+SYDEKey SYDEKeyCode::LeftTab = SYDEKey(VK_TAB);
 
 std::vector<SYDEKey> SYDEKeyCode::KeyCodes = {
 	A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,
 	Q,R,S,T,U,V,W,X,Y,Z,Return,Backspace,
 	Space, ArrowLeft, ArrowDown, ArrowUp,
-	ArrowRight,LeftShift, RightShift
+	ArrowRight,LeftShift, RightShift, LeftTab
 };
 
 std::string SYDEKeyCode::KeysDown()

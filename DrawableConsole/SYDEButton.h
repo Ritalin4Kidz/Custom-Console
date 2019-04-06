@@ -5,13 +5,13 @@
 #include "SYDEUI.h"
 #include "SYDEWindowGame.h"
 
-class SYDEButton : public SYDEUI {
+class SYDEButton : public SYDEUI, public SYDEUIInterface {
 public:
 	SYDEButton() { m_Label = ""; }
 	SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
 	virtual ~SYDEButton() {}
 
-	ConsoleWindow draw_Button(ConsoleWindow window);
+	ConsoleWindow draw_ui(ConsoleWindow window) override;
 
 	void addText(string a_text) { m_Text += a_text; }
 	void setText(string a_text) { m_Text = a_text; }
@@ -22,6 +22,8 @@ public:
 	void setHighLight(ColourClass _COLR) { HiLightColour = _COLR; }
 
 	void ButtonPress() { m_BtnState = BUTTONCLICKED; }
+
+	SYDEButton& operator=(SYDEButton other);
 
 	void setActive(bool active) { m_Active = active; }
 	bool getActive() { return m_Active; }

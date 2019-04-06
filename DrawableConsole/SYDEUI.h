@@ -14,6 +14,11 @@ enum ButtonState {
 	BUTTONCLICKED
 };
 
+__interface SYDEUIInterface
+{
+	virtual ConsoleWindow draw_ui(ConsoleWindow window) {}
+};
+
 class SYDEUI
 {
 public:

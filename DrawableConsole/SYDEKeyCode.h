@@ -43,4 +43,5 @@ public:
 	static SYDEKey ArrowDown;
 	static SYDEKey LeftShift;
 	static SYDEKey RightShift;
+	static SYDEKey LeftTab;
 };

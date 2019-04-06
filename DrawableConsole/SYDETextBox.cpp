@@ -8,7 +8,7 @@ SYDETextBox::SYDETextBox(Vector2 a_Pos, Vector2 a_Size, ColourClass a_TextColour
 	TextColour = a_TextColour;
 }
 
-ConsoleWindow SYDETextBox::draw_textbox(ConsoleWindow window)
+ConsoleWindow SYDETextBox::draw_ui(ConsoleWindow window)
 {
 	int stringNo = 1;
 	for (int ii = m_Pos.getY(); ii < m_Pos.getY() + m_Size.getY(); ii++)

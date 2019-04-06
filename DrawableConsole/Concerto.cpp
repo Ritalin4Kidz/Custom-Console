@@ -6,8 +6,12 @@
 void Concerto::Initialize()
 {
 	m_Label._WrapText(true);
-	m_Button = SYDEButton("Test Text", Vector2(20, 10), Vector2(10, 1), BLACK, true);
-	m_Button.setHighLight(RED);
+	//m_Button = SYDEButton("Test Text", Vector2(0, 0), Vector2(10, 1), BLACK, true);
+	//m_Button.setHighLight(RED);
+	for (int i = 0; i < _MENU.getSize(); i++)
+	{
+		_MENU[i].setHighLight(RED);
+	}
 }
 void Concerto::m_Button_Press()
 {
@@ -30,16 +34,19 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	{
 		m_TextBox.removeText(1);
 	}
+	if (SYDEKeyCode::get(VK_TAB)._CompareState(KEYDOWN))
+	{
+		_MENU.setActive(!_MENU.getActive());
+	}
 	if (SYDEKeyCode::get('M')._CompareState(KEYDOWN))
 	{
-		m_Button.setActive(!m_Button.getActive());
+		_MENU.nextSelect();
 	}
-	if (SYDEKeyCode::get('P')._CompareState(KEYDOWN) && m_Button.getActive())
+	if (SYDEKeyCode::get('P')._CompareState(KEYDOWN) && _MENU.getActive())
 	{
-		m_Button.ButtonPress();
+		_MENU.getSelected().ButtonPress();
 	}
-	m_Button._HIGHLIGHT(m_Button.getActive());
-	if (m_Button._CompareButtonState(BUTTONCLICKED))
+	if (_MENU[0]._CompareButtonState(BUTTONCLICKED))
 	{
 		m_Button_Press();
 	}
@@ -55,11 +62,11 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	std::string test = SYDEKeyCode::KeysDown();
 	m_TextBox.addText(test);
 
-
-	window = m_TextBox.draw_textbox(window);
+	if (_MENU.getActive()) { window = _MENU.draw_menu(window); }
+	window = m_TextBox.draw_ui(window);
 	m_Label.setText("DeltaTime:" + to_string(SYDEDefaults::getDeltaTime()));
-	window = m_Label.draw_label(window);
-	window = m_Button.draw_Button(window);
+	window = m_Label.draw_ui(window);
+	//window = m_Button.draw_ui(window);
 	//window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
 	return window;
 	//PICK ME UP GITHUBBY

@@ -10,7 +10,7 @@ SYDEButton::SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass
 	_TRANSPARENT = _TRANSPARENTBG;
 }
 
-ConsoleWindow SYDEButton::draw_Button(ConsoleWindow window)
+ConsoleWindow SYDEButton::draw_ui(ConsoleWindow window)
 {
 	int stringNo = 1;
 	ColourClass _TXT = TextColour;
@@ -54,6 +54,17 @@ ConsoleWindow SYDEButton::draw_Button(ConsoleWindow window)
 		m_BtnState = BUTTONNONE;
 	}
 	return window;
+}
+
+SYDEButton & SYDEButton::operator=(SYDEButton other)
+{
+	this->m_Size = other.m_Size;
+	this->m_Text = other.m_Text;
+	this->m_Pos = other.m_Pos;
+	this->TextColour = other.TextColour;
+	this->HiLightColour = other.TextColour;
+	this->m_Active = other.m_Active;
+	return*this;
 }
 
 

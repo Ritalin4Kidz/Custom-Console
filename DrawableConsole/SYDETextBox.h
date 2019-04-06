@@ -5,7 +5,7 @@
 #include "SYDEUI.h"
 using namespace std;
 
-class SYDETextBox : public SYDEUI {
+class SYDETextBox : public SYDEUI, public SYDEUIInterface {
 public:
 	SYDETextBox() { m_Label = ""; }
 	SYDETextBox(string a_Label) { m_Label = a_Label; }
@@ -13,7 +13,7 @@ public:
 	virtual ~SYDETextBox() {}
 
 
-	ConsoleWindow draw_textbox(ConsoleWindow window);
+	ConsoleWindow draw_ui(ConsoleWindow window) override;
 
 	void addText(string a_text) { if (m_Active) { m_Text += a_text; } }
 	void removeText(int amt) { if (m_Active) { m_Text = m_Text.substr(0, m_Text.size() - amt); } }

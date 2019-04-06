@@ -4,13 +4,13 @@
 #include "Vector2.h"
 #include "SYDEUI.h"
 
-class SYDELabel : public SYDEUI {
+class SYDELabel : public SYDEUI, public SYDEUIInterface {
 public:
 	SYDELabel() { m_Label = ""; }
 	SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
 	virtual ~SYDELabel() {}
 
-	ConsoleWindow draw_label(ConsoleWindow window);
+	ConsoleWindow draw_ui(ConsoleWindow window) override;
 
 	void addText(string a_text) { m_Text += a_text; }
 	void setText(string a_text) { m_Text = a_text; }

@@ -182,6 +182,7 @@
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDELabel.h" />
+    <ClInclude Include="SYDEMenu.h" />
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDELabel.cpp" />
+    <ClCompile Include="SYDEMenu.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />

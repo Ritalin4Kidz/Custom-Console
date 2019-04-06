@@ -32,6 +32,7 @@
 #include "SYDETextBox.h"
 #include "SYDELabel.h"
 #include "SYDEButton.h"
+#include "SYDEMenu.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -48,7 +49,11 @@ private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
 	SYDELabel m_Label = SYDELabel("Test Text",  Vector2(4, 10), Vector2(10, 1), BLACK, true);
 	SYDEButton m_Button;
-	
+	//WE WANT TO START THE MENU AT y=1.
+	SYDEMenu _MENU = SYDEMenu(vector<SYDEButton> {
+		SYDEButton("Test Text", Vector2(0, 1), Vector2(10, 1), BLACK, true),
+		SYDEButton("New Text", Vector2(0, 2), Vector2(10, 1), BLACK, true)
+	});
 	string m_LabelText = "Test Text";
 	void(buttonPressFunc)() { m_Button_Press(); }
 };

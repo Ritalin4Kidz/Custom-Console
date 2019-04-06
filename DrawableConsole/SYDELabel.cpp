@@ -10,7 +10,7 @@ SYDELabel::SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass t
 	TextColour = txtColour;
 }
 
-ConsoleWindow SYDELabel::draw_label(ConsoleWindow window)
+ConsoleWindow SYDELabel::draw_ui(ConsoleWindow window)
 {
 	int stringNo = 1;
 	ColourClass _TXT = TextColour;

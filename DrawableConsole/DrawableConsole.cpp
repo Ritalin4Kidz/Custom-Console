@@ -3114,7 +3114,7 @@ int main()
 	//}
 
 	//Concerto
-	DinseyPlanes m_Planes(astVars);
+	//DinseyPlanes m_Planes(astVars);
 	LPCWSTR title = L"Concerto";
 	SYDECredits::_GAMETITLE = "Concerto";
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";

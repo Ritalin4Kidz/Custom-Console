@@ -89,6 +89,13 @@ void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const H
 	}
 	_activated = true;
 }
+void SYDEGamePlay::activate_bySplashscreen(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight, Artwork artVars)
+{
+	_poweredBySYDEEngine(4, 15, true, start, hOut, window, windowWidth, windowHeight, artVars);
+	PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
+	Sleep(1000);
+	_activated = true;
+}
 void SYDEGamePlay::hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight, AssetsClass astVars)
 {
 	//SCENE 10

@@ -10,6 +10,16 @@ ConsoleWindow SYDEMenu::draw_menu(ConsoleWindow window)
 	return window;
 }
 
+void SYDEMenu::prevSelect()
+{
+	selectionNumber--;
+	if (selectionNumber < 0)
+	{
+		selectionNumber = m_Items.size() - 1;
+	}
+	hiLight();
+}
+
 void SYDEMenu::nextSelect()
 {
 	selectionNumber++; 

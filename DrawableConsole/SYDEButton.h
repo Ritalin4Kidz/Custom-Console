@@ -27,6 +27,9 @@ public:
 
 	void setActive(bool active) { m_Active = active; }
 	bool getActive() { return m_Active; }
+
+	void DoFunc() { m_Function(); }
+	void SetFunc(void(*f)()) { m_Function = f; }
 private:
 
 	bool m_Active = false;
@@ -38,4 +41,6 @@ private:
 	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
 	ColourClass HiLightColour = NULLCOLOUR;
+
+	void(*m_Function)();
 };

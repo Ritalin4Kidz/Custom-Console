@@ -27,6 +27,8 @@ public:
 	int getSize() { return m_Items.size(); }
 	int getSelectedNumber() { return selectionNumber; }
 	SYDEButton& getSelected() { return m_Items[selectionNumber]; }
+
+	void DoSelectedFunc() { m_Items[selectionNumber].DoFunc(); }
 	void setPos(Vector2 newPos) { m_Pos = newPos; }
 private:
 	vector<SYDEButton> m_Items;

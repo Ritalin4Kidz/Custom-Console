@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "SYDEClientClass.h"
 
-int __cdecl Client::main_client(const char* message)
+int __cdecl SClient::main_client(const char* message)
 {
 	WSADATA wsaData;
 	SOCKET ConnectSocket = INVALID_SOCKET;

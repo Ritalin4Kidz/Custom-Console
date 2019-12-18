@@ -1,12 +1,11 @@
 #pragma once
 
-#pragma once
-#undef UNICODE
+//#undef UNICODE
 
-#define WIN32_LEAN_AND_MEAN
-#pragma comment (lib, "Ws2_32.lib")
-#pragma comment (lib, "Mswsock.lib")
-#pragma comment (lib, "AdvApi32.lib")
+//#define WIN32_LEAN_AND_MEAN
+//#pragma comment (lib, "Ws2_32.lib")
+//#pragma comment (lib, "Mswsock.lib")
+//#pragma comment (lib, "AdvApi32.lib")
 
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -16,10 +15,12 @@
 #include <string>
 
 // Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
-class Client {
+
+
+class SClient {
 public:
-	Client() {}
-	virtual ~Client() {}
+	SClient() {}
+	virtual ~SClient() {}
 
 	int __cdecl main_client(const char* message);
 

@@ -2912,6 +2912,47 @@ void animation_test_turtle()
 	}
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
+
+void Sprite_Sheet_Test() 
+{
+	string lastPress = "Null";
+	LPCWSTR title = L"Animation Test"; //GOOD TITLE, NO CHANGE NEEDED BOSS
+	SetConsoleTitleW(title);
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
+	}
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+	CustomAnimationAsset testSheetAnim;
+	testSheetAnim.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\TestAnimations\\TestSpriteSheet_2.bmp",astVars,80, 100, 20, 20, 6, 11));
+	testSheetAnim.setLooping(true);
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+
+		for (int l = 0; l < windowWidth; l++)
+		{
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.setTextAtPoint(Vector2(l, m), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+			}
+		}
+		window = testSheetAnim.draw_asset(window, Vector2(0, 0));
+		window.writeConsole();
+		//TODO, ADD UI AND CONTROLS TO MANIPULATE ANIMATION FOR TECH DEMO
+		Sleep(30);
+	}
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
+}
+
 void animation_test_player()
 {
 	string lastPress = "Null";
@@ -3126,12 +3167,12 @@ int main()
 	SYDEGamePlay::initialize_window(hOut, window);
 	SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
-	while (true)
-	{
-		window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		window.writeConsole();
-		SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
-	}
+	//while (true)
+	//{
+	//	window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
+	//	window.writeConsole();
+	//	SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
+	//}
 	//END CONCERTO
 
 	//REInvent The Wheel
@@ -3153,7 +3194,7 @@ int main()
 	}*/
 	// END REINVENT THE WHEEL
 
-
+	Sprite_Sheet_Test();
 	//animation_test_player();
 
 	//bmp_test2(testBmp);

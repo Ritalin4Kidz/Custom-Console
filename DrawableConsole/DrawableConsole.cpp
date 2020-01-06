@@ -2682,7 +2682,7 @@ void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 				BackgroundColourVariable = window._intToColour((int)BackgroundColourVariable + (int)BLACK_BLUE_BG);
 			}
 		}
-		window = asset_to_draw.draw_asset(window, Vector2(x, y));
+		window = asset_to_draw.draw_asset(window, Vector2(x, y),40, 20);
 		//UI LINE 1
 		window.setTextAtPoint(Vector2(0, 18), "R", determineColour(WHITE, window.getTextColourAtPoint(Vector2(0, 18))));
 		window.setTextAtPoint(Vector2(1, 18), ":", determineColour(WHITE, window.getTextColourAtPoint(Vector2(1, 18))));
@@ -3132,13 +3132,13 @@ int main()
 	//}
 	//set_up_window_properties();
 	////NECCESARY ON STARTUP
-	//GdiplusStartup(&gdiplusToken, &startupInput, 0);
-	//srand(time(NULL));
+	GdiplusStartup(&gdiplusToken, &startupInput, 0);
+	srand(time(NULL));
 	////CENTER THE WINDOW
 	//window.setOffset(config.getOffset());
 	
 	//INIT CUSTOMASSETS
-	//set_up_custom_assets();
+	set_up_custom_assets();
 	
 	//INITIALIZE CHEAT VALUES
 	//cheatCodes = config.ReturnCheats();
@@ -3165,7 +3165,8 @@ int main()
 	deltaTime.initialise(std::chrono::high_resolution_clock::now());
 	Concerto m_Concerto;
 	SYDEGamePlay::initialize_window(hOut, window);
-	SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+	//SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
 	//while (true)
 	//{
@@ -3194,10 +3195,10 @@ int main()
 	}*/
 	// END REINVENT THE WHEEL
 
-	Sprite_Sheet_Test();
+	//Sprite_Sheet_Test();
 	//animation_test_player();
 
-	//bmp_test2(testBmp);
+	bmp_test2(testBmp);
 	//bmp_test2(fieldTestBmp);
 	//play_syde();
 	/* REGION ENGINE TESTS

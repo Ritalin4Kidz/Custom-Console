@@ -65,3 +65,8 @@ void CustomAsset::setCharAtPoint(Vector2 Point, char m_Text)
 {
 	AssetVector[Point.getY()][Point.getX()].setChar(m_Text);
 }
+
+void CustomAsset::setColourAtPoint(Vector2 Point, int m_Colour)
+{
+	AssetVector[Point.getY()][Point.getX()].setColour(m_Colour);
+}

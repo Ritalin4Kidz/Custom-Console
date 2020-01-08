@@ -38,7 +38,7 @@ ConsoleWindow CustomAsset::draw_asset(ConsoleWindow window, Vector2 point, int w
 	{
 		for (int ii = startPointX, jj = StartJJ; ii < windowWidth + point.getX() && ii < AssetVector[i].size(); ii++, jj++)
 		{
-			window.setTextAtPoint(Vector2(jj, j), to_string(window._intToColour(AssetVector[i][ii].getChar())), window._intToColour(AssetVector[i][ii].getColour()));
+			window.setTextAtPoint(Vector2(jj, j), to_string(AssetVector[i][ii].getChar()), window._intToColour(AssetVector[i][ii].getColour()));
 		}
 	}
 	return window;
@@ -69,4 +69,14 @@ void CustomAsset::setCharAtPoint(Vector2 Point, char m_Text)
 void CustomAsset::setColourAtPoint(Vector2 Point, int m_Colour)
 {
 	AssetVector[Point.getY()][Point.getX()].setColour(m_Colour);
+}
+
+char CustomAsset::getCharAtPoint(Vector2 Point, char m_Text)
+{
+	return AssetVector[Point.getY()][Point.getX()].getChar();
+}
+
+int CustomAsset::getColourAtPoint(Vector2 Point, int m_Colour)
+{
+	return AssetVector[Point.getY()][Point.getX()].getColour();
 }

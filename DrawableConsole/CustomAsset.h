@@ -21,8 +21,9 @@ public:
 	void setCharAtPoint(Vector2 Point, char m_Text);
 	void setColourAtPoint(Vector2 Point, int m_Colour);
 
-	char getCharAtPoint(Vector2 Point, char m_Text);
-	int getColourAtPoint(Vector2 Point, int m_Colour);
+	char getCharAtPoint(Vector2 Point);
+	int getColourAtPoint(Vector2 Point);
+	string getStringFromChar(char x) { return string(1, x); }
 private:
 	vector<vector<TextItem>> AssetVector;
 

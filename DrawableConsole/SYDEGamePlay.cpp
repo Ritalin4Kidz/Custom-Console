@@ -187,6 +187,26 @@ ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, co
 	return SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
 }
 
+ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME & deltaTime)
+{
+	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
+	{
+		// CHECKING THE STATE OF ALL INPUTS
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown();
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp();
+	}
+	//reset_void(start, hOut,  window, windowWidth, windowHeight); //IN CASE FUCKED UP SCREEN
+	deltaTime.refreshTime();
+	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
+	SetConsoleCursorPosition(hOut, start);
+	return SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
+}
+
 void SYDEGamePlay::_introductionScript()
 {
 	string gameTitle = "Syde";

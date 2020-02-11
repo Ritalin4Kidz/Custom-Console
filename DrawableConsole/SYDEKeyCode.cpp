@@ -46,6 +46,8 @@ std::vector<SYDEKey> SYDEKeyCode::KeyCodes = {
 	ArrowRight,LeftShift, RightShift, LeftTab
 };
 
+std::vector<SYDEKey> SYDEKeyCode::KeyCodes_Optimized = {};
+
 std::string SYDEKeyCode::KeysDown()
 {
 	std::string m_return;
@@ -71,4 +73,15 @@ SYDEKey SYDEKeyCode::get(char KeyCode)
 		SYDEKey(KeyCode) //KEY DOESN'T EXIST, HOW ABOUT WE ADD IT
 	);
 	return KeyCodes[KeyCodes.size() - 1];
+}
+
+SYDEKey SYDEKeyCode::get_key(char KeyCode)
+{
+	for (int i = 0; i < KeyCodes_Optimized.size(); i++)
+	{
+		if (KeyCodes_Optimized[i].getKeyCode() == KeyCode) {
+			return KeyCodes_Optimized[i];
+		}
+	}
+	return SYDEKey('~');
 }

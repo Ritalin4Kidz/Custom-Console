@@ -61,6 +61,22 @@ std::string SYDEKeyCode::KeysDown()
 	return m_return;
 }
 
+std::string SYDEKeyCode::KeysDownSafe()
+{
+	HWND hWnd = GetConsoleWindow();
+	bool inForeground = GetForegroundWindow() == hWnd;
+	std::string m_return;
+	if (!inForeground) { return ""; }
+	for (char i = ' '; i <= '`'; i++) {
+		if (GetAsyncKeyState(i))
+		{
+			char addTxt = static_cast<char>(i);;
+			m_return += addTxt;
+		}
+	}
+	return m_return;
+}
+
 SYDEKey SYDEKeyCode::get(char KeyCode)
 {
 	for (int i = 0; i < KeyCodes.size(); i++)

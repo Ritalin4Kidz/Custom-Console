@@ -40,6 +40,12 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 	window.setOffset(config.getOffset());
 	//CHEATS
 	cheatCodes = config.ReturnCheats();
+
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
 	//for (int i = 0; i < cheatCodes.size(); i++)
 	//{
 	//	if (cheatCodes[i] == "JumpAllowed")
@@ -189,20 +195,21 @@ ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, co
 
 ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME & deltaTime)
 {
+	HWND ConsoleWindow = GetConsoleWindow();
 	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
 	{
 		// CHECKING THE STATE OF ALL INPUTS
-		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown();
-		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp();
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown_Safe(ConsoleWindow);
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp_Safe(ConsoleWindow);
 	}
 	//reset_void(start, hOut,  window, windowWidth, windowHeight); //IN CASE FUCKED UP SCREEN
 	deltaTime.refreshTime();
 	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
-	CONSOLE_CURSOR_INFO cInfo;
-	GetConsoleCursorInfo(hOut, &cInfo);
-	cInfo.bVisible = false;
-	SetConsoleCursorInfo(hOut, &cInfo);
-	cout.flush();
+	//CONSOLE_CURSOR_INFO cInfo;
+	//GetConsoleCursorInfo(hOut, &cInfo);
+	//cInfo.bVisible = false;
+	//SetConsoleCursorInfo(hOut, &cInfo);
+	//cout.flush();
 	SetConsoleCursorPosition(hOut, start);
 	return SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
 }

@@ -2634,11 +2634,11 @@ void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 	window.writeConsole(); //DONE
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 
-	CONSOLE_CURSOR_INFO cInfo;
-	GetConsoleCursorInfo(hOut, &cInfo);
-	cInfo.bVisible = false;
-	SetConsoleCursorInfo(hOut, &cInfo);
-	cout.flush();
+	//CONSOLE_CURSOR_INFO cInfo;
+	//GetConsoleCursorInfo(hOut, &cInfo);
+	//cInfo.bVisible = false;
+	//SetConsoleCursorInfo(hOut, &cInfo);
+	//cout.flush();
 	int x = 0;
 	int y = 0;
 	while (true)
@@ -3197,7 +3197,11 @@ int main()
 
 	//Sprite_Sheet_Test();
 	//animation_test_player();
-
+	CONSOLE_CURSOR_INFO cInfo;
+	GetConsoleCursorInfo(hOut, &cInfo);
+	cInfo.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cInfo);
+	cout.flush();
 	bmp_test2(testBmp);
 	//bmp_test2(fieldTestBmp);
 	//play_syde();

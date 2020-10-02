@@ -3125,18 +3125,29 @@ void set_up_window_properties()
 
 void set_up_shape_test()
 {
-	window.ClearWindow(true);
-	for (int l = 0; l < windowWidth; l++)
+	//SYDESquare s(3, RED_RED_BG, Vector2(2, 5));
+	//SYDERect s(Vector2(6, 3), RED_RED_BG, Vector2(2, 5));
+	SYDECircle s(1, RED_WHITE_BG, Vector2(2, 5));;
+	s.setChar('*');
+	while (true)
 	{
-		for (int m = 0; m < windowHeight; m++)
+		window.ClearWindow(true);
+		for (int l = 0; l < windowWidth; l++)
 		{
-			window.addToLine(m, " ", BLACK);
+			for (int m = 0; m < windowHeight; m++)
+			{
+				window.addToLine(m, " ", BLACK);
+			}
 		}
+		if (GetKeyDown('C'))
+		{
+			window = s.draw_at_point(window, (Vector2(5, 7)));
+		}
+		else
+			window = s.draw(window);
+		window.writeConsole();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	}
-	//SYDECircle s(int 3, RED_RED_BG, Vector2(2, 5));
-	//window = s.draw(window);
-	window.writeConsole();
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
 // MAIN FUNCTION
 int main()

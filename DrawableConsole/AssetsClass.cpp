@@ -10,7 +10,22 @@ using namespace Gdiplus;
 using namespace std;
 //LOOK AT BITMAP
 LPCWSTR AssetsClass::explosion_file_path = L"EngineFiles\\Sounds\\explosion.wav";
-
+vector<string> AssetsClass::BLACK_RGB = { "12","12","12" };
+vector<string> AssetsClass::BLUE_RGB = { "0","55","218" };
+vector<string> AssetsClass::GREEN_RGB = { "19","161","14" };
+vector<string> AssetsClass::AQUA_RGB = { "58","150","221" };
+vector<string> AssetsClass::RED_RGB = { "197","15","31" };
+vector<string> AssetsClass::PURPLE_RGB = { "136","23","152" };
+vector<string> AssetsClass::YELLOW_RGB = { "193","156","0" };
+vector<string> AssetsClass::WHITE_RGB = { "204","204","204" };
+vector<string> AssetsClass::LIGHTGREY_RGB = { "118","118","118" };
+vector<string> AssetsClass::DARKBLUE_RGB = { "59","120","255" };
+vector<string> AssetsClass::BRIGHTGREEN_RGB = { "22","198","12" };
+vector<string> AssetsClass::LIGHTBLUE_RGB = { "97","214","214" };
+vector<string> AssetsClass::BRIGHTRED_RGB = { "231","72","86" };
+vector<string> AssetsClass::LIGHTPURPLE_RGB = { "180","0","158" };
+vector<string> AssetsClass::BRIGHTYELLOW_RGB = { "249","241","165" };
+vector<string> AssetsClass::BRIGHTWHITE_RGB = { "242","242","242" };
 const int AssetsClass::get_file_size(char * filename)
 {
 	FILE* f = fopen(filename, "rb");
@@ -171,6 +186,89 @@ vector<ColourClass> AssetsClass::get_bmp_as_direct_colour_class_array(const WCHA
 		}
 	}
 	return tempVec;
+}
+
+vector<string> AssetsClass::ColourToRGBStrArray(ColourClass c)
+{
+	if (c < BLACK_BLUE_BG)
+	{
+		return get_BLACK_RGB();
+	}
+	if (c >= BLACK_BLUE_BG && c < BLACK_GREEN_BG)
+	{
+		return get_BLUE_RGB();
+	}
+
+	if (c >= BLACK_GREEN_BG && c < BLACK_AQUA_BG)
+	{
+		return get_GREEN_RGB();
+	}
+
+	if (c >= BLACK_AQUA_BG && c < BLACK_RED_BG)
+	{
+		return get_AQUA_RGB();
+	}
+
+	if (c >= BLACK_RED_BG && c < BLACK_PURPLE_BG)
+	{
+		return get_RED_RGB();
+	}
+
+	if (c >= BLACK_PURPLE_BG && c < BLACK_YELLOW_BG)
+	{
+		return get_PURPLE_RGB();
+	}
+
+	if (c >= BLACK_YELLOW_BG && c < BLACK_WHITE_BG)
+	{
+		return get_YELLOW_RGB();
+	}
+
+	if (c >= BLACK_WHITE_BG && c < BLACK_LIGHTGREY_BG)
+	{
+		return get_WHITE_RGB();
+	}
+
+	if (c >= BLACK_LIGHTGREY_BG && c < BLACK_DARKBLUE_BG)
+	{
+		return get_LIGHTGREY_RGB();
+	}
+
+	if (c >= BLACK_DARKBLUE_BG && c < BLACK_BRIGHTGREEN_BG)
+	{
+		return get_DARKBLUE_RGB();
+	}
+
+	if (c >= BLACK_BRIGHTGREEN_BG && c < BLACK_LIGHTBLUE_BG)
+	{
+		return get_BRIGHTGREEN_RGB();
+	}
+
+	if (c >= BLACK_LIGHTBLUE_BG && c < BLACK_BRIGHTRED_BG)
+	{
+		return get_LIGHTBLUE_RGB();
+	}
+
+	if (c >= BLACK_BRIGHTRED_BG && c < BLACK_LIGHTPURPLE_BG)
+	{
+		return get_BRIGHTRED_RGB();
+	}
+
+	if (c >= BLACK_LIGHTPURPLE_BG && c < BLACK_BRIGHTYELLOW_BG)
+	{
+		return get_LIGHTPURPLE_RGB();
+	}
+
+	if (c >= BLACK_BRIGHTYELLOW_BG && c < BLACK_BRIGHTWHITE_BG)
+	{
+		return get_BRIGHTYELLOW_RGB();
+	}
+
+	if (c >= BLACK_BRIGHTWHITE_BG && c <= BRIGHTWHITE_BRIGHTWHITE_BG)
+	{
+		return get_BRIGHTWHITE_RGB();
+	}
+	return get_BLACK_RGB();
 }
 
 

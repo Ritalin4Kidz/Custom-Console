@@ -8,6 +8,7 @@
 #include "Artwork.h"
 #include "AssetsClass.h"
 #include "CustomAnimationAsset.h"
+#include "SYDEScreenshot.h"
 #include "CustomAsset.h"
 #include "Activation.h"
 #include "SYDECredits.h"

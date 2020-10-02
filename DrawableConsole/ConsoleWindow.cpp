@@ -82,7 +82,7 @@ ColourClass ConsoleWindow::getTextColourAtPoint(Vector2 point)
 	{
 		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
 		{
-			return (ColourClass) m_Lines[point.getY()].getLine()[point.getX()].getColour();
+			return static_cast<ColourClass>(m_Lines[point.getY()].getLine()[point.getX()].getColour());
 		}
 	}
 	return BLACK;
@@ -257,6 +257,91 @@ ColourClass ConsoleWindow::determineColourAtPoint(Vector2 point, ColourClass mai
 		return (ColourClass)(main + BLACK_BRIGHTWHITE_BG);
 	}
 	return main;
+}
+
+ColourClass ConsoleWindow::get_BG_Colour_At_Point_Only(Vector2 point)
+{
+	ColourClass bg = getTextColourAtPoint(point);
+
+	//if (bg < BLACK_BLUE_BG)
+	//{
+	//	return BLACK;
+	//}
+	if (bg >= BLACK_BLUE_BG && bg < BLACK_GREEN_BG)
+	{
+		return BLUE_BLUE_BG;
+	}
+
+	if (bg >= BLACK_GREEN_BG && bg < BLACK_AQUA_BG)
+	{
+		return GREEN_GREEN_BG;
+	}
+
+	if (bg >= BLACK_AQUA_BG && bg < BLACK_RED_BG)
+	{
+		return AQUA_AQUA_BG;
+	}
+
+	if (bg >= BLACK_RED_BG && bg < BLACK_PURPLE_BG)
+	{
+		return RED_RED_BG;
+	}
+
+	if (bg >= BLACK_PURPLE_BG && bg < BLACK_YELLOW_BG)
+	{
+		return PURPLE_PURPLE_BG;
+	}
+
+	if (bg >= BLACK_YELLOW_BG && bg < BLACK_WHITE_BG)
+	{
+		return YELLOW_YELLOW_BG;
+	}
+
+	if (bg >= BLACK_WHITE_BG && bg < BLACK_LIGHTGREY_BG)
+	{
+		return WHITE_WHITE_BG;
+	}
+
+	if (bg >= BLACK_LIGHTGREY_BG && bg < BLACK_DARKBLUE_BG)
+	{
+		return LIGHTGREY_LIGHTGREY_BG;
+	}
+
+	if (bg >= BLACK_DARKBLUE_BG && bg < BLACK_BRIGHTGREEN_BG)
+	{
+		return DARKBLUE_DARKBLUE_BG;
+	}
+
+	if (bg >= BLACK_BRIGHTGREEN_BG && bg < BLACK_LIGHTBLUE_BG)
+	{
+		return BRIGHTGREEN_BRIGHTGREEN_BG;
+	}
+
+	if (bg >= BLACK_LIGHTBLUE_BG && bg < BLACK_BRIGHTRED_BG)
+	{
+		return LIGHTBLUE_LIGHTBLUE_BG;
+	}
+
+	if (bg >= BLACK_BRIGHTRED_BG && bg < BLACK_LIGHTPURPLE_BG)
+	{
+		return BRIGHTRED_BRIGHTRED_BG;
+	}
+
+	if (bg >= BLACK_LIGHTPURPLE_BG && bg < BLACK_BRIGHTYELLOW_BG)
+	{
+		return LIGHTPURPLE_LIGHTPURPLE_BG;
+	}
+
+	if (bg >= BLACK_BRIGHTYELLOW_BG && bg < BLACK_BRIGHTWHITE_BG)
+	{
+		return BRIGHTYELLOW_BRIGHTYELLOW_BG;
+	}
+
+	if (bg >= BLACK_BRIGHTWHITE_BG && bg <= BRIGHTWHITE_BRIGHTWHITE_BG)
+	{
+		return BRIGHTWHITE_BRIGHTWHITE_BG;
+	}
+	return BLACK;
 }
 
 void ConsoleWindow::operator=(ConsoleWindow other)

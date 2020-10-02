@@ -46,6 +46,12 @@
     <Filter Include="Source Files\SYDECredits">
       <UniqueIdentifier>{03569828-52de-4a68-ad87-d0de82b1101f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SYDEUtil">
+      <UniqueIdentifier>{ac7c43b1-96e7-41f0-a770-f502b5f3004a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SYDEUtil">
+      <UniqueIdentifier>{81d6f97b-2e8f-466b-a9a3-0202b9c2f56f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -153,6 +159,12 @@
     <ClInclude Include="SYDEShapes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEScreenshot.h">
+      <Filter>Header Files\SYDEUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -251,6 +263,9 @@
     <ClCompile Include="SYDEShapes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SYDEScreenshot.cpp">
+      <Filter>Source Files\SYDEUtil</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="BrainFiles\AiAgainstPlayer.txt" />
@@ -273,5 +288,10 @@
   <ItemGroup>
     <None Include="BrainFiles\PathFile.zz" />
     <None Include="BrainFiles\configSettings.sc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DrawableConsole.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@
 // callum@hands.net.au
 #include "pch.h"
 #include "SYDEstdafx.h"
+#include "SYDEScreenshot.h"
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
@@ -2734,6 +2735,12 @@ void bmp_test2(CustomAsset asset_to_draw) //Keep As Intructions
 		window.setTextAtPoint(Vector2(34, 19), "R", determineColour(WHITE, window.getTextColourAtPoint(Vector2(34, 19))));
 		//END UI
 		window.writeConsole();
+		if (GetKeyDown('Q'))
+		{
+			SYDEScreenshotError e;
+			SYDEScreenshot::init();
+			SYDEScreenshot::Take_Screenshot(window, windowWidth, windowHeight, e);
+		}
 	}
 }
 void animation_test()
@@ -3160,6 +3167,7 @@ int main()
 	//}
 	//set_up_window_properties();
 	////NECCESARY ON STARTUP
+	config.volumeControl(0);
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	////CENTER THE WINDOW
@@ -3167,7 +3175,7 @@ int main()
 	
 	//INIT CUSTOMASSETS
 	set_up_custom_assets();
-	set_up_shape_test();
+	//set_up_shape_test();
 	//INITIALIZE CHEAT VALUES
 	//cheatCodes = config.ReturnCheats();
 	//for (int i = 0; i < cheatCodes.size(); i++)

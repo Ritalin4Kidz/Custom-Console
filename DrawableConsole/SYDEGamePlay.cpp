@@ -57,7 +57,7 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 	//		Cheat_Wireframe = true;
 	//	}
 	//}
-
+	SYDEScreenshot::init();
 }
 
 Settings SYDEGamePlay::config = Settings("EngineFiles\\Settings\\configSettings.sc");

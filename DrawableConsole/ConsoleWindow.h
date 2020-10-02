@@ -309,7 +309,12 @@ public:
 	void initialize(int width, int height);
 	void writeConsole();
 	ColourClass determineColourAtPoint(Vector2 point, ColourClass main, bool onlyFG);
+
+	ColourClass get_BG_Colour_At_Point_Only(Vector2 point);
+
 	void operator=(ConsoleWindow other);
+
+
 private:
 	vector<Line> m_Lines;
 	Vector2 offset;

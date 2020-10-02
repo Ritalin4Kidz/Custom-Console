@@ -67,3 +67,29 @@ vector<string> Settings::ReturnCheats()
 {
 	return SettingsSplitter(cheats,';');
 }
+
+void Settings::volumeControl(int volume)
+{
+	switch (volume)
+	{
+	case 0:
+		waveOutSetVolume(0, VOLUME_OFF);
+		break;
+	case 1:
+		waveOutSetVolume(0, VOLUME_LOW);
+		break;
+	case 2:
+		waveOutSetVolume(0, VOLUME_NML);
+		break;
+	case 3:
+		waveOutSetVolume(0, VOLUME_MED);
+		break;
+	case 4:
+		waveOutSetVolume(0, VOLUME_HIG);
+		break;
+	default:
+		waveOutSetVolume(0, VOLUME_NML);
+		volume = 2;
+		break;
+	}
+}

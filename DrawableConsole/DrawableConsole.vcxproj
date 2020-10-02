@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>SYDEEngine</TargetName>
+    <TargetName>SYDEEngine_Debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -173,6 +173,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="ReiventTheWheel.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SYDEButton.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDELabel.h" />
     <ClInclude Include="SYDEMenu.h" />
+    <ClInclude Include="SYDEScreenshot.h" />
     <ClInclude Include="SYDEShapes.h" />
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
@@ -224,6 +226,7 @@
     <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDELabel.cpp" />
     <ClCompile Include="SYDEMenu.cpp" />
+    <ClCompile Include="SYDEScreenshot.cpp" />
     <ClCompile Include="SYDEShapes.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />
     <ClCompile Include="SYDETime.cpp" />
@@ -247,6 +250,9 @@
   <ItemGroup>
     <None Include="BrainFiles\configSettings.sc" />
     <None Include="BrainFiles\PathFile.zz" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DrawableConsole.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

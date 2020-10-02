@@ -31,3 +31,4 @@
 #include "SYDETime.h"
 #include <chrono>
 #include "SYDETextBox.h"
+#include "SYDEShapes.h"

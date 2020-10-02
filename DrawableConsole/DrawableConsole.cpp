@@ -3121,6 +3121,23 @@ void set_up_window_properties()
 	};
 	SetConsoleScreenBufferSize(hOut, scrollbar);
 }
+
+
+void set_up_shape_test()
+{
+	window.ClearWindow(true);
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.addToLine(m, " ", BLACK);
+		}
+	}
+	//SYDECircle s(int 3, RED_RED_BG, Vector2(2, 5));
+	//window = s.draw(window);
+	window.writeConsole();
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
+}
 // MAIN FUNCTION
 int main()
 {
@@ -3139,7 +3156,7 @@ int main()
 	
 	//INIT CUSTOMASSETS
 	set_up_custom_assets();
-	
+	set_up_shape_test();
 	//INITIALIZE CHEAT VALUES
 	//cheatCodes = config.ReturnCheats();
 	//for (int i = 0; i < cheatCodes.size(); i++)

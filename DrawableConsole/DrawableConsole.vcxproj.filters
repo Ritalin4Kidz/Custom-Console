@@ -150,6 +150,9 @@
     <ClInclude Include="SYDEMenu.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEShapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -244,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="SYDEMenu.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEShapes.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

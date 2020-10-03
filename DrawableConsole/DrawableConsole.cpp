@@ -3168,6 +3168,7 @@ int main()
 	//set_up_window_properties();
 	////NECCESARY ON STARTUP
 	config.volumeControl(0);
+	config.ColourPalette(hOut);
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	////CENTER THE WINDOW

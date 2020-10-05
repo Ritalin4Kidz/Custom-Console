@@ -168,6 +168,9 @@
     <ClInclude Include="SYDEFPS.h">
       <Filter>Header Files\SYDEUtil</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEClock.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -271,6 +274,9 @@
     </ClCompile>
     <ClCompile Include="SYDEFPS.cpp">
       <Filter>Source Files\SYDEUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEClock.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

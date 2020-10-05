@@ -177,6 +177,7 @@
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SYDEButton.h" />
+    <ClInclude Include="SYDEClock.h" />
     <ClInclude Include="SYDECredits.h" />
     <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
@@ -221,6 +222,7 @@
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SYDEButton.cpp" />
+    <ClCompile Include="SYDEClock.cpp" />
     <ClCompile Include="SYDECredits.cpp" />
     <ClCompile Include="SYDEFPS.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />

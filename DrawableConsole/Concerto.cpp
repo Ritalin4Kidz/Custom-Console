@@ -2,6 +2,7 @@
 #include "Concerto.h"
 #include <string>
 
+ColourClass Concerto::_bg = WHITE_WHITE_BG;
 
 void Concerto::Initialize()
 {
@@ -12,10 +13,18 @@ void Concerto::Initialize()
 	{
 		_MENU[i].setHighLight(RED);
 	}
+	_t.SetFunc(TickFunc);
+	_t.SetPos(Vector2(0, 2));
+	_t.SetColour(BRIGHTGREEN);
 }
 void Concerto::m_Button_Press()
 {
 	m_Label.setText("Potassium");
+}
+void TickFunc()
+{
+	int r = rand() % 255;
+	Concerto::setBG(static_cast<ColourClass>(r));
 }
 ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
@@ -23,7 +32,7 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	{
 		for (int m = 0; m < windowHeight; m++)
 		{
-			window.setTextAtPoint(Vector2(l, m), " ", WHITE_WHITE_BG);
+			window.setTextAtPoint(Vector2(l, m), " ", _bg);
 		}
 	}
 	if (SYDEKeyCode::get(VK_RETURN)._CompareState(KEYDOWN))
@@ -68,6 +77,7 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	window = m_Label.draw_ui(window);
 	//window = m_Button.draw_ui(window);
 	//window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
+	window = _t.draw_ui(window);
 	return window;
 	//PICK ME UP GITHUBBY
 }

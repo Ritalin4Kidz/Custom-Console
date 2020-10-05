@@ -10,7 +10,11 @@ public:
 	SYDEButton() { m_Label = ""; }
 	SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
 	virtual ~SYDEButton() {}
-
+	/// <summary>
+	/// Draw the button onto the window
+	/// </summary>
+	/// <param name="window"></param>
+	/// <returns></returns>
 	ConsoleWindow draw_ui(ConsoleWindow window) override;
 
 	void addText(string a_text) { m_Text += a_text; }
@@ -21,6 +25,9 @@ public:
 	void _HIGHLIGHT(bool _HILGHT) { _HIGHLIGHTED = _HILGHT; }
 	void setHighLight(ColourClass _COLR) { HiLightColour = _COLR; }
 
+	/// <summary>
+	/// Change the button state to BUTTONCLICKED
+	/// </summary>
 	void ButtonPress() { m_BtnState = BUTTONCLICKED; }
 
 	SYDEButton& operator=(SYDEButton other);
@@ -28,7 +35,14 @@ public:
 	void setActive(bool active) { m_Active = active; }
 	bool getActive() { return m_Active; }
 
+	/// <summary>
+	/// Execute the main button function
+	/// </summary>
 	void DoFunc() { m_Function(); }
+	/// <summary>
+	/// Set the main function for the button
+	/// </summary>
+	/// <param name="f"></param>
 	void SetFunc(void(*f)()) { m_Function = f; }
 private:
 
@@ -41,6 +55,6 @@ private:
 	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
 	ColourClass HiLightColour = NULLCOLOUR;
-
+protected:
 	void(*m_Function)();
 };

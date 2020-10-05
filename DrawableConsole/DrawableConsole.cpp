@@ -3134,7 +3134,7 @@ void set_up_shape_test()
 {
 	//SYDESquare s(3, RED_RED_BG, Vector2(2, 5));
 	//SYDERect s(Vector2(6, 3), RED_RED_BG, Vector2(2, 5));
-	SYDECircle s(1, RED_WHITE_BG, Vector2(2, 5));;
+	SYDECircle s(3, RED_WHITE_BG, Vector2(2, 5));;
 	s.setChar('*');
 	while (true)
 	{
@@ -3205,12 +3205,13 @@ int main()
 	//SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
-	//while (true)
-	//{
-	//	window = SYDEGamePlay::play_game(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
-	//	window.writeConsole();
-	//	SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
-	//}
+	SYDEGamePlay::showFPS(true);
+	while (true)
+	{
+		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		window.writeConsole();
+		SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
+	}
 	//END CONCERTO
 
 	//REInvent The Wheel

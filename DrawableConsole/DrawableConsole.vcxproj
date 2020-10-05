@@ -23,17 +23,17 @@
     <ProjectGuid>{BE11616C-7124-40EE-8D7A-2F2056BEE0C9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DrawableConsole</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -178,6 +178,7 @@
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SYDEButton.h" />
     <ClInclude Include="SYDECredits.h" />
+    <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
@@ -221,6 +222,7 @@
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SYDEButton.cpp" />
     <ClCompile Include="SYDECredits.cpp" />
+    <ClCompile Include="SYDEFPS.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />

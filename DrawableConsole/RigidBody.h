@@ -9,8 +9,16 @@ public:
 	RigidBody() {}
 	RigidBody(Vector2 pos, float Weight, bool kinemat) { m_pos = pos; m_Weight = Weight; m_Kinematic = kinemat; }
 	virtual ~RigidBody() {}
-
+	/// <summary>
+	/// Main Gravity Loop
+	/// </summary>
+	/// <param name="rigidbodyArray"></param>
 	void gravity(vector<RigidBody> rigidbodyArray);
+	/// <summary>
+	/// check gravity for all attached rigidbodys
+	/// </summary>
+	/// <param name="rigidbodyArray"></param>
+	/// <param name="children"></param>
 	void gravityChildren(vector<RigidBody> rigidbodyArray, vector<RigidBody> children);
 	bool checkArrayForHit(vector<RigidBody> rbArr);
 

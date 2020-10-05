@@ -7,6 +7,7 @@
 using namespace std;
 
 bool SYDEGamePlay::_activated = false;
+bool SYDEGamePlay::FPS_Counter = false;
 
 vector<string> SYDEGamePlay::cheatCodes = vector<string>();
 
@@ -46,17 +47,6 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 	cInfo.bVisible = false;
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
-	//for (int i = 0; i < cheatCodes.size(); i++)
-	//{
-	//	if (cheatCodes[i] == "JumpAllowed")
-	//	{
-	//		Cheat_CanJump = true;
-	//	}
-	//	else if (cheatCodes[i] == "Wireframe")
-	//	{
-	//		Cheat_Wireframe = true;
-	//	}
-	//}
 	SYDEScreenshot::init();
 }
 
@@ -205,13 +195,13 @@ ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const 
 	//reset_void(start, hOut,  window, windowWidth, windowHeight); //IN CASE FUCKED UP SCREEN
 	deltaTime.refreshTime();
 	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
-	//CONSOLE_CURSOR_INFO cInfo;
-	//GetConsoleCursorInfo(hOut, &cInfo);
-	//cInfo.bVisible = false;
-	//SetConsoleCursorInfo(hOut, &cInfo);
-	//cout.flush();
 	SetConsoleCursorPosition(hOut, start);
-	return SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
+	window = SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
+	if (FPS_Counter)
+	{
+		SYDEFPS::draw(window);
+	}
+	return window;
 }
 
 void SYDEGamePlay::_introductionScript()

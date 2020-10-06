@@ -16,6 +16,8 @@ void Concerto::Initialize()
 	_t.SetFunc(TickFunc);
 	_t.SetPos(Vector2(0, 2));
 	_t.SetColour(BRIGHTGREEN);
+	//_t.setState(Percentage);
+	_t.setValueLength(3);
 }
 void Concerto::m_Button_Press()
 {

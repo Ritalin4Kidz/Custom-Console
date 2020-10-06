@@ -3210,6 +3210,8 @@ int main()
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('E'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('B'));
+	window.setStartingLine(1);
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);

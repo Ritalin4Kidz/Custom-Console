@@ -38,9 +38,42 @@ void SYDEParticleEmitter::draw(ConsoleWindow& w)
 		TimeToSpawn += SYDEDefaults::getDeltaTime();
 		if (TimeToSpawn >= spawnTime)
 		{
+			if (_RandomColour)
+			{
+				int r = rand() % 255;
+				m_ParticleColour = static_cast<ColourClass>(r);
+			}
 			float _x = m_VelocityMin.getX() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getX() - m_VelocityMin.getX())));
 			float _y = m_VelocityMin.getY() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getY() - m_VelocityMin.getY())));
 			m_Particles.push_back(SYDEParticle(m_Pos, Vector2(_x,_y), particleLifeSpan,m_ParticleColour,m_ParticleCharacter));
 		}
+	}
+}
+
+void SYDEParticleBurst::draw(ConsoleWindow& w)
+{
+	for (int i = 0; i < m_Particles.size(); i++)
+	{
+		m_Particles[i].draw(w);
+		if (m_Particles[i].isDead())
+		{
+			m_Particles.erase(m_Particles.begin() + i);
+			i--;
+		}
+	}
+}
+
+void SYDEParticleBurst::burst()
+{
+	for (int i = 0; i < maxParticles; i++)
+	{
+		if (_RandomColour)
+		{
+			int r = rand() % 255;
+			m_ParticleColour = static_cast<ColourClass>(r);
+		}
+		float _x = m_VelocityMin.getX() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getX() - m_VelocityMin.getX())));
+		float _y = m_VelocityMin.getY() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getY() - m_VelocityMin.getY())));
+		m_Particles.push_back(SYDEParticle(m_Pos, Vector2(_x, _y), particleLifeSpan, m_ParticleColour, m_ParticleCharacter));
 	}
 }

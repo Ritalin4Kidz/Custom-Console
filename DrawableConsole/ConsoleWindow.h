@@ -313,9 +313,10 @@ public:
 	ColourClass get_BG_Colour_At_Point_Only(Vector2 point);
 
 	void operator=(ConsoleWindow other);
-
+	void setStartingLine(int i) { _StartingLine = i; }
 
 private:
 	vector<Line> m_Lines;
 	Vector2 offset;
+	int _StartingLine = 0;
 };

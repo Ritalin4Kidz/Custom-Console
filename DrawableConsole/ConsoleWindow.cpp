@@ -111,11 +111,11 @@ void ConsoleWindow::initialize(int width, int height)
 void ConsoleWindow::writeConsole()
 {
 	Line blank;
-	for (int i = 0; i < offset.getY(); i++)
+	for (int i = 0; i < offset.getY() + _StartingLine; i++)
 	{
 		blank.writeLine();
 	}	
-	for (int i = 0; i < m_Lines.size(); i++)
+	for (int i = _StartingLine; i < m_Lines.size(); i++)
 	{
 		m_Lines[i].writeLine(offset.getX());
 	}

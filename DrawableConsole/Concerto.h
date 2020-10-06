@@ -63,5 +63,6 @@ private:
 	void(buttonPressFunc)() { m_Button_Press(); }
 	SYDEClock_Timer _t = SYDEClock_Timer(0.5f);
 	SYDEParticleEmitter _e = SYDEParticleEmitter(Vector2(20,-3), Vector2(-2, 1), Vector2(2, 1));
+	SYDEParticleBurst _b = SYDEParticleBurst(Vector2(0, 0), Vector2(-2, -2), Vector2(2, 2));
 	static ColourClass _bg;
 };

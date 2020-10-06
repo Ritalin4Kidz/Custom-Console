@@ -21,6 +21,12 @@ void Concerto::Initialize()
 
 	_e.setColour(AQUA);
 	_e.setCharacter("*");
+	_e.RainbowOn(true);
+
+	_b.setColour(AQUA);
+	_b.setCharacter("*");
+	_b.RainbowOn(true);
+	_b.setMaxParticles(35);
 }
 void Concerto::m_Button_Press()
 {
@@ -47,6 +53,16 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	if (SYDEKeyCode::get_key('E')._CompareState(KEYDOWN))
 	{
 		_e.Stop();
+	}
+	if (SYDEKeyCode::get_key('B')._CompareState(KEYDOWN))
+	{
+		if (_b.isDead())
+		{
+			float _x = 0 + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (40 - 0)));
+			float _y = 0 + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (19 - 0)));
+			_b.setPos(Vector2(_x, _y));
+			_b.burst();
+		}
 	}
 	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN))
 	{
@@ -97,11 +113,12 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	//if (_MENU.getActive()) { window = _MENU.draw_menu(window); }
 	//window = m_TextBox.draw_ui(window);
 	//m_Label.setText("DeltaTime:" + to_string(SYDEDefaults::getDeltaTime()));
-	window = m_Label.draw_ui(window);
 	//window = m_Button.draw_ui(window);
 	//window.setTextAtPoint(Vector2(0, 18), to_string(SYDEDefaults::getDeltaTime()), BLACK_WHITE_BG);
 	//window = _t.draw_ui(window);
 	_e.draw(window);
+	_b.draw(window);
+	window = m_Label.draw_ui(window);
 	return window;
 	//PICK ME UP GITHUBBY
 }

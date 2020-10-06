@@ -3206,6 +3206,10 @@ int main()
 	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
 	//SYDEGamePlay::showFPS(true);
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('E'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);

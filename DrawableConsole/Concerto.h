@@ -34,6 +34,7 @@
 #include "SYDEButton.h"
 #include "SYDEMenu.h"
 #include "SYDEClock.h"
+#include "SYDEParticle.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -51,7 +52,7 @@ public:
 	static void setBG(ColourClass c) { _bg = c; }
 private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
-	SYDELabel m_Label = SYDELabel("Test Text",  Vector2(4, 10), Vector2(10, 1), BLACK, true);
+	SYDELabel m_Label = SYDELabel("Q:Start,E:Stop,W:Increase,S:Decrease",  Vector2(0, 19), Vector2(40, 1), WHITE, true);
 	SYDEButton m_Button;
 	//WE WANT TO START THE MENU AT y=1.
 	SYDEMenu _MENU = SYDEMenu(vector<SYDEButton> {
@@ -61,5 +62,6 @@ private:
 	string m_LabelText = "Test Text";
 	void(buttonPressFunc)() { m_Button_Press(); }
 	SYDEClock_Timer _t = SYDEClock_Timer(0.5f);
+	SYDEParticleEmitter _e = SYDEParticleEmitter(Vector2(20,-3), Vector2(-2, 1), Vector2(2, 1));
 	static ColourClass _bg;
 };

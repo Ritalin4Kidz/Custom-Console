@@ -33,7 +33,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -185,6 +185,7 @@
     <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDELabel.h" />
     <ClInclude Include="SYDEMenu.h" />
+    <ClInclude Include="SYDEParticle.h" />
     <ClInclude Include="SYDEScreenshot.h" />
     <ClInclude Include="SYDEShapes.h" />
     <ClInclude Include="SYDEstdafx.h" />
@@ -230,6 +231,7 @@
     <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDELabel.cpp" />
     <ClCompile Include="SYDEMenu.cpp" />
+    <ClCompile Include="SYDEParticle.cpp" />
     <ClCompile Include="SYDEScreenshot.cpp" />
     <ClCompile Include="SYDEShapes.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />

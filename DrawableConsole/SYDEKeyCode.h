@@ -4,11 +4,29 @@
 #include <string>
 class SYDEKeyCode {
 public:
+	/// <summary>
+	/// check through the key array for key states
+	/// </summary>
+	/// <returns></returns>
 	static std::string KeysDown();
+	/// <summary>
+	/// check through the key array for key states
+	/// </summary>
+	/// <returns></returns>
 	static std::string KeysDownSafe();
 	static std::vector<SYDEKey> KeyCodes;
 	static std::vector<SYDEKey> KeyCodes_Optimized;
+	/// <summary>
+	/// Return the pressed key
+	/// </summary>
+	/// <param name="KeyCode"></param>
+	/// <returns></returns>
 	static SYDEKey get(char KeyCode);
+	/// <summary>
+	/// return the pressed key
+	/// </summary>
+	/// <param name="KeyCode"></param>
+	/// <returns></returns>
 	static SYDEKey get_key(char KeyCode);
 	static SYDEKey A; //0
 	static SYDEKey B; //1

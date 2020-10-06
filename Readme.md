@@ -125,6 +125,10 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.1.3.0 6/10/2020
+- SYDEParticle header added
+- SYDEParticle & SYDEParticleEmitter classes
+
 ### 1.1.2.0
 - SYDEClock_Timer added
 - Timer can do a function on each tik and display itself on the window

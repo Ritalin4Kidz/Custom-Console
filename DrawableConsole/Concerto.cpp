@@ -23,7 +23,7 @@ void Concerto::Initialize()
 	_e.setCharacter("*");
 	_e.RainbowOn(true);
 
-	_b.setColour(AQUA);
+	_b.setColour(YELLOW);
 	_b.setCharacter("*");
 	_b.RainbowOn(true);
 	_b.setMaxParticles(35);

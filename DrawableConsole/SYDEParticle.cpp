@@ -65,9 +65,14 @@ void SYDEParticleBurst::draw(ConsoleWindow& w)
 
 void SYDEParticleBurst::burst()
 {
+	if (_RandomColour && _solidBurst)
+	{
+		int r = rand() % 255;
+		m_ParticleColour = static_cast<ColourClass>(r);
+	}
 	for (int i = 0; i < maxParticles; i++)
 	{
-		if (_RandomColour)
+		if (_RandomColour && !_solidBurst)
 		{
 			int r = rand() % 255;
 			m_ParticleColour = static_cast<ColourClass>(r);

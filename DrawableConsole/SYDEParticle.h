@@ -101,6 +101,7 @@ public:
 	void setPos(Vector2 p) { m_Pos = p; }
 
 	void RainbowOn(bool b) { _RandomColour = b; }
+	void SolidBurst(bool b) { _solidBurst = b; }
 
 private:
 
@@ -109,6 +110,7 @@ private:
 	float particleLifeSpan = 0.5f;
 
 	bool _RandomColour = false;
+	bool _solidBurst = true;
 
 	ColourClass m_ParticleColour = BRIGHTGREEN;
 	std::string m_ParticleCharacter = "*";

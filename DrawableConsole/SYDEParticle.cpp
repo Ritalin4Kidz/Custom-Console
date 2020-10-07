@@ -3,11 +3,19 @@
 
 SYDEParticle::SYDEParticle(Vector2 pos, Vector2 vel, float lifeSpan, ColourClass c, std::string _char)
 {
-	m_Pos = pos; m_Velocity = vel; m_LifeTime = lifeSpan; m_colour = c; m_character = _char;
+	m_Pos = pos; m_Velocity = vel; 
+	m_LifeTime = lifeSpan; 	m_maxLifeTime = lifeSpan;
+	m_colour = c; m_colour_finish = c;
+	m_character = _char;
 }
 
 void SYDEParticle::draw(ConsoleWindow& w)
 {
+	if (colour_transform)
+	{
+		if (m_LifeTime < (m_maxLifeTime / 2))
+			m_colour = m_colour_finish;
+	}
 	if (!isDead())
 	{
 		ColourClass c = m_colour;
@@ -38,6 +46,7 @@ void SYDEParticleEmitter::draw(ConsoleWindow& w)
 		TimeToSpawn += SYDEDefaults::getDeltaTime();
 		if (TimeToSpawn >= spawnTime)
 		{
+			TimeToSpawn -= spawnTime;
 			if (_RandomColour)
 			{
 				int r = rand() % 255;
@@ -46,6 +55,10 @@ void SYDEParticleEmitter::draw(ConsoleWindow& w)
 			float _x = m_VelocityMin.getX() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getX() - m_VelocityMin.getX())));
 			float _y = m_VelocityMin.getY() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getY() - m_VelocityMin.getY())));
 			m_Particles.push_back(SYDEParticle(m_Pos, Vector2(_x,_y), particleLifeSpan,m_ParticleColour,m_ParticleCharacter));
+			if (colour_transform)
+			{
+				m_Particles[m_Particles.size() - 1].setFinishingColour(m_colour_finish);
+			}
 		}
 	}
 }
@@ -80,5 +93,9 @@ void SYDEParticleBurst::burst()
 		float _x = m_VelocityMin.getX() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getX() - m_VelocityMin.getX())));
 		float _y = m_VelocityMin.getY() + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (m_VelocityMax.getY() - m_VelocityMin.getY())));
 		m_Particles.push_back(SYDEParticle(m_Pos, Vector2(_x, _y), particleLifeSpan, m_ParticleColour, m_ParticleCharacter));
+		if (colour_transform)
+		{
+			m_Particles[m_Particles.size() - 1].setFinishingColour(m_colour_finish);
+		}
 	}
 }

@@ -9,7 +9,7 @@ class SYDEParticle {
 public:
 	SYDEParticle() {}
 	SYDEParticle(Vector2 pos, Vector2 vel) { m_Pos = pos; m_Velocity = vel; }
-	SYDEParticle(Vector2 pos, Vector2 vel, float lifeSpan) { m_Pos = pos; m_Velocity = vel; m_LifeTime = lifeSpan; }
+	SYDEParticle(Vector2 pos, Vector2 vel, float lifeSpan) { m_Pos = pos; m_Velocity = vel; m_LifeTime = lifeSpan; m_maxLifeTime = lifeSpan; }
 	SYDEParticle(Vector2 pos, Vector2 vel, float lifeSpan, ColourClass c, std::string _char);
 	virtual ~SYDEParticle() {}
 
@@ -17,13 +17,18 @@ public:
 
 	bool isDead() { return m_LifeTime < 0; }
 
+	void setFinishingColour(ColourClass c) { m_colour_finish = c; colour_transform = true; }
+
 private:
 
 	std::string m_character = "*";
 	ColourClass m_colour = BRIGHTGREEN;
+	ColourClass m_colour_finish = BRIGHTGREEN;
+	bool colour_transform = false;
 protected:
 	bool m_TRANSPARENT = true;
 	float m_LifeTime = 0.5f;
+	float m_maxLifeTime = 0.5f;
 	Vector2 m_Pos = Vector2(0);
 	Vector2 m_Velocity = Vector2(0, 0.5f);
 };
@@ -33,7 +38,7 @@ public:
 	SYDEParticleEmitter(Vector2 pos, Vector2 minV, Vector2 maxV) { m_Pos = pos; m_VelocityMin = minV; m_VelocityMax = maxV; }
 	virtual ~SYDEParticleEmitter() {}
 
-	void draw(ConsoleWindow& w);
+	virtual void draw(ConsoleWindow& w);
 
 	/// <summary>
 	/// Start the emitter
@@ -48,6 +53,10 @@ public:
 	void increaseLifeSpan(float s) { particleLifeSpan += s; }
 	void decreaseLifeSpan(float s) { particleLifeSpan -= s; }
 
+	void setSpawnTime(float s) { spawnTime = s; }
+	void increaseSpawnTime(float s) { spawnTime += s; }
+	void decreaseSpawnTime(float s) { spawnTime -= s; }
+
 	void setMaxParticles(int max) { maxParticles = max; }
 	void increaseMaxParticles(int max) { maxParticles += max; }
 	void decreaseMaxParticles(int max) { maxParticles -= max; }
@@ -58,6 +67,8 @@ public:
 
 	void RainbowOn(bool b) { _RandomColour = b; }
 
+	void setFinishingColour(ColourClass c) { m_colour_finish = c; colour_transform = true; }
+	void removeFinishColour() { m_colour_finish = m_ParticleColour; colour_transform = false; }
 private:
 	
 	std::vector<SYDEParticle> m_Particles = std::vector<SYDEParticle>();
@@ -71,6 +82,9 @@ private:
 
 	ColourClass m_ParticleColour = BRIGHTGREEN;
 	std::string m_ParticleCharacter = "*";
+
+	ColourClass m_colour_finish = BRIGHTGREEN;
+	bool colour_transform = false;
 protected:
 	Vector2 m_Pos;
 	Vector2 m_VelocityMin;
@@ -82,8 +96,8 @@ public:
 	SYDEParticleBurst(Vector2 pos, Vector2 minV, Vector2 maxV) { m_Pos = pos; m_VelocityMin = minV; m_VelocityMax = maxV; }
 	virtual ~SYDEParticleBurst() {}
 
-	void draw(ConsoleWindow& w);
-	void burst();
+	virtual void draw(ConsoleWindow& w);
+	virtual void burst();
 
 
 	bool isDead() { return m_Particles.size() <= 0; }
@@ -103,6 +117,9 @@ public:
 	void RainbowOn(bool b) { _RandomColour = b; }
 	void SolidBurst(bool b) { _solidBurst = b; }
 
+	void setFinishingColour(ColourClass c) { m_colour_finish = c; colour_transform = true; }
+	void removeFinishColour() { m_colour_finish = m_ParticleColour; colour_transform = false; }
+
 private:
 
 	std::vector<SYDEParticle> m_Particles = std::vector<SYDEParticle>();
@@ -114,6 +131,9 @@ private:
 
 	ColourClass m_ParticleColour = BRIGHTGREEN;
 	std::string m_ParticleCharacter = "*";
+
+	ColourClass m_colour_finish = BRIGHTGREEN;
+	bool colour_transform = false;
 protected:
 	Vector2 m_Pos;
 	Vector2 m_VelocityMin;

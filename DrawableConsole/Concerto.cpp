@@ -27,6 +27,7 @@ void Concerto::Initialize()
 	_b.setCharacter("*");
 	_b.RainbowOn(true);
 	_b.setMaxParticles(35);
+	_b.setFinishingColour(WHITE);
 }
 void Concerto::m_Button_Press()
 {
@@ -68,11 +69,13 @@ ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, 
 	{
 		_e.increaseLifeSpan(0.1f);
 		_e.increaseMaxParticles(1);
+		_e.decreaseSpawnTime(0.05f);
 	}
 	if (SYDEKeyCode::get_key('S')._CompareState(KEYDOWN))
 	{
 		_e.decreaseLifeSpan(0.1f);
 		_e.decreaseMaxParticles(1);
+		_e.increaseSpawnTime(0.05f);
 	}
 	//if (SYDEKeyCode::get(VK_RETURN)._CompareState(KEYDOWN))
 	//{

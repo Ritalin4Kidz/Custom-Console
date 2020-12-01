@@ -49,6 +49,9 @@ public:
 	void Initialize();
 	void m_Button_Press();
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
+
+	ConsoleWindow test_A(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow test_Particles(ConsoleWindow window, int windowWidth, int windowHeight);
 	static void setBG(ColourClass c) { _bg = c; }
 private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);

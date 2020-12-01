@@ -52,79 +52,28 @@
     <Filter Include="Source Files\SYDEUtil">
       <UniqueIdentifier>{81d6f97b-2e8f-466b-a9a3-0202b9c2f56f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{bcaaeeaf-74bc-40c4-a2b1-60d875e87482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Assets">
+      <UniqueIdentifier>{ed494539-2fe5-4272-8399-b134849fe8ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{3ea04186-f050-4889-8337-1f243b38662f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Assets">
+      <UniqueIdentifier>{41899c02-0e07-4774-a08c-fd5edb4145c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MainEngine">
+      <UniqueIdentifier>{ad84550d-5eda-43d2-8d00-a241485923c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MainEngine">
+      <UniqueIdentifier>{07b7d5e6-bc48-4e87-b4a5-d87b0633e070}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ConsoleWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Line.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoardPiece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Board.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RigidBody.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Artwork.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AssetsClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Background.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BackgroundObj.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Characters.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CustomAnimationAsset.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CustomAsset.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Defaults.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ReiventTheWheel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Concerto.h">
       <Filter>Header Files\Concerto</Filter>
-    </ClInclude>
-    <ClInclude Include="SYDEWindowGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SYDEGamePlay.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SYDETime.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Activation.h">
       <Filter>Header Files\Activation</Filter>
@@ -137,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="SYDETextBox.h">
       <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="SYDEstdafx.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SYDEUI.h">
       <Filter>Header Files\UI</Filter>
@@ -156,14 +102,8 @@
     <ClInclude Include="SYDEMenu.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="SYDEShapes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SYDEScreenshot.h">
       <Filter>Header Files\SYDEUtil</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SYDEFPS.h">
       <Filter>Header Files\SYDEUtil</Filter>
@@ -174,76 +114,88 @@
     <ClInclude Include="SYDEParticle.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsObject.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundObj.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetsClass.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Artwork.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAnimationAsset.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAsset.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEShapes.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDETime.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="AI.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardPiece.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Characters.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleWindow.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Defaults.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="ReiventTheWheel.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEGamePlay.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEstdafx.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEWindowGame.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="TextItem.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawableConsole.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ConsoleWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Line.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BoardPiece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Board.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RigidBody.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Artwork.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AssetsClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BackgroundObj.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Characters.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Settings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CustomAnimationAsset.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CustomAsset.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ReiventTheWheel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Concerto.cpp">
       <Filter>Source Files\Concerto</Filter>
-    </ClCompile>
-    <ClCompile Include="SYDEGamePlay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SYDETime.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Defaults.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Activation.cpp">
       <Filter>Source Files\Activation</Filter>
@@ -269,9 +221,6 @@
     <ClCompile Include="SYDEMenu.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="SYDEShapes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SYDEScreenshot.cpp">
       <Filter>Source Files\SYDEUtil</Filter>
     </ClCompile>
@@ -283,6 +232,75 @@
     </ClCompile>
     <ClCompile Include="SYDEParticle.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Artwork.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetsClass.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundObj.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Characters.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAnimationAsset.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAsset.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEShapes.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDETime.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="TextItem.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="AI.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardPiece.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleWindow.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Defaults.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableConsole.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="ReiventTheWheel.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEGamePlay.cpp">
+      <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

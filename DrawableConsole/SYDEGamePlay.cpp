@@ -8,6 +8,8 @@ using namespace std;
 
 bool SYDEGamePlay::_activated = false;
 bool SYDEGamePlay::FPS_Counter = false;
+bool SYDEGamePlay::resize_window_on_init = true;
+bool SYDEGamePlay::remove_scrollbar = true;
 
 vector<string> SYDEGamePlay::cheatCodes = vector<string>();
 
@@ -16,24 +18,29 @@ GdiplusStartupInput SYDEGamePlay::startupInput;
 
 void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 {
-	//REMOVE FULLSCREEN, MINIMIZE AND RESIZING ABILITY (PREVENTS ERRORS CAUSE BY THE RESIZE)
-	HWND WINDOW_HWND = GetConsoleWindow();
-	DWORD WINDOW_STYLE = GetWindowLong(WINDOW_HWND, GWL_STYLE);
-	WINDOW_STYLE &= (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX);
-	SetWindowLong(WINDOW_HWND, GWL_STYLE, GetWindowLong(WINDOW_HWND, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_MINIMIZEBOX & ~WS_SIZEBOX);
-	SetWindowPos(WINDOW_HWND, NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED);
-	//REMOVE SCROLLBAR AND SET WINDOWSIZE
-	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
-	COORD NewSBSize;
-	int Status;
-	SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
-	SetConsoleWindowInfo(hOut, TRUE, &windowSize);
-	GetConsoleScreenBufferInfo(hOut, &SBInfo);
-	COORD scrollbar = {
-		SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
-		SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
-	};
-	SetConsoleScreenBufferSize(hOut, scrollbar);
+	if (resize_window_on_init)
+	{
+		//REMOVE FULLSCREEN, MINIMIZE AND RESIZING ABILITY (PREVENTS ERRORS CAUSE BY THE RESIZE)
+		HWND WINDOW_HWND = GetConsoleWindow();
+		DWORD WINDOW_STYLE = GetWindowLong(WINDOW_HWND, GWL_STYLE);
+		WINDOW_STYLE &= (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX);
+		SetWindowLong(WINDOW_HWND, GWL_STYLE, GetWindowLong(WINDOW_HWND, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_MINIMIZEBOX & ~WS_SIZEBOX);
+		SetWindowPos(WINDOW_HWND, NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED);
+		SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
+		SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+	}
+	if (remove_scrollbar)
+	{
+		//REMOVE SCROLLBAR AND SET WINDOWSIZE
+		CONSOLE_SCREEN_BUFFER_INFO SBInfo;
+		COORD NewSBSize;
+		GetConsoleScreenBufferInfo(hOut, &SBInfo);
+		COORD scrollbar = {
+			SBInfo.srWindow.Right - SBInfo.srWindow.Left + 1,
+			SBInfo.srWindow.Bottom - SBInfo.srWindow.Top + 1
+		};
+		SetConsoleScreenBufferSize(hOut, scrollbar);
+	}
 	//NECCESARY ON STARTUP
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));

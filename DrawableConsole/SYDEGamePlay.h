@@ -33,6 +33,18 @@ public:
 	static void showFPS(bool b) { FPS_Counter = b; }
 
 	/// <summary>
+	/// Change if scrollbar is removed on window init
+	/// </summary>
+	/// <param name="remove"></param>
+	static void Remove_Scrollbar_On_Init(bool remove) { remove_scrollbar = remove; }
+
+	/// <summary>
+	/// Change if the window is resized on window init
+	/// </summary>
+	/// <param name="resize"></param>
+	static void Resize_Window_On_Init(bool resize) { resize_window_on_init = resize; }
+
+	/// <summary>
 	/// Opening splashscreens (optional for starting up the program)
 	/// </summary>
 	/// <param name="chimePath"></param>
@@ -112,4 +124,8 @@ private:
 	//GDI VALUES
 	static ULONG_PTR gdiplusToken;
 	static GdiplusStartupInput startupInput;
+
+	//OTHER SETTINGS
+	static bool resize_window_on_init;
+	static bool remove_scrollbar;
 };

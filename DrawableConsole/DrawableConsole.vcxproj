@@ -97,7 +97,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -132,7 +132,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -179,7 +179,6 @@
     <ClInclude Include="SYDEButton.h" />
     <ClInclude Include="SYDEClock.h" />
     <ClInclude Include="SYDECredits.h" />
-    <ClInclude Include="SYDEDataSend.h" />
     <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEKey.h" />
@@ -226,7 +225,6 @@
     <ClCompile Include="SYDEButton.cpp" />
     <ClCompile Include="SYDEClock.cpp" />
     <ClCompile Include="SYDECredits.cpp" />
-    <ClCompile Include="SYDEDataSend.cpp" />
     <ClCompile Include="SYDEFPS.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
     <ClCompile Include="SYDEKey.cpp" />

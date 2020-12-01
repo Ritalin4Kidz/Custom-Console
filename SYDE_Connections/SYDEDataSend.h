@@ -9,7 +9,7 @@
 class SYDEDataSend {
 public:
 	SYDEDataSend() { client_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); Connect("127.0.0.1", 2011); }
-	SYDEDataSend(SOCKET s) { client_socket = s; Connect("127.0.0.1", 2011);}
+	SYDEDataSend(SOCKET s) { client_socket = s; Connect("127.0.0.1", 2011); }
 	virtual ~SYDEDataSend() {}
 
 	/// <summary>

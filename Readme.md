@@ -125,6 +125,10 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.1.4.0 1/12/2020
+- SYDEConnections Library Started
+- Various Cleanup
+
 ### 1.1.3.0 6/10/2020
 - SYDEParticle header added
 - SYDEParticle & SYDEParticleEmitter classes

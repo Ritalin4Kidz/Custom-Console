@@ -30,12 +30,12 @@ int SYDEDataSend::Connect(std::string ipAddr, int ipPort)
         //wprintf(L"connect function failed with error: %ld\n", WSAGetLastError());
         iResult = closesocket(client_socket);
         if (iResult == SOCKET_ERROR)
-           // wprintf(L"closesocket function failed with error: %ld\n", WSAGetLastError());
-        WSACleanup();
+            // wprintf(L"closesocket function failed with error: %ld\n", WSAGetLastError());
+            WSACleanup();
         return 1;
     }
 
-   // wprintf(L"Connected to server.\n");
+    // wprintf(L"Connected to server.\n");
 
     iResult = closesocket(client_socket);
     if (iResult == SOCKET_ERROR) {

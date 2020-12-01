@@ -4,6 +4,7 @@
 // ritalin4kidz.github.io
 // callum@hands.net.au
 #include "pch.h"
+#include "SYDEDataSend.h"
 #include "SYDEstdafx.h"
 #include "SYDEScreenshot.h"
 using namespace std;
@@ -3167,6 +3168,11 @@ int main()
 	//}
 	//set_up_window_properties();
 	////NECCESARY ON STARTUP
+
+	SYDEDataSend s = SYDEDataSend();
+	s.AddData("#0010TEST1");
+	s.SYDE_Send();
+
 	config.volumeControl(0);
 	config.ColourPalette(hOut);
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);

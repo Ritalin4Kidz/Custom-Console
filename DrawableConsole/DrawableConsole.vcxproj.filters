@@ -192,6 +192,9 @@
     <ClInclude Include="TextItem.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEDataSend.h">
+      <Filter>Header Files\SYDEUtil</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -301,6 +304,9 @@
     </ClCompile>
     <ClCompile Include="SYDEGamePlay.cpp">
       <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEDataSend.cpp">
+      <Filter>Source Files\SYDEUtil</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

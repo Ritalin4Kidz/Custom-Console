@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.1.5.0 2/12/2020
+- Asset Class now allows to place another asset on top of it to replace certain values in the asset
+
 ### 1.1.4.0 1/12/2020
 - SYDEConnections Library Started
 - Various Cleanup

@@ -1,1 +1,27 @@
-﻿  DrawableConsole.vcxproj -> G:\Github Repos\Custom-Console\Debug\SYDEEngine_Debug.exe
+﻿  CustomAsset.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(11,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(13,23): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(23,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(24,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(37,79): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(39,82): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(41,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(41,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(68,23): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(70,96): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(70,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(71,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(71,98): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(78,24): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(78,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(83,24): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(83,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(88,31): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(88,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(93,31): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(93,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+  DrawableConsole.vcxproj -> G:\Github Repos\Custom-Console\Debug\SYDEEngine_Debug.exe

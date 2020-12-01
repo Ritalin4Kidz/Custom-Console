@@ -40,8 +40,9 @@ void TickFunc()
 }
 ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	return test_Asset(window, windowWidth, windowHeight);
 	//return test_A(window,windowWidth,windowHeight);
-	return test_Particles(window,windowWidth,windowHeight);
+	//return test_Particles(window,windowWidth,windowHeight);
 }
 
 ConsoleWindow Concerto::test_A(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -133,6 +134,36 @@ ConsoleWindow Concerto::test_Particles(ConsoleWindow window, int windowWidth, in
 	_e.draw(window);
 	_b.draw(window);
 	window = m_Label.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow Concerto::test_Asset(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = m_Map.draw_asset(window, Vector2(camera_Pos.getX() - 20, camera_Pos.getY() - 10), windowWidth, windowHeight);
+	window = m_Structure.draw_asset(window, Vector2(20, 10));
+	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
+	{
+		m_Map.AddAssetOnto(m_Structure, Vector2(camera_Pos.getX(), camera_Pos.getY()));
+	}
+	window.setTextAtPoint(Vector2(0, 1), std::to_string((int)camera_Pos.getX()) + "," + std::to_string((int)camera_Pos.getY()), RED_WHITE_BG);
+
+	if (SYDEKeyCode::get_key('S')._CompareState(KEY) && camera_Pos.getY() < 1000)
+	{
+		camera_Pos.addY(1);
+	}
+	if (SYDEKeyCode::get_key('W')._CompareState(KEY) && camera_Pos.getY() > 0)
+	{
+		camera_Pos.addY(-1);
+	}
+	if (SYDEKeyCode::get_key('D')._CompareState(KEY) && camera_Pos.getX() < 1000)
+	{
+		camera_Pos.addX(2);
+	}
+	if (SYDEKeyCode::get_key('A')._CompareState(KEY) && camera_Pos.getX() > 0)
+	{
+		camera_Pos.addX(-2);
+	}
+
 	return window;
 }
 

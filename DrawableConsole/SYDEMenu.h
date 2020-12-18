@@ -10,7 +10,7 @@ using namespace std;
 
 class SYDEMenu {
 public:
-	SYDEMenu() {}
+	SYDEMenu() { m_Items = vector<SYDEButton>(); }
 	/// <summary>
 	/// Create a menu with an array of buttons
 	/// </summary>
@@ -25,6 +25,12 @@ public:
 	ConsoleWindow draw_menu(ConsoleWindow window);
 	void setActive(bool _ACTV) { m_Active = _ACTV; }
 	bool getActive() { return m_Active; }
+
+	/// <summary>
+	/// Add a new item into the menu
+	/// </summary>
+	/// <param name="option"></param>
+	void AddOption(SYDEButton option) { m_Items.push_back(option); m_Items[0]._HIGHLIGHT(true);}
 
 	SYDEButton& operator[](int i) { return m_Items[i]; }
 

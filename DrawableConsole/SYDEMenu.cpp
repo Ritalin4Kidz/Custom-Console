@@ -10,6 +10,11 @@ ConsoleWindow SYDEMenu::draw_menu(ConsoleWindow window)
 	return window;
 }
 
+void SYDEMenu::RemoveOptionAtIndex(int i)
+{
+	m_Items.erase(m_Items.begin() + i);
+}
+
 void SYDEMenu::prevSelect()
 {
 	selectionNumber--;

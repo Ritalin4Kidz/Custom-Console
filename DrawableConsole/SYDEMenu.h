@@ -32,6 +32,12 @@ public:
 	/// <param name="option"></param>
 	void AddOption(SYDEButton option) { m_Items.push_back(option); m_Items[0]._HIGHLIGHT(true);}
 
+	/// <summary>
+	/// Remove an option from the menu
+	/// </summary>
+	/// <param name="i"></param>
+	void RemoveOptionAtIndex(int i);
+
 	SYDEButton& operator[](int i) { return m_Items[i]; }
 
 	/// <summary>

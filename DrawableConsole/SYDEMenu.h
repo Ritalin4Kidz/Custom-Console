@@ -90,6 +90,8 @@ public:
 	void draw_ui(ConsoleWindow& window) { window = m_Button.draw_ui(window); }
 	void drawDisplay(ConsoleWindow& window) { window = m_DisplayItem.draw_asset(window, m_DisplayLoc); }
 
+	string getLabel() { return m_Button.m_Label; }
+	bool compareLabel(std::string text) { return m_Button.m_Label == text; }
 	void setLabel(std::string labelTxt) { m_Button.m_Label = labelTxt; }
 
 protected:

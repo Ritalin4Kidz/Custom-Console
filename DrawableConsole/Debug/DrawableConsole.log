@@ -1,4 +1,597 @@
-﻿  CustomAsset.cpp
+﻿  Activation.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\Activation.cpp(25,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Activation.cpp(25,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  AI.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(12,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(23,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(42,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(42,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(51,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(60,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(70,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(70,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(80,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(91,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(91,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(100,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(109,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(128,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(128,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(137,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(146,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(159,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(177,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(185,12): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(209,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(217,12): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AI.cpp(247,22): warning C4018: '<': signed/unsigned mismatch
+  Artwork.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(7,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(7,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(8,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(8,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(9,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(9,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(10,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(10,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(12,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(12,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(13,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(13,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(14,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(14,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(15,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(15,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(18,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(18,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(19,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(19,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(21,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(21,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(22,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(22,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(23,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(23,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(24,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(24,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(26,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(26,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(27,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(27,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(29,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(29,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(30,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(30,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(31,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(31,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(32,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(32,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(34,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(34,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(35,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(35,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(38,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(38,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(39,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(39,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(40,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(40,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(41,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(41,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(43,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(43,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(44,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(44,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(46,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(46,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(47,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(47,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(48,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(48,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(49,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(49,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(51,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(51,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(52,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(52,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(55,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(55,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(56,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(56,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(58,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(58,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(59,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(59,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(61,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(61,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(62,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(62,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(63,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(63,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(64,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(64,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(66,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(66,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(67,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(67,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(68,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(68,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(69,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(69,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(72,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(72,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(73,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(73,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(74,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(74,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(75,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(75,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(77,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(77,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(78,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(78,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(80,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(80,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(81,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(81,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(83,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(83,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(84,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(84,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(86,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(86,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(87,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(87,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(89,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(89,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(90,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(90,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(92,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(92,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(93,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(93,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(94,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(94,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(95,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(95,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(98,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(98,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(99,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(99,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(101,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(101,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(102,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(102,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(104,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(104,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(105,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(105,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(107,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(107,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(108,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(108,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(110,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(110,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(111,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(111,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(113,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(113,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(114,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(114,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(116,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(116,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(117,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(117,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(119,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(119,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(120,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(120,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(122,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(122,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(123,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(123,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(125,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(125,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(126,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(126,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(128,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(128,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(129,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(129,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(132,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(132,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(133,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(133,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(135,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(135,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(136,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(136,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(138,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(138,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(139,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(139,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(141,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(141,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(142,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(142,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(144,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(144,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(145,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(145,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(147,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(147,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(148,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(148,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(150,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(150,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(151,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(151,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(153,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(153,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(154,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(154,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(156,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(156,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(157,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(157,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(159,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(159,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(160,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(160,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(162,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(162,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(163,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(163,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(166,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(166,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(167,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(167,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(168,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(168,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(169,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(169,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(171,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(171,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(172,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(172,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(174,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(174,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(175,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(175,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(177,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(177,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(178,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(178,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(180,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(180,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(181,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(181,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(183,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(183,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(184,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(184,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(186,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(186,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(187,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(187,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(188,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(188,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(189,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(189,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(192,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(192,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(193,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(193,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(195,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(195,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(196,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(196,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(198,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(198,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(199,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(199,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(200,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(200,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(201,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(201,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(203,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(203,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(204,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(204,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(205,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(205,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(206,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(206,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(209,28): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(211,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(211,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(219,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(219,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(220,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(220,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(221,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(221,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(222,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(222,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(223,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(223,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(224,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(224,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(226,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(226,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(227,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(227,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(229,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(229,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(230,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(230,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(231,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(231,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(232,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(232,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(233,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(233,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(234,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(234,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(235,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(235,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(236,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(236,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(237,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(237,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(238,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(238,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(240,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(240,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(241,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(241,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(243,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(243,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(244,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(244,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(245,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(245,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(246,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(246,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(247,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(247,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(248,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(248,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(249,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(249,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(250,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(250,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(251,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(251,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(252,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(252,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(254,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(254,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(255,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(255,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(257,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(257,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(258,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(258,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(259,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(259,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(260,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(260,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(261,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(261,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(262,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(262,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(266,28): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(268,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Artwork.cpp(268,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  AssetsClass.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AssetsClass.cpp(153,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AssetsClass.cpp(154,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AssetsClass.cpp(155,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AssetsClass.cpp(158,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\AssetsClass.cpp(165,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\AssetsClass.cpp(167,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Background.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(11,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(11,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(37,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(37,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(45,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(45,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(51,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(55,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(59,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(60,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(64,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(65,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(69,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(70,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(74,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(78,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(79,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(80,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(81,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(82,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(83,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(87,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(92,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(96,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(97,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(101,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(102,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(106,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(107,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(111,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(115,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(116,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(120,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(124,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(125,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(129,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(136,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(136,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(137,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(137,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(142,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(143,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(148,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(149,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(150,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(154,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(155,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(159,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(163,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(175,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(175,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(183,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(183,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(190,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(190,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(195,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(201,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(207,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(213,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(219,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(227,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(227,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(234,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(234,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(241,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(241,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(248,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(248,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(255,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(255,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(262,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(262,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(275,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(275,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(283,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(283,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(290,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(290,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(297,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(297,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(304,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(304,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(311,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(311,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(318,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(318,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(326,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(326,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(333,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(333,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(340,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(340,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(347,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(347,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(354,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(354,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(362,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(362,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(366,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(366,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(374,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(374,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(378,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(378,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(392,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(392,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(400,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(400,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(407,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(407,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(416,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(416,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(423,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(423,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(430,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(430,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(437,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(437,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(444,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(444,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(451,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(451,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(458,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(458,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(465,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(465,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(472,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(472,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(479,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Background.cpp(479,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  BackgroundObj.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+  Board.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(10,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(20,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(34,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(36,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(38,23): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(83,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Board.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+  BoardPiece.cpp
+  Characters.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+  Concerto.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.h(79,91): warning C4129: 'B': unrecognized character escape sequence
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.h(84,160): warning C4129: 'B': unrecognized character escape sequence
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.cpp(108,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.cpp(108,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.cpp(153,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.cpp(153,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ConsoleWindow.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(27,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(37,12): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(39,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(41,23): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(85,54): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(85,78): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(93,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(118,32): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.cpp(120,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  CustomAnimationAsset.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAnimationAsset.cpp(16,15): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\CustomAnimationAsset.cpp(35,20): warning C4018: '>=': signed/unsigned mismatch
+  CustomAsset.cpp
 G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
 G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
 G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
@@ -12,10 +605,6 @@ G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(41,38): warning C
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(41,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(68,23): warning C4018: '<': signed/unsigned mismatch
-G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(70,96): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(70,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(71,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(71,98): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(78,24): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(78,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(83,24): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
@@ -24,4 +613,528 @@ G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(88,31): warning C
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(88,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(93,31): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
 G:\Github Repos\Custom-Console\DrawableConsole\CustomAsset.cpp(93,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-  DrawableConsole.vcxproj -> G:\Github Repos\Custom-Console\Debug\SYDEEngine_Debug.exe
+  Defaults.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.cpp(9,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  DrawableConsole.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.h(79,91): warning C4129: 'B': unrecognized character escape sequence
+G:\Github Repos\Custom-Console\DrawableConsole\Concerto.h(84,160): warning C4129: 'B': unrecognized character escape sequence
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(57,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(58,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(59,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(60,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(64,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(97,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(98,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(99,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(100,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(102,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(74,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(85,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(105,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(107,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(109,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(109,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(136,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(138,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(140,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(142,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(144,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(144,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(146,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(146,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(176,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(178,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(209,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(238,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(265,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(265,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(274,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(517,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(517,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(533,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(533,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(849,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(851,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(866,31): warning C4018: '>': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(870,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(870,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(873,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(881,23): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(883,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(883,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(885,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(887,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(887,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(946,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(946,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(980,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(996,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(996,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1008,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1033,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1253,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1253,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1261,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1261,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1262,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1262,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1332,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1332,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1355,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1396,17): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1401,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1401,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1411,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1411,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1422,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1422,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1450,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1560,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1560,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1573,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1578,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1582,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1598,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1598,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1606,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1610,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1614,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1640,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1659,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1665,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1699,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1724,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1728,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1733,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1738,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1743,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1748,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1753,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1757,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1762,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1782,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1782,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1792,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1821,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1821,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1824,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1829,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1878,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1894,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(1927,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2244,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2244,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2245,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2245,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2246,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2246,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2247,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2247,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2248,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2248,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2249,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2249,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2251,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2251,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2252,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2252,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2254,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2254,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2255,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2255,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2257,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2257,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2258,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2258,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2259,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2259,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2260,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2260,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2262,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2262,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2263,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2263,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2264,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2264,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2265,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2265,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2266,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2266,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2267,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2267,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2270,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2270,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2271,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2271,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2273,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2273,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2274,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2274,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2275,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2275,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2276,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2276,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2277,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2277,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2278,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2278,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2280,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2280,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2281,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2281,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2282,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2282,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2283,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2283,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2285,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2285,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2286,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2286,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2289,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2289,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2290,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2290,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2291,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2291,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2292,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2292,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2293,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2293,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2294,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2294,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2296,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2296,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2297,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2297,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2299,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2299,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2300,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2300,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2301,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2301,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2302,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2302,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2304,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2304,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2305,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2305,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2306,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2306,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2307,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2307,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2308,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2308,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2309,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2309,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2312,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2312,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2313,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2313,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2315,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2315,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2316,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2316,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2318,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2318,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2319,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2319,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2320,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2320,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2321,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2321,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2323,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2323,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2324,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2324,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2327,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2327,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2328,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2328,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2329,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2329,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2330,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2330,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2331,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2331,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2332,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2332,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2334,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2334,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2335,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2335,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2337,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2337,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2338,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2338,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2339,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2339,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2340,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2340,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2342,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2342,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2343,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2343,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2344,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2344,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2345,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2345,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2346,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2346,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2347,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2347,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2371,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2371,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2382,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2382,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2391,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2393,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2397,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2399,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2403,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2405,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2409,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2411,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2415,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2417,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2436,19): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2473,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2473,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2494,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2494,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2600,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2600,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2652,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2652,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2686,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2686,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2789,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2789,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2870,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2870,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2952,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(2952,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3014,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3014,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3090,20): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3122,57): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3122,85): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3121,6): warning C4101: 'Status': unreferenced local variable
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3120,8): warning C4101: 'NewSBSize': unreferenced local variable
+G:\Github Repos\Custom-Console\DrawableConsole\DrawableConsole.cpp(3174,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Line.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Line.cpp(8,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Line.cpp(23,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Line.cpp(34,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Line.cpp(38,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Line.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
+  pch.cpp
+  ReiventTheWheel.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(16,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(16,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(23,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(34,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(52,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(52,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(65,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(65,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(69,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(70,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(73,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(74,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(76,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(93,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(93,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(100,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(100,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(103,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(122,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(122,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(131,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(221,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(224,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(227,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(230,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(291,17): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(300,15): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(321,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(321,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(337,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(337,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(352,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(352,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(361,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(361,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(374,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(374,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\ReiventTheWheel.cpp(376,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  RigidBody.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\RigidBody.cpp(11,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\RigidBody.cpp(55,22): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\RigidBody.cpp(57,21): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\RigidBody.cpp(77,21): warning C4018: '<': signed/unsigned mismatch
+  Settings.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.cpp(10,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.cpp(21,21): warning C4018: '<': signed/unsigned mismatch
+  SYDEButton.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(32,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(33,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(35,24): warning C4018: '>': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(39,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(39,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(41,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(43,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(48,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(48,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(51,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(51,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(54,17): warning C4018: '<=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(56,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(56,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(61,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEButton.cpp(61,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SYDEClock.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEClock.cpp(36,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEClock.cpp(38,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEClock.cpp(39,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEClock.cpp(39,64): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+  SYDECredits.cpp
+  SYDEFPS.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+  SYDEGamePlay.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Settings.h(32,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(29,58): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(29,86): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(46,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(36,9): warning C4101: 'NewSBSize': unreferenced local variable
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(141,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(141,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(171,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(196,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(547,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(547,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(581,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEGamePlay.cpp(581,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SYDEKey.cpp
+  SYDEKeyCode.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEKeyCode.cpp(38,42): warning C4309: 'argument': truncation of constant value
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEKeyCode.cpp(39,43): warning C4309: 'argument': truncation of constant value
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEKeyCode.cpp(82,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEKeyCode.cpp(96,20): warning C4018: '<': signed/unsigned mismatch
+  SYDELabel.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(18,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(19,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(21,24): warning C4018: '>': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(25,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(25,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(27,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(29,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(33,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(33,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(35,17): warning C4018: '<=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(37,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(37,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(42,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDELabel.cpp(42,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SYDEMenu.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEMenu.cpp(6,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEMenu.cpp(31,22): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEMenu.cpp(40,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEMenu.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEMenu.cpp(80,22): warning C4018: '>=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEMenu.cpp(89,20): warning C4018: '<': signed/unsigned mismatch
+  SYDEParticle.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Defaults.h(15,2): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEParticle.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEParticle.cpp(44,26): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEParticle.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
+  SYDEScreenshot.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEScreenshot.cpp(64,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEScreenshot.cpp(64,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SYDEShapes.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(57,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(58,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(59,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(60,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(64,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(97,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(98,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(99,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(100,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.h(102,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(15,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(17,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(19,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(19,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(27,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(29,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(31,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(31,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(48,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDEShapes.cpp(56,9): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  SYDETextBox.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(297,75): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(299,73): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\ConsoleWindow.h(300,40): warning C4018: '<': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(14,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(16,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(18,17): warning C4018: '<=': signed/unsigned mismatch
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(20,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(20,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(25,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+G:\Github Repos\Custom-Console\DrawableConsole\SYDETextBox.cpp(25,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SYDETime.cpp
+  TextItem.cpp
+  Vector2.cpp
+G:\Github Repos\Custom-Console\DrawableConsole\Vector2.cpp(30): warning C4172: returning address of local variable or temporary
+G:\Github Repos\Custom-Console\DrawableConsole\Vector2.cpp(35): warning C4172: returning address of local variable or temporary
+G:\Github Repos\Custom-Console\DrawableConsole\Vector2.cpp(40): warning C4172: returning address of local variable or temporary
+  DrawableConsole.vcxproj -> G:\Github Repos\Custom-Console\Debug\SYDEEngine_Debug.lib

@@ -13,6 +13,12 @@ void Concerto::Initialize()
 	{
 		_MENU[i].setHighLight(RED);
 	}
+
+	//for (int i = 0; i < _ADAPTIVEMENU.getSize(); i++)
+	//{
+	//	_ADAPTIVEMENU[i].setButtonHighlightColour(WHITE_BLUE_BG);
+	//}
+	_ADAPTIVEMENU.setPos(Vector2(0, 1));
 	_t.SetFunc(TickFunc);
 	_t.SetPos(Vector2(0, 2));
 	_t.SetColour(BRIGHTGREEN);
@@ -40,7 +46,8 @@ void TickFunc()
 }
 ConsoleWindow Concerto::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	return test_Asset(window, windowWidth, windowHeight);
+	return test_Menus(window, windowWidth, windowHeight);
+	//return test_Asset(window, windowWidth, windowHeight);
 	//return test_A(window,windowWidth,windowHeight);
 	//return test_Particles(window,windowWidth,windowHeight);
 }
@@ -134,6 +141,31 @@ ConsoleWindow Concerto::test_Particles(ConsoleWindow window, int windowWidth, in
 	_e.draw(window);
 	_b.draw(window);
 	window = m_Label.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.setTextAtPoint(Vector2(l, m), " ", BLACK_LIGHTGREY_BG);
+		}
+	}
+
+	if (SYDEKeyCode::get_key('M')._CompareState(KEYDOWN))
+	{
+		_ADAPTIVEMENU.setActive(!_ADAPTIVEMENU.getActive());
+	}
+	else if (SYDEKeyCode::get_key(VK_TAB)._CompareState(KEYDOWN))
+	{
+		_ADAPTIVEMENU.nextSelect();
+	}
+
+	window = _ADAPTIVEMENU.draw_menu(window);
+
+
 	return window;
 }
 

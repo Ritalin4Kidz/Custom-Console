@@ -53,6 +53,7 @@ public:
 
 	ConsoleWindow test_A(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow test_Particles(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow test_Menus(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow test_Asset(ConsoleWindow window, int windowWidth, int windowHeight);
 	static void setBG(ColourClass c) { _bg = c; }
@@ -76,4 +77,10 @@ private:
 	Vector2 camera_Pos = Vector2(100, 250);
 	CustomAsset m_Map = CustomAsset(2000, 1000, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\MainMapSQ.bmp", 1000, 1000));;
 	CustomAsset m_Structure = CustomAsset(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3));
+
+
+	SYDEAdaptiveMenu _ADAPTIVEMENU = SYDEAdaptiveMenu(vector<SYDEAdaptiveMenu_Item> {
+		SYDEAdaptiveMenu_Item(SYDEButton("No Display", Vector2(0, 1), Vector2(20, 1), WHITE, RED, true)),
+		SYDEAdaptiveMenu_Item(SYDEButton("Display", Vector2(0, 2), Vector2(20, 1), WHITE, RED, true), CustomAsset(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3)), Vector2(25,5))
+	});
 };

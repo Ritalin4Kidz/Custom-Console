@@ -3215,6 +3215,8 @@ int main()
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('B'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('M'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_TAB));
 	window.setStartingLine(1);
 	while (true)
 	{

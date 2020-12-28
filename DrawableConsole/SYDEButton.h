@@ -9,6 +9,7 @@ class SYDEButton : public SYDEUI, public SYDEUIInterface {
 public:
 	SYDEButton() { m_Label = ""; }
 	SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
+	SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG);
 	virtual ~SYDEButton() {}
 	/// <summary>
 	/// Draw the button onto the window

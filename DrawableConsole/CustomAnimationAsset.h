@@ -64,6 +64,8 @@ public:
 	/// <param name="frames"></param>
 	void setAsset(vector<CustomAsset> frames);
 
+	void ClearAsset() { for (int i = 0; i < m_Frames.size(); i++) m_Frames[i].ClearAsset(); m_Frames.clear(); }
+
 private:
 	vector<CustomAsset> m_Frames;
 	int frame_number = 0;

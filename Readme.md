@@ -125,6 +125,12 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.1.7.0 4/01/2021
+- Clear Asset In Custom Asset/Custom Animation Asset
+
+### 1.1.6.0 
+- SYDE Adaptive Menus
+
 ### 1.1.5.0 2/12/2020
 - Asset Class now allows to place another asset on top of it to replace certain values in the asset
 

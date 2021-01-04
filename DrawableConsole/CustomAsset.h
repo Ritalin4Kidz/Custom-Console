@@ -18,6 +18,8 @@ public:
 	void setAsset(int width, int height, vector<ColourClass> colourClassArray);
 	void setAsset(vector<vector<TextItem>> asset) { AssetVector = asset; }
 
+	void ClearAsset() { for (int i = 0; i < AssetVector.size(); i++) AssetVector[i].clear(); AssetVector.clear(); }
+
 	void AddAssetOnto(CustomAsset other, Vector2 point);
 
 

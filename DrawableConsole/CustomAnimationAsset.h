@@ -27,10 +27,20 @@ public:
 
 class CustomAnimationAsset {
 public:
-	CustomAnimationAsset() {}
-	CustomAnimationAsset(vector<CustomAsset> frames) { setAsset(frames); }
+	CustomAnimationAsset() { max_frame_time = _standardMaxFrameTime; }
+	CustomAnimationAsset(vector<CustomAsset> frames) { setAsset(frames); max_frame_time = _standardMaxFrameTime;}
 
 	static void SetDeltatimeBasedAnimation(bool deltaTimeAnimation) { _DeltatimeFrame = deltaTimeAnimation; }
+	static bool getDeltatimeBasedAnimation() { return _DeltatimeFrame; }
+
+	static void setStandardMaxFrameTime(float frameTime) { _standardMaxFrameTime = frameTime; }
+	static float getStandardMaxFrameTime() { return _standardMaxFrameTime; }
+
+	float getMaxDeltatime() { return max_frame_time; }
+
+	void setMaxDeltatime(float maxFrameTime) { max_frame_time = maxFrameTime; }
+
+	float getCurrentFrameTime() { return frame_time; }
 
 	virtual ~CustomAnimationAsset() {}
 
@@ -78,7 +88,8 @@ private:
 	bool m_paused = false;
 
 	float frame_time = 0;
-	float max_frame_time = 1;
+	float max_frame_time;
 
 	static bool _DeltatimeFrame;
+	static float _standardMaxFrameTime;
 };

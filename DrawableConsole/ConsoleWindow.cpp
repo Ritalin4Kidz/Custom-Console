@@ -121,6 +121,19 @@ void ConsoleWindow::writeConsole()
 	}
 }
 
+void ConsoleWindow::writeConsoleOptimized()
+{
+	Line blank;
+	for (int i = 0; i < offset.getY() + _StartingLine; i++)
+	{
+		blank.writeLine();
+	}
+	for (int i = _StartingLine; i < m_Lines.size(); i++)
+	{
+		m_Lines[i].writeLineOptimized(offset.getX());
+	}
+}
+
 ColourClass ConsoleWindow::determineColourAtPoint(Vector2 point, ColourClass main, bool onlyFG)
 {
 	ColourClass bg = getTextColourAtPoint(point);

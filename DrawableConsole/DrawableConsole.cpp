@@ -3221,12 +3221,18 @@ int main()
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('B'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('M'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_TAB));
+	
+	SYDELabel m_fps = SYDELabel("", Vector2(35, 1), Vector2(6, 1), BRIGHTGREEN, true);
+
 	window.setStartingLine(1);
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		window.writeConsole();
-		SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
+		SYDEFunctions::SYDESleep(50, SYDEDefaults::getDeltaTime());
+		float fps = 1.0f / SYDEDefaults::getDeltaTime();
+		m_fps.setText(std::to_string((int)fps) + "fps");
+		window = m_fps.draw_ui(window);
+		window.writeConsoleOptimized();
 	}
 	//END CONCERTO
 

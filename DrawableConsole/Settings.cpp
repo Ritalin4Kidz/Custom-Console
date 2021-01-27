@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
+
 vector<string> SettingsSplitter(string a_String, char splitter)
 {
 	int arraySize = 1;

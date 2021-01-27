@@ -119,6 +119,7 @@ private:
 };
 
 class AdvancedSettings : public Settings {
+public:
 	AdvancedSettings() {}
 	AdvancedSettings(string settingsFile);
 
@@ -142,4 +143,6 @@ class AdvancedSettings : public Settings {
 	void setLightPurple(SYDE_ColourValues c) { _LIGHTPURPLE = c; }
 	void setBrightYellow(SYDE_ColourValues c) { _BRIGHTYELLOW = c; }
 	void setBrightWhite(SYDE_ColourValues c) { _BRIGHTWHITE = c; }
+
+private:
 };

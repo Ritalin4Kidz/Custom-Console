@@ -125,6 +125,11 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.0.0 27/01/2021
+- Major Update To Line Writing
+- - Using WriteConsoleOptimized writes with an optimized line writing func, allowing for faster frames (meaning bigger scales projects can be now made)
+- - WriteConsole still exists for legacy products
+
 ### 1.1.8.0 27/01/2021
 - Added Font Settings Functions for allowing to change font and font size easily before init
 

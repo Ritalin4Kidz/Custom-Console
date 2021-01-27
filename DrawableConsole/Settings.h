@@ -23,6 +23,53 @@ struct SYDE_ColourValues {
 	std::string toRGBStr() { return std::to_string(r) + "," + std::to_string(g) + "," + std::to_string(b); }
 };
 
+class Font_Settings_Func
+{
+public:
+	/// <summary>
+	/// Set up the font of the console with custom sizes/font Note: may cause uneven results
+	/// </summary>
+	/// <param name="sizeX"></param>
+	/// <param name="sizeY"></param>
+	/// <param name="font"></param>
+	static void set_up_custom_font(int sizeX, int sizeY, const wchar_t* font);
+
+
+	/// <summary>
+	/// Set Up the Console in Arial Format
+	/// </summary>
+	/// <param name="size"></param>
+	static void set_up_arial(int size);
+
+	/// <summary>
+	/// set up consola font
+	/// </summary>
+	/// <param name="size"></param>
+	static void set_up_consola(int size);
+
+	/// <summary>
+	/// set up default font
+	/// </summary>
+	/// <param name="size"></param>
+	static void set_up_consolas(int size);
+
+	/// <summary>
+	/// set up courier new font
+	/// </summary>
+	/// <param name="size"></param>
+	static void set_up_courier(int size);
+
+	/// <summary>
+	/// Set up MS gothic font
+	/// </summary>
+	/// <param name="size"></param>
+	static void set_up_gothic(int size);
+
+private:
+	static CONSOLE_FONT_INFOEX getCfi(int sizeX, int sizeY);
+};
+
+
 class Settings {
 public:
 	Settings() {}

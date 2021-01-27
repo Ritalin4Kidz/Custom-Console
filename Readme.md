@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.1.8.0 27/01/2021
+- Added Font Settings Functions for allowing to change font and font size easily before init
+
 ### 1.1.7.0 4/01/2021
 - Clear Asset In Custom Asset/Custom Animation Asset
 

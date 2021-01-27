@@ -3174,7 +3174,11 @@ int main()
 	srand(time(NULL));
 	////CENTER THE WINDOW
 	//window.setOffset(config.getOffset());
-	
+	//Font_Settings_Func::set_up_consola(16);
+	//Font_Settings_Func::set_up_consolas(16);
+	//Font_Settings_Func::set_up_consolas(32);
+	//Font_Settings_Func::set_up_arial(16);
+	Font_Settings_Func::set_up_courier(16);
 	//INIT CUSTOMASSETS
 	set_up_custom_assets();
 	//set_up_shape_test();

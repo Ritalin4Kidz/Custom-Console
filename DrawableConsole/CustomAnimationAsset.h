@@ -30,6 +30,8 @@ public:
 	CustomAnimationAsset() {}
 	CustomAnimationAsset(vector<CustomAsset> frames) { setAsset(frames); }
 
+	static void SetDeltatimeBasedAnimation(bool deltaTimeAnimation) { _DeltatimeFrame = deltaTimeAnimation; }
+
 	virtual ~CustomAnimationAsset() {}
 
 	void operator=(CustomAnimationAsset other);

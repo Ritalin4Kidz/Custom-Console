@@ -6,7 +6,8 @@ using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
 bool CustomAnimationAsset::_DeltatimeFrame = false;
-float CustomAnimationAsset::_standardMaxFrameTime = 1.0f;
+//30FPS
+float CustomAnimationAsset::_standardMaxFrameTime = 0.03f;
 
 void CustomAnimationAsset::operator=(CustomAnimationAsset other)
 {

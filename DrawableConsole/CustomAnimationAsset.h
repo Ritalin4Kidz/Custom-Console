@@ -3,6 +3,7 @@
 #include "ConsoleWindow.h"
 #include "CustomAsset.h"
 #include "AssetsClass.h"
+#include "Defaults.h"
 #include <windows.h>
 
 using namespace std;
@@ -67,8 +68,15 @@ public:
 	void ClearAsset() { for (int i = 0; i < m_Frames.size(); i++) m_Frames[i].ClearAsset(); m_Frames.clear(); }
 
 private:
+	void nextFrame();
+
 	vector<CustomAsset> m_Frames;
 	int frame_number = 0;
 	bool m_looping = false;
 	bool m_paused = false;
+
+	float frame_time = 0;
+	float max_frame_time = 1;
+
+	static bool _DeltatimeFrame;
 };

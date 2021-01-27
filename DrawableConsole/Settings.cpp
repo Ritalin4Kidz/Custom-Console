@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
+
 vector<string> SettingsSplitter(string a_String, char splitter)
 {
 	int arraySize = 1;
@@ -147,4 +148,58 @@ AdvancedSettings::AdvancedSettings(string settingsFile)
 			cheats = FileLines[4];
 		}
 	}
+}
+
+void Font_Settings_Func::set_up_custom_font(int sizeX, int sizeY, const wchar_t* font)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(sizeX, sizeY);
+	std::wcscpy(cfi.FaceName, font); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+void Font_Settings_Func::set_up_arial(int size)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(size / 2, size);
+	std::wcscpy(cfi.FaceName, L"Arial"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+void Font_Settings_Func::set_up_consola(int size)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(size / 2, size);
+	std::wcscpy(cfi.FaceName, L"Consola"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+void Font_Settings_Func::set_up_consolas(int size)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(size / 2, size);
+	std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+void Font_Settings_Func::set_up_courier(int size)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(size / 2, size);
+	std::wcscpy(cfi.FaceName, L"Courier New"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+void Font_Settings_Func::set_up_gothic(int size)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(size / 2, size);
+	std::wcscpy(cfi.FaceName, L"MS Gothic"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+CONSOLE_FONT_INFOEX Font_Settings_Func::getCfi(int sizeX, int sizeY)
+{
+	CONSOLE_FONT_INFOEX cfi;
+	cfi.cbSize = sizeof(cfi);
+	cfi.nFont = 0;
+	cfi.dwFontSize.X = sizeX;                   // Width of each character in the font
+	cfi.dwFontSize.Y = sizeY;                  // Height
+	cfi.FontFamily = FF_DONTCARE;
+	cfi.FontWeight = FW_NORMAL;
+	return cfi;
 }

@@ -28,6 +28,42 @@ void Line::writeLine(int offsetX)
 	cout << endl;
 }
 
+void Line::writeLineOptimized(int offsetX)
+{
+	int LineSize = m_Line.size();
+	currentColour = m_Line[0].getColour();
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0);
+	for (int ii = 0; ii < offsetX; ii++)
+	{
+		cout << " ";
+	}
+	for (int i = 0; i < LineSize; i++)
+	{
+		if (i == LineSize - 1)
+		{
+			currentTxt += m_Line[i].getChar();
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), currentColour);
+			cout << currentTxt << endl;
+			currentTxt = "";
+			return;
+		}
+		else if (m_Line[i].getColour() == currentColour)
+		{
+			currentTxt += m_Line[i].getChar();
+		}
+		else
+		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), currentColour);
+			cout << currentTxt;
+			currentColour = m_Line[i].getColour();
+			currentTxt = m_Line[i].getChar();
+		}
+		//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
+		//cout << m_Line[i].getChar();
+	}
+	//cout << currentTxt endl;
+}
+
 void Line::addLine(string a_line, int colour)
 {
 	vector<TextItem> newLine(m_Line.size() +  a_line.size());

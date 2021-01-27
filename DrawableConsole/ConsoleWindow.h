@@ -307,7 +307,16 @@ public:
 	Line getLine(int index) { return m_Lines[index]; }
 	void eraseConsole();
 	void initialize(int width, int height);
+
+	/// <summary>
+	/// Old write console func, outdated as of 27_01_2021
+	/// </summary>
 	void writeConsole();
+
+	/// <summary>
+	/// Optimized console write function
+	/// </summary>
+	void writeConsoleOptimized();
 	ColourClass determineColourAtPoint(Vector2 point, ColourClass main, bool onlyFG);
 
 	ColourClass get_BG_Colour_At_Point_Only(Vector2 point);

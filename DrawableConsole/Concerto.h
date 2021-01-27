@@ -50,8 +50,12 @@ public:
 	void m_Button_Press();
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 
+
 	ConsoleWindow test_A(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow test_Particles(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow test_Menus(ConsoleWindow window, int windowWidth, int windowHeight);
+
+	ConsoleWindow test_Asset(ConsoleWindow window, int windowWidth, int windowHeight);
 	static void setBG(ColourClass c) { _bg = c; }
 private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
@@ -68,4 +72,15 @@ private:
 	SYDEParticleEmitter _e = SYDEParticleEmitter(Vector2(20,-3), Vector2(-2, 1), Vector2(2, 1));
 	SYDEParticleBurst _b = SYDEParticleBurst(Vector2(0, 0), Vector2(-2, -2), Vector2(2, 2));
 	static ColourClass _bg;
+
+	AssetsClass astVars;
+	Vector2 camera_Pos = Vector2(100, 250);
+	CustomAsset m_Map = CustomAsset(2000, 1000, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\MainMapSQ.bmp", 1000, 1000));;
+	CustomAsset m_Structure = CustomAsset(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3));
+
+
+	SYDEAdaptiveMenu _ADAPTIVEMENU = SYDEAdaptiveMenu(vector<SYDEAdaptiveMenu_Item> {
+		SYDEAdaptiveMenu_Item(SYDEButton("No Display", Vector2(0, 1), Vector2(20, 1), WHITE, RED, true)),
+		SYDEAdaptiveMenu_Item(SYDEButton("Display", Vector2(0, 2), Vector2(20, 1), WHITE, RED, true), CustomAsset(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3)), Vector2(25,5))
+	});
 };

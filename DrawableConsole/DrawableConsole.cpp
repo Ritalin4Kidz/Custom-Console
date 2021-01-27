@@ -3167,13 +3167,18 @@ int main()
 	//}
 	//set_up_window_properties();
 	////NECCESARY ON STARTUP
+
 	config.volumeControl(0);
 	config.ColourPalette(hOut);
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	////CENTER THE WINDOW
 	//window.setOffset(config.getOffset());
-	
+	//Font_Settings_Func::set_up_consola(16);
+	//Font_Settings_Func::set_up_consolas(16);
+	//Font_Settings_Func::set_up_consolas(32);
+	//Font_Settings_Func::set_up_arial(16);
+	Font_Settings_Func::set_up_courier(16);
 	//INIT CUSTOMASSETS
 	set_up_custom_assets();
 	//set_up_shape_test();
@@ -3210,13 +3215,24 @@ int main()
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('E'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('B'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('M'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_TAB));
+	
+	SYDELabel m_fps = SYDELabel("", Vector2(35, 1), Vector2(6, 1), BRIGHTGREEN, true);
+
 	window.setStartingLine(1);
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		window.writeConsole();
-		SYDEFunctions::SYDESleep(30, SYDEDefaults::getDeltaTime());
+		SYDEFunctions::SYDESleep(50, SYDEDefaults::getDeltaTime());
+		float fps = 1.0f / SYDEDefaults::getDeltaTime();
+		m_fps.setText(std::to_string((int)fps) + "fps");
+		window = m_fps.draw_ui(window);
+		window.writeConsoleOptimized();
 	}
 	//END CONCERTO
 

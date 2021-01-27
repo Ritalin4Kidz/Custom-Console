@@ -10,10 +10,24 @@ SYDEButton::SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass
 	_TRANSPARENT = _TRANSPARENTBG;
 }
 
+SYDEButton::SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG)
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	TextColour = txtColour;
+	HiLightColour = a_hiLightColour;
+	_TRANSPARENT = _TRANSPARENTBG;
+}
+
 ConsoleWindow SYDEButton::draw_ui(ConsoleWindow window)
 {
 	int stringNo = 1;
 	ColourClass _TXT = TextColour;
+	if (_HIGHLIGHTED)
+	{
+		_TXT = HiLightColour;
+	}
 	if (_WRAPTEXT) {
 		int y = m_Size.getY();
 		int x = m_Size.getX();
@@ -62,8 +76,9 @@ SYDEButton & SYDEButton::operator=(SYDEButton other)
 	this->m_Text = other.m_Text;
 	this->m_Pos = other.m_Pos;
 	this->TextColour = other.TextColour;
-	this->HiLightColour = other.TextColour;
+	this->HiLightColour = other.HiLightColour;
 	this->m_Active = other.m_Active;
+	this->_TRANSPARENT = other._TRANSPARENT;
 	return*this;
 }
 

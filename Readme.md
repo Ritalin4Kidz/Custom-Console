@@ -125,6 +125,27 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.0.0 27/01/2021
+- Major Update To Line Writing
+- - Using WriteConsoleOptimized writes with an optimized line writing func, allowing for faster frames (meaning bigger scales projects can be now made)
+- - WriteConsole still exists for legacy products
+
+### 1.1.8.0 27/01/2021
+- Added Font Settings Functions for allowing to change font and font size easily before init
+
+### 1.1.7.0 4/01/2021
+- Clear Asset In Custom Asset/Custom Animation Asset
+
+### 1.1.6.0 
+- SYDE Adaptive Menus
+
+### 1.1.5.0 2/12/2020
+- Asset Class now allows to place another asset on top of it to replace certain values in the asset
+
+### 1.1.4.0 1/12/2020
+- SYDEConnections Library Started
+- Various Cleanup
+
 ### 1.1.3.0 6/10/2020
 - SYDEParticle header added
 - SYDEParticle & SYDEParticleEmitter classes

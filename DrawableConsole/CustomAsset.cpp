@@ -61,6 +61,18 @@ void CustomAsset::setAsset(int width, int height, vector<ColourClass> colourClas
 	AssetVector = temp_temp;
 }
 
+void CustomAsset::AddAssetOnto(CustomAsset other, Vector2 point)
+{
+	for (int i = 0; i < other.AssetVector.size(); i++)
+	{
+		for (int ii = 0; ii < other.AssetVector[i].size(); ii++)
+		{
+			setCharAtPoint(Vector2(point.getX() + ii, point.getY() + i), other.AssetVector[i][ii].getChar());
+			setColourAtPoint(Vector2(point.getX() + ii, point.getY() + i), other.AssetVector[i][ii].getColour());
+		}
+	}
+}
+
 void CustomAsset::setCharAtPoint(Vector2 Point, char m_Text)
 {
 	AssetVector[Point.getY()][Point.getX()].setChar(m_Text);

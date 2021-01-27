@@ -3228,7 +3228,7 @@ int main()
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		SYDEFunctions::SYDESleep(50, SYDEDefaults::getDeltaTime());
+		//SYDEFunctions::SYDESleep(50, SYDEDefaults::getDeltaTime());
 		float fps = 1.0f / SYDEDefaults::getDeltaTime();
 		m_fps.setText(std::to_string((int)fps) + "fps");
 		window = m_fps.draw_ui(window);

@@ -65,6 +65,12 @@ public:
 	/// <param name="size"></param>
 	static void set_up_gothic(int size);
 
+	/// <summary>
+	/// Set up lucida console font
+	/// </summary>
+	/// <param name="size"></param>
+	static void set_up_lucida_console(int size);
+
 private:
 	static CONSOLE_FONT_INFOEX getCfi(int sizeX, int sizeY);
 };

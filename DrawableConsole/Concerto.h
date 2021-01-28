@@ -35,6 +35,7 @@
 #include "SYDEMenu.h"
 #include "SYDEClock.h"
 #include "SYDEParticle.h"
+#include "SYDEGamePlay.h"
 using namespace std;
 using namespace Gdiplus;
 

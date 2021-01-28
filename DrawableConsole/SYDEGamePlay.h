@@ -31,7 +31,7 @@ public:
 	/// </summary>
 	/// <param name="b"></param>
 	static void showFPS(bool b) { FPS_Counter = b; }
-
+	
 	/// <summary>
 	/// Change if scrollbar is removed on window init
 	/// </summary>
@@ -102,6 +102,25 @@ public:
 	/// <param name="deltaTime"></param>
 	/// <returns></returns>
 	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
+
+	/// <summary>
+	/// Enable clicking and getting mouse position
+	/// </summary>
+	/// <param name="hOut"></param>
+	static void EnableClicking(HANDLE hOut);
+
+	/// <summary>
+	/// disable clicking
+	/// </summary>
+	/// <param name="hOut"></param>
+	static void DisableClicking(HANDLE hOut);
+
+	/// <summary>
+	/// get the last point clicked
+	/// </summary>
+	/// <returns></returns>
+	static Vector2 GetPointClicked() { return LastPointClicked; }
+
 	/// <summary>
 	/// shutdown gdiplus
 	/// </summary>
@@ -119,6 +138,20 @@ private:
 
 	static string _returnRandomNonsense();
 	static Settings config;
+
+	//ClickValues
+	static Vector2 LastPointClicked;
+	static bool ClickEnabled;
+	static INPUT_RECORD InputRecord;
+	static DWORD Events;
+	static COORD coord;
+	static CONSOLE_CURSOR_INFO cci;
+	static HANDLE hin;
+	static DWORD prev_mode;
+	static void SYDE_MouseClickFunction();
+
+
+	//cheats
 	static vector<string> cheatCodes;
 
 	//GDI VALUES

@@ -164,7 +164,8 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 	}
 
 	window = _ADAPTIVEMENU.draw_menu(window);
-
+	m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()));
+	window = m_Label.draw_ui(window);
 
 	return window;
 }

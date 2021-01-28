@@ -3179,6 +3179,7 @@ int main()
 	//Font_Settings_Func::set_up_consolas(32);
 	//Font_Settings_Func::set_up_arial(16);
 	Font_Settings_Func::set_up_courier(16);
+	SYDEFPS::setAnchor(SLA_Right);
 	//INIT CUSTOMASSETS
 	set_up_custom_assets();
 	//set_up_shape_test();
@@ -3211,6 +3212,8 @@ int main()
 	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	//SYDEGamePlay::hidden_splashsceen_001(astVars.get_squish_file_path(), start, hOut, window, windowWidth, windowHeight, astVars);
 	//SYDEGamePlay::showFPS(true);
+	SYDEGamePlay::EnableClicking(hOut);
+
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('E'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
@@ -3222,16 +3225,13 @@ int main()
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('M'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_TAB));
 	
-	SYDELabel m_fps = SYDELabel("", Vector2(35, 1), Vector2(6, 1), BRIGHTGREEN, true);
+	SYDEGamePlay::showFPS(true);
 
 	window.setStartingLine(1);
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		//SYDEFunctions::SYDESleep(50, SYDEDefaults::getDeltaTime());
-		float fps = 1.0f / SYDEDefaults::getDeltaTime();
-		m_fps.setText(std::to_string((int)fps) + "fps");
-		window = m_fps.draw_ui(window);
 		window.writeConsoleOptimized();
 	}
 	//END CONCERTO

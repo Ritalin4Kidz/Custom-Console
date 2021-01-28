@@ -202,24 +202,30 @@ ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, co
 ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME & deltaTime)
 {
 	HWND ConsoleWindow = GetConsoleWindow();
+	//KEYBOARD INPUTS
 	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
 	{
 		// CHECKING THE STATE OF ALL INPUTS
 		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown_Safe(ConsoleWindow);
 		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp_Safe(ConsoleWindow);
 	}
+	//MOUSE INPUTS
 	if (ClickEnabled)
 	{
 		SYDE_MouseClickFunction();
 	}
+	//DELTATIME
 	deltaTime.refreshTime();
 	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	//DRAW
 	SetConsoleCursorPosition(hOut, start);
 	window = SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
+	//FPS
 	if (FPS_Counter)
 	{
 		SYDEFPS::draw(window);
 	}
+	//RETURN GAME
 	return window;
 }
 

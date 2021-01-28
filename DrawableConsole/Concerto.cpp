@@ -162,9 +162,20 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 	{
 		_ADAPTIVEMENU.nextSelect();
 	}
-
+	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN))
+	{
+		m_LabelText = " --- State: Key Down";
+	}
+	else if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEY))
+	{
+		m_LabelText = " --- State: Key Held";
+	}
+	else if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYUP))
+	{
+		m_LabelText = " --- State: Key Released";
+	}
 	window = _ADAPTIVEMENU.draw_menu(window);
-	m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()));
+	m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()) + m_LabelText);
 	window = m_Label.draw_ui(window);
 
 	return window;

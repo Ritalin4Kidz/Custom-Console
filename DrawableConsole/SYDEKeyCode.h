@@ -65,4 +65,8 @@ public:
 	static SYDEKey LeftShift;
 	static SYDEKey RightShift;
 	static SYDEKey LeftTab;
+
+	//MOUSE KEYS, OPTIONAL, ONLY IF CLICKING ENABLED
+	static SYDEKey LEFT_CLICK_MOUSE;
+	static SYDEKey RIGHT_CLICK_MOUSE;
 };

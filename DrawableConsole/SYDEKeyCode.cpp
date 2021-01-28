@@ -38,6 +38,9 @@ SYDEKey SYDEKeyCode::ArrowRight = SYDEKey(VK_RIGHT);
 SYDEKey SYDEKeyCode::LeftShift = SYDEKey(VK_LSHIFT);
 SYDEKey SYDEKeyCode::RightShift = SYDEKey(VK_RSHIFT);
 SYDEKey SYDEKeyCode::LeftTab = SYDEKey(VK_TAB);
+//MOUSE CLICK
+SYDEKey SYDEKeyCode::LEFT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
+SYDEKey SYDEKeyCode::RIGHT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
 
 std::vector<SYDEKey> SYDEKeyCode::KeyCodes = {
 	A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,

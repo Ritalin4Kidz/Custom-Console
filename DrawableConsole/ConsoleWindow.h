@@ -292,20 +292,69 @@ class ConsoleWindow {
 public:
 	ConsoleWindow();
 	ConsoleWindow(int size);
+	ConsoleWindow(ConsoleWindow* window) { *this = window; }
 	virtual ~ConsoleWindow() {}
 	void ClearWindow(bool removeText);
+	/// <summary>
+	/// Add text to a line
+	/// </summary>
+	/// <param name="index"></param>
+	/// <param name="a_line"></param>
+	/// <param name="colour"></param>
 	void addToLine(int index, string a_line, ColourClass colour) { if (index < m_Lines.size()) { m_Lines[index].addLine(a_line, colour); } }
+	/// <summary>
+	/// Add text ontop of a line
+	/// </summary>
+	/// <param name="index"></param>
+	/// <param name="a_line"></param>
+	/// <param name="colour"></param>
+	/// <param name="blankSpace"></param>
+	/// <param name="startPoint"></param>
 	void addLayerToLine(int index, string a_line, ColourClass colour, char blankSpace, int startPoint);
+	/// <summary>
+	/// Change a line completely
+	/// </summary>
+	/// <param name="index"></param>
+	/// <param name="a_line"></param>
+	/// <param name="colour"></param>
 	void setLine(int index, string a_line, ColourClass colour) { if (index < m_Lines.size()) { m_Lines[index].setLine(a_line, colour); } }
+	/// <summary>
+	/// Empty a line
+	/// </summary>
+	/// <param name="index"></param>
 	void clearLine(int index) { if (index < m_Lines.size()) { m_Lines[index].setLine(" ", WHITE); } }
 
+	/// <summary>
+	/// Set the text at a certain point
+	/// </summary>
+	/// <param name="point"></param>
+	/// <param name="text"></param>
+	/// <param name="colour"></param>
 	void setTextAtPoint(Vector2 point, string text, ColourClass colour);
 
+	/// <summary>
+	/// Get a colour from an int
+	/// </summary>
+	/// <param name="colour_int"></param>
+	/// <returns></returns>
 	ColourClass _intToColour(int colour_int);
+	/// <summary>
+	/// get the text colour at a certain point
+	/// </summary>
+	/// <param name="point"></param>
+	/// <returns></returns>
 	ColourClass getTextColourAtPoint(Vector2 point);
+	/// <summary>
+	/// set the offset for printing the window
+	/// </summary>
+	/// <param name="a_offset"></param>
 	void setOffset(Vector2 a_offset) { offset.setX(a_offset.getX()); offset.setY(a_offset.getY()); }
 	Line getLine(int index) { return m_Lines[index]; }
+	/// <summary>
+	/// Clear the console without removing the lines
+	/// </summary>
 	void eraseConsole();
+	//init the console
 	void initialize(int width, int height);
 
 	/// <summary>
@@ -317,8 +366,19 @@ public:
 	/// Optimized console write function
 	/// </summary>
 	void writeConsoleOptimized();
+	/// <summary>
+	/// Determine the colour at a point if you want to place a character over a blank tile
+	/// </summary>
+	/// <param name="point"></param>
+	/// <param name="main"></param>
+	/// <param name="onlyFG"></param>
+	/// <returns></returns>
 	ColourClass determineColourAtPoint(Vector2 point, ColourClass main, bool onlyFG);
-
+	/// <summary>
+	/// Only get the current background colour
+	/// </summary>
+	/// <param name="point"></param>
+	/// <returns></returns>
 	ColourClass get_BG_Colour_At_Point_Only(Vector2 point);
 
 	void operator=(ConsoleWindow other);

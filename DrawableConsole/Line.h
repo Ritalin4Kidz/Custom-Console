@@ -3,9 +3,14 @@
 #include <string>
 #include "TextItem.h"
 using namespace std;
+/// <summary>
+/// Each line of the console window, made of a vector of TextItems
+/// </summary>
 class Line {
 public:
 	Line() {}
+	Line(vector<TextItem> a_Line) { m_Line = a_Line; }
+	Line(Line* a_Line) { *this = a_Line; }
 	virtual ~Line() {}
 
 	void writeLine(); 

@@ -41,6 +41,11 @@ SYDEKey SYDEKeyCode::LeftTab = SYDEKey(VK_TAB);
 //MOUSE CLICK
 SYDEKey SYDEKeyCode::LEFT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
 SYDEKey SYDEKeyCode::RIGHT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
+Vector2 SYDEKeyCode::lastMousePosition = Vector2(0);
+Vector2 SYDEKeyCode::offset = Vector2(0);
+INPUT_RECORD SYDEKeyCode::InputRecord;
+DWORD SYDEKeyCode::Events;
+HANDLE SYDEKeyCode::hin;
 
 std::vector<SYDEKey> SYDEKeyCode::KeyCodes = {
 	A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,
@@ -103,4 +108,14 @@ SYDEKey SYDEKeyCode::get_key(char KeyCode)
 		}
 	}
 	return SYDEKey('~');
+}
+
+Vector2 SYDEKeyCode::getMousePosition()
+{
+	if (WaitForSingleObject(hin, SYDEDefaults::mouseInputWaitTime) == WAIT_OBJECT_0)
+	{
+		ReadConsoleInput(hin, &InputRecord, 1, &Events);
+		lastMousePosition = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - offset.getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - offset.getY());
+	}
+	return lastMousePosition;
 }

@@ -2,6 +2,8 @@
 #include "SYDEKey.h"
 #include <vector>
 #include <string>
+#include "Vector2.h"
+#include "Defaults.h"
 class SYDEKeyCode {
 public:
 	/// <summary>
@@ -30,6 +32,13 @@ public:
 	/// <param name="KeyCode"></param>
 	/// <returns></returns>
 	static SYDEKey get_key(char KeyCode);
+
+	/// <summary>
+	/// Get the current position of the mouse relative to the window
+	/// </summary>
+	/// <returns></returns>
+	static Vector2 getMousePosition();
+
 	//A Key
 	static SYDEKey A;
 	//B Key
@@ -109,4 +118,20 @@ public:
 	static SYDEKey LEFT_CLICK_MOUSE;
 	//Mouse Right Click
 	static SYDEKey RIGHT_CLICK_MOUSE;
+
+	/// <summary>
+	/// Initiate neccesary values for mouse movement, called in SYDEGamePlay during enableClicking function
+	/// </summary>
+	/// <param name="_offset"></param>
+	/// <param name="_input"></param>
+	/// <param name="_events"></param>
+	/// <param name="_hin"></param>
+	static void initMouseMovementVars(Vector2 _offset, INPUT_RECORD _input, DWORD _events, HANDLE _hin) { offset = _offset; InputRecord = _input; Events = _events; hin = _hin; }
+
+private:
+	static Vector2 lastMousePosition;
+	static Vector2 offset;
+	static INPUT_RECORD InputRecord;
+	static DWORD Events;
+	static HANDLE hin;
 };

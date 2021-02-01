@@ -241,6 +241,8 @@ void SYDEGamePlay::EnableClicking(HANDLE hOut)
 	cci.bVisible = FALSE;
 	SetConsoleCursorInfo(hOut, &cci);
 	SetConsoleMode(hin, prev_mode & ENABLE_EXTENDED_FLAGS | ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
+
+	SYDEKeyCode::initMouseMovementVars(config.getOffset(), InputRecord, Events, hin);
 }
 
 void SYDEGamePlay::DisableClicking(HANDLE hOut)
@@ -754,7 +756,7 @@ string SYDEGamePlay::_returnRandomNonsense()
 
 void SYDEGamePlay::SYDE_MouseClickFunction()
 {
-	if (WaitForSingleObject(hin, 1) == WAIT_OBJECT_0)
+	if (WaitForSingleObject(hin, SYDEDefaults::mouseInputWaitTime) == WAIT_OBJECT_0)
 	{
 		ReadConsoleInput(hin, &InputRecord, 1, &Events);
 		switch (InputRecord.EventType)

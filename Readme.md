@@ -125,6 +125,10 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.2.0 2/02/2021
+- SYDEKeyCode::getMousePosition() to return a Vector2 of the mouse's position relative to the console window
+- More comments on functions
+
 ### 1.2.1.0 28/01/2021
 - SYDEGamePlay::EnableClicking(Handle hOut) allows for clicking to be enabled and for the mouse position to be returned with SYDEGamePlay::GetPointClicked()
 - Animations can now run on deltaTime per frame if they choose too

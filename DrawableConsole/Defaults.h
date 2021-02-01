@@ -12,6 +12,8 @@ public:
 	static void setDeltaTime(float time) { deltaTime = time; }
 	static float getDeltaTime() { return deltaTime; }
 	static Vector2 v2_Zero;
+
+	static int mouseInputWaitTime;
 };
 
 class SYDEFunctions {

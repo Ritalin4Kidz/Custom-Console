@@ -175,7 +175,9 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 		m_LabelText = " --- State: Key Released";
 	}
 	window = _ADAPTIVEMENU.draw_menu(window);
-	m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()) + m_LabelText);
+	Vector2 testMousePosition = SYDEKeyCode::getMousePosition();
+	//m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()) + m_LabelText);
+	m_Label.setText(to_string((int)testMousePosition.getX()) + "," + to_string((int)testMousePosition.getY()) + m_LabelText);
 	window = m_Label.draw_ui(window);
 
 	return window;

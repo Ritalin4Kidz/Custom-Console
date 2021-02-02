@@ -31,7 +31,7 @@ public:
 	/// </summary>
 	/// <param name="b"></param>
 	static void showFPS(bool b) { FPS_Counter = b; }
-
+	
 	/// <summary>
 	/// Change if scrollbar is removed on window init
 	/// </summary>
@@ -102,6 +102,25 @@ public:
 	/// <param name="deltaTime"></param>
 	/// <returns></returns>
 	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
+
+	/// <summary>
+	/// Enable clicking and getting mouse position
+	/// </summary>
+	/// <param name="hOut"></param>
+	static void EnableClicking(HANDLE hOut);
+
+	/// <summary>
+	/// disable clicking
+	/// </summary>
+	/// <param name="hOut"></param>
+	static void DisableClicking(HANDLE hOut);
+
+	/// <summary>
+	/// get the last point clicked
+	/// </summary>
+	/// <returns></returns>
+	static Vector2 GetPointClicked() { return LastPointClicked; }
+
 	/// <summary>
 	/// shutdown gdiplus
 	/// </summary>
@@ -109,9 +128,40 @@ public:
 		GdiplusShutdown(gdiplusToken);
 	}
 private:
+	/// <summary>
+	/// Introduction Script Void
+	/// </summary>
 	static void _introductionScript();
+	/// <summary>
+	/// Display introduction credits on the window
+	/// </summary>
+	/// <param name="window"></param>
 	static void _introCreditsScript(ConsoleWindow& window);
+	/// <summary>
+	/// freebee bee
+	/// </summary>
+	/// <param name="baseY"></param>
+	/// <param name="baseX"></param>
+	/// <param name="setUp"></param>
+	/// <param name="start"></param>
+	/// <param name="hOut"></param>
+	/// <param name="window"></param>
+	/// <param name="windowWidth"></param>
+	/// <param name="windowHeight"></param>
+	/// <param name="artVars"></param>
 	static void _drawBee(int baseY, int baseX, bool setUp, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars);
+	/// <summary>
+	/// SYDE Engine splashscreen
+	/// </summary>
+	/// <param name="baseY"></param>
+	/// <param name="baseX"></param>
+	/// <param name="setUp"></param>
+	/// <param name="start"></param>
+	/// <param name="hOut"></param>
+	/// <param name="window"></param>
+	/// <param name="windowWidth"></param>
+	/// <param name="windowHeight"></param>
+	/// <param name="artVars"></param>
 	static void _poweredBySYDEEngine(int baseY, int baseX, bool setUp, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars);
 
 	static bool _activated;
@@ -119,6 +169,19 @@ private:
 
 	static string _returnRandomNonsense();
 	static Settings config;
+
+	//ClickValues
+	static Vector2 LastPointClicked;
+	static bool ClickEnabled;
+	static INPUT_RECORD InputRecord;
+	static DWORD Events;
+	static COORD coord;
+	static CONSOLE_CURSOR_INFO cci;
+	static HANDLE hin;
+	static DWORD prev_mode;
+	static void SYDE_MouseClickFunction();
+
+	//cheats
 	static vector<string> cheatCodes;
 
 	//GDI VALUES

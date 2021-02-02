@@ -4,10 +4,16 @@
 using namespace std;
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
+
+bool CustomAnimationAsset::_DeltatimeFrame = false;
+//30FPS
+float CustomAnimationAsset::_standardMaxFrameTime = 0.03f;
+
 void CustomAnimationAsset::operator=(CustomAnimationAsset other)
 {
 	this->m_Frames = other.m_Frames;
 	this->frame_number = 0;
+	this->max_frame_time = other.max_frame_time;
 }
 
 
@@ -30,7 +36,7 @@ ConsoleWindow CustomAnimationAsset::draw_asset(ConsoleWindow window, Vector2 poi
 		window = m_Frames[frame_number].draw_asset(window, point);
 		if (!m_paused)
 		{
-			frame_number++;
+			nextFrame();
 		}
 		if (frame_number >= m_Frames.size())
 		{
@@ -44,6 +50,23 @@ ConsoleWindow CustomAnimationAsset::draw_asset(ConsoleWindow window, Vector2 poi
 void CustomAnimationAsset::setAsset(vector<CustomAsset> frames)
 {
 	m_Frames = frames;
+}
+
+void CustomAnimationAsset::nextFrame()
+{
+	if (_DeltatimeFrame)
+	{
+		frame_time += SYDEDefaults::getDeltaTime();
+		while (frame_time >= max_frame_time)
+		{
+			frame_time -= max_frame_time;
+			frame_number++;
+		}
+	}
+	else
+	{
+		frame_number++;
+	}
 }
 
 vector<CustomAsset> AnimationSpriteSheets::load_from_animation_sheet(const WCHAR * bmpFile, AssetsClass astVars, int file_totalWidth, int file_totalHeight, int sprite_width, int sprite_height, int startingSprite, int noSprites)

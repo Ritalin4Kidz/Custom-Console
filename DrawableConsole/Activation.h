@@ -31,6 +31,9 @@
 using namespace std;
 using namespace Gdiplus;
 
+/// <summary>
+/// screen drawn if engine not activated, pls show the splashscreen reeeee
+/// </summary>
 class Activation{
 public:
 	Activation() {}

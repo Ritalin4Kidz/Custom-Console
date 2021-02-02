@@ -81,6 +81,3 @@ SYDEButton & SYDEButton::operator=(SYDEButton other)
 	this->_TRANSPARENT = other._TRANSPARENT;
 	return*this;
 }
-
-
-

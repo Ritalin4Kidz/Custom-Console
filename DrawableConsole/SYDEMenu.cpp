@@ -50,6 +50,13 @@ ConsoleWindow SYDEAdaptiveMenu::draw_menu(ConsoleWindow window)
 
 	for (int i = 0; i < m_Items.size(); i++)
 	{
+		if (selectedOffCurrentHighlight)
+		{
+			if (m_Items[i].getButton().getCurrentlyHighlighted())
+			{
+				selectionNumber = i;
+			}
+		}
 		m_Items[i].draw_ui(window);
 	}
 	if (m_Items[selectionNumber].getDisplay())

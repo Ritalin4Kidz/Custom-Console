@@ -192,6 +192,13 @@ void Font_Settings_Func::set_up_gothic(int size)
 	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 }
 
+void Font_Settings_Func::set_up_lucida_console(int size)
+{
+	CONSOLE_FONT_INFOEX cfi = getCfi(size / 2, size);
+	std::wcscpy(cfi.FaceName, L"Lucida Console"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
 CONSOLE_FONT_INFOEX Font_Settings_Func::getCfi(int sizeX, int sizeY)
 {
 	CONSOLE_FONT_INFOEX cfi;

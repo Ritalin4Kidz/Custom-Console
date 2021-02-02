@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "SYDEFPS.h"
-SYDELabel SYDEFPS::m_fps = SYDELabel("", Vector2(35, 1), Vector2(5, 1), BRIGHTGREEN, true);
+SYDELabel SYDEFPS::m_fps = SYDELabel("", Vector2(34, 1), Vector2(6, 1), BRIGHTGREEN, true);
 void SYDEFPS::draw(ConsoleWindow& w)
 {
 	float fps = 1.0f / SYDEDefaults::getDeltaTime();

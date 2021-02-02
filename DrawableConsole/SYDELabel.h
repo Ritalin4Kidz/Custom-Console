@@ -4,6 +4,12 @@
 #include "Vector2.h"
 #include "SYDEUI.h"
 
+enum SYDELabelAnchor {
+	SLA_Normal,
+	SLA_Center,
+	SLA_Right
+};
+
 class SYDELabel : public SYDEUI, public SYDEUIInterface {
 public:
 	SYDELabel() { m_Label = ""; }
@@ -28,7 +34,7 @@ public:
 	/// <summary>
 	/// remove a certain amount of text
 	/// </summary>
-	/// <param name="amt"></param>
+	/// <param name="amt"> - Amount Of Text To Remove</param>
 	void removeText(int amt) {m_Text = m_Text.substr(0, m_Text.size() - amt);}
 
 	void setPos(Vector2 v) { m_Pos = v; }
@@ -40,6 +46,19 @@ public:
 	/// </summary>
 	/// <param name="_WRAP"></param>
 	void _WrapText(bool _WRAP) { _WRAPTEXT = _WRAP; }
+
+	/// <summary>
+	/// set the label anchor
+	/// </summary>
+	/// <param name="a"> - Text Anchor</param>
+	void setLabelAnchor(SYDELabelAnchor a) { _Anchor = a; }
+
+protected:
+	ConsoleWindow draw_normal(ConsoleWindow window);
+	ConsoleWindow draw_center_anchored(ConsoleWindow window);
+	ConsoleWindow draw_right_anchored(ConsoleWindow window);
+
+	SYDELabelAnchor _Anchor = SLA_Normal;
 
 private:
 	bool _WRAPTEXT = false;

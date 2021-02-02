@@ -32,3 +32,5 @@
 #include <chrono>
 #include "SYDETextBox.h"
 #include "SYDEShapes.h"
+#include "SYDEClickableButton.h"
+#include "CustomAsset_Clickable.h"

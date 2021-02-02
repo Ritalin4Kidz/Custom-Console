@@ -36,6 +36,8 @@
 #include "SYDEClock.h"
 #include "SYDEParticle.h"
 #include "SYDEGamePlay.h"
+#include "SYDEClickableButton.h"
+#include "CustomAsset_Clickable.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -62,6 +64,7 @@ private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
 	SYDELabel m_Label = SYDELabel("Q:Start,E:Stop,W:Increase,S:Decrease",  Vector2(0, 19), Vector2(40, 1), WHITE, true);
 	SYDEButton m_Button;
+	SYDEClickableButton m_ClickableButton;
 	//WE WANT TO START THE MENU AT y=1.
 	SYDEMenu _MENU = SYDEMenu(vector<SYDEButton> {
 		SYDEButton("Test Text", Vector2(0, 1), Vector2(10, 1), BLACK, true),
@@ -81,7 +84,7 @@ private:
 
 
 	SYDEAdaptiveMenu _ADAPTIVEMENU = SYDEAdaptiveMenu(vector<SYDEAdaptiveMenu_Item> {
-		SYDEAdaptiveMenu_Item(SYDEButton("No Display", Vector2(0, 1), Vector2(20, 1), WHITE, RED, true)),
-		SYDEAdaptiveMenu_Item(SYDEButton("Display", Vector2(0, 2), Vector2(20, 1), WHITE, RED, true), CustomAsset(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3)), Vector2(25,5))
+		SYDEAdaptiveMenu_Item(new SYDEButton("No Display", Vector2(0, 1), Vector2(20, 1), WHITE, RED, true)),
+		SYDEAdaptiveMenu_Item(new SYDEButton("Display", Vector2(0, 2), Vector2(20, 1), WHITE, RED, true),  new CustomAsset_Clickable(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3), TickFunc), Vector2(25,5))
 	});
 };

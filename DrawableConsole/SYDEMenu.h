@@ -74,30 +74,30 @@ private:
 
 class SYDEAdaptiveMenu_Item{
 public:
-	SYDEAdaptiveMenu_Item(SYDEButton Button) { m_display = false; m_Button = Button; }
-	SYDEAdaptiveMenu_Item(SYDEButton Button, CustomAsset Display, Vector2 Loc) { m_display = true; m_Button = Button; m_DisplayItem = Display; m_DisplayLoc = Loc;}
+	SYDEAdaptiveMenu_Item(SYDEButton* Button) { m_display = false; m_Button = Button; }
+	SYDEAdaptiveMenu_Item(SYDEButton* Button, CustomAsset* Display, Vector2 Loc) { m_display = true; m_Button = Button; m_DisplayItem = Display; m_DisplayLoc = Loc;}
 	virtual ~SYDEAdaptiveMenu_Item() {}
 
-	void setButtonHighlight(bool a) { m_Button._HIGHLIGHT(a); }
-	void setButtonHighlightColour(ColourClass c) { m_Button.setHighLight(c); }
-	void DoButtonFunc() { m_Button.DoFunc(); }
+	void setButtonHighlight(bool a) { m_Button->_HIGHLIGHT(a); }
+	void setButtonHighlightColour(ColourClass c) { m_Button->setHighLight(c); }
+	void DoButtonFunc() { m_Button->DoFunc(); }
 
 	bool getDisplay() { return m_display; }
 	Vector2 getDiplayLoc() { return m_DisplayLoc; }
 
-	SYDEButton& getButton() { return m_Button; }
+	SYDEButton& getButton() { return *m_Button; }
 
-	void draw_ui(ConsoleWindow& window) { window = m_Button.draw_ui(window); }
-	void drawDisplay(ConsoleWindow& window) { window = m_DisplayItem.draw_asset(window, m_DisplayLoc); }
+	void draw_ui(ConsoleWindow& window) { window = m_Button->draw_ui(window); }
+	void drawDisplay(ConsoleWindow& window) { window = m_DisplayItem->draw_asset(window, m_DisplayLoc); }
 
-	string getLabel() { return m_Button.m_Label; }
-	bool compareLabel(std::string text) { return m_Button.m_Label == text; }
-	void setLabel(std::string labelTxt) { m_Button.m_Label = labelTxt; }
+	string getLabel() { return m_Button->m_Label; }
+	bool compareLabel(std::string text) { return m_Button->m_Label == text; }
+	void setLabel(std::string labelTxt) { m_Button->m_Label = labelTxt; }
 
 protected:
 	bool m_display;
-	SYDEButton m_Button = SYDEButton();
-	CustomAsset m_DisplayItem = CustomAsset();
+	SYDEButton* m_Button;
+	CustomAsset* m_DisplayItem = new CustomAsset();
 	Vector2 m_DisplayLoc = Vector2(0, 0);
 };
 

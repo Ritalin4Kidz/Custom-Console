@@ -128,8 +128,12 @@ public:
 	/// <param name="_hin"></param>
 	static void initMouseMovementVars(Vector2 _offset, INPUT_RECORD _input, DWORD _events, HANDLE _hin) { offset = _offset; InputRecord = _input; Events = _events; hin = _hin; }
 
+
+	static void SetLastClickPosition(Vector2 v) { lastClickPosition = v; }
+	static Vector2 GetLastClickPosition() { return lastClickPosition; }
 private:
 	static Vector2 lastMousePosition;
+	static Vector2 lastClickPosition;
 	static Vector2 offset;
 	static INPUT_RECORD InputRecord;
 	static DWORD Events;

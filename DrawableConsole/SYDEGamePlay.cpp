@@ -765,6 +765,7 @@ void SYDEGamePlay::SYDE_MouseClickFunction()
 			if (InputRecord.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 			{
 				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
+				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
 				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDown();
 			}
 			else 
@@ -775,6 +776,7 @@ void SYDEGamePlay::SYDE_MouseClickFunction()
 			if (InputRecord.Event.MouseEvent.dwButtonState == RIGHTMOST_BUTTON_PRESSED)
 			{
 				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
+				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
 				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDown();
 			}
 			else

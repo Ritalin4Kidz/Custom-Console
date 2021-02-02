@@ -2,7 +2,7 @@
 #include "Concerto.h"
 #include <string>
 
-ColourClass Concerto::_bg = BLACK;
+ColourClass Concerto::_bg = BLACK_LIGHTGREY_BG;
 
 void Concerto::Initialize()
 {
@@ -34,6 +34,11 @@ void Concerto::Initialize()
 	_b.RainbowOn(true);
 	_b.setMaxParticles(35);
 	_b.setFinishingColour(WHITE);
+
+
+	m_ClickableButton = SYDEClickableButton("CLICK ME", Vector2(20, 15), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_ClickableButton.setHighLight(RED);
+	m_ClickableButton.SetFunc(TickFunc);
 }
 void Concerto::m_Button_Press()
 {
@@ -150,7 +155,7 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 	{
 		for (int m = 0; m < windowHeight; m++)
 		{
-			window.setTextAtPoint(Vector2(l, m), " ", BLACK_LIGHTGREY_BG);
+			window.setTextAtPoint(Vector2(l, m), " ", _bg);
 		}
 	}
 
@@ -175,11 +180,11 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 		m_LabelText = " --- State: Key Released";
 	}
 	window = _ADAPTIVEMENU.draw_menu(window);
-	Vector2 testMousePosition = SYDEKeyCode::getMousePosition();
-	//m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()) + m_LabelText);
-	m_Label.setText(to_string((int)testMousePosition.getX()) + "," + to_string((int)testMousePosition.getY()) + m_LabelText);
+	//Vector2 testMousePosition = SYDEKeyCode::getMousePosition();
+	m_Label.setText(to_string((int)SYDEGamePlay::GetPointClicked().getX()) + "," + to_string((int)SYDEGamePlay::GetPointClicked().getY()) + m_LabelText);
+	//m_Label.setText(to_string((int)testMousePosition.getX()) + "," + to_string((int)testMousePosition.getY()) + m_LabelText);
 	window = m_Label.draw_ui(window);
-
+	window = m_ClickableButton.draw_ui(window);
 	return window;
 }
 

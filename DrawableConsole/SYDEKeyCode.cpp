@@ -42,6 +42,7 @@ SYDEKey SYDEKeyCode::LeftTab = SYDEKey(VK_TAB);
 SYDEKey SYDEKeyCode::LEFT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
 SYDEKey SYDEKeyCode::RIGHT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
 Vector2 SYDEKeyCode::lastMousePosition = Vector2(0);
+Vector2 SYDEKeyCode::lastClickPosition = Vector2(0);
 Vector2 SYDEKeyCode::offset = Vector2(0);
 INPUT_RECORD SYDEKeyCode::InputRecord;
 DWORD SYDEKeyCode::Events;

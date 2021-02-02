@@ -45,7 +45,7 @@ public:
 	/// </summary>
 	/// <param name="f"></param>
 	void SetFunc(void(*f)()) { m_Function = f; }
-private:
+protected:
 
 	bool m_Active = false;
 
@@ -56,6 +56,5 @@ private:
 	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
 	ColourClass HiLightColour = NULLCOLOUR;
-protected:
 	void(*m_Function)();
 };

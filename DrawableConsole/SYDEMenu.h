@@ -155,7 +155,12 @@ public:
 	/// </summary>
 	void DoSelectedFunc() { m_Items[selectionNumber].DoButtonFunc(); }
 	void setPos(Vector2 newPos) { m_Pos = newPos; }
+
+	void setGetSelectedOffCurrentHighlight(bool currentHighlight) { selectedOffCurrentHighlight = currentHighlight; }
 private:
+
+	bool selectedOffCurrentHighlight = false;
+
 	vector<SYDEAdaptiveMenu_Item> m_Items;
 	Vector2 m_Pos = Vector2(0, 0);
 

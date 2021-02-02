@@ -12,3 +12,15 @@
 *.pdb
 *.ipdb
 *.iobj
+*.obj
+*.db-wal
+*.db-shm
+*.ilk
+*.obj
+*.log
+*.res
+*.tlog
+*.pch
+*.aps
+*.filters
+*.pch

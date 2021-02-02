@@ -19,6 +19,17 @@ SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a
 	_TRANSPARENT = _TRANSPARENTBG;
 }
 
+SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)())
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	TextColour = txtColour;
+	HiLightColour = a_hiLightColour;
+	_TRANSPARENT = _TRANSPARENTBG;
+	m_Function = f;
+}
+
 ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 {
 	int stringNo = 1;

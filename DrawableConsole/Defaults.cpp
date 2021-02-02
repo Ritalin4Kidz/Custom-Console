@@ -3,7 +3,7 @@
 
 float SYDEDefaults::deltaTime = 0;
 Vector2 SYDEDefaults::v2_Zero = Vector2(0, 0);
-int SYDEDefaults::mouseInputWaitTime = 1;
+int SYDEDefaults::mouseInputWaitTime = 0;
 
 void SYDEFunctions::SYDESleep(int time, float deltaTime)
 {

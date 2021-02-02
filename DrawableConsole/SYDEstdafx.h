@@ -33,4 +33,5 @@
 #include "SYDETextBox.h"
 #include "SYDEShapes.h"
 #include "SYDEClickableButton.h"
+#include "SYDEHoverableButton.h"
 #include "CustomAsset_Clickable.h"

@@ -129,6 +129,7 @@ Inside our main function, we can initialize all of our variables and call up SYD
 - SYDEKeyCode::getMousePosition() to return a Vector2 of the mouse's position relative to the console window
 - More comments on functions
 - SYDEClickableButton added which performs a func on click
+- SYDEHoverableButton added which hilights on hover
 - Adjusted SYDE Adaptive Menu to allow for clickable buttons & assets
 
 ### 1.2.1.0 28/01/2021

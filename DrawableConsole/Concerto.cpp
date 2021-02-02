@@ -39,6 +39,9 @@ void Concerto::Initialize()
 	m_ClickableButton = SYDEClickableButton("CLICK ME", Vector2(20, 15), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_ClickableButton.setHighLight(RED);
 	m_ClickableButton.SetFunc(TickFunc);
+
+
+	_ADAPTIVEMENU.setGetSelectedOffCurrentHighlight(true);
 }
 void Concerto::m_Button_Press()
 {
@@ -163,10 +166,10 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 	{
 		_ADAPTIVEMENU.setActive(!_ADAPTIVEMENU.getActive());
 	}
-	else if (SYDEKeyCode::get_key(VK_TAB)._CompareState(KEYDOWN))
-	{
-		_ADAPTIVEMENU.nextSelect();
-	}
+	//else if (SYDEKeyCode::get_key(VK_TAB)._CompareState(KEYDOWN))
+	//{
+	//	_ADAPTIVEMENU.nextSelect();
+	//}
 	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN))
 	{
 		m_LabelText = " --- State: Key Down";

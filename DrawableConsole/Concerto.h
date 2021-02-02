@@ -37,6 +37,7 @@
 #include "SYDEParticle.h"
 #include "SYDEGamePlay.h"
 #include "SYDEClickableButton.h"
+#include "SYDEHoverableButton.h"
 #include "CustomAsset_Clickable.h"
 using namespace std;
 using namespace Gdiplus;
@@ -84,7 +85,7 @@ private:
 
 
 	SYDEAdaptiveMenu _ADAPTIVEMENU = SYDEAdaptiveMenu(vector<SYDEAdaptiveMenu_Item> {
-		SYDEAdaptiveMenu_Item(new SYDEButton("No Display", Vector2(0, 1), Vector2(20, 1), WHITE, RED, true)),
-		SYDEAdaptiveMenu_Item(new SYDEButton("Display", Vector2(0, 2), Vector2(20, 1), WHITE, RED, true),  new CustomAsset_Clickable(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3), TickFunc), Vector2(25,5))
+		SYDEAdaptiveMenu_Item(new SYDEHoverableButton("No Display", Vector2(0, 1), Vector2(20, 1), WHITE, RED, true, false)),
+		SYDEAdaptiveMenu_Item(new SYDEHoverableButton("Display", Vector2(0, 2), Vector2(20, 1), WHITE, RED, true, false),  new CustomAsset_Clickable(6, 3, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\\Bitmaps\\Sand.bmp", 3, 3), TickFunc), Vector2(25,5))
 	});
 };

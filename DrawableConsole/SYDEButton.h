@@ -24,6 +24,9 @@ public:
 
 	void _WrapText(bool _WRAP) { _WRAPTEXT = _WRAP; }
 	void _HIGHLIGHT(bool _HILGHT) { _HIGHLIGHTED = _HILGHT; }
+
+	bool getCurrentlyHighlighted() { return _HIGHLIGHTED; }
+
 	void setHighLight(ColourClass _COLR) { HiLightColour = _COLR; }
 
 	/// <summary>

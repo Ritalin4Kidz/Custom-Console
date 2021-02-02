@@ -79,6 +79,31 @@ void SYDEKey::Reset()
 	isPressed = false;
 }
 
+void SYDEKey::ForceKeyDown()
+{
+	if (_STATE == KEY) return;
+	if (_STATE == KEYDOWN)
+	{
+		_STATE = KEY;
+		return;
+	}
+	_STATE = KEYDOWN;
+}
+
+void SYDEKey::ForceKeyDownIfHeld()
+{
+	if (_STATE == KEYDOWN)
+	{
+		_STATE = KEY;
+		return;
+	}
+}
+
+void SYDEKey::ForceKeyUp()
+{
+	_STATE = KEYUP;
+}
+
 
 SYDEKey & SYDEKey::operator=(char KeyCode)
 {

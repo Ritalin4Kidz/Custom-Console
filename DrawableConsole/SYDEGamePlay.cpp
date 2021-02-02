@@ -11,6 +11,15 @@ bool SYDEGamePlay::FPS_Counter = false;
 bool SYDEGamePlay::resize_window_on_init = true;
 bool SYDEGamePlay::remove_scrollbar = true;
 
+bool SYDEGamePlay::ClickEnabled = false;
+Vector2 SYDEGamePlay::LastPointClicked = Vector2(0);
+INPUT_RECORD SYDEGamePlay::InputRecord;
+DWORD SYDEGamePlay::Events;
+COORD SYDEGamePlay::coord;
+CONSOLE_CURSOR_INFO SYDEGamePlay::cci;
+HANDLE SYDEGamePlay::hin;
+DWORD SYDEGamePlay::prev_mode;
+
 vector<string> SYDEGamePlay::cheatCodes = vector<string>();
 
 ULONG_PTR SYDEGamePlay::gdiplusToken;
@@ -193,22 +202,59 @@ ConsoleWindow SYDEGamePlay::play_game(SYDEWindowGame* SYDE_GAME, COORD start, co
 ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME & deltaTime)
 {
 	HWND ConsoleWindow = GetConsoleWindow();
+	//KEYBOARD INPUTS
 	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
 	{
 		// CHECKING THE STATE OF ALL INPUTS
 		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown_Safe(ConsoleWindow);
 		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp_Safe(ConsoleWindow);
 	}
-	//reset_void(start, hOut,  window, windowWidth, windowHeight); //IN CASE FUCKED UP SCREEN
+	//MOUSE INPUTS
+	if (ClickEnabled)
+	{
+		SYDE_MouseClickFunction();
+	}
+	//DELTATIME
 	deltaTime.refreshTime();
 	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	//DRAW
 	SetConsoleCursorPosition(hOut, start);
 	window = SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
+	//FPS
 	if (FPS_Counter)
 	{
 		SYDEFPS::draw(window);
 	}
+	//RETURN GAME
 	return window;
+}
+
+void SYDEGamePlay::EnableClicking(HANDLE hOut)
+{
+	ClickEnabled = true;
+	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	hin = GetStdHandle(STD_INPUT_HANDLE);
+
+	GetConsoleMode(hin, &prev_mode);
+
+	cci.dwSize = 25;
+	cci.bVisible = FALSE;
+	SetConsoleCursorInfo(hOut, &cci);
+	SetConsoleMode(hin, prev_mode & ENABLE_EXTENDED_FLAGS | ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
+
+	SYDEKeyCode::initMouseMovementVars(config.getOffset(), InputRecord, Events, hin);
+}
+
+void SYDEGamePlay::DisableClicking(HANDLE hOut)
+{
+	ClickEnabled = false;
+	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	hin = GetStdHandle(STD_INPUT_HANDLE);
+	cci.dwSize = 25;
+	cci.bVisible = FALSE;
+	SetConsoleCursorInfo(hOut, &cci);
+	SetConsoleMode(hin, ENABLE_PROCESSED_INPUT);
+	SetConsoleMode(hin, prev_mode);
 }
 
 void SYDEGamePlay::_introductionScript()
@@ -479,6 +525,47 @@ void SYDEGamePlay::_introductionScript()
 		cout << "Aborting Download%" << endl;
 		Sleep(40);
 		break;
+	case 6:
+		Sleep(40);
+		cout << "SYDE ENGINE LOADING%" << endl;
+		Sleep(40);
+		cout << "Actually this is just a meme load%" << endl;
+		Sleep(40);
+		cout << "nothing is actually loading%" << endl;
+		Sleep(40);
+		cout << "You've been duped%" << endl;
+		Sleep(40);
+		cout << "But ty for trying out the engine%" << endl;
+		Sleep(40);
+		cout << "Been working on this since dec 2018%" << endl;
+		Sleep(40);
+		cout << "Cool to see the s**t that can be%" << endl;
+		Sleep(40);
+		cout << "done in this engine%" << endl;
+		Sleep(40);
+		cout << "----------------------------%" << endl;
+		Sleep(40);
+		cout << "LOADING LOAD SCRIPTS...10%" << endl;
+		Sleep(40);
+		cout << "LOADING LOAD SCRIPTS...74%" << endl;
+		Sleep(40);
+		cout << "LOADING LOAD SCRIPTS...100%" << endl;
+		Sleep(10);
+		cout << "LOADING GRAPHICS....5%" << endl;
+		Sleep(40);
+		cout << "LOADING GRAPHICS....65%" << endl;
+		Sleep(40);
+		cout << "LOADING GRAPHICS....100%" << endl;
+		Sleep(10);
+		cout << "nah just messing with you again%" << endl;
+		Sleep(40);
+		cout << "the percent symbol isn't even real%" << endl;
+		Sleep(40);
+		cout << "see...." << endl;
+		Sleep(40);
+		cout << "Have fun whoever you are%" << endl;
+		Sleep(40);
+		break;
 	default:
 		for (int i = 0; i < 30; i++)
 		{
@@ -665,4 +752,43 @@ string SYDEGamePlay::_returnRandomNonsense()
 	}
 	pText += "%";
 	return pText;
+}
+
+void SYDEGamePlay::SYDE_MouseClickFunction()
+{
+	if (WaitForSingleObject(hin, SYDEDefaults::mouseInputWaitTime) == WAIT_OBJECT_0)
+	{
+		ReadConsoleInput(hin, &InputRecord, 1, &Events);
+		switch (InputRecord.EventType)
+		{
+		case MOUSE_EVENT:
+			if (InputRecord.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+			{
+				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
+				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
+				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDown();
+			}
+			else 
+			{
+				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyUp();
+			}
+
+			if (InputRecord.Event.MouseEvent.dwButtonState == RIGHTMOST_BUTTON_PRESSED)
+			{
+				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
+				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
+				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDown();
+			}
+			else
+			{
+				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyUp();
+			}
+			break;
+		}
+	}
+	else
+	{
+		SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDownIfHeld();
+		SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDownIfHeld();
+	}
 }

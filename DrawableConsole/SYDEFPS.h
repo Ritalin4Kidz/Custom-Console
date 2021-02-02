@@ -20,6 +20,12 @@ public:
 	/// </summary>
 	/// <param name="c"></param>
 	static void setColour(ColourClass c) { m_fps.setColour(c); }
+
+	/// <summary>
+	/// Set the anchor for the counter
+	/// </summary>
+	/// <param name="_anchor"></param>
+	static void setAnchor(SYDELabelAnchor _anchor) { m_fps.setLabelAnchor(_anchor); }
 private:
 
 protected:

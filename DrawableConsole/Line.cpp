@@ -22,8 +22,8 @@ void Line::writeLine(int offsetX)
 	}
 	for (int i = 0; i < m_Line.size(); i++)
 	{
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
-			cout << m_Line[i].getChar();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
+		cout << m_Line[i].getChar();
 	}
 	cout << endl;
 }
@@ -37,31 +37,31 @@ void Line::writeLineOptimized(int offsetX)
 	{
 		cout << " ";
 	}
-	for (int i = 0; i < LineSize; i++)
+	int position = 0;
+	for (auto& i : m_Line)
 	{
-		if (i == LineSize - 1)
+		if (position == LineSize - 1)
 		{
-			currentTxt += m_Line[i].getChar();
+			currentTxt += i.getChar();
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), currentColour);
 			cout << currentTxt << endl;
 			currentTxt = "";
 			return;
 		}
-		else if (m_Line[i].getColour() == currentColour)
+		else if (i.getColour() == currentColour)
 		{
-			currentTxt += m_Line[i].getChar();
+			currentTxt += i.getChar();
 		}
 		else
 		{
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), currentColour);
 			cout << currentTxt;
-			currentColour = m_Line[i].getColour();
-			currentTxt = m_Line[i].getChar();
+			currentColour = i.getColour();
+			currentTxt = i.getChar();
 		}
-		//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), m_Line[i].getColour());
-		//cout << m_Line[i].getChar();
+		position++;
 	}
-	//cout << currentTxt endl;
+
 }
 
 void Line::addLine(string a_line, int colour)
@@ -86,4 +86,9 @@ void Line::setLine(string a_line, int colour)
 		newLine[i] = TextItem(a_line[i], colour);
 	}
 	m_Line = newLine;
+}
+
+void Line::operator=(Line other)
+{
+	this->m_Line = other.m_Line;
 }

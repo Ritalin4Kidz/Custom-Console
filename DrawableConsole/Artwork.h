@@ -2,7 +2,9 @@
 #include "ConsoleWindow.h"
 #include "Vector2.h"
 
-
+/// <summary>
+/// Various artwork, done for init
+/// </summary>
 class Artwork {
 public:
 	Artwork() {}

@@ -27,9 +27,9 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -168,6 +168,8 @@
     <ClInclude Include="ConsoleWindow.h" />
     <ClInclude Include="CustomAnimationAsset.h" />
     <ClInclude Include="CustomAsset.h" />
+    <ClInclude Include="CustomAsset_Clickable.h" />
+    <ClInclude Include="CustomAsset_Draggable.h" />
     <ClInclude Include="Defaults.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="pch.h" />
@@ -177,10 +179,12 @@
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SYDEButton.h" />
+    <ClInclude Include="SYDEClickableButton.h" />
     <ClInclude Include="SYDEClock.h" />
     <ClInclude Include="SYDECredits.h" />
     <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
+    <ClInclude Include="SYDEHoverableButton.h" />
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDELabel.h" />
@@ -210,6 +214,8 @@
     <ClCompile Include="ConsoleWindow.cpp" />
     <ClCompile Include="CustomAnimationAsset.cpp" />
     <ClCompile Include="CustomAsset.cpp" />
+    <ClCompile Include="CustomAsset_Clickable.cpp" />
+    <ClCompile Include="CustomAsset_Draggable.cpp" />
     <ClCompile Include="Defaults.cpp" />
     <ClCompile Include="DrawableConsole.cpp" />
     <ClCompile Include="Line.cpp" />
@@ -223,10 +229,12 @@
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SYDEButton.cpp" />
+    <ClCompile Include="SYDEClickableButton.cpp" />
     <ClCompile Include="SYDEClock.cpp" />
     <ClCompile Include="SYDECredits.cpp" />
     <ClCompile Include="SYDEFPS.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
+    <ClCompile Include="SYDEHoverableButton.cpp" />
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDELabel.cpp" />

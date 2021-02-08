@@ -47,6 +47,15 @@ public:
 	/// <returns>true/false</returns>
 	bool rgb_match(vector<string> rgb, string r, string g, string b);
 	/// <summary>
+	/// Compare RGB
+	/// </summary>
+	/// <param name="rgb"></param>
+	/// <param name="r"></param>
+	/// <param name="g"></param>
+	/// <param name="b"></param>
+	/// <returns>true/false</returns>
+	static bool rgb_compare(vector<string> rgb, string r, string g, string b);
+	/// <summary>
 	/// get colour from RGB
 	/// </summary>
 	/// <param name="r"></param>
@@ -54,6 +63,14 @@ public:
 	/// <param name="b"></param>
 	/// <returns></returns>
 	ColourClass return_colour_from_RGB(string r, string g, string b);
+	/// <summary>
+	/// get colour from RGB
+	/// </summary>
+	/// <param name="r"></param>
+	/// <param name="g"></param>
+	/// <param name="b"></param>
+	/// <returns></returns>
+	static ColourClass colour_from_RGB(string r, string g, string b);
 	ConsoleWindow draw_bmp_on_window(ConsoleWindow window, const WCHAR* bmpFile, Vector2 bmpfilepoint, Vector2 point, int windowWidth, int windowHeight, int bmpWidth, int bmpHeight);
 
 	/// <summary>
@@ -61,7 +78,24 @@ public:
 	/// </summary>
 	/// <returns>"EngineFiles\\TestBitmaps\\testfile2.bmp"</returns>
 	char* get_test_bmp_path() { return test_bmp_path; }
+
+
+	/// <summary>
+	/// Get bmp as a colour class array
+	/// </summary>
+	/// <param name="bmpFile"></param>
+	/// <param name="bmpWidth"></param>
+	/// <param name="bmpHeight"></param>
+	/// <returns></returns>
 	vector<ColourClass> get_bmp_as_direct_colour_class_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight);
+	/// <summary>
+	/// Get bmp as a colour class array
+	/// </summary>
+	/// <param name="bmpFile"></param>
+	/// <param name="bmpWidth"></param>
+	/// <param name="bmpHeight"></param>
+	/// <returns></returns>
+	static vector<ColourClass> get_bmp_as_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight);
 	/// <summary>
 	/// Default chime file path
 	/// </summary>

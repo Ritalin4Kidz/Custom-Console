@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.3.0 9/02/2021
+- CustomAsset_Draggable for draggable objects
+
 ### 1.2.2.0 2/02/2021
 - SYDEKeyCode::getMousePosition() to return a Vector2 of the mouse's position relative to the console window
 - More comments on functions

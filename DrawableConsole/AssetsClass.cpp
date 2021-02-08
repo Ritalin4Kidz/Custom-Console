@@ -77,6 +77,11 @@ bool AssetsClass::rgb_match(vector<string> rgb, string r, string g, string b)
 	return r == rgb[0] && g == rgb[1] && b == rgb[2] ;
 }
 
+bool AssetsClass::rgb_compare(vector<string> rgb, string r, string g, string b)
+{
+	return r == rgb[0] && g == rgb[1] && b == rgb[2];
+}
+
 ColourClass AssetsClass::return_colour_from_RGB(string r, string g, string b)
 {
 	if (rgb_match(get_BLACK_RGB(), r, g, b))
@@ -146,6 +151,75 @@ ColourClass AssetsClass::return_colour_from_RGB(string r, string g, string b)
 	return NULLCOLOUR;
 }
 
+ColourClass AssetsClass::colour_from_RGB(string r, string g, string b)
+{
+	if (rgb_compare(get_BLACK_RGB(), r, g, b))
+	{
+		return BLACK;
+	}
+	if (rgb_compare(get_BLUE_RGB(), r, g, b))
+	{
+		return BLUE_BLUE_BG;
+	}
+	if (rgb_compare(get_GREEN_RGB(), r, g, b))
+	{
+		return GREEN_GREEN_BG;
+	}
+	if (rgb_compare(get_AQUA_RGB(), r, g, b))
+	{
+		return AQUA_AQUA_BG;
+	}
+	if (rgb_compare(get_RED_RGB(), r, g, b))
+	{
+		return RED_RED_BG;
+	}
+	if (rgb_compare(get_PURPLE_RGB(), r, g, b))
+	{
+		return PURPLE_PURPLE_BG;
+	}
+	if (rgb_compare(get_YELLOW_RGB(), r, g, b))
+	{
+		return YELLOW_YELLOW_BG;
+	}
+	if (rgb_compare(get_WHITE_RGB(), r, g, b))
+	{
+		return WHITE_WHITE_BG;
+	}
+	if (rgb_compare(get_LIGHTGREY_RGB(), r, g, b))
+	{
+		return LIGHTGREY_LIGHTGREY_BG;
+	}
+	if (rgb_compare(get_DARKBLUE_RGB(), r, g, b))
+	{
+		return DARKBLUE_DARKBLUE_BG;
+	}
+	if (rgb_compare(get_BRIGHTGREEN_RGB(), r, g, b))
+	{
+		return BRIGHTGREEN_BRIGHTGREEN_BG;
+	}
+	if (rgb_compare(get_LIGHTBLUE_RGB(), r, g, b))
+	{
+		return LIGHTBLUE_LIGHTBLUE_BG;
+	}
+	if (rgb_compare(get_BRIGHTRED_RGB(), r, g, b))
+	{
+		return BRIGHTRED_BRIGHTRED_BG;
+	}
+	if (rgb_compare(get_LIGHTPURPLE_RGB(), r, g, b))
+	{
+		return LIGHTPURPLE_LIGHTPURPLE_BG;
+	}
+	if (rgb_compare(get_BRIGHTYELLOW_RGB(), r, g, b))
+	{
+		return BRIGHTYELLOW_BRIGHTYELLOW_BG;
+	}
+	if (rgb_compare(get_BRIGHTWHITE_RGB(), r, g, b))
+	{
+		return BRIGHTWHITE_BRIGHTWHITE_BG;
+	}
+	return NULLCOLOUR;
+}
+
 ConsoleWindow AssetsClass::draw_bmp_on_window(ConsoleWindow window, const WCHAR* bmpFile, Vector2 bmpfilepoint, Vector2 point, int windowWidth, int windowHeight, int bmpWidth, int bmpHeight)
 {
 	//EDIT NEEDED, ADJUST SO THAT POINT ACTUALLY WORKS, WE CAN SPAWN FROM DIFFERENT POSITIONS
@@ -181,6 +255,24 @@ vector<ColourClass> AssetsClass::get_bmp_as_direct_colour_class_array(const WCHA
 			Gdiplus::Color pixelColor;
 			temp.GetPixel(ii + 1, i, &pixelColor);
 			ColourClass colour_use = return_colour_from_RGB(to_string(pixelColor.GetR()), to_string(pixelColor.GetG()), to_string(pixelColor.GetB()));
+			tempVec.push_back(colour_use); //twice for one pixel
+			tempVec.push_back(colour_use);
+		}
+	}
+	return tempVec;
+}
+
+vector<ColourClass> AssetsClass::get_bmp_as_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight)
+{
+	Bitmap temp(bmpFile, FALSE);
+	vector<ColourClass> tempVec;
+	for (int i = 0; i < bmpHeight; i++)
+	{
+		for (int ii = 0; ii < bmpWidth; ii++)
+		{
+			Gdiplus::Color pixelColor;
+			temp.GetPixel(ii + 1, i, &pixelColor);
+			ColourClass colour_use = colour_from_RGB(to_string(pixelColor.GetR()), to_string(pixelColor.GetG()), to_string(pixelColor.GetB()));
 			tempVec.push_back(colour_use); //twice for one pixel
 			tempVec.push_back(colour_use);
 		}

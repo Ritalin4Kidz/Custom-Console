@@ -188,6 +188,7 @@
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDELabel.h" />
+    <ClInclude Include="SYDELabel_Hoverable.h" />
     <ClInclude Include="SYDEMenu.h" />
     <ClInclude Include="SYDEParticle.h" />
     <ClInclude Include="SYDEScreenshot.h" />
@@ -238,6 +239,7 @@
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDELabel.cpp" />
+    <ClCompile Include="SYDELabel_Hoverable.cpp" />
     <ClCompile Include="SYDEMenu.cpp" />
     <ClCompile Include="SYDEParticle.cpp" />
     <ClCompile Include="SYDEScreenshot.cpp" />

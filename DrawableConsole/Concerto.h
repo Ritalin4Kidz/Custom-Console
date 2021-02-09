@@ -40,6 +40,7 @@
 #include "SYDEHoverableButton.h"
 #include "CustomAsset_Clickable.h"
 #include "CustomAsset_Draggable.h"
+#include "SYDELabel_Hoverable.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -64,7 +65,7 @@ public:
 	static void setBG(ColourClass c) { _bg = c; }
 private:
 	SYDETextBox m_TextBox = SYDETextBox(Vector2(4, 5), Vector2(10, 2), BLACK_BRIGHTWHITE_BG);
-	SYDELabel m_Label = SYDELabel("Q:Start,E:Stop,W:Increase,S:Decrease",  Vector2(0, 19), Vector2(40, 1), WHITE, true);
+	SYDELabel_Hoverable m_Label = SYDELabel_Hoverable("Q:Start,E:Stop,W:Increase,S:Decrease",  Vector2(0, 19), Vector2(40, 1), WHITE, true, TickFunc);
 	SYDEButton m_Button;
 	SYDEClickableButton m_ClickableButton;
 	//WE WANT TO START THE MENU AT y=1.

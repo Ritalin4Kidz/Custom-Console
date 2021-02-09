@@ -35,3 +35,4 @@
 #include "SYDEClickableButton.h"
 #include "SYDEHoverableButton.h"
 #include "CustomAsset_Clickable.h"
+#include "SYDELabel_Hoverable.h"

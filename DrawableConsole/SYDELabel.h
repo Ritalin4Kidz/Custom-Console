@@ -54,17 +54,16 @@ public:
 	void setLabelAnchor(SYDELabelAnchor a) { _Anchor = a; }
 
 protected:
-	ConsoleWindow draw_normal(ConsoleWindow window);
-	ConsoleWindow draw_center_anchored(ConsoleWindow window);
-	ConsoleWindow draw_right_anchored(ConsoleWindow window);
-
-	SYDELabelAnchor _Anchor = SLA_Normal;
-
-private:
 	bool _WRAPTEXT = false;
 	bool _TRANSPARENT = false;
 	Vector2 m_Size = Vector2(0, 0);
 	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
+
+	ConsoleWindow draw_normal(ConsoleWindow window);
+	ConsoleWindow draw_center_anchored(ConsoleWindow window);
+	ConsoleWindow draw_right_anchored(ConsoleWindow window);
+
+	SYDELabelAnchor _Anchor = SLA_Normal;
 
 };

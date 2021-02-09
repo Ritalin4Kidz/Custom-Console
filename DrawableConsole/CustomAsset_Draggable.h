@@ -37,7 +37,7 @@ public:
 protected:
 	bool isInDraggedState = false;
 	void setIsInDraggedState(bool state) { isInDraggedState = state; }
-	bool isHoldClickRequired = true;
+	bool isHoldClickRequired = false;
 
 	Vector2 offset = Vector2(0);
 

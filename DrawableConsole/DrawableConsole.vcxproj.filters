@@ -204,6 +204,9 @@
     <ClInclude Include="CustomAsset_Clickable.h">
       <Filter>Header Files\Assets</Filter>
     </ClInclude>
+    <ClInclude Include="SYDELabel_Hoverable.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -325,6 +328,9 @@
     </ClCompile>
     <ClCompile Include="CustomAsset_Draggable.cpp">
       <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDELabel_Hoverable.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

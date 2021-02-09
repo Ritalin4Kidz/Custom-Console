@@ -26,6 +26,10 @@ ConsoleWindow CustomAsset_Draggable::draw_asset(ConsoleWindow window, Vector2 po
 			else
 				isInDraggedState = true;
 		}
+		else if (isInDraggedState && !isHoldClickRequired)
+		{
+			isInDraggedState = false;
+		}
 	}
 	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYUP) && isHoldClickRequired)
 	{
@@ -63,12 +67,19 @@ ConsoleWindow CustomAsset_Draggable::draw_asset(ConsoleWindow window, Vector2 po
 		}
 	}
 
-	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
+	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN))
 	{
-		if (!isHoldClickRequired)
-			isInDraggedState = !isInDraggedState;
-		else
-			isInDraggedState = true;
+		if (pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
+		{
+			if (!isHoldClickRequired)
+				isInDraggedState = !isInDraggedState;
+			else
+				isInDraggedState = true;
+		}
+		else if (isInDraggedState && !isHoldClickRequired)
+		{
+			isInDraggedState = false;
+		}
 	}
 	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYUP) && isHoldClickRequired)
 	{

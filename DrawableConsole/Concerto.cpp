@@ -166,10 +166,6 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 	{
 		_ADAPTIVEMENU.setActive(!_ADAPTIVEMENU.getActive());
 	}
-	//else if (SYDEKeyCode::get_key(VK_TAB)._CompareState(KEYDOWN))
-	//{
-	//	_ADAPTIVEMENU.nextSelect();
-	//}
 	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN))
 	{
 		m_LabelText = " --- State: Key Down";

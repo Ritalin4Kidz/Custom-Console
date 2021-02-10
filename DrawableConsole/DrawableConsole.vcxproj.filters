@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Concerto">
-      <UniqueIdentifier>{15862a08-2aa1-4b9d-a50d-097016b03e6c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Concerto">
-      <UniqueIdentifier>{7f325ce2-b41b-4ecd-a5de-e7bc846c9139}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\Concerto">
       <UniqueIdentifier>{50109be3-f93f-40a9-8b4f-a5bbe7dd25f9}</UniqueIdentifier>
     </Filter>
@@ -70,11 +64,17 @@
     <Filter Include="Source Files\MainEngine">
       <UniqueIdentifier>{07b7d5e6-bc48-4e87-b4a5-d87b0633e070}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Include Headers">
+      <UniqueIdentifier>{83779fb3-05e9-4cae-9241-d220dc833e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos">
+      <UniqueIdentifier>{60b2bd50-16a1-468a-b11b-25c66c14146a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Demos">
+      <UniqueIdentifier>{15862a08-2aa1-4b9d-a50d-097016b03e6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Concerto.h">
-      <Filter>Header Files\Concerto</Filter>
-    </ClInclude>
     <ClInclude Include="Activation.h">
       <Filter>Header Files\Activation</Filter>
     </ClInclude>
@@ -171,9 +171,6 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
-    <ClInclude Include="ReiventTheWheel.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
@@ -181,9 +178,6 @@
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
     <ClInclude Include="SYDEGamePlay.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="SYDEstdafx.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
     <ClInclude Include="SYDEWindowGame.h">
@@ -207,10 +201,31 @@
     <ClInclude Include="SYDELabel_Hoverable.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEstdafx.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineUI.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineMath.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineAssets.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineDemos.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReiventTheWheel.h">
+      <Filter>Demos</Filter>
+    </ClInclude>
+    <ClInclude Include="Concerto.h">
+      <Filter>Demos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
-      <Filter>Source Files\Concerto</Filter>
+      <Filter>Source Files\Demos</Filter>
     </ClCompile>
     <ClCompile Include="Activation.cpp">
       <Filter>Source Files\Activation</Filter>
@@ -308,9 +323,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
-    <ClCompile Include="ReiventTheWheel.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
     <ClCompile Include="Settings.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
@@ -331,6 +343,9 @@
     </ClCompile>
     <ClCompile Include="SYDELabel_Hoverable.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ReiventTheWheel.cpp">
+      <Filter>Source Files\Demos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

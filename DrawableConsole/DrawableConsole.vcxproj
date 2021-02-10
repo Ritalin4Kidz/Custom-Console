@@ -182,6 +182,10 @@
     <ClInclude Include="SYDEClickableButton.h" />
     <ClInclude Include="SYDEClock.h" />
     <ClInclude Include="SYDECredits.h" />
+    <ClInclude Include="SYDEEngineAssets.h" />
+    <ClInclude Include="SYDEEngineDemos.h" />
+    <ClInclude Include="SYDEEngineMath.h" />
+    <ClInclude Include="SYDEEngineUI.h" />
     <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEHoverableButton.h" />

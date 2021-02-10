@@ -6,6 +6,8 @@
 #include "pch.h"
 #include "SYDEstdafx.h"
 #include "SYDEScreenshot.h"
+#include "SYDEEngineDemos.h"
+#include "SYDEEngineAssets.h"
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES

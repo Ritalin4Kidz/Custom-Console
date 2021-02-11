@@ -204,6 +204,7 @@
     <ClInclude Include="SYDEWindowGame.h" />
     <ClInclude Include="TextItem.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Activation.cpp" />
@@ -252,6 +253,7 @@
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="BrainFiles\AiAgainstPlayer.txt" />

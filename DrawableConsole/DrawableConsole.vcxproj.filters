@@ -222,6 +222,9 @@
     <ClInclude Include="Concerto.h">
       <Filter>Demos</Filter>
     </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -346,6 +349,9 @@
     </ClCompile>
     <ClCompile Include="ReiventTheWheel.cpp">
       <Filter>Source Files\Demos</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Source Files\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

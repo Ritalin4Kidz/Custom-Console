@@ -228,6 +228,9 @@
     <ClInclude Include="SYDEMainDemos.h">
       <Filter>Demos</Filter>
     </ClInclude>
+    <ClInclude Include="ConsoleWindow3D.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -358,6 +361,9 @@
     </ClCompile>
     <ClCompile Include="SYDEMainDemos.cpp">
       <Filter>Source Files\Demos</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleWindow3D.cpp">
+      <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

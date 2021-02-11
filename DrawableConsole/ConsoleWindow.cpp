@@ -71,6 +71,16 @@ void ConsoleWindow::setTextAtPoint(Vector2 point, string text, ColourClass colou
 	}
 }
 
+void ConsoleWindow::setTextAtPoint(Vector3 point, string text, ColourClass colour)
+{
+	setTextAtPoint(Vector2(point.getX(),point.getY()), text, colour);
+}
+
+string ConsoleWindow::getTextAtPoint(Vector2 point)
+{
+	return std::string("" + getLine(point.getY()).getCharAtIndex(point.getX()));
+}
+
 ColourClass ConsoleWindow::_intToColour(int colour_int)
 {
 	return (ColourClass)colour_int;

@@ -166,6 +166,7 @@
     <ClInclude Include="Characters.h" />
     <ClInclude Include="Concerto.h" />
     <ClInclude Include="ConsoleWindow.h" />
+    <ClInclude Include="ConsoleWindow3D.h" />
     <ClInclude Include="CustomAnimationAsset.h" />
     <ClInclude Include="CustomAsset.h" />
     <ClInclude Include="CustomAsset_Clickable.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Characters.cpp" />
     <ClCompile Include="Concerto.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
+    <ClCompile Include="ConsoleWindow3D.cpp" />
     <ClCompile Include="CustomAnimationAsset.cpp" />
     <ClCompile Include="CustomAsset.cpp" />
     <ClCompile Include="CustomAsset_Clickable.cpp" />

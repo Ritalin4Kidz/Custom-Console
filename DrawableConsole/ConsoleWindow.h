@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Vector2.h"
+#include "Vector3.h"
 /*
 	COLOUR CLASS ENUM
 	Easier way of calling the colour value
@@ -333,6 +334,16 @@ public:
 	void setTextAtPoint(Vector2 point, string text, ColourClass colour);
 
 	/// <summary>
+	/// Set the text at a certain point
+	/// </summary>
+	/// <param name="point"></param>
+	/// <param name="text"></param>
+	/// <param name="colour"></param>
+	void setTextAtPoint(Vector3 point, string text, ColourClass colour);
+
+	string getTextAtPoint(Vector2 point);
+
+	/// <summary>
 	/// Get a colour from an int
 	/// </summary>
 	/// <param name="colour_int"></param>
@@ -383,6 +394,8 @@ public:
 
 	void operator=(ConsoleWindow other);
 	void setStartingLine(int i) { _StartingLine = i; }
+
+	int getHeight() { return m_Lines.size(); }
 
 private:
 	vector<Line> m_Lines;

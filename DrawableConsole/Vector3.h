@@ -35,7 +35,6 @@ public:
 	Vector3& operator*=(float other);
 
 	Vector3 offset(float offset);
-	bool willHit(Vector3 other, Vector3 gravity);
 	bool operator==(Vector3 other);
 
 	float distance(Vector3 other);

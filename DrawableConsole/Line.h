@@ -19,6 +19,9 @@ public:
 	void addLine(string a_line, int colour);
 	void setLine(string a_line, int colour);
 	void setTextAtLine(int index, TextItem other) { m_Line[index] = other; }
+
+	char getCharAtIndex(int index) { return m_Line[index].getChar(); }
+
 	vector<TextItem> getLine() { return m_Line; }
 
 

@@ -92,12 +92,6 @@ Vector3 Vector3::offset(float offset)
 	return Vector3(this->getX() + offset, this->getY() + offset, this->getZ() + offset);
 }
 
-bool Vector3::willHit(Vector3 other, Vector3 gravity)
-{
-	//not implemented
-	return false;
-}
-
 bool Vector3::operator==(Vector3 other)
 {
 	return (x == other.x && y == other.y && z == other.z);

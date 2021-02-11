@@ -225,6 +225,9 @@
     <ClInclude Include="Vector3.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEMainDemos.h">
+      <Filter>Demos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -352,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
       <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEMainDemos.cpp">
+      <Filter>Source Files\Demos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

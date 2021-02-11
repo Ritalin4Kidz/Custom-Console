@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Vector3.h"
 
 void Vector3::addXSafe(float a_X, float min, float max)

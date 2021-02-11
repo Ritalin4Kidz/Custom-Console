@@ -13,4 +13,7 @@ __interface SYDEWindowGame
 	/// <param name="windowHeight"></param>
 	/// <returns></returns>
 	virtual ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) {}
+
+
+	virtual ConsoleWindow3D window_draw_game3D(ConsoleWindow3D window, int windowWidth, int windowHeight) {}
 };

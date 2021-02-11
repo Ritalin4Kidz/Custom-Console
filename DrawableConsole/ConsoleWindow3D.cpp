@@ -53,10 +53,36 @@ void ConsoleWindow3D::writeConsole()
 
 void ConsoleWindow3D::sortLevels()
 {
-	//TODO, IMPLEMENT SORTING
+	for (int i = 0; i < m_WindowLevels.size() - 1; i++)
+	{
+		for (int ii = i; ii < m_WindowLevels.size(); ii++)
+		{
+			if (m_WindowLevels[i].m_Level > m_WindowLevels[ii].m_Level)
+			{
+				ConsoleLevels temp = m_WindowLevels[i];
+				m_WindowLevels[i] = m_WindowLevels[ii];
+				m_WindowLevels[ii] = temp;
+				ii = i;
+			}
+		}
+	}
 }
 
 ConsoleLevels* ConsoleWindow3D::operator[](int level)
+{
+	for (int i = 0; i < m_WindowLevels.size(); i++)
+	{
+		if (level == m_WindowLevels[i].m_Level)
+		{
+			return &m_WindowLevels[i];
+		}
+	}
+	m_WindowLevels.push_back(ConsoleLevels(level, windowWidth, windowHeight));
+	sortLevels();
+	return &m_WindowLevels[level];
+}
+
+ConsoleLevels* ConsoleWindow3D::get(int level)
 {
 	for (int i = 0; i < m_WindowLevels.size(); i++)
 	{
@@ -78,9 +104,24 @@ void ConsoleWindow3D::setTextAtPosition(Vector3 point, string text, ColourClass 
 		{
 			if (colour != NULLCOLOUR)
 			{
-				m_WindowLevels[point.getZ()].window.addLayerToLine((int)point.getY(), text, colour, NULL, (int)point.getX());
+				get(point.getZ())->window.addLayerToLine((int)point.getY(), text, colour, NULL, (int)point.getX());
 			}
 		}
 	}
 }
 
+void ConsoleWindow3D::operator=(ConsoleWindow3D other)
+{
+	windowWidth = other.windowWidth;
+	windowHeight = other.windowHeight;
+	m_WindowLevels = other.m_WindowLevels;
+	offset = other.offset;
+}
+
+void ConsoleLevels::operator=(ConsoleLevels other)
+{
+	window = other.window;
+	m_Level = other.m_Level;
+	m_windowHeight = other.m_windowHeight;
+	m_windowWidth = other.m_windowWidth;
+}

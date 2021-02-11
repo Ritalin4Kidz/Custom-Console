@@ -1,5 +1,6 @@
 #pragma once
 #include "ConsoleWindow.h"
+#include "ConsoleWindow3D.h"
 #include "SYDELabel.h"
 #include "Defaults.h"
 

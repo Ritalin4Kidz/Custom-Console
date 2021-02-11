@@ -229,6 +229,31 @@ ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const 
 	return window;
 }
 
+ConsoleWindow3D SYDEGamePlay::play3D(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime)
+{
+	HWND ConsoleWindow = GetConsoleWindow();
+	//KEYBOARD INPUTS
+	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
+	{
+		// CHECKING THE STATE OF ALL INPUTS
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown_Safe(ConsoleWindow);
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp_Safe(ConsoleWindow);
+	}
+	//MOUSE INPUTS
+	if (ClickEnabled)
+	{
+		SYDE_MouseClickFunction();
+	}
+	//DELTATIME
+	deltaTime.refreshTime();
+	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	//DRAW
+	SetConsoleCursorPosition(hOut, start);
+	window = SYDE_GAME->window_draw_game3D(window, windowWidth, windowHeight);
+	//RETURN GAME
+	return window;
+}
+
 void SYDEGamePlay::EnableClicking(HANDLE hOut)
 {
 	ClickEnabled = true;

@@ -15,6 +15,8 @@ public:
 	int m_Level;
 	int m_windowHeight;
 	int m_windowWidth;
+
+	void operator=(ConsoleLevels other);
 };
 
 class ConsoleWindow3D {
@@ -32,10 +34,12 @@ public:
 	void sortLevels();
 
 	ConsoleLevels* operator[](int level);
-
+	ConsoleLevels* get(int level);
 	void setTextAtPosition(Vector3 point, string text, ColourClass colour);
 
 	void setOffset(Vector2 a_offset) { offset.setX(a_offset.getX()); offset.setY(a_offset.getY()); }
+	void operator=(ConsoleWindow3D other);
+
 protected:
 	std::vector<ConsoleLevels> m_WindowLevels = std::vector<ConsoleLevels>();
 private:

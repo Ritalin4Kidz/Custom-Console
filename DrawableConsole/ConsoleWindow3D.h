@@ -19,6 +19,9 @@ public:
 	void operator=(ConsoleLevels other);
 };
 
+/// <summary>
+/// Note: This class is experimental, and it's highly reccomended to use ConsoleWindow for non-experienced users
+/// </summary>
 class ConsoleWindow3D {
 public:
 	ConsoleWindow3D(int width, int height);
@@ -35,6 +38,9 @@ public:
 
 	ConsoleLevels* operator[](int level);
 	ConsoleLevels* get(int level);
+
+	ConsoleWindow* getWindow(int level);
+
 	void setTextAtPosition(Vector3 point, string text, ColourClass colour);
 
 	void setOffset(Vector2 a_offset) { offset.setX(a_offset.getX()); offset.setY(a_offset.getY()); }

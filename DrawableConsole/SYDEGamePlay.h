@@ -116,7 +116,7 @@ public:
 	/// <param name="windowHeight"></param>
 	/// <param name="deltaTime"></param>
 	/// <returns></returns>
-	static ConsoleWindow3D play3D(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
+	static ConsoleWindow3D play3D(SYDEWindowGame3D* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 
 	/// <summary>
 	/// Enable clicking and getting mouse position

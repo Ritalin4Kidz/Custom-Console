@@ -129,6 +129,7 @@ Inside our main function, we can initialize all of our variables and call up SYD
 - CustomAsset_Draggable for draggable objects
 - SYDELabel_Hoverable
 - Seperated Includes Into Categories
+- ConsoleWindow3D for layered windows (experimental class)
 
 ### 1.2.2.0 2/02/2021
 - SYDEKeyCode::getMousePosition() to return a Vector2 of the mouse's position relative to the console window

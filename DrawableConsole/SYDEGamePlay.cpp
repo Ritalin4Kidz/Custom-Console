@@ -229,7 +229,7 @@ ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const 
 	return window;
 }
 
-ConsoleWindow3D SYDEGamePlay::play3D(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime)
+ConsoleWindow3D SYDEGamePlay::play3D(SYDEWindowGame3D* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime)
 {
 	HWND ConsoleWindow = GetConsoleWindow();
 	//KEYBOARD INPUTS

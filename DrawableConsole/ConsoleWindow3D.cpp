@@ -96,6 +96,11 @@ ConsoleLevels* ConsoleWindow3D::get(int level)
 	return &m_WindowLevels[level];
 }
 
+ConsoleWindow* ConsoleWindow3D::getWindow(int level)
+{
+	return &this->get(level)->window;
+}
+
 void ConsoleWindow3D::setTextAtPosition(Vector3 point, string text, ColourClass colour)
 {
 	if (point.getY() < windowHeight && point.getY() > 0)

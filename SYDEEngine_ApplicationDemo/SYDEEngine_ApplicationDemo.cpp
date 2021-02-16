@@ -38,8 +38,24 @@ using namespace std;
 
 
 // MAIN FUNCTION
-int main()
+int main(int argc, char* argv[])
 {
+	Concerto m_Concerto;
+	std::string GameState = "";
+	//ARGUMENT SETTINGS
+	for (int i = 0; i < argc; i++)
+	{
+		std::string arg = argv[i];
+		if (arg == "concerto")
+		{
+			LPCWSTR title = L"Concerto";
+			SYDECredits::_GAMETITLE = "Concerto";
+			SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
+			SetConsoleTitleW(title);
+			GameState = "Concerto";
+			break;
+		}
+	}
 	//while (true) { //deltaTime test, comment out
 	//	deltaTime.refreshTime();
 	//	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
@@ -80,14 +96,9 @@ int main()
 
 	//Concerto
 	//DinseyPlanes m_Planes(astVars);
-	LPCWSTR title = L"Concerto";
-	SYDECredits::_GAMETITLE = "Concerto";
-	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
-	SetConsoleTitleW(title);
 	//opening();
 	SYDETIME deltaTime;
 	deltaTime.initialise(std::chrono::high_resolution_clock::now());
-	Concerto m_Concerto;
 	SYDEGamePlay::initialize_window(hOut, window);
 	//SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
@@ -111,7 +122,14 @@ int main()
 	window.setStartingLine(1);
 	while (true)
 	{
-		window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		if (GameState == "Concerto")
+		{
+			window = SYDEGamePlay::play(&m_Concerto, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		}
+		else 
+		{
+			break;
+		}
 		//SYDEFunctions::SYDESleep(50, SYDEDefaults::getDeltaTime());
 		window.writeConsoleOptimized();
 	}

@@ -148,6 +148,7 @@
     <ClCompile Include="SYDEEngine_ApplicationDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ProjectFiles\CopyRelease.bat" />
     <None Include="ProjectFiles\RunConcerto.bat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

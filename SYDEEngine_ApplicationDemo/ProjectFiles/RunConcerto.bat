@@ -1,1 +1,1 @@
-..\..\Release\SYDEEngine_ApplicationDemo.exe concerto
+SYDEEngine_ApplicationDemo.exe concerto

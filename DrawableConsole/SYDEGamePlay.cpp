@@ -1,8 +1,5 @@
 #include "pch.h"
 #include "SYDEGamePlay.h"
-#include "SYDETime.h"
-#include "Defaults.h"
-#include "SYDEKeyCode.h"
 
 using namespace std;
 

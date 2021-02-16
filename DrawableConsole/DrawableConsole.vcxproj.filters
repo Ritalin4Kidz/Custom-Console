@@ -323,9 +323,6 @@
     <ClCompile Include="Defaults.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
-    <ClCompile Include="DrawableConsole.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
     <ClCompile Include="Line.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>

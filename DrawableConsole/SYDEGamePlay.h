@@ -17,6 +17,9 @@
 #include <vector>
 #include <gdiplus.h>
 #include "SYDEFPS.h"
+#include "SYDETime.h"
+#include "Defaults.h"
+#include "SYDEKeyCode.h"
 using namespace std;
 using namespace Gdiplus;
 class SYDEGamePlay {

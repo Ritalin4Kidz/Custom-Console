@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.4.0 17/02/2021
+
+
 ### 1.2.3.0 10/02/2021
 - CustomAsset_Draggable for draggable objects
 - SYDELabel_Hoverable

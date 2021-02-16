@@ -1,5 +1,6 @@
 #pragma once
 #include "ConsoleWindow.h"
+#include "ConsoleWindow3D.h"
 /// <summary>
 /// SYDE Window Game Interface, for building game scenes
 /// </summary>
@@ -18,12 +19,5 @@ __interface SYDEWindowGame
 
 __interface SYDEWindowGame3D
 {
-	/// <summary>
-	/// The main function on which SYDEGamePlay runs
-	/// </summary>
-	/// <param name="window"></param>
-	/// <param name="windowWidth"></param>
-	/// <param name="windowHeight"></param>
-	/// <returns></returns>
 	virtual ConsoleWindow3D window_draw_game3D(ConsoleWindow3D window, int windowWidth, int windowHeight) {}
 };

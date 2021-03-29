@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.5.0
+- SYDEKeyCode Name Change
+
 ### 1.2.4.0 17/02/2021
 - Removed DrawableConsole.cpp, as old demos moved to SYDEMainDemos.h
 

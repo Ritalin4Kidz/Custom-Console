@@ -40,84 +40,84 @@ public:
 	static Vector2 getMousePosition();
 
 	//A Key
-	static SYDEKey A;
+	static SYDEKey SYDEKeyCode_A;
 	//B Key
-	static SYDEKey B;
+	static SYDEKey SYDEKeyCode_B;
 	//C Key
-	static SYDEKey C;
+	static SYDEKey SYDEKeyCode_C;
 	//D Key
-	static SYDEKey D;
+	static SYDEKey SYDEKeyCode_D;
 	//E Key
-	static SYDEKey E;
+	static SYDEKey SYDEKeyCode_E;
 	//F Key
-	static SYDEKey F;
+	static SYDEKey SYDEKeyCode_F;
 	//G Key
-	static SYDEKey G;
+	static SYDEKey SYDEKeyCode_G;
 	//H Key
-	static SYDEKey H;
+	static SYDEKey SYDEKeyCode_H;
 	//I Key
-	static SYDEKey I;
+	static SYDEKey SYDEKeyCode_I;
 	//J Key
-	static SYDEKey J;
+	static SYDEKey SYDEKeyCode_J;
 	//K Key
-	static SYDEKey K;
+	static SYDEKey SYDEKeyCode_K;
 	//L Key
-	static SYDEKey L;
+	static SYDEKey SYDEKeyCode_L;
 	//M Key
-	static SYDEKey M;
+	static SYDEKey SYDEKeyCode_M;
 	//N Key
-	static SYDEKey N;
+	static SYDEKey SYDEKeyCode_N;
 	//O Key
-	static SYDEKey O;
+	static SYDEKey SYDEKeyCode_O;
 	//P Key
-	static SYDEKey P;
+	static SYDEKey SYDEKeyCode_P;
 	//Q Key
-	static SYDEKey Q;
+	static SYDEKey SYDEKeyCode_Q;
 	//R Key
-	static SYDEKey R;
+	static SYDEKey SYDEKeyCode_R;
 	//S Key
-	static SYDEKey S;
+	static SYDEKey SYDEKeyCode_S;
 	//T Key
-	static SYDEKey T;
+	static SYDEKey SYDEKeyCode_T;
 	//U Key
-	static SYDEKey U;\
+	static SYDEKey SYDEKeyCode_U;
 	//V Key
-	static SYDEKey V;
+	static SYDEKey SYDEKeyCode_V;
 	//W Key
-	static SYDEKey W;
+	static SYDEKey SYDEKeyCode_W;
 	//X Key
-	static SYDEKey X;
+	static SYDEKey SYDEKeyCode_X;
 	//Y Key
-	static SYDEKey Y;
+	static SYDEKey SYDEKeyCode_Y;
 	//Z Key
-	static SYDEKey Z;
+	static SYDEKey SYDEKeyCode_Z;
 	//Other Keys
 	//Return Key
-	static SYDEKey Return;
+	static SYDEKey SYDEKeyCode_Return;
 	//Backspace Key
-	static SYDEKey Backspace;
+	static SYDEKey SYDEKeyCode_Backspace;
 	//Space Key
-	static SYDEKey Space;
+	static SYDEKey SYDEKeyCode_Space;
 	//Left Arrow Key
-	static SYDEKey ArrowLeft;
+	static SYDEKey SYDEKeyCode_ArrowLeft;
 	//Right Arrow Key
-	static SYDEKey ArrowRight;
+	static SYDEKey SYDEKeyCode_ArrowRight;
 	//Up Arrow Key
-	static SYDEKey ArrowUp;
+	static SYDEKey SYDEKeyCode_ArrowUp;
 	//Down Arrow Key
-	static SYDEKey ArrowDown;
+	static SYDEKey SYDEKeyCode_ArrowDown;
 	//Left Shift Key
-	static SYDEKey LeftShift;
+	static SYDEKey SYDEKeyCode_LeftShift;
 	//Right Shift Key
-	static SYDEKey RightShift;
+	static SYDEKey SYDEKeyCode_RightShift;
 	//Left Tab Key
-	static SYDEKey LeftTab;
+	static SYDEKey SYDEKeyCode_LeftTab;
 
 	//MOUSE KEYS, OPTIONAL, ONLY IF CLICKING ENABLED
 	//Mouse Left Click
-	static SYDEKey LEFT_CLICK_MOUSE;
+	static SYDEKey SYDEKeyCode_LEFT_CLICK_MOUSE;
 	//Mouse Right Click
-	static SYDEKey RIGHT_CLICK_MOUSE;
+	static SYDEKey SYDEKeyCode_RIGHT_CLICK_MOUSE;
 
 	/// <summary>
 	/// Initiate neccesary values for mouse movement, called in SYDEGamePlay during enableClicking function

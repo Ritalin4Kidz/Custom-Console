@@ -1,46 +1,46 @@
 #include "pch.h"
 #include "SYDEKeyCode.h"
 
-SYDEKey SYDEKeyCode::A = SYDEKey('A');
-SYDEKey SYDEKeyCode::B = SYDEKey('B');
-SYDEKey SYDEKeyCode::C = SYDEKey('C');
-SYDEKey SYDEKeyCode::D = SYDEKey('D');
-SYDEKey SYDEKeyCode::E = SYDEKey('E');
-SYDEKey SYDEKeyCode::F = SYDEKey('F');
-SYDEKey SYDEKeyCode::G = SYDEKey('G');
-SYDEKey SYDEKeyCode::H = SYDEKey('H');
-SYDEKey SYDEKeyCode::I = SYDEKey('I');
-SYDEKey SYDEKeyCode::J = SYDEKey('J');
-SYDEKey SYDEKeyCode::K = SYDEKey('K');
-SYDEKey SYDEKeyCode::L = SYDEKey('L');
-SYDEKey SYDEKeyCode::M = SYDEKey('M');
-SYDEKey SYDEKeyCode::N = SYDEKey('N');
-SYDEKey SYDEKeyCode::O = SYDEKey('O');
-SYDEKey SYDEKeyCode::P = SYDEKey('P');
-SYDEKey SYDEKeyCode::Q = SYDEKey('Q');
-SYDEKey SYDEKeyCode::R = SYDEKey('R');
-SYDEKey SYDEKeyCode::S = SYDEKey('S');
-SYDEKey SYDEKeyCode::T = SYDEKey('T');
-SYDEKey SYDEKeyCode::U = SYDEKey('U');
-SYDEKey SYDEKeyCode::V = SYDEKey('V');
-SYDEKey SYDEKeyCode::W = SYDEKey('W');
-SYDEKey SYDEKeyCode::X = SYDEKey('X');
-SYDEKey SYDEKeyCode::Y = SYDEKey('Y');
-SYDEKey SYDEKeyCode::Z = SYDEKey('Z');
+SYDEKey SYDEKeyCode::SYDEKeyCode_A = SYDEKey('A');
+SYDEKey SYDEKeyCode::SYDEKeyCode_B = SYDEKey('B');
+SYDEKey SYDEKeyCode::SYDEKeyCode_C = SYDEKey('C');
+SYDEKey SYDEKeyCode::SYDEKeyCode_D = SYDEKey('D');
+SYDEKey SYDEKeyCode::SYDEKeyCode_E = SYDEKey('E');
+SYDEKey SYDEKeyCode::SYDEKeyCode_F = SYDEKey('F');
+SYDEKey SYDEKeyCode::SYDEKeyCode_G = SYDEKey('G');
+SYDEKey SYDEKeyCode::SYDEKeyCode_H = SYDEKey('H');
+SYDEKey SYDEKeyCode::SYDEKeyCode_I = SYDEKey('I');
+SYDEKey SYDEKeyCode::SYDEKeyCode_J = SYDEKey('J');
+SYDEKey SYDEKeyCode::SYDEKeyCode_K = SYDEKey('K');
+SYDEKey SYDEKeyCode::SYDEKeyCode_L = SYDEKey('L');
+SYDEKey SYDEKeyCode::SYDEKeyCode_M = SYDEKey('M');
+SYDEKey SYDEKeyCode::SYDEKeyCode_N = SYDEKey('N');
+SYDEKey SYDEKeyCode::SYDEKeyCode_O = SYDEKey('O');
+SYDEKey SYDEKeyCode::SYDEKeyCode_P = SYDEKey('P');
+SYDEKey SYDEKeyCode::SYDEKeyCode_Q = SYDEKey('Q');
+SYDEKey SYDEKeyCode::SYDEKeyCode_R = SYDEKey('R');
+SYDEKey SYDEKeyCode::SYDEKeyCode_S = SYDEKey('S');
+SYDEKey SYDEKeyCode::SYDEKeyCode_T = SYDEKey('T');
+SYDEKey SYDEKeyCode::SYDEKeyCode_U = SYDEKey('U');
+SYDEKey SYDEKeyCode::SYDEKeyCode_V = SYDEKey('V');
+SYDEKey SYDEKeyCode::SYDEKeyCode_W = SYDEKey('W');
+SYDEKey SYDEKeyCode::SYDEKeyCode_X = SYDEKey('X');
+SYDEKey SYDEKeyCode::SYDEKeyCode_Y = SYDEKey('Y');
+SYDEKey SYDEKeyCode::SYDEKeyCode_Z = SYDEKey('Z');
 //Other Keys
-SYDEKey SYDEKeyCode::Return = SYDEKey(VK_RETURN);
-SYDEKey SYDEKeyCode::Backspace = SYDEKey(VK_BACK);
-SYDEKey SYDEKeyCode::Space = SYDEKey(VK_SPACE);
-SYDEKey SYDEKeyCode::ArrowLeft = SYDEKey(VK_LEFT);
-SYDEKey SYDEKeyCode::ArrowDown = SYDEKey(VK_DOWN);
-SYDEKey SYDEKeyCode::ArrowUp = SYDEKey(VK_UP);
-SYDEKey SYDEKeyCode::ArrowRight = SYDEKey(VK_RIGHT);
-SYDEKey SYDEKeyCode::LeftShift = SYDEKey(VK_LSHIFT);
-SYDEKey SYDEKeyCode::RightShift = SYDEKey(VK_RSHIFT);
-SYDEKey SYDEKeyCode::LeftTab = SYDEKey(VK_TAB);
+SYDEKey SYDEKeyCode::SYDEKeyCode_Return = SYDEKey(VK_RETURN);
+SYDEKey SYDEKeyCode::SYDEKeyCode_Backspace = SYDEKey(VK_BACK);
+SYDEKey SYDEKeyCode::SYDEKeyCode_Space = SYDEKey(VK_SPACE);
+SYDEKey SYDEKeyCode::SYDEKeyCode_ArrowLeft = SYDEKey(VK_LEFT);
+SYDEKey SYDEKeyCode::SYDEKeyCode_ArrowDown = SYDEKey(VK_DOWN);
+SYDEKey SYDEKeyCode::SYDEKeyCode_ArrowUp = SYDEKey(VK_UP);
+SYDEKey SYDEKeyCode::SYDEKeyCode_ArrowRight = SYDEKey(VK_RIGHT);
+SYDEKey SYDEKeyCode::SYDEKeyCode_LeftShift = SYDEKey(VK_LSHIFT);
+SYDEKey SYDEKeyCode::SYDEKeyCode_RightShift = SYDEKey(VK_RSHIFT);
+SYDEKey SYDEKeyCode::SYDEKeyCode_LeftTab = SYDEKey(VK_TAB);
 //MOUSE CLICK
-SYDEKey SYDEKeyCode::LEFT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
-SYDEKey SYDEKeyCode::RIGHT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
+SYDEKey SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
+SYDEKey SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE = SYDEKey(MOUSE_EVENT);
 Vector2 SYDEKeyCode::lastMousePosition = Vector2(0);
 Vector2 SYDEKeyCode::lastClickPosition = Vector2(0);
 Vector2 SYDEKeyCode::offset = Vector2(0);
@@ -49,10 +49,12 @@ DWORD SYDEKeyCode::Events;
 HANDLE SYDEKeyCode::hin;
 
 std::vector<SYDEKey> SYDEKeyCode::KeyCodes = {
-	A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,
-	Q,R,S,T,U,V,W,X,Y,Z,Return,Backspace,
-	Space, ArrowLeft, ArrowDown, ArrowUp,
-	ArrowRight,LeftShift, RightShift, LeftTab
+	SYDEKeyCode_A,SYDEKeyCode_B,SYDEKeyCode_C,SYDEKeyCode_D,SYDEKeyCode_E,SYDEKeyCode_F,SYDEKeyCode_G,
+	SYDEKeyCode_H,SYDEKeyCode_I,SYDEKeyCode_J,SYDEKeyCode_K,SYDEKeyCode_L,SYDEKeyCode_M,SYDEKeyCode_N,
+	SYDEKeyCode_O,SYDEKeyCode_P,SYDEKeyCode_Q,SYDEKeyCode_R,SYDEKeyCode_S,SYDEKeyCode_T,SYDEKeyCode_U,
+	SYDEKeyCode_V,SYDEKeyCode_W,SYDEKeyCode_X,SYDEKeyCode_Y,SYDEKeyCode_Z,
+	SYDEKeyCode_Return,SYDEKeyCode_Backspace, SYDEKeyCode_Space, SYDEKeyCode_ArrowLeft, SYDEKeyCode_ArrowDown,
+	SYDEKeyCode_ArrowUp, SYDEKeyCode_ArrowRight,SYDEKeyCode_LeftShift, SYDEKeyCode_RightShift, SYDEKeyCode_LeftTab
 };
 
 std::vector<SYDEKey> SYDEKeyCode::KeyCodes_Optimized = {};

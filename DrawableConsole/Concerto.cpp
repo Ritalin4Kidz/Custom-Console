@@ -166,15 +166,15 @@ ConsoleWindow Concerto::test_Menus(ConsoleWindow window, int windowWidth, int wi
 	{
 		_ADAPTIVEMENU.setActive(!_ADAPTIVEMENU.getActive());
 	}
-	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN))
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN))
 	{
 		m_LabelText = " --- State: Key Down";
 	}
-	else if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEY))
+	else if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEY))
 	{
 		m_LabelText = " --- State: Key Held";
 	}
-	else if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYUP))
+	else if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP))
 	{
 		m_LabelText = " --- State: Key Released";
 	}

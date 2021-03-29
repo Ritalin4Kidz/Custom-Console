@@ -788,29 +788,29 @@ void SYDEGamePlay::SYDE_MouseClickFunction()
 			{
 				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
 				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
-				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDown();
+				SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyDown();
 			}
 			else 
 			{
-				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyUp();
+				SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyUp();
 			}
 
 			if (InputRecord.Event.MouseEvent.dwButtonState == RIGHTMOST_BUTTON_PRESSED)
 			{
 				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
 				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
-				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDown();
+				SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE.ForceKeyDown();
 			}
 			else
 			{
-				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyUp();
+				SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE.ForceKeyUp();
 			}
 			break;
 		}
 	}
 	else
 	{
-		SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDownIfHeld();
-		SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDownIfHeld();
+		SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyDownIfHeld();
+		SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE.ForceKeyDownIfHeld();
 	}
 }

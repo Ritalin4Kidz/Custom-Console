@@ -11,14 +11,22 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 	{
 		for (int m = 0; m < windowHeight; m++)
 		{
-			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
+			window.setTextAtPoint(Vector2(l, m), " ", RED_RED_BG);
 		}
 	}
 	window = m_MainMap.draw_asset(window, Vector2(PlayerPos.getX() - 20, PlayerPos.getY() - 10), windowWidth, windowHeight);
 
 	window.setTextAtPoint(Vector2(20, 10), "*", window.determineColourAtPoint(Vector2(20, 10), BRIGHTWHITE, true));
-	if (momentumTime > 0.25f)
+	if (momentumTime > 0.05f)
 	{
+		if (SYDEKeyCode::get_key('S')._CompareState(KEY))
+		{
+			AddMomentum(Vector2(0, 1));
+		}
+		if (SYDEKeyCode::get_key('W')._CompareState(KEY) && checkGrounded())
+		{
+			AddMomentum(Vector2(0, -4));
+		}
 		if (SYDEKeyCode::get_key('D')._CompareState(KEY))
 		{
 			AddPosition(Vector2(1, 0));
@@ -27,13 +35,17 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 		{
 			AddPosition(Vector2(-1, 0));
 		}
-		if (SYDEKeyCode::get_key('S')._CompareState(KEY))
+
+
+		//PURPOSEFULLY BROKEN SHIT
+		if (SYDEKeyCode::get_key('Q')._CompareState(KEY))
 		{
-			AddMomentum(Vector2(0, 1));
+			AddPosition(Vector2(-5, 0));
 		}
-		if (SYDEKeyCode::get_key('W')._CompareState(KEY) && (m_Momentum.getY() == 0 || m_Momentum.getY() == 1))
+
+		if (SYDEKeyCode::get_key('E')._CompareState(KEY))
 		{
-			AddMomentum(Vector2(0, -5));
+			AddPosition(Vector2(5, 0));
 		}
 		ApplyMomentum();
 		momentumTime -= 0.05f;
@@ -78,6 +90,16 @@ void SYDEPlatformer::AddPosition(Vector2 add)
 			PlayerPos.addY(1);
 			PositionY -= 1;
 		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			//START
+			PlayerPos = CheckPoint;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+		{
+			//START
+			CheckPoint = PlayerPos;
+		}
 	}
 	while (PositionY < 0)
 	{
@@ -89,6 +111,16 @@ void SYDEPlatformer::AddPosition(Vector2 add)
 		{
 			PlayerPos.addY(-1);
 			PositionY += 1;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			//START
+			PlayerPos = CheckPoint;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+		{
+			//START
+			CheckPoint = PlayerPos;
 		}
 	}
 	int PositionX = add.getX();
@@ -103,6 +135,16 @@ void SYDEPlatformer::AddPosition(Vector2 add)
 			PlayerPos.addX(1);
 			PositionX -= 1;
 		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			//START
+			PlayerPos = CheckPoint;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+		{
+			//START
+			CheckPoint = PlayerPos;
+		}
 	}
 	while (PositionX < 0)
 	{
@@ -114,6 +156,16 @@ void SYDEPlatformer::AddPosition(Vector2 add)
 		{
 			PlayerPos.addX(-1);
 			PositionX += 1;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			//START
+			PlayerPos = CheckPoint;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+		{
+			//START
+			CheckPoint = PlayerPos;
 		}
 	}
 }
@@ -134,18 +186,38 @@ void SYDEPlatformer::ApplyMomentum()
 			PlayerPos.addY(1);
 			MomentumY -= 1;
 		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			//START
+			PlayerPos = CheckPoint;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+		{
+			//START
+			CheckPoint = PlayerPos;
+		}
 	}
 	while (MomentumY < 0)
 	{
 		if (m_MainMap.getColourAtPoint(PlayerPos + Vector2(0, -1)) == BRIGHTWHITE_BRIGHTWHITE_BG)
 		{
-			m_Momentum.setY(0);
+			m_Momentum.setY(-1);
 			MomentumY = 0;
 		}
 		else
 		{
 			PlayerPos.addY(-1);
 			MomentumY += 1;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			//START
+			PlayerPos = CheckPoint;
+		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+		{
+			//START
+			CheckPoint = PlayerPos;
 		}
 	}
 	m_Momentum.addY(1);
@@ -165,6 +237,16 @@ void SYDEPlatformer::ApplyMomentum()
 				PlayerPos.addX(1);
 				MomentumY -= 1;
 			}
+			if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+			{
+				//START
+				PlayerPos = CheckPoint;
+			}
+			if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+			{
+				//START
+				CheckPoint = PlayerPos;
+			}
 		}
 		else
 		{
@@ -178,6 +260,24 @@ void SYDEPlatformer::ApplyMomentum()
 				PlayerPos.addX(-1);
 				MomentumY += 1;
 			}
+			if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+			{
+				//START
+				PlayerPos = CheckPoint;
+			}
+			if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+			{
+				//START
+				CheckPoint = PlayerPos;
+			}
 		}
+	}
+}
+
+bool SYDEPlatformer::checkGrounded()
+{
+	if (m_MainMap.getColourAtPoint(PlayerPos + Vector2(0, 1)) == BRIGHTWHITE_BRIGHTWHITE_BG)
+	{
+		return true;
 	}
 }

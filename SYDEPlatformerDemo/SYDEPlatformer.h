@@ -22,6 +22,9 @@ public:
 private:
 	Vector2 PlayerPos = Vector2(4, 3);
 
+	Vector2 CheckPoint = Vector2(4, 3);
+
+	bool checkGrounded();
 	float momentumTime = 0;
 
 	Vector2 m_Momentum = Vector2(0, 0);

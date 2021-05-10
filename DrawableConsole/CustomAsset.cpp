@@ -90,5 +90,9 @@ char CustomAsset::getCharAtPoint(Vector2 Point)
 
 int CustomAsset::getColourAtPoint(Vector2 Point)
 {
+	if (Point.getX() < 0 || Point.getY() < 0)
+	{
+		return NULLCOLOUR;
+	}
 	return AssetVector[Point.getY()][Point.getX()].getColour();
 }

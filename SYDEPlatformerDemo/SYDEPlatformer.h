@@ -13,9 +13,8 @@ public:
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	static AssetsClass astVars;
 
-	void AddMomentum(Vector2 momentum);
 
-	void AddPosition(Vector2 add);
+	void AddPositionX(Vector2 add);
 
 	void ApplyMomentum();
 
@@ -25,6 +24,8 @@ private:
 	Vector2 CheckPoint = Vector2(4, 3);
 
 	bool checkGrounded();
+	bool checkGrounded(ConsoleWindow window);
+	float movementTime = 0;
 	float momentumTime = 0;
 
 	Vector2 m_Momentum = Vector2(0, 0);

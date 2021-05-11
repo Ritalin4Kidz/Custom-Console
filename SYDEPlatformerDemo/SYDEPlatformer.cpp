@@ -17,11 +17,16 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 	window = m_MainMap.draw_asset(window, Vector2(PlayerPos.getX() - 20, PlayerPos.getY() - 10), windowWidth, windowHeight);
 
 	window.setTextAtPoint(Vector2(20, 10), "*", window.determineColourAtPoint(Vector2(20, 10), BRIGHTWHITE, true));
-
+	if (momentumTime > 0.05f)
+	{
+		ApplyMomentum();
+		momentumTime -= 0.05f;
+	}
+	momentumTime += SYDEDefaults::getDeltaTime();
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEY) && checkGrounded())
 	{
-		PlayerPos = Vector2(48*2, 132);
+		PlayerPos = Vector2(691*2, 136);
 	}
 
 
@@ -73,12 +78,6 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 	{
 		m_Momentum = (Vector2(0, -5));
 	}
-	if (momentumTime > 0.05f)
-	{
-		ApplyMomentum();
-		momentumTime -= 0.05f;
-	}
-	momentumTime += SYDEDefaults::getDeltaTime();
 
 	return window;
 }

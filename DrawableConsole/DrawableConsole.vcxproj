@@ -188,6 +188,7 @@
     <ClInclude Include="SYDEEngineDemos.h" />
     <ClInclude Include="SYDEEngineMath.h" />
     <ClInclude Include="SYDEEngineUI.h" />
+    <ClInclude Include="SYDEFileDefaults.h" />
     <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
     <ClInclude Include="SYDEHoverableButton.h" />
@@ -241,6 +242,7 @@
     <ClCompile Include="SYDEClickableButton.cpp" />
     <ClCompile Include="SYDEClock.cpp" />
     <ClCompile Include="SYDECredits.cpp" />
+    <ClCompile Include="SYDEFileDefaults.cpp" />
     <ClCompile Include="SYDEFPS.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
     <ClCompile Include="SYDEHoverableButton.cpp" />

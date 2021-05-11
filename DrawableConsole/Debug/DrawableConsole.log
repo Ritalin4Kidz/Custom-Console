@@ -343,10 +343,10 @@ g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'a
 g:\github repos\custom-console\drawableconsole\customasset.h(47): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\defaults.h(17): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
 g:\github repos\custom-console\drawableconsole\customanimationasset.h(145): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\concerto.h(86): warning C4129: 'B': unrecognized character escape sequence
-g:\github repos\custom-console\drawableconsole\concerto.h(91): warning C4129: 'B': unrecognized character escape sequence
-g:\github repos\custom-console\drawableconsole\concerto.cpp(116): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\concerto.cpp(161): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\concerto.h(87): warning C4129: 'B': unrecognized character escape sequence
+g:\github repos\custom-console\drawableconsole\concerto.h(92): warning C4129: 'B': unrecognized character escape sequence
+g:\github repos\custom-console\drawableconsole\concerto.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\concerto.cpp(162): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   ConsoleWindow.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -528,6 +528,7 @@ g:\github repos\custom-console\drawableconsole\sydeclock.cpp(38): warning C4244:
 g:\github repos\custom-console\drawableconsole\sydeclock.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\github repos\custom-console\drawableconsole\sydeclock.cpp(39): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
   SYDECredits.cpp
+  SYDEFileDefaults.cpp
   SYDEFPS.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch

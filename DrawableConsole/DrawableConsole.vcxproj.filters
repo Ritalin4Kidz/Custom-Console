@@ -231,6 +231,9 @@
     <ClInclude Include="ConsoleWindow3D.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEFileDefaults.h">
+      <Filter>Header Files\SYDEUtil</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -361,6 +364,9 @@
     </ClCompile>
     <ClCompile Include="ConsoleWindow3D.cpp">
       <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEFileDefaults.cpp">
+      <Filter>Source Files\SYDEUtil</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

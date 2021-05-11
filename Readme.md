@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.6.0
+- SYDEFileDefaults.h Added, Function that grabs the filename for each file in a directory, filterable by format
+
 ### 1.2.5.0
 - SYDEKeyCode Name Change
 

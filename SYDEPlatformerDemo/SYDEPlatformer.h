@@ -3,6 +3,7 @@
 #include "SYDEScreenshot.h"
 #include "SYDEEngineAssets.h"
 #include "SYDEEngineUI.h"
+#include "SYDEFileDefaults.h"
 #include "Vector2.h"
 
 class SYDEPlatformer : public SYDEWindowGame {

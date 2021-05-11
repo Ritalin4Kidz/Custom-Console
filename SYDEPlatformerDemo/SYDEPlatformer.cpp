@@ -21,13 +21,13 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEY) && checkGrounded())
 	{
-		PlayerPos = Vector2(412, 70);
+		PlayerPos = Vector2(670*2, 3);
 	}
 
 
-		if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && checkGrounded())
+		if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1))
 		{
-			m_Momentum = (Vector2(0, -4));
+			m_Momentum = (Vector2(0, -3));
 		}
 		if (SYDEKeyCode::get_key('D')._CompareState(KEY))
 		{
@@ -90,7 +90,7 @@ void SYDEPlatformer::ApplyMomentum()
 	}
 	else
 	{
-		m_Momentum.addY(1);
+		m_Momentum.addY(0.5f);
 	}
 	int momY = m_Momentum.getY();
 	if (momY < 0)

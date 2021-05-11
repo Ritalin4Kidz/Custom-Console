@@ -19,9 +19,9 @@ public:
 	void ApplyMomentum();
 
 private:
-	Vector2 PlayerPos = Vector2(4, 3);
+	Vector2 PlayerPos = Vector2(2, 3);
 
-	Vector2 CheckPoint = Vector2(4, 3);
+	Vector2 CheckPoint = Vector2(2, 3);
 
 	bool checkGrounded();
 	bool checkGrounded(ConsoleWindow window);

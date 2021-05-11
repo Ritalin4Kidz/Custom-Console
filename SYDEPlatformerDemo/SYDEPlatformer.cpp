@@ -26,7 +26,7 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEY) && checkGrounded())
 	{
-		PlayerPos = Vector2(691*2, 136);
+		PlayerPos = Vector2(855*2, 150);
 	}
 
 

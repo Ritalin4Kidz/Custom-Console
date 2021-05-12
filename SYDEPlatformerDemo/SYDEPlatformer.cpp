@@ -77,6 +77,14 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 		//START
 		PlayerPos = CheckPoint;
 	}
+	if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
+	{
+		CheckPoint = PlayerPos;
+	}
+	if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
+	{
+		winMap();
+	}
 	if (m_MainMap.getColourAtPoint(PlayerPos) == YELLOW_YELLOW_BG)
 	{
 		AddPositionX(Vector2(-5, 0));
@@ -142,7 +150,8 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 		m_State = MainLevel_STATE;
 		string bmpFile = "EngineFiles\\Bitmaps\\Map\\" + m_Levels[SelectedLevel];
 		wstring wbmpFile = wstring(bmpFile.begin(), bmpFile.end());
-		m_MainMap = CustomAsset(2000, 1000, astVars.get_bmp_as_direct_colour_class_array((WCHAR*)wbmpFile.c_str(), 1000, 1000));
+		SYDEBMPDimensions fileSize = SYDEFileDefaults::getBMPDimensions(bmpFile);
+		m_MainMap = CustomAsset(fileSize.width * 2, fileSize.height, astVars.get_bmp_as_direct_colour_class_array((WCHAR*)wbmpFile.c_str(), fileSize.width, fileSize.height));
 	}
 	return window;
 }
@@ -158,6 +167,10 @@ void SYDEPlatformer::AddPositionX(Vector2 add)
 			CheckPoint = PlayerPos;
 		}
 	}
+}
+
+void SYDEPlatformer::winMap()
+{
 }
 
 void SYDEPlatformer::ApplyMomentum()
@@ -184,6 +197,10 @@ void SYDEPlatformer::ApplyMomentum()
 				{
 					CheckPoint = PlayerPos;
 				}
+				if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
+				{
+					winMap();
+				}
 			}
 			else
 			{
@@ -202,6 +219,10 @@ void SYDEPlatformer::ApplyMomentum()
 				if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
 				{
 					CheckPoint = PlayerPos;
+				}
+				if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
+				{
+					winMap();
 				}
 			}
 			else

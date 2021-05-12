@@ -27,7 +27,7 @@ public:
 
 
 	void AddPositionX(Vector2 add);
-
+	void winMap();
 	void ApplyMomentum();
 
 private:

@@ -51,6 +51,8 @@ public:
 	void nextSelect();
 	void hiLight();
 
+	void shiftMenu(Vector2 pos);
+
 	int getSize() { return m_Items.size(); }
 	int getSelectedNumber() { return selectionNumber; }
 	/// <summary>
@@ -155,6 +157,8 @@ public:
 	/// </summary>
 	void DoSelectedFunc() { m_Items[selectionNumber].DoButtonFunc(); }
 	void setPos(Vector2 newPos) { m_Pos = newPos; }
+
+	void shiftMenu(Vector2 pos);
 
 	void setGetSelectedOffCurrentHighlight(bool currentHighlight) { selectedOffCurrentHighlight = currentHighlight; }
 private:

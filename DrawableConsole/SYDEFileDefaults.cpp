@@ -36,3 +36,18 @@ std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string p
 {
 	return getAllFileNamesInFolder(path, format, false);
 }
+
+SYDEBMPDimensions SYDEFileDefaults::getBMPDimensions(std::string bmpFile)
+{
+	FILE* f = fopen(bmpFile.c_str(), "rb");
+	unsigned char info[54];
+	fread(info, sizeof(unsigned char), 54, f); // read the 54-byte header
+	fclose(f);
+	// extract image height and width from header
+	int width = *(int*)&info[18];
+	int height = *(int*)&info[22];
+	SYDEBMPDimensions dimensions;
+	dimensions.width = width;
+	dimensions.height = height;
+	return dimensions;
+}

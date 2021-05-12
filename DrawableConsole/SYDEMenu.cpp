@@ -44,6 +44,14 @@ void SYDEMenu::hiLight()
 	m_Items[selectionNumber]._HIGHLIGHT(true);
 }
 
+void SYDEMenu::shiftMenu(Vector2 pos)
+{
+	for (int i = 0; i < m_Items.size(); i++)
+	{
+		m_Items[i].setPos(m_Items[i].getPos() + pos);
+	}
+}
+
 ConsoleWindow SYDEAdaptiveMenu::draw_menu(ConsoleWindow window)
 {
 	if (!m_Active) return window;
@@ -98,4 +106,12 @@ void SYDEAdaptiveMenu::hiLight()
 		m_Items[i].setButtonHighlight(false);
 	}
 	m_Items[selectionNumber].setButtonHighlight(true);
+}
+
+void SYDEAdaptiveMenu::shiftMenu(Vector2 pos)
+{
+	for (int i = 0; i < m_Items.size(); i++)
+	{
+		m_Items[i].getButton().setPos(m_Items[i].getButton().getPos() + pos);
+	}
 }

@@ -3,8 +3,20 @@
 #include <string>
 #include <iostream>
 #include <experimental/filesystem>
+#include <windows.h>
+#include <objidl.h>
+#include <gdiplus.h>
+using namespace Gdiplus;
+#pragma comment (lib,"Gdiplus.lib")
 
 namespace fs = std::experimental::filesystem;
+class SYDEBMPDimensions
+{
+public:
+	int height;
+	int width;
+};
+
 class SYDEFileDefaults {
 public:
 
@@ -24,4 +36,7 @@ public:
 	/// <param name="format">: format filter, '*' will select all</param>
 	/// <returns>filenames</returns>
 	static std::vector<std::string> getAllFileNamesInFolder(std::string path, std::string format);
+
+
+	static SYDEBMPDimensions getBMPDimensions(std::string bmpFile);
 };

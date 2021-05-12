@@ -3,9 +3,24 @@ AssetsClass SYDEPlatformer::astVars = AssetsClass();
 
 void SYDEPlatformer::init()
 {
+	m_Levels = SYDEFileDefaults::getAllFileNamesInFolder("EngineFiles\\Bitmaps\\Map", ".bmp",true);
 }
 
 ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	switch (m_State)
+	{
+	case MainLevel_STATE:
+		return draw_game(window, windowWidth, windowHeight);
+	case MainMenu_STATE:
+		return draw_title(window, windowWidth, windowHeight);
+	case LevelSelect_STATE:
+		return draw_levelSelect(window, windowWidth, windowHeight);
+	}
+	return draw_title(window, windowWidth, windowHeight);
+}
+
+ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int l = 0; l < windowWidth; l++)
 	{
@@ -24,9 +39,9 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 	}
 	momentumTime += SYDEDefaults::getDeltaTime();
 	//DEBUG
-	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEY) && checkGrounded())
+	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		PlayerPos = Vector2(486*2, 163);
+		PlayerPos = Vector2(22*2, 155);
 	}
 
 
@@ -75,6 +90,60 @@ ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowW
 		m_Momentum = (Vector2(0, -5));
 	}
 
+	return window;
+}
+
+ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
+		}
+	}
+	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
+	{
+		m_State = LevelSelect_STATE;
+	}
+	window.setTextAtPoint(Vector2(0, 1), "SYDE PLATFORMER", BRIGHTWHITE);
+	return window;
+}
+
+ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
+		}
+	}
+	window.setTextAtPoint(Vector2(0, 1), "SELECT LEVEL", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 5), m_Levels[SelectedLevel], BRIGHTWHITE);
+	if (SYDEKeyCode::get_key('D')._CompareState(KEYDOWN))
+	{
+		SelectedLevel++;
+		if (SelectedLevel >= m_Levels.size())
+		{
+			SelectedLevel = 0;
+		}
+	}
+	else if (SYDEKeyCode::get_key('A')._CompareState(KEYDOWN))
+	{
+		SelectedLevel--;
+		if (SelectedLevel < 0)
+		{
+			SelectedLevel = m_Levels.size() -1;
+		}
+	}
+	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
+	{
+		m_State = MainLevel_STATE;
+		string bmpFile = "EngineFiles\\Bitmaps\\Map\\" + m_Levels[SelectedLevel];
+		wstring wbmpFile = wstring(bmpFile.begin(), bmpFile.end());
+		m_MainMap = CustomAsset(2000, 1000, astVars.get_bmp_as_direct_colour_class_array((WCHAR*)wbmpFile.c_str(), 1000, 1000));
+	}
 	return window;
 }
 

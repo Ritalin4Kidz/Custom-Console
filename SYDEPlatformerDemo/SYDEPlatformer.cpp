@@ -41,7 +41,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		PlayerPos = Vector2(22*2, 155);
+		PlayerPos = Vector2(851*2, 211);
 	}
 
 

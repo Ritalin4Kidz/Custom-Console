@@ -10,7 +10,8 @@ enum GameStateSYDE
 {
 	MainLevel_STATE,
 	MainMenu_STATE,
-	LevelSelect_STATE
+	LevelSelect_STATE,
+	Win_STATE
 };
 
 class SYDEPlatformer : public SYDEWindowGame {
@@ -21,6 +22,8 @@ public:
 	ConsoleWindow draw_game(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow draw_title(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow draw_levelSelect(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow draw_WinState(ConsoleWindow window, int windowWidth, int windowHeight);
+
 
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	static AssetsClass astVars;
@@ -39,6 +42,8 @@ private:
 	bool checkGrounded(ConsoleWindow window);
 	float movementTime = 0;
 	float momentumTime = 0;
+
+	double gameTime = 0.0f;
 
 	Vector2 m_Momentum = Vector2(0, 0);
 	CustomAsset m_MainMap; //= CustomAsset(2000, 1000, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\Map\\Sewers.bmp", 1000, 1000));

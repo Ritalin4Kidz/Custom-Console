@@ -59,8 +59,7 @@ int main(int argc, char* argv[])
 	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	SYDEGamePlay::EnableClicking(hOut);
 
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('E'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));

@@ -32,10 +32,21 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 		}
 	}
 	window = m_MainMap.draw_asset(window, Vector2(PlayerPos.getX() - 20, PlayerPos.getY() - 10), windowWidth, windowHeight);
+	window.setTextAtPoint(Vector2(20, 10), "*", window.determineColourAtPoint(Vector2(20, 10), BRIGHTWHITE, true));
+	if (dead)
+	{
+		deadTime+= SYDEDefaults::getDeltaTime();
+		if (deadTime >= 0.5f)
+		{
+			dead = false;
+			//START
+			PlayerPos = CheckPoint;
+			deadTime = 0;
+		}
+		return window;
+	}
 
 	gameTime += SYDEDefaults::getDeltaTime();
-
-	window.setTextAtPoint(Vector2(20, 10), "*", window.determineColourAtPoint(Vector2(20, 10), BRIGHTWHITE, true));
 	if (momentumTime > 0.05f)
 	{
 		ApplyMomentum();
@@ -45,14 +56,12 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		PlayerPos = Vector2(475*2, 343);
+		PlayerPos = Vector2(994*2, 389);
 	}
-
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
 		m_State = LevelSelect_STATE;
 	}
-
 
 	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1))
 	{
@@ -83,8 +92,8 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 
 	if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
 	{
-		//START
-		PlayerPos = CheckPoint;
+		dead = true;
+		return window;
 	}
 	if (m_MainMap.getColourAtPoint(PlayerPos) == BLUE_BLUE_BG)
 	{
@@ -93,6 +102,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
 	{
 		winMap();
+		return window;
 	}
 	if (m_MainMap.getColourAtPoint(PlayerPos) == YELLOW_YELLOW_BG)
 	{
@@ -109,7 +119,6 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 
 	return window;
 }
-
 ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int l = 0; l < windowWidth; l++)
@@ -136,7 +145,6 @@ ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, 
 
 	return window;
 }
-
 ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int l = 0; l < windowWidth; l++)
@@ -181,7 +189,6 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 	}
 	return window;
 }
-
 ConsoleWindow SYDEPlatformer::draw_WinState(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int l = 0; l < windowWidth; l++)
@@ -198,12 +205,10 @@ ConsoleWindow SYDEPlatformer::draw_WinState(ConsoleWindow window, int windowWidt
 	window.setTextAtPoint(Vector2(0, 1), "CONGRATS", BRIGHTWHITE);
 
 	window.setTextAtPoint(Vector2(3, 9), "LEVEL BEATEN", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(3, 10), "Time Taken: " + std::to_string(gameTime) + "s", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(3, 10), "Time Taken: " + timeString, BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 11), "Press Space To Return To Menu", BRIGHTWHITE);
 	return window;
 }
-
-
 void SYDEPlatformer::AddPositionX(Vector2 add)
 {
 	if (m_MainMap.getColourAtPoint(PlayerPos + add) != BRIGHTWHITE_BRIGHTWHITE_BG)
@@ -213,14 +218,30 @@ void SYDEPlatformer::AddPositionX(Vector2 add)
 		{
 			CheckPoint = PlayerPos;
 		}
+		if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
+		{
+			dead = true;
+			return;
+		}
 	}
 }
-
 void SYDEPlatformer::winMap()
 {
 	m_State = Win_STATE;
+	m_hours = 0;
+	m_minutes = 0;
+	while (gameTime >= 60)
+	{
+		m_minutes++;
+		gameTime -= 60;
+		if (m_minutes == 60)
+		{
+			m_hours++;
+			m_minutes = 0;
+		}
+	}
+	timeString = timeStringConvert();
 }
-
 void SYDEPlatformer::ApplyMomentum()
 {
 	if (checkGrounded() && m_Momentum.getY() > 0)
@@ -245,9 +266,10 @@ void SYDEPlatformer::ApplyMomentum()
 				{
 					CheckPoint = PlayerPos;
 				}
-				if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
+				if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
 				{
-					winMap();
+					dead = true;
+					return;
 				}
 			}
 			else
@@ -268,9 +290,10 @@ void SYDEPlatformer::ApplyMomentum()
 				{
 					CheckPoint = PlayerPos;
 				}
-				if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
+				if (m_MainMap.getColourAtPoint(PlayerPos) == RED_RED_BG)
 				{
-					winMap();
+					dead = true;
+					return;
 				}
 			}
 			else
@@ -280,7 +303,20 @@ void SYDEPlatformer::ApplyMomentum()
 		}
 	}
 }
-
+std::string SYDEPlatformer::timeStringConvert()
+{
+	std::string temp = "";
+	if (m_hours > 0)
+	{
+		temp += to_string(m_hours) + "h " + to_string(m_minutes) + "m ";
+	}
+	else if (m_minutes > 0)
+	{
+		temp += to_string(m_minutes) + "m ";
+	}
+	temp += std::to_string(gameTime) + "s";
+	return temp;
+}
 bool SYDEPlatformer::checkGrounded()
 {
 	if (m_MainMap.getColourAtPoint(PlayerPos + Vector2(0, 1)) == BRIGHTWHITE_BRIGHTWHITE_BG)
@@ -288,7 +324,6 @@ bool SYDEPlatformer::checkGrounded()
 		return true;
 	}
 }
-
 bool SYDEPlatformer::checkGrounded(ConsoleWindow window)
 {
 	if (window.getTextColourAtPoint(Vector2(20,11)) == BRIGHTWHITE_BRIGHTWHITE_BG)

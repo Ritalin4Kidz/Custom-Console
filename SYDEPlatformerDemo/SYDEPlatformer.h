@@ -32,7 +32,7 @@ public:
 	void AddPositionX(Vector2 add);
 	void winMap();
 	void ApplyMomentum();
-
+	std::string timeStringConvert();
 private:
 	Vector2 PlayerPos = Vector2(2, 3);
 
@@ -44,10 +44,15 @@ private:
 	float momentumTime = 0;
 
 	double gameTime = 0.0f;
+	int m_minutes = 0;
+	int m_hours = 0;
 
 	Vector2 m_Momentum = Vector2(0, 0);
 	CustomAsset m_MainMap; //= CustomAsset(2000, 1000, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\Map\\Sewers.bmp", 1000, 1000));
 
 	std::vector<std::string> m_Levels;
 	int SelectedLevel = 0;
+	std::string timeString = "";
+	bool dead = false;
+	float deadTime = 0.0f;
 };

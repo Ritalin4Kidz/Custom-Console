@@ -79,6 +79,12 @@
     <Filter Include="Header Files\SYDESounds">
       <UniqueIdentifier>{2fc6bea5-a25b-48cf-a86c-4f3bf20d6197}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SYDEOldCode">
+      <UniqueIdentifier>{ae809061-2efe-4b0e-8bef-a7ee342471fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SYDEOldCode">
+      <UniqueIdentifier>{d5d730fa-a6cb-4cde-9a63-05eb0ae82418}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h">
@@ -152,18 +158,6 @@
     </ClInclude>
     <ClInclude Include="SYDETime.h">
       <Filter>Header Files\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="AI.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Board.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="BoardPiece.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Characters.h">
-      <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleWindow.h">
       <Filter>Header Files\MainEngine</Filter>
@@ -246,6 +240,21 @@
     <ClInclude Include="SYDESounds.h">
       <Filter>Header Files\Include Headers</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEOldCodeAI.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeCharacters.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeBoard.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeBoardPiece.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineOldCode.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -299,9 +308,6 @@
     <ClCompile Include="BackgroundObj.cpp">
       <Filter>Source Files\Assets</Filter>
     </ClCompile>
-    <ClCompile Include="Characters.cpp">
-      <Filter>Source Files\Assets</Filter>
-    </ClCompile>
     <ClCompile Include="CustomAnimationAsset.cpp">
       <Filter>Source Files\Assets</Filter>
     </ClCompile>
@@ -321,15 +327,6 @@
       <Filter>Source Files\Math</Filter>
     </ClCompile>
     <ClCompile Include="TextItem.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="AI.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="Board.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="BoardPiece.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleWindow.cpp">
@@ -382,6 +379,18 @@
     </ClCompile>
     <ClCompile Include="SYDESound.cpp">
       <Filter>Source Files\SYDESounds</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeAI.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeBoard.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeBoardPiece.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeCharacters.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

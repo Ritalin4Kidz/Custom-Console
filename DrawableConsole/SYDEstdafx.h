@@ -3,7 +3,6 @@
 #include <math.h>
 #include <time.h>
 #include "Vector2.h"
-#include "Board.h"
 #include <stdlib.h> 
 #include <string>
 #include <windows.h>
@@ -14,7 +13,6 @@
 #include <gdiplus.h>
 #include <chrono>
 #include "ConsoleWindow.h"
-#include "AI.h"
 #include "Activation.h"
 #include "Settings.h"
 #include "SYDEWindowGame.h"

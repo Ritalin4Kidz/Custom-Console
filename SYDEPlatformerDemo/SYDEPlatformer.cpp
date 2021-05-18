@@ -182,7 +182,7 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 		string bmpFile = "EngineFiles\\Bitmaps\\Map\\" + m_Levels[SelectedLevel];
 		wstring wbmpFile = wstring(bmpFile.begin(), bmpFile.end());
 		SYDEBMPDimensions fileSize = SYDEFileDefaults::getBMPDimensions(bmpFile);
-		m_MainMap = CustomAsset(fileSize.width * 2, fileSize.height, astVars.get_bmp_as_direct_colour_class_array((WCHAR*)wbmpFile.c_str(), fileSize.width, fileSize.height));
+		m_MainMap = CustomAsset(fileSize.width * 2, fileSize.height, astVars.get_bmp_as_array((WCHAR*)wbmpFile.c_str(), fileSize.width, fileSize.height));
 		CheckPoint = m_MainMap.returnPointOfFirstInstance(LIGHTGREY_LIGHTGREY_BG);
 		PlayerPos = CheckPoint;
 		gameTime = 0.0f;

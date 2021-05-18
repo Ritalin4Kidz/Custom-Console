@@ -19,7 +19,7 @@ Settings config("EngineFiles\\Settings\\configSettings.sc");
 ConsoleWindow window(windowHeight);
 //DRAWING SETTINGS
 BackgroundClass bgVars;
-Characters charVars;
+SYDEOldCodeCharacters charVars;
 Artwork artVars;
 //OTHER ASSETS
 AssetsClass astVars;

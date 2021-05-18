@@ -60,14 +60,14 @@ void SYDEMainDemos::TicTacToe(bool isAIp1, bool isAIp2, int offset, string OBrai
 	// 15 LOGIC : https://www.braingle.com/brainteasers/teaser.php?op=2&id=5388&comm=0
 
 	// CREATE THE 9 BOARD PIECES, EACH WITH A VALUE (HAS TO BE IN THIS ORDER FOR THE 15 LOGIC)
-	vector<BoardPiece> pieces = {
-		BoardPiece(Vector2(0,0), 4), BoardPiece(Vector2(1,0), 3), BoardPiece(Vector2(2,0), 8),
-		BoardPiece(Vector2(0,1), 9), BoardPiece(Vector2(1,1), 5), BoardPiece(Vector2(2,1), 1),
-		BoardPiece(Vector2(0,2), 2), BoardPiece(Vector2(1,2), 7), BoardPiece(Vector2(2,2), 6),
+	vector<SYDEOldCodeBoardPiece> pieces = {
+		SYDEOldCodeBoardPiece(Vector2(0,0), 4), SYDEOldCodeBoardPiece(Vector2(1,0), 3), SYDEOldCodeBoardPiece(Vector2(2,0), 8),
+		SYDEOldCodeBoardPiece(Vector2(0,1), 9), SYDEOldCodeBoardPiece(Vector2(1,1), 5), SYDEOldCodeBoardPiece(Vector2(2,1), 1),
+		SYDEOldCodeBoardPiece(Vector2(0,2), 2), SYDEOldCodeBoardPiece(Vector2(1,2), 7), SYDEOldCodeBoardPiece(Vector2(2,2), 6),
 	};
 
 	// CREATE THE BOARD, TARGET VALUE OF 15, MAX 9 TURNS
-	Board ticTacToeBoard(pieces, 15, 9);
+	SYDEOldCodeBoard ticTacToeBoard(pieces, 15, 9);
 	for (int i = 0; i < ticTacToeBoard.getBoard().size(); i++)
 	{
 		window.setTextAtPoint(ticTacToeBoard.getBoard()[i].getPos().offset(offset), "*", WHITE);
@@ -81,8 +81,8 @@ void SYDEMainDemos::TicTacToe(bool isAIp1, bool isAIp2, int offset, string OBrai
 	bool isGameWon = false;
 	int turns = 0;
 	ColourClass colour = GREEN;
-	AI OAI(OBrain);
-	AI XAI(XBrain);
+	SYDEOldCodeAI OAI(OBrain);
+	SYDEOldCodeAI XAI(XBrain);
 	string boardString;
 	// GAME LOOP
 	while (!isGameWon && turns < ticTacToeBoard.getMaxTurns())
@@ -1103,12 +1103,12 @@ void SYDEMainDemos::drawBrain(string AIBrain)
 			window.addToLine(m, " ", WHITE);
 		}
 	}
-	vector<BoardPiece> pieces = {
-		BoardPiece(Vector2(0,0), 4), BoardPiece(Vector2(1,0), 3), BoardPiece(Vector2(2,0), 8),
-		BoardPiece(Vector2(0,1), 9), BoardPiece(Vector2(1,1), 5), BoardPiece(Vector2(2,1), 1),
-		BoardPiece(Vector2(0,2), 2), BoardPiece(Vector2(1,2), 7), BoardPiece(Vector2(2,2), 6),
+	vector<SYDEOldCodeBoardPiece> pieces = {
+		SYDEOldCodeBoardPiece(Vector2(0,0), 4), SYDEOldCodeBoardPiece(Vector2(1,0), 3), SYDEOldCodeBoardPiece(Vector2(2,0), 8),
+		SYDEOldCodeBoardPiece(Vector2(0,1), 9), SYDEOldCodeBoardPiece(Vector2(1,1), 5), SYDEOldCodeBoardPiece(Vector2(2,1), 1),
+		SYDEOldCodeBoardPiece(Vector2(0,2), 2), SYDEOldCodeBoardPiece(Vector2(1,2), 7), SYDEOldCodeBoardPiece(Vector2(2,2), 6),
 	};
-	AI brain(AIBrain);
+	SYDEOldCodeAI brain(AIBrain);
 	int ii = 0;
 	int max = brain.getBrainSize();
 	while (ii < max)
@@ -1117,7 +1117,7 @@ void SYDEMainDemos::drawBrain(string AIBrain)
 		{
 			for (int x = 1; x < 10; x = x + 4)
 			{
-				Board ticTacToeBoard(pieces, 15, 9);
+				SYDEOldCodeBoard ticTacToeBoard(pieces, 15, 9);
 				vector<string> board = brain.returnBoard(ii);
 				int k = 0;
 				for (int j = 0; j < 3; j++)
@@ -1202,7 +1202,7 @@ void SYDEMainDemos::nodePath()
 	// 0 = Wall
 
 	// CREATING THE BOARDPIECES IN A FOR LOOP
-	vector<BoardPiece> pieces;
+	vector<SYDEOldCodeBoardPiece> pieces;
 	bool isWall = false;
 	bool top = false;
 	int heightVal = 5;
@@ -1223,7 +1223,7 @@ void SYDEMainDemos::nodePath()
 					bValue = 0;
 				}
 			}
-			pieces.push_back(BoardPiece(Vector2(xx, yy), bValue));
+			pieces.push_back(SYDEOldCodeBoardPiece(Vector2(xx, yy), bValue));
 		}
 		if (isWall)
 		{
@@ -1233,7 +1233,7 @@ void SYDEMainDemos::nodePath()
 	}
 	pieces[pieces.size() - 1].setValue(2);
 	// ADD PIECES TO A NEWLY DECLARED BOARD
-	Board nodePathBoard(pieces, 0, 0);
+	SYDEOldCodeBoard nodePathBoard(pieces, 0, 0);
 	// INITIALIZE THE CONSOLE WINDOW 
 	// SIZE WIDTH & HEIGHT DECLARED AT TOP OF FILE AS CONST
 	window.ClearWindow(true);

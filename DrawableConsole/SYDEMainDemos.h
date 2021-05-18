@@ -4,7 +4,7 @@
 #include "SYDEEngineAssets.h"
 #include "SYDEEngineMath.h"
 #include "SYDEEngineUI.h"
-
+#include "SYDEEngineOldCode.h"
 class SYDEMainDemos {
 public:
 	SYDEMainDemos();
@@ -91,7 +91,7 @@ private:
 	int skinNumber = 0;
 	//DRAWING SETTINGS
 	BackgroundClass bgVars;
-	Characters charVars;
+	SYDEOldCodeCharacters charVars;
 	Artwork artVars;
 	//OTHER ASSETS
 	AssetsClass astVars;

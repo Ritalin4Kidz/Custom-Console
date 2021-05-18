@@ -1,7 +1,6 @@
 #pragma once
 #include "BackgroundObj.h"
 #include "Background.h"
-#include "Characters.h"
 #include "Artwork.h"
 #include "AssetsClass.h"
 #include "CustomAsset.h"

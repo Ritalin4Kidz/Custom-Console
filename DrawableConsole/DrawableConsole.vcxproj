@@ -157,14 +157,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h" />
-    <ClInclude Include="AI.h" />
+    <ClInclude Include="SYDEEngineOldCode.h" />
+    <ClInclude Include="SYDEOldCodeAI.h" />
     <ClInclude Include="Artwork.h" />
     <ClInclude Include="AssetsClass.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="BackgroundObj.h" />
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="BoardPiece.h" />
-    <ClInclude Include="Characters.h" />
+    <ClInclude Include="SYDEOldCodeBoard.h" />
+    <ClInclude Include="SYDEOldCodeBoardPiece.h" />
+    <ClInclude Include="SYDEOldCodeCharacters.h" />
     <ClInclude Include="Concerto.h" />
     <ClInclude Include="ConsoleWindow.h" />
     <ClInclude Include="ConsoleWindow3D.h" />
@@ -214,14 +215,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Activation.cpp" />
-    <ClCompile Include="AI.cpp" />
+    <ClCompile Include="SYDEOldCodeAI.cpp" />
     <ClCompile Include="Artwork.cpp" />
     <ClCompile Include="AssetsClass.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="BoardPiece.cpp" />
-    <ClCompile Include="Characters.cpp" />
+    <ClCompile Include="SYDEOldCodeBoard.cpp" />
+    <ClCompile Include="SYDEOldCodeBoardPiece.cpp" />
+    <ClCompile Include="SYDEOldCodeCharacters.cpp" />
     <ClCompile Include="Concerto.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
     <ClCompile Include="ConsoleWindow3D.cpp" />

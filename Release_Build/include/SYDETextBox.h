@@ -12,11 +12,19 @@ public:
 	SYDETextBox(Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour);
 	virtual ~SYDETextBox() {}
 
-
+	/// <summary>
+	/// Draw the textbox on the screen
+	/// </summary>
+	/// <param name="window"></param>
+	/// <returns></returns>
 	ConsoleWindow draw_ui(ConsoleWindow window) override;
 
 	void addText(string a_text) { if (m_Active) { m_Text += a_text; } }
 	void removeText(int amt) { if (m_Active) { m_Text = m_Text.substr(0, m_Text.size() - amt); } }
+	/// <summary>
+	/// Set if the textbox is allowed to receive input
+	/// </summary>
+	/// <param name="active"></param>
 	void setActive(bool active) { m_Active = active; }
 
 	bool getActive() { return m_Active; }

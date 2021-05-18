@@ -1,5 +1,8 @@
 #pragma once
-
+#include <cmath>
+/// <summary>
+/// Point consisting of a x & y value
+/// </summary>
 class Vector2 {
 public:
 	Vector2() { x = 0; y = 0; }
@@ -28,10 +31,20 @@ public:
 	Vector2& operator+=(Vector2 other);
 	Vector2& operator*=(float other);
 
+	/// <summary>
+	/// Add a float to the values of the vector2
+	/// </summary>
+	/// <param name="offset"></param>
+	/// <returns></returns>
 	Vector2 offset(float offset);
 	bool willHit(Vector2 other, Vector2 gravity);
 	bool operator==(Vector2 other);
 
+	/// <summary>
+	/// return the distance between two points
+	/// </summary>
+	/// <param name="other"></param>
+	/// <returns></returns>
 	float distance(Vector2 other);
 
 private:

@@ -271,7 +271,7 @@ vector<ColourClass> AssetsClass::get_bmp_as_array(const WCHAR* bmpFile, int bmpW
 		for (int ii = 0; ii < bmpWidth; ii++)
 		{
 			Gdiplus::Color pixelColor;
-			temp.GetPixel(ii + 1, i, &pixelColor);
+			temp.GetPixel(ii, i, &pixelColor);
 			ColourClass colour_use = colour_from_RGB(to_string(pixelColor.GetR()), to_string(pixelColor.GetG()), to_string(pixelColor.GetB()));
 			tempVec.push_back(colour_use); //twice for one pixel
 			tempVec.push_back(colour_use);

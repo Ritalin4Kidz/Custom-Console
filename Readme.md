@@ -125,6 +125,10 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.2.7.0 18/05/2021
+- Added SYDESound.h
+- get_bmp_as_array fixes issue of bmp loading
+
 ### 1.2.6.0
 - SYDEFileDefaults.h Added, Function that grabs the filename for each file in a directory, filterable by format
 

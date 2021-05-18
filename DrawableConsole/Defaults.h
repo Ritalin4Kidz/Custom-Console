@@ -13,6 +13,8 @@ public:
 	static float getDeltaTime() { return deltaTime; }
 	static Vector2 v2_Zero;
 
+	static void consoleCommand(const char* cmd);
+
 	static int mouseInputWaitTime;
 };
 

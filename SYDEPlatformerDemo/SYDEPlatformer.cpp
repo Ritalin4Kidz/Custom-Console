@@ -56,7 +56,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		PlayerPos = Vector2(994*2, 389);
+		PlayerPos = Vector2(252*2, 450);
 	}
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{

@@ -81,7 +81,7 @@ public:
 
 
 	/// <summary>
-	/// Get bmp as a colour class array
+	/// Get bmp as a colour class array (LEGACY: user get_bmp_as_array instead)
 	/// </summary>
 	/// <param name="bmpFile"></param>
 	/// <param name="bmpWidth"></param>

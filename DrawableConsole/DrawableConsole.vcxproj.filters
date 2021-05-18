@@ -73,6 +73,12 @@
     <Filter Include="Source Files\Demos">
       <UniqueIdentifier>{15862a08-2aa1-4b9d-a50d-097016b03e6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SYDESounds">
+      <UniqueIdentifier>{1af39172-4189-4ba7-b99d-1977c741b98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SYDESounds">
+      <UniqueIdentifier>{2fc6bea5-a25b-48cf-a86c-4f3bf20d6197}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h">
@@ -234,6 +240,12 @@
     <ClInclude Include="SYDEFileDefaults.h">
       <Filter>Header Files\SYDEUtil</Filter>
     </ClInclude>
+    <ClInclude Include="SYDESound.h">
+      <Filter>Header Files\SYDESounds</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDESounds.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -367,6 +379,9 @@
     </ClCompile>
     <ClCompile Include="SYDEFileDefaults.cpp">
       <Filter>Source Files\SYDEUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDESound.cpp">
+      <Filter>Source Files\SYDESounds</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

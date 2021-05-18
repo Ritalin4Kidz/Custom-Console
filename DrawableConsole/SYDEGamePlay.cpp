@@ -1,8 +1,5 @@
 #include "pch.h"
 #include "SYDEGamePlay.h"
-#include "SYDETime.h"
-#include "Defaults.h"
-#include "SYDEKeyCode.h"
 
 using namespace std;
 
@@ -225,6 +222,31 @@ ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const 
 	{
 		SYDEFPS::draw(window);
 	}
+	//RETURN GAME
+	return window;
+}
+
+ConsoleWindow3D SYDEGamePlay::play3D(SYDEWindowGame3D* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime)
+{
+	HWND ConsoleWindow = GetConsoleWindow();
+	//KEYBOARD INPUTS
+	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
+	{
+		// CHECKING THE STATE OF ALL INPUTS
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown_Safe(ConsoleWindow);
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp_Safe(ConsoleWindow);
+	}
+	//MOUSE INPUTS
+	if (ClickEnabled)
+	{
+		SYDE_MouseClickFunction();
+	}
+	//DELTATIME
+	deltaTime.refreshTime();
+	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	//DRAW
+	SetConsoleCursorPosition(hOut, start);
+	window = SYDE_GAME->window_draw_game3D(window, windowWidth, windowHeight);
 	//RETURN GAME
 	return window;
 }
@@ -766,29 +788,29 @@ void SYDEGamePlay::SYDE_MouseClickFunction()
 			{
 				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
 				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
-				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDown();
+				SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyDown();
 			}
 			else 
 			{
-				SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyUp();
+				SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyUp();
 			}
 
 			if (InputRecord.Event.MouseEvent.dwButtonState == RIGHTMOST_BUTTON_PRESSED)
 			{
 				LastPointClicked = Vector2(InputRecord.Event.MouseEvent.dwMousePosition.X - config.getOffset().getX(), InputRecord.Event.MouseEvent.dwMousePosition.Y - config.getOffset().getY());
 				SYDEKeyCode::SetLastClickPosition(LastPointClicked);
-				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDown();
+				SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE.ForceKeyDown();
 			}
 			else
 			{
-				SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyUp();
+				SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE.ForceKeyUp();
 			}
 			break;
 		}
 	}
 	else
 	{
-		SYDEKeyCode::LEFT_CLICK_MOUSE.ForceKeyDownIfHeld();
-		SYDEKeyCode::RIGHT_CLICK_MOUSE.ForceKeyDownIfHeld();
+		SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyDownIfHeld();
+		SYDEKeyCode::SYDEKeyCode_RIGHT_CLICK_MOUSE.ForceKeyDownIfHeld();
 	}
 }

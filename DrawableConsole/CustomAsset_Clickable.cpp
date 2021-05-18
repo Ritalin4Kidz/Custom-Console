@@ -12,7 +12,7 @@ ConsoleWindow CustomAsset_Clickable::draw_asset(ConsoleWindow window, Vector2 po
 		}
 	}
 
-	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
 	{
 		DoFunc();
 	}
@@ -44,7 +44,7 @@ ConsoleWindow CustomAsset_Clickable::draw_asset(ConsoleWindow window, Vector2 po
 		}
 	}
 
-	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
 	{
 		DoFunc();
 	}

@@ -74,7 +74,7 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 	}
 	_CheckState();
 	
-	if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()))
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()))
 	{
 		DoFunc();
 	}

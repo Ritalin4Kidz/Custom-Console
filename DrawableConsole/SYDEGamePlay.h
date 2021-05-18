@@ -1,6 +1,7 @@
 #pragma once
 #include "SYDEWindowGame.h"
 #include "ConsoleWindow.h"
+#include "ConsoleWindow3D.h"
 #include "SYDETime.h"
 #include <windows.h>
 #include <iostream>
@@ -16,6 +17,9 @@
 #include <vector>
 #include <gdiplus.h>
 #include "SYDEFPS.h"
+#include "SYDETime.h"
+#include "Defaults.h"
+#include "SYDEKeyCode.h"
 using namespace std;
 using namespace Gdiplus;
 class SYDEGamePlay {
@@ -102,6 +106,20 @@ public:
 	/// <param name="deltaTime"></param>
 	/// <returns></returns>
 	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
+
+
+	/// <summary>
+	/// Core game loop for running SYDEWindow games
+	/// </summary>
+	/// <param name="SYDE_GAME"></param>
+	/// <param name="start"></param>
+	/// <param name="hOut"></param>
+	/// <param name="window"></param>
+	/// <param name="windowWidth"></param>
+	/// <param name="windowHeight"></param>
+	/// <param name="deltaTime"></param>
+	/// <returns></returns>
+	static ConsoleWindow3D play3D(SYDEWindowGame3D* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 
 	/// <summary>
 	/// Enable clicking and getting mouse position

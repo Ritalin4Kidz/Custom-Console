@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Concerto">
-      <UniqueIdentifier>{15862a08-2aa1-4b9d-a50d-097016b03e6c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Concerto">
-      <UniqueIdentifier>{7f325ce2-b41b-4ecd-a5de-e7bc846c9139}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\Concerto">
       <UniqueIdentifier>{50109be3-f93f-40a9-8b4f-a5bbe7dd25f9}</UniqueIdentifier>
     </Filter>
@@ -70,11 +64,29 @@
     <Filter Include="Source Files\MainEngine">
       <UniqueIdentifier>{07b7d5e6-bc48-4e87-b4a5-d87b0633e070}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Include Headers">
+      <UniqueIdentifier>{83779fb3-05e9-4cae-9241-d220dc833e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demos">
+      <UniqueIdentifier>{60b2bd50-16a1-468a-b11b-25c66c14146a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Demos">
+      <UniqueIdentifier>{15862a08-2aa1-4b9d-a50d-097016b03e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SYDESounds">
+      <UniqueIdentifier>{1af39172-4189-4ba7-b99d-1977c741b98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SYDESounds">
+      <UniqueIdentifier>{2fc6bea5-a25b-48cf-a86c-4f3bf20d6197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SYDEOldCode">
+      <UniqueIdentifier>{ae809061-2efe-4b0e-8bef-a7ee342471fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SYDEOldCode">
+      <UniqueIdentifier>{d5d730fa-a6cb-4cde-9a63-05eb0ae82418}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Concerto.h">
-      <Filter>Header Files\Concerto</Filter>
-    </ClInclude>
     <ClInclude Include="Activation.h">
       <Filter>Header Files\Activation</Filter>
     </ClInclude>
@@ -147,18 +159,6 @@
     <ClInclude Include="SYDETime.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="AI.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Board.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="BoardPiece.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Characters.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
     <ClInclude Include="ConsoleWindow.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
@@ -171,9 +171,6 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
-    <ClInclude Include="ReiventTheWheel.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
@@ -183,19 +180,85 @@
     <ClInclude Include="SYDEGamePlay.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
-    <ClInclude Include="SYDEstdafx.h">
-      <Filter>Header Files\MainEngine</Filter>
-    </ClInclude>
     <ClInclude Include="SYDEWindowGame.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
     <ClInclude Include="TextItem.h">
       <Filter>Header Files\MainEngine</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEClickableButton.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEHoverableButton.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAsset_Draggable.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAsset_Clickable.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDELabel_Hoverable.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEstdafx.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineUI.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineMath.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineAssets.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineDemos.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReiventTheWheel.h">
+      <Filter>Demos</Filter>
+    </ClInclude>
+    <ClInclude Include="Concerto.h">
+      <Filter>Demos</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEMainDemos.h">
+      <Filter>Demos</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleWindow3D.h">
+      <Filter>Header Files\MainEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEFileDefaults.h">
+      <Filter>Header Files\SYDEUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDESound.h">
+      <Filter>Header Files\SYDESounds</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDESounds.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeAI.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeCharacters.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeBoard.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEOldCodeBoardPiece.h">
+      <Filter>Header Files\SYDEOldCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SYDEEngineOldCode.h">
+      <Filter>Header Files\Include Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
-      <Filter>Source Files\Concerto</Filter>
+      <Filter>Source Files\Demos</Filter>
     </ClCompile>
     <ClCompile Include="Activation.cpp">
       <Filter>Source Files\Activation</Filter>
@@ -245,9 +308,6 @@
     <ClCompile Include="BackgroundObj.cpp">
       <Filter>Source Files\Assets</Filter>
     </ClCompile>
-    <ClCompile Include="Characters.cpp">
-      <Filter>Source Files\Assets</Filter>
-    </ClCompile>
     <ClCompile Include="CustomAnimationAsset.cpp">
       <Filter>Source Files\Assets</Filter>
     </ClCompile>
@@ -269,22 +329,10 @@
     <ClCompile Include="TextItem.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
-    <ClCompile Include="AI.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="Board.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="BoardPiece.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
     <ClCompile Include="ConsoleWindow.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
     <ClCompile Include="Defaults.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawableConsole.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
     <ClCompile Include="Line.cpp">
@@ -293,14 +341,56 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
-    <ClCompile Include="ReiventTheWheel.cpp">
-      <Filter>Source Files\MainEngine</Filter>
-    </ClCompile>
     <ClCompile Include="Settings.cpp">
       <Filter>Source Files\MainEngine</Filter>
     </ClCompile>
     <ClCompile Include="SYDEGamePlay.cpp">
       <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEClickableButton.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEHoverableButton.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAsset_Clickable.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAsset_Draggable.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDELabel_Hoverable.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ReiventTheWheel.cpp">
+      <Filter>Source Files\Demos</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEMainDemos.cpp">
+      <Filter>Source Files\Demos</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleWindow3D.cpp">
+      <Filter>Source Files\MainEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEFileDefaults.cpp">
+      <Filter>Source Files\SYDEUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDESound.cpp">
+      <Filter>Source Files\SYDESounds</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeAI.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeBoard.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeBoardPiece.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOldCodeCharacters.cpp">
+      <Filter>Source Files\SYDEOldCode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -41,6 +41,21 @@ public:
 
 	void Reset();
 
+	/// <summary>
+	/// FORCE THE KEY INTO A DOWN STATE
+	/// </summary>
+	void ForceKeyDown();
+
+	/// <summary>
+	/// FORCE A KEY FROM DOWN TO HELD STATE
+	/// </summary>
+	void ForceKeyDownIfHeld();
+
+	/// <summary>
+	/// FORCE THE KEY INTO AN UP STATE
+	/// </summary>
+	void ForceKeyUp();
+
 	SYDEKey& operator=(char KeyCode);
 
 private:

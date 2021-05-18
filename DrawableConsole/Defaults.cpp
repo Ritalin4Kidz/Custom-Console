@@ -14,3 +14,8 @@ void SYDEFunctions::SYDESleep(int time, float deltaTime)
 	}
 	Sleep(_SLEEP);
 }
+
+void SYDEDefaults::consoleCommand(const char* cmd)
+{
+	system(cmd);
+}

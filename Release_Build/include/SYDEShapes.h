@@ -8,11 +8,33 @@ class SYDEShape {
 public:
 	SYDEShape() {}
 	virtual ~SYDEShape() {}
-
+	/// <summary>
+	/// main draw function, overridable
+	/// </summary>
+	/// <param name="window"></param>
+	/// <returns></returns>
 	virtual ConsoleWindow draw(ConsoleWindow window) { return window; }
+	/// <summary>
+	/// Override the position temporarily and draw the shape at a different position
+	/// </summary>
+	/// <param name="window"></param>
+	/// <param name="a_Pos"></param>
+	/// <returns></returns>
 	ConsoleWindow draw_at_point(ConsoleWindow window, Vector2 a_Pos);
+	/// <summary>
+	/// return size of the shape
+	/// </summary>
+	/// <returns></returns>
 	Vector2 getSize() { return m_Size; }
+	/// <summary>
+	/// return the colour of the shape
+	/// </summary>
+	/// <returns></returns>
 	ColourClass getColour() { return m_Colour; }
+	/// <summary>
+	/// return the position of the shape
+	/// </summary>
+	/// <returns></returns>
 	Vector2 getPos() { return m_Pos; }
 
 	void setPos(Vector2 p) { m_Pos = p; }
@@ -26,7 +48,9 @@ protected:
 
 	char m_Char = ' ';
 };
-
+/// <summary>
+/// Custom Square Asset
+/// </summary>
 class SYDESquare : public SYDEShape {
 public:
 	SYDESquare();
@@ -45,7 +69,9 @@ protected:
 private:
 	
 };
-
+/// <summary>
+/// Custom Rectangle Asset
+/// </summary>
 class SYDERect : public SYDEShape {
 public:
 	SYDERect() {}
@@ -62,7 +88,9 @@ protected:
 private:
 
 };
-
+/// <summary>
+/// Custom Circle? Asset
+/// </summary>
 class SYDECircle : public SYDEShape {
 public:
 	SYDECircle() { m_Size = Vector2(1), m_Colour = WHITE_WHITE_BG; m_Pos = Vector2(0); }

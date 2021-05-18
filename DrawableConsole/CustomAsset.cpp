@@ -90,5 +90,24 @@ char CustomAsset::getCharAtPoint(Vector2 Point)
 
 int CustomAsset::getColourAtPoint(Vector2 Point)
 {
+	if (Point.getX() < 0 || Point.getY() < 0)
+	{
+		return NULLCOLOUR;
+	}
 	return AssetVector[Point.getY()][Point.getX()].getColour();
+}
+
+Vector2 CustomAsset::returnPointOfFirstInstance(ColourClass a_Colour)
+{
+	for (int i = 0; i < AssetVector.size(); i++)
+	{
+		for (int ii = 0; ii < AssetVector[i].size(); ii++)
+		{
+			if (AssetVector[i][ii].getColour() == a_Colour)
+			{
+				return Vector2(ii, i);
+			}
+		}
+	}
+	return Vector2(0, 0);
 }

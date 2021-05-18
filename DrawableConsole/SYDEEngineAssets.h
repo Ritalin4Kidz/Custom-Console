@@ -1,0 +1,10 @@
+#pragma once
+#include "BackgroundObj.h"
+#include "Background.h"
+#include "Artwork.h"
+#include "AssetsClass.h"
+#include "CustomAsset.h"
+#include "CustomAsset_Clickable.h"
+#include "CustomAsset_Draggable.h"
+#include "CustomAnimationAsset.h"
+#include "SYDEShapes.h"

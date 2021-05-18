@@ -77,8 +77,14 @@ public:
 	/// <param name="Point"></param>
 	/// <returns></returns>
 	int getColourAtPoint(Vector2 Point);
-	string getStringFromChar(char x) { return string(1, x); }
+
+	/// <summary>
+	/// return the point where the colour is first displayed on the asset
+	/// </summary>
+	/// <param name="a_Colour">colour to find</param>
+	/// <returns></returns>
+	Vector2 returnPointOfFirstInstance(ColourClass a_Colour);
 protected:
 	vector<vector<TextItem>> AssetVector;
-
+	string getStringFromChar(char x) { return string(1, x); }
 };

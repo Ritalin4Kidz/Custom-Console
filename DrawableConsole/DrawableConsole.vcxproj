@@ -24,16 +24,17 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DrawableConsole</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ProjectName>SYDEEngine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -156,18 +157,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h" />
-    <ClInclude Include="AI.h" />
+    <ClInclude Include="SYDEEngineOldCode.h" />
+    <ClInclude Include="SYDEOldCodeAI.h" />
     <ClInclude Include="Artwork.h" />
     <ClInclude Include="AssetsClass.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="BackgroundObj.h" />
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="BoardPiece.h" />
-    <ClInclude Include="Characters.h" />
+    <ClInclude Include="SYDEOldCodeBoard.h" />
+    <ClInclude Include="SYDEOldCodeBoardPiece.h" />
+    <ClInclude Include="SYDEOldCodeCharacters.h" />
     <ClInclude Include="Concerto.h" />
     <ClInclude Include="ConsoleWindow.h" />
+    <ClInclude Include="ConsoleWindow3D.h" />
     <ClInclude Include="CustomAnimationAsset.h" />
     <ClInclude Include="CustomAsset.h" />
+    <ClInclude Include="CustomAsset_Clickable.h" />
+    <ClInclude Include="CustomAsset_Draggable.h" />
     <ClInclude Include="Defaults.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="pch.h" />
@@ -177,17 +182,28 @@
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SYDEButton.h" />
+    <ClInclude Include="SYDEClickableButton.h" />
     <ClInclude Include="SYDEClock.h" />
     <ClInclude Include="SYDECredits.h" />
+    <ClInclude Include="SYDEEngineAssets.h" />
+    <ClInclude Include="SYDEEngineDemos.h" />
+    <ClInclude Include="SYDEEngineMath.h" />
+    <ClInclude Include="SYDEEngineUI.h" />
+    <ClInclude Include="SYDEFileDefaults.h" />
     <ClInclude Include="SYDEFPS.h" />
     <ClInclude Include="SYDEGamePlay.h" />
+    <ClInclude Include="SYDEHoverableButton.h" />
     <ClInclude Include="SYDEKey.h" />
     <ClInclude Include="SYDEKeyCode.h" />
     <ClInclude Include="SYDELabel.h" />
+    <ClInclude Include="SYDELabel_Hoverable.h" />
+    <ClInclude Include="SYDEMainDemos.h" />
     <ClInclude Include="SYDEMenu.h" />
     <ClInclude Include="SYDEParticle.h" />
     <ClInclude Include="SYDEScreenshot.h" />
     <ClInclude Include="SYDEShapes.h" />
+    <ClInclude Include="SYDESound.h" />
+    <ClInclude Include="SYDESounds.h" />
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
@@ -195,23 +211,26 @@
     <ClInclude Include="SYDEWindowGame.h" />
     <ClInclude Include="TextItem.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Activation.cpp" />
-    <ClCompile Include="AI.cpp" />
+    <ClCompile Include="SYDEOldCodeAI.cpp" />
     <ClCompile Include="Artwork.cpp" />
     <ClCompile Include="AssetsClass.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BackgroundObj.cpp" />
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="BoardPiece.cpp" />
-    <ClCompile Include="Characters.cpp" />
+    <ClCompile Include="SYDEOldCodeBoard.cpp" />
+    <ClCompile Include="SYDEOldCodeBoardPiece.cpp" />
+    <ClCompile Include="SYDEOldCodeCharacters.cpp" />
     <ClCompile Include="Concerto.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
+    <ClCompile Include="ConsoleWindow3D.cpp" />
     <ClCompile Include="CustomAnimationAsset.cpp" />
     <ClCompile Include="CustomAsset.cpp" />
+    <ClCompile Include="CustomAsset_Clickable.cpp" />
+    <ClCompile Include="CustomAsset_Draggable.cpp" />
     <ClCompile Include="Defaults.cpp" />
-    <ClCompile Include="DrawableConsole.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -223,21 +242,28 @@
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SYDEButton.cpp" />
+    <ClCompile Include="SYDEClickableButton.cpp" />
     <ClCompile Include="SYDEClock.cpp" />
     <ClCompile Include="SYDECredits.cpp" />
+    <ClCompile Include="SYDEFileDefaults.cpp" />
     <ClCompile Include="SYDEFPS.cpp" />
     <ClCompile Include="SYDEGamePlay.cpp" />
+    <ClCompile Include="SYDEHoverableButton.cpp" />
     <ClCompile Include="SYDEKey.cpp" />
     <ClCompile Include="SYDEKeyCode.cpp" />
     <ClCompile Include="SYDELabel.cpp" />
+    <ClCompile Include="SYDELabel_Hoverable.cpp" />
+    <ClCompile Include="SYDEMainDemos.cpp" />
     <ClCompile Include="SYDEMenu.cpp" />
     <ClCompile Include="SYDEParticle.cpp" />
     <ClCompile Include="SYDEScreenshot.cpp" />
     <ClCompile Include="SYDEShapes.cpp" />
+    <ClCompile Include="SYDESound.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="BrainFiles\AiAgainstPlayer.txt" />

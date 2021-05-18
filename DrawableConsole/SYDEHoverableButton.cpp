@@ -49,7 +49,7 @@ ConsoleWindow SYDEHoverableButton::draw_ui(ConsoleWindow window)
 		_HIGHLIGHTED = true;
 		if (m_Clickable)
 		{
-			if (SYDEKeyCode::LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()))
+			if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()))
 			{
 				DoFunc();
 			}

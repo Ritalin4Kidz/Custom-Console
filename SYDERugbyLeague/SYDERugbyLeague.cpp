@@ -41,6 +41,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
+	srand(time(NULL));
 	SRLGame m_SRL;
 	LPCWSTR title = L"SYDE";
 	SYDECredits::_GAMETITLE = "SYDE";
@@ -53,7 +54,6 @@ int main(int argc, char* argv[])
 	}
 	config.volumeControl(0);
 	config.ColourPalette(hOut);
-	srand(time(NULL));
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
 	SYDETIME deltaTime;

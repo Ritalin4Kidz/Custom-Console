@@ -61,8 +61,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,8,0
- PRODUCTVERSION 1,2,8,0
+ FILEVERSION 0,0,0,1
+ PRODUCTVERSION 0,0,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -78,13 +78,13 @@ BEGIN
         BLOCK "0c0904b0"
         BEGIN
             VALUE "CompanyName", "Team Freebee"
-            VALUE "FileDescription", "SYDE Engine Libraries"
-            VALUE "FileVersion", "1.2.8.0"
-            VALUE "InternalName", "Drawable.exe"
-            VALUE "LegalCopyright", "Copyright (C) 2020"
-            VALUE "OriginalFilename", "Drawable.exe"
-            VALUE "ProductName", "SYDE Engine"
-            VALUE "ProductVersion", "1.2.8.0"
+            VALUE "FileDescription", "Syde Rugby League"
+            VALUE "FileVersion", "0.0.0.1"
+            VALUE "InternalName", "SYDERugbyLeague.exe"
+            VALUE "LegalCopyright", "Copyright (C) 2021"
+            VALUE "OriginalFilename", "SYDERugbyLeague.exe"
+            VALUE "ProductName", "SYDE Rugby League"
+            VALUE "ProductVersion", "0.0.0.1"
         END
     END
     BLOCK "VarFileInfo"

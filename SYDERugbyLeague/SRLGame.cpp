@@ -42,6 +42,10 @@ void SRLGameManager::addPlay(string a_Play, SRLPlayer player)
 
 
 
+void SRLGameManager::endStats()
+{
+}
+
 void SRLGameManager::play()
 {
 	//DO WE DO AN INTERCHANGE

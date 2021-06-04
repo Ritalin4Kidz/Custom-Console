@@ -44,6 +44,8 @@ void SRLGameManager::addPlay(string a_Play, SRLPlayer player)
 
 void SRLGameManager::endStats()
 {
+	m_HomeTeam.saveTeam();
+	m_AwayTeam.saveTeam();
 }
 
 void SRLGameManager::play()

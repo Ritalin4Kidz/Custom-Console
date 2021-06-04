@@ -6,6 +6,8 @@
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+
+
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
@@ -37,6 +39,6 @@ public:
 	/// <returns>filenames</returns>
 	static std::vector<std::string> getAllFileNamesInFolder(std::string path, std::string format);
 
-
+	static bool exists(const char* filename);
 	static SYDEBMPDimensions getBMPDimensions(std::string bmpFile);
 };

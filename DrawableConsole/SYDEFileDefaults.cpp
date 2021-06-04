@@ -37,6 +37,11 @@ std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string p
 	return getAllFileNamesInFolder(path, format, false);
 }
 
+bool SYDEFileDefaults::exists(const char* filename)
+{
+	return fs::exists(filename);
+}
+
 SYDEBMPDimensions SYDEFileDefaults::getBMPDimensions(std::string bmpFile)
 {
 	FILE* f = fopen(bmpFile.c_str(), "rb");

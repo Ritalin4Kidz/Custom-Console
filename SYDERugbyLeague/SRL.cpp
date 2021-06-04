@@ -18,8 +18,10 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 void SRLGame::test()
 {
 	SRLGameManager m_srlmanager;
-	SRLTeam HomeTeam = SRLTeam(createRandomTeam("MD-"), "Mildews");
-	SRLTeam AwayTeam = SRLTeam(createRandomTeam("HM-"), "Honey Magnets");
+	SRLTeam HomeTeam = SRLTeam("Mildews");
+	HomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\Mildews.json");
+	SRLTeam AwayTeam = SRLTeam("Honey Magnets");
+	AwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\Honey Magnets.json");
 	m_srlmanager.setTeams(HomeTeam, AwayTeam);
 	try
 	{

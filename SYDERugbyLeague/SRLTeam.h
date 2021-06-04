@@ -10,6 +10,7 @@ using namespace std;
 class SRLTeam {
 public:
 	SRLTeam();
+	SRLTeam(string name) {m_Name= name;}
 	SRLTeam(vector<SRLPlayer> a_TeamList, string name);
 	virtual ~SRLTeam();
 
@@ -18,6 +19,9 @@ public:
 	SRLPlayer getRandomPlayer();
 
 	string getName() { return m_Name; }
+	void setName(string name) { m_Name = name; }
+	void loadTeam(string path);
+	void saveTeam();
 
 private:
 

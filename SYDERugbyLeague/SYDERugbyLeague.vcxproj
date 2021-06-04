@@ -152,6 +152,7 @@
     <ClCompile Include="SYDERugbyLeague.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SRL.h" />
     <ClInclude Include="SRLGame.h" />

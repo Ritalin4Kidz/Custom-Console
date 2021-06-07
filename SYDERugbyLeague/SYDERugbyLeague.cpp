@@ -68,7 +68,6 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
-
 	SYDEGamePlay::showFPS(true);
 
 	window.setStartingLine(1);

@@ -37,6 +37,11 @@ std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string p
 	return getAllFileNamesInFolder(path, format, false);
 }
 
+int SYDEFileDefaults::getFileCount(std::string path, std::string format)
+{
+	return getAllFileNamesInFolder(path,format).size();
+}
+
 bool SYDEFileDefaults::exists(const char* filename)
 {
 	return fs::exists(filename);

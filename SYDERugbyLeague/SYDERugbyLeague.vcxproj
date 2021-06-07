@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="SRL.cpp" />
     <ClCompile Include="SRLGame.cpp" />
+    <ClCompile Include="SRLNameGenerator.cpp" />
     <ClCompile Include="SRLPlayer.cpp" />
     <ClCompile Include="SRLTeam.cpp" />
     <ClCompile Include="SYDERugbyLeague.cpp" />
@@ -156,11 +157,15 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="SRL.h" />
     <ClInclude Include="SRLGame.h" />
+    <ClInclude Include="SRLNameGenerator.h" />
     <ClInclude Include="SRLPlayer.h" />
     <ClInclude Include="SRLTeam.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SYDERugbyLeague.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Gameplay Loop.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

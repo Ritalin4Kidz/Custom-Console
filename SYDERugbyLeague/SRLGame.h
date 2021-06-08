@@ -21,6 +21,8 @@ public:
 
 	bool isTied() { return homeTeamScore == awayTeamScore; }
 
+	void addStartTimePlay();
+	void addFullTimePlay();
 
 	void endStats();
 
@@ -49,4 +51,6 @@ private:
 
 	int m_Tackle = 0;
 	bool m_HomeTeamHasBall = true;
+
+	bool halfTimeHasPassed = false;
 };

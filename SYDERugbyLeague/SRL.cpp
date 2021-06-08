@@ -38,10 +38,12 @@ void SRLGame::test()
 	m_srlmanager.setTeams(HomeTeam, AwayTeam);
 	try
 	{
+		m_srlmanager.addStartTimePlay();
 		while (m_srlmanager.getMinutesPassed() < 80 || m_srlmanager.isTied())
 		{
 			m_srlmanager.play();
 		}
+		m_srlmanager.addFullTimePlay();
 	}
 	catch (exception ex)
 	{

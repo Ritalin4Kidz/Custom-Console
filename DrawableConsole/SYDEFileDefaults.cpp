@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "SYDEFileDefaults.h"
 
-std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string path, std::string format, bool trimPath)
+std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string path, std::string format, bool trimPath, bool trimFormat)
 {
 	std::vector<std::string> StringVector = std::vector<std::string>();
 	for (const auto& entry : fs::directory_iterator(path))
@@ -29,7 +29,19 @@ std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string p
 			StringVector[i].erase(StringVector[i].begin(), StringVector[i].end() - ((StringVector[i].length() - path.length())- 1));
 		}
 	}
+	if (trimFormat)
+	{
+		for (int i = 0; i < StringVector.size(); i++)
+		{
+			StringVector[i].erase(StringVector[i].end() - format.length(), StringVector[i].end());
+		}
+	}
 	return StringVector;
+}
+
+std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string path, std::string format, bool trimPath)
+{
+	return getAllFileNamesInFolder(path, format, trimPath, false);
 }
 
 std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string path, std::string format)

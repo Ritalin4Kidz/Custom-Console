@@ -23,6 +23,8 @@ public:
 	void loadTeam(string path);
 	void saveTeam();
 
+	vector<SRLPlayer> getPlayers() { return m_TeamList; }
+
 private:
 
 	string m_Name;

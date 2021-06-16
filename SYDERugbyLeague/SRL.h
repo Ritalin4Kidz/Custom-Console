@@ -78,11 +78,11 @@ public:
 	void init();
 
 	vector<SRLPlayer> createRandomTeam(string prefix);
-
+	vector<SRLPlayer> createRandomTeam(string prefix, float multiplier);
 	void test();
 
 	SRLTeam generateRandomTeam();
-
+	SRLTeam generateRandomTeam(float multiplier);
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 
 	ConsoleWindow main_menu_scene(ConsoleWindow window, int windowWidth, int windowHeight);

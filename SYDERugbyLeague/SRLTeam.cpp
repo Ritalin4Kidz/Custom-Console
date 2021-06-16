@@ -22,6 +22,10 @@ string SRLTeam::Interchange()
 	}
 	int interchange1 = rand() % m_TeamList.size();
 	int interchange2 = (rand() % 4) + 13;
+	if (interchange1 >= 13)
+	{
+		return "";
+	}
 	if (interchange1 >= 17 || interchange2 >= 17)
 	{
 		return "";

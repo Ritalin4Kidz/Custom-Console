@@ -50,6 +50,16 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	return m_Team;
 }
 
+vector<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
+{
+	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
+	for (int i = 0; i < 17; i++)
+	{
+		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), (rand() % 100) * multiplier, (rand() % 100) * multiplier, (rand() % 100) * multiplier));
+	}
+	return m_Team;
+}
+
 void SRLGame::test()
 {
 	SRLGameManager m_srlmanager;
@@ -60,6 +70,7 @@ void SRLGame::test()
 	m_srlmanager.setTeams(HomeTeam, AwayTeam);
 	try
 	{
+		m_srlmanager.addTeamLineupsPlayByPlay();
 		m_srlmanager.addStartTimePlay();
 		while (m_srlmanager.getMinutesPassed() < 80 || m_srlmanager.isTied())
 		{
@@ -80,6 +91,11 @@ void SRLGame::test()
 SRLTeam SRLGame::generateRandomTeam()
 {
 	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamName());
+}
+
+SRLTeam SRLGame::generateRandomTeam(float multiplier)
+{
+	return SRLTeam(createRandomTeam("", multiplier), SRLNameGenerator::generateRandomTeamName());
 }
 
 ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)

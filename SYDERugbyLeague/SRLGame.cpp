@@ -86,7 +86,7 @@ void SRLGameManager::play()
 	}
 
 	//CALLED EVERY SECOND
-	m_SecondsPassed += 16;
+	m_SecondsPassed += timeSecondSkip;
 	if (m_SecondsPassed >= 60)
 	{
 		m_SecondsPassed -= 60;
@@ -110,38 +110,78 @@ void SRLGameManager::play()
 	}
 
 	//CHECK FOR ERRORS
-	int atkError1 = (rand() % 100);
-	int defError1 = (rand() % 100);
+	if (checkError(defender, attacker))
+	{
+		return;
+	}
+
+	//MOVEMENT
+	doRegularMovement(defender, attacker);
+
+	//CHANCE FOR INTERCEPT
+	if (checkIntercept(defender, attacker))
+	{
+		addPlay("Intercepted Off A " + attacker.getName() + " Pass", defender);
+	}
+	//CHANCE FOR STRIP
+	else if (checkStrip(defender, attacker))
+	{
+		addPlay("Stripped Ball Off " + attacker.getName(), defender);
+	}
+
+	if (doFieldGoal(defender, attacker))
+	{
+		return;
+	}
+	//END OF SET, CHANGEOVER
+	if (m_Tackle == 6)
+	{
+		addPlay("6th Tackle Changeover", attacker);
+		changeOver(false);
+		return;
+	}
+	//CHECK FOR POINTS
+	else if (doTry(defender, attacker))
+	{
+		return;
+	}
+	
+}
+
+bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
+{
+	int atkError1 = (rand() % defaultErrorChance);
+	int defError1 = (rand() % defaultErrorChance);
 	if (atkError1 > attacker.getAttack())
 	{
 		//1 in 4 chance of error
-		int atkError2 = (rand() % 4);
+		int atkError2 = (rand() % secondaryErrorChance);
 		if (atkError2 == 0)
 		{
 			addPlay("Knock On", attacker);
 			changeOver(true);
-			return;
+			return true;
 		}
 		//1 in 4 chance of error
-		int atkError3 = (rand() % 4);
+		int atkError3 = (rand() % secondaryErrorChance);
 		if (atkError3 == 0)
 		{
 			addPlay("Over The Sideline", attacker);
 			changeOver(false);
-			return;
+			return true;
 		}
-		int atkError4 = (rand() % 4);
+		int atkError4 = (rand() % secondaryErrorChance);
 		if (atkError4 == 0)
 		{
 			addPlay("Forward Pass", attacker);
 			changeOver(false);
-			return;
+			return true;
 		}
 	}
 	else if (defError1 > defender.getDefence())
 	{
 		//1 in 4 chance of error
-		int defError2 = (rand() % 4);
+		int defError2 = (rand() % secondaryErrorChance);
 		if (defError2 == 0)
 		{
 			addPlay("Ruck Infringement", defender);
@@ -149,7 +189,7 @@ void SRLGameManager::play()
 			//changeOver(true);
 		}
 		//1 in 4 chance of error
-		int defError3 = (rand() % 4);
+		int defError3 = (rand() % secondaryErrorChance);
 		if (defError3 == 0)
 		{
 			addPlay("Penalty", defender);
@@ -159,7 +199,7 @@ void SRLGameManager::play()
 				if (m_BallPosition < 30 && (homeTeamScore - awayTeamScore) > -3)
 				{
 					//1 in 4 chance of error
-					int goal = (rand() % 4);
+					int goal = (rand() % conversionErrorChance);
 					if (goal != 0)
 					{
 						homeTeamScore += 2;
@@ -192,7 +232,7 @@ void SRLGameManager::play()
 				if (m_BallPosition > 70 && (awayTeamScore - homeTeamScore) > -3)
 				{
 					//1 in 4 chance of error
-					int goal = (rand() % 4);
+					int goal = (rand() % conversionErrorChance);
 					if (goal != 0)
 					{
 						awayTeamScore += 2;
@@ -220,11 +260,14 @@ void SRLGameManager::play()
 					m_BallPosition += 30;
 				}
 			}
-			return;
+			return true;
 		}
 	}
+	return false;
+}
 
-	//MOVEMENT
+void SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
+{
 	if (m_HomeTeamHasBall)
 	{
 		if (attacker.getAttack() > defender.getDefence())
@@ -248,21 +291,66 @@ void SRLGameManager::play()
 		}
 	}
 	m_Tackle++;
+}
 
-	//CHANCE FOR STRIP
-	if (defender.getSpeed() > attacker.getSpeed())
+bool SRLGameManager::checkIntercept(SRLPlayer defender, SRLPlayer attacker)
+{
+	if (defender.getAttack() > attacker.getDefence())
 	{
-		if (defender.getDefence() > attacker.getAttack())
+		int chance1 = defender.getSpeed() - attacker.getAttack();
+		int chance2 = rand() % defaultStealChance;
+		if (chance1 > chance2)
 		{
-			int chance1 = defender.getDefence() - attacker.getAttack();
-			int chance2 = rand() % 100;
-			if (chance1 > chance2)
+			changeOver(false);
+			attacker = defender;
+			if (m_HomeTeamHasBall)
 			{
-				addPlay("Stripped Ball Off " + attacker.getName(), defender);
-				changeOver(false);
+				defender = m_AwayTeam.getRandomPlayer();
+				if (attacker.getAttack() > defender.getDefence())
+				{
+					m_BallPosition -= ((rand() % (attacker.getAttack() - defender.getDefence())) + ((attacker.getSpeed() / 20) + 1)) / 2;
+				}
+				else
+				{
+					m_BallPosition -= (((attacker.getSpeed() / 20) + 1)) / 2;
+				}
 			}
+			else
+			{
+				defender = m_HomeTeam.getRandomPlayer();
+				if (attacker.getAttack() > defender.getDefence())
+				{
+					m_BallPosition += ((rand() % (attacker.getAttack() - defender.getDefence())) + ((attacker.getSpeed() / 20) + 1)) / 2;
+				}
+				else
+				{
+					m_BallPosition += (((attacker.getSpeed() / 20) + 1)) / 2;
+				}
+			}
+			m_Tackle++;
+			return true;
 		}
 	}
+	return false;
+}
+
+bool SRLGameManager::checkStrip(SRLPlayer defender, SRLPlayer attacker)
+{
+	if (defender.getDefence() > attacker.getAttack())
+	{
+		int chance1 = defender.getDefence() - attacker.getAttack();
+		int chance2 = rand() % defaultStealChance;
+		if (chance1 > chance2)
+		{
+			changeOver(false);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
+{
 	if (m_MinutesPassed > 50)
 	{
 		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0 && (homeTeamScore - awayTeamScore) % 6 == 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
@@ -270,7 +358,7 @@ void SRLGameManager::play()
 			if (m_BallPosition < 30 && m_BallPosition > 0 && m_HomeTeamHasBall)
 			{
 				int chance1 = attacker.getAttack();
-				int chance2 = rand() % 100;
+				int chance2 = rand() % defaultGoalChance;
 				if (chance1 > chance2)
 				{
 					homeTeamScore += 1;
@@ -284,7 +372,7 @@ void SRLGameManager::play()
 					changeOver(true);
 				}
 				m_Tackle = 0;
-				return;
+				return true;
 			}
 		}
 		else if ((m_Tackle == 5 && ((awayTeamScore - homeTeamScore >= 0 && (awayTeamScore - homeTeamScore) % 6 == 0) || awayTeamScore - homeTeamScore == -1)) || homeTeamScore == awayTeamScore)
@@ -292,7 +380,7 @@ void SRLGameManager::play()
 			if (m_BallPosition > 70 && m_BallPosition < 100 && !m_HomeTeamHasBall)
 			{
 				int chance1 = attacker.getAttack();
-				int chance2 = rand() % 100;
+				int chance2 = rand() % defaultGoalChance;
 				if (chance1 > chance2)
 				{
 					awayTeamScore += 1;
@@ -306,20 +394,16 @@ void SRLGameManager::play()
 					changeOver(true);
 				}
 				m_Tackle = 0;
-				return;
+				return true;
 			}
 		}
 	}
-	//END OF SET, CHANGEOVER
-	if (m_Tackle == 6)
-	{
-		addPlay("6th Tackle Changeover", attacker);
-		changeOver(false);
-		return;
-	}
+	return false;
+}
 
-	//CHECK FOR POINTS
-	else if (m_BallPosition < 0 && m_HomeTeamHasBall)
+bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
+{
+	if (m_BallPosition < 0 && m_HomeTeamHasBall)
 	{
 		homeTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
@@ -329,11 +413,11 @@ void SRLGameManager::play()
 			m_MinutesPassed = 40;
 			m_SecondsPassed = 0;
 		}
-		int goal1 = (rand() % 100);
+		int goal1 = (rand() % defaultGoalChance);
 		if (goal1 < attacker.getAttack())
 		{
 			//1 in 4 chance of error
-			int goal2 = (rand() % 4);
+			int goal2 = (rand() % conversionErrorChance);
 			if (goal2 != 0)
 			{
 				homeTeamScore += 2;
@@ -356,7 +440,7 @@ void SRLGameManager::play()
 			m_BallPosition = 0;
 			m_HomeTeamHasBall = false;
 			m_Tackle = 0;
-			return;
+			return true;
 		}
 		m_BallPosition = 100;
 		m_Tackle = 0;
@@ -372,11 +456,11 @@ void SRLGameManager::play()
 			m_MinutesPassed = 40;
 			m_SecondsPassed = 0;
 		}
-		int goal1 = (rand() % 100);
+		int goal1 = (rand() % defaultGoalChance);
 		if (goal1 < attacker.getAttack())
 		{
 			//1 in 4 chance of error
-			int goal2 = (rand() % 4);
+			int goal2 = (rand() % conversionErrorChance);
 			if (goal2 != 0)
 			{
 				awayTeamScore += 2;
@@ -399,13 +483,14 @@ void SRLGameManager::play()
 			m_BallPosition = 0;
 			m_HomeTeamHasBall = false;
 			m_Tackle = 0;
-			return;
+			return true;
 		}
 		m_BallPosition = 0;
 		m_Tackle = 0;
 	}
-	
+	return false;
 }
+
 
 void SRLGameManager::changeOver(bool error)
 {

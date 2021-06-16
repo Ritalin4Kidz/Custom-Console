@@ -28,6 +28,13 @@ public:
 
 	void play();
 
+	bool checkError(SRLPlayer defender, SRLPlayer attacker);
+	void doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
+	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
+	bool checkStrip(SRLPlayer defender, SRLPlayer attacker);
+	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
+	bool doTry(SRLPlayer defender, SRLPlayer attacker);
+
 	void changeOver(bool error);
 
 	int getMinutesPassed() { return m_MinutesPassed; }
@@ -38,6 +45,14 @@ private:
 
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;
+
+	const int defaultErrorChance = 120;
+	const int defaultStealChance = 150;
+	const int defaultGoalChance = 95;
+	const int secondaryErrorChance = 7;
+	const int conversionErrorChance = 3;
+
+	const int timeSecondSkip = 16;
 
 	int homeTeamScore;
 	int awayTeamScore;

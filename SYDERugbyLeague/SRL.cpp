@@ -26,7 +26,7 @@ void SeasonModeClick()
 
 void SRLGame::init()
 {
-	//test();
+	test();
 	m_ExhibitionMatchBtn = SYDEClickableButton("Exhibition", Vector2(0, 3), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_ExhibitionMatchBtn.setHighLight(RED);
 	m_ExhibitionMatchBtn.SetFunc(ExhibitionMatchClick);

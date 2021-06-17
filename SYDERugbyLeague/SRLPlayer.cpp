@@ -61,3 +61,36 @@ void SRLPlayer::savePlayer()
 	//std::ofstream ofs("EngineFiles\\Settings\\MOTS_SaveFile.sc");
 	//ofs << save_file;
 }
+
+string SRLPlayer::getTimeOnField()
+{
+	int minutes = 0;
+	int timePassed = timeOnField;
+	while (timePassed > 59)
+	{
+		minutes++;
+		timePassed -= 60;
+	}
+	string minutesStr = to_string(minutes);
+	if (minutesStr.length() == 1)
+	{
+		minutesStr = "0" + minutesStr;
+	}
+	string secondsStr = to_string(timePassed);
+	if (secondsStr.length() == 1)
+	{
+		secondsStr = "0" + secondsStr;
+	}
+	return minutesStr + ":" + secondsStr;
+}
+
+float SRLPlayer::getDallyMPointsWorth()
+{
+	float weight = 0;
+	weight = m_RunMetres + (m_Tackles * 2) + m_KickMetres + (m_4020*10) + (getPoints() * 10);
+	weight += (m_Strips * 3) + (m_Intercepts * 3);
+	weight = weight / (m_Errors + 1);
+	weight = weight / 10;
+
+	return weight;
+}

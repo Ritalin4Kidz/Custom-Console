@@ -36,6 +36,7 @@ struct SRLLadder
 {
 	SRLLadder() {}
 	SRLLadder(vector<SRLLadderPosition> ladder) { m_Ladder = ladder; }
+	void sortLadder();
 	vector<SRLLadderPosition> m_Ladder;
 };
 
@@ -46,8 +47,11 @@ struct SRLGameMatchup
 	string AwayTeam;
 	vector<string> ResultPlayByPlay;
 
-	int homeTeamScore;
-	int awayTeamScore;
+	int homeTeamScore = 0;
+	int awayTeamScore = 0;
+
+	string WinningTeam;
+	string LosingTeam;
 };
 
 struct SRLRound
@@ -102,8 +106,11 @@ public:
 	static GameStateSYDE newState;
 
 	static bool SeasonStart;
+
+	static bool Simulate;
 private:
 	SYDEClickableButton m_SeasonModeBtn;
+	SYDEClickableButton m_SimulateBtn;
 	SYDEClickableButton m_ExhibitionMatchBtn;
 
 	SYDEClickableButton m_StartSeasonBtn;
@@ -112,4 +119,8 @@ private:
 	int m_SelectedTeam = 0;
 	SRLSeason m_Season;
 
+
+	int m_round = 0;
+	int m_roundToSimulate = 0;
+	bool finals = false;
 };

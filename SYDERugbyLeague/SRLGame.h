@@ -22,6 +22,11 @@ public:
 
 	bool isTied() { return homeTeamScore == awayTeamScore; }
 
+	int getHomeScore() { return homeTeamScore; }
+	int getAwayScore() { return awayTeamScore; }
+
+	int fromRand(int range);
+
 	void addTeamLineupsPlayByPlay();
 
 	void addStartTimePlay();
@@ -32,6 +37,8 @@ public:
 	void play();
 
 	bool checkError(SRLPlayer defender, SRLPlayer attacker);
+	int checkKick(SRLPlayer defender, SRLPlayer attacker);
+	int doKick(SRLPlayer defender, SRLPlayer attacker);
 	void doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
 	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
@@ -50,18 +57,22 @@ private:
 
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;
-	const int defaultAttackErrorChance = 85;
+	const int defaultAttackErrorChance = 90;
 	const int defaultDefenceErrorChance = 90;
 	const int defaultStealChance = 160;
 	const int defaultGoalChance = 90;
-	const int secondaryErrorChance = 16;
+	const int secondaryErrorChance = 19;
 	const int conversionErrorChance = 3;
 	const int secondaryStripChance = 10;
 
-	const int tryVideoRefChance = 4;
-	const int tryErrorChance = 11;
+	const int defaultEarlyKickChance = 15;
+	const int fortytwentyChance = 18;
 
-	const int timeSecondSkip = 16;
+	const int tryVideoRefChance = 4;
+	const int tryErrorChance = 13;
+
+	const int minTimeSecondSkip = 11;
+	const int maxTimeSecondSkip = 19;
 
 	int homeTeamScore;
 	int awayTeamScore;

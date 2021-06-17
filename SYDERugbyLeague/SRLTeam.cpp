@@ -76,3 +76,274 @@ void SRLTeam::saveTeam()
 	ofs << save_file;
 	//return save_file;
 }
+
+void SRLTeam::addPlayerMetres(string playerName, int metres)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addRunMetres(metres);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerKickMetres(string playerName, int metres)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addKickMetres(metres);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerTry(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addTry();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerGoal(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addGoal();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerFieldGoal(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addFieldGoal();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerError(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addError();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayer4020(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].add4020();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerKick(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addKick();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerTackle(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addTackle();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerIntercept(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addIntercept();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerStrip(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addStrip();
+			return;
+		}
+	}
+}
+
+void SRLTeam::addTimeOnField(int time)
+{
+	for (int i = 0; i < 13; i++)
+	{
+		m_TeamList[i].addTimeOnField(time);
+	}
+}
+
+string SRLTeam::getMostTackles()
+{
+	int temp = 0;
+	string player = "";
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getTackles() > temp)
+		{
+			temp = m_TeamList[i].getTackles();
+			player = m_TeamList[i].getName();
+		}
+	}
+	return player + ": " + to_string(temp);
+}
+
+string SRLTeam::getMostMetres()
+{
+	int temp = 0;
+	string player = "";
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getMetres() > temp)
+		{
+			temp = m_TeamList[i].getMetres();
+			player = m_TeamList[i].getName();
+		}
+	}
+	return player + ": " + to_string(temp);
+}
+
+string SRLTeam::getMostPoints()
+{
+	int temp = 0;
+	string player = "";
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getPoints() > temp)
+		{
+			temp = m_TeamList[i].getPoints();
+			player = m_TeamList[i].getName();
+		}
+	}
+	return player + ": " + to_string(temp);
+}
+
+string SRLTeam::getMostErrors()
+{
+	int temp = 0;
+	string player = "";
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getErrors() > temp)
+		{
+			temp = m_TeamList[i].getErrors();
+			player = m_TeamList[i].getName();
+		}
+	}
+	return player + ": " + to_string(temp);
+}
+
+int SRLTeam::totalTries()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getTries();
+	}
+	return temp;
+}
+
+int SRLTeam::totalGoals()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getGoals();
+	}
+	return temp;
+}
+
+int SRLTeam::totalFieldGoals()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getFieldGoals();
+	}
+	return temp;
+}
+
+int SRLTeam::totalTackles()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getTackles();
+	}
+	return temp;
+}
+
+int SRLTeam::totalMetres()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getMetres();
+	}
+	return temp;
+}
+
+int SRLTeam::totalErrors()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getErrors();
+	}
+	return temp;
+}
+
+int SRLTeam::totalKickMetres()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		temp += m_TeamList[i].getKickMetres();
+	}
+	return temp;
+}
+

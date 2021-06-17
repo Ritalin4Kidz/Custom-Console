@@ -14,7 +14,7 @@ BASED OFF D6 Game
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
-int windowWidth = 40;
+int windowWidth = 60;
 const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 Settings config("EngineFiles\\Settings\\configSettings.sc");

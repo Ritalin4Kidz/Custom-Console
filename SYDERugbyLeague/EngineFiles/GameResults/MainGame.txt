@@ -1,142 +1,201 @@
 ----------LINE-UPS----------
-Home Team: Westen Suburbs Grapefruit
-1: Avery Hing
-2: James Cleary
-3: Cooper de Flatio
-4: Karl Allsopp
-5: Christian Meikle
-6: Karl Ese'ese
-7: Dominic Croker
-8: Kris Rice
-9: Julian Som
-10: Simon Dean
-11: Allie Rice
-12: Josh Thurston
-13: Adole Alexander
-14: Reimis Toa
-15: Junior Ujhazzy
-16: Mitch Worsent
-17: Lindsay Vlandys
-Away Team: Eastbury Kings
-1: Mitchell Emerson
-2: Aaron Atoni
-3: Avery Greenberg
-4: Greta Romney
-5: Cameron O' Connor
-6: Ali Harrigan
-7: Jarrod Som
-8: Ali Jackston
-9: Simon Hannington
-10: Dominic Hands
-11: Pete Ese'ese
-12: Amy Croker
-13: Jarrod Johns
-14: Diana Hannington
-15: Callum Vlandys
-16: Calum Alexander
-17: Monty de Flatio
+Home Team: Goulbourn Workers
+1: Billie Meikle
+2: Billy Port
+3: Jay Reio
+4: Mitch O' Donnell
+5: Sam Harrigan
+6: Jared Armstrong
+7: Andy Britt
+8: Amy Tedesco
+9: Joshua Hannington
+10: Alister Warrant
+11: Julian Cummins
+12: Jeremy Atoni
+13: Jenny Boyd
+14: Nita O' Thomas
+15: Cameron Johnson
+16: Calum Hannington
+17: Billie Cummins
+Away Team: Ademonia Roosters
+1: Dylan Best
+2: Mark Doomer
+3: Adole Potter
+4: Jonathon Jackston
+5: Luca Harnett
+6: Miles Alexander
+7: Billie Sua
+8: Bill Farmer
+9: Luca Romney
+10: Dylan Som
+11: Nick Hill
+12: Paul Barter
+13: Brenton Armstrong
+14: Trixie O' Connor
+15: Niko Allsopp
+16: Arnole Greenberg
+17: Trixie Perry
 ----------------------------
-00:00 - KICK OFF - Westen Suburbs Grapefruit: 0 v Eastbury Kings: 0
-00:48 - Cooper de Flatio - Forward Pass
-02:24 - Jarrod Som - 6th Tackle Changeover
-03:44 - Amy Croker - Intercepted Off A Avery Hing Pass
-04:16 - ------VIDEO REFEREE------
-04:16 - Simon Hannington - TRY - Westen Suburbs Grapefruit: 0 v Eastbury Kings: 4
-05:16 - Simon Hannington - GOAL - Westen Suburbs Grapefruit: 0 v Eastbury Kings: 6
-07:20 - James Cleary - Intercepted Off A Jarrod Johns Pass
-07:20 - James Cleary - TRY - Westen Suburbs Grapefruit: 4 v Eastbury Kings: 6
-08:20 - James Cleary - GOAL - Westen Suburbs Grapefruit: 6 v Eastbury Kings: 6
-09:20 - Westen Suburbs Grapefruit Interchanged Players Karl Allsopp & Lindsay Vlandys
-09:20 - Eastbury Kings Interchanged Players Aaron Atoni & Calum Alexander
-10:24 - Dominic Croker - Forward Pass
-10:40 - Westen Suburbs Grapefruit Interchanged Players Cooper de Flatio & Junior Ujhazzy
-12:00 - Greta Romney - 6th Tackle Changeover
-12:32 - Jarrod Johns - Ruck Infringement
-13:04 - Christian Meikle - Forward Pass
-13:20 - Eastbury Kings Interchanged Players Jarrod Som & Aaron Atoni
-13:36 - Adole Alexander - Penalty
-13:36 - Calum Alexander - PENALTY GOAL - Westen Suburbs Grapefruit: 6 v Eastbury Kings: 8
-15:56 - Lindsay Vlandys - Stripped Ball Off Calum Alexander
-17:00 - Avery Greenberg - Stripped Ball Off Julian Som
-17:16 - Greta Romney - Forward Pass
-17:48 - ------VIDEO REFEREE------
-17:48 - Adole Alexander - NO TRY - Held Up
-18:36 - Pete Ese'ese - Ruck Infringement
-18:52 - Dominic Croker - TRY - Westen Suburbs Grapefruit: 10 v Eastbury Kings: 8
-19:52 - Dominic Croker - CONVERSION MISSED
-21:08 - Christian Meikle - Over The Sideline
-21:24 - Simon Hannington - TRY - Westen Suburbs Grapefruit: 10 v Eastbury Kings: 12
-22:24 - Simon Hannington - GOAL - Westen Suburbs Grapefruit: 10 v Eastbury Kings: 14
-25:00 - Mitchell Emerson - 6th Tackle Changeover
-25:00 - Eastbury Kings Interchanged Players Mitchell Emerson & Jarrod Som
-25:48 - Kris Rice - Over The Sideline
-26:04 - James Cleary - Intercepted Off A Ali Jackston Pass
-26:20 - Westen Suburbs Grapefruit Interchanged Players Josh Thurston & Reimis Toa
-26:52 - Simon Dean - TRY - Westen Suburbs Grapefruit: 14 v Eastbury Kings: 14
-27:52 - Simon Dean - CONVERSION MISSED
-29:40 - Simon Dean - Knock On
-29:40 - Eastbury Kings Interchanged Players Dominic Hands & Monty de Flatio
-30:12 - Calum Alexander - TRY - Westen Suburbs Grapefruit: 14 v Eastbury Kings: 18
-31:12 - Calum Alexander - CONVERSION MISSED
-33:00 - Calum Alexander - Forward Pass
-33:16 - Jarrod Som - Penalty
-33:48 - James Cleary - TRY - Westen Suburbs Grapefruit: 18 v Eastbury Kings: 18
-34:48 - James Cleary - GOAL - Westen Suburbs Grapefruit: 20 v Eastbury Kings: 18
-36:36 - Monty de Flatio - Intercepted Off A Christian Meikle Pass
-36:52 - Calum Alexander - Forward Pass
-38:28 - Jarrod Som - Penalty
-39:00 - Eastbury Kings Interchanged Players Cameron O' Connor & Callum Vlandys
-39:32 - ------VIDEO REFEREE------
-39:32 - Karl Ese'ese - NO TRY - Obstruction
-39:32 - Karl Ese'ese - Penalty
-40:00 - HALF TIME - Westen Suburbs Grapefruit: 20 v Eastbury Kings: 18
-40:52 - Greta Romney - Forward Pass
-41:08 - Pete Ese'ese - Intercepted Off A Dominic Croker Pass
-41:56 - Julian Som - Stripped Ball Off Ali Jackston
-42:12 - Kris Rice - Over The Sideline
-43:00 - Karl Ese'ese - Intercepted Off A Simon Hannington Pass
-44:20 - Jarrod Johns - Penalty
-44:20 - James Cleary - PENALTY GOAL MISSED
-45:20 - Westen Suburbs Grapefruit Interchanged Players Adole Alexander & Josh Thurston
-45:36 - Amy Croker - Intercepted Off A Christian Meikle Pass
-46:40 - Eastbury Kings Interchanged Players Greta Romney & Diana Hannington
-46:56 - Junior Ujhazzy - Intercepted Off A Avery Greenberg Pass
-48:00 - Calum Alexander - Penalty
-48:32 - Monty de Flatio - Intercepted Off A Kris Rice Pass
-49:04 - Avery Greenberg - Forward Pass
-49:52 - Dominic Croker - TRY - Westen Suburbs Grapefruit: 24 v Eastbury Kings: 18
-50:52 - Dominic Croker - CONVERSION MISSED
-52:56 - Diana Hannington - Ruck Infringement
-52:56 - Diana Hannington - Penalty
-54:16 - James Cleary - FIELD GOAL - Westen Suburbs Grapefruit: 25 v Eastbury Kings: 18
-55:20 - Eastbury Kings Interchanged Players Monty de Flatio & Cameron O' Connor
-55:52 - Julian Som - 6th Tackle Changeover
-56:40 - Diana Hannington - TRY - Westen Suburbs Grapefruit: 25 v Eastbury Kings: 22
-57:40 - Diana Hannington - GOAL - Westen Suburbs Grapefruit: 25 v Eastbury Kings: 24
-60:00 - Jarrod Som - Over The Sideline
-60:32 - Allie Rice - Over The Sideline
-61:36 - Aaron Atoni - Knock On
-62:40 - Eastbury Kings Interchanged Players Aaron Atoni & Monty de Flatio
-63:28 - James Cleary - 6th Tackle Changeover
-64:00 - Simon Dean - Intercepted Off A Monty de Flatio Pass
-64:16 - Ali Harrigan - Stripped Ball Off Avery Hing
-65:36 - Diana Hannington - FIELD GOAL MISSED
-66:08 - Diana Hannington - Intercepted Off A Dominic Croker Pass
-66:56 - James Cleary - Intercepted Off A Monty de Flatio Pass
-67:28 - Allie Rice - Over The Sideline
-67:44 - Karl Ese'ese - Intercepted Off A Ali Jackston Pass
-68:00 - Simon Hannington - Intercepted Off A Josh Thurston Pass
-69:04 - Ali Harrigan - Over The Sideline
-69:20 - Ali Harrigan - Intercepted Off A Avery Hing Pass
-70:08 - ------VIDEO REFEREE------
-70:08 - Jarrod Som - TRY - Westen Suburbs Grapefruit: 25 v Eastbury Kings: 28
-71:08 - Jarrod Som - CONVERSION MISSED
-73:44 - Jarrod Som - 6th Tackle Changeover
-74:32 - ------VIDEO REFEREE------
-74:32 - Karl Ese'ese - TRY - Westen Suburbs Grapefruit: 29 v Eastbury Kings: 28
-75:32 - Karl Ese'ese - CONVERSION MISSED
-77:20 - Ali Harrigan - Intercepted Off A Kris Rice Pass
-78:08 - ------VIDEO REFEREE------
-78:08 - Cameron O' Connor - TRY - Westen Suburbs Grapefruit: 29 v Eastbury Kings: 32
-79:08 - Cameron O' Connor - GOAL - Westen Suburbs Grapefruit: 29 v Eastbury Kings: 34
-80:08 - FULL TIME - Westen Suburbs Grapefruit: 29 v Eastbury Kings: 34
+00:00 - KICK OFF - Goulbourn Workers: 0 v Ademonia Roosters: 0
+02:34 - Luca Romney - Penalty
+04:03 - Alister Warrant - 6th Tackle Changeover
+04:47 - Billie Meikle - Penalty
+05:52 - Bill Farmer - Knock On
+06:52 - Jared Armstrong - Forward Pass
+07:20 - Ademonia Roosters Interchanged Players Billie Sua & Trixie Perry
+09:20 - Jared Armstrong - 6th Tackle Changeover
+09:20 - Ademonia Roosters Interchanged Players Brenton Armstrong & Arnole Greenberg
+10:11 - Ademonia Roosters Interchanged Players Bill Farmer & Brenton Armstrong
+10:38 - Joshua Hannington - Intercepted Off A Adole Potter Pass
+11:24 - Luca Harnett - Stripped Ball Off Billie Meikle
+12:23 - Jared Armstrong - Penalty
+12:55 - Jared Armstrong - Penalty
+12:55 - Trixie Perry - PENALTY GOAL - Goulbourn Workers: 0 v Ademonia Roosters: 2
+16:24 - Jenny Boyd - 6th Tackle Changeover
+18:26 - Dylan Som - Intercepted Off A Mitch O' Donnell Pass
+18:39 - Luca Romney - Over The Sideline
+19:38 - Adole Potter - Intercepted Off A Jenny Boyd Pass
+20:25 - Miles Alexander - Over The Sideline
+20:42 - Billie Meikle - Knock On
+20:59 - Brenton Armstrong - Over The Sideline
+21:13 - Goulbourn Workers Interchanged Players Amy Tedesco & Billie Cummins
+21:25 - Ademonia Roosters Interchanged Players Luca Romney & Niko Allsopp
+21:38 - Goulbourn Workers Interchanged Players Joshua Hannington & Cameron Johnson
+21:49 - Goulbourn Workers Interchanged Players Jenny Boyd & Joshua Hannington
+23:02 - Billie Cummins - Intercepted Off A Adole Potter Pass
+24:08 - Adole Potter - Over The Sideline
+24:19 - Andy Britt - TRY - Goulbourn Workers: 4 v Ademonia Roosters: 2
+25:19 - Andy Britt - GOAL - Goulbourn Workers: 6 v Ademonia Roosters: 2
+27:20 - Goulbourn Workers Interchanged Players Billy Port & Nita O' Thomas
+29:00 - Paul Barter - 6th Tackle Changeover
+29:55 - Luca Harnett - Penalty
+30:10 - Nita O' Thomas - Forward Pass
+30:47 - Brenton Armstrong - Forward Pass
+30:58 - Jay Reio - Over The Sideline
+30:58 - Ademonia Roosters Interchanged Players Trixie Perry & Trixie O' Connor
+31:16 - Jared Armstrong - Stripped Ball Off Luca Harnett
+32:48 - Andy Britt - 6th Tackle Changeover
+34:36 - Miles Alexander - Penalty
+35:08 - Billie Meikle - Knock On
+39:40 - Ademonia Roosters Interchanged Players Brenton Armstrong & Bill Farmer
+40:00 - HALF TIME - Goulbourn Workers: 6 v Ademonia Roosters: 2
+40:33 - Goulbourn Workers Interchanged Players Jeremy Atoni & Billy Port
+41:45 - Niko Allsopp - Intercepted Off A Billie Meikle Pass
+41:45 - Ademonia Roosters Interchanged Players Nick Hill & Luca Romney
+42:29 - Niko Allsopp - TRY - Goulbourn Workers: 6 v Ademonia Roosters: 6
+43:29 - Niko Allsopp - GOAL - Goulbourn Workers: 6 v Ademonia Roosters: 8
+44:58 - Andy Britt - Intercepted Off A Miles Alexander Pass
+46:01 - ------VIDEO REFEREE------
+46:01 - Andy Britt - NO TRY - Held Up
+46:19 - Billy Port - 6th Tackle Changeover
+48:13 - Cameron Johnson - Forward Pass
+48:30 - Mark Doomer - Over The Sideline
+50:04 - Adole Potter - Ruck Infringement
+50:04 - Ademonia Roosters Interchanged Players Dylan Som & Nick Hill
+50:19 - Alister Warrant - TRY - Goulbourn Workers: 10 v Ademonia Roosters: 8
+51:19 - Alister Warrant - CONVERSION MISSED
+54:56 - Billy Port - Intercepted Off A Adole Potter Pass
+55:09 - Jonathon Jackston - Intercepted Off A Alister Warrant Pass
+56:09 - Nick Hill - Over The Sideline
+57:10 - Trixie O' Connor - Penalty
+57:10 - Goulbourn Workers Interchanged Players Julian Cummins & Jeremy Atoni
+58:43 - Billy Port - 6th Tackle Changeover
+59:27 - Sam Harrigan - Stripped Ball Off Miles Alexander
+60:52 - Nita O' Thomas - 6th Tackle Changeover
+61:30 - Luca Romney - Over The Sideline
+61:30 - Goulbourn Workers Interchanged Players Billie Cummins & Amy Tedesco
+61:43 - Dylan Best - Ruck Infringement
+61:43 - Goulbourn Workers Interchanged Players Jay Reio & Julian Cummins
+62:29 - ------VIDEO REFEREE------
+62:29 - Joshua Hannington - TRY - Goulbourn Workers: 14 v Ademonia Roosters: 8
+63:29 - Joshua Hannington - CONVERSION MISSED
+66:23 - Luca Harnett - Forward Pass
+67:01 - Billie Meikle - Forward Pass
+67:17 - Luca Romney - Forward Pass
+68:30 - Nita O' Thomas - FIELD GOAL - Goulbourn Workers: 15 v Ademonia Roosters: 8
+72:14 - Amy Tedesco - 6th Tackle Changeover
+72:55 - Joshua Hannington - Intercepted Off A Miles Alexander Pass
+73:12 - Cameron Johnson - Forward Pass
+74:16 - Joshua Hannington - Penalty
+75:42 - Adole Potter - 6th Tackle Changeover
+76:43 - Miles Alexander - Penalty
+77:13 - Trixie O' Connor - Intercepted Off A Julian Cummins Pass
+79:35 - Alister Warrant - Intercepted Off A Miles Alexander Pass
+79:53 - Jonathon Jackston - Intercepted Off A Amy Tedesco Pass
+80:06 - FULL TIME - Goulbourn Workers: 15 v Ademonia Roosters: 8
+                             
+--------PLAYER STATS--------
+Home Team: Goulbourn Workers
+1: Billie Meikle |Time Played: 80:06 |Metres: 34 |Tackles: 11 |Kicks: 3 |Kick Metres: 108 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+2: Nita O' Thomas |Time Played: 52:46 |Metres: 50 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 16
+3: Julian Cummins |Time Played: 75:33 |Metres: 20 |Tackles: 6 |Kicks: 1 |Kick Metres: 55 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 43
+4: Mitch O' Donnell |Time Played: 80:06 |Metres: 43 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+5: Sam Harrigan |Time Played: 80:06 |Metres: 65 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 46
+6: Jared Armstrong |Time Played: 80:06 |Metres: 41 |Tackles: 17 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+7: Andy Britt |Time Played: 80:06 |Metres: 40 |Tackles: 8 |Kicks: 2 |Kick Metres: 102 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 1 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 110
+8: Amy Tedesco |Time Played: 39:49 |Metres: 13 |Tackles: 0 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+9: Cameron Johnson |Time Played: 58:28 |Metres: 10 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+10: Alister Warrant |Time Played: 80:06 |Metres: 71 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 66
+11: Jeremy Atoni |Time Played: 63:29 |Metres: 43 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+12: Billy Port |Time Played: 66:53 |Metres: 44 |Tackles: 10 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 42
+13: Joshua Hannington |Time Played: 79:55 |Metres: 42 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 29
+14: Jay Reio |Time Played: 61:43 |Metres: 41 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+15: Jenny Boyd |Time Played: 21:49 |Metres: 13 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+16: Calum Hannington |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Billie Cummins |Time Played: 40:17 |Metres: 27 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+Highlights:                 
+Most Tackles: Jared Armstrong: 17
+Most Points: Andy Britt: 6
+Most Metres: Alister Warrant: 71
+Most Errors: Billie Meikle: 4
+                             
+Away Team: Ademonia Roosters
+1: Dylan Best |Time Played: 80:06 |Metres: 14 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+2: Mark Doomer |Time Played: 80:06 |Metres: 20 |Tackles: 8 |Kicks: 2 |Kick Metres: 66 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+3: Adole Potter |Time Played: 80:06 |Metres: 33 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+4: Jonathon Jackston |Time Played: 80:06 |Metres: 59 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 46
+5: Luca Harnett |Time Played: 80:06 |Metres: 14 |Tackles: 11 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+6: Miles Alexander |Time Played: 80:06 |Metres: 13 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+7: Trixie O' Connor |Time Played: 49:08 |Metres: 34 |Tackles: 9 |Kicks: 2 |Kick Metres: 68 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+8: Bill Farmer |Time Played: 50:37 |Metres: 3 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+9: Niko Allsopp |Time Played: 58:41 |Metres: 67 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 1 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 73
+10: Nick Hill |Time Played: 71:47 |Metres: 7 |Tackles: 13 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+11: Luca Romney |Time Played: 59:46 |Metres: 10 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+12: Paul Barter |Time Played: 80:06 |Metres: 111 |Tackles: 10 |Kicks: 2 |Kick Metres: 93 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 112
+13: Arnole Greenberg |Time Played: 70:46 |Metres: 11 |Tackles: 13 |Kicks: 2 |Kick Metres: 36 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+14: Trixie Perry |Time Played: 23:38 |Metres: 4 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 15
+15: Dylan Som |Time Played: 50:04 |Metres: 28 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+16: Brenton Armstrong |Time Played: 38:49 |Metres: 21 |Tackles: 7 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+17: Billie Sua |Time Played: 07:20 |Metres: 8 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+Highlights:                 
+Most Tackles: Adole Potter: 16
+Most Points: Niko Allsopp: 6
+Most Metres: Paul Barter: 111
+Most Errors: Luca Romney: 4
+                             
+---------TEAM STATS---------
+Home Team: Goulbourn Workers
+Total Metres: 597
+Total Kick Metres: 358
+Total Errors: 12
+Total Tackles: 135
+Total Tries: 3
+Total Goals: 1
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Ademonia Roosters
+Total Metres: 457
+Total Kick Metres: 309
+Total Errors: 18
+Total Tackles: 158
+Total Tries: 1
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Paul Barter
+2nd (2 Points) -- Andy Britt
+3rd (1 Point) -- Niko Allsopp
+----------------------------

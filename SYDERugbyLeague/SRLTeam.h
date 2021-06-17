@@ -23,7 +23,37 @@ public:
 	void loadTeam(string path);
 	void saveTeam();
 
+	void addPlayerMetres(string playerName, int metres);
+	void addPlayerKickMetres(string playerName, int metres);
+
+	void addPlayerTry(string playerName);
+	void addPlayerGoal(string playerName);
+	void addPlayerFieldGoal(string playerName);
+	void addPlayerError(string playerName);
+	void addPlayer4020(string playerName);
+	void addPlayerKick(string playerName);
+	void addPlayerTackle(string playerName);
+	void addPlayerIntercept(string playerName);
+	void addPlayerStrip(string playerName);
+
+	void addTimeOnField(int time);
+
+	int getInterchanges() { return m_Interchanges; }
+
 	vector<SRLPlayer> getPlayers() { return m_TeamList; }
+
+	string getMostTackles();
+	string getMostMetres();
+	string getMostPoints();
+	string getMostErrors();
+
+	int totalTries();
+	int totalGoals();
+	int totalFieldGoals();
+	int totalTackles();
+	int totalMetres();
+	int totalErrors();
+	int totalKickMetres();
 
 private:
 

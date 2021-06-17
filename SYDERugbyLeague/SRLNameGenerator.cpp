@@ -452,7 +452,7 @@ vector<string> SRLNameGenerator::CityNames = vector<string>
 	"South Sydney",
 	"Western Suburbs North",
 	"Greater Western Sydney",
-	"Bendingo",
+	"Bendigo",
 	"Bega",
 	"North Melbourne",
 	"North Head",
@@ -480,7 +480,11 @@ vector<string> SRLNameGenerator::CityNames = vector<string>
 	"Jerstion City",
 	"Fremangion Town",
 	"Farm Square",
-	"Minto"
+	"Minto",
+	"Nowra",
+	"East Havertown",
+	"Sompeton",
+	"Duba"
 };
 
 

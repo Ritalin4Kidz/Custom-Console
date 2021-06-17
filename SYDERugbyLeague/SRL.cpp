@@ -1,4 +1,5 @@
 #include "SRL.h"
+AssetsClass SRLGame::astVars = AssetsClass();
 GameStateSYDE SRLGame::currentState = Unknown_STATE;
 GameStateSYDE SRLGame::newState = MainMenu_STATE;
 GameStateBettingSYDE SRLGame::bettingState = CurrentRound_STATE;
@@ -9,6 +10,8 @@ bool SRLGame::PrevRoundCall = false;
 bool SRLGame::addCall = false;
 bool SRLGame::removeCall = false;
 bool SRLGame::Simulate = false;
+bool SRLGame::generateCall = false;
+bool SRLGame::randomFillCall = false;
 void ExhibitionMatchClick()
 {
 	if (SRLGame::currentState = MainMenu_STATE)
@@ -27,15 +30,14 @@ void SimulateClick()
 
 void SeasonModeClick()
 {
-	if (SRLGame::currentState == MainMenu_STATE)
-	{
-		SRLGame::newState = SeasonConfig_State;
-	}
-	if (SRLGame::currentState == SeasonConfig_State)
-	{
-		SRLGame::SeasonStart = true;
-	}
+	SRLGame::newState = SeasonConfig_State;
 }
+
+void SeasonModeStartClick()
+{
+	SRLGame::SeasonStart = true;
+}
+
 
 void SeasonViewClick()
 {
@@ -100,6 +102,27 @@ void DallyLdrViewClick()
 {
 	SRLGame::ldrState = Dally_State;
 }
+void FGLdrViewClick()
+{
+	SRLGame::ldrState = FG_State;
+}
+void TackleLdrViewClick()
+{
+	SRLGame::ldrState = Tackles_State;
+}
+void KickMetresLdrViewClick()
+{
+	SRLGame::ldrState = KickMetres_State;
+}
+void _4020LdrViewClick()
+{
+	SRLGame::ldrState = State_4020;
+}
+
+void GenerateTeamViewClick()
+{
+	SRLGame::generateCall = true;
+}
 
 void BlankViewClick()
 {
@@ -127,17 +150,24 @@ void MainMenuViewClick()
 	SRLGame::newState = MainMenu_STATE;
 }
 
+void SettingsViewClick()
+{
+	SRLGame::newState = SettingsState;
+}
+
+void InfoViewClick()
+{
+	SRLGame::newState = InformationState;
+}
+
+void RandomFillClick()
+{
+	SRLGame::randomFillCall = true;
+}
+
 
 void SRLGame::init()
 {
-	//test();
-	m_ExhibitionMatchBtn = SYDEClickableButton("Exhibition", Vector2(0, 3), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_ExhibitionMatchBtn.setHighLight(RED);
-	m_ExhibitionMatchBtn.SetFunc(ExhibitionMatchClick);
-
-	m_SeasonModeBtn = SYDEClickableButton("Season Mode", Vector2(0, 4), Vector2(11, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SeasonModeBtn.setHighLight(RED);
-	m_SeasonModeBtn.SetFunc(SeasonModeClick);
 
 	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SeasonViewBtn.setHighLight(RED);
@@ -183,10 +213,7 @@ void SRLGame::init()
 	m_BetBtnAccount.SetFunc(AccountViewClick);
 
 	//SEASON CONFIG
-	m_BackSeasonCfgBtn = SYDEClickableButton(" Back ", Vector2(0, 19), Vector2(6, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_BackSeasonCfgBtn.setHighLight(RED);
-	m_BackSeasonCfgBtn.SetFunc(MainMenuViewClick);
-	m_PrevTeamSeasonCfgBtn = SYDEClickableButton("Prev Team ", Vector2(6, 19), Vector2(10, 1), BLACK_WHITE_BG, false);
+	m_PrevTeamSeasonCfgBtn = SYDEClickableButton(" Previous Team  ", Vector2(0, 19), Vector2(16, 1), BLACK_WHITE_BG, false);
 	m_PrevTeamSeasonCfgBtn.setHighLight(RED);
 	m_PrevTeamSeasonCfgBtn.SetFunc(PrevRoundViewClick);
 	m_NextTeamSeasonCfgBtn = SYDEClickableButton("Next Team ", Vector2(16, 19), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -200,7 +227,13 @@ void SRLGame::init()
 	m_RemoveTeamSeasonCfgBtn.SetFunc(RemoveViewClick);
 	m_StartSeasonBtn = SYDEClickableButton("Start Season", Vector2(48, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
 	m_StartSeasonBtn.setHighLight(RED);
-	m_StartSeasonBtn.SetFunc(SeasonModeClick);
+	m_StartSeasonBtn.SetFunc(SeasonModeStartClick);
+	m_GenerateTeamSeasonCfgBtn = SYDEClickableButton("Generate Team", Vector2(47, 2), Vector2(13, 1), BLACK_WHITE_BG, false);
+	m_GenerateTeamSeasonCfgBtn.setHighLight(RED);
+	m_GenerateTeamSeasonCfgBtn.SetFunc(GenerateTeamViewClick);
+	m_RandomFillSeasonCfgBtn = SYDEClickableButton("Random Fill", Vector2(36, 2), Vector2(11, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_RandomFillSeasonCfgBtn.setHighLight(RED);
+	m_RandomFillSeasonCfgBtn.SetFunc(RandomFillClick);
 
 	//LEADERBOARD
 	m_LeaderboardBtnMostTries = SYDEClickableButton(" Most Tries ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_LIGHTBLUE_BG, false);
@@ -218,6 +251,33 @@ void SRLGame::init()
 	m_LeaderboardBtnMostDallyM = SYDEClickableButton(" Top Player ", Vector2(48, 2), Vector2(12, 1), BRIGHTWHITE_LIGHTBLUE_BG, false);
 	m_LeaderboardBtnMostDallyM.setHighLight(RED);
 	m_LeaderboardBtnMostDallyM.SetFunc(DallyLdrViewClick);
+
+	m_LeaderboardBtnMostFieldGoals = SYDEClickableButton(" Field Goal ", Vector2(6, 3), Vector2(12, 1), BRIGHTWHITE_AQUA_BG, false);
+	m_LeaderboardBtnMostFieldGoals.setHighLight(RED);
+	m_LeaderboardBtnMostFieldGoals.SetFunc(FGLdrViewClick);
+	m_LeaderboardBtnMostTackles = SYDEClickableButton(" Top Tackle ", Vector2(18, 3), Vector2(12, 1), BRIGHTWHITE_LIGHTBLUE_BG, false);
+	m_LeaderboardBtnMostTackles.setHighLight(RED);
+	m_LeaderboardBtnMostTackles.SetFunc(TackleLdrViewClick);
+	m_LeaderboardBtnMostKickMetres = SYDEClickableButton(" Kick Metre ", Vector2(30, 3), Vector2(12, 1), BRIGHTWHITE_AQUA_BG, false);
+	m_LeaderboardBtnMostKickMetres.setHighLight(RED);
+	m_LeaderboardBtnMostKickMetres.SetFunc(KickMetresLdrViewClick);
+	m_LeaderboardBtnMost4020 = SYDEClickableButton(" Most 40/20 ", Vector2(42, 3), Vector2(12, 1), BRIGHTWHITE_LIGHTBLUE_BG, false);
+	m_LeaderboardBtnMost4020.setHighLight(RED);
+	m_LeaderboardBtnMost4020.SetFunc(_4020LdrViewClick);
+
+	//MainMenuTabs
+	m_BackSeasonCfgBtn = SYDEClickableButton("   Main Menu  ", Vector2(0, 1), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BackSeasonCfgBtn.setHighLight(RED);
+	m_BackSeasonCfgBtn.SetFunc(MainMenuViewClick);
+	m_SeasonCfgBtn = SYDEClickableButton("  Season Mode  ", Vector2(14, 1), Vector2(15, 1), BLACK_WHITE_BG, false);
+	m_SeasonCfgBtn.setHighLight(RED);
+	m_SeasonCfgBtn.SetFunc(SeasonModeClick);
+	m_GameSettingsBtn = SYDEClickableButton(" Game Settings ", Vector2(29, 1), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_GameSettingsBtn.setHighLight(RED);
+	m_GameSettingsBtn.SetFunc(SettingsViewClick);
+	m_GameInfoBtn = SYDEClickableButton("Game Information", Vector2(44, 1), Vector2(16, 1), BLACK_WHITE_BG, false);
+	m_GameInfoBtn.setHighLight(RED);
+	m_GameInfoBtn.SetFunc(InfoViewClick);
 }
 
 vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
@@ -314,10 +374,18 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		{
 			AssignState(std::bind(&SRLGame::BettingView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
+		else if (currentState == SettingsState)
+		{
+			AssignState(std::bind(&SRLGame::SettingsView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
+		else if (currentState == InformationState)
+		{
+			AssignState(std::bind(&SRLGame::InfoView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
 		else if (currentState == ResultsViewState)
 		{
-			sortOutResultsScreen();
 			m_SelectedGame = 0;
+			sortOutResultsScreen();
 			AssignState(std::bind(&SRLGame::ResultsView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == SeasonConfig_State)
@@ -339,9 +407,13 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 
 ConsoleWindow SRLGame::main_menu_scene(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	window.setTextAtPoint(Vector2(0,1), "SYDE RUGBY LEAGUE", WHITE);
-	window = m_ExhibitionMatchBtn.draw_ui(window);
-	window = m_SeasonModeBtn.draw_ui(window);
+	window = m_MainMenuBG.draw_asset(window, Vector2(0, 0));
+	window = drawMainMenuTabs(window);
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	//window.setTextAtPoint(Vector2(0, 19), "", BLACK_BRIGHTWHITE_BG);
 	return window;
 }
 
@@ -352,6 +424,7 @@ ConsoleWindow SRLGame::exhibition_match_settings(ConsoleWindow window, int windo
 
 ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	window = drawMainMenuTabs(window);
 	window = configTabs(window);
 	if (SeasonStart)
 	{
@@ -397,8 +470,8 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 	}
 
 
-	window.setTextAtPoint(Vector2(0, 1), "SEASON CONFIG", WHITE);
-	window.setTextAtPoint(Vector2(0, 2), m_SavedTeams[m_SelectedTeam], WHITE);
+	window.setTextAtPoint(Vector2(0, 2), "SEASON CONFIG: ", WHITE);
+	window.setTextAtPoint(Vector2(16, 2), m_SavedTeams[m_SelectedTeam], WHITE);
 	window.setTextAtPoint(Vector2(0, 3), "TEAMS:", WHITE);
 	if (NextRoundCall)
 	{
@@ -416,6 +489,16 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		if (m_SelectedTeam < 0)
 		{
 			m_SelectedTeam = m_SavedTeams.size() - 1;
+		}
+	}
+	if (generateCall)
+	{
+		generateCall = false;
+		if (m_SeasonTeams.size() < 16)
+		{
+			SRLTeam HomeTeam = generateRandomTeam();
+			HomeTeam.saveTeam();
+			m_SeasonTeams.push_back(HomeTeam.getName());
 		}
 	}
 	if (addCall)
@@ -438,6 +521,21 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		{
 			m_SavedTeams.push_back(m_SeasonTeams[m_SeasonTeams.size()-1]);
 			m_SeasonTeams.erase(m_SeasonTeams.begin() + m_SeasonTeams.size() - 1);
+		}
+	}
+
+	if (randomFillCall)
+	{
+		randomFillCall = false;
+		while (m_SeasonTeams.size() < 16)
+		{
+			m_SelectedTeam = rand() % m_SavedTeams.size();
+			m_SeasonTeams.push_back(m_SavedTeams[m_SelectedTeam]);
+			m_SavedTeams.erase(m_SavedTeams.begin() + m_SelectedTeam);
+			if (m_SelectedTeam > m_SavedTeams.size() - 1)
+			{
+				m_SelectedTeam = 0;
+			}
 		}
 	}
 
@@ -534,6 +632,10 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 				m_Season.m_TopGoals.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getGoals());
 				m_Season.m_TopPoints.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getPoints());
 				m_Season.m_TopMetres.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getMetres());
+				m_Season.m_TopFieldGoals.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getFieldGoals());
+				m_Season.m_Top4020.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].get4020());
+				m_Season.m_TopTackles.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getTackles());
+				m_Season.m_TopKickMetres.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getKickMetres());
 			}
 			for (int i = 0; i < m_srlmanager.getAwayTeam().getPlayers().size(); i++)
 			{
@@ -542,12 +644,20 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 				m_Season.m_TopGoals.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getGoals());
 				m_Season.m_TopPoints.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getPoints());
 				m_Season.m_TopMetres.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getMetres());
+				m_Season.m_TopFieldGoals.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getFieldGoals());
+				m_Season.m_Top4020.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].get4020());
+				m_Season.m_TopTackles.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getTackles());
+				m_Season.m_TopKickMetres.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getKickMetres());
 			}
 			m_Season.m_TopPlayers.orderShortlist();
 			m_Season.m_TopTries.orderShortlist();
 			m_Season.m_TopGoals.orderShortlist();
 			m_Season.m_TopPoints.orderShortlist();
 			m_Season.m_TopMetres.orderShortlist();
+			m_Season.m_TopFieldGoals.orderShortlist();
+			m_Season.m_Top4020.orderShortlist();
+			m_Season.m_TopTackles.orderShortlist();
+			m_Season.m_TopKickMetres.orderShortlist();
 
 			if (!finals)
 			{
@@ -705,7 +815,7 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 	window = drawLeaderboardTabs(window);
 	if (ldrState == Tries_State)
 	{
-		window.setTextAtPoint(Vector2(0, 3), "TOP TRY SCORERS   ", WHITE);
+		//window.setTextAtPoint(Vector2(0, 3), "TOP TRY SCORERS   ", WHITE);
 		if (m_Season.m_TopTries.shortlist.size() > 15)
 		{
 			for (int i = 0; i < 15; i++)
@@ -716,7 +826,7 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 	}
 	else if (ldrState == Goals_STATE)
 	{
-		window.setTextAtPoint(Vector2(0, 3), "TOP GOAL SCORERS   ", WHITE);
+		//window.setTextAtPoint(Vector2(0, 3), "TOP GOAL SCORERS   ", WHITE);
 		if (m_Season.m_TopGoals.shortlist.size() > 15)
 		{
 			for (int i = 0; i < 15; i++)
@@ -727,7 +837,7 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 	}
 	else if (ldrState == Metres_State)
 	{
-		window.setTextAtPoint(Vector2(0, 3), "TOP METRES   ", WHITE);
+		//window.setTextAtPoint(Vector2(0, 3), "TOP METRES   ", WHITE);
 		if (m_Season.m_TopMetres.shortlist.size() > 15)
 		{
 			for (int i = 0; i < 15; i++)
@@ -738,7 +848,7 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 	}
 	else if (ldrState == Points_STATE)
 	{
-		window.setTextAtPoint(Vector2(0, 3), "TOP POINT SCORERS   ", WHITE);
+		//window.setTextAtPoint(Vector2(0, 3), "TOP POINT SCORERS   ", WHITE);
 		if (m_Season.m_TopPoints.shortlist.size() > 15)
 		{
 			for (int i = 0; i < 15; i++)
@@ -749,12 +859,52 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 	}
 	else if (ldrState == Dally_State)
 	{
-		window.setTextAtPoint(Vector2(0, 3), "TOP PLAYERS   ", WHITE);
+		//window.setTextAtPoint(Vector2(0, 3), "TOP PLAYERS   ", WHITE);
 		if (m_Season.m_TopPlayers.shortlist.size() > 15)
 		{
 			for (int i = 0; i < 15; i++)
 			{
 				window.setTextAtPoint(Vector2(0, 4 + i), to_string(i+1) + ". " + m_Season.m_TopPlayers.shortlist[i].Player + "-" + m_Season.m_TopPlayers.shortlist[i].TeamName + " : " + to_string(m_Season.m_TopPlayers.shortlist[i].points), window._intToColour(i+1));
+			}
+		}
+	}
+	else if (ldrState == Tackles_State)
+	{
+		if (m_Season.m_TopTackles.shortlist.size() > 15)
+		{
+			for (int i = 0; i < 15; i++)
+			{
+				window.setTextAtPoint(Vector2(0, 4 + i), to_string(i + 1) + ". " + m_Season.m_TopTackles.shortlist[i].Player + "-" + m_Season.m_TopTackles.shortlist[i].TeamName + " : " + to_string(m_Season.m_TopTackles.shortlist[i].points), window._intToColour(i + 1));
+			}
+		}
+	}
+	else if (ldrState == State_4020)
+	{
+		if (m_Season.m_Top4020.shortlist.size() > 15)
+		{
+			for (int i = 0; i < 15; i++)
+			{
+				window.setTextAtPoint(Vector2(0, 4 + i), to_string(i + 1) + ". " + m_Season.m_Top4020.shortlist[i].Player + "-" + m_Season.m_Top4020.shortlist[i].TeamName + " : " + to_string(m_Season.m_Top4020.shortlist[i].points), window._intToColour(i + 1));
+			}
+		}
+	}
+	else if (ldrState == KickMetres_State)
+	{
+		if (m_Season.m_TopKickMetres.shortlist.size() > 15)
+		{
+			for (int i = 0; i < 15; i++)
+			{
+				window.setTextAtPoint(Vector2(0, 4 + i), to_string(i + 1) + ". " + m_Season.m_TopKickMetres.shortlist[i].Player + "-" + m_Season.m_TopKickMetres.shortlist[i].TeamName + " : " + to_string(m_Season.m_TopKickMetres.shortlist[i].points), window._intToColour(i + 1));
+			}
+		}
+	}
+	else if (ldrState == FG_State)
+	{
+		if (m_Season.m_TopFieldGoals.shortlist.size() > 15)
+		{
+			for (int i = 0; i < 15; i++)
+			{
+				window.setTextAtPoint(Vector2(0, 4 + i), to_string(i + 1) + ". " + m_Season.m_TopFieldGoals.shortlist[i].Player + "-" + m_Season.m_TopFieldGoals.shortlist[i].TeamName + " : " + to_string(m_Season.m_TopFieldGoals.shortlist[i].points), window._intToColour(i + 1));
 			}
 		}
 	}
@@ -808,6 +958,22 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	return window;
 }
 
+ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = drawMainMenuTabs(window);
+	window.setTextAtPoint(Vector2(0, 2), "GAME SETTINGS", BRIGHTWHITE);
+	return window;
+}
+
+ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = drawMainMenuTabs(window);
+	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
+	return window;
+}
+
 ConsoleWindow SRLGame::drawTabs(ConsoleWindow window)
 {
 	window = m_SeasonViewBtn.draw_ui(window);
@@ -838,6 +1004,21 @@ ConsoleWindow SRLGame::drawLeaderboardTabs(ConsoleWindow window)
 	window = m_LeaderboardBtnMostMetres.draw_ui(window);
 	window = m_LeaderboardBtnMostPoints.draw_ui(window);
 	window = m_LeaderboardBtnMostDallyM.draw_ui(window);
+
+	window = m_LeaderboardBtnMostFieldGoals.draw_ui(window);
+	window = m_LeaderboardBtnMostKickMetres.draw_ui(window);
+	window = m_LeaderboardBtnMost4020.draw_ui(window);
+	window = m_LeaderboardBtnMostTackles.draw_ui(window);
+
+	return window;
+}
+
+ConsoleWindow SRLGame::drawMainMenuTabs(ConsoleWindow window)
+{
+	window = m_BackSeasonCfgBtn.draw_ui(window);
+	window = m_SeasonCfgBtn.draw_ui(window);
+	window = m_GameSettingsBtn.draw_ui(window);
+	window = m_GameInfoBtn.draw_ui(window);
 	return window;
 }
 
@@ -849,6 +1030,8 @@ ConsoleWindow SRLGame::configTabs(ConsoleWindow window)
 	window = m_StartSeasonBtn.draw_ui(window);
 	window = m_NextTeamSeasonCfgBtn.draw_ui(window);
 	window = m_PrevTeamSeasonCfgBtn.draw_ui(window);
+	window = m_GenerateTeamSeasonCfgBtn.draw_ui(window);
+	window = m_RandomFillSeasonCfgBtn.draw_ui(window);
 	return window;
 }
 

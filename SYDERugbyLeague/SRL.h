@@ -21,7 +21,9 @@ enum GameStateSYDE
 	LadderViewState,
 	ResultsViewState,
 	BettingViewState,
-	LeaderboardViewState
+	LeaderboardViewState,
+	SettingsState,
+	InformationState,
 };
 
 enum GameStateBettingSYDE
@@ -37,7 +39,11 @@ enum GameStateLeaderboardSYDE
 	Goals_STATE,
 	Points_STATE,
 	Metres_State,
-	Dally_State
+	Dally_State,
+	State_4020,
+	Tackles_State,
+	FG_State,
+	KickMetres_State
 };
 
 struct SRLLadderPosition
@@ -122,6 +128,10 @@ struct SRLSeason
 	SRLLeaderboard m_TopGoals;
 	SRLLeaderboard m_TopPoints;
 	SRLLeaderboard m_TopMetres;
+	SRLLeaderboard m_TopFieldGoals;
+	SRLLeaderboard m_TopTackles;
+	SRLLeaderboard m_Top4020;
+	SRLLeaderboard m_TopKickMetres;
 };
 
 class SRLGame : public SYDEWindowGame {
@@ -133,7 +143,7 @@ public:
 	vector<SRLPlayer> createRandomTeam(string prefix);
 	vector<SRLPlayer> createRandomTeam(string prefix, float multiplier);
 	void test();
-
+	static AssetsClass astVars;
 	SRLTeam generateRandomTeam();
 	SRLTeam generateRandomTeam(float multiplier);
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
@@ -148,13 +158,15 @@ public:
 	ConsoleWindow LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 
+	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
+
 	ConsoleWindow drawTabs(ConsoleWindow window);
 	ConsoleWindow drawBetTabs(ConsoleWindow window);
 	ConsoleWindow drawLeaderboardTabs(ConsoleWindow window);
+	ConsoleWindow drawMainMenuTabs(ConsoleWindow window);
 
 	ConsoleWindow configTabs(ConsoleWindow window);
-
-	static AssetsClass astVars;
 
 	void CalculateOdds();
 
@@ -179,19 +191,20 @@ public:
 
 	static bool addCall;
 	static bool removeCall;
+	static bool generateCall;
 
+	static bool randomFillCall;
 	void sortOutResultsScreen();
 
 private:
-	SYDEClickableButton m_SeasonModeBtn;
-	SYDEClickableButton m_ExhibitionMatchBtn;
 
-	SYDEClickableButton m_BackSeasonCfgBtn;
 	SYDEClickableButton m_StartSeasonBtn;
 	SYDEClickableButton m_NextTeamSeasonCfgBtn;
 	SYDEClickableButton m_PrevTeamSeasonCfgBtn;
 	SYDEClickableButton m_AddTeamSeasonCfgBtn;
 	SYDEClickableButton m_RemoveTeamSeasonCfgBtn;
+	SYDEClickableButton m_GenerateTeamSeasonCfgBtn;
+	SYDEClickableButton m_RandomFillSeasonCfgBtn;
 
 	//View Season
 	SYDEClickableButton m_SeasonViewBtn;
@@ -224,6 +237,15 @@ private:
 	SYDEClickableButton m_LeaderboardBtnMostPoints;
 	SYDEClickableButton m_LeaderboardBtnMostDallyM;
 
+	SYDEClickableButton m_LeaderboardBtnMostFieldGoals;
+	SYDEClickableButton m_LeaderboardBtnMostTackles;
+	SYDEClickableButton m_LeaderboardBtnMostKickMetres;
+	SYDEClickableButton m_LeaderboardBtnMost4020;
+
+	SYDEClickableButton m_BackSeasonCfgBtn;
+	SYDEClickableButton m_SeasonCfgBtn;
+	SYDEClickableButton m_GameSettingsBtn;
+	SYDEClickableButton m_GameInfoBtn;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;
@@ -237,4 +259,6 @@ private:
 	int m_round = 0;
 	int m_roundToSimulate = 0;
 	bool finals = false;
+
+	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));
 };

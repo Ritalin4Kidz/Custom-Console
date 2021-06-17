@@ -18,6 +18,8 @@ public:
 	void addPlayNoMinutes(string a_Play);
 	void addPlay(string a_Play, SRLPlayer player);
 
+	SRLTeam getHomeTeam() { return m_HomeTeam; }
+	SRLTeam getAwayTeam() { return m_AwayTeam; }
 	void setTeams(SRLTeam team1, SRLTeam team2) { m_HomeTeam = team1; m_AwayTeam = team2; }
 
 	bool isTied() { return homeTeamScore == awayTeamScore; }

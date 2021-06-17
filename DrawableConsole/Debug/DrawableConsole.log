@@ -8,29 +8,6 @@ g:\github repos\custom-console\drawableconsole\customasset.h(47): warning C4018:
 g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
 g:\github repos\custom-console\drawableconsole\customanimationasset.h(145): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\activation.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SYDEOldCodeAI.cpp
-g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(12): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(23): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(51): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(60): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(80): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(100): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(109): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(137): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(146): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(159): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(177): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(185): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(209): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(217): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(247): warning C4018: '<': signed/unsigned mismatch
   Artwork.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -320,21 +297,6 @@ g:\github repos\custom-console\drawableconsole\background.cpp(479): warning C424
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
-  SYDEOldCodeBoard.cpp
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(10): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(20): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(34): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(36): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(38): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(59): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(71): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(83): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(95): warning C4018: '<': signed/unsigned mismatch
-  SYDEOldCodeBoardPiece.cpp
-  SYDEOldCodeCharacters.cpp
-g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
   Concerto.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -435,6 +397,12 @@ g:\github repos\custom-console\drawableconsole\customasset_draggable.cpp(94): wa
   Defaults.cpp
 g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
 g:\github repos\custom-console\drawableconsole\defaults.cpp(10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Line.cpp
+g:\github repos\custom-console\drawableconsole\line.cpp(8): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\line.cpp(23): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\line.cpp(70): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\line.cpp(74): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\line.cpp(84): warning C4018: '<': signed/unsigned mismatch
   ReiventTheWheel.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -479,10 +447,6 @@ g:\github repos\custom-console\drawableconsole\rigidbody.cpp(11): warning C4018:
 g:\github repos\custom-console\drawableconsole\rigidbody.cpp(55): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\rigidbody.cpp(57): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\rigidbody.cpp(77): warning C4018: '<': signed/unsigned mismatch
-  Settings.cpp
-g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\settings.cpp(11): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\settings.cpp(22): warning C4018: '<': signed/unsigned mismatch
   SYDEButton.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -528,6 +492,10 @@ g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C40
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+  SYDEFileDefaults.cpp
+g:\github repos\custom-console\drawableconsole\sydefiledefaults.cpp(16): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydefiledefaults.cpp(27): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydefiledefaults.cpp(34): warning C4018: '<': signed/unsigned mismatch
   SYDEGamePlay.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -804,6 +772,44 @@ g:\github repos\custom-console\drawableconsole\sydemenu.cpp(59): warning C4018: 
 g:\github repos\custom-console\drawableconsole\sydemenu.cpp(95): warning C4018: '>=': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\sydemenu.cpp(104): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\sydemenu.cpp(113): warning C4018: '<': signed/unsigned mismatch
+  SYDEOldCodeAI.cpp
+g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(12): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(23): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(51): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(60): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(80): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(100): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(109): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(137): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(146): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(159): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(177): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(185): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(209): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(217): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeai.cpp(247): warning C4018: '<': signed/unsigned mismatch
+  SYDEOldCodeBoard.cpp
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(10): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(20): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(34): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(36): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(38): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(59): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(71): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(83): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydeoldcodeboard.cpp(95): warning C4018: '<': signed/unsigned mismatch
+  SYDEOldCodeBoardPiece.cpp
+  SYDEOldCodeCharacters.cpp
+g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
   SYDEParticle.cpp
 g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
@@ -849,9 +855,17 @@ g:\github repos\custom-console\drawableconsole\sydetextbox.cpp(16): warning C424
 g:\github repos\custom-console\drawableconsole\sydetextbox.cpp(18): warning C4018: '<=': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\sydetextbox.cpp(20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\github repos\custom-console\drawableconsole\sydetextbox.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Settings.cpp
+g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\settings.cpp(11): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\settings.cpp(22): warning C4018: '<': signed/unsigned mismatch
   Vector2.cpp
 g:\github repos\custom-console\drawableconsole\vector2.cpp(29): warning C4172: returning address of local variable or temporary
 g:\github repos\custom-console\drawableconsole\vector2.cpp(34): warning C4172: returning address of local variable or temporary
 g:\github repos\custom-console\drawableconsole\vector2.cpp(39): warning C4172: returning address of local variable or temporary
+  Vector3.cpp
+g:\github repos\custom-console\drawableconsole\vector3.cpp(43): warning C4172: returning address of local variable or temporary
+g:\github repos\custom-console\drawableconsole\vector3.cpp(55): warning C4172: returning address of local variable or temporary
+g:\github repos\custom-console\drawableconsole\vector3.cpp(49): warning C4172: returning address of local variable or temporary
 LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
   DrawableConsole.vcxproj -> G:\Github Repos\Custom-Console\Debug\SYDEEngine_Debug.lib

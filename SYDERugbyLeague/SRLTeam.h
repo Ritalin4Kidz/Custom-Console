@@ -55,6 +55,11 @@ public:
 	int totalErrors();
 	int totalKickMetres();
 
+
+	int totalAttackStat();
+	int totalDefenceStat();
+	int totalSpeedStat();
+
 private:
 
 	string m_Name;

@@ -43,8 +43,8 @@ int main(int argc, char* argv[])
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	SRLGame m_SRL;
-	LPCWSTR title = L"SYDE";
-	SYDECredits::_GAMETITLE = "SYDE";
+	LPCWSTR title = L"SYDE Rugby League Simulator";
+	SYDECredits::_GAMETITLE = "SYDE Rugby League Simulator";
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
 	SetConsoleTitleW(title);
 	//ARGUMENT SETTINGS
@@ -63,12 +63,12 @@ int main(int argc, char* argv[])
 	SYDEGamePlay::EnableClicking(hOut);
 
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_UP));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_DOWN));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
-	SYDEGamePlay::showFPS(true);
+	//SYDEGamePlay::showFPS(true);
 
 	window.setStartingLine(1);
 	while (true)

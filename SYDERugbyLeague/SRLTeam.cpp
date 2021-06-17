@@ -347,3 +347,33 @@ int SRLTeam::totalKickMetres()
 	return temp;
 }
 
+int SRLTeam::totalAttackStat()
+{
+	int total = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		total += m_TeamList[i].getAttack();
+	}
+	return total;
+}
+
+int SRLTeam::totalDefenceStat()
+{
+	int total = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		total += m_TeamList[i].getDefence();
+	}
+	return total;
+}
+
+int SRLTeam::totalSpeedStat()
+{
+	int total = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		total += m_TeamList[i].getSpeed();
+	}
+	return total;
+}
+

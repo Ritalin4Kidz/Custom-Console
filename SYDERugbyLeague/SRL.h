@@ -33,6 +33,12 @@ enum GameStateBettingSYDE
 	Account_STATE,
 };
 
+enum GameStateResultSYDE
+{
+	Summary_STATE,
+	PlayByPlay_STATE
+};
+
 enum GameStateLeaderboardSYDE
 {
 	Tries_State,
@@ -165,9 +171,10 @@ public:
 	ConsoleWindow drawBetTabs(ConsoleWindow window);
 	ConsoleWindow drawLeaderboardTabs(ConsoleWindow window);
 	ConsoleWindow drawMainMenuTabs(ConsoleWindow window);
+	ConsoleWindow drawResultTabs(ConsoleWindow window);
 
 	ConsoleWindow configTabs(ConsoleWindow window);
-
+	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
 
 	std::function<ConsoleWindow(ConsoleWindow, int, int)> m_State;
@@ -181,6 +188,7 @@ public:
 
 	static GameStateBettingSYDE bettingState;
 	static GameStateLeaderboardSYDE ldrState;
+	static GameStateResultSYDE resultState;
 
 	static bool SeasonStart;
 
@@ -193,11 +201,14 @@ public:
 	static bool removeCall;
 	static bool generateCall;
 
+	static bool errorCall;
+	
+
 	static bool randomFillCall;
 	void sortOutResultsScreen();
 
 private:
-
+	string errorMessage = "";
 	SYDEClickableButton m_StartSeasonBtn;
 	SYDEClickableButton m_NextTeamSeasonCfgBtn;
 	SYDEClickableButton m_PrevTeamSeasonCfgBtn;
@@ -205,6 +216,9 @@ private:
 	SYDEClickableButton m_RemoveTeamSeasonCfgBtn;
 	SYDEClickableButton m_GenerateTeamSeasonCfgBtn;
 	SYDEClickableButton m_RandomFillSeasonCfgBtn;
+
+	//View Season
+	SYDEClickableButton m_ErrorOkViewBtn;
 
 	//View Season
 	SYDEClickableButton m_SeasonViewBtn;
@@ -246,6 +260,10 @@ private:
 	SYDEClickableButton m_SeasonCfgBtn;
 	SYDEClickableButton m_GameSettingsBtn;
 	SYDEClickableButton m_GameInfoBtn;
+
+	//Results Page
+	SYDEClickableButton m_GameResultSummaryBtn;
+	SYDEClickableButton m_GameResultPlayByPlayBtn;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;

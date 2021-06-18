@@ -105,7 +105,19 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Xander",
 	"Julian",
 	"Jeremy",
-	"Dom"
+	"Dom",
+	"Jeffrey",
+	"Jeni",
+	"Kyrsta",
+	"Jordan",
+	"Nico",
+	"Castro",
+	"Don",
+	"Anthony",
+	"Kev",
+	"Jr.",
+	"Sr.",
+	"Frank"
 };
 
 vector<string> SRLNameGenerator::LastNames = vector<string>
@@ -211,7 +223,15 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Loomer",
 	"Farmer",
 	"Hannington",
-	"Beltio"
+	"Beltio",
+	"Papiai",
+	"Dellio",
+	"Winger",
+	"Belta",
+	"Domino",
+	"Junior",
+	"McDonalson",
+	"Sunnerson"
 };
 
 vector<string> SRLNameGenerator::TeamNames = vector<string>
@@ -343,7 +363,18 @@ vector<string> SRLNameGenerator::TeamNames = vector<string>
 	"Spacemen",
 	"Stars",
 	"Dancers",
-	"Stealers"
+	"Stealers",
+	"Doglegs",
+	"Origami",
+	"Takeout",
+	"Bananas",
+	"Berries",
+	"Cannons",
+	"Cannonballs",
+	"Tradies",
+	"Diggers",
+	"Callers",
+	"Accountants"
 };
 
 vector<string> SRLNameGenerator::CityNames = vector<string>
@@ -483,7 +514,51 @@ vector<string> SRLNameGenerator::CityNames = vector<string>
 	"Nowra",
 	"East Havertown",
 	"Sompeton",
-	"Duba"
+	"Duba",
+	"Hellio",
+	"Westellio",
+	"Diamond City",
+	"Emeralton",
+	"Glenbrook",
+	"Blue Mountains",
+	"Simsta",
+	"Xylerbrek",
+	"Westler",
+	"Xyler",
+	"North Xyler",
+	"Resboro",
+	"Trilbrex",
+	"Eweweron",
+	"Manilla",
+	"Sutherland",
+	"Illawarra",
+	"Gryzlexyx",
+	"The Exyx",
+	"Mintrosto",
+	"West Dinsey",
+	"DW Ocean",
+	"Almon Island",
+	"Blankis",
+	"Aliran",
+	"Daggo Coast",
+	"SYDE Coast",
+	"West SYDE",
+	"Taumatawhaka",
+	"Toplefia",
+	"North Muric",
+	"Ballistica",
+	"Broken Coast",
+	"Repaired Coast",
+	"Meow Coast",
+	"Arcoomer",
+	"Djungelskog",
+	"Thrustbowl",
+	"Rhofields",
+	"Zengina",
+	"New Xylsdia",
+	"Denton",
+	"Windan",
+	"Cyprux"
 };
 
 

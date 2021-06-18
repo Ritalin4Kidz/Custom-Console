@@ -45,6 +45,81 @@ void SRLGameManager::addPlay(string a_Play, SRLPlayer player)
 	m_PlayByPlay.push_back(minutesStr + ":" + secondsStr + " - " + player.getName() + " - " + a_Play);
 }
 
+void SRLGameManager::generateWeather()
+{
+	int range = rand() % 10000;
+	if (range < 1500)
+	{
+		weather = Weather_Clear;
+		addPlayNoMinutes("Weather: Clear");
+	}
+	else if (range < 3000)
+	{
+		weather = Weather_Cloudy;
+		weatherAtkErrorBonus = 1.15f;
+		addPlayNoMinutes("Weather: Cloudy");
+	}
+	else if (range < 4200)
+	{
+		weather = Weather_Humid;
+		weatherAtkErrorBonus = 1.15f;
+		weatherDefErrorBonus = 1.25f;
+		addPlayNoMinutes("Weather: Humid");
+	}
+	else if (range < 5300)
+	{
+		weather = Weather_Storm;
+		weatherAtkErrorBonus = 2.15f;
+		weatherDefErrorBonus = 1.75f;
+		weatherGoalErrorBonus = 2.75f;
+		addPlayNoMinutes("Weather: Stormy");
+	}
+	else if (range < 6300)
+	{
+		weather = Weather_Rain;
+		weatherAtkErrorBonus = 2.25f;
+		weatherGoalErrorBonus = 1.35f;
+		addPlayNoMinutes("Weather: Rain");
+	}
+	else if (range < 7600)
+	{
+		weather = Weather_Windy;
+		weatherAtkErrorBonus = 1.05f;
+		weatherGoalErrorBonus = 2.95f;
+		addPlayNoMinutes("Weather: Windy");
+	}
+	else if (range < 8700)
+	{
+		weather = Weather_Sunny;
+		weatherAtkErrorBonus = 1.05f;
+		weatherDefErrorBonus = 1.85f;
+		addPlayNoMinutes("Weather: Sunny");
+	}
+	else if (range < 9600)
+	{
+		weather = Weather_Heatwave;
+		weatherAtkErrorBonus = 2.05f;
+		weatherDefErrorBonus = 2.85f;
+		addPlayNoMinutes("Weather: Heat Wave");
+	}
+	else if (range < 9950)
+	{
+		weather = Weather_Hail;
+		weatherAtkErrorBonus = 3.00f;
+		weatherDefErrorBonus = 3.00f;
+		weatherGoalErrorBonus = 3.00f;
+		addPlayNoMinutes("Weather: Hail");
+	}
+	else if (range < 10000)
+	{
+		weather = Weather_Snow;
+		weatherAtkErrorBonus = 5.00f;
+		weatherDefErrorBonus = 5.00f;
+		weatherGoalErrorBonus = 5.00f;
+		addPlayNoMinutes("Weather: Snow");
+	}
+}
+
 
 
 int SRLGameManager::fromRand(int range)
@@ -69,6 +144,8 @@ void SRLGameManager::addTeamLineupsPlayByPlay()
 	{
 		addPlayNoMinutes(std::to_string(i + 1) + ": " + m_AwayTeam.getPlayers()[i].getName());
 	}
+	addPlayNoMinutes("----------GAME-STAT---------");
+	generateWeather();
 	addPlayNoMinutes("----------------------------");
 }
 
@@ -334,8 +411,8 @@ void SRLGameManager::play()
 
 bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 {
-	int atkError1 = (rand() % defaultAttackErrorChance);
-	int defError1 = (rand() % defaultDefenceErrorChance);
+	int atkError1 = rand() % defaultAttackErrorChance * weatherAtkErrorBonus;
+	int defError1 = rand() % defaultDefenceErrorChance * weatherDefErrorBonus;
 	if (atkError1 > attacker.getAttack())
 	{
 		//1 in 4 chance of error
@@ -635,7 +712,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 			if (m_BallPosition < 30 && m_BallPosition > 0 && m_HomeTeamHasBall)
 			{
 				int chance1 = attacker.getAttack();
-				int chance2 = rand() % defaultGoalChance;
+				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
 				if (chance1 > chance2)
 				{
 					homeTeamScore += 1;
@@ -659,7 +736,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 			if (m_BallPosition > 70 && m_BallPosition < 100 && !m_HomeTeamHasBall)
 			{
 				int chance1 = attacker.getAttack();
-				int chance2 = rand() % defaultGoalChance;
+				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
 				if (chance1 > chance2)
 				{
 					awayTeamScore += 1;
@@ -754,7 +831,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_MinutesPassed = 40;
 			m_SecondsPassed = 0;
 		}
-		int goal1 = (rand() % defaultGoalChance);
+		int goal1 = (rand() % defaultGoalChance * weatherGoalErrorBonus);
 		if (goal1 < attacker.getAttack())
 		{
 			//1 in 4 chance of error
@@ -860,7 +937,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_MinutesPassed = 40;
 			m_SecondsPassed = 0;
 		}
-		int goal1 = (rand() % defaultGoalChance);
+		int goal1 = (rand() % defaultGoalChance * weatherGoalErrorBonus);
 		if (goal1 < attacker.getAttack())
 		{
 			//1 in 4 chance of error

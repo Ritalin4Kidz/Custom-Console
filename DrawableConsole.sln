@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{F0BD4FDB-ED49-4B40-BFE6-A09291D90D8B}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.md = Readme.md
+		SYDERugbyLeagueReadme.md = SYDERugbyLeagueReadme.md
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYDE_Connections", "SYDE_Connections\SYDE_Connections.vcxproj", "{A0E2B7DC-E644-408D-86FC-432EF4F8797F}"

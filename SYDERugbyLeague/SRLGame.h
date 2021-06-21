@@ -53,6 +53,10 @@ public:
 
 	void play();
 
+	void teamHaveMainGoalKickers(bool isOn) { m_MainGoalKickers = isOn; }
+	void weatherEffects(bool isOn) { m_Weather = isOn; }
+	void staminaEffect(bool isOn) { m_Stamina = isOn; }
+
 	bool checkError(SRLPlayer defender, SRLPlayer attacker);
 	int checkKick(SRLPlayer defender, SRLPlayer attacker);
 	int doKick(SRLPlayer defender, SRLPlayer attacker);
@@ -85,7 +89,7 @@ private:
 	const int tryErrorChance = 13;
 	const int minTimeSecondSkip = 11;
 	const int maxTimeSecondSkip = 19;
-
+	const int outOnFullErrorChance = 35;
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;
@@ -103,7 +107,9 @@ private:
 	bool m_HomeTeamHasBall = true;
 	bool halfTimeHasPassed = false;
 
-
+	bool m_MainGoalKickers = true;
+	bool m_Weather = true;
+	bool m_Stamina = true;
 	//WEATHER BONUSES
 	SRLGameWeather weather = Weather_Clear;
 	float weatherAtkErrorBonus = 1;

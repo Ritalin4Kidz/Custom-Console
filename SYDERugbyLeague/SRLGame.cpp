@@ -47,6 +47,12 @@ void SRLGameManager::addPlay(string a_Play, SRLPlayer player)
 
 void SRLGameManager::generateWeather()
 {
+	if (!m_Weather)
+	{
+		weather = Weather_Clear;
+		addPlayNoMinutes("Weather: Clear");
+		return;
+	}
 	int range = rand() % 10000;
 	if (range < 1500)
 	{
@@ -302,6 +308,15 @@ void SRLGameManager::play()
 	if (m_SecondsPassed >= 60)
 	{
 		m_SecondsPassed -= 60;
+		//DECREASE PLAYERS ON FIELD STAMINA, HOME TEAM DECREASES SLIGHTLY SLOWER
+		if (m_Stamina)
+		{
+			for (int i = 0; i < 13; i++)
+			{
+				m_HomeTeam.addPlayerStamina(m_HomeTeam.getPlayers()[i].getName(), -0.4f);
+				m_AwayTeam.addPlayerStamina(m_AwayTeam.getPlayers()[i].getName(), -0.5f);
+			}
+		}
 		m_MinutesPassed++;
 		if (m_MinutesPassed >= 40 && halfTimeHasPassed == false)
 		{
@@ -413,7 +428,12 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 {
 	int atkError1 = rand() % defaultAttackErrorChance * weatherAtkErrorBonus;
 	int defError1 = rand() % defaultDefenceErrorChance * weatherDefErrorBonus;
-	if (atkError1 > attacker.getAttack())
+	if (m_Stamina)
+	{
+		atkError1 *= attacker.getStamina();
+		defError1 *= defender.getStamina();
+	}
+	if (atkError1 > attacker.getHandling())
 	{
 		//1 in 4 chance of error
 		int atkError2 = (rand() % secondaryErrorChance);
@@ -423,14 +443,37 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 			if (m_HomeTeamHasBall)
 			{
 				m_HomeTeam.addPlayerError(attacker.getName());
+				m_HomeTeam.addPlayerStamina(attacker.getName(), -2);
 			}
 			else
 			{
 				m_AwayTeam.addPlayerError(attacker.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), -2);
 			}
 			changeOver(true);
 			return true;
 		}
+		//
+		int atkError4 = (rand() % secondaryErrorChance);
+		if (atkError4 == 0)
+		{
+			addPlay("Forward Pass", attacker);
+			if (m_HomeTeamHasBall)
+			{
+				m_HomeTeam.addPlayerError(attacker.getName());
+				m_HomeTeam.addPlayerStamina(attacker.getName(), -2);
+			}
+			else
+			{
+				m_AwayTeam.addPlayerError(attacker.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), -2);
+			}
+			changeOver(false);
+			return true;
+		}
+	}
+	if (atkError1 > attacker.getAttack())
+	{
 		//1 in 4 chance of error
 		int atkError3 = (rand() % secondaryErrorChance);
 		if (atkError3 == 0)
@@ -439,25 +482,12 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 			if (m_HomeTeamHasBall)
 			{
 				m_HomeTeam.addPlayerError(attacker.getName());
+				m_HomeTeam.addPlayerStamina(attacker.getName(), -1);
 			}
 			else
 			{
 				m_AwayTeam.addPlayerError(attacker.getName());
-			}
-			changeOver(false);
-			return true;
-		}
-		int atkError4 = (rand() % secondaryErrorChance);
-		if (atkError4 == 0)
-		{
-			addPlay("Forward Pass", attacker);
-			if (m_HomeTeamHasBall)
-			{
-				m_HomeTeam.addPlayerError(attacker.getName());
-			}
-			else
-			{
-				m_AwayTeam.addPlayerError(attacker.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), -1);
 			}
 			changeOver(false);
 			return true;
@@ -472,11 +502,13 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 			addPlay("Ruck Infringement", defender);
 			if (!m_HomeTeamHasBall)
 			{
-				m_HomeTeam.addPlayerError(defender.getName());
+				m_HomeTeam.addPlayerRuckInfringment(defender.getName());
+				m_HomeTeam.addPlayerStamina(attacker.getName(), -1);
 			}
 			else
 			{
-				m_AwayTeam.addPlayerError(defender.getName());
+				m_AwayTeam.addPlayerRuckInfringment(defender.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), -1);
 			}
 			m_Tackle = 0;
 			//changeOver(true);
@@ -529,10 +561,31 @@ int SRLGameManager::checkKick(SRLPlayer defender, SRLPlayer attacker)
 
 int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 {
+	int chanceOut = rand() % outOnFullErrorChance;
+	if (chanceOut == 0)
+	{
+		addPlay("Kick Out On The Full", attacker);
+		if (m_HomeTeamHasBall)
+		{
+			m_HomeTeam.addPlayerStamina(attacker.getName(), -1);
+			m_HomeTeam.addPlayerError(attacker.getName());
+		}
+		else
+		{
+			m_AwayTeam.addPlayerStamina(attacker.getName(), -1);
+			m_AwayTeam.addPlayerError(attacker.getName());
+		}
+		changeOver(false);
+		return 1;
+	}
 	int chanceKick = rand() % fortytwentyChance;
 	if (m_HomeTeamHasBall)
 	{
-		int kickDistance = 10 + (((rand() % (attacker.getAttack() + attacker.getSpeed() + 1)) / 2.5f));
+		int kickDistance = 10 + (((rand() % (attacker.getKicking() + attacker.getSpeed() + 1)) / 2.5f));
+		if (m_Stamina)
+		{
+			kickDistance *= attacker.getStamina();
+		}
 		int originalPos = m_BallPosition;
 		m_HomeTeam.addPlayerKickMetres(attacker.getName(), kickDistance);
 		m_HomeTeam.addPlayerKick(attacker.getName());
@@ -548,6 +601,7 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 		{
 			addPlay("40/20", attacker);
 			m_HomeTeam.addPlayer4020(attacker.getName());
+			m_HomeTeam.addPlayerStamina(attacker.getName(), 3);
 			m_BallPosition = 20;
 			m_Tackle = 0;
 			return 1;
@@ -560,7 +614,11 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 	}
 	else 
 	{
-		int kickDistance = 10 + (((rand() % (attacker.getAttack() + attacker.getSpeed() + 1)) / 2.5f));
+		int kickDistance = 10 + (((rand() % (attacker.getKicking() + attacker.getSpeed() + 1)) / 2.5f));
+		if (m_Stamina)
+		{
+			kickDistance *= attacker.getStamina();
+		}
 		int originalPos = m_BallPosition;
 		m_AwayTeam.addPlayerKickMetres(attacker.getName(), kickDistance);
 		m_AwayTeam.addPlayerKick(attacker.getName());
@@ -576,6 +634,7 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 		{
 			addPlay("40/20", attacker);
 			m_AwayTeam.addPlayer4020(attacker.getName());
+			m_AwayTeam.addPlayerStamina(attacker.getName(), 3);
 			m_BallPosition = 20;
 			m_Tackle = 0;
 			return 1;
@@ -639,6 +698,7 @@ bool SRLGameManager::checkIntercept(SRLPlayer defender, SRLPlayer attacker)
 			if (m_HomeTeamHasBall)
 			{
 				m_HomeTeam.addPlayerIntercept(attacker.getName());
+				m_HomeTeam.addPlayerStamina(attacker.getName(), 2);
 				defender = m_AwayTeam.getRandomPlayer();
 				if (attacker.getAttack() > defender.getDefence())
 				{
@@ -652,6 +712,7 @@ bool SRLGameManager::checkIntercept(SRLPlayer defender, SRLPlayer attacker)
 			else
 			{
 				m_AwayTeam.addPlayerIntercept(attacker.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), 2);
 				defender = m_HomeTeam.getRandomPlayer();
 				if (attacker.getAttack() > defender.getDefence())
 				{
@@ -674,6 +735,10 @@ int SRLGameManager::checkStrip(SRLPlayer defender, SRLPlayer attacker)
 	if (defender.getDefence() > attacker.getAttack())
 	{
 		int chance1 = defender.getDefence() - attacker.getAttack();
+		if (m_Stamina)
+		{
+			chance1 *= defender.getStamina();
+		}
 		int chance2 = rand() % defaultStealChance;
 		if (chance1 > chance2)
 		{
@@ -711,7 +776,11 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 		{
 			if (m_BallPosition < 30 && m_BallPosition > 0 && m_HomeTeamHasBall)
 			{
-				int chance1 = attacker.getAttack();
+				int chance1 = attacker.getGoalKicking();
+				if (m_Stamina)
+				{
+					chance1 *= attacker.getGoalKicking();
+				}
 				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
 				if (chance1 > chance2)
 				{
@@ -735,7 +804,11 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 		{
 			if (m_BallPosition > 70 && m_BallPosition < 100 && !m_HomeTeamHasBall)
 			{
-				int chance1 = attacker.getAttack();
+				int chance1 = attacker.getGoalKicking();
+				if (m_Stamina)
+				{
+					chance1 *= attacker.getGoalKicking();
+				}
 				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
 				if (chance1 > chance2)
 				{
@@ -768,10 +841,16 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		{
 			addPlay("------VIDEO REFEREE------");
 			int chance2 = rand() % tryErrorChance;
+			if (chance2 < 6)
+			{
+				m_HomeTeam.addPlayerNoTry(attacker.getName());
+				m_HomeTeam.addPlayerStamina(attacker.getName(), -3);
+			}
 			//KNOCK ON
 			if (chance2 == 0)
 			{
 				addPlay("NO TRY - Knock On", attacker);
+				m_HomeTeam.addPlayerError(attacker.getName());
 				changeOver(true);
 				return true;
 			}
@@ -823,6 +902,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		homeTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
 		m_HomeTeam.addPlayerTry(attacker.getName());
+		m_HomeTeam.addPlayerStamina(attacker.getName(), 5);
 		m_MinutesPassed++;
 		m_HomeTeam.addTimeOnField(60);
 		m_AwayTeam.addTimeOnField(60);
@@ -831,8 +911,12 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_MinutesPassed = 40;
 			m_SecondsPassed = 0;
 		}
+		if (m_MainGoalKickers)
+		{
+			attacker = m_HomeTeam.getGoalKicker();
+		}
 		int goal1 = (rand() % defaultGoalChance * weatherGoalErrorBonus);
-		if (goal1 < attacker.getAttack())
+		if (goal1 < attacker.getGoalKicking())
 		{
 			//1 in 4 chance of error
 			int goal2 = (rand() % conversionErrorChance);
@@ -840,6 +924,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			{
 				homeTeamScore += 2;
 				addPlay("GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+				m_HomeTeam.addPlayerStamina(attacker.getName(), 1);
 				m_HomeTeam.addPlayerGoal(attacker.getName());
 			}
 			else
@@ -874,10 +959,16 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		{
 			addPlay("------VIDEO REFEREE------");
 			int chance2 = rand() % tryErrorChance;
+			if (chance2 < 6)
+			{
+				m_AwayTeam.addPlayerNoTry(attacker.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), -4);
+			}
 			//KNOCK ON
 			if (chance2 == 0)
 			{
 				addPlay("NO TRY - Knock On", attacker);
+				m_AwayTeam.addPlayerError(attacker.getName());
 				changeOver(true);
 				return true;
 			}
@@ -929,6 +1020,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		awayTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
 		m_AwayTeam.addPlayerTry(attacker.getName());
+		m_AwayTeam.addPlayerStamina(attacker.getName(), 5);
 		m_MinutesPassed++;
 		m_HomeTeam.addTimeOnField(60);
 		m_AwayTeam.addTimeOnField(60);
@@ -937,8 +1029,12 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_MinutesPassed = 40;
 			m_SecondsPassed = 0;
 		}
+		if (m_MainGoalKickers)
+		{
+			attacker = m_AwayTeam.getGoalKicker();
+		}
 		int goal1 = (rand() % defaultGoalChance * weatherGoalErrorBonus);
-		if (goal1 < attacker.getAttack())
+		if (goal1 < attacker.getGoalKicking())
 		{
 			//1 in 4 chance of error
 			int goal2 = (rand() % conversionErrorChance);
@@ -947,6 +1043,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				awayTeamScore += 2;
 				addPlay("GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
 				m_AwayTeam.addPlayerGoal(attacker.getName());
+				m_AwayTeam.addPlayerStamina(attacker.getName(), 1);
 			}
 			else
 			{
@@ -981,10 +1078,15 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 	m_Tackle = 0;
 	if (m_HomeTeamHasBall)
 	{
-		m_AwayTeam.addPlayerError(defender.getName());
+		m_AwayTeam.addPlayerPenalty(defender.getName());
+		m_AwayTeam.addPlayerStamina(attacker.getName(), -4);
 		if (m_BallPosition < 30 && (homeTeamScore - awayTeamScore) > -3)
 		{
 			//1 in 4 chance of error
+			if (m_MainGoalKickers)
+			{
+				attacker = m_HomeTeam.getGoalKicker();
+			}
 			int goal = (rand() % conversionErrorChance);
 			if (goal != 0)
 			{
@@ -1018,10 +1120,17 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 	}
 	else
 	{
-		m_HomeTeam.addPlayerError(defender.getName());
+		m_HomeTeam.addPlayerPenalty(defender.getName());
+		m_HomeTeam.addPlayerStamina(attacker.getName(), -4);
+
 		if (m_BallPosition > 70 && (awayTeamScore - homeTeamScore) > -3)
 		{
+
 			//1 in 4 chance of error
+			if (m_MainGoalKickers)
+			{
+				attacker = m_AwayTeam.getGoalKicker();
+			}
 			int goal = (rand() % conversionErrorChance);
 			if (goal != 0)
 			{

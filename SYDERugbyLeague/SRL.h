@@ -49,7 +49,22 @@ enum GameStateLeaderboardSYDE
 	State_4020,
 	Tackles_State,
 	FG_State,
-	KickMetres_State
+	KickMetres_State,
+	Steals_State,
+	ErrorsLdr_State,
+	Penalty_State,
+	RuckError_State,
+	NoTry_State
+};
+
+enum SRLSeasonLength
+{
+	Length_ShortSeason = 10,
+	Length_MediumSeason = 20,
+	Length_NormalSeason = 26,
+	Length_LongSeason = 40,
+	Length_ExtremeSeason = 66,
+	Length_EnduranceSeason = 100
 };
 
 struct SRLLadderPosition
@@ -138,6 +153,11 @@ struct SRLSeason
 	SRLLeaderboard m_TopTackles;
 	SRLLeaderboard m_Top4020;
 	SRLLeaderboard m_TopKickMetres;
+	SRLLeaderboard m_TopSteals;
+	SRLLeaderboard m_TopErrors;
+	SRLLeaderboard m_TopPenalty;
+	SRLLeaderboard m_TopRuckErrors;
+	SRLLeaderboard m_TopNoTries;
 };
 
 class SRLGame : public SYDEWindowGame {
@@ -164,6 +184,8 @@ public:
 	ConsoleWindow LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 
+	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
+
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
 
@@ -175,7 +197,10 @@ public:
 
 	ConsoleWindow configTabs(ConsoleWindow window);
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
+
+	void SimulateGames();
 
 	std::function<ConsoleWindow(ConsoleWindow, int, int)> m_State;
 
@@ -190,6 +215,8 @@ public:
 	static GameStateLeaderboardSYDE ldrState;
 	static GameStateResultSYDE resultState;
 
+	static SRLSeasonLength seasonLength;
+
 	static bool SeasonStart;
 
 	static bool Simulate;
@@ -202,13 +229,18 @@ public:
 	static bool generateCall;
 
 	static bool errorCall;
-	
+	static bool menuCall;
+
+	static bool m_GoalKicker;
+	static bool m_Weather;
+	static bool m_Stamina;
+
+	static string errorMessage;
 
 	static bool randomFillCall;
 	void sortOutResultsScreen();
 
 private:
-	string errorMessage = "";
 	SYDEClickableButton m_StartSeasonBtn;
 	SYDEClickableButton m_NextTeamSeasonCfgBtn;
 	SYDEClickableButton m_PrevTeamSeasonCfgBtn;
@@ -219,6 +251,10 @@ private:
 
 	//View Season
 	SYDEClickableButton m_ErrorOkViewBtn;
+
+	//View Season
+	SYDEClickableButton m_MenuOkViewBtn;
+	SYDEClickableButton m_MenuCnclViewBtn;
 
 	//View Season
 	SYDEClickableButton m_SeasonViewBtn;
@@ -255,6 +291,12 @@ private:
 	SYDEClickableButton m_LeaderboardBtnMostTackles;
 	SYDEClickableButton m_LeaderboardBtnMostKickMetres;
 	SYDEClickableButton m_LeaderboardBtnMost4020;
+	SYDEClickableButton m_LeaderboardBtnMostSteals;
+
+	SYDEClickableButton m_LeaderboardBtnMostErrors;
+	SYDEClickableButton m_LeaderboardBtnMostPenalties;
+	SYDEClickableButton m_LeaderboardBtnMostNoTries;
+	SYDEClickableButton m_LeaderboardBtnMostRuckErrors;
 
 	SYDEClickableButton m_BackSeasonCfgBtn;
 	SYDEClickableButton m_SeasonCfgBtn;
@@ -265,6 +307,14 @@ private:
 	SYDEClickableButton m_GameResultSummaryBtn;
 	SYDEClickableButton m_GameResultPlayByPlayBtn;
 
+	//View Season
+	SYDEClickableButton m_SettingsGoalKickerBtn;
+	//View Season
+	SYDEClickableButton m_SettingsWeatherBtn;
+	SYDEClickableButton m_SettingsStaminaBtn;
+	SYDEClickableButton m_SettingsSeasonLengthBtn;
+
+
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;
 	int m_SelectedTeam = 0;
@@ -273,6 +323,8 @@ private:
 	vector<string> m_ResultsScreenVector;
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;
+
+	int BaseSeasonGames = 26;
 
 	int m_round = 0;
 	int m_roundToSimulate = 0;

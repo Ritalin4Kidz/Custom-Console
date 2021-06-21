@@ -10,7 +10,7 @@ using json = nlohmann::json;
 class SRLPlayer {
 public:
 	SRLPlayer();
-	SRLPlayer(string name, int speed, int attack, int defence);
+	SRLPlayer(string name, int speed, int attack, int defence,int kicking, int goalKicking, int handling);
 
 
 	virtual ~SRLPlayer();
@@ -24,7 +24,16 @@ public:
 
 	int getDefence() { return m_BaseDefence; }
 
+	int getKicking() { return m_BaseKicking; }
+
+	int getHandling() { return m_BaseHandling; }
+
+	float getStamina() { return m_Stamina / 100; }
+	void addStamina(int stamina) { m_Stamina += stamina; }
+
 	int getID() { return id; }
+
+	int getGoalKicking() { return m_GoalKicking; }
 
 	void loadPlayer(string path);
 	void savePlayer();
@@ -56,16 +65,28 @@ public:
 	void add4020() { m_4020++; }
 	int get4020() { return m_4020; }
 
+	void addRuckError(){ m_RuckInfringements++; }
+	int getRuckErrors() { return m_RuckInfringements; }
+
+	void addPenalty() { m_PenaltiesConceded++; }
+	int getPenalty() { return m_PenaltiesConceded; }
+
+	void addNoTry() { m_NoTriesVideoRef++; }
+	int getNoTry() { return m_NoTriesVideoRef; }
+
 	void addTimeOnField(int time) { timeOnField += time; }
 	string getTimeOnField();
 
 	void addIntercept() { m_Intercepts++; }
 	void addStrip() { m_Strips++; }
 
+	int getSteals() { return m_Intercepts + m_Strips; }
+
 	int getPoints() { return (m_Tries * 4) + (m_Goals * 2) + m_FieldGoals; }
 
 	float getDallyMPointsWorth();
-	int getFantasyPoints() { return getDallyMPointsWorth() * 5; }
+	float getFantasyPointsCalc();
+	int getFantasyPoints() { return getFantasyPointsCalc() * 5; }
 
 	string getStatsString() { return "|Time Played: " + getTimeOnField() + " |Metres: " + std::to_string(m_RunMetres) + " |" + "Tackles: " + std::to_string(m_Tackles) + " |" + "Kicks: " + std::to_string(m_Kicks) + " |" + "Kick Metres: " + std::to_string(m_KickMetres) + " |" + "40/20: " + std::to_string(m_4020) + " |" + "Errors: " + std::to_string(m_Errors) + " |" + "Tries: " + std::to_string(m_Tries) + " |" + "Goals: " + std::to_string(m_Goals) + " |" + "Field Goals: " + std::to_string(m_FieldGoals) + " |" + "Total Points: " + std::to_string(getPoints()) + " |" + "Fantasy Points: " + to_string(getFantasyPoints()); }
 
@@ -78,6 +99,14 @@ private:
 	int m_BaseAttack;
 	//GENERAL DEFENSIVE STAT
 	int m_BaseDefence;
+	//GENRRAL GOAL KICKING STAT
+	int m_GoalKicking = 0;
+	//GENERAL KICKING STAT
+	int m_BaseKicking = 0;
+	//GENERAL HANDLING STAT
+	int m_BaseHandling = 0;
+
+	float m_Stamina = 100;
 
 	int id = 0;
 
@@ -91,6 +120,9 @@ private:
 	int m_Errors = 0;
 	int m_4020 = 0;
 	int m_Tackles = 0;
+	int m_PenaltiesConceded = 0;
+	int m_NoTriesVideoRef = 0;
+	int m_RuckInfringements = 0;
 
 	int m_Intercepts = 0;
 	int m_Strips = 0;

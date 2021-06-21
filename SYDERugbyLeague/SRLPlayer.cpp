@@ -4,12 +4,15 @@ SRLPlayer::SRLPlayer()
 {
 }
 
-SRLPlayer::SRLPlayer(string name, int speed, int attack, int defence)
+SRLPlayer::SRLPlayer(string name, int speed, int attack, int defence,int kicking, int goalKicking, int handling)
 {
 	m_PlayerName = name;
 	m_BaseSpeed = speed;
 	m_BaseAttack = attack;
 	m_BaseDefence = defence;
+	m_BaseKicking = kicking;
+	m_GoalKicking = goalKicking;
+	m_BaseHandling = handling;
 }
 
 SRLPlayer::~SRLPlayer()
@@ -25,6 +28,8 @@ void SRLPlayer::loadPlayer(string path)
 	this->m_BaseDefence = (save_file["def"]);
 	this->m_BaseSpeed = (save_file["spd"]);
 	this->id = (save_file["id"]);
+	this->m_GoalKicking = (save_file["goalkick"]);
+	this->m_BaseKicking = (save_file["kick"]);
 }
 
 void SRLPlayer::savePlayer()
@@ -35,7 +40,8 @@ void SRLPlayer::savePlayer()
 	save_file["spd"] = m_BaseAttack;
 	save_file["def"] = m_BaseDefence;
 	save_file["atk"] = m_BaseSpeed;
-
+	save_file["kick"] = m_BaseKicking;
+	save_file["goalkick"] = m_GoalKicking;
 	if (id == 0)
 	{
 		id++;
@@ -89,8 +95,18 @@ float SRLPlayer::getDallyMPointsWorth()
 	float weight = 0;
 	weight = m_RunMetres + (m_Tackles * 2) + m_KickMetres + (m_4020*10) + (getPoints() * 10);
 	weight += (m_Strips * 3) + (m_Intercepts * 3);
-	weight = weight / (m_Errors + 1);
+	weight = weight / (m_Errors + m_RuckInfringements +m_PenaltiesConceded + 1);
 	weight = weight / 10;
 
 	return weight;
+}
+
+float SRLPlayer::getFantasyPointsCalc()
+{
+		float weight = 0;
+		weight = m_RunMetres + (m_Tackles * 2) + m_KickMetres + (m_4020 * 10) + (m_Tries * 8) + (m_Goals) + (m_FieldGoals *3);
+		weight += (m_Strips * 3) + (m_Intercepts * 3);
+		weight = weight / (m_Errors + m_RuckInfringements + m_PenaltiesConceded + 1);
+		weight = weight / 6;
+		return weight;
 }

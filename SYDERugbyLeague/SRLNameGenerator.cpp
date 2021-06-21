@@ -117,7 +117,14 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Kev",
 	"Jr.",
 	"Sr.",
-	"Frank"
+	"Frank",
+	"Declan",
+	"Pauly",
+	"Waylon",
+	"Homer",
+	"Bart",
+	"Hubert",
+	"Connor"
 };
 
 vector<string> SRLNameGenerator::LastNames = vector<string>
@@ -231,7 +238,9 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Domino",
 	"Junior",
 	"McDonalson",
-	"Sunnerson"
+	"Sunnerson",
+	"Sullivan",
+	"O' Sullivan"
 };
 
 vector<string> SRLNameGenerator::TeamNames = vector<string>

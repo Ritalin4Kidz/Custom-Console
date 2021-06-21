@@ -35,9 +35,15 @@ public:
 	void addPlayerTackle(string playerName);
 	void addPlayerIntercept(string playerName);
 	void addPlayerStrip(string playerName);
+	void addPlayerStamina(string playerName, int Stamina);
+
+	void addPlayerPenalty(string playerName);
+	void addPlayerRuckInfringment(string playerName);
+	void addPlayerNoTry(string playerName);
 
 	void addTimeOnField(int time);
 
+	SRLPlayer getGoalKicker();
 	int getInterchanges() { return m_Interchanges; }
 
 	vector<SRLPlayer> getPlayers() { return m_TeamList; }
@@ -59,7 +65,8 @@ public:
 	int totalAttackStat();
 	int totalDefenceStat();
 	int totalSpeedStat();
-
+	int totalKickStat();
+	int totalHandlingStat();
 private:
 
 	string m_Name;

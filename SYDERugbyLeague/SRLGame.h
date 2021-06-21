@@ -30,6 +30,9 @@ public:
 	void addPlay(string a_Play);
 	void addPlayNoMinutes(string a_Play);
 	void addPlay(string a_Play, SRLPlayer player);
+	void addSumary(string a_Play);
+	void addSumaryNoMinutes(string a_Play);
+	void addSummary(string a_Play, SRLPlayer player);
 
 	void generateWeather();
 
@@ -73,6 +76,7 @@ public:
 	int getMinutesPassed() { return m_MinutesPassed; }
 
 	vector<string> getPlayByPlay() { return m_PlayByPlay; }
+	vector<string> getSummary() { return m_Summary; }
 
 private:
 	//CONSTANTS
@@ -100,7 +104,7 @@ private:
 	int m_MinutesPassed;
 	//PLAYS
 	vector<string> m_PlayByPlay;
-	
+	vector<string> m_Summary;
 	//GAMEPLAY
 	int m_BallPosition = 100;
 	int m_Tackle = 0;

@@ -45,6 +45,41 @@ void SRLGameManager::addPlay(string a_Play, SRLPlayer player)
 	m_PlayByPlay.push_back(minutesStr + ":" + secondsStr + " - " + player.getName() + " - " + a_Play);
 }
 
+void SRLGameManager::addSumary(string a_Play)
+{
+	string minutesStr = to_string(m_MinutesPassed);
+	if (minutesStr.length() == 1)
+	{
+		minutesStr = "0" + minutesStr;
+	}
+	string secondsStr = to_string(m_SecondsPassed);
+	if (secondsStr.length() == 1)
+	{
+		secondsStr = "0" + secondsStr;
+	}
+	m_Summary.push_back(minutesStr + ":" + secondsStr + " - " + a_Play);
+}
+
+void SRLGameManager::addSumaryNoMinutes(string a_Play)
+{
+	m_Summary.push_back(a_Play);
+}
+
+void SRLGameManager::addSummary(string a_Play, SRLPlayer player)
+{
+	string minutesStr = to_string(m_MinutesPassed);
+	if (minutesStr.length() == 1)
+	{
+		minutesStr = "0" + minutesStr;
+	}
+	string secondsStr = to_string(m_SecondsPassed);
+	if (secondsStr.length() == 1)
+	{
+		secondsStr = "0" + secondsStr;
+	}
+	m_Summary.push_back(minutesStr + ":" + secondsStr + " - " + player.getName() + " - " + a_Play);
+}
+
 void SRLGameManager::generateWeather()
 {
 	if (!m_Weather)
@@ -267,6 +302,7 @@ void SRLGameManager::endStats()
 			player3 = m_AwayTeam.getPlayers()[i].getName();
 		}
 	}
+	addSumaryNoMinutes("Player Of The Match: " + player1);
 	addPlayNoMinutes("1st (3 Points) -- " + player1);
 	addPlayNoMinutes("2nd (2 Points) -- " + player2);
 	addPlayNoMinutes("3rd (1 Point) -- " + player3);
@@ -786,6 +822,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 				{
 					homeTeamScore += 1;
 					addPlay("FIELD GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+					addSummary("FIELD GOAL - " + to_string(homeTeamScore) + " v " +  to_string(awayTeamScore), attacker);
 					m_BallPosition = 100;
 					m_HomeTeam.addPlayerFieldGoal(attacker.getName());
 				}
@@ -814,6 +851,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 				{
 					awayTeamScore += 1;
 					addPlay("FIELD GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+					addSummary("FIELD GOAL - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 					m_BallPosition = 0;
 					m_AwayTeam.addPlayerFieldGoal(attacker.getName());
 				}
@@ -901,6 +939,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		}
 		homeTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+		addSummary("TRY - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 		m_HomeTeam.addPlayerTry(attacker.getName());
 		m_HomeTeam.addPlayerStamina(attacker.getName(), 5);
 		m_MinutesPassed++;
@@ -924,6 +963,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			{
 				homeTeamScore += 2;
 				addPlay("GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+				addSummary("GOAL - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 				m_HomeTeam.addPlayerStamina(attacker.getName(), 1);
 				m_HomeTeam.addPlayerGoal(attacker.getName());
 			}
@@ -1019,6 +1059,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		}
 		awayTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+		addSummary("TRY - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 		m_AwayTeam.addPlayerTry(attacker.getName());
 		m_AwayTeam.addPlayerStamina(attacker.getName(), 5);
 		m_MinutesPassed++;
@@ -1042,6 +1083,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			{
 				awayTeamScore += 2;
 				addPlay("GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+				addSummary("GOAL - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 				m_AwayTeam.addPlayerGoal(attacker.getName());
 				m_AwayTeam.addPlayerStamina(attacker.getName(), 1);
 			}
@@ -1092,6 +1134,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 			{
 				homeTeamScore += 2;
 				addPlay("PENALTY GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+				addSummary("PENALTY GOAL - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 				m_HomeTeam.addPlayerGoal(attacker.getName());
 				m_BallPosition = 100;
 			}
@@ -1136,6 +1179,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 			{
 				awayTeamScore += 2;
 				addPlay("PENALTY GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+				addSummary("PENALTY GOAL - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 				m_AwayTeam.addPlayerGoal(attacker.getName());
 				m_BallPosition = 0;
 			}

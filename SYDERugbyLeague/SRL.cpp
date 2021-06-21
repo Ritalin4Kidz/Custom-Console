@@ -19,6 +19,8 @@ bool SRLGame::menuCall = false;
 bool SRLGame::m_GoalKicker = true;
 bool SRLGame::m_Weather = true;
 bool SRLGame::m_Stamina = true;
+bool SRLGame::m_ExtraTime = true;
+bool SRLGame::m_ResultsTabCall = false;
 string SRLGame::errorMessage = "";
 void ExhibitionMatchClick()
 {
@@ -189,11 +191,13 @@ void BlankViewClick()
 
 void SummaryRsltViewClick()
 {
+	SRLGame::m_ResultsTabCall = true;
 	SRLGame::resultState = Summary_STATE;
 }
 
 void PlayByPlayRsltViewClick()
 {
+	SRLGame::m_ResultsTabCall = true;
 	SRLGame::resultState = PlayByPlay_STATE;
 }
 
@@ -215,7 +219,7 @@ void PrevRoundViewClick()
 
 void MainMenuViewClick()
 {
-	if (SRLGame::currentState != SeasonModeState)
+	if (SRLGame::currentState == MainMenu_STATE || SRLGame::currentState == InformationState || SRLGame::currentState == SettingsState)
 	{
 		SRLGame::newState = MainMenu_STATE;
 		return;
@@ -228,6 +232,10 @@ void MainMenuViewClick()
 void SettingsViewClick()
 {
 	SRLGame::newState = SettingsState;
+}
+void ExtraTimeViewClick()
+{
+	SRLGame::m_ExtraTime = !SRLGame::m_ExtraTime;
 }
 void SettingsLengthViewClick()
 {
@@ -295,7 +303,7 @@ void SRLGame::init()
 	m_Blank1ViewBtn = SYDEClickableButton("    Blank   ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_Blank1ViewBtn.setHighLight(RED);
 	m_Blank1ViewBtn.SetFunc(BlankViewClick);
-	m_PreviousRoundViewBtn = SYDEClickableButton("   Previous  ", Vector2(24, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_PreviousRoundViewBtn = SYDEClickableButton("  Previous  ", Vector2(24, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
 	m_PreviousRoundViewBtn.setHighLight(RED);
 	m_PreviousRoundViewBtn.SetFunc(PrevRoundViewClick);
 	m_NextRoundViewBtn = SYDEClickableButton("    Next    ", Vector2(36, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -435,6 +443,10 @@ void SRLGame::init()
 	m_SettingsSeasonLengthBtn = SYDEClickableButton(" Season Length:", Vector2(6, 9), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsSeasonLengthBtn.setHighLight(RED);
 	m_SettingsSeasonLengthBtn.SetFunc(SettingsLengthViewClick);
+
+	m_SettingsExtraTimeBtn = SYDEClickableButton(" Extra Time:", Vector2(9, 11), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsExtraTimeBtn.setHighLight(RED);
+	m_SettingsExtraTimeBtn.SetFunc(ExtraTimeViewClick);
 }
 
 vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
@@ -807,8 +819,8 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			int line = 3;
 			for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
 			{
-				window.setTextAtPoint(Vector2(0, line ), "(H) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds.ReturnPrice(), window._intToColour(i + 1));
-				window.setTextAtPoint(Vector2(0, line + 1),"(A) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds.ReturnPrice(), window._intToColour(i + 1));
+				window.setTextAtPoint(Vector2(0, line ), "(H) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds.ReturnPrice(), window._intToColour(i + 2));
+				window.setTextAtPoint(Vector2(0, line + 1),"(A) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds.ReturnPrice(), window._intToColour(i + 2));
 				line += 2;
 			}
 		}
@@ -907,6 +919,11 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 {
 	window = drawTabs(window);
 	window = drawResultTabs(window);
+	if (m_ResultsTabCall)
+	{
+		m_ResultsTabCall = false;
+		m_LineResults = 0;
+	}
 	if (NextRoundCall)
 	{
 		NextRoundCall = false;
@@ -929,7 +946,33 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	}
 	if (resultState == Summary_STATE)
 	{
+		for (int i = 0; i < windowWidth; i++)
+		{
+			window.setTextAtPoint(Vector2(i, 3), " ", BLACK_BRIGHTWHITE_BG);
+		}
+		window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam, BLACK_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(26, 3), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].awayTeamScore), BLACK_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(34, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam, BLACK_BRIGHTWHITE_BG);
+		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+		{
+			if (m_LineResults > 0)
+			{
+				m_LineResults--;
+			}
+		}
 
+		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+		{
+			if (m_LineResults < m_SummaryScreenVector.size() - 1)
+			{
+				m_LineResults++;
+			}
+		}
+
+		for (int i = 0; i + m_LineResults < m_SummaryScreenVector.size() && i < 14; i++)
+		{
+			window.setTextAtPoint(Vector2(1, 4 + i), m_SummaryScreenVector[i + m_LineResults], WHITE);
+		}
 	}
 	if (resultState == PlayByPlay_STATE)
 	{
@@ -1021,6 +1064,15 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 	case Length_EnduranceSeason:
 		window.setTextAtPoint(Vector2(22, 9), "Endurance", BRIGHTWHITE);
 		break;
+	}
+	window = m_SettingsExtraTimeBtn.draw_ui(window);
+	if (m_ExtraTime)
+	{
+		window.setTextAtPoint(Vector2(22, 11), "On", BRIGHTWHITE);
+	}
+	else
+	{
+		window.setTextAtPoint(Vector2(22, 11), "Off", BRIGHTWHITE);
 	}
 	return window;
 }
@@ -1235,7 +1287,8 @@ void SRLGame::SimulateGames()
 			{
 				m_srlmanager.addTeamLineupsPlayByPlay();
 				m_srlmanager.addStartTimePlay();
-				while (m_srlmanager.getMinutesPassed() < 80 || m_srlmanager.isTied())
+				bool continuePlay = finals || m_ExtraTime;
+				while (m_srlmanager.getMinutesPassed() < 80 || (m_srlmanager.isTied() && continuePlay))
 				{
 					m_srlmanager.play();
 				}
@@ -1260,6 +1313,7 @@ void SRLGame::SimulateGames()
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].LosingTeam = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam;
 			}
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].ResultPlayByPlay = m_srlmanager.getPlayByPlay();
+			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].SummaryPlayByPlay = m_srlmanager.getSummary();
 
 			for (int i = 0; i < m_srlmanager.getHomeTeam().getPlayers().size(); i++)
 			{
@@ -1322,9 +1376,13 @@ void SRLGame::SimulateGames()
 							m_Season.m_Ladder.m_Ladder[ii].won++;
 							m_Season.m_Ladder.m_Ladder[ii].points += 2;
 						}
-						else
+						else if (m_srlmanager.getHomeScore() < m_srlmanager.getAwayScore())
 						{
 							m_Season.m_Ladder.m_Ladder[ii].lost++;
+						}
+						else
+						{
+							m_Season.m_Ladder.m_Ladder[ii].points++;
 						}
 						m_Season.m_Ladder.m_Ladder[ii].pointsFor += m_srlmanager.getHomeScore();
 						m_Season.m_Ladder.m_Ladder[ii].pointsAgainst += m_srlmanager.getAwayScore();
@@ -1338,9 +1396,13 @@ void SRLGame::SimulateGames()
 							m_Season.m_Ladder.m_Ladder[ii].won++;
 							m_Season.m_Ladder.m_Ladder[ii].points += 2;
 						}
-						else
+						else if (m_srlmanager.getHomeScore() > m_srlmanager.getAwayScore())
 						{
 							m_Season.m_Ladder.m_Ladder[ii].lost++;
+						}
+						else
+						{
+							m_Season.m_Ladder.m_Ladder[ii].points++;
 						}
 						m_Season.m_Ladder.m_Ladder[ii].pointsAgainst += m_srlmanager.getHomeScore();
 						m_Season.m_Ladder.m_Ladder[ii].pointsFor += m_srlmanager.getAwayScore();
@@ -1407,6 +1469,7 @@ void SRLGame::SimulateGames()
 void SRLGame::sortOutResultsScreen()
 {
 	m_ResultsScreenVector.clear();
+	m_SummaryScreenVector.clear();
 	vector<string> temp = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay;
 	for (int i = 0; i < temp.size(); i++)
 	{
@@ -1416,6 +1479,11 @@ void SRLGame::sortOutResultsScreen()
 			temp[i].erase(temp[i].begin(), temp[i].begin() + 55);
 		}
 		m_ResultsScreenVector.push_back(temp[i]);
+	}
+	vector<string> temp2 = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].SummaryPlayByPlay;
+	for (int i = 0; i < temp2.size(); i++)
+	{
+		m_SummaryScreenVector.push_back(temp2[i]);
 	}
 	m_LineResults = 0;
 }

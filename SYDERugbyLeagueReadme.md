@@ -17,6 +17,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###	 0.3.1.0 alpha
+- Extra time now a setting (always on during finals games)
+
 ###  0.3.0.0 alpha 21-06-2021
 - Game Settings
 - Teams now have a main goal kicker if option selected
@@ -24,6 +27,7 @@ SRL Simulation game made inside the SYDE Framework.
 - players now have handling stats
 - leaderboard now only shows top 10 but also includes options to view stats of poor discipline
 - players now have stamina (optional game setting)
+- season length can be changed in settings
 
 ###  0.2.0.0 alpha 18-06-2021
 - Weather In Games

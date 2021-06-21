@@ -103,6 +103,7 @@ struct SRLGameMatchup
 	string HomeTeam;
 	string AwayTeam;
 	vector<string> ResultPlayByPlay;
+	vector<string> SummaryPlayByPlay;
 
 	int homeTeamScore = 0;
 	int awayTeamScore = 0;
@@ -234,6 +235,9 @@ public:
 	static bool m_GoalKicker;
 	static bool m_Weather;
 	static bool m_Stamina;
+	static bool m_ExtraTime;
+	static bool m_ResultsTabCall;
+
 
 	static string errorMessage;
 
@@ -313,6 +317,7 @@ private:
 	SYDEClickableButton m_SettingsWeatherBtn;
 	SYDEClickableButton m_SettingsStaminaBtn;
 	SYDEClickableButton m_SettingsSeasonLengthBtn;
+	SYDEClickableButton m_SettingsExtraTimeBtn;
 
 
 	vector<string> m_SavedTeams;
@@ -321,6 +326,7 @@ private:
 	SRLSeason m_Season;
 
 	vector<string> m_ResultsScreenVector;
+	vector<string> m_SummaryScreenVector;
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;
 

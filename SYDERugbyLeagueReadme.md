@@ -4,18 +4,18 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR RELEASE (As Of 21-06-2021)
-- More Game Options
-- - Player Injuries
-- - Sin Bins/Send Offs
+## GOALS FOR RELEASE (As Of 22-06-2021)
 
-- Simplified Game Summaries
+- Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
-- Betting
+- Betting (Properly Implemented)
 
 - Individual Player Analysis
 
 ## Release Notes
+
+###  0.4.1.0 alpha
+- More names added to the name generator
 
 ###  0.4.0.0 alpha 22-06-2021
 - Injuries now a game setting (defaulted to none)
@@ -23,6 +23,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 ###	 0.3.1.0 alpha
 - Extra time now a setting (always on during finals games)
+- game summaries
 
 ###  0.3.0.0 alpha 21-06-2021
 - Game Settings

@@ -124,7 +124,10 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Homer",
 	"Bart",
 	"Hubert",
-	"Connor"
+	"Connor",
+	"Dreka",
+	"Imm",
+	"Dasi"
 };
 
 vector<string> SRLNameGenerator::LastNames = vector<string>
@@ -240,7 +243,32 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"McDonalson",
 	"Sunnerson",
 	"Sullivan",
-	"O' Sullivan"
+	"O' Sullivan",
+	"Dempsey",
+	"Martin",
+	"Kriis",
+	"Cotric",
+	"Yacoub",
+	"Silwedel",
+	"Dean",
+	"Kerr",
+	"Fallon",
+	"Fox",
+	"Wolf",
+	"Humphrey",
+	"West",
+	"East",
+	"North",
+	"South",
+	"Kimley",
+	"Horter",
+	"Gealo",
+	"Develo",
+	"Indigo",
+	"Dharo",
+	"Xylxed",
+	"Kylze",
+	"Normandy"
 };
 
 vector<string> SRLNameGenerator::TeamNames = vector<string>
@@ -483,7 +511,7 @@ vector<string> SRLNameGenerator::CityNames = vector<string>
 	"Ademonia",
 	"Transistia",
 	"Saltio City",
-	"North West Bilby",
+	"NW Bilby",
 	"Bilby",
 	"London",
 	"Amazita City",
@@ -567,7 +595,11 @@ vector<string> SRLNameGenerator::CityNames = vector<string>
 	"New Xylsdia",
 	"Denton",
 	"Windan",
-	"Cyprux"
+	"Cyprux",
+	"Gera",
+	"Hryold",
+	"Normville",
+	"Bakini"
 };
 
 

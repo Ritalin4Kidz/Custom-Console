@@ -17,6 +17,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.4.0.0 alpha 22-06-2021
+- Injuries now a game setting (defaulted to none)
+- Sin Bins & Send Offs
+
 ###	 0.3.1.0 alpha
 - Extra time now a setting (always on during finals games)
 

@@ -20,6 +20,8 @@ bool SRLGame::m_GoalKicker = true;
 bool SRLGame::m_Weather = true;
 bool SRLGame::m_Stamina = true;
 bool SRLGame::m_ExtraTime = true;
+bool SRLGame::m_Injuries = false;
+bool SRLGame::m_SinBins = false;
 bool SRLGame::m_ResultsTabCall = false;
 string SRLGame::errorMessage = "";
 void ExhibitionMatchClick()
@@ -163,12 +165,28 @@ void NoTriesLdrViewClick()
 {
 	SRLGame::ldrState = NoTry_State;
 }
+void SinBinLdrViewClick()
+{
+	SRLGame::ldrState = SinBin_State;
+}
+void SendOffLdrViewClick()
+{
+	SRLGame::ldrState = SendOff_State;
+}
+void InjuryLdrViewClick()
+{
+	SRLGame::ldrState = Injury_State;
+}
+
 
 void GenerateTeamViewClick()
 {
 	SRLGame::generateCall = true;
 }
-
+void ToggleSinBinClick()
+{
+	SRLGame::m_SinBins = !SRLGame::m_SinBins;
+}
 void ToggleKickerClick()
 {
 	SRLGame::m_GoalKicker = !SRLGame::m_GoalKicker;
@@ -236,6 +254,10 @@ void SettingsViewClick()
 void ExtraTimeViewClick()
 {
 	SRLGame::m_ExtraTime = !SRLGame::m_ExtraTime;
+}
+void InjuriesViewClick()
+{
+	SRLGame::m_Injuries = !SRLGame::m_Injuries;
 }
 void SettingsLengthViewClick()
 {
@@ -392,6 +414,16 @@ void SRLGame::init()
 	m_LeaderboardBtnMostNoTries.setHighLight(RED);
 	m_LeaderboardBtnMostNoTries.SetFunc(NoTriesLdrViewClick);
 
+	m_LeaderboardBtnMostSinBin = SYDEClickableButton("   Sin Bin  ", Vector2(12, 18), Vector2(12, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_LeaderboardBtnMostSinBin.setHighLight(RED);
+	m_LeaderboardBtnMostSinBin.SetFunc(SinBinLdrViewClick);
+	m_LeaderboardBtnMostSendOff = SYDEClickableButton("  Send Off  ", Vector2(24, 18), Vector2(12, 1), BRIGHTWHITE_RED_BG, false);
+	m_LeaderboardBtnMostSendOff.setHighLight(RED);
+	m_LeaderboardBtnMostSendOff.SetFunc(SendOffLdrViewClick);
+	m_LeaderboardBtnMostInjuries = SYDEClickableButton(" Top Injury ", Vector2(36, 18), Vector2(12, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_LeaderboardBtnMostInjuries.setHighLight(RED);
+	m_LeaderboardBtnMostInjuries.SetFunc(InjuryLdrViewClick);
+
 
 	//MainMenuTabs
 	m_BackSeasonCfgBtn = SYDEClickableButton("   Main Menu  ", Vector2(0, 1), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -447,6 +479,14 @@ void SRLGame::init()
 	m_SettingsExtraTimeBtn = SYDEClickableButton(" Extra Time:", Vector2(9, 11), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsExtraTimeBtn.setHighLight(RED);
 	m_SettingsExtraTimeBtn.SetFunc(ExtraTimeViewClick);
+
+	m_SettingsInjuryBtn = SYDEClickableButton(" Injuries:", Vector2(11, 13), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsInjuryBtn.setHighLight(RED);
+	m_SettingsInjuryBtn.SetFunc(InjuriesViewClick);
+
+	m_SettingsSinBinBtn = SYDEClickableButton(" Sin Bins:", Vector2(11, 15), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsSinBinBtn.setHighLight(RED);
+	m_SettingsSinBinBtn.SetFunc(ToggleSinBinClick);
 }
 
 vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
@@ -912,6 +952,21 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 		window = LeaderboardPositions(window, m_Season.m_TopNoTries.shortlist);
 		window.setTextAtPoint(Vector2(0, 5), "MOST TRIES DISALLOWED   ", WHITE);
 	}
+	else if (ldrState == SinBin_State)
+	{
+		window = LeaderboardPositions(window, m_Season.m_TopSinBin.shortlist);
+		window.setTextAtPoint(Vector2(0, 5), "MOST SIN BINS   ", WHITE);
+	}
+	else if (ldrState == SendOff_State)
+	{
+		window = LeaderboardPositions(window, m_Season.m_TopSendOff.shortlist);
+		window.setTextAtPoint(Vector2(0, 5), "MOST SEND OFFS   ", WHITE);
+	}
+	else if (ldrState == Injury_State)
+	{
+		window = LeaderboardPositions(window, m_Season.m_TopInjuries.shortlist);
+		window.setTextAtPoint(Vector2(0, 5), "MOST INJURIES   ", WHITE);
+	}
 	return window;
 }
 
@@ -1074,6 +1129,24 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 	{
 		window.setTextAtPoint(Vector2(22, 11), "Off", BRIGHTWHITE);
 	}
+	window = m_SettingsInjuryBtn.draw_ui(window);
+	if (m_Injuries)
+	{
+		window.setTextAtPoint(Vector2(22, 13), "On", BRIGHTWHITE);
+	}
+	else
+	{
+		window.setTextAtPoint(Vector2(22, 13), "Off", BRIGHTWHITE);
+	}
+	window = m_SettingsSinBinBtn.draw_ui(window);
+	if (m_SinBins)
+	{
+		window.setTextAtPoint(Vector2(22, 15), "On", BRIGHTWHITE);
+	}
+	else
+	{
+		window.setTextAtPoint(Vector2(22, 15), "Off", BRIGHTWHITE);
+	}
 	return window;
 }
 
@@ -1127,6 +1200,10 @@ ConsoleWindow SRLGame::drawLeaderboardTabs(ConsoleWindow window)
 	window = m_LeaderboardBtnMostPenalties.draw_ui(window);
 	window = m_LeaderboardBtnMostNoTries.draw_ui(window);
 	window = m_LeaderboardBtnMostRuckErrors.draw_ui(window);
+
+	window = m_LeaderboardBtnMostSinBin.draw_ui(window);
+	window = m_LeaderboardBtnMostSendOff.draw_ui(window);
+	window = m_LeaderboardBtnMostInjuries.draw_ui(window);
 
 	return window;
 }
@@ -1283,6 +1360,7 @@ void SRLGame::SimulateGames()
 			m_srlmanager.teamHaveMainGoalKickers(m_GoalKicker);
 			m_srlmanager.weatherEffects(m_Weather);
 			m_srlmanager.staminaEffect(m_Stamina);
+			m_srlmanager.injuriesEffect(m_Injuries);
 			try
 			{
 				m_srlmanager.addTeamLineupsPlayByPlay();
@@ -1331,6 +1409,9 @@ void SRLGame::SimulateGames()
 				m_Season.m_TopSteals.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getSteals());
 				m_Season.m_TopNoTries.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getNoTry());
 				m_Season.m_TopRuckErrors.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getRuckErrors());
+				m_Season.m_TopSinBin.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getSinBins());
+				m_Season.m_TopSendOff.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getSendOffs());
+				m_Season.m_TopInjuries.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getInjuries());
 			}
 			for (int i = 0; i < m_srlmanager.getAwayTeam().getPlayers().size(); i++)
 			{
@@ -1348,6 +1429,9 @@ void SRLGame::SimulateGames()
 				m_Season.m_TopSteals.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getSteals());
 				m_Season.m_TopNoTries.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getNoTry());
 				m_Season.m_TopRuckErrors.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getRuckErrors());
+				m_Season.m_TopSinBin.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getSinBins());
+				m_Season.m_TopSendOff.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getSendOffs());
+				m_Season.m_TopInjuries.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getInjuries());
 			}
 			m_Season.m_TopPlayers.orderShortlist();
 			m_Season.m_TopTries.orderShortlist();
@@ -1363,6 +1447,9 @@ void SRLGame::SimulateGames()
 			m_Season.m_TopSteals.orderShortlist();
 			m_Season.m_TopNoTries.orderShortlist();
 			m_Season.m_TopRuckErrors.orderShortlist();
+			m_Season.m_TopSinBin.orderShortlist();
+			m_Season.m_TopSendOff.orderShortlist();
+			m_Season.m_TopInjuries.orderShortlist();
 
 			if (!finals)
 			{

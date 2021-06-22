@@ -15,6 +15,13 @@ public:
 	virtual ~SRLTeam();
 
 	string Interchange();
+	/// <summary>
+	/// Don't use for regular interchange as it injures the player
+	/// </summary>
+	/// <param name="playerName"></param>
+	/// <returns></returns>
+	string SafeInterchange(string playerName);
+
 
 	SRLPlayer getRandomPlayer();
 
@@ -37,11 +44,16 @@ public:
 	void addPlayerStrip(string playerName);
 	void addPlayerStamina(string playerName, int Stamina);
 
+	void setPlayerInjured(string playerName);
+	void setPlayerSent(string playerName, bool sendOff);
+
+	int getPlayerOffCount();
+
 	void addPlayerPenalty(string playerName);
 	void addPlayerRuckInfringment(string playerName);
 	void addPlayerNoTry(string playerName);
 
-	void addTimeOnField(int time);
+	vector<string> addTimeOnField(int time);
 
 	SRLPlayer getGoalKicker();
 	int getInterchanges() { return m_Interchanges; }

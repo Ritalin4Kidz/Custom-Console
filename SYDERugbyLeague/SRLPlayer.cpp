@@ -68,6 +68,26 @@ void SRLPlayer::savePlayer()
 	//ofs << save_file;
 }
 
+void SRLPlayer::addTimeOnField(int time)
+{
+	if (m_Sent)
+	{
+		return;
+	}
+	if (m_Sinbin)
+	{
+		sinBinTime += time;
+		if (sinBinTime > 600)
+		{
+			sinBinTime = 0;
+			m_Sinbin = false;
+			m_ComingBack = true;
+		}
+		return;
+	}
+	timeOnField += time;
+}
+
 string SRLPlayer::getTimeOnField()
 {
 	int minutes = 0;

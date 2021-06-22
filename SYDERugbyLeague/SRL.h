@@ -54,7 +54,10 @@ enum GameStateLeaderboardSYDE
 	ErrorsLdr_State,
 	Penalty_State,
 	RuckError_State,
-	NoTry_State
+	NoTry_State,
+	Injury_State,
+	SendOff_State,
+	SinBin_State
 };
 
 enum SRLSeasonLength
@@ -159,6 +162,10 @@ struct SRLSeason
 	SRLLeaderboard m_TopPenalty;
 	SRLLeaderboard m_TopRuckErrors;
 	SRLLeaderboard m_TopNoTries;
+
+	SRLLeaderboard m_TopSinBin;
+	SRLLeaderboard m_TopSendOff;
+	SRLLeaderboard m_TopInjuries;
 };
 
 class SRLGame : public SYDEWindowGame {
@@ -236,6 +243,10 @@ public:
 	static bool m_Weather;
 	static bool m_Stamina;
 	static bool m_ExtraTime;
+	static bool m_Injuries;
+	static bool m_SinBins;
+
+
 	static bool m_ResultsTabCall;
 
 
@@ -302,6 +313,10 @@ private:
 	SYDEClickableButton m_LeaderboardBtnMostNoTries;
 	SYDEClickableButton m_LeaderboardBtnMostRuckErrors;
 
+	SYDEClickableButton m_LeaderboardBtnMostSinBin;
+	SYDEClickableButton m_LeaderboardBtnMostSendOff;
+	SYDEClickableButton m_LeaderboardBtnMostInjuries;
+
 	SYDEClickableButton m_BackSeasonCfgBtn;
 	SYDEClickableButton m_SeasonCfgBtn;
 	SYDEClickableButton m_GameSettingsBtn;
@@ -318,7 +333,8 @@ private:
 	SYDEClickableButton m_SettingsStaminaBtn;
 	SYDEClickableButton m_SettingsSeasonLengthBtn;
 	SYDEClickableButton m_SettingsExtraTimeBtn;
-
+	SYDEClickableButton m_SettingsInjuryBtn;
+	SYDEClickableButton m_SettingsSinBinBtn;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;

@@ -339,8 +339,17 @@ void SRLGameManager::play()
 	//CALLED EVERY SECOND
 	int timeSecondSkip = minTimeSecondSkip + (rand() % (maxTimeSecondSkip - minTimeSecondSkip));
 	m_SecondsPassed += timeSecondSkip;
-	m_HomeTeam.addTimeOnField(timeSecondSkip);
-	m_AwayTeam.addTimeOnField(timeSecondSkip);
+	vector<string> SinBinPlays;
+	SinBinPlays = m_HomeTeam.addTimeOnField(timeSecondSkip); 
+	for (int i = 0; i < SinBinPlays.size(); i++)
+	{
+		addPlay(SinBinPlays[i]);
+	}
+	SinBinPlays = m_AwayTeam.addTimeOnField(timeSecondSkip);
+	for (int i = 0; i < SinBinPlays.size(); i++)
+	{
+		addPlay(SinBinPlays[i]);
+	}
 	if (m_SecondsPassed >= 60)
 	{
 		m_SecondsPassed -= 60;
@@ -374,6 +383,15 @@ void SRLGameManager::play()
 
 	//MOVEMENT
 	doRegularMovement(defender, attacker);
+
+	int chance1 = rand() % injuryChance;
+	if (chance1 == 0)
+	{
+		if (doInjury(defender, attacker, m_HomeTeamHasBall))
+		{
+			return;
+		}		
+	}
 
 	//CHECK FOR ERRORS
 	if (checkError(defender, attacker))
@@ -460,6 +478,16 @@ void SRLGameManager::play()
 	
 }
 
+SRLPlayer SRLGameManager::getRandomSafe(SRLTeam team)
+{
+	SRLPlayer returnPlayer = team.getRandomPlayer();
+	while (returnPlayer.getPlayerSent())
+	{
+		returnPlayer = team.getRandomPlayer();
+	}
+	return returnPlayer;
+}
+
 bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 {
 	int atkError1 = rand() % defaultAttackErrorChance * weatherAtkErrorBonus;
@@ -476,16 +504,7 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 		if (atkError2 == 0)
 		{
 			addPlay("Knock On", attacker);
-			if (m_HomeTeamHasBall)
-			{
-				m_HomeTeam.addPlayerError(attacker.getName());
-				m_HomeTeam.addPlayerStamina(attacker.getName(), -2);
-			}
-			else
-			{
-				m_AwayTeam.addPlayerError(attacker.getName());
-				m_AwayTeam.addPlayerStamina(attacker.getName(), -2);
-			}
+			addAttackerErrorStats(attacker.getName(), -2);
 			changeOver(true);
 			return true;
 		}
@@ -494,16 +513,7 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 		if (atkError4 == 0)
 		{
 			addPlay("Forward Pass", attacker);
-			if (m_HomeTeamHasBall)
-			{
-				m_HomeTeam.addPlayerError(attacker.getName());
-				m_HomeTeam.addPlayerStamina(attacker.getName(), -2);
-			}
-			else
-			{
-				m_AwayTeam.addPlayerError(attacker.getName());
-				m_AwayTeam.addPlayerStamina(attacker.getName(), -2);
-			}
+			addAttackerErrorStats(attacker.getName(), -2);
 			changeOver(false);
 			return true;
 		}
@@ -515,16 +525,7 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 		if (atkError3 == 0)
 		{
 			addPlay("Over The Sideline", attacker);
-			if (m_HomeTeamHasBall)
-			{
-				m_HomeTeam.addPlayerError(attacker.getName());
-				m_HomeTeam.addPlayerStamina(attacker.getName(), -1);
-			}
-			else
-			{
-				m_AwayTeam.addPlayerError(attacker.getName());
-				m_AwayTeam.addPlayerStamina(attacker.getName(), -1);
-			}
+			addAttackerErrorStats(attacker.getName(), -1);
 			changeOver(false);
 			return true;
 		}
@@ -558,6 +559,14 @@ bool SRLGameManager::checkError(SRLPlayer defender, SRLPlayer attacker)
 		if (defError3 == 0)
 		{
 			doPenalty(defender, attacker);
+			if (defError2 == 0)
+			{
+				int sinBin = rand() % professionalFoulChance;
+				if (sinBin == 0)
+				{
+					doSendOff(defender, attacker, m_HomeTeamHasBall, false);
+				}
+			}
 			return true;
 		}
 	}
@@ -601,16 +610,7 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 	if (chanceOut == 0)
 	{
 		addPlay("Kick Out On The Full", attacker);
-		if (m_HomeTeamHasBall)
-		{
-			m_HomeTeam.addPlayerStamina(attacker.getName(), -1);
-			m_HomeTeam.addPlayerError(attacker.getName());
-		}
-		else
-		{
-			m_AwayTeam.addPlayerStamina(attacker.getName(), -1);
-			m_AwayTeam.addPlayerError(attacker.getName());
-		}
+		addAttackerErrorStats(attacker.getName(), -1);
 		changeOver(false);
 		return 1;
 	}
@@ -1112,6 +1112,111 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		m_Tackle = 0;
 	}
 	return false;
+}
+
+bool SRLGameManager::doInjury(SRLPlayer defender, SRLPlayer attacker, bool homeTeam)
+{
+	if (m_Injuries)
+	{
+		string swap = "";
+		if (homeTeam)
+		{
+			swap = m_HomeTeam.SafeInterchange(attacker.getName());
+		}
+		else
+		{
+			swap = m_AwayTeam.SafeInterchange(attacker.getName());
+		}
+		if (swap != "")
+		{
+			int injuryDesc = rand() % 5;
+			switch (injuryDesc)
+			{
+			case 0:
+				addPlay("Injury - HIA", attacker);
+				break;
+			case 1:
+				addPlay("Injury - Broken Arm", attacker);
+				break;
+			case 2:
+				addPlay("Injury - Broken Leg", attacker);
+				break;
+			case 3:
+				addPlay("Injury - ACL", attacker);
+				break;
+			case 4:
+				addPlay("Injury - Broken Jaw", attacker);
+				break;
+			default:
+				addPlay("Injury - Broken Jaw", attacker);
+				break;
+			}
+			if (injuryDesc == 0)
+			{
+				doSendOff(defender, attacker, homeTeam, true);
+				doPenalty(defender, attacker);
+			}
+			if (injuryDesc == 1 || injuryDesc == 4)
+			{
+				doSendOff(defender, attacker, homeTeam, false);
+				doPenalty(defender, attacker);
+			}
+			//addSummary("Injury", attacker);
+			addPlay(swap);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool SRLGameManager::doSendOff(SRLPlayer defender, SRLPlayer attacker, bool homeTeam, bool sendOff)
+{
+	if (m_sendOffs)
+	{
+		if (!homeTeam)
+		{
+			if (m_HomeTeam.getPlayerOffCount() > 3)
+			{
+				return false;
+			}
+			m_HomeTeam.addPlayerStamina(defender.getName(), -30);
+			m_HomeTeam.setPlayerSent(defender.getName(), sendOff);
+		}
+		else
+		{
+			if (m_HomeTeam.getPlayerOffCount() > 3)
+			{
+				return false;
+			}
+			m_AwayTeam.addPlayerStamina(defender.getName(), -30);
+			m_AwayTeam.setPlayerSent(defender.getName(), sendOff);
+		}
+		if (sendOff)
+		{
+			addPlay("SEND OFF", defender);
+			addSummary("SEND OFF", defender);
+		}
+		else
+		{
+			addPlay("SIN BIN", defender);
+			addSummary("SIN BIN", defender);
+		}
+	}
+	return true;
+}
+
+void SRLGameManager::addAttackerErrorStats(string PlayerName, int StaminaLoss)
+{
+	if (m_HomeTeamHasBall)
+	{
+		m_HomeTeam.addPlayerError(PlayerName);
+		m_HomeTeam.addPlayerStamina(PlayerName, StaminaLoss);
+	}
+	else
+	{
+		m_AwayTeam.addPlayerError(PlayerName);
+		m_AwayTeam.addPlayerStamina(PlayerName, StaminaLoss);
+	}
 }
 
 void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)

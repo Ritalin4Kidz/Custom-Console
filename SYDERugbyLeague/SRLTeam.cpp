@@ -34,10 +34,54 @@ string SRLTeam::Interchange()
 	{
 		return "";
 	}
+	if (m_TeamList[interchange1].getPlayerSent())
+	{
+		return "";
+	}
+	if (m_TeamList[interchange2].getInjured())
+	{
+		return "";
+	}
 	string swap = getName() + " Interchanged Players " + m_TeamList[interchange1].getName() + " & " + m_TeamList[interchange2].getName();
 	iter_swap(m_TeamList.begin() + interchange1,m_TeamList.begin() + interchange2);
 	m_Interchanges++;
 	return swap;
+}
+
+string SRLTeam::SafeInterchange(string playerName)
+{
+	if (m_Interchanges >= 8)
+	{
+		return "";
+	}
+	int Interchange1 = -1;
+	for (int i = 0; i < 13; i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			Interchange1 = i;
+		}
+	}
+	if (m_TeamList[Interchange1].getPlayerSent())
+	{
+		return "";
+	}
+	if (Interchange1 == -1)
+	{
+		return "";
+	}
+	for (int i = 13; i < m_TeamList.size(); i++)
+	{
+		if (!m_TeamList[i].getInjured())
+		{
+			m_TeamList[i].setInjured();
+			string swap = getName() + " Interchanged Players " + m_TeamList[Interchange1].getName() + " & " + m_TeamList[i].getName();
+			iter_swap(m_TeamList.begin() + Interchange1, m_TeamList.begin() + i);
+			m_Interchanges++;
+			return swap;
+		}
+	}
+	return "";
 }
 
 SRLPlayer SRLTeam::getRandomPlayer()
@@ -221,6 +265,43 @@ void SRLTeam::addPlayerStamina(string playerName, int Stamina)
 	}
 }
 
+void SRLTeam::setPlayerInjured(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].setInjured();
+			return;
+		}
+	}
+}
+
+void SRLTeam::setPlayerSent(string playerName, bool sendOff)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].setPlayerOff(sendOff);
+			return;
+		}
+	}
+}
+
+int SRLTeam::getPlayerOffCount()
+{
+	int temp = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getPlayerSent())
+		{
+			temp++;
+		}
+	}
+	return temp;
+}
+
 void SRLTeam::addPlayerPenalty(string playerName)
 {
 	for (int i = 0; i < m_TeamList.size(); i++)
@@ -257,12 +338,19 @@ void SRLTeam::addPlayerNoTry(string playerName)
 	}
 }
 
-void SRLTeam::addTimeOnField(int time)
+vector<string> SRLTeam::addTimeOnField(int time)
 {
+	vector<string> temp;
 	for (int i = 0; i < 13; i++)
 	{
 		m_TeamList[i].addTimeOnField(time);
+		if (m_TeamList[i].comingBack())
+		{
+			temp.push_back("SIN BIN RETURN - " + m_TeamList[i].getName());
+			m_TeamList[i].ComingBackOff();
+		}
 	}
+	return temp;
 }
 
 SRLPlayer SRLTeam::getGoalKicker()

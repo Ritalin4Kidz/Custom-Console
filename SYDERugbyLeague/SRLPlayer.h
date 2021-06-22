@@ -15,7 +15,8 @@ public:
 
 	virtual ~SRLPlayer();
 
-
+	bool getPlayerSent() { return m_Sent || m_Sinbin; }
+	void setPlayerOff(bool sendOff) { if (sendOff) { m_Sent = true; m_SendOffs++; } else { m_Sinbin = true; m_SinBins++; } }
 	string getName() { return m_PlayerName; }
 	void setName(string name) { m_PlayerName = name; }
 	int getSpeed() { return m_BaseSpeed; }
@@ -62,6 +63,10 @@ public:
 	void addError() { m_Errors++; }
 	int getErrors() { return m_Errors; }
 
+	int getSendOffs() { return m_SendOffs; }
+	int getSinBins() { return m_SinBins; }
+	int getInjuries() { return m_Injuries; }
+
 	void add4020() { m_4020++; }
 	int get4020() { return m_4020; }
 
@@ -71,10 +76,16 @@ public:
 	void addPenalty() { m_PenaltiesConceded++; }
 	int getPenalty() { return m_PenaltiesConceded; }
 
+	bool comingBack() { return m_ComingBack; }
+	void ComingBackOff() { m_ComingBack = false; }
+
+	void setInjured() { m_Injured = true; m_Injuries++; }
+	bool getInjured() { return m_Injured; }
+
 	void addNoTry() { m_NoTriesVideoRef++; }
 	int getNoTry() { return m_NoTriesVideoRef; }
 
-	void addTimeOnField(int time) { timeOnField += time; }
+	void addTimeOnField(int time);
 	string getTimeOnField();
 
 	void addIntercept() { m_Intercepts++; }
@@ -124,8 +135,20 @@ private:
 	int m_NoTriesVideoRef = 0;
 	int m_RuckInfringements = 0;
 
+	int sinBinTime = 0;
+
+	bool m_Injured = false;
+	bool m_Sinbin = false;
+	bool m_Sent = false;
+
+	bool m_ComingBack = false;
+
 	int m_Intercepts = 0;
 	int m_Strips = 0;
+
+	int m_SinBins = 0;
+	int m_SendOffs = 0;
+	int m_Injuries = 0;
 
 	int timeOnField = 0;
 };

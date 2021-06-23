@@ -12,7 +12,12 @@ SRL Simulation game made inside the SYDE Framework.
 
 - Individual Player Analysis
 
+- Season Events
+
 ## Release Notes
+
+###  0.5.1.0 alpha 
+- Betting Fully Implemented
 
 ###  0.5.0.0 alpha 23-06-2021
 - Background Music Added

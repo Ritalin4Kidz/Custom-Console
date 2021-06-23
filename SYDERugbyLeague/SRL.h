@@ -12,6 +12,8 @@
 #include <iostream>
 #include <fstream>
 #include <iterator>
+#pragma region states
+
 enum GameStateSYDE
 {
 	Unknown_STATE,
@@ -78,17 +80,20 @@ enum SRLSeasonLength
 	Length_EnduranceSeason = 100
 };
 
-struct SRLLadderPosition
+enum SRLBetTag
 {
-	string teamName = "";
-	int played = 0;
-	int won = 0;
-	int lost = 0;
-	int points = 0;
-	int pointsFor = 0;
-	int pointsAgainst = 0;
-	int pointsDifference = 0;
+	Bet_Lost,
+	Bet_Won,
+	Bet_InProgress
 };
+
+enum SRLPriorBets_State
+{
+	IndividualGameBets_State,
+	PremiershipWinnerBets_State
+};
+
+#pragma endregion
 
 struct SRLBetPrice
 {
@@ -103,15 +108,30 @@ struct SRLBetPrice
 	string ReturnPrice();
 };
 
+struct SRLLadderPosition
+{
+	string teamName = "";
+	int played = 0;
+	int won = 0;
+	int lost = 0;
+	int points = 0;
+	int pointsFor = 0;
+	int pointsAgainst = 0;
+	int pointsDifference = 0;
+	SRLBetPrice premiershipOdds = SRLBetPrice(5, 0);
+};
+
 struct SRLGameBet
 {
 	SRLGameBet() {}
-	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; }
+	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; originalBetAmount = betAmount; }
+	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet, bool bet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; premiershipBet = bet; originalBetAmount = betAmount;}
 	SRLBetPrice betOdds;
 	SRLBetPrice betAmount;
-
+	SRLBetPrice originalBetAmount;
+	bool premiershipBet = false;
 	SRLBetPrice ReturnBetWinnings();
-
+	SRLBetTag betState = Bet_InProgress;
 	string m_teamName;
 };
 
@@ -136,8 +156,16 @@ struct SRLGameMatchup
 	int homeTeamScore = 0;
 	int awayTeamScore = 0;
 
+	bool tiedGame = false;
+
 	string WinningTeam;
 	string LosingTeam;
+};
+
+struct SRLGameBetsWriting
+{
+	string name;
+	ColourClass colour;
 };
 
 struct SRLRound
@@ -173,6 +201,7 @@ struct SRLSeason
 	SRLSeason() {}
 	SRLSeason(SRLDraw draw, SRLLadder ladder) { m_Draw = draw; m_Ladder = ladder; }
 	SRLDraw m_Draw;
+	vector<SRLGameBet> m_PremiershipBets;
 	SRLLadder m_Ladder;
 	SRLLeaderboard m_TopPlayers;
 	SRLLeaderboard m_TopTries;
@@ -234,8 +263,10 @@ public:
 	ConsoleWindow BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
-
+	void CalculatePremiershipOdds();
 	void SimulateGames();
+
+	void UpdateBets();
 
 	std::function<ConsoleWindow(ConsoleWindow, int, int)> m_State;
 
@@ -250,6 +281,7 @@ public:
 	static GameStateLeaderboardSYDE ldrState;
 	static GameStateResultSYDE resultState;
 	static GameStateSettingsSYDE settingsState;
+	static SRLPriorBets_State priorBetsState;
 
 	static SRLSeasonLength seasonLength;
 
@@ -287,7 +319,10 @@ public:
 	static bool betCall;
 	static bool betPlaceCall;
 	static bool homeTeamBet;
+	static bool premiershipBet;
 	static int gameNumberBet;
+
+	static int priorBetNumberLine;
 
 	void sortOutResultsScreen();
 
@@ -374,6 +409,10 @@ private:
 	SYDEClickableButton m_GameSettingsSeasonBtn;
 	SYDEClickableButton m_GameSettingsNormalBtn;
 
+	//GameSettingsPage
+	SYDEClickableButton m_PriorBetsGameBtn;
+	SYDEClickableButton m_PriorBetsPremiershipBtn;
+
 	//View Season
 	SYDEClickableButton m_SettingsGoalKickerBtn;
 	//View Season
@@ -385,6 +424,7 @@ private:
 	SYDEClickableButton m_SettingsSinBinBtn;
 
 	vector<SYDEClickableButton> m_BetButtons;
+	vector<SYDEClickableButton> m_PremiershipBetButtons;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;
@@ -393,6 +433,10 @@ private:
 
 	vector<string> m_ResultsScreenVector;
 	vector<string> m_SummaryScreenVector;
+
+	vector<SRLGameBetsWriting> m_GameBetsWriteUp;
+	vector<SRLGameBetsWriting> m_PremiershipBetsWriteUp;
+
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;
 

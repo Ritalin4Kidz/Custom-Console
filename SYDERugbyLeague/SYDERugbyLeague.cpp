@@ -10,6 +10,7 @@ BASED OFF D6 Game
 #include "SYDEEngineDemos.h"
 #include "SYDEEngineAssets.h"
 #include "SYDEMainDemos.h"
+#include "SYDESounds.h"
 
 using namespace std;
 using namespace Gdiplus;
@@ -40,9 +41,9 @@ using namespace std;
 // MAIN FUNCTION
 int main(int argc, char* argv[])
 {
+	bool debug = false;
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
-	SRLGame m_SRL;
 	LPCWSTR title = L"SYDE Rugby League Simulator";
 	SYDECredits::_GAMETITLE = "SYDE Rugby League Simulator";
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
@@ -51,15 +52,27 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < argc; i++)
 	{
 		std::string arg = argv[i];
+		if (arg == "--Debug")
+		{
+			debug = true;
+		}
 	}
-	config.volumeControl(0);
+	BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_NML);
 	config.ColourPalette(hOut);
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
 	SYDETIME deltaTime;
 	deltaTime.initialise(std::chrono::high_resolution_clock::now());
 	SYDEGamePlay::initialize_window(hOut, window);
-	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+	if (debug)
+	{
+		SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_OFF);
+	}
+	else
+	{
+		SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+	}
 	SYDEGamePlay::EnableClicking(hOut);
 
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
@@ -69,11 +82,12 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 	//SYDEGamePlay::showFPS(true);
-
 	window.setStartingLine(1);
+	SRLGame m_SRL;
 	while (true)
 	{
 		window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		window = SRLGame::m_GamePlaySoundtrack.playWindow(window);
 		window.writeConsoleOptimized();
 	}
 	CONSOLE_CURSOR_INFO cInfo;

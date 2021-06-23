@@ -1,10 +1,14 @@
 #include "SRL.h"
+
+#pragma region Static
+
 AssetsClass SRLGame::astVars = AssetsClass();
 GameStateSYDE SRLGame::currentState = Unknown_STATE;
 GameStateSYDE SRLGame::newState = MainMenu_STATE;
 GameStateBettingSYDE SRLGame::bettingState = CurrentRound_STATE;
 GameStateLeaderboardSYDE SRLGame::ldrState = Tries_State;
 GameStateResultSYDE SRLGame::resultState = Summary_STATE;
+GameStateSettingsSYDE SRLGame::settingsState = SeasonSettings_STATE;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
 bool SRLGame::SeasonStart = false;
 bool SRLGame::NextRoundCall = false;
@@ -23,13 +27,79 @@ bool SRLGame::m_ExtraTime = true;
 bool SRLGame::m_Injuries = false;
 bool SRLGame::m_SinBins = false;
 bool SRLGame::m_ResultsTabCall = false;
+bool SRLGame::soundTrackOn = true;
+bool SRLGame::homeTeamBet = false;
+bool SRLGame::betPlaceCall = false;
+int SRLGame::gameNumberBet = 0;
 string SRLGame::errorMessage = "";
+
+string SRLGame::betTag = "";
+bool SRLGame::betCall = false;
+
+SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
+
+#pragma endregion
+
+#pragma region ButtonVoids
 void ExhibitionMatchClick()
 {
 	if (SRLGame::currentState = MainMenu_STATE)
 	{
 		SRLGame::newState = Exhibition_LoadState;
 	}
+}
+
+vector<string> Split(string a_String, char splitter)
+{
+	int arraySize = 1;
+	for (int i = 0; i < a_String.length(); i++)
+	{
+		if (a_String[i] == splitter)
+		{
+			arraySize++;
+		}
+	}
+	std::vector<std::string> splitString(arraySize);
+	int arrayNo = 0;
+	while (arrayNo < arraySize - 1)
+	{
+		for (int i = 0; i < a_String.length(); i++)
+		{
+			if (a_String[i] == splitter)
+			{
+				splitString[arrayNo] = a_String.substr(0, i);
+				a_String = a_String.substr(i + 1, a_String.length() - i);
+				arrayNo++;
+				break;
+			}
+		}
+	}
+	splitString[arraySize - 1] = a_String;
+	return splitString;
+}
+
+void BetMatchClick()
+{
+	SRLGame::betTag = SYDEClickableButton::getLastButtonTag();
+	vector<string> bets = Split(SRLGame::betTag, ';');
+	SRLGame::betTag = bets[2];
+	SRLGame::homeTeamBet = bets[1] == "H";
+	SRLGame::gameNumberBet = stoi(bets[0]);
+	SRLGame::betCall = true;
+	SRLGame::errorMessage = "Confirm $10 Bet On " + SRLGame::betTag + "?";
+}
+
+void SoundTrackClick()
+{
+	if (SRLGame::soundTrackOn)
+	{
+		SRLGame::m_GamePlaySoundtrack.stop();
+	}
+	else
+	{
+		SRLGame::m_GamePlaySoundtrack.start();
+	}
+	SRLGame::soundTrackOn = !SRLGame::soundTrackOn;
 }
 
 void SimulateClick()
@@ -53,6 +123,16 @@ void MenuOKViewClick()
 {
 	SRLGame::newState = MainMenu_STATE;
 	SRLGame::menuCall = false;
+}
+
+void betCNCLClick()
+{
+	SRLGame::betCall = false;
+}
+void betOKClick()
+{
+	SRLGame::betPlaceCall = true;
+	SRLGame::betCall = false;
 }
 
 void SeasonModeClick()
@@ -94,6 +174,10 @@ void CurrentRoundViewClick()
 void FuturesViewClick()
 {
 	SRLGame::bettingState = Futures_STATE;
+}
+void PastBetViewClick()
+{
+	SRLGame::bettingState = ViewBets_STATE;
 }
 void AccountViewClick()
 {
@@ -177,7 +261,14 @@ void InjuryLdrViewClick()
 {
 	SRLGame::ldrState = Injury_State;
 }
-
+void SeasonSettingsViewClick()
+{
+	SRLGame::settingsState = SeasonSettings_STATE;
+}
+void NormalSettingsViewClick()
+{
+	SRLGame::settingsState = NormalSettings_STATE;
+}
 
 void GenerateTeamViewClick()
 {
@@ -298,10 +389,48 @@ void RandomFillClick()
 	SRLGame::randomFillCall = true;
 }
 
+void nextSongClick()
+{
+	if (SRLGame::soundTrackOn)
+	{
+		SRLGame::m_GamePlaySoundtrack.next();
+	}
+}
+
+#pragma endregion
 
 void SRLGame::init()
 {
+#pragma region SoundTrack
 
+	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\01MeetMeOneDay.wav"), 165);
+	m_GamePlaySoundtrack.editSongInfo(0, "Meet Me One Day", "Rit@lin4Kidz");
+	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\02ShowYouATrick.wav"), 86);
+	m_GamePlaySoundtrack.editSongInfo(1, "Let Me Show You A Remix", "Rit@lin4Kidz");
+	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\03StillSad.wav"), 60);
+	m_GamePlaySoundtrack.editSongInfo(2, "Still Sad That I Exist", "Handsprime");
+
+	m_GamePlaySoundtrack.setYPos(14);
+
+	m_GamePlaySoundtrack.start();
+	m_GamePlaySoundtrack.shuffleSongs(true, true);
+
+#pragma endregion
+
+#pragma region SoundTrackSettings
+
+	m_SoundTrackOnBtn =SYDEClickableButton(" Background Music:", Vector2(3, 4), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SoundTrackOnBtn.setHighLight(RED);
+	m_SoundTrackOnBtn.SetFunc(SoundTrackClick);
+
+	m_SoundTrackNextBtn = SYDEClickableButton(" Current Song:", Vector2(7, 6), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SoundTrackNextBtn.setHighLight(RED);
+	m_SoundTrackNextBtn.SetFunc(nextSongClick);
+
+#pragma endregion
+
+
+#pragma region SeasonOptions
 	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SeasonViewBtn.setHighLight(RED);
 	m_SeasonViewBtn.SetFunc(SeasonViewClick);
@@ -335,16 +464,32 @@ void SRLGame::init()
 	m_SimulateBtn.setHighLight(RED);
 	m_SimulateBtn.SetFunc(SimulateClick);
 
-	m_BetBtnCurrentRound = SYDEClickableButton("    Current Round    ", Vector2(0, 2), Vector2(20, 1), BRIGHTWHITE_GREEN_BG, false);
+#pragma endregion
+
+#pragma region BettingOptions
+	m_BetBtnCurrentRound = SYDEClickableButton(" Current Round  ", Vector2(0, 2), Vector2(15, 1), BRIGHTWHITE_GREEN_BG, false);
 	m_BetBtnCurrentRound.setHighLight(RED);
 	m_BetBtnCurrentRound.SetFunc(CurrentRoundViewClick);
-	m_BetBtnFutures = SYDEClickableButton("       Futures       ", Vector2(20, 2), Vector2(20, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
+	m_BetBtnFutures = SYDEClickableButton("    Futures     ", Vector2(15, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
 	m_BetBtnFutures.setHighLight(RED);
 	m_BetBtnFutures.SetFunc(FuturesViewClick);
-	m_BetBtnAccount = SYDEClickableButton("       Account       ", Vector2(40, 2), Vector2(20, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetBtnViewBets = SYDEClickableButton("Betting History", Vector2(30, 2), Vector2(15, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetBtnViewBets.setHighLight(RED);
+	m_BetBtnViewBets.SetFunc(PastBetViewClick);
+	m_BetBtnAccount = SYDEClickableButton("     Account    ", Vector2(45, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
 	m_BetBtnAccount.setHighLight(RED);
 	m_BetBtnAccount.SetFunc(AccountViewClick);
 
+	m_BetOkViewBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BetOkViewBtn.setHighLight(RED);
+	m_BetOkViewBtn.SetFunc(betOKClick);
+
+	m_BetCnclViewBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BetCnclViewBtn.setHighLight(RED);
+	m_BetCnclViewBtn.SetFunc(betCNCLClick);
+#pragma endregion
+
+#pragma region SeasonConfig
 	//SEASON CONFIG
 	m_PrevTeamSeasonCfgBtn = SYDEClickableButton(" Previous Team  ", Vector2(0, 19), Vector2(16, 1), BLACK_WHITE_BG, false);
 	m_PrevTeamSeasonCfgBtn.setHighLight(RED);
@@ -367,8 +512,9 @@ void SRLGame::init()
 	m_RandomFillSeasonCfgBtn = SYDEClickableButton("Random Fill", Vector2(49, 2), Vector2(11, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_RandomFillSeasonCfgBtn.setHighLight(RED);
 	m_RandomFillSeasonCfgBtn.SetFunc(RandomFillClick);
+#pragma endregion
 
-	//LEADERBOARD
+#pragma region LeaderboardOptions
 	m_LeaderboardBtnMostTries = SYDEClickableButton(" Most Tries ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_LIGHTBLUE_BG, false);
 	m_LeaderboardBtnMostTries.setHighLight(RED);
 	m_LeaderboardBtnMostTries.SetFunc(TriesLdrViewClick);
@@ -423,8 +569,9 @@ void SRLGame::init()
 	m_LeaderboardBtnMostInjuries = SYDEClickableButton(" Top Injury ", Vector2(36, 18), Vector2(12, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_LeaderboardBtnMostInjuries.setHighLight(RED);
 	m_LeaderboardBtnMostInjuries.SetFunc(InjuryLdrViewClick);
+#pragma endregion
 
-
+#pragma region MainMenuOptions
 	//MainMenuTabs
 	m_BackSeasonCfgBtn = SYDEClickableButton("   Main Menu  ", Vector2(0, 1), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_BackSeasonCfgBtn.setHighLight(RED);
@@ -439,6 +586,22 @@ void SRLGame::init()
 	m_GameInfoBtn.setHighLight(RED);
 	m_GameInfoBtn.SetFunc(InfoViewClick);
 
+#pragma endregion
+
+#pragma region GameSettings
+
+	//RESULTS PAGE
+	m_GameSettingsSeasonBtn = SYDEClickableButton("       Season Settings        ", Vector2(0, 2), Vector2(30, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_GameSettingsSeasonBtn.setHighLight(RED);
+	m_GameSettingsSeasonBtn.SetFunc(SeasonSettingsViewClick);
+	m_GameSettingsNormalBtn = SYDEClickableButton("     Application Settings     ", Vector2(30, 2), Vector2(30, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_GameSettingsNormalBtn.setHighLight(RED);
+	m_GameSettingsNormalBtn.SetFunc(NormalSettingsViewClick);
+
+#pragma endregion
+
+
+#pragma region ResultsOptions
 	//RESULTS PAGE
 	m_GameResultSummaryBtn = SYDEClickableButton("            Summary           ", Vector2(0, 2), Vector2(30, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_GameResultSummaryBtn.setHighLight(RED);
@@ -459,35 +622,41 @@ void SRLGame::init()
 	m_MenuCnclViewBtn.setHighLight(RED);
 	m_MenuCnclViewBtn.SetFunc(MenuCNCLClick);
 
+#pragma endregion
+
+#pragma region GameSettingsOptions
 	//SETTINGS
-	m_SettingsGoalKickerBtn = SYDEClickableButton(" Main Goal Kicker:", Vector2(3, 3), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsGoalKickerBtn = SYDEClickableButton(" Main Goal Kicker:", Vector2(3, 4), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsGoalKickerBtn.setHighLight(RED);
 	m_SettingsGoalKickerBtn.SetFunc(ToggleKickerClick);
 
-	m_SettingsWeatherBtn = SYDEClickableButton(" Weather:", Vector2(12, 5), Vector2(9, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsWeatherBtn = SYDEClickableButton(" Weather:", Vector2(12, 6), Vector2(9, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsWeatherBtn.setHighLight(RED);
 	m_SettingsWeatherBtn.SetFunc(ToggleWeatherClick);
 
-	m_SettingsStaminaBtn = SYDEClickableButton(" Stamina:", Vector2(12, 7), Vector2(9, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsStaminaBtn = SYDEClickableButton(" Stamina:", Vector2(12, 8), Vector2(9, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsStaminaBtn.setHighLight(RED);
 	m_SettingsStaminaBtn.SetFunc(ToggleStaminaClick);
 
-	m_SettingsSeasonLengthBtn = SYDEClickableButton(" Season Length:", Vector2(6, 9), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsSeasonLengthBtn = SYDEClickableButton(" Season Length:", Vector2(6, 10), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsSeasonLengthBtn.setHighLight(RED);
 	m_SettingsSeasonLengthBtn.SetFunc(SettingsLengthViewClick);
 
-	m_SettingsExtraTimeBtn = SYDEClickableButton(" Extra Time:", Vector2(9, 11), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsExtraTimeBtn = SYDEClickableButton(" Extra Time:", Vector2(9, 12), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsExtraTimeBtn.setHighLight(RED);
 	m_SettingsExtraTimeBtn.SetFunc(ExtraTimeViewClick);
 
-	m_SettingsInjuryBtn = SYDEClickableButton(" Injuries:", Vector2(11, 13), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsInjuryBtn = SYDEClickableButton(" Injuries:", Vector2(11, 14), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsInjuryBtn.setHighLight(RED);
 	m_SettingsInjuryBtn.SetFunc(InjuriesViewClick);
 
-	m_SettingsSinBinBtn = SYDEClickableButton(" Sin Bins:", Vector2(11, 15), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsSinBinBtn = SYDEClickableButton(" Sin Bins:", Vector2(11, 16), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsSinBinBtn.setHighLight(RED);
 	m_SettingsSinBinBtn.SetFunc(ToggleSinBinClick);
+#pragma endregion
 }
+
+#pragma region Misc
 
 vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 {
@@ -557,6 +726,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	{
 		return ConfirmPop_UP(window, windowWidth, windowHeight);
 	}
+	else if (betCall)
+	{
+		return BetPop_UP(window, windowWidth, windowHeight);
+	}
 	for (int i = 0; i < windowWidth; i++)
 	{
 		for (int ii = 0; ii < windowHeight; ii++)
@@ -622,6 +795,9 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	return window;
 }
 
+#pragma endregion
+
+#pragma region Windows
 ConsoleWindow SRLGame::main_menu_scene(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = m_MainMenuBG.draw_asset(window, Vector2(0, 0));
@@ -854,6 +1030,28 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 	window = drawBetTabs(window);
 	if (bettingState == CurrentRound_STATE)
 	{
+		if (betPlaceCall)
+		{
+			betPlaceCall = false;
+			if (m_BetMoney.dollars < 10)
+			{
+				errorCall = true;
+				errorMessage = "Not Enough Money To Bet";
+				return window;
+			}
+			else
+			{
+				m_BetMoney.dollars -= 10;
+				if (homeTeamBet)
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameNumberBet].homeTeamOdds, SRLBetPrice(10, 0)));
+				}
+				else
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameNumberBet].awayTeamOdds, SRLBetPrice(10, 0)));
+				}
+			}
+		}
 		if (m_roundToSimulate < BaseSeasonGames + 4)
 		{
 			int line = 3;
@@ -864,14 +1062,22 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 				line += 2;
 			}
 		}
+		for (int i = 0; i < m_BetButtons.size(); i++)
+		{
+			window = m_BetButtons[i].draw_ui(window);
+		}
 	}
 	else if(bettingState == Futures_STATE)
 	{
 
 	}
-	else if (bettingState == Account_STATE)
+	else if (bettingState == ViewBets_STATE)
 	{
 
+	}
+	else if (bettingState == Account_STATE)
+	{
+		window.setTextAtPoint(Vector2(2, 3), "Account Balance: " + m_BetMoney.ReturnPrice(), BRIGHTWHITE);
 	}
 
 
@@ -1070,82 +1276,100 @@ ConsoleWindow SRLGame::LeaderboardPositions(ConsoleWindow window, vector<SRLLead
 ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawMainMenuTabs(window);
-	window.setTextAtPoint(Vector2(0, 2), "GAME SETTINGS", BRIGHTWHITE);
-	window = m_SettingsGoalKickerBtn.draw_ui(window);
-	if (m_GoalKicker)
+	window = m_GameSettingsSeasonBtn.draw_ui(window);
+	window = m_GameSettingsNormalBtn.draw_ui(window);
+	if (settingsState == SeasonSettings_STATE)
 	{
-		window.setTextAtPoint(Vector2(22, 3), "On", BRIGHTWHITE);
+		window = m_SettingsGoalKickerBtn.draw_ui(window);
+		if (m_GoalKicker)
+		{
+			window.setTextAtPoint(Vector2(22, 4), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 4), "Off", BRIGHTWHITE);
+		}
+		window = m_SettingsWeatherBtn.draw_ui(window);
+		if (m_Weather)
+		{
+			window.setTextAtPoint(Vector2(22, 6), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 6), "Off", BRIGHTWHITE);
+		}
+		window = m_SettingsStaminaBtn.draw_ui(window);
+		if (m_Stamina)
+		{
+			window.setTextAtPoint(Vector2(22, 8), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 8), "Off", BRIGHTWHITE);
+		}
+		window = m_SettingsSeasonLengthBtn.draw_ui(window);
+		switch (seasonLength)
+		{
+		case Length_ShortSeason:
+			window.setTextAtPoint(Vector2(22, 10), "Short", BRIGHTWHITE);
+			break;
+		case Length_MediumSeason:
+			window.setTextAtPoint(Vector2(22, 10), "Medium", BRIGHTWHITE);
+			break;
+		case Length_NormalSeason:
+			window.setTextAtPoint(Vector2(22, 10), "Normal", BRIGHTWHITE);
+			break;
+		case Length_LongSeason:
+			window.setTextAtPoint(Vector2(22, 10), "Long", BRIGHTWHITE);
+			break;
+		case Length_ExtremeSeason:
+			window.setTextAtPoint(Vector2(22, 10), "Extreme", BRIGHTWHITE);
+			break;
+		case Length_EnduranceSeason:
+			window.setTextAtPoint(Vector2(22, 10), "Endurance", BRIGHTWHITE);
+			break;
+		}
+		window = m_SettingsExtraTimeBtn.draw_ui(window);
+		if (m_ExtraTime)
+		{
+			window.setTextAtPoint(Vector2(22, 12), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 12), "Off", BRIGHTWHITE);
+		}
+		window = m_SettingsInjuryBtn.draw_ui(window);
+		if (m_Injuries)
+		{
+			window.setTextAtPoint(Vector2(22, 14), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 14), "Off", BRIGHTWHITE);
+		}
+		window = m_SettingsSinBinBtn.draw_ui(window);
+		if (m_SinBins)
+		{
+			window.setTextAtPoint(Vector2(22, 16), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 16), "Off", BRIGHTWHITE);
+		}
 	}
-	else
+	else if (settingsState == NormalSettings_STATE)
 	{
-		window.setTextAtPoint(Vector2(22, 3), "Off", BRIGHTWHITE);
-	}
-	window = m_SettingsWeatherBtn.draw_ui(window);
-	if (m_Weather)
-	{
-		window.setTextAtPoint(Vector2(22, 5), "On", BRIGHTWHITE);
-	}
-	else
-	{
-		window.setTextAtPoint(Vector2(22, 5), "Off", BRIGHTWHITE);
-	}
-	window = m_SettingsStaminaBtn.draw_ui(window);
-	if (m_Stamina)
-	{
-		window.setTextAtPoint(Vector2(22, 7), "On", BRIGHTWHITE);
-	}
-	else
-	{
-		window.setTextAtPoint(Vector2(22, 7), "Off", BRIGHTWHITE);
-	}
-	window = m_SettingsSeasonLengthBtn.draw_ui(window);
-	switch (seasonLength)
-	{
-	case Length_ShortSeason:
-		window.setTextAtPoint(Vector2(22, 9), "Short", BRIGHTWHITE);
-		break;
-	case Length_MediumSeason:
-		window.setTextAtPoint(Vector2(22, 9), "Medium", BRIGHTWHITE);
-		break;
-	case Length_NormalSeason:
-		window.setTextAtPoint(Vector2(22, 9), "Normal", BRIGHTWHITE);
-		break;
-	case Length_LongSeason:
-		window.setTextAtPoint(Vector2(22, 9), "Long", BRIGHTWHITE);
-		break;
-	case Length_ExtremeSeason:
-		window.setTextAtPoint(Vector2(22, 9), "Extreme", BRIGHTWHITE);
-		break;
-	case Length_EnduranceSeason:
-		window.setTextAtPoint(Vector2(22, 9), "Endurance", BRIGHTWHITE);
-		break;
-	}
-	window = m_SettingsExtraTimeBtn.draw_ui(window);
-	if (m_ExtraTime)
-	{
-		window.setTextAtPoint(Vector2(22, 11), "On", BRIGHTWHITE);
-	}
-	else
-	{
-		window.setTextAtPoint(Vector2(22, 11), "Off", BRIGHTWHITE);
-	}
-	window = m_SettingsInjuryBtn.draw_ui(window);
-	if (m_Injuries)
-	{
-		window.setTextAtPoint(Vector2(22, 13), "On", BRIGHTWHITE);
-	}
-	else
-	{
-		window.setTextAtPoint(Vector2(22, 13), "Off", BRIGHTWHITE);
-	}
-	window = m_SettingsSinBinBtn.draw_ui(window);
-	if (m_SinBins)
-	{
-		window.setTextAtPoint(Vector2(22, 15), "On", BRIGHTWHITE);
-	}
-	else
-	{
-		window.setTextAtPoint(Vector2(22, 15), "Off", BRIGHTWHITE);
+		window = m_SoundTrackOnBtn.draw_ui(window);
+		if (soundTrackOn)
+		{
+			window.setTextAtPoint(Vector2(22, 4), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 4), "Off", BRIGHTWHITE);
+		}
+		window = m_SoundTrackNextBtn.draw_ui(window);
+		window.setTextAtPoint(Vector2(22, 6), m_GamePlaySoundtrack.getSongPlaying(), BRIGHTWHITE);
 	}
 	return window;
 }
@@ -1178,6 +1402,7 @@ ConsoleWindow SRLGame::drawBetTabs(ConsoleWindow window)
 {
 	window = m_BetBtnCurrentRound.draw_ui(window);
 	window = m_BetBtnFutures.draw_ui(window);
+	window = m_BetBtnViewBets.draw_ui(window);
 	window = m_BetBtnAccount.draw_ui(window);
 	return window;
 }
@@ -1251,6 +1476,21 @@ ConsoleWindow SRLGame::ErrorPop_UP(ConsoleWindow window, int windowWidth, int wi
 	return window;
 }
 
+ConsoleWindow SRLGame::BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", GREEN_GREEN_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), errorMessage, BRIGHTWHITE_GREEN_BG);
+	window = m_BetOkViewBtn.draw_ui(window);
+	window = m_BetCnclViewBtn.draw_ui(window);
+	return window;
+}
+
 ConsoleWindow SRLGame::ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 5; i < windowWidth - 5; i++)
@@ -1266,15 +1506,28 @@ ConsoleWindow SRLGame::ConfirmPop_UP(ConsoleWindow window, int windowWidth, int 
 	return window;
 }
 
+#pragma endregion
+
+#pragma region Simulate
+
 void SRLGame::CalculateOdds()
 {
 	//CalculateOdds
-	for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
+	m_BetButtons.clear();
+	for (int i = 0, j = 2; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++, j+=2)
 	{
 		SRLTeam oddsHomeTeam;
 		oddsHomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam + ".json");
+		SYDEClickableButton a_BetBtnH = SYDEClickableButton("Bet $10",Vector2(50, j+1), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtnH.SetFunc(BetMatchClick);
+		a_BetBtnH.setTag(to_string(i) + ";" + "H;" + oddsHomeTeam.getName());
+		m_BetButtons.push_back(a_BetBtnH);
 		SRLTeam oddsAwayTeam;
 		oddsAwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam + ".json");
+		SYDEClickableButton a_BetBtnA = SYDEClickableButton("Bet $10", Vector2(50, j + 2), Vector2(7, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+		a_BetBtnA.SetFunc(BetMatchClick);
+		a_BetBtnA.setTag(to_string(i) + ";" + "A;" + oddsAwayTeam.getName());
+		m_BetButtons.push_back(a_BetBtnA);
 		float oddsHAttack = oddsHomeTeam.totalAttackStat();
 		float oddsHDefence = oddsHomeTeam.totalDefenceStat();
 		float oddsHSpeed = oddsHomeTeam.totalSpeedStat();
@@ -1385,7 +1638,7 @@ void SRLGame::SimulateGames()
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam;
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].LosingTeam = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam;
 			}
-			else
+			else if (m_srlmanager.getHomeScore() < m_srlmanager.getAwayScore())
 			{
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam;
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].LosingTeam = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam;
@@ -1450,6 +1703,14 @@ void SRLGame::SimulateGames()
 			m_Season.m_TopSinBin.orderShortlist();
 			m_Season.m_TopSendOff.orderShortlist();
 			m_Season.m_TopInjuries.orderShortlist();
+
+			for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.size(); ii++)
+			{
+				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam)
+				{
+					m_BetMoney.addBetPrice(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets[ii].ReturnBetWinnings());
+				}
+			}
 
 			if (!finals)
 			{
@@ -1575,6 +1836,9 @@ void SRLGame::sortOutResultsScreen()
 	m_LineResults = 0;
 }
 
+#pragma endregion
+
+#pragma region Ladder
 void SRLLadder::sortLadder()
 {
 	for (int i = 0; i < m_Ladder.size(); i++)
@@ -1600,6 +1864,25 @@ void SRLLadder::sortLadder()
 				ii = i + 1;
 			}
 		}
+	}
+}
+
+void SRLBetPrice::addCents(int c)
+{
+	int currentBalance = (dollars * 100) + cents;
+	currentBalance += c;
+	dollars = currentBalance / 100;
+	cents = currentBalance % 100;
+}
+
+void SRLBetPrice::addBetPrice(SRLBetPrice bet)
+{
+	dollars += bet.dollars;
+	cents += bet.cents;
+	while (cents > 100)
+	{
+		dollars++;
+		cents -= 100;
 	}
 }
 
@@ -1648,4 +1931,25 @@ void SRLLeaderboard::orderShortlist()
 			}
 		}
 	}
+}
+
+#pragma endregion
+
+SRLBetPrice SRLGameBet::ReturnBetWinnings()
+{
+	float betOddsF = betOdds.dollars;
+	float centsTemp = betOdds.cents;
+	betOddsF += (centsTemp / 100);
+	float newDollars = 0;
+	float newCents = betAmount.dollars * 100;
+	newCents += betAmount.cents;
+	newCents *= betOddsF;
+	while (newCents >= 100)
+	{
+		newDollars++;
+		newCents -= 100;
+	}
+	betAmount.dollars = newDollars;
+	betAmount.cents = newCents;
+	return betAmount;
 }

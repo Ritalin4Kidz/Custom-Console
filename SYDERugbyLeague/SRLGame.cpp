@@ -10,6 +10,8 @@ SRLGameManager::~SRLGameManager()
 {
 }
 
+#pragma region AddPlays
+
 void SRLGameManager::addPlay(string a_Play)
 {
 	string minutesStr = to_string(m_MinutesPassed);
@@ -308,6 +310,10 @@ void SRLGameManager::endStats()
 	addPlayNoMinutes("3rd (1 Point) -- " + player3);
 	addPlayNoMinutes("----------------------------");
 }
+
+#pragma endregion
+
+#pragma region Simulate
 
 void SRLGameManager::play()
 {
@@ -1326,3 +1332,5 @@ void SRLGameManager::changeOver(bool error)
 	}
 	m_HomeTeamHasBall = !m_HomeTeamHasBall;
 }
+
+#pragma endregion

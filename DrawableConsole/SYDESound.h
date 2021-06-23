@@ -35,9 +35,18 @@ private:
 /// </summary>
 class SYDESoundFile {
 public:
+	SYDESoundFile() {}
 	SYDESoundFile(std::string FileName) { m_FileName = std::wstring(FileName.begin(), FileName.end()); m_SoundVolume = BaseSYDESoundSettings::getDefaultVolume(); }
 	SYDESoundFile(std::string FileName, SYDESoundVolume m_Volume) { m_FileName = std::wstring(FileName.begin(), FileName.end()); m_SoundVolume = BaseSYDESoundSettings::getVolume(m_Volume); }
 	virtual ~SYDESoundFile() {}
+
+	void setSongTitle(std::string Title) { m_SongTitle = Title; }
+	void setSongArtist(std::string Artist) { m_SongArtist = Artist; }
+
+	std::string getLongerString();
+
+	std::string GetTitle() { return m_SongTitle; }
+	std::string GetArtists() { return m_SongArtist; }
 
 	/// <summary>
 	/// play the sound
@@ -56,4 +65,7 @@ public:
 private:
 	DWORD m_SoundVolume;
 	std::wstring m_FileName;
+
+	std::string m_SongTitle;
+	std::string m_SongArtist;
 };

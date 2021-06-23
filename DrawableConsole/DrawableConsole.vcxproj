@@ -204,6 +204,7 @@
     <ClInclude Include="SYDEShapes.h" />
     <ClInclude Include="SYDESound.h" />
     <ClInclude Include="SYDESounds.h" />
+    <ClInclude Include="SYDESoundtrack.h" />
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
@@ -259,6 +260,7 @@
     <ClCompile Include="SYDEScreenshot.cpp" />
     <ClCompile Include="SYDEShapes.cpp" />
     <ClCompile Include="SYDESound.cpp" />
+    <ClCompile Include="SYDESoundtrack.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />
     <ClCompile Include="SYDETime.cpp" />
     <ClCompile Include="TextItem.cpp" />

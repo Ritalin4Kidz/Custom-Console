@@ -1,5 +1,8 @@
 #include "pch.h"
 #include "SYDEClickableButton.h"
+
+string SYDEClickableButton::lastTag = "";
+
 SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG)
 {
 	m_Text = a_text;
@@ -76,10 +79,16 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 	
 	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()))
 	{
+		lastTag = tag;
 		DoFunc();
 	}
 
 	return window;
+}
+
+string SYDEClickableButton::getLastButtonTag()
+{
+	return lastTag;
 }
 
 bool SYDEClickableButton::pointIsInButtonRange(Vector2 Point)

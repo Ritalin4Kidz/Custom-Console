@@ -19,7 +19,12 @@ public:
 	/// <param name="window"></param>
 	/// <returns></returns>
 	ConsoleWindow draw_ui(ConsoleWindow window) override;
+	void setTag(string newTag) { tag = newTag; }
+	string getTag() { return tag; }
 
+	static string getLastButtonTag();
 private:
+	static string lastTag;
+	string tag = "";
 	bool pointIsInButtonRange(Vector2 Point);
 };

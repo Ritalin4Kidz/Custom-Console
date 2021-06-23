@@ -4,15 +4,20 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR RELEASE (As Of 22-06-2021)
+## GOALS FOR RELEASE (As Of 23-06-2021)
 
 - Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
-- Betting (Properly Implemented)
+- Ability to set custom amounts in bets
 
 - Individual Player Analysis
 
 ## Release Notes
+
+###  0.5.0.0 alpha 23-06-2021
+- Background Music Added
+- Setting to turn off included
+- Betting enabled
 
 ###  0.4.1.0 alpha
 - More names added to the name generator

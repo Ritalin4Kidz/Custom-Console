@@ -6,6 +6,7 @@
 #include "SYDEEngineUI.h"
 #include "SYDEFileDefaults.h"
 #include "SRLNameGenerator.h"
+#include "SYDESounds.h"
 #include "Vector2.h"
 #include "SRLGame.h"
 #include <iostream>
@@ -30,13 +31,20 @@ enum GameStateBettingSYDE
 {
 	CurrentRound_STATE,
 	Futures_STATE,
-	Account_STATE,
+	ViewBets_STATE,
+	Account_STATE
 };
 
 enum GameStateResultSYDE
 {
 	Summary_STATE,
 	PlayByPlay_STATE
+};
+
+enum GameStateSettingsSYDE
+{
+	SeasonSettings_STATE,
+	NormalSettings_STATE
 };
 
 enum GameStateLeaderboardSYDE
@@ -84,10 +92,27 @@ struct SRLLadderPosition
 
 struct SRLBetPrice
 {
+	SRLBetPrice() {}
 	SRLBetPrice(int d, int c) { dollars = d; cents = c; }
 	int dollars;
 	int cents;
+
+	void addCents(int c);
+	void addBetPrice(SRLBetPrice bet);
+
 	string ReturnPrice();
+};
+
+struct SRLGameBet
+{
+	SRLGameBet() {}
+	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; }
+	SRLBetPrice betOdds;
+	SRLBetPrice betAmount;
+
+	SRLBetPrice ReturnBetWinnings();
+
+	string m_teamName;
 };
 
 struct SRLLadder
@@ -119,6 +144,7 @@ struct SRLRound
 {
 	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
 	vector<SRLGameMatchup> m_Games;
+	vector<SRLGameBet> m_Bets;
 };
 
 struct SRLDraw
@@ -205,6 +231,7 @@ public:
 
 	ConsoleWindow configTabs(ConsoleWindow window);
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
 
@@ -222,6 +249,7 @@ public:
 	static GameStateBettingSYDE bettingState;
 	static GameStateLeaderboardSYDE ldrState;
 	static GameStateResultSYDE resultState;
+	static GameStateSettingsSYDE settingsState;
 
 	static SRLSeasonLength seasonLength;
 
@@ -246,13 +274,21 @@ public:
 	static bool m_Injuries;
 	static bool m_SinBins;
 
-
+	static SYDESoundtrack m_GamePlaySoundtrack;
+	static bool soundTrackOn;
 	static bool m_ResultsTabCall;
 
 
 	static string errorMessage;
 
 	static bool randomFillCall;
+
+	static string betTag;
+	static bool betCall;
+	static bool betPlaceCall;
+	static bool homeTeamBet;
+	static int gameNumberBet;
+
 	void sortOutResultsScreen();
 
 private:
@@ -270,6 +306,10 @@ private:
 	//View Season
 	SYDEClickableButton m_MenuOkViewBtn;
 	SYDEClickableButton m_MenuCnclViewBtn;
+
+	//View Season
+	SYDEClickableButton m_BetOkViewBtn;
+	SYDEClickableButton m_BetCnclViewBtn;
 
 	//View Season
 	SYDEClickableButton m_SeasonViewBtn;
@@ -293,6 +333,7 @@ private:
 	SYDEClickableButton m_SimulateBtn;
 
 	SYDEClickableButton m_BetBtnCurrentRound;
+	SYDEClickableButton m_BetBtnViewBets;
 	SYDEClickableButton m_BetBtnFutures;
 	SYDEClickableButton m_BetBtnAccount;
 
@@ -322,9 +363,16 @@ private:
 	SYDEClickableButton m_GameSettingsBtn;
 	SYDEClickableButton m_GameInfoBtn;
 
+	SYDEClickableButton m_SoundTrackOnBtn;
+	SYDEClickableButton m_SoundTrackNextBtn;
+
 	//Results Page
 	SYDEClickableButton m_GameResultSummaryBtn;
 	SYDEClickableButton m_GameResultPlayByPlayBtn;
+
+	//GameSettingsPage
+	SYDEClickableButton m_GameSettingsSeasonBtn;
+	SYDEClickableButton m_GameSettingsNormalBtn;
 
 	//View Season
 	SYDEClickableButton m_SettingsGoalKickerBtn;
@@ -335,6 +383,8 @@ private:
 	SYDEClickableButton m_SettingsExtraTimeBtn;
 	SYDEClickableButton m_SettingsInjuryBtn;
 	SYDEClickableButton m_SettingsSinBinBtn;
+
+	vector<SYDEClickableButton> m_BetButtons;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;
@@ -350,6 +400,8 @@ private:
 
 	int m_round = 0;
 	int m_roundToSimulate = 0;
+	SRLBetPrice m_BetMoney = SRLBetPrice(100, 0);
+
 	bool finals = false;
 
 	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));

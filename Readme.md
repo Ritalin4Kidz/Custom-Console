@@ -125,6 +125,10 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.3.0.0 23/06.2021
+- Numerous Splashscreen fixes
+- SYDESoundtrack
+
 ### 1.2.8.0 18/05/2021
 - Added Comments
 - Separated outdated headers into SYDEOldCode.h

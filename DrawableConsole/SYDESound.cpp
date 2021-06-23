@@ -47,6 +47,15 @@ DWORD BaseSYDESoundSettings::getVolume(SYDESoundVolume m_Volume)
 	}
 }
 
+std::string SYDESoundFile::getLongerString()
+{
+	if (m_SongTitle.length() > m_SongArtist.length())
+	{
+		return m_SongTitle;
+	}
+	return m_SongArtist;
+}
+
 void SYDESoundFile::playSound()
 {
 	waveOutSetVolume(0, m_SoundVolume);

@@ -30,6 +30,9 @@ For setting custom amount, add a button that leads to a keypad like this (max do
 
 ## Release Notes
 
+###  0.6.3.0 alpha
+- Simulation pop up
+
 ###  0.6.2.0 alpha
 - Custom Amount Bet (default 42.30)
 - Soundtrack updates

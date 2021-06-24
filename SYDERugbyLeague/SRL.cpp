@@ -17,6 +17,7 @@ bool SRLGame::PrevRoundCall = false;
 bool SRLGame::addCall = false;
 bool SRLGame::removeCall = false;
 bool SRLGame::Simulate = false;
+bool SRLGame::SimulateCall = false;
 bool SRLGame::generateCall = false;
 bool SRLGame::randomFillCall = false;
 bool SRLGame::errorCall = false;
@@ -148,7 +149,7 @@ void SimulateClick()
 {
 	if (SRLGame::currentState == SeasonModeState)
 	{
-		SRLGame::Simulate = true;
+		SRLGame::SimulateCall = true;
 	}
 }
 
@@ -813,6 +814,10 @@ SRLTeam SRLGame::generateRandomTeam(float multiplier)
 
 ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (SimulateCall)
+	{
+		return SimulatePopUp(window, windowWidth, windowHeight);
+	}
 	if (errorCall)
 	{
 		return ErrorPop_UP(window, windowWidth, windowHeight);
@@ -1635,6 +1640,23 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 5), "Version: 0.6.2.0-alpha", BRIGHTWHITE);
+	return window;
+}
+
+ConsoleWindow SRLGame::SimulatePopUp(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	SimulateCall = false;
+	Simulate = true;
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6),"SIMULATING....PLEASE WAIT...." , BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 7), "Please note simulation will take longer", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 8), "the more rounds simulated at once", BLACK_BRIGHTYELLOW_BG);
 	return window;
 }
 

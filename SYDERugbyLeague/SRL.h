@@ -287,6 +287,8 @@ public:
 	ConsoleWindow NewsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
 
+	ConsoleWindow SimulatePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
+
 	ConsoleWindow drawTabs(ConsoleWindow window);
 	ConsoleWindow drawBetTabs(ConsoleWindow window);
 	ConsoleWindow drawLeaderboardTabs(ConsoleWindow window);
@@ -344,6 +346,7 @@ public:
 	static bool SeasonStart;
 
 	static bool Simulate;
+	static bool SimulateCall;
 
 	static bool NextRoundCall;
 	static bool PrevRoundCall;

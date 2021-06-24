@@ -175,13 +175,22 @@ struct SRLGameBetsWriting
 	ColourClass colour;
 };
 
+enum SRLArticleType
+{
+	SRLAT_Premiership,
+	SRLAT_PlayerTrade,
+	SRLAT_PlayerSign,
+	SRLAT_Normal,
+	SRLAT_DropPlayer,
+};
+
 struct SRLNewsArticle
 {
 	SRLNewsArticle() {}
 	string headline;
 	vector<string> newsStory;
 	CustomAsset newsPicture;
-
+	SRLArticleType type = SRLAT_Normal;
 };
 
 struct SRLRound
@@ -292,11 +301,23 @@ public:
 	vector<string> generatePremiershipArticle(string teamName);
 	vector<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);
 	vector<string> generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2);
+	vector<string> generateFeelGoodArticleSickKids(string Player1);
+	vector<string> generateFeelGoodArticleSavesDrowner(string Player1);
+	vector<string> generateFeelGoodArticleDonatesToCharity(string Player1);
+
+	vector<string> generateFeelBadArticleSexScandal(string Player1);
+	vector<string> generateFeelBadArticlePunchUp(string Player1);
+	vector<string> generateFeelBadArticleGambling(string Player1);
+
+	vector<string> generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1);
 
 	void sortOutNews();
 	void offContractTrade();
+	void offContractTrade(int team1, int player1);
 	void TeamTrade();
 	void UpdateBets();
+
+	void otherArticles();
 
 	std::function<ConsoleWindow(ConsoleWindow, int, int)> m_State;
 
@@ -360,7 +381,6 @@ public:
 	static int articleClicked;
 
 	static int priorBetNumberLine;
-
 	void sortOutResultsScreen();
 
 private:
@@ -460,6 +480,7 @@ private:
 	SYDEClickableButton m_SettingsExtraTimeBtn;
 	SYDEClickableButton m_SettingsInjuryBtn;
 	SYDEClickableButton m_SettingsSinBinBtn;
+	SYDEClickableButton m_SettingsEventsBtn;
 
 	vector<SYDEClickableButton> m_BetButtons;
 	vector<SYDEClickableButton> m_PremiershipBetButtons;
@@ -482,6 +503,8 @@ private:
 
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;
+
+	const int newsArticlesPerRound = 8;
 
 	int BaseSeasonGames = 26;
 

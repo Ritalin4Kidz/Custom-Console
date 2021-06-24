@@ -4,9 +4,12 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR RELEASE (As Of 24-06-2021)
+## GOALS FOR BETA (As Of 24-06-2021)
+
+Beta is going to be reserved exclusively for fixing bugs and creating more news stories/player/team names, here are the current goals before I can start putting out a beta and getting people to test
 
 - Ability to set custom amounts in bets
+- - Custom amount settable in account, custom bet button added which will request to add that amount
 
 
 ## ABANDONED IDEAS
@@ -16,6 +19,9 @@ SRL Simulation game made inside the SYDE Framework.
 - Individual Player Analysis
 
 ## Release Notes
+
+###  0.6.1.0 alpha
+- News Story Updates
 
 ###  0.6.0.0 alpha 24-6-2021
 - Season Events Implemented

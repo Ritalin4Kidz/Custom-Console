@@ -73,6 +73,14 @@ DWORD BaseSYDESoundSettings::getVolume(SYDESoundVolume m_Volume)
 
 std::string SYDESoundFile::getLongerString()
 {
+	if (m_FeatArtist != "")
+	{
+		if (m_SongTitle.length() > m_SongArtist.length() + m_FeatArtist.length() + 1)
+		{
+			return m_SongTitle;
+		}
+		return m_SongArtist + " " + m_FeatArtist;
+	}
 	if (m_SongTitle.length() > m_SongArtist.length())
 	{
 		return m_SongTitle;

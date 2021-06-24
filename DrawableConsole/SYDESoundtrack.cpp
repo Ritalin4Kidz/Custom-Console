@@ -23,10 +23,16 @@ ConsoleWindow SYDESoundtrack::displaySongInformation(ConsoleWindow window, int b
 			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTWHITE_BRIGHTRED_BG);
 		}
 	}
-	for (int i = baseX + 2, j= 0; i < m_Soundtrack[selectedSong].m_Sound.GetArtists().length(); i++, j++)
+	string Artists = m_Soundtrack[selectedSong].m_Sound.GetArtists();
+	if (m_Soundtrack[selectedSong].m_Sound.GetFeatureArtists() != "")
 	{
-		window.setTextAtPoint(Vector2(i, baseY), m_Soundtrack[selectedSong].m_Sound.GetArtists().substr(j, j+1), BRIGHTWHITE_BRIGHTRED_BG);
+		Artists += " " + m_Soundtrack[selectedSong].m_Sound.GetFeatureArtists();
 	}
+	for (int i = baseX + 2, j= 0; i < Artists.length(); i++, j++)
+	{
+		window.setTextAtPoint(Vector2(i, baseY), Artists.substr(j, j+1), BRIGHTWHITE_BRIGHTRED_BG);
+	}
+	
 	for (int i = baseX + 2, j = 0; i < m_Soundtrack[selectedSong].m_Sound.GetTitle().length(); i++, j++)
 	{
 		window.setTextAtPoint(Vector2(i, baseY + 1), m_Soundtrack[selectedSong].m_Sound.GetTitle().substr(j, j + 1), BRIGHTWHITE_BRIGHTRED_BG);

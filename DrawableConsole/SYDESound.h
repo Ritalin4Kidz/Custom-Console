@@ -42,12 +42,14 @@ public:
 
 	void setSongTitle(std::string Title) { m_SongTitle = Title; }
 	void setSongArtist(std::string Artist) { m_SongArtist = Artist; }
+	void setFeatureArtist(std::string Artist) { m_FeatArtist = Artist; }
+
 
 	std::string getLongerString();
 
 	std::string GetTitle() { return m_SongTitle; }
 	std::string GetArtists() { return m_SongArtist; }
-
+	std::string GetFeatureArtists() { return m_FeatArtist; }
 	/// <summary>
 	/// play the sound
 	/// </summary>
@@ -70,4 +72,5 @@ private:
 
 	std::string m_SongTitle;
 	std::string m_SongArtist;
+	std::string m_FeatArtist = "";
 };

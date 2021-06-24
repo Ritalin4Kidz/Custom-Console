@@ -11,6 +11,16 @@ Beta is going to be reserved exclusively for fixing bugs and creating more news 
 - Ability to set custom amounts in bets
 - - Custom amount settable in account, custom bet button added which will request to add that amount
 
+For setting custom amount, add a button that leads to a keypad like this (max dollars = 9999)
+
+	9 | 8 | 7 
+	6 | 5 | 4
+	3 | 2 | 1
+	. | 0 | C
+	
+	CNCL   OK
+
+- Save Game Settings To A File
 
 ## ABANDONED IDEAS
 
@@ -19,6 +29,10 @@ Beta is going to be reserved exclusively for fixing bugs and creating more news 
 - Individual Player Analysis
 
 ## Release Notes
+
+###  0.6.2.0 alpha
+- Custom Amount Bet (default 42.30)
+- Soundtrack updates
 
 ###  0.6.1.0 alpha
 - News Story Updates

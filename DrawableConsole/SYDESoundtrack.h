@@ -23,6 +23,7 @@ public:
 	void addSong(SYDESoundtrackEntry file) { m_Soundtrack.push_back(file); }
 	void start();
 	void editSongInfo(int index, string Title, string Artist) { m_Soundtrack[index].m_Sound.setSongArtist(Artist); m_Soundtrack[index].m_Sound.setSongTitle(Title); }
+	void editSongInfo(int index, string Title, string Artist, string feat) { m_Soundtrack[index].m_Sound.setSongArtist(Artist); m_Soundtrack[index].m_Sound.setSongTitle(Title); m_Soundtrack[index].m_Sound.setFeatureArtist(feat);}
 	ConsoleWindow displaySongInformation(ConsoleWindow window, int baseX);
 	void play();
 	void stop();

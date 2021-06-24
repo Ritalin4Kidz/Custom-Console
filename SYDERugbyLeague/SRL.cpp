@@ -35,6 +35,7 @@ bool SRLGame::betPlaceCall = false;
 bool SRLGame::premiershipBet = false;
 bool SRLGame::m_SeasonEvents = true;
 bool SRLGame::headlineCall = false;
+SRLBetPrice SRLGame::m_BetAmount = SRLBetPrice(10, 0);
 int SRLGame::gameNumberBet = 0;
 int SRLGame::priorBetNumberLine = 0;
 string SRLGame::errorMessage = "";
@@ -113,12 +114,15 @@ void BetMatchClick()
 {
 	SRLGame::betTag = SYDEClickableButton::getLastButtonTag();
 	vector<string> bets = Split(SRLGame::betTag, ';');
-	SRLGame::betTag = bets[2];
-	SRLGame::homeTeamBet = bets[1] == "H";
-	SRLGame::premiershipBet = bets[1] == "P";
+	SRLGame::betTag = bets[4];
+	SRLGame::m_BetAmount.dollars = stoi(bets[1]);
+	SRLGame::m_BetAmount.cents = stoi(bets[2]);
+	SRLGame::homeTeamBet = bets[3] == "H";
+	SRLGame::premiershipBet = bets[3] == "P";
 	SRLGame::gameNumberBet = stoi(bets[0]);
 	SRLGame::betCall = true;
-	SRLGame::errorMessage = "Confirm $10 Bet On " + SRLGame::betTag + "?";
+
+	SRLGame::errorMessage = "Confirm " + SRLGame::m_BetAmount.ReturnPrice() +" Bet On " + SRLGame::betTag + "?";
 }
 
 void ArticleClick()
@@ -460,10 +464,10 @@ void SRLGame::init()
 
 	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\01MeetMeOneDay.wav"), 165);
 	m_GamePlaySoundtrack.editSongInfo(0, "Meet Me One Day", "Rit@lin4Kidz");
-	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\02ShowYouATrick.wav"), 86);
-	m_GamePlaySoundtrack.editSongInfo(1, "Let Me Show You A Remix", "Rit@lin4Kidz");
-	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\03StillSad.wav"), 60);
-	m_GamePlaySoundtrack.editSongInfo(2, "Still Sad That I Exist", "Handsprime");
+	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\02IThink.wav"), 93);
+	m_GamePlaySoundtrack.editSongInfo(1, "I Think, Therefore I Suck", "Handsprime","(Rit@lin4Kidz Remix)");
+	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\03Waterfall.wav"), 133);
+	m_GamePlaySoundtrack.editSongInfo(2, "Waterfall", "Handsprime","(Rit@lin4Kidz Remix)");
 
 	m_GamePlaySoundtrack.setYPos(14);
 
@@ -1139,24 +1143,24 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		if (betPlaceCall)
 		{
 			betPlaceCall = false;
-			if (m_BetMoney.dollars < 10)
+			if (m_BetMoney.greaterThan(m_BetAmount) || m_BetMoney.equal(m_BetAmount))
+			{
+				m_BetMoney.removeBetPrice(m_BetAmount);
+				if (homeTeamBet)
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameNumberBet].homeTeamOdds, m_BetAmount));
+				}
+				else
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameNumberBet].awayTeamOdds, m_BetAmount));
+				}
+				UpdateBets();
+			}
+			else
 			{
 				errorCall = true;
 				errorMessage = "Not Enough Money To Bet";
 				return window;
-			}
-			else
-			{
-				m_BetMoney.dollars -= 10;
-				if (homeTeamBet)
-				{
-					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameNumberBet].homeTeamOdds, SRLBetPrice(10, 0)));
-				}
-				else
-				{
-					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameNumberBet].awayTeamOdds, SRLBetPrice(10, 0)));
-				}
-				UpdateBets();
 			}
 		}
 		if (m_roundToSimulate < BaseSeasonGames + 4)
@@ -1183,17 +1187,17 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		if (betPlaceCall)
 		{
 			betPlaceCall = false;
-			if (m_BetMoney.dollars < 10)
+			if (m_BetMoney.greaterThan(m_BetAmount) || m_BetMoney.equal(m_BetAmount))
+			{
+				m_BetMoney.removeBetPrice(m_BetAmount);
+				m_Season.m_PremiershipBets.push_back(SRLGameBet(betTag, m_Season.m_Ladder.m_Ladder[gameNumberBet].premiershipOdds, m_BetAmount, true));
+				UpdateBets();
+			}
+			else
 			{
 				errorCall = true;
 				errorMessage = "Not Enough Money To Bet";
 				return window;
-			}
-			else
-			{
-				m_BetMoney.dollars -= 10;
-				m_Season.m_PremiershipBets.push_back(SRLGameBet(betTag, m_Season.m_Ladder.m_Ladder[gameNumberBet].premiershipOdds, SRLBetPrice(10, 0), true));
-				UpdateBets();
 			}
 		}
 		if (m_roundToSimulate >= seasonLength)
@@ -1630,6 +1634,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.6.2.0-alpha", BRIGHTWHITE);
 	return window;
 }
 
@@ -1768,16 +1773,24 @@ void SRLGame::CalculateOdds()
 	{
 		SRLTeam oddsHomeTeam;
 		oddsHomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam + ".json");
-		SYDEClickableButton a_BetBtnH = SYDEClickableButton("Bet $10",Vector2(50, j+1), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		SYDEClickableButton a_BetBtnH = SYDEClickableButton("Bet $10",Vector2(42, j+1), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtnH.SetFunc(BetMatchClick);
-		a_BetBtnH.setTag(to_string(i) + ";" + "H;" + oddsHomeTeam.getName());
+		a_BetBtnH.setTag(to_string(i) + ";10;0;" + "H;" + oddsHomeTeam.getName());
 		m_BetButtons.push_back(a_BetBtnH);
+		SYDEClickableButton a_BetBtnHCustom = SYDEClickableButton("$Custom", Vector2(51, j + 1), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtnHCustom.SetFunc(BetMatchClick);
+		a_BetBtnHCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "H;" + oddsHomeTeam.getName());
+		m_BetButtons.push_back(a_BetBtnHCustom);
 		SRLTeam oddsAwayTeam;
 		oddsAwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam + ".json");
-		SYDEClickableButton a_BetBtnA = SYDEClickableButton("Bet $10", Vector2(50, j + 2), Vector2(7, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+		SYDEClickableButton a_BetBtnA = SYDEClickableButton("Bet $10", Vector2(42, j + 2), Vector2(7, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 		a_BetBtnA.SetFunc(BetMatchClick);
-		a_BetBtnA.setTag(to_string(i) + ";" + "A;" + oddsAwayTeam.getName());
+		a_BetBtnA.setTag(to_string(i) + ";10;0;" + "A;" + oddsAwayTeam.getName());
 		m_BetButtons.push_back(a_BetBtnA);
+		SYDEClickableButton a_BetBtnACustom = SYDEClickableButton("$Custom", Vector2(51, j + 2), Vector2(7, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+		a_BetBtnACustom.SetFunc(BetMatchClick);
+		a_BetBtnACustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "A;" + oddsAwayTeam.getName());
+		m_BetButtons.push_back(a_BetBtnACustom);
 		float oddsHAttack = oddsHomeTeam.totalAttackStat();
 		float oddsHDefence = oddsHomeTeam.totalDefenceStat();
 		float oddsHSpeed = oddsHomeTeam.totalSpeedStat();
@@ -1857,10 +1870,14 @@ void SRLGame::CalculatePremiershipOdds()
 		oddsCents += ladderAdj;
 		oddsCents -= pointPercent;
 		m_Season.m_Ladder.m_Ladder[i].premiershipOdds = SRLBetPrice(oddsCents / 100, oddsCents % 100);
-		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(50, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtn.SetFunc(BetMatchClick);
-		a_BetBtn.setTag(to_string(i) + ";" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
+		a_BetBtn.setTag(to_string(i) + ";10;0;" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
 		m_PremiershipBetButtons.push_back(a_BetBtn);
+		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtnCustom.SetFunc(BetMatchClick);
+		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
+		m_PremiershipBetButtons.push_back(a_BetBtnCustom);
 	}
 }
 
@@ -2674,6 +2691,30 @@ void SRLBetPrice::addBetPrice(SRLBetPrice bet)
 		dollars++;
 		cents -= 100;
 	}
+}
+
+void SRLBetPrice::removeBetPrice(SRLBetPrice bet)
+{
+	dollars -= bet.dollars;
+	cents -= bet.cents;
+	while (cents < 0)
+	{
+		dollars--;
+		cents += 100;
+	}
+}
+
+bool SRLBetPrice::greaterThan(SRLBetPrice bet)
+{
+	if (dollars > bet.dollars)
+	{
+		return true;
+	}
+	else if (dollars == bet.dollars && cents > bet.cents)
+	{
+		return true;
+	}
+	return false;
 }
 
 string SRLBetPrice::ReturnPrice()

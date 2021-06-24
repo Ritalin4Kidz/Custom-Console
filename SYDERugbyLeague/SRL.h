@@ -112,6 +112,10 @@ struct SRLBetPrice
 	void addCents(int c);
 	void addBetPrice(SRLBetPrice bet);
 
+	void removeBetPrice(SRLBetPrice bet);
+	bool equal(SRLBetPrice bet) { return dollars == bet.dollars && cents == bet.cents; }
+	bool greaterThan(SRLBetPrice bet);
+
 	string ReturnPrice();
 };
 
@@ -366,6 +370,7 @@ public:
 	static bool soundTrackOn;
 	static bool m_ResultsTabCall;
 
+	static SRLBetPrice m_BetAmount;
 
 	static string errorMessage;
 
@@ -511,6 +516,7 @@ private:
 	int m_round = 0;
 	int m_roundToSimulate = 0;
 	SRLBetPrice m_BetMoney = SRLBetPrice(100, 0);
+	SRLBetPrice m_CustomBet = SRLBetPrice(42, 30);
 
 	bool finals = false;
 

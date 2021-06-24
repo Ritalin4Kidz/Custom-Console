@@ -72,6 +72,7 @@ void SYDESoundtrack::next()
 		}
 		selectedSong = selectedSong2;
 	}
+	m_Soundtrack[selectedSong].m_Sound.setVolume(BaseSYDESoundSettings::getDefaultVolume());
 	m_Soundtrack[selectedSong].m_Sound.playSound();
 	displaySongInfo = true;
 	songInfoPosition = (m_Soundtrack[selectedSong].m_Sound.getLongerString().size() + 4);

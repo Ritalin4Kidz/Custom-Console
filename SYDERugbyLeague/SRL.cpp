@@ -52,6 +52,20 @@ void ExhibitionMatchClick()
 	}
 }
 
+void MusicVolumeClick()
+{
+	if (BaseSYDESoundSettings::getDefaultVolumeState() == SYDE_VOLUME_OFF)
+		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_LOW);
+	else if (BaseSYDESoundSettings::getDefaultVolumeState() == SYDE_VOLUME_LOW)
+		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_NML);
+	else if (BaseSYDESoundSettings::getDefaultVolumeState() == SYDE_VOLUME_NML)
+		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_MED);
+	else if (BaseSYDESoundSettings::getDefaultVolumeState() == SYDE_VOLUME_MED)
+		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_HIG);
+	else if (BaseSYDESoundSettings::getDefaultVolumeState() == SYDE_VOLUME_HIG)
+		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_OFF);
+}
+
 vector<string> Split(string a_String, char splitter)
 {
 	int arraySize = 1;
@@ -442,6 +456,10 @@ void SRLGame::init()
 	m_SoundTrackNextBtn = SYDEClickableButton(" Current Song:", Vector2(7, 6), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SoundTrackNextBtn.setHighLight(RED);
 	m_SoundTrackNextBtn.SetFunc(nextSongClick);
+
+	m_SoundTrackVolume = SYDEClickableButton(" Music Volume:", Vector2(7, 8), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SoundTrackVolume.setHighLight(RED);
+	m_SoundTrackVolume.SetFunc(MusicVolumeClick);
 
 #pragma endregion
 
@@ -1488,6 +1506,25 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		}
 		window = m_SoundTrackNextBtn.draw_ui(window);
 		window.setTextAtPoint(Vector2(22, 6), m_GamePlaySoundtrack.getSongPlaying(), BRIGHTWHITE);
+		window = m_SoundTrackVolume.draw_ui(window);
+		switch (BaseSYDESoundSettings::getDefaultVolumeState())
+		{
+		case SYDE_VOLUME_OFF:
+			window.setTextAtPoint(Vector2(22, 8), "Off", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_LOW:
+			window.setTextAtPoint(Vector2(22, 8), "Low", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_HIG:
+			window.setTextAtPoint(Vector2(22, 8), "High", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_NML:
+			window.setTextAtPoint(Vector2(22, 8), "Normal", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_MED:
+			window.setTextAtPoint(Vector2(22, 8), "Medium", BRIGHTWHITE);
+			break;
+		}
 	}
 	return window;
 }

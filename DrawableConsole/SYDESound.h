@@ -22,7 +22,7 @@ class BaseSYDESoundSettings
 public:
 	static void changeDefaultVolume(SYDESoundVolume m_Volume);
 	static DWORD getDefaultVolume() { return m_SoundVolume; }
-
+	static SYDESoundVolume getDefaultVolumeState();
 	static DWORD getVolume(SYDESoundVolume m_Volume);
 
 private:
@@ -61,6 +61,8 @@ public:
 	/// Stop sounds
 	/// </summary>
 	void stopSound();
+
+	void setVolume(DWORD volume) { m_SoundVolume = volume; }
 
 private:
 	DWORD m_SoundVolume;

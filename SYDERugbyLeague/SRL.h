@@ -400,6 +400,7 @@ private:
 
 	SYDEClickableButton m_SoundTrackOnBtn;
 	SYDEClickableButton m_SoundTrackNextBtn;
+	SYDEClickableButton m_SoundTrackVolume;
 
 	//Results Page
 	SYDEClickableButton m_GameResultSummaryBtn;

@@ -24,11 +24,14 @@ public:
 
 
 	SRLPlayer getRandomPlayer();
+	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
 
 	string getName() { return m_Name; }
 	void setName(string name) { m_Name = name; }
 	void loadTeam(string path);
+	void loadTeamOffContract(string path);
 	void saveTeam();
+	void saveTeamOffContract();
 
 	void addPlayerMetres(string playerName, int metres);
 	void addPlayerKickMetres(string playerName, int metres);
@@ -59,6 +62,8 @@ public:
 	int getInterchanges() { return m_Interchanges; }
 
 	vector<SRLPlayer> getPlayers() { return m_TeamList; }
+
+	void setPlayer(int index, SRLPlayer p) { m_TeamList[index] = p; }
 
 	string getMostTackles();
 	string getMostMetres();

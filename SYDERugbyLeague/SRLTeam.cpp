@@ -105,6 +105,21 @@ void SRLTeam::loadTeam(string path)
 	}
 }
 
+void SRLTeam::loadTeamOffContract(string path)
+{
+	std::ifstream ifs{ path };
+	json save_file = json::parse(ifs);
+	setName(save_file["name"]);
+	for (int i = 0; i < 200; i++)
+	{
+		int playerID = save_file["players"][to_string(i)];
+		SRLPlayer newPlayer = SRLPlayer();
+		string filePath = string("EngineFiles\\GameResults\\Players\\" + to_string(playerID) + ".json");
+		newPlayer.loadPlayer(filePath);
+		m_TeamList.push_back(newPlayer);
+	}
+}
+
 void SRLTeam::saveTeam()
 {
 	json save_file;
@@ -116,6 +131,22 @@ void SRLTeam::saveTeam()
 		save_file["players"][to_string(i)] = m_TeamList[i].getID();
 	}
 	string filePath = string("EngineFiles\\GameResults\\Teams\\" + m_Name + ".json");
+	std::ofstream ofs(filePath);
+	ofs << save_file;
+	//return save_file;
+}
+
+void SRLTeam::saveTeamOffContract()
+{
+	json save_file;
+	//PlayerStats
+	save_file["name"] = m_Name;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		m_TeamList[i].savePlayer();
+		save_file["players"][to_string(i)] = m_TeamList[i].getID();
+	}
+	string filePath = string("EngineFiles\\GameResults\\OffContract\\" + m_Name + ".json");
 	std::ofstream ofs(filePath);
 	ofs << save_file;
 	//return save_file;

@@ -32,12 +32,15 @@ bool SRLGame::soundTrackOn = true;
 bool SRLGame::homeTeamBet = false;
 bool SRLGame::betPlaceCall = false;
 bool SRLGame::premiershipBet = false;
+bool SRLGame::m_SeasonEvents = true;
+bool SRLGame::headlineCall = false;
 int SRLGame::gameNumberBet = 0;
 int SRLGame::priorBetNumberLine = 0;
 string SRLGame::errorMessage = "";
-
+int SRLGame::articleClicked = 0;
 string SRLGame::betTag = "";
 bool SRLGame::betCall = false;
+ArticleViewingState SRLGame::articleState = HeadlinesState;
 
 SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
 
@@ -50,6 +53,11 @@ void ExhibitionMatchClick()
 	{
 		SRLGame::newState = Exhibition_LoadState;
 	}
+}
+
+void ArticleBackClick()
+{
+	SRLGame::articleState = HeadlinesState;
 }
 
 void MusicVolumeClick()
@@ -107,6 +115,12 @@ void BetMatchClick()
 	SRLGame::errorMessage = "Confirm $10 Bet On " + SRLGame::betTag + "?";
 }
 
+void ArticleClick()
+{
+	SRLGame::articleClicked = stoi(SYDEClickableButton::getLastButtonTag());
+	SRLGame::headlineCall = true;
+}
+
 void SoundTrackClick()
 {
 	if (SRLGame::soundTrackOn)
@@ -151,6 +165,11 @@ void betOKClick()
 {
 	SRLGame::betPlaceCall = true;
 	SRLGame::betCall = false;
+}
+
+void newsViewClick()
+{
+	SRLGame::newState = NewsViewState;
 }
 
 void SeasonModeClick()
@@ -485,9 +504,9 @@ void SRLGame::init()
 	m_MainMenuViewBtn.SetFunc(MainMenuViewClick);
 
 	//BLANK BUTTONS EDIT LATER
-	m_Blank1ViewBtn = SYDEClickableButton("    Blank   ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_Blank1ViewBtn.setHighLight(RED);
-	m_Blank1ViewBtn.SetFunc(BlankViewClick);
+	m_NewsViewBtn = SYDEClickableButton("Season News ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_NewsViewBtn.setHighLight(RED);
+	m_NewsViewBtn.SetFunc(newsViewClick);
 	m_PreviousRoundViewBtn = SYDEClickableButton("  Previous  ", Vector2(24, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
 	m_PreviousRoundViewBtn.setHighLight(RED);
 	m_PreviousRoundViewBtn.SetFunc(PrevRoundViewClick);
@@ -554,6 +573,11 @@ void SRLGame::init()
 	m_RandomFillSeasonCfgBtn = SYDEClickableButton("Random Fill", Vector2(49, 2), Vector2(11, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_RandomFillSeasonCfgBtn.setHighLight(RED);
 	m_RandomFillSeasonCfgBtn.SetFunc(RandomFillClick);
+
+
+	m_BackHeadline = SYDEClickableButton("BACK", Vector2(2, 17), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BackHeadline.setHighLight(RED);
+	m_BackHeadline.SetFunc(ArticleBackClick);
 #pragma endregion
 
 #pragma region LeaderboardOptions
@@ -710,6 +734,16 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	return m_Team;
 }
 
+vector<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
+{
+	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
+	for (int i = 0; i < 200; i++)
+	{
+		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20)));
+	}
+	return m_Team;
+}
+
 vector<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
 {
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
@@ -751,6 +785,11 @@ void SRLGame::test()
 SRLTeam SRLGame::generateRandomTeam()
 {
 	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamName());
+}
+
+SRLTeam SRLGame::generateOffSeasonTeam()
+{
+	return SRLTeam(createOffSeasonTeam(""), "Off Contract Players");
 }
 
 SRLTeam SRLGame::generateRandomTeam(float multiplier)
@@ -814,6 +853,11 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		{
 			AssignState(std::bind(&SRLGame::InfoView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
+		else if (currentState == NewsViewState)
+		{
+			sortOutNews();
+			AssignState(std::bind(&SRLGame::NewsView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
 		else if (currentState == ResultsViewState)
 		{
 			m_SelectedGame = 0;
@@ -826,6 +870,11 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 			{
 				SRLTeam HomeTeam = generateRandomTeam();
 				HomeTeam.saveTeam();
+			}
+			if (!SYDEFileDefaults::exists("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json"))
+			{
+				SRLTeam HomeTeam = generateOffSeasonTeam();
+				HomeTeam.saveTeamOffContract();
 			}
 			m_SelectedTeam = 0;
 			m_SeasonTeams = vector<string>();
@@ -1529,6 +1578,33 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 	return window;
 }
 
+ConsoleWindow SRLGame::NewsView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = drawTabs(window);
+	if (headlineCall)
+	{
+		m_Article = m_Season.m_Draw.m_Rounds[m_round].newsStories[articleClicked];
+		articleState = ArticleFullViewState;
+		headlineCall = false;
+	}
+	if (articleState == HeadlinesState)
+	{
+		for (int i = 0; i < m_NewsHeadlines.size(); i++)
+		{
+			window = m_NewsHeadlines[i].draw_ui(window);
+		}
+	}
+	else if (articleState == ArticleFullViewState)
+	{
+		for (int i = 0; i < m_Article.newsStory.size(); i++)
+		{
+			window.setTextAtPoint(Vector2(0, i+2), m_Article.newsStory[i], BRIGHTWHITE);
+		}
+		window = m_BackHeadline.draw_ui(window);
+	}
+	return window;
+}
+
 ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawMainMenuTabs(window);
@@ -1546,7 +1622,7 @@ ConsoleWindow SRLGame::drawTabs(ConsoleWindow window)
 	window = m_BettingViewBtn.draw_ui(window);
 	window = m_LeaderboardViewBtn.draw_ui(window);
 	window = m_MainMenuViewBtn.draw_ui(window);
-	window = m_Blank1ViewBtn.draw_ui(window);
+	window = m_NewsViewBtn.draw_ui(window);
 	window = m_PreviousRoundViewBtn.draw_ui(window);
 	window = m_NextRoundViewBtn.draw_ui(window);
 	window = m_SimulateBtn.draw_ui(window);
@@ -1798,6 +1874,7 @@ void SRLGame::SimulateGames()
 			m_srlmanager.weatherEffects(m_Weather);
 			m_srlmanager.staminaEffect(m_Stamina);
 			m_srlmanager.injuriesEffect(m_Injuries);
+			m_srlmanager.sinBinsEffect(m_SinBins);
 			try
 			{
 				m_srlmanager.addTeamLineupsPlayByPlay();
@@ -1967,6 +2044,22 @@ void SRLGame::SimulateGames()
 		}
 		//Simulate = false;
 		m_roundToSimulate++;
+
+		//NEWS STORIES
+		if (m_SeasonEvents)
+		{
+			int noTrades1 = rand() % 3;
+			for (int i = 0; i < noTrades1; i++)
+			{
+				offContractTrade();
+			}
+			int noTrades2 = rand() % 3;
+			for (int i = 0; i < noTrades2; i++)
+			{
+				TeamTrade();
+			}
+		}
+
 		if (m_roundToSimulate >= m_Season.m_Draw.m_Rounds.size())
 		{
 			finals = true;
@@ -1985,6 +2078,10 @@ void SRLGame::SimulateGames()
 						m_Season.m_PremiershipBets[ii].betState = Bet_Lost;
 					}
 				}
+				SRLNewsArticle m_PremiershipArticle;
+				m_PremiershipArticle.headline = m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam + " Wins Premiership!";
+				m_PremiershipArticle.newsStory = generatePremiershipArticle(m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam);
+				m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_PremiershipArticle);
 				UpdateBets();
 			}
 			else
@@ -1997,6 +2094,12 @@ void SRLGame::SimulateGames()
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[4].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //5v8
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[5].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //6v7
 					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
@@ -2027,6 +2130,190 @@ void SRLGame::SimulateGames()
 			UpdateBets();
 		}
 	}
+}
+
+vector<string> SRLGame::generateMinorPremiershipArticle(string teamName)
+{
+	vector<string> temp;
+	temp.push_back(teamName + " have won the");
+	temp.push_back("minor premiership after a hard fought season.");
+	temp.push_back("Having confirmed a home qualifying final,");
+	temp.push_back(teamName + " will be looking to");
+	temp.push_back("convert this into the main premiership come");
+	temp.push_back("grand final day.");
+	return temp;
+}
+
+vector<string> SRLGame::generatePremiershipArticle(string teamName)
+{
+	vector<string> temp;
+	temp.push_back(teamName + " have won the");
+	temp.push_back("premiership after a hard fought grand final.");
+	temp.push_back("The CEO of " + teamName);
+	temp.push_back("has announced a 70% discount in the merch store");
+	temp.push_back("as a celebration of this achievement.");
+	temp.push_back(" ");
+	temp.push_back("Congratulations " + teamName + "!");
+	return temp;
+}
+
+vector<string> SRLGame::generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer)
+{
+	vector<string> temp;
+	temp.push_back(teamName + " have boosted their squad");
+	temp.push_back("after the signing of the off contract " + newPlayer + ".");
+	temp.push_back("Unfortunately this signing also means that");
+	temp.push_back(teamName + " have let go of " + oldPlayer + ".");
+	temp.push_back(oldPlayer + " is now currently looking for a new club");
+	return temp;
+}
+
+vector<string> SRLGame::generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2)
+{
+	vector<string> temp;
+	temp.push_back(teamName1 + " & " + teamName2);
+	temp.push_back("have agreed to do a player swap!");
+	temp.push_back("This trade sees " + Player1);
+	temp.push_back("find a new home at the " + teamName2);
+	temp.push_back("whilst " + Player1 + " will now have to adapt");
+	temp.push_back("to their new role at " + teamName1 + ".");
+	return temp;
+}
+
+
+void SRLGame::sortOutNews()
+{
+	m_NewsHeadlines.clear();
+	for (int i = 0, j =3; i < m_Season.m_Draw.m_Rounds[m_round].newsStories.size(); i++, j+=2)
+	{
+		SYDEClickableButton a_Headline = SYDEClickableButton(" " + m_Season.m_Draw.m_Rounds[m_round].newsStories[i].headline, Vector2(2, j), Vector2(m_Season.m_Draw.m_Rounds[m_round].newsStories[i].headline.length() + 2, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_Headline.SetFunc(ArticleClick);
+		a_Headline.setTag(to_string(i));
+		m_NewsHeadlines.push_back(a_Headline);
+	}
+}
+
+void SRLGame::offContractTrade()
+{
+	//TRADE OFF CONTRACT
+	SRLTeam offContract;
+	offContract.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");
+	int team1 = rand() % 16;
+	SRLTeam MainTeam;
+	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team1].teamName + ".json");
+	int player1 = MainTeam.getRandomPlayerInt();
+	int player2 = offContract.getRandomPlayerInt();
+	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
+	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	MainTeam.setPlayer(player1, Player2Character);
+	offContract.setPlayer(player2, Player1Character);
+	SRLNewsArticle m_SigningArticle;
+	m_SigningArticle.headline = m_Season.m_Ladder.m_Ladder[team1].teamName + " Sign " + Player2Character.getName();
+	m_SigningArticle.newsStory = generateOffContractTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, Player2Character.getName(), Player1Character.getName());
+	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_SigningArticle);
+
+	m_Season.m_TopPlayers.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopTries.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopGoals.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopPoints.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopMetres.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopFieldGoals.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_Top4020.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopTackles.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopKickMetres.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopErrors.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopPenalty.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopSteals.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopNoTries.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopRuckErrors.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopSinBin.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopSendOff.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopInjuries.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+
+	m_Season.m_TopPlayers.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopTries.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopGoals.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopPoints.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopMetres.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopFieldGoals.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_Top4020.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopTackles.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopKickMetres.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopErrors.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopPenalty.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopSteals.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopNoTries.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopRuckErrors.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopSinBin.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopSendOff.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopInjuries.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+
+	MainTeam.saveTeam();
+	offContract.saveTeamOffContract();
+}
+
+void SRLGame::TeamTrade()
+{
+	//TRADE OFF
+	int team1 = rand() % 16;
+	int team2 = rand() % 16;
+	if (team1 == team2)
+	{
+		return;
+	}
+	SRLTeam MainTeam;
+	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team1].teamName + ".json");
+	SRLTeam offContract;
+	offContract.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team2].teamName + ".json");
+	int player1 = MainTeam.getRandomPlayerInt();
+	int player2 = offContract.getRandomPlayerInt();
+	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
+	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	MainTeam.setPlayer(player1, Player2Character);
+	offContract.setPlayer(player2, Player1Character);
+	SRLNewsArticle m_SigningArticle;
+	m_SigningArticle.headline = m_Season.m_Ladder.m_Ladder[team1].teamName + " Sign " + Player2Character.getName();
+	m_SigningArticle.newsStory = generateTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, m_Season.m_Ladder.m_Ladder[team2].teamName, Player2Character.getName(), Player1Character.getName());
+	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_SigningArticle);
+
+	m_Season.m_TopPlayers.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopTries.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopGoals.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopPoints.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopMetres.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopFieldGoals.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_Top4020.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopTackles.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopKickMetres.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopErrors.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopPenalty.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopSteals.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopNoTries.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopRuckErrors.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopSinBin.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopSendOff.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+	m_Season.m_TopInjuries.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
+
+	m_Season.m_TopPlayers.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopTries.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopGoals.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopPoints.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopMetres.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopFieldGoals.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_Top4020.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopTackles.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopKickMetres.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopErrors.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopPenalty.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopSteals.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopNoTries.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopRuckErrors.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopSinBin.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopSendOff.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+	m_Season.m_TopInjuries.changePlayerTeam(Player2Character.getName(), offContract.getName(), MainTeam.getName());
+
+	MainTeam.saveTeam();
+	offContract.saveTeam();
 }
 
 void SRLGame::UpdateBets()
@@ -2189,6 +2476,18 @@ void SRLLeaderboard::orderShortlist()
 				i = 0;
 				ii = i + 1;
 			}
+		}
+	}
+}
+
+void SRLLeaderboard::changePlayerTeam(string playerName, string oldTeam, string newTeam)
+{
+	for (int i = 0; i < shortlist.size(); i++)
+	{
+		if (shortlist[i].TeamName == oldTeam && shortlist[i].Player == playerName)
+		{
+			shortlist[i].TeamName = newTeam;
+			return;
 		}
 	}
 }

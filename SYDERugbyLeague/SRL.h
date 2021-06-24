@@ -27,6 +27,13 @@ enum GameStateSYDE
 	LeaderboardViewState,
 	SettingsState,
 	InformationState,
+	NewsViewState
+};
+
+enum ArticleViewingState
+{
+	HeadlinesState,
+	ArticleFullViewState
 };
 
 enum GameStateBettingSYDE
@@ -168,11 +175,21 @@ struct SRLGameBetsWriting
 	ColourClass colour;
 };
 
+struct SRLNewsArticle
+{
+	SRLNewsArticle() {}
+	string headline;
+	vector<string> newsStory;
+	CustomAsset newsPicture;
+
+};
+
 struct SRLRound
 {
 	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
 	vector<SRLGameMatchup> m_Games;
 	vector<SRLGameBet> m_Bets;
+	vector<SRLNewsArticle> newsStories;
 };
 
 struct SRLDraw
@@ -194,6 +211,8 @@ struct SRLLeaderboard
 	void addToShortlist(string playerName, string teamName, int points);
 	vector<SRLLeaderboardPosition> shortlist;
 	void orderShortlist();
+
+	void changePlayerTeam(string playerName, string oldTeam, string newTeam);
 };
 
 struct SRLSeason
@@ -230,10 +249,12 @@ public:
 	void init();
 
 	vector<SRLPlayer> createRandomTeam(string prefix);
+	vector<SRLPlayer> createOffSeasonTeam(string prefix);
 	vector<SRLPlayer> createRandomTeam(string prefix, float multiplier);
 	void test();
 	static AssetsClass astVars;
 	SRLTeam generateRandomTeam();
+	SRLTeam generateOffSeasonTeam();
 	SRLTeam generateRandomTeam(float multiplier);
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 
@@ -250,6 +271,7 @@ public:
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
 
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow NewsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow drawTabs(ConsoleWindow window);
@@ -266,6 +288,14 @@ public:
 	void CalculatePremiershipOdds();
 	void SimulateGames();
 
+	vector<string> generateMinorPremiershipArticle(string teamName);
+	vector<string> generatePremiershipArticle(string teamName);
+	vector<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);
+	vector<string> generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2);
+
+	void sortOutNews();
+	void offContractTrade();
+	void TeamTrade();
 	void UpdateBets();
 
 	std::function<ConsoleWindow(ConsoleWindow, int, int)> m_State;
@@ -282,6 +312,7 @@ public:
 	static GameStateResultSYDE resultState;
 	static GameStateSettingsSYDE settingsState;
 	static SRLPriorBets_State priorBetsState;
+	static ArticleViewingState articleState;
 
 	static SRLSeasonLength seasonLength;
 
@@ -291,6 +322,8 @@ public:
 
 	static bool NextRoundCall;
 	static bool PrevRoundCall;
+
+	static bool headlineCall;
 
 	static bool addCall;
 	static bool removeCall;
@@ -305,6 +338,8 @@ public:
 	static bool m_ExtraTime;
 	static bool m_Injuries;
 	static bool m_SinBins;
+	static bool m_SeasonEvents;
+
 
 	static SYDESoundtrack m_GamePlaySoundtrack;
 	static bool soundTrackOn;
@@ -321,6 +356,8 @@ public:
 	static bool homeTeamBet;
 	static bool premiershipBet;
 	static int gameNumberBet;
+
+	static int articleClicked;
 
 	static int priorBetNumberLine;
 
@@ -359,7 +396,7 @@ private:
 	//View Main menu
 	SYDEClickableButton m_MainMenuViewBtn;
 
-	SYDEClickableButton m_Blank1ViewBtn;
+	SYDEClickableButton m_NewsViewBtn;
 
 	SYDEClickableButton m_PreviousRoundViewBtn;
 
@@ -426,6 +463,11 @@ private:
 
 	vector<SYDEClickableButton> m_BetButtons;
 	vector<SYDEClickableButton> m_PremiershipBetButtons;
+
+	vector<SYDEClickableButton> m_NewsHeadlines;
+	SYDEClickableButton m_BackHeadline;
+	SRLNewsArticle m_Article;
+
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;

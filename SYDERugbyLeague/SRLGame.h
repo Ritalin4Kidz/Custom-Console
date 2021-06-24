@@ -60,6 +60,7 @@ public:
 	void weatherEffects(bool isOn) { m_Weather = isOn; }
 	void staminaEffect(bool isOn) { m_Stamina = isOn; }
 	void injuriesEffect(bool isOn) { m_Injuries = isOn; }
+	void sinBinsEffect(bool isOn) { m_sendOffs = isOn; }
 
 	SRLPlayer getRandomSafe(SRLTeam team);
 

@@ -8,6 +8,7 @@ SRLTeam::SRLTeam(vector<SRLPlayer> a_TeamList, string name)
 {
 	m_TeamList = a_TeamList;
 	m_Name = name;
+	generateJerseys();
 }
 
 SRLTeam::~SRLTeam()
@@ -84,10 +85,34 @@ string SRLTeam::SafeInterchange(string playerName)
 	return "";
 }
 
+void SRLTeam::generateJerseys()
+{
+	int noJerseys = SYDEFileDefaults::getFileCount("EngineFiles\\JerseyFeatures", ".bmp");
+	jerseryTypeInt = rand() % noJerseys;
+
+	primaryColour = getRandomColour();
+	secondaryColour = getRandomColour();
+	while (primaryColour == secondaryColour)
+	{
+		secondaryColour = getRandomColour();
+	}
+	badgeColour = getRandomColour();
+	while (badgeColour == primaryColour || badgeColour == secondaryColour)
+	{
+		badgeColour = getRandomColour();
+	}
+}
+
 SRLPlayer SRLTeam::getRandomPlayer()
 {
 	int player = rand() % 13;
 	return m_TeamList[player];
+}
+
+void SRLTeam::clearTeam()
+{
+	m_TeamList.clear();
+	m_Name = "";
 }
 
 void SRLTeam::loadTeam(string path)
@@ -95,6 +120,10 @@ void SRLTeam::loadTeam(string path)
 	std::ifstream ifs{ path };
 	json save_file = json::parse(ifs);
 	setName(save_file["name"]);
+	primaryColour = static_cast<ColourClass>(save_file["primary"]);
+	secondaryColour = static_cast<ColourClass>(save_file["secondary"]);
+	badgeColour = static_cast<ColourClass>(save_file["badge"]);
+	jerseryTypeInt = save_file["jerseytype"];
 	for (int i = 0; i < 17; i++)
 	{
 		int playerID = save_file["players"][to_string(i)];
@@ -125,6 +154,10 @@ void SRLTeam::saveTeam()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_Name;
+	save_file["jerseytype"] = jerseryTypeInt;
+	save_file["primary"] = static_cast<int>(primaryColour);
+	save_file["secondary"] = static_cast<int>(secondaryColour);
+	save_file["badge"] = static_cast<int>(badgeColour);
 	for (int i = 0; i < 17; i++)
 	{
 		m_TeamList[i].savePlayer();
@@ -399,6 +432,21 @@ SRLPlayer SRLTeam::getGoalKicker()
 	return m_TeamList[temp1];
 }
 
+SRLPlayer SRLTeam::getGoalKickerNoLimit()
+{
+	int temp = 0;
+	int temp1 = 0;
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getGoalKicking() > temp)
+		{
+			temp = m_TeamList[i].getGoalKicking();
+			temp1 = i;
+		}
+	}
+	return m_TeamList[temp1];
+}
+
 string SRLTeam::getMostTackles()
 {
 	int temp = 0;
@@ -577,5 +625,76 @@ int SRLTeam::totalHandlingStat()
 		total += m_TeamList[i].getHandling();
 	}
 	return total;
+}
+
+int SRLTeam::averageAttackStat()
+{
+	return totalAttackStat() / m_TeamList.size();
+}
+
+int SRLTeam::averageDefenceStat()
+{
+	return totalDefenceStat() / m_TeamList.size();
+}
+
+int SRLTeam::averageSpeedStat()
+{
+	return totalSpeedStat() / m_TeamList.size();
+}
+
+int SRLTeam::averageKickStat()
+{
+	return totalKickStat() / m_TeamList.size();
+}
+
+int SRLTeam::averageHandlingStat()
+{
+	return totalHandlingStat() / m_TeamList.size();
+}
+
+int SRLTeam::TeamRating()
+{
+	int rating = averageAttackStat() + averageDefenceStat() + averageSpeedStat() + averageKickStat() + averageHandlingStat();
+	return rating/5;
+}
+
+ColourClass SRLTeam::getRandomColour()
+{
+	int colour = rand() % 15;
+	{
+		switch (colour)
+		{
+		case 0:
+			return BLUE_BLUE_BG;
+		case 1:
+			return GREEN_GREEN_BG;
+		case 2:
+			return AQUA_AQUA_BG;
+		case 3:
+			return RED_RED_BG;
+		case 4:
+			return PURPLE_PURPLE_BG;
+		case 5:
+			return YELLOW_YELLOW_BG;
+		case 6:
+			return WHITE_WHITE_BG;
+		case 7:
+			return LIGHTGREY_LIGHTGREY_BG;
+		case 8:
+			return DARKBLUE_DARKBLUE_BG;
+		case 9:
+			return BRIGHTGREEN_BRIGHTGREEN_BG;
+		case 10:
+			return LIGHTBLUE_LIGHTBLUE_BG;
+		case 11:
+			return BRIGHTRED_BRIGHTRED_BG;
+		case 12:
+			return LIGHTPURPLE_LIGHTPURPLE_BG;
+		case 13:
+			return BRIGHTYELLOW_BRIGHTYELLOW_BG;
+		case 14:
+			return BRIGHTWHITE_BRIGHTWHITE_BG;
+		}
+	}
 }
 

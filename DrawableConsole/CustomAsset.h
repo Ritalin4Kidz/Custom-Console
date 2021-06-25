@@ -66,6 +66,13 @@ public:
 	void setColourAtPoint(Vector2 Point, int m_Colour);
 
 	/// <summary>
+	/// change all the instances of a colour
+	/// </summary>
+	/// <param name="oldColour"></param>
+	/// <param name="newColour"></param>
+	void changeAllInstancesOfColour(ColourClass oldColour, ColourClass newColour);
+
+	/// <summary>
 	/// return the character at a certain point in the asset
 	/// </summary>
 	/// <param name="Point"></param>

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-
+#include "ConsoleWindow.h"
 #include "SRLPlayer.h"
 
 using namespace std;
@@ -22,9 +22,18 @@ public:
 	/// <returns></returns>
 	string SafeInterchange(string playerName);
 
+	void generateJerseys();
+	
+	int getJerseryType() { return jerseryTypeInt; }
+
+	ColourClass getPrimary() { return primaryColour; }
+	ColourClass getSecondary() { return secondaryColour; }
+	ColourClass getBadge() { return badgeColour; }
 
 	SRLPlayer getRandomPlayer();
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
+
+	void clearTeam();
 
 	string getName() { return m_Name; }
 	void setName(string name) { m_Name = name; }
@@ -59,6 +68,7 @@ public:
 	vector<string> addTimeOnField(int time);
 
 	SRLPlayer getGoalKicker();
+	SRLPlayer getGoalKickerNoLimit();
 	int getInterchanges() { return m_Interchanges; }
 
 	vector<SRLPlayer> getPlayers() { return m_TeamList; }
@@ -84,9 +94,24 @@ public:
 	int totalSpeedStat();
 	int totalKickStat();
 	int totalHandlingStat();
-private:
 
+	int averageAttackStat();
+	int averageDefenceStat();
+	int averageSpeedStat();
+	int averageKickStat();
+	int averageHandlingStat();
+
+	int TeamRating();
+
+private:
+	ColourClass getRandomColour();
 	string m_Name;
+
+	int jerseryTypeInt;
+
+	ColourClass primaryColour = WHITE;
+	ColourClass secondaryColour = WHITE;
+	ColourClass badgeColour = WHITE;
 
 	vector<SRLPlayer> m_TeamList = vector<SRLPlayer>();
 	int m_Interchanges = 0;

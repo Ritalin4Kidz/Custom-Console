@@ -27,7 +27,8 @@ enum GameStateSYDE
 	LeaderboardViewState,
 	SettingsState,
 	InformationState,
-	NewsViewState
+	NewsViewState,
+	TeamInDepthViewState
 };
 
 enum ArticleViewingState
@@ -281,6 +282,8 @@ public:
 	ConsoleWindow LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 
+	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
+
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
 
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -328,6 +331,8 @@ public:
 	void offContractTrade(int team1, int player1);
 	void TeamTrade();
 	void UpdateBets();
+
+	void setUpTeamInDepthView(int teamViewing);
 
 	void otherArticles();
 
@@ -525,6 +530,10 @@ private:
 	SYDEClickableButton m_BackHeadline;
 	SRLNewsArticle m_Article;
 
+	SYDEClickableButton m_TeamInDepthView;
+	SYDEClickableButton m_BackTeamInDepth;
+	SYDEClickableButton m_NextTeamInDepth;
+	SYDEClickableButton m_PrevTeamInDepth;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;
@@ -552,4 +561,8 @@ private:
 	bool finals = false;
 
 	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));
+
+	SRLTeam m_InDepthTeamView;
+	CustomAsset m_JerseyView;
+	int m_TeamViewing = 0;
 };

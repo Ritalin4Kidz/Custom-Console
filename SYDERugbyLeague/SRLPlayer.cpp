@@ -30,6 +30,7 @@ void SRLPlayer::loadPlayer(string path)
 	this->id = (save_file["id"]);
 	this->m_GoalKicking = (save_file["goalkick"]);
 	this->m_BaseKicking = (save_file["kick"]);
+	this->m_BaseHandling = (save_file["hand"]);
 }
 
 void SRLPlayer::savePlayer()
@@ -42,6 +43,7 @@ void SRLPlayer::savePlayer()
 	save_file["atk"] = m_BaseSpeed;
 	save_file["kick"] = m_BaseKicking;
 	save_file["goalkick"] = m_GoalKicking;
+	save_file["hand"] = m_BaseHandling;
 	if (id == 0)
 	{
 		id++;

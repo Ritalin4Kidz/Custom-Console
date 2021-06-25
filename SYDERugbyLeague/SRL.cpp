@@ -82,6 +82,16 @@ vector<string> Split(string a_String, char splitter)
 
 #pragma region ButtonVoids
 
+void InDepthTeamViewClick()
+{
+	SRLGame::newState = TeamInDepthViewState;
+}
+
+void InDepthBackClick()
+{
+	SRLGame::newState = MainMenu_STATE;
+}
+
 void KeypadClick1()
 {
 	SRLGame::addCustomStrString("1");
@@ -478,7 +488,7 @@ void PlayByPlayRsltViewClick()
 
 void NextRoundViewClick()
 {
-	if (SRLGame::currentState == SeasonModeState || SRLGame::currentState == ResultsViewState || SRLGame::currentState == SeasonConfig_State)
+	if (SRLGame::currentState == SeasonModeState || SRLGame::currentState == ResultsViewState || SRLGame::currentState == SeasonConfig_State || SRLGame::currentState == TeamInDepthViewState)
 	{
 		SRLGame::NextRoundCall = true;
 	}
@@ -486,7 +496,7 @@ void NextRoundViewClick()
 
 void PrevRoundViewClick()
 {
-	if (SRLGame::currentState == SeasonModeState || SRLGame::currentState == ResultsViewState || SRLGame::currentState == SeasonConfig_State)
+	if (SRLGame::currentState == SeasonModeState || SRLGame::currentState == ResultsViewState || SRLGame::currentState == SeasonConfig_State || SRLGame::currentState == TeamInDepthViewState)
 	{
 		SRLGame::PrevRoundCall = true;
 	}
@@ -785,6 +795,10 @@ void SRLGame::init()
 	m_GameInfoBtn.setHighLight(RED);
 	m_GameInfoBtn.SetFunc(InfoViewClick);
 
+	m_TeamInDepthView = SYDEClickableButton(" In Depth Team View ", Vector2(0, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_TeamInDepthView.setHighLight(RED);
+	m_TeamInDepthView.SetFunc(InDepthTeamViewClick);
+
 #pragma endregion
 
 #pragma region GameSettings
@@ -930,6 +944,20 @@ void SRLGame::init()
 	m_KeypadBtn_CNCL._WrapText(true);
 
 #pragma endregion
+
+#pragma region Team In-Depth View
+	m_BackTeamInDepth = SYDEClickableButton("  Back To Main Menu ", Vector2(0, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_BackTeamInDepth.setHighLight(RED);
+	m_BackTeamInDepth.SetFunc(InDepthBackClick);
+
+	m_PrevTeamInDepth = SYDEClickableButton("   View Prev Team   ", Vector2(20, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_PrevTeamInDepth.setHighLight(RED);
+	m_PrevTeamInDepth.SetFunc(PrevRoundViewClick);
+
+	m_NextTeamInDepth = SYDEClickableButton("   View Next Team   ", Vector2(40, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_NextTeamInDepth.setHighLight(RED);
+	m_NextTeamInDepth.SetFunc(NextRoundViewClick);
+#pragma endregion
 }
 
 #pragma region Misc
@@ -1071,6 +1099,21 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		{
 			AssignState(std::bind(&SRLGame::InfoView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
+		else if (currentState == TeamInDepthViewState)
+		{
+			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
+			{
+				SRLTeam HomeTeam = generateRandomTeam();
+				HomeTeam.saveTeam();
+			}
+			if (!SYDEFileDefaults::exists("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json"))
+			{
+				SRLTeam HomeTeam = generateOffSeasonTeam();
+				HomeTeam.saveTeamOffContract();
+			}
+			setUpTeamInDepthView(0);
+			AssignState(std::bind(&SRLGame::TeamInDepthView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
 		else if (currentState == NewsViewState)
 		{
 			sortOutNews();
@@ -1110,11 +1153,12 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 ConsoleWindow SRLGame::main_menu_scene(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = m_MainMenuBG.draw_asset(window, Vector2(0, 0));
-	window = drawMainMenuTabs(window);
 	for (int ii = 0; ii < 60; ii++)
 	{
 		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 	}
+	window = drawMainMenuTabs(window);
+	window = m_TeamInDepthView.draw_ui(window);
 	//window.setTextAtPoint(Vector2(0, 19), "", BLACK_BRIGHTWHITE_BG);
 	return window;
 }
@@ -1664,6 +1708,54 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	return window;
 }
 
+ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	if (PrevRoundCall)
+	{
+		PrevRoundCall = false;
+		m_TeamViewing--;
+		if (m_TeamViewing < 0)
+		{
+			m_TeamViewing = SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") - 1;
+		}
+		setUpTeamInDepthView(m_TeamViewing);
+	}
+	if (NextRoundCall)
+	{
+		NextRoundCall = false;
+		m_TeamViewing++;
+		if (m_TeamViewing >= SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json"))
+		{
+			m_TeamViewing = 0;
+		}
+		setUpTeamInDepthView(m_TeamViewing);
+	}
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(2, 1), m_InDepthTeamView.getName(), BLACK_BRIGHTWHITE_BG);
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(2, 3), "Attack: " + to_string(m_InDepthTeamView.averageAttackStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 4), "Defence: " + to_string(m_InDepthTeamView.averageDefenceStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 5), "Speed: " + to_string(m_InDepthTeamView.averageSpeedStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 6), "Kicking: " + to_string(m_InDepthTeamView.averageKickStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 7), "Handling: " + to_string(m_InDepthTeamView.averageHandlingStat()), BRIGHTWHITE);
+
+	window.setTextAtPoint(Vector2(2, 9), "Team Rating: " + to_string(m_InDepthTeamView.TeamRating()), BRIGHTWHITE);
+
+	window.setTextAtPoint(Vector2(2, 11), "Goal Kicker: " + m_InDepthTeamView.getGoalKickerNoLimit().getName(), BRIGHTWHITE);
+
+	window = m_JerseyView.draw_asset(window, Vector2(30,3));
+	window = m_BackTeamInDepth.draw_ui(window);
+	window = m_PrevTeamInDepth.draw_ui(window);
+	window = m_NextTeamInDepth.draw_ui(window);
+	return window;
+}
+
 ConsoleWindow SRLGame::LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard)
 {
 	if (ldrboard.size() > 10)
@@ -1838,7 +1930,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.7.2.0-alpha", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.8.0.0-alpha", BRIGHTWHITE);
 	return window;
 }
 
@@ -2848,6 +2940,25 @@ void SRLGame::UpdateBets()
 		}
 		m_PremiershipBetsWriteUp.push_back(writeUp);
 	}
+}
+
+void SRLGame::setUpTeamInDepthView(int teamViewing)
+{
+	m_TeamViewing = teamViewing;
+	string teamLoad = SYDEFileDefaults::getAllFileNamesInFolder("EngineFiles\\GameResults\\Teams", ".json", true, true)[m_TeamViewing];
+	m_InDepthTeamView.clearTeam();
+	m_InDepthTeamView.loadTeam("EngineFiles\\GameResults\\Teams\\" + teamLoad + ".json");
+	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(m_InDepthTeamView.getJerseryType()) + ".bmp";
+	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
+	m_JerseyView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	m_JerseyView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	m_JerseyView.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	m_JerseyView.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	m_JerseyView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
+	m_JerseyView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
+	m_JerseyView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
 }
 
 void SRLGame::otherArticles()

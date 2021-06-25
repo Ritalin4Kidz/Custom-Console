@@ -35,6 +35,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.8.0.0 alpha 
+- Can now view more in depth details for every team in the home menu
+
 ###  0.7.2.0 alpha 
 - Application settings now save to a file
 

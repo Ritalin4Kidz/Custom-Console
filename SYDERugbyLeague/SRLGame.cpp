@@ -378,6 +378,20 @@ void SRLGameManager::play()
 			m_Tackle = 0;
 			return;
 		}
+		if (m_MinutesPassed >= 80 && fullTimeHasPassed == false)
+		{
+			m_MinutesPassed = 80;
+			m_SecondsPassed = 0;
+			if (m_ExtraTime && homeTeamScore == awayTeamScore)
+			{
+				m_PlayByPlay.push_back("80:00 - EXTRA TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
+			}
+			fullTimeHasPassed = true;
+			m_BallPosition = 0;
+			m_HomeTeamHasBall = false;
+			m_Tackle = 0;
+			return;
+		}
 	}
 	SRLPlayer defender = m_AwayTeam.getRandomPlayer();
 	SRLPlayer attacker = m_HomeTeam.getRandomPlayer();
@@ -692,6 +706,26 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 
 void SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 {
+	int chance1 = rand() % incorrectPlayTheBallChance;
+	if (chance1 > attacker.getHandling() * 10)
+	{
+		int chance2 = rand() % 150;
+		if (chance2 == 0)
+		{
+			addPlay("Incorrect Play The Ball", attacker);
+			defender = attacker;
+			changeOver(false);
+			if (!m_HomeTeamHasBall)
+			{
+				attacker = m_AwayTeam.getRandomPlayer();
+			}
+			else
+			{
+				attacker = m_HomeTeam.getRandomPlayer();
+			}
+			doPenalty(defender, attacker);
+		}
+	}
 	if (m_HomeTeamHasBall)
 	{
 		if (attacker.getAttack() > defender.getDefence())
@@ -942,6 +976,38 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				m_Tackle = 0;
 				return true;
 			}
+			//Penalty Try
+			else if (chance2 == 6)
+			{
+				int chance3 = rand() % tryInfringementChance;
+				if (chance3 == 0)
+				{
+					addPlay("PENALTY TRY", attacker);
+				}
+			}
+			//Professional Foul
+			else if (chance2 == 7)
+			{
+				int chance3 = rand() % tryInfringementChance;
+				if (chance3 == 0)
+				{
+					addPlay("NO TRY - PROFESSIONAL FOUL", attacker);
+					doSendOff(defender, attacker, m_HomeTeamHasBall, false);
+					doPenalty(defender, attacker);
+					m_BallPosition = 10;
+					return true;
+				}
+			}
+			else if (chance2 == 8)
+			{
+				addPlay("NO TRY - Double Movement", attacker);
+				m_BallPosition = 10;
+				changeOver(false);
+				defender = attacker;
+				attacker = m_AwayTeam.getRandomPlayer();
+				doPenalty(defender, attacker);
+				return true;
+			}
 		}
 		homeTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
@@ -954,6 +1020,11 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		if (!halfTimeHasPassed && m_MinutesPassed >= 40)
 		{
 			m_MinutesPassed = 40;
+			m_SecondsPassed = 0;
+		}
+		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+		{
+			m_MinutesPassed = 80;
 			m_SecondsPassed = 0;
 		}
 		if (m_MainGoalKickers)
@@ -993,6 +1064,11 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_HomeTeamHasBall = false;
 			m_Tackle = 0;
 			return true;
+		}
+		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+		{
+			m_MinutesPassed = 80;
+			m_SecondsPassed = 0;
 		}
 		m_BallPosition = 100;
 		m_Tackle = 0;
@@ -1062,6 +1138,38 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				m_Tackle = 0;
 				return true;
 			}
+			//Penalty Try
+			else if (chance2 == 6)
+			{
+				int chance3 = rand() % tryInfringementChance;
+				if (chance3 == 0)
+				{
+					addPlay("PENALTY TRY", attacker);
+				}
+			}
+			//Professional Foul
+			else if (chance2 == 7)
+			{
+				int chance3 = rand() % tryInfringementChance;
+				if (chance3 == 0)
+				{
+					addPlay("NO TRY - PROFESSIONAL FOUL", attacker);
+					doSendOff(defender, attacker, m_HomeTeamHasBall, false);
+					doPenalty(defender, attacker);
+					m_BallPosition = 90;
+					return true;
+				}
+			}
+			else if (chance2 == 8)
+			{
+				addPlay("NO TRY - Double Movement", attacker);
+				m_BallPosition = 90;
+				changeOver(false);
+				defender = attacker;
+				attacker = m_AwayTeam.getRandomPlayer();
+				doPenalty(defender, attacker);
+				return true;
+			}
 		}
 		awayTeamScore += 4;
 		addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
@@ -1074,6 +1182,11 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		if (!halfTimeHasPassed && m_MinutesPassed >= 40)
 		{
 			m_MinutesPassed = 40;
+			m_SecondsPassed = 0;
+		}
+		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+		{
+			m_MinutesPassed = 80;
 			m_SecondsPassed = 0;
 		}
 		if (m_MainGoalKickers)
@@ -1113,6 +1226,11 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_HomeTeamHasBall = false;
 			m_Tackle = 0;
 			return true;
+		}
+		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+		{
+			m_MinutesPassed = 80;
+			m_SecondsPassed = 0;
 		}
 		m_BallPosition = 0;
 		m_Tackle = 0;
@@ -1262,6 +1380,11 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 				m_MinutesPassed = 40;
 				m_SecondsPassed = 0;
 			}
+			if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+			{
+				m_MinutesPassed = 80;
+				m_SecondsPassed = 0;
+			}
 		}
 		else if (m_BallPosition < 30)
 		{
@@ -1305,6 +1428,11 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 			if (!halfTimeHasPassed && m_MinutesPassed >= 40)
 			{
 				m_MinutesPassed = 40;
+				m_SecondsPassed = 0;
+			}
+			if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+			{
+				m_MinutesPassed = 80;
 				m_SecondsPassed = 0;
 			}
 		}

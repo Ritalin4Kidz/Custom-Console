@@ -62,6 +62,8 @@ public:
 	void injuriesEffect(bool isOn) { m_Injuries = isOn; }
 	void sinBinsEffect(bool isOn) { m_sendOffs = isOn; }
 
+	void extraTimeEffect(bool isOn) { m_ExtraTime = isOn; }
+
 	SRLPlayer getRandomSafe(SRLTeam team);
 
 	bool checkError(SRLPlayer defender, SRLPlayer attacker);
@@ -100,7 +102,9 @@ private:
 	const int defaultEarlyKickChance = 15;
 	const int fortytwentyChance = 18;
 	const int tryVideoRefChance = 4;
-	const int tryErrorChance = 13;
+	const int tryErrorChance = 18;
+	const int incorrectPlayTheBallChance = 1000;
+	const int tryInfringementChance = 200;
 	const int minTimeSecondSkip = 11;
 	const int maxTimeSecondSkip = 19;
 	const int outOnFullErrorChance = 35;
@@ -122,12 +126,16 @@ private:
 	int m_Tackle = 0;
 	bool m_HomeTeamHasBall = true;
 	bool halfTimeHasPassed = false;
+	bool fullTimeHasPassed = false;
 
 	bool m_MainGoalKickers = true;
 	bool m_Weather = true;
 	bool m_Stamina = true;
 	bool m_Injuries = false;
 	bool m_sendOffs = true;
+
+	bool m_ExtraTime = false;
+
 	//WEATHER BONUSES
 	SRLGameWeather weather = Weather_Clear;
 	float weatherAtkErrorBonus = 1;

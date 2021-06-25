@@ -1426,7 +1426,7 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		window = m_PriorBetsPremiershipBtn.draw_ui(window);
 		if (priorBetsState == IndividualGameBets_State)
 		{
-			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 			{
 				if (priorBetNumberLine > 0)
 				{
@@ -1434,7 +1434,7 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 				}
 			}
 
-			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 			{
 				if (priorBetNumberLine < m_GameBetsWriteUp.size() - 1)
 				{
@@ -1449,7 +1449,7 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		}
 		else if (priorBetsState == PremiershipWinnerBets_State)
 		{
-			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 			{
 				if (priorBetNumberLine > 0)
 				{
@@ -1457,7 +1457,7 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 				}
 			}
 
-			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 			{
 				if (priorBetNumberLine < m_PremiershipBetsWriteUp.size() - 1)
 				{
@@ -1831,7 +1831,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.7.0.0-alpha", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.7.1.0-alpha", BRIGHTWHITE);
 	return window;
 }
 
@@ -2153,6 +2153,7 @@ void SRLGame::SimulateGames()
 			m_srlmanager.staminaEffect(m_Stamina);
 			m_srlmanager.injuriesEffect(m_Injuries);
 			m_srlmanager.sinBinsEffect(m_SinBins);
+			m_srlmanager.extraTimeEffect(m_ExtraTime);
 			try
 			{
 				m_srlmanager.addTeamLineupsPlayByPlay();

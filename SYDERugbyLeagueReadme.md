@@ -6,9 +6,26 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## GOALS FOR BETA (As Of 25-06-2021)
 
-Beta is going to be reserved exclusively for fixing bugs and creating more news stories/player/team names, here are the current goals before I can start putting out a beta and getting people to test
+- Save Game Application Settings To A File
 
-- Save Game Settings To A File
+- SRL Game simulation updates
+- - Add play for 80 min full time (0.7.1.0alpha)
+- - More video ref outcomes (0.7.1.0alpha)
+
+- Best Player calculation improvements
+
+
+## GOALS FOR GOLD
+
+- Increase the amount of player names & team names to more than double
+
+- at least 50 different news stories
+
+- better odds calculations
+
+- bug fixes
+
+- full soundtrack implementation
 
 ## ABANDONED IDEAS
 
@@ -17,6 +34,9 @@ Beta is going to be reserved exclusively for fixing bugs and creating more news 
 - Individual Player Analysis
 
 ## Release Notes
+
+###  0.7.1.0 alpha 25-06-2021
+- Simulation updates
 
 ###  0.7.0.0 alpha 25-06-2021
 - Custom amount bets now a keypad pop-up for the amount you want to bet
@@ -31,7 +51,7 @@ Beta is going to be reserved exclusively for fixing bugs and creating more news 
 ###  0.6.1.0 alpha
 - News Story Updates
 
-###  0.6.0.0 alpha 24-6-2021
+###  0.6.0.0 alpha
 - Season Events Implemented
 - Viewable News Stories
 

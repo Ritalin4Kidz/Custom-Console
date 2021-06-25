@@ -36,6 +36,8 @@ bool SRLGame::betPlaceCall = false;
 bool SRLGame::premiershipBet = false;
 bool SRLGame::m_SeasonEvents = true;
 bool SRLGame::headlineCall = false;
+bool SRLGame::keyPadCall = false;
+string SRLGame::customAmountStr = "";
 SRLBetPrice SRLGame::m_BetAmount = SRLBetPrice(10, 0);
 int SRLGame::gameNumberBet = 0;
 int SRLGame::priorBetNumberLine = 0;
@@ -49,7 +51,137 @@ SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
 
 #pragma endregion
 
+vector<string> Split(string a_String, char splitter)
+{
+	int arraySize = 1;
+	for (int i = 0; i < a_String.length(); i++)
+	{
+		if (a_String[i] == splitter)
+		{
+			arraySize++;
+		}
+	}
+	std::vector<std::string> splitString(arraySize);
+	int arrayNo = 0;
+	while (arrayNo < arraySize - 1)
+	{
+		for (int i = 0; i < a_String.length(); i++)
+		{
+			if (a_String[i] == splitter)
+			{
+				splitString[arrayNo] = a_String.substr(0, i);
+				a_String = a_String.substr(i + 1, a_String.length() - i);
+				arrayNo++;
+				break;
+			}
+		}
+	}
+	splitString[arraySize - 1] = a_String;
+	return splitString;
+}
+
 #pragma region ButtonVoids
+
+void KeypadClick1()
+{
+	SRLGame::addCustomStrString("1");
+}
+void KeypadClick2()
+{
+	SRLGame::addCustomStrString("2");
+}
+
+void KeypadClick3()
+{
+	SRLGame::addCustomStrString("3");
+}
+
+void KeypadClick4()
+{
+	SRLGame::addCustomStrString("4");
+}
+
+void KeypadClick5()
+{
+	SRLGame::addCustomStrString("5");
+}
+
+void KeypadClick6()
+{
+	SRLGame::addCustomStrString("6");
+}
+
+void KeypadClick7()
+{
+	SRLGame::addCustomStrString("7");
+}
+
+void KeypadClick8()
+{
+	SRLGame::addCustomStrString("8");
+}
+
+void KeypadClick9()
+{
+	SRLGame::addCustomStrString("9");
+}
+
+void KeypadClick0()
+{
+	SRLGame::addCustomStrString("0");
+}
+
+void KeypadClickDOT()
+{
+	SRLGame::addCustomStrString(".");
+}
+
+void KeypadClickClear()
+{
+	SRLGame::removeCustomStrString();
+}
+
+void KeypadClickOK()
+{
+	SRLGame::keyPadCall = false;
+	try
+	{
+		vector<string> bets = Split(SRLGame::customAmountStr, '.');
+		SRLGame::m_BetAmount.dollars = stoi(bets[0]);
+		if (bets.size() >= 2)
+		{
+			SRLGame::m_BetAmount.cents = stoi(bets[1]);
+			if (SRLGame::m_BetAmount.cents < 10)
+			{
+				SRLGame::m_BetAmount.cents *= 10;
+			}
+		}
+		else
+		{
+			SRLGame::m_BetAmount.cents = 0;
+		}
+	}
+	catch (exception e)
+	{
+		SRLGame::errorCall = true;
+		SRLGame::errorMessage = "Invalid betting amount";
+		return;
+	}
+	if (SRLGame::m_BetAmount.dollars == 0 && SRLGame::m_BetAmount.cents == 0)
+	{
+		SRLGame::errorCall = true;
+		SRLGame::errorMessage = "Bet must be greater than $0.00";
+		return;
+	}
+	SRLGame::errorMessage = "Confirm " + SRLGame::m_BetAmount.ReturnPrice() + " Bet On " + SRLGame::betTag + "?";
+	SRLGame::betCall = true;
+}
+
+void KeypadClickCNCL()
+{
+	SRLGame::keyPadCall = false;
+}
+
 void ExhibitionMatchClick()
 {
 	if (SRLGame::currentState = MainMenu_STATE)
@@ -82,33 +214,16 @@ void MusicVolumeClick()
 		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_OFF);
 }
 
-vector<string> Split(string a_String, char splitter)
+void CustomBetClick()
 {
-	int arraySize = 1;
-	for (int i = 0; i < a_String.length(); i++)
-	{
-		if (a_String[i] == splitter)
-		{
-			arraySize++;
-		}
-	}
-	std::vector<std::string> splitString(arraySize);
-	int arrayNo = 0;
-	while (arrayNo < arraySize - 1)
-	{
-		for (int i = 0; i < a_String.length(); i++)
-		{
-			if (a_String[i] == splitter)
-			{
-				splitString[arrayNo] = a_String.substr(0, i);
-				a_String = a_String.substr(i + 1, a_String.length() - i);
-				arrayNo++;
-				break;
-			}
-		}
-	}
-	splitString[arraySize - 1] = a_String;
-	return splitString;
+	SRLGame::customAmountStr = "";
+	SRLGame::betTag = SYDEClickableButton::getLastButtonTag();
+	vector<string> bets = Split(SRLGame::betTag, ';');
+	SRLGame::betTag = bets[4];
+	SRLGame::homeTeamBet = bets[3] == "H";
+	SRLGame::premiershipBet = bets[3] == "P";
+	SRLGame::gameNumberBet = stoi(bets[0]);
+	SRLGame::keyPadCall = true;
 }
 
 void BetMatchClick()
@@ -735,6 +850,79 @@ void SRLGame::init()
 	m_SettingsEventsBtn.setHighLight(RED);
 	m_SettingsEventsBtn.SetFunc(ToggleEventsClick);
 #pragma endregion
+
+#pragma region keypad
+	m_KeypadBtn_1 = SYDEClickableButton("        1", Vector2(18, 11), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_1.setHighLight(RED);
+	m_KeypadBtn_1.SetFunc(KeypadClick1);
+	m_KeypadBtn_1._WrapText(true);
+
+	m_KeypadBtn_2 = SYDEClickableButton("        2", Vector2(11, 11), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_2.setHighLight(RED);
+	m_KeypadBtn_2.SetFunc(KeypadClick2);
+	m_KeypadBtn_2._WrapText(true);
+
+	m_KeypadBtn_3 = SYDEClickableButton("        3", Vector2(4, 11), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_3.setHighLight(RED);
+	m_KeypadBtn_3.SetFunc(KeypadClick3);
+	m_KeypadBtn_3._WrapText(true);
+
+	m_KeypadBtn_4 = SYDEClickableButton("        4", Vector2(18, 7), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_4.setHighLight(RED);
+	m_KeypadBtn_4.SetFunc(KeypadClick4);
+	m_KeypadBtn_4._WrapText(true);
+
+	m_KeypadBtn_5 = SYDEClickableButton("        5", Vector2(11, 7), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_5.setHighLight(RED);
+	m_KeypadBtn_5.SetFunc(KeypadClick5);
+	m_KeypadBtn_5._WrapText(true);
+
+	m_KeypadBtn_6 = SYDEClickableButton("        6", Vector2(4, 7), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_6.setHighLight(RED);
+	m_KeypadBtn_6.SetFunc(KeypadClick6);
+	m_KeypadBtn_6._WrapText(true);
+
+	m_KeypadBtn_7 = SYDEClickableButton("        7", Vector2(18, 3), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_7.setHighLight(RED);
+	m_KeypadBtn_7.SetFunc(KeypadClick7);
+	m_KeypadBtn_7._WrapText(true);
+
+	m_KeypadBtn_8 = SYDEClickableButton("        8", Vector2(11, 3), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_8.setHighLight(RED);
+	m_KeypadBtn_8.SetFunc(KeypadClick8);
+	m_KeypadBtn_8._WrapText(true);
+
+	m_KeypadBtn_9 = SYDEClickableButton("        9", Vector2(4, 3), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_9.setHighLight(RED);
+	m_KeypadBtn_9.SetFunc(KeypadClick9);
+	m_KeypadBtn_9._WrapText(true);
+
+	m_KeypadBtn_0 = SYDEClickableButton("        0", Vector2(11, 15), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_0.setHighLight(RED);
+	m_KeypadBtn_0.SetFunc(KeypadClick0);
+	m_KeypadBtn_0._WrapText(true);
+
+	m_KeypadBtn_DOT = SYDEClickableButton("        .", Vector2(4, 15), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_DOT.setHighLight(RED);
+	m_KeypadBtn_DOT.SetFunc(KeypadClickDOT);
+	m_KeypadBtn_DOT._WrapText(true);
+
+	m_KeypadBtn_CLEAR = SYDEClickableButton("        C", Vector2(18, 15), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_CLEAR.setHighLight(RED);
+	m_KeypadBtn_CLEAR.SetFunc(KeypadClickClear);
+	m_KeypadBtn_CLEAR._WrapText(true);
+
+	m_KeypadBtn_OK = SYDEClickableButton("        OK", Vector2(25, 15), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_OK.setHighLight(RED);
+	m_KeypadBtn_OK.SetFunc(KeypadClickOK);
+	m_KeypadBtn_OK._WrapText(true);
+
+	m_KeypadBtn_CNCL = SYDEClickableButton("       CNCL", Vector2(25, 11), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
+	m_KeypadBtn_CNCL.setHighLight(RED);
+	m_KeypadBtn_CNCL.SetFunc(KeypadClickCNCL);
+	m_KeypadBtn_CNCL._WrapText(true);
+
+#pragma endregion
 }
 
 #pragma region Misc
@@ -821,6 +1009,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	if (errorCall)
 	{
 		return ErrorPop_UP(window, windowWidth, windowHeight);
+	}
+	if (keyPadCall)
+	{
+		return KeypadPop_Up(window, windowWidth, windowHeight);
 	}
 	else if (menuCall)
 	{
@@ -1639,7 +1831,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.6.2.0-alpha", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.7.0.0-alpha", BRIGHTWHITE);
 	return window;
 }
 
@@ -1739,6 +1931,33 @@ ConsoleWindow SRLGame::configTabs(ConsoleWindow window)
 	return window;
 }
 
+ConsoleWindow SRLGame::KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 0; i < windowWidth; i++)
+	{
+		for (int ii = 2; ii < windowHeight - 1; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BLACK);
+		}
+	}
+	window.setTextAtPoint(Vector2(25, 3), "Bet Amount: $" + customAmountStr, BRIGHTWHITE);
+	window = m_KeypadBtn_1.draw_ui(window);
+	window = m_KeypadBtn_2.draw_ui(window);
+	window = m_KeypadBtn_3.draw_ui(window);
+	window = m_KeypadBtn_4.draw_ui(window);
+	window = m_KeypadBtn_5.draw_ui(window);
+	window = m_KeypadBtn_6.draw_ui(window);
+	window = m_KeypadBtn_7.draw_ui(window);
+	window = m_KeypadBtn_8.draw_ui(window);
+	window = m_KeypadBtn_9.draw_ui(window);
+	window = m_KeypadBtn_0.draw_ui(window);
+	window = m_KeypadBtn_DOT.draw_ui(window);
+	window = m_KeypadBtn_CLEAR.draw_ui(window);
+	window = m_KeypadBtn_OK.draw_ui(window);
+	window = m_KeypadBtn_CNCL.draw_ui(window);
+	return window;
+}
+
 ConsoleWindow SRLGame::ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 5; i < windowWidth-5; i++)
@@ -1800,7 +2019,7 @@ void SRLGame::CalculateOdds()
 		a_BetBtnH.setTag(to_string(i) + ";10;0;" + "H;" + oddsHomeTeam.getName());
 		m_BetButtons.push_back(a_BetBtnH);
 		SYDEClickableButton a_BetBtnHCustom = SYDEClickableButton("$Custom", Vector2(51, j + 1), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtnHCustom.SetFunc(BetMatchClick);
+		a_BetBtnHCustom.SetFunc(CustomBetClick);
 		a_BetBtnHCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "H;" + oddsHomeTeam.getName());
 		m_BetButtons.push_back(a_BetBtnHCustom);
 		SRLTeam oddsAwayTeam;
@@ -1810,7 +2029,7 @@ void SRLGame::CalculateOdds()
 		a_BetBtnA.setTag(to_string(i) + ";10;0;" + "A;" + oddsAwayTeam.getName());
 		m_BetButtons.push_back(a_BetBtnA);
 		SYDEClickableButton a_BetBtnACustom = SYDEClickableButton("$Custom", Vector2(51, j + 2), Vector2(7, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-		a_BetBtnACustom.SetFunc(BetMatchClick);
+		a_BetBtnACustom.SetFunc(CustomBetClick);
 		a_BetBtnACustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "A;" + oddsAwayTeam.getName());
 		m_BetButtons.push_back(a_BetBtnACustom);
 		float oddsHAttack = oddsHomeTeam.totalAttackStat();
@@ -1897,7 +2116,7 @@ void SRLGame::CalculatePremiershipOdds()
 		a_BetBtn.setTag(to_string(i) + ";10;0;" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
 		m_PremiershipBetButtons.push_back(a_BetBtn);
 		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtnCustom.SetFunc(BetMatchClick);
+		a_BetBtnCustom.SetFunc(CustomBetClick);
 		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
 		m_PremiershipBetButtons.push_back(a_BetBtnCustom);
 	}
@@ -2641,6 +2860,29 @@ void SRLGame::otherArticles()
 		break;
 	}
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_Article);
+}
+
+void SRLGame::addCustomStrString(string charAdd)
+{
+	int maxLength = 4;
+	if (customAmountStr.find('.') != std::string::npos) {
+		maxLength = customAmountStr.find('.') + 3;
+		if (charAdd == ".")
+			return;
+	}
+	if (charAdd != "." && customAmountStr.length() >= maxLength)
+	{
+		return;
+	}
+	customAmountStr += charAdd;
+}
+
+void SRLGame::removeCustomStrString()
+{
+	if (customAmountStr.length() > 0)
+	{
+		customAmountStr = customAmountStr.substr(0, customAmountStr.size() - 1);
+	}
 }
 
 void SRLGame::sortOutResultsScreen()

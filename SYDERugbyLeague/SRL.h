@@ -296,6 +296,9 @@ public:
 	ConsoleWindow drawResultTabs(ConsoleWindow window);
 
 	ConsoleWindow configTabs(ConsoleWindow window);
+
+	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
+
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -333,7 +336,8 @@ public:
 
 	static GameStateSYDE currentState;
 	static GameStateSYDE newState;
-
+	static void addCustomStrString(string charAdd);
+	static void removeCustomStrString();
 	static GameStateBettingSYDE bettingState;
 	static GameStateLeaderboardSYDE ldrState;
 	static GameStateResultSYDE resultState;
@@ -377,6 +381,8 @@ public:
 
 	static string errorMessage;
 
+	static string customAmountStr;
+
 	static bool randomFillCall;
 
 	static string betTag;
@@ -384,6 +390,7 @@ public:
 	static bool betPlaceCall;
 	static bool homeTeamBet;
 	static bool premiershipBet;
+	static bool keyPadCall;
 	static int gameNumberBet;
 
 	static int articleClicked;
@@ -489,6 +496,24 @@ private:
 	SYDEClickableButton m_SettingsInjuryBtn;
 	SYDEClickableButton m_SettingsSinBinBtn;
 	SYDEClickableButton m_SettingsEventsBtn;
+
+
+	//KEYPAD
+	SYDEClickableButton m_KeypadBtn_1;
+	SYDEClickableButton m_KeypadBtn_2;
+	SYDEClickableButton m_KeypadBtn_3;
+	SYDEClickableButton m_KeypadBtn_4;
+	SYDEClickableButton m_KeypadBtn_5;
+	SYDEClickableButton m_KeypadBtn_6;
+	SYDEClickableButton m_KeypadBtn_7;
+	SYDEClickableButton m_KeypadBtn_8;
+	SYDEClickableButton m_KeypadBtn_9;
+	SYDEClickableButton m_KeypadBtn_0;
+	SYDEClickableButton m_KeypadBtn_DOT;
+	SYDEClickableButton m_KeypadBtn_CLEAR;
+	SYDEClickableButton m_KeypadBtn_OK;
+	SYDEClickableButton m_KeypadBtn_CNCL;
+
 
 	vector<SYDEClickableButton> m_BetButtons;
 	vector<SYDEClickableButton> m_PremiershipBetButtons;

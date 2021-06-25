@@ -4,21 +4,9 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR BETA (As Of 24-06-2021)
+## GOALS FOR BETA (As Of 25-06-2021)
 
 Beta is going to be reserved exclusively for fixing bugs and creating more news stories/player/team names, here are the current goals before I can start putting out a beta and getting people to test
-
-- Ability to set custom amounts in bets
-- - Custom amount settable in account, custom bet button added which will request to add that amount
-
-For setting custom amount, add a button that leads to a keypad like this (max dollars = 9999)
-
-	9 | 8 | 7 
-	6 | 5 | 4
-	3 | 2 | 1
-	. | 0 | C
-	
-	CNCL   OK
 
 - Save Game Settings To A File
 
@@ -29,6 +17,9 @@ For setting custom amount, add a button that leads to a keypad like this (max do
 - Individual Player Analysis
 
 ## Release Notes
+
+###  0.7.0.0 alpha 25-06-2021
+- Custom amount bets now a keypad pop-up for the amount you want to bet
 
 ###  0.6.3.0 alpha
 - Simulation pop up

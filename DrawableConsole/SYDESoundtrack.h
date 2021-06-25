@@ -31,7 +31,7 @@ public:
 	void setYPos(int y) { baseY = y; }
 
 	void next();
-	void shuffleSongs(bool isOn, bool refresh) { shuffle = isOn; if (refresh) selectedSong = -1; next(); }
+	void shuffleSongs(bool isOn, bool refresh) { shuffle = isOn; if (refresh) { selectedSong = -1; next(); } }
 
 	ConsoleWindow playWindow(ConsoleWindow window);
 private:

@@ -212,6 +212,8 @@ void MusicVolumeClick()
 		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_HIG);
 	else if (BaseSYDESoundSettings::getDefaultVolumeState() == SYDE_VOLUME_HIG)
 		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_OFF);
+
+	SRLGame::saveGameSettings();
 }
 
 void CustomBetClick()
@@ -258,6 +260,7 @@ void SoundTrackClick()
 		SRLGame::m_GamePlaySoundtrack.start();
 	}
 	SRLGame::soundTrackOn = !SRLGame::soundTrackOn;
+	SRLGame::saveGameSettings();
 }
 
 void SimulateClick()
@@ -576,6 +579,7 @@ void PremiershipResultsViewClick()
 
 void SRLGame::init()
 {
+	loadGameSettings();
 #pragma region SoundTrack
 
 	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\01MeetMeOneDay.wav"), 165);
@@ -587,8 +591,11 @@ void SRLGame::init()
 
 	m_GamePlaySoundtrack.setYPos(14);
 
-	m_GamePlaySoundtrack.start();
-	m_GamePlaySoundtrack.shuffleSongs(true, true);
+	if (soundTrackOn)
+	{
+		m_GamePlaySoundtrack.start();
+	}
+	m_GamePlaySoundtrack.shuffleSongs(true, soundTrackOn);
 
 #pragma endregion
 
@@ -1831,7 +1838,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.7.1.0-alpha", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.7.2.0-alpha", BRIGHTWHITE);
 	return window;
 }
 
@@ -2417,6 +2424,37 @@ void SRLGame::SimulateGames()
 			CalculateOdds();
 			CalculatePremiershipOdds();
 			UpdateBets();
+		}
+	}
+}
+
+void SRLGame::saveGameSettings()
+{
+	json save_file;
+	//PlayerStats
+	save_file["soundvolume"] = static_cast<int>(BaseSYDESoundSettings::getDefaultVolumeState());
+	save_file["soundtrackon"] = static_cast<int>(soundTrackOn);
+	string filePath = string("EngineFiles\\Settings\\gameSettings.json");
+	std::ofstream ofs(filePath);
+	ofs << save_file;
+}
+
+void SRLGame::loadGameSettings()
+{
+	if (SYDEFileDefaults::exists("EngineFiles\\Settings\\gameSettings.json"))
+	{
+		try
+		{
+			std::ifstream ifs{ "EngineFiles\\Settings\\gameSettings.json" };
+			json save_file = json::parse(ifs);
+			int volume = save_file["soundvolume"];
+			BaseSYDESoundSettings::changeDefaultVolume(static_cast<SYDESoundVolume>(volume));
+			volume = save_file["soundtrackon"];
+			soundTrackOn = static_cast<bool>(volume);
+		}
+		catch (exception e)
+		{
+
 		}
 	}
 }

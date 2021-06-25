@@ -6,7 +6,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## GOALS FOR BETA (As Of 25-06-2021)
 
-- Save Game Application Settings To A File
+- Save Game Application Settings To A File (0.7.2.0alpha)
 
 - SRL Game simulation updates
 - - Add play for 80 min full time (0.7.1.0alpha)
@@ -35,7 +35,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
-###  0.7.1.0 alpha 25-06-2021
+###  0.7.2.0 alpha 
+- Application settings now save to a file
+
+###  0.7.1.0 alpha 
 - Simulation updates
 
 ###  0.7.0.0 alpha 25-06-2021

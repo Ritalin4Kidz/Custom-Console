@@ -306,6 +306,9 @@ public:
 	void CalculatePremiershipOdds();
 	void SimulateGames();
 
+	static void saveGameSettings();
+	static void loadGameSettings();
+
 	vector<string> generateMinorPremiershipArticle(string teamName);
 	vector<string> generatePremiershipArticle(string teamName);
 	vector<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);

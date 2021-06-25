@@ -115,8 +115,13 @@ float SRLPlayer::getDallyMPointsWorth()
 	float weight = 0;
 	weight = m_RunMetres + (m_Tackles * 2) + m_KickMetres + (m_4020*10) + (getPoints() * 10);
 	weight += (m_Strips * 3) + (m_Intercepts * 3);
-	weight = weight / (m_Errors + m_RuckInfringements +m_PenaltiesConceded + 1);
+	weight = weight / (m_Errors + m_RuckInfringements +m_PenaltiesConceded + 1 + (m_SinBins*2));
 	weight = weight / 10;
+
+	if (m_SendOffs > 0)
+	{
+		weight = 0;
+	}
 
 	return weight;
 }
@@ -124,9 +129,14 @@ float SRLPlayer::getDallyMPointsWorth()
 float SRLPlayer::getFantasyPointsCalc()
 {
 		float weight = 0;
-		weight = m_RunMetres + (m_Tackles * 2) + m_KickMetres + (m_4020 * 10) + (m_Tries * 8) + (m_Goals) + (m_FieldGoals *3);
+		weight = (m_RunMetres/2) + (m_Tackles * 2) + (m_KickMetres/3) + (m_4020 * 10) + (m_Tries * 8) + (m_Goals) + (m_FieldGoals *3);
 		weight += (m_Strips * 3) + (m_Intercepts * 3);
-		weight = weight / (m_Errors + m_RuckInfringements + m_PenaltiesConceded + 1);
+		weight = weight / (m_Errors + m_RuckInfringements + m_PenaltiesConceded + 1 + (m_SinBins * 2));
 		weight = weight / 6;
+
+		if (m_SendOffs > 0)
+		{
+			weight = 0;
+		}
 		return weight;
 }

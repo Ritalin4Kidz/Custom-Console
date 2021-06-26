@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include "SYDEFileDefaults.h"
+#include "ConsoleWindow.h"
 using namespace std;
 using json = nlohmann::json;
 class SRLPlayer {
@@ -26,6 +27,8 @@ public:
 	int getDefence() { return m_BaseDefence; }
 
 	int getKicking() { return m_BaseKicking; }
+
+	int getRating() { int rating = m_BaseAttack + m_BaseDefence + m_BaseSpeed + m_BaseKicking + m_BaseHandling; return rating / 5; }
 
 	int getHandling() { return m_BaseHandling; }
 
@@ -70,6 +73,8 @@ public:
 	void add4020() { m_4020++; }
 	int get4020() { return m_4020; }
 
+	void generateFeatures();
+
 	void addRuckError(){ m_RuckInfringements++; }
 	int getRuckErrors() { return m_RuckInfringements; }
 
@@ -84,6 +89,11 @@ public:
 
 	void addNoTry() { m_NoTriesVideoRef++; }
 	int getNoTry() { return m_NoTriesVideoRef; }
+
+	ColourClass getPrimary() { return primaryColour; }
+	ColourClass getSecondary() { return secondaryColour; }
+	ColourClass getTertiary() { return tertiaryColour; }
+	int getStyleType() { return playerTypeInt; }
 
 	void addTimeOnField(int time);
 	string getTimeOnField();
@@ -151,4 +161,9 @@ private:
 	int m_Injuries = 0;
 
 	int timeOnField = 0;
+	ColourClass getRandomColour();
+	int playerTypeInt;
+	ColourClass primaryColour = WHITE;
+	ColourClass secondaryColour = WHITE;
+	ColourClass tertiaryColour = WHITE;
 };

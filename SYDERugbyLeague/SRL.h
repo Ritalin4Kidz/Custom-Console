@@ -28,7 +28,14 @@ enum GameStateSYDE
 	SettingsState,
 	InformationState,
 	NewsViewState,
-	TeamInDepthViewState
+	TeamInDepthViewState,
+};
+
+enum GameStateInDepthView
+{
+	NormalInDepthView,
+	TeamListViewState,
+	PlayerViewState
 };
 
 enum ArticleViewingState
@@ -283,6 +290,8 @@ public:
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow PlayerInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
 
@@ -320,11 +329,15 @@ public:
 	vector<string> generateFeelGoodArticleSavesDrowner(string Player1);
 	vector<string> generateFeelGoodArticleDonatesToCharity(string Player1);
 
+	vector<string> generateRumourArticlePlayerRelease(string Team1, string Player1);
+	vector<string> generateRumourArticleContractExtension(string Team1, string Player1);
+
 	vector<string> generateFeelBadArticleSexScandal(string Player1);
 	vector<string> generateFeelBadArticlePunchUp(string Player1);
 	vector<string> generateFeelBadArticleGambling(string Player1);
 
 	vector<string> generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1);
+	vector<string> generateArticleWalksOutOnClub(string Team1, string Player1, int team1, int player1);
 
 	void sortOutNews();
 	void offContractTrade();
@@ -333,6 +346,8 @@ public:
 	void UpdateBets();
 
 	void setUpTeamInDepthView(int teamViewing);
+
+	void setUpPlayer();
 
 	void otherArticles();
 
@@ -349,6 +364,7 @@ public:
 	static GameStateBettingSYDE bettingState;
 	static GameStateLeaderboardSYDE ldrState;
 	static GameStateResultSYDE resultState;
+	static GameStateInDepthView inDepthState;
 	static GameStateSettingsSYDE settingsState;
 	static SRLPriorBets_State priorBetsState;
 	static ArticleViewingState articleState;
@@ -405,6 +421,9 @@ public:
 
 	static int priorBetNumberLine;
 	void sortOutResultsScreen();
+
+	static int playerClicked;
+	static bool playerCall;
 
 private:
 	SYDEClickableButton m_StartSeasonBtn;
@@ -534,6 +553,8 @@ private:
 	SYDEClickableButton m_BackTeamInDepth;
 	SYDEClickableButton m_NextTeamInDepth;
 	SYDEClickableButton m_PrevTeamInDepth;
+	SYDEClickableButton m_TeamListInDepth;
+	SYDEClickableButton m_BackTeamListInDepth;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;
@@ -565,4 +586,7 @@ private:
 	SRLTeam m_InDepthTeamView;
 	CustomAsset m_JerseyView;
 	int m_TeamViewing = 0;
+	vector<SYDEClickableButton> m_PlayerButtons;
+	SRLPlayer m_PlayerView;
+	CustomAsset m_PlayerAsset;
 };

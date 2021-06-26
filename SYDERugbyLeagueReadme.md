@@ -31,9 +31,13 @@ SRL Simulation game made inside the SYDE Framework.
 
 - Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
-- Individual Player Analysis
-
 ## Release Notes
+
+###  0.9.0.0 beta 26-06-2021
+- Can now view team lists and player details for every team from the main menu
+- Player styles
+- More News Articles
+- First official build for beta
 
 ###  0.8.0.0 alpha 
 - Can now view more in depth details for every team in the home menu

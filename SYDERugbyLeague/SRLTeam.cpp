@@ -627,29 +627,38 @@ int SRLTeam::totalHandlingStat()
 	return total;
 }
 
-int SRLTeam::averageAttackStat()
+void SRLTeam::CalculateAverages()
 {
-	return totalAttackStat() / m_TeamList.size();
+	CalculateAverageAttackStat();
+	CalculateAverageDefenceStat();
+	CalculateAverageSpeedStat();
+	CalculateAverageKickStat();
+	CalculateAverageHandlingStat();
 }
 
-int SRLTeam::averageDefenceStat()
+void SRLTeam::CalculateAverageAttackStat()
 {
-	return totalDefenceStat() / m_TeamList.size();
+	averageAttack = totalAttackStat() / m_TeamList.size();
 }
 
-int SRLTeam::averageSpeedStat()
+void SRLTeam::CalculateAverageDefenceStat()
 {
-	return totalSpeedStat() / m_TeamList.size();
+	averageDefence = totalDefenceStat() / m_TeamList.size();
 }
 
-int SRLTeam::averageKickStat()
+void SRLTeam::CalculateAverageSpeedStat()
 {
-	return totalKickStat() / m_TeamList.size();
+	averageSpeed = totalSpeedStat() / m_TeamList.size();
 }
 
-int SRLTeam::averageHandlingStat()
+void SRLTeam::CalculateAverageKickStat()
 {
-	return totalHandlingStat() / m_TeamList.size();
+	averageKick = totalKickStat() / m_TeamList.size();
+}
+
+void SRLTeam::CalculateAverageHandlingStat()
+{
+	averageHandling = totalHandlingStat() / m_TeamList.size();
 }
 
 int SRLTeam::TeamRating()

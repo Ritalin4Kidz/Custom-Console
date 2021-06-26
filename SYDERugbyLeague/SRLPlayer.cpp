@@ -13,6 +13,7 @@ SRLPlayer::SRLPlayer(string name, int speed, int attack, int defence,int kicking
 	m_BaseKicking = kicking;
 	m_GoalKicking = goalKicking;
 	m_BaseHandling = handling;
+	generateFeatures();
 }
 
 SRLPlayer::~SRLPlayer()
@@ -31,6 +32,10 @@ void SRLPlayer::loadPlayer(string path)
 	this->m_GoalKicking = (save_file["goalkick"]);
 	this->m_BaseKicking = (save_file["kick"]);
 	this->m_BaseHandling = (save_file["hand"]);
+	this->primaryColour = static_cast<ColourClass>(save_file["primary"]);
+	this->secondaryColour = static_cast<ColourClass>(save_file["secondary"]);
+	this->tertiaryColour = static_cast<ColourClass>(save_file["tertiary"]);
+	this->playerTypeInt = save_file["playertype"];
 }
 
 void SRLPlayer::savePlayer()
@@ -44,6 +49,10 @@ void SRLPlayer::savePlayer()
 	save_file["kick"] = m_BaseKicking;
 	save_file["goalkick"] = m_GoalKicking;
 	save_file["hand"] = m_BaseHandling;
+	save_file["playertype"] = playerTypeInt;
+	save_file["primary"] = static_cast<int>(primaryColour);
+	save_file["secondary"] = static_cast<int>(secondaryColour);
+	save_file["tertiary"] = static_cast<int>(tertiaryColour);
 	if (id == 0)
 	{
 		id++;
@@ -68,6 +77,24 @@ void SRLPlayer::savePlayer()
 	//return save_file;
 	//std::ofstream ofs("EngineFiles\\Settings\\MOTS_SaveFile.sc");
 	//ofs << save_file;
+}
+
+void SRLPlayer::generateFeatures()
+{
+	int noPlayers = SYDEFileDefaults::getFileCount("EngineFiles\\PlayerFeatures", ".bmp");
+	playerTypeInt = rand() % noPlayers;
+
+	primaryColour = getRandomColour();
+	secondaryColour = getRandomColour();
+	while (primaryColour == secondaryColour)
+	{
+		secondaryColour = getRandomColour();
+	}
+	tertiaryColour = getRandomColour();
+	while (tertiaryColour == primaryColour || tertiaryColour == secondaryColour)
+	{
+		tertiaryColour = getRandomColour();
+	}
 }
 
 void SRLPlayer::addTimeOnField(int time)
@@ -141,4 +168,40 @@ float SRLPlayer::getFantasyPointsCalc()
 			weight = 0;
 		}
 		return weight;
+}
+
+ColourClass SRLPlayer::getRandomColour()
+{
+	int colour = rand() % 13;
+	{
+		switch (colour)
+		{
+		case 0:
+			return BLUE_BLUE_BG;
+		case 1:
+			return GREEN_GREEN_BG;
+		case 2:
+			return AQUA_AQUA_BG;
+		case 3:
+			return RED_RED_BG;
+		case 4:
+			return PURPLE_PURPLE_BG;
+		case 5:
+			return YELLOW_YELLOW_BG;
+		case 6:
+			return WHITE_WHITE_BG;
+		case 7:
+			return LIGHTGREY_LIGHTGREY_BG;
+		case 8:
+			return DARKBLUE_DARKBLUE_BG;
+		case 9:
+			return BRIGHTGREEN_BRIGHTGREEN_BG;
+		case 10:
+			return LIGHTBLUE_LIGHTBLUE_BG;
+		case 11:
+			return LIGHTPURPLE_LIGHTPURPLE_BG;
+		case 12:
+			return BRIGHTYELLOW_BRIGHTYELLOW_BG;
+		}
+	}
 }

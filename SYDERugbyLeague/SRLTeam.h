@@ -95,11 +95,19 @@ public:
 	int totalKickStat();
 	int totalHandlingStat();
 
-	int averageAttackStat();
-	int averageDefenceStat();
-	int averageSpeedStat();
-	int averageKickStat();
-	int averageHandlingStat();
+	void CalculateAverages();
+
+	void CalculateAverageAttackStat();
+	void CalculateAverageDefenceStat();
+	void CalculateAverageSpeedStat();
+	void CalculateAverageKickStat();
+	void CalculateAverageHandlingStat();
+
+	int averageAttackStat() { return averageAttack; }
+	int averageDefenceStat() { return averageDefence; }
+	int averageSpeedStat() { return averageSpeed; }
+	int averageKickStat() { return averageKick; }
+	int averageHandlingStat() { return averageHandling; }
 
 	int TeamRating();
 
@@ -115,4 +123,10 @@ private:
 
 	vector<SRLPlayer> m_TeamList = vector<SRLPlayer>();
 	int m_Interchanges = 0;
+
+	int averageAttack = 0;
+	int averageDefence = 0;
+	int averageSpeed = 0;
+	int averageKick = 0;
+	int averageHandling = 0;
 };

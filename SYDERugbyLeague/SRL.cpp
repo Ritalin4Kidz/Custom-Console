@@ -9,6 +9,7 @@ GameStateBettingSYDE SRLGame::bettingState = CurrentRound_STATE;
 GameStateLeaderboardSYDE SRLGame::ldrState = Tries_State;
 GameStateResultSYDE SRLGame::resultState = Summary_STATE;
 GameStateSettingsSYDE SRLGame::settingsState = SeasonSettings_STATE;
+GameStateInDepthView SRLGame::inDepthState = NormalInDepthView;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
 bool SRLGame::SeasonStart = false;
@@ -37,6 +38,8 @@ bool SRLGame::premiershipBet = false;
 bool SRLGame::m_SeasonEvents = true;
 bool SRLGame::headlineCall = false;
 bool SRLGame::keyPadCall = false;
+bool SRLGame::playerCall = false;
+int SRLGame::playerClicked = 0;
 string SRLGame::customAmountStr = "";
 SRLBetPrice SRLGame::m_BetAmount = SRLBetPrice(10, 0);
 int SRLGame::gameNumberBet = 0;
@@ -81,6 +84,21 @@ vector<string> Split(string a_String, char splitter)
 }
 
 #pragma region ButtonVoids
+
+void PlayerClick()
+{
+	SRLGame::playerCall = true;
+	SRLGame::playerClicked = stoi(SYDEClickableButton::getLastButtonTag());
+}
+
+void InDepthTeamListViewClick()
+{
+	SRLGame::inDepthState = TeamListViewState;
+}
+void InDepthTeamListBackClick()
+{
+	SRLGame::inDepthState = NormalInDepthView;
+}
 
 void InDepthTeamViewClick()
 {
@@ -946,17 +964,36 @@ void SRLGame::init()
 #pragma endregion
 
 #pragma region Team In-Depth View
-	m_BackTeamInDepth = SYDEClickableButton("  Back To Main Menu ", Vector2(0, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_BackTeamInDepth = SYDEClickableButton("  To Main Menu ", Vector2(0, 19), Vector2(15, 1), BLACK_WHITE_BG, false);
 	m_BackTeamInDepth.setHighLight(RED);
 	m_BackTeamInDepth.SetFunc(InDepthBackClick);
 
-	m_PrevTeamInDepth = SYDEClickableButton("   View Prev Team   ", Vector2(20, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_PrevTeamInDepth = SYDEClickableButton("   Prev Team   ", Vector2(15, 19), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_PrevTeamInDepth.setHighLight(RED);
 	m_PrevTeamInDepth.SetFunc(PrevRoundViewClick);
 
-	m_NextTeamInDepth = SYDEClickableButton("   View Next Team   ", Vector2(40, 19), Vector2(20, 1), BLACK_WHITE_BG, false);
+	m_NextTeamInDepth = SYDEClickableButton("   Next Team   ", Vector2(30, 19), Vector2(15, 1), BLACK_WHITE_BG, false);
 	m_NextTeamInDepth.setHighLight(RED);
 	m_NextTeamInDepth.SetFunc(NextRoundViewClick);
+
+	m_TeamListInDepth = SYDEClickableButton("   Team List   ", Vector2(45, 19), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_TeamListInDepth.setHighLight(RED);
+	m_TeamListInDepth.SetFunc(InDepthTeamListViewClick);
+
+	m_BackTeamListInDepth = SYDEClickableButton("  To Team View ", Vector2(0, 19), Vector2(15, 1), BLACK_WHITE_BG, false);
+	m_BackTeamListInDepth.setHighLight(RED);
+	m_BackTeamListInDepth.SetFunc(InDepthTeamListBackClick);
+
+
+	for (int i = 0; i < 17; i++)
+	{
+		SYDEClickableButton button = SYDEClickableButton("View Player", Vector2(46, i + 2), Vector2(11, 1), BLACK_BRIGHTWHITE_BG, false);
+		button.setHighLight(RED);
+		button.setTag(to_string(i));
+		button.SetFunc(PlayerClick);
+		m_PlayerButtons.push_back(button);
+	}
+
 #pragma endregion
 }
 
@@ -1710,6 +1747,20 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 
 ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (playerCall)
+	{
+		playerCall = false;
+		setUpPlayer();
+		inDepthState = PlayerViewState;
+	}
+	if (inDepthState == TeamListViewState)
+	{
+		return TeamInDepthListView(window, windowWidth, windowHeight);
+	}
+	else if (inDepthState == PlayerViewState)
+	{
+		return PlayerInDepthView(window, windowWidth, windowHeight);
+	}
 	if (PrevRoundCall)
 	{
 		PrevRoundCall = false;
@@ -1753,6 +1804,52 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 	window = m_BackTeamInDepth.draw_ui(window);
 	window = m_PrevTeamInDepth.draw_ui(window);
 	window = m_NextTeamInDepth.draw_ui(window);
+	window = m_TeamListInDepth.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(2, 1), m_InDepthTeamView.getName(), BLACK_BRIGHTWHITE_BG);
+	for (int i = 0; i < m_InDepthTeamView.getPlayers().size(); i++)
+	{
+		window.setTextAtPoint(Vector2(1, i+ 2), to_string(i+1) + ". " + m_InDepthTeamView.getPlayers()[i].getName(), BRIGHTWHITE);
+		window = m_PlayerButtons[i].draw_ui(window);
+	}
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window = m_BackTeamListInDepth.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(2, 1), m_PlayerView.getName(), BLACK_BRIGHTWHITE_BG);
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window = m_PlayerAsset.draw_asset(window, Vector2(30, 3));
+	window = m_TeamListInDepth.draw_ui(window, Vector2(0,19));
+
+	window.setTextAtPoint(Vector2(2, 3), "Attack: " + to_string(m_PlayerView.getAttack()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 4), "Defence: " + to_string(m_PlayerView.getDefence()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 5), "Speed: " + to_string(m_PlayerView.getSpeed()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 6), "Kicking: " + to_string(m_PlayerView.getKicking()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 7), "Handling: " + to_string(m_PlayerView.getHandling()), BRIGHTWHITE);
+
+	window.setTextAtPoint(Vector2(2, 9), "Player Rating: " + to_string(m_PlayerView.getRating()), BRIGHTWHITE);
+
 	return window;
 }
 
@@ -1930,7 +2027,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.8.0.0-alpha", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.0.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2594,7 +2691,7 @@ vector<string> SRLGame::generateTradeArticle(string teamName1, string teamName2,
 	temp.push_back("have agreed to do a player swap!");
 	temp.push_back("This trade sees " + Player1);
 	temp.push_back("find a new home at the " + teamName2);
-	temp.push_back("whilst " + Player1 + " will now have to adapt");
+	temp.push_back("whilst " + Player2 + " will now have to adapt");
 	temp.push_back("to their new role at " + teamName1 + ".");
 	return temp;
 }
@@ -2637,6 +2734,32 @@ vector<string> SRLGame::generateFeelGoodArticleDonatesToCharity(string Player1)
 	temp.push_back("found that the charity organisation has strong");
 	temp.push_back("anti-LGBT connections. " + Player1);
 	temp.push_back("has not commented on that matter.");
+	return temp;
+}
+
+vector<string> SRLGame::generateRumourArticlePlayerRelease(string Team1, string Player1)
+{
+	vector<string> temp;
+	temp.push_back("Sources tell us that " + Team1 + " are");
+	temp.push_back("considering telling " + Player1 + " to");
+	temp.push_back("Find a new home immediately. This comes after rumours");
+	temp.push_back(Player1 + " has already been told they're");
+	temp.push_back("free to talk to other clubs. This news has already");
+	temp.push_back("sparked outrage from fans on social media, especially");
+	temp.push_back("those who consider " + Player1 + " to");
+	temp.push_back("be a fan favourite");
+	return temp;
+}
+
+vector<string> SRLGame::generateRumourArticleContractExtension(string Team1, string Player1)
+{
+	vector<string> temp;
+	temp.push_back("Sources tell us that " + Team1 + " are");
+	temp.push_back("considering extending " + Player1 + "'s");
+	temp.push_back("contract by a further 3 years.");
+	temp.push_back(Player1 + " has already been approached");
+	temp.push_back("by other clubs, who were hoping to snatch the");
+	temp.push_back("fan favourite before season's end.");
 	return temp;
 }
 
@@ -2686,6 +2809,21 @@ vector<string> SRLGame::generateArticleDropControversialPlayer(string Team1, str
 	temp.push_back("on the starting line-up, however it is confirmed ");
 	temp.push_back("that " + Team1 + " already have a replacement ready.");
 	temp.push_back("We'll have more as this story develops");
+	offContractTrade(team1, player1);
+	return temp;
+}
+
+vector<string> SRLGame::generateArticleWalksOutOnClub(string Team1, string Player1, int team1, int player1)
+{
+	vector<string> temp;
+	temp.push_back("After issues with recent contract negotiations, ");
+	temp.push_back(Player1 + " has walked from the ");
+	temp.push_back(Team1 + ", who in return have released them");
+	temp.push_back("from the team, and are threatening legal action");
+	temp.push_back("to get them barred from the SRL for the remainder");
+	temp.push_back("of the original contract.");
+	temp.push_back("It is currently unsure who will be replacing");
+	temp.push_back(Player1 + " at " + Team1 + ".");
 	offContractTrade(team1, player1);
 	return temp;
 }
@@ -2853,7 +2991,7 @@ void SRLGame::TeamTrade()
 	offContract.setPlayer(player2, Player1Character);
 	SRLNewsArticle m_SigningArticle;
 	m_SigningArticle.headline = m_Season.m_Ladder.m_Ladder[team1].teamName + " Sign " + Player2Character.getName();
-	m_SigningArticle.newsStory = generateTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, m_Season.m_Ladder.m_Ladder[team2].teamName, Player2Character.getName(), Player1Character.getName());
+	m_SigningArticle.newsStory = generateTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, m_Season.m_Ladder.m_Ladder[team2].teamName, Player1Character.getName(), Player2Character.getName());
 	m_SigningArticle.type = SRLAT_PlayerTrade;
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_SigningArticle);
 
@@ -2959,12 +3097,30 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_JerseyView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
 	m_JerseyView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
 	m_JerseyView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
+
+	m_InDepthTeamView.CalculateAverages();
+}
+
+void SRLGame::setUpPlayer()
+{
+	m_PlayerView = m_InDepthTeamView.getPlayers()[playerClicked];
+
+	string PlayerBmp = "EngineFiles\\PlayerFeatures\\playerstyle" + to_string(m_PlayerView.getStyleType()) + ".bmp";
+	wstring wPlayerBmp = wstring(PlayerBmp.begin(), PlayerBmp.end());
+	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
+	m_PlayerAsset = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wPlayerBmp.c_str(), 15, 15));
+	m_PlayerAsset.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	m_PlayerAsset.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	m_PlayerAsset.changeAllInstancesOfColour(BLACK_WHITE_BG, m_PlayerView.getPrimary());
+	m_PlayerAsset.changeAllInstancesOfColour(BLACK, m_PlayerView.getSecondary());
+	m_PlayerAsset.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_PlayerView.getTertiary());
 }
 
 void SRLGame::otherArticles()
 {
 	SRLNewsArticle m_Article;
-	int articleType = rand() % 7;
+	int articleType = rand() % 10;
 	int team = rand() % 16;
 	SRLTeam MainTeam;
 	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
@@ -3003,6 +3159,26 @@ void SRLGame::otherArticles()
 		{
 			return;
 		}
+		break;
+	case 7:
+		m_Article.headline = playerStory.getName() + " At Risk Of An Early Release!";
+		m_Article.newsStory = generateRumourArticlePlayerRelease(MainTeam.getName(), playerStory.getName());
+		break;
+	case 8:
+		if (m_SeasonEvents)
+		{
+			m_Article.headline = playerStory.getName() + " Walks Out On " + MainTeam.getName();
+			m_Article.newsStory = generateArticleWalksOutOnClub(MainTeam.getName(), playerStory.getName(), team, player);
+			m_Article.type = SRLAT_DropPlayer;
+		}
+		else
+		{
+			return;
+		}
+		break;
+	case 9:
+		m_Article.headline = playerStory.getName() + " To Have Contract Extended!";
+		m_Article.newsStory = generateRumourArticleContractExtension(MainTeam.getName(), playerStory.getName());
 		break;
 	default:
 		m_Article.headline = playerStory.getName() + " Helps Sick Kids In Hospital";

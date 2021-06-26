@@ -28,6 +28,30 @@ void BaseSYDESoundSettings::changeDefaultVolume(SYDESoundVolume m_Volume)
 	}
 }
 
+SYDESoundVolume BaseSYDESoundSettings::getDefaultVolumeState()
+{
+	if (m_SoundVolume == DWORD(858993459))
+	{
+		return SYDE_VOLUME_LOW;
+	}
+	if (m_SoundVolume == DWORD(1717986918))
+	{
+		return SYDE_VOLUME_NML;
+	}
+	if (m_SoundVolume == DWORD(-1717986918))
+	{
+		return SYDE_VOLUME_MED;
+	}
+	if (m_SoundVolume == DWORD(-858993459))
+	{
+		return SYDE_VOLUME_HIG;
+	}
+	if (m_SoundVolume == DWORD(0))
+	{
+		return SYDE_VOLUME_OFF;
+	}
+}
+
 DWORD BaseSYDESoundSettings::getVolume(SYDESoundVolume m_Volume)
 {
 	switch (m_Volume)
@@ -45,6 +69,23 @@ DWORD BaseSYDESoundSettings::getVolume(SYDESoundVolume m_Volume)
 	default:
 		return DWORD(1717986918);
 	}
+}
+
+std::string SYDESoundFile::getLongerString()
+{
+	if (m_FeatArtist != "")
+	{
+		if (m_SongTitle.length() > m_SongArtist.length() + m_FeatArtist.length() + 1)
+		{
+			return m_SongTitle;
+		}
+		return m_SongArtist + " " + m_FeatArtist;
+	}
+	if (m_SongTitle.length() > m_SongArtist.length())
+	{
+		return m_SongTitle;
+	}
+	return m_SongArtist;
 }
 
 void SYDESoundFile::playSound()

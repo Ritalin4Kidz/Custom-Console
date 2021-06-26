@@ -255,6 +255,9 @@
     <ClInclude Include="SYDEEngineOldCode.h">
       <Filter>Header Files\Include Headers</Filter>
     </ClInclude>
+    <ClInclude Include="SYDESoundtrack.h">
+      <Filter>Header Files\SYDESounds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -391,6 +394,9 @@
     </ClCompile>
     <ClCompile Include="SYDEOldCodeCharacters.cpp">
       <Filter>Source Files\SYDEOldCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDESoundtrack.cpp">
+      <Filter>Source Files\SYDESounds</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

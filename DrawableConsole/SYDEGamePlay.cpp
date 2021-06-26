@@ -68,11 +68,13 @@ Settings SYDEGamePlay::config = Settings("EngineFiles\\Settings\\configSettings.
 void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars)
 {
 	bool setUp = true;
+	int baseX = (windowWidth / 2) - 11;
+	int baseY = (windowHeight / 2) - 6;
 	_introductionScript();
 	_introCreditsScript(window);
 	for (int i = -10; i < 5; i++)
 	{
-		_drawBee(i, 9, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
+		_drawBee(i, baseX, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
 		setUp = false;
 		Sleep(50);
 	}
@@ -81,26 +83,29 @@ void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const H
 	Sleep(1250);
 	for (int i = 5; i < 22; i++)
 	{
-		_drawBee(i, 9, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
+		_drawBee(i, baseX, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
 		Sleep(50);
 	}
+	baseX = (windowWidth / 2) - 5;
 	for (int i = -10; i < 6; i++)
 	{
-		_poweredBySYDEEngine(i, 15, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
+		_poweredBySYDEEngine(i, baseX, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
 		Sleep(50);
 	}
 	PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
 	Sleep(1250);
 	for (int i = 6; i < 22; i++)
 	{
-		_poweredBySYDEEngine(i, 15, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
+		_poweredBySYDEEngine(i, baseX, setUp, start, hOut, window, windowWidth, windowHeight, artVars);
 		Sleep(50);
 	}
 	_activated = true;
 }
 void SYDEGamePlay::activate_bySplashscreen(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight, Artwork artVars)
 {
-	_poweredBySYDEEngine(4, 15, true, start, hOut, window, windowWidth, windowHeight, artVars);
+	int baseX = (windowWidth / 2) - 5;
+	int baseY = (windowHeight / 2) - 6;
+	_poweredBySYDEEngine(baseY, baseX, true, start, hOut, window, windowWidth, windowHeight, artVars);
 	PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
 	Sleep(1000);
 	_activated = true;

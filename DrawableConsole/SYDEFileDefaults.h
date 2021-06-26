@@ -6,6 +6,8 @@
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+
+
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
@@ -27,6 +29,15 @@ public:
 	/// <param name="format">: format filter, '*' will select all</param>
 	/// <param name="trimPath"></param>
 	/// <returns>filenames</returns>
+	static std::vector<std::string> getAllFileNamesInFolder(std::string path, std::string format, bool trimPath, bool trimFormat);
+
+	/// <summary>
+	/// Return all the file names in a folder as a vector of strings
+	/// </summary>
+	/// <param name="path">: folder path</param>
+	/// <param name="format">: format filter, '*' will select all</param>
+	/// <param name="trimPath"></param>
+	/// <returns>filenames</returns>
 	static std::vector<std::string> getAllFileNamesInFolder(std::string path, std::string format, bool trimPath);
 
 	/// <summary>
@@ -38,5 +49,8 @@ public:
 	static std::vector<std::string> getAllFileNamesInFolder(std::string path, std::string format);
 
 
+	static int getFileCount(std::string path, std::string format);
+
+	static bool exists(const char* filename);
 	static SYDEBMPDimensions getBMPDimensions(std::string bmpFile);
 };

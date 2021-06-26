@@ -1,0 +1,10 @@
+////////////SRL Gameplay Loop
+
+16 Teams In A Season
+ - These can be generated randomly or grabbed from the current saves
+
+2 Modes - Manager & Spectator
+ - In manager mode, the player gets given options after every game to have an attempt to raise the stats of players
+ - In spectator mode, the player gets given a betting allowance and makes bets on the outcome of the games
+
+ Every game is generated, no actual rugby league gameplay

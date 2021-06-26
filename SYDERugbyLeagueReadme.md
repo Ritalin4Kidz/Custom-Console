@@ -33,6 +33,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.0.1 beta 27-06-2021
+- Fixed inconsistent sizing of window bug
+
 ###  0.9.0.0 beta 26-06-2021
 - Can now view team lists and player details for every team from the main menu
 - Player styles

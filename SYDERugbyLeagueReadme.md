@@ -33,6 +33,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.1.0 beta 
+- News Article Updates
+- More styles (players + jerseys)
+
 ###  0.9.0.1 beta 27-06-2021
 - Fixed inconsistent sizing of window bug
 

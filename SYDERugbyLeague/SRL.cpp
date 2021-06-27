@@ -2017,6 +2017,7 @@ ConsoleWindow SRLGame::NewsView(ConsoleWindow window, int windowWidth, int windo
 			window.setTextAtPoint(Vector2(0, i+2), m_Article.newsStory[i], BRIGHTWHITE);
 		}
 		window = m_BackHeadline.draw_ui(window);
+		window = m_Article.newsPicture.draw_asset(window, Vector2(46, 12));
 	}
 	return window;
 }
@@ -2027,7 +2028,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.0.1-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.1.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2557,8 +2558,9 @@ void SRLGame::SimulateGames()
 				}
 				SRLNewsArticle m_PremiershipArticle;
 				m_PremiershipArticle.headline = m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam + " Wins Premiership!";
-				m_PremiershipArticle.newsStory = generatePremiershipArticle(m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam);
+				m_PremiershipArticle.newsStory = SRLNewsStoryGenerator::generatePremiershipArticle(m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam);
 				m_PremiershipArticle.type = SRLAT_Premiership;
+				m_PremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Premiership.bmp", 7, 7));
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_PremiershipArticle);
 				m_ArticlesRemaining--;
 				UpdateBets();
@@ -2576,8 +2578,9 @@ void SRLGame::SimulateGames()
 
 					SRLNewsArticle m_MinorPremiershipArticle;
 					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-					m_MinorPremiershipArticle.newsStory = generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
 					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
 					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
 					m_ArticlesRemaining--;
 
@@ -2648,187 +2651,6 @@ void SRLGame::loadGameSettings()
 	}
 }
 
-vector<string> SRLGame::generateMinorPremiershipArticle(string teamName)
-{
-	vector<string> temp;
-	temp.push_back(teamName + " have won the");
-	temp.push_back("minor premiership after a hard fought season.");
-	temp.push_back("Having confirmed a home qualifying final,");
-	temp.push_back(teamName + " will be looking to");
-	temp.push_back("convert this into the main premiership come");
-	temp.push_back("grand final day.");
-	return temp;
-}
-
-vector<string> SRLGame::generatePremiershipArticle(string teamName)
-{
-	vector<string> temp;
-	temp.push_back(teamName + " have won the");
-	temp.push_back("premiership after a hard fought grand final.");
-	temp.push_back("The CEO of " + teamName);
-	temp.push_back("has announced a 70% discount in the merch store");
-	temp.push_back("as a celebration of this achievement.");
-	temp.push_back(" ");
-	temp.push_back("Congratulations " + teamName + "!");
-	return temp;
-}
-
-vector<string> SRLGame::generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer)
-{
-	vector<string> temp;
-	temp.push_back(teamName + " have boosted their squad");
-	temp.push_back("after the signing of the off contract " + newPlayer + ".");
-	temp.push_back("Unfortunately this signing also means that");
-	temp.push_back(teamName + " have let go of " + oldPlayer + ".");
-	temp.push_back(oldPlayer + " is now currently looking for a new club");
-	return temp;
-}
-
-vector<string> SRLGame::generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2)
-{
-	vector<string> temp;
-	temp.push_back(teamName1 + " & " + teamName2);
-	temp.push_back("have agreed to do a player swap!");
-	temp.push_back("This trade sees " + Player1);
-	temp.push_back("find a new home at the " + teamName2);
-	temp.push_back("whilst " + Player2 + " will now have to adapt");
-	temp.push_back("to their new role at " + teamName1 + ".");
-	return temp;
-}
-
-vector<string> SRLGame::generateFeelGoodArticleSickKids(string Player1)
-{
-	vector<string> temp;
-	temp.push_back(Player1 + " met with some young fans");
-	temp.push_back("in a local hospital yesterday. Some people");
-	temp.push_back("have questioned the legitimacy of their act, with some");
-	temp.push_back("claiming it was to fulfill hours of community service");
-	temp.push_back("after last year's parking ticket incident.");
-	temp.push_back(Player1 + " has denied these claims,");
-	temp.push_back("slamming their critics as 'A Bunch Of Cowards'.");
-	return temp;
-}
-
-vector<string> SRLGame::generateFeelGoodArticleSavesDrowner(string Player1)
-{
-	vector<string> temp;
-	temp.push_back(Player1 + " has been met with applause today");
-	temp.push_back("after they heroically saved a local 50 year old man");
-	temp.push_back("from drowning at a local beach.");
-	temp.push_back("The SRL has reacted to this event by offering the man");
-	temp.push_back("free tickets to the next home game.");
-	temp.push_back("The man has responded by saying:");
-	temp.push_back("'I appreciate " + Player1 + ", but i hate their team.'");
-	return temp;
-}
-
-vector<string> SRLGame::generateFeelGoodArticleDonatesToCharity(string Player1)
-{
-	vector<string> temp;
-	temp.push_back(Player1 + " donated $50k to a local charity");
-	temp.push_back("today, and now they are challenging other SRL players");
-	temp.push_back("to match the donation.");
-	temp.push_back("'We all are more fortunate then others, and we need to");
-	temp.push_back("use our power to make this world a better place'");
-	temp.push_back("Twitter users have criticised the donation, after it was");
-	temp.push_back("found that the charity organisation has strong");
-	temp.push_back("anti-LGBT connections. " + Player1);
-	temp.push_back("has not commented on that matter.");
-	return temp;
-}
-
-vector<string> SRLGame::generateRumourArticlePlayerRelease(string Team1, string Player1)
-{
-	vector<string> temp;
-	temp.push_back("Sources tell us that " + Team1 + " are");
-	temp.push_back("considering telling " + Player1 + " to");
-	temp.push_back("Find a new home immediately. This comes after rumours");
-	temp.push_back(Player1 + " has already been told they're");
-	temp.push_back("free to talk to other clubs. This news has already");
-	temp.push_back("sparked outrage from fans on social media, especially");
-	temp.push_back("those who consider " + Player1 + " to");
-	temp.push_back("be a fan favourite");
-	return temp;
-}
-
-vector<string> SRLGame::generateRumourArticleContractExtension(string Team1, string Player1)
-{
-	vector<string> temp;
-	temp.push_back("Sources tell us that " + Team1 + " are");
-	temp.push_back("considering extending " + Player1 + "'s");
-	temp.push_back("contract by a further 3 years.");
-	temp.push_back(Player1 + " has already been approached");
-	temp.push_back("by other clubs, who were hoping to snatch the");
-	temp.push_back("fan favourite before season's end.");
-	return temp;
-}
-
-vector<string> SRLGame::generateFeelBadArticleSexScandal(string Player1)
-{
-	vector<string> temp;
-	temp.push_back(Player1 + " is currently in hot water");
-	temp.push_back("after a sexting scandal arrised today");
-	temp.push_back(Player1 + " has been alleged to have been");
-	temp.push_back("sexting other players for the past year and a half");
-	temp.push_back("When asked for a comment, all we recieved was a pic");
-	temp.push_back("of their genitalia.");
-	return temp;
-}
-
-vector<string> SRLGame::generateFeelBadArticlePunchUp(string Player1)
-{
-	vector<string> temp;
-	temp.push_back(Player1 + " is currently out on bail");
-	temp.push_back("after an alleged punch on at northies RSL occured");
-	temp.push_back("last friday night.");
-	temp.push_back("We asked " + Player1 + " for a comment,");
-	temp.push_back("who only responded by threatening to 'take this outside'");
-	temp.push_back("We'll have more as this story develops");
-	return temp;
-}
-
-vector<string> SRLGame::generateFeelBadArticleGambling(string Player1)
-{
-	vector<string> temp;
-	temp.push_back(Player1 + " has allegedly lost over $30k");
-	temp.push_back("at the pokies last night after a long bender.");
-	temp.push_back("When reached out for a comment, " + Player1);
-	temp.push_back("responded by pushing us aside, and claiming that we were");
-	temp.push_back("'bringing bad luck to the machine'.");
-	temp.push_back("We'll have more as this story develops");
-	return temp;
-}
-
-vector<string> SRLGame::generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1)
-{
-	vector<string> temp;
-	temp.push_back("After a recent controversy, " + Team1);
-	temp.push_back("have decided to drop " + Player1 + " from");
-	temp.push_back("their team, and have released them from their contract.");
-	temp.push_back("It is currently unknown who will be replacing them");
-	temp.push_back("on the starting line-up, however it is confirmed ");
-	temp.push_back("that " + Team1 + " already have a replacement ready.");
-	temp.push_back("We'll have more as this story develops");
-	offContractTrade(team1, player1);
-	return temp;
-}
-
-vector<string> SRLGame::generateArticleWalksOutOnClub(string Team1, string Player1, int team1, int player1)
-{
-	vector<string> temp;
-	temp.push_back("After issues with recent contract negotiations, ");
-	temp.push_back(Player1 + " has walked from the ");
-	temp.push_back(Team1 + ", who in return have released them");
-	temp.push_back("from the team, and are threatening legal action");
-	temp.push_back("to get them barred from the SRL for the remainder");
-	temp.push_back("of the original contract.");
-	temp.push_back("It is currently unsure who will be replacing");
-	temp.push_back(Player1 + " at " + Team1 + ".");
-	offContractTrade(team1, player1);
-	return temp;
-}
-
-
 void SRLGame::sortOutNews()
 {
 	m_NewsHeadlines.clear();
@@ -2873,8 +2695,9 @@ void SRLGame::offContractTrade()
 	offContract.setPlayer(player2, Player1Character);
 	SRLNewsArticle m_SigningArticle;
 	m_SigningArticle.headline = m_Season.m_Ladder.m_Ladder[team1].teamName + " Sign " + Player2Character.getName();
-	m_SigningArticle.newsStory = generateOffContractTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, Player2Character.getName(), Player1Character.getName());
+	m_SigningArticle.newsStory = SRLNewsStoryGenerator::generateOffContractTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, Player2Character.getName(), Player1Character.getName());
 	m_SigningArticle.type = SRLAT_PlayerSign;
+	m_SigningArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_SigningArticle);
 
 	m_Season.m_TopPlayers.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
@@ -2991,8 +2814,9 @@ void SRLGame::TeamTrade()
 	offContract.setPlayer(player2, Player1Character);
 	SRLNewsArticle m_SigningArticle;
 	m_SigningArticle.headline = m_Season.m_Ladder.m_Ladder[team1].teamName + " Sign " + Player2Character.getName();
-	m_SigningArticle.newsStory = generateTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, m_Season.m_Ladder.m_Ladder[team2].teamName, Player1Character.getName(), Player2Character.getName());
+	m_SigningArticle.newsStory = SRLNewsStoryGenerator::generateTradeArticle(m_Season.m_Ladder.m_Ladder[team1].teamName, m_Season.m_Ladder.m_Ladder[team2].teamName, Player1Character.getName(), Player2Character.getName());
 	m_SigningArticle.type = SRLAT_PlayerTrade;
+	m_SigningArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_SigningArticle);
 
 	m_Season.m_TopPlayers.changePlayerTeam(Player1Character.getName(), MainTeam.getName(), offContract.getName());
@@ -3120,7 +2944,7 @@ void SRLGame::setUpPlayer()
 void SRLGame::otherArticles()
 {
 	SRLNewsArticle m_Article;
-	int articleType = rand() % 10;
+	int articleType = rand() % 16;
 	int team = rand() % 16;
 	SRLTeam MainTeam;
 	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
@@ -3128,31 +2952,39 @@ void SRLGame::otherArticles()
 	SRLPlayer playerStory = MainTeam.getPlayers()[player];
 	switch (articleType)
 	{
+
 	case 1:
 		m_Article.headline = playerStory.getName() + " Saves Local Man From Drowning";
-		m_Article.newsStory = generateFeelGoodArticleSavesDrowner(playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	case 2:
 		m_Article.headline = playerStory.getName() + " Donates To Controverisal Charity";
-		m_Article.newsStory = generateFeelGoodArticleDonatesToCharity(playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleDonatesToCharity(playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
 		break;
 	case 3:
 		m_Article.headline = playerStory.getName() + " Involved In Sexting Scandal";
-		m_Article.newsStory = generateFeelBadArticleSexScandal(playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticleSexScandal(playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Phone.bmp", 7, 7));
 		break;
 	case 4:
 		m_Article.headline = playerStory.getName() + " Assaults RSL Bouncer";
-		m_Article.newsStory = generateFeelBadArticlePunchUp(playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticlePunchUp(playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	case 5:
 		m_Article.headline = playerStory.getName() + "'s Large-Scale Gambling Problem";
-		m_Article.newsStory = generateFeelBadArticleGambling(playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticleGambling(playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Coin.bmp", 7, 7));
 		break;
 	case 6:
 		if (m_SeasonEvents)
 		{
 			m_Article.headline = MainTeam.getName() + " Drop " + playerStory.getName();
-			m_Article.newsStory = generateArticleDropControversialPlayer(MainTeam.getName(), playerStory.getName(), team, player);
+			m_Article.newsStory = SRLNewsStoryGenerator::generateArticleDropControversialPlayer(MainTeam.getName(), playerStory.getName(), team, player);
+			m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+			offContractTrade(team, player);
 			m_Article.type = SRLAT_DropPlayer;
 		}
 		else
@@ -3162,13 +2994,16 @@ void SRLGame::otherArticles()
 		break;
 	case 7:
 		m_Article.headline = playerStory.getName() + " At Risk Of An Early Release!";
-		m_Article.newsStory = generateRumourArticlePlayerRelease(MainTeam.getName(), playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePlayerRelease(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
 	case 8:
 		if (m_SeasonEvents)
 		{
 			m_Article.headline = playerStory.getName() + " Walks Out On " + MainTeam.getName();
-			m_Article.newsStory = generateArticleWalksOutOnClub(MainTeam.getName(), playerStory.getName(), team, player);
+			m_Article.newsStory = SRLNewsStoryGenerator::generateArticleWalksOutOnClub(MainTeam.getName(), playerStory.getName(), team, player);
+			m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+			offContractTrade(team, player);
 			m_Article.type = SRLAT_DropPlayer;
 		}
 		else
@@ -3178,11 +3013,43 @@ void SRLGame::otherArticles()
 		break;
 	case 9:
 		m_Article.headline = playerStory.getName() + " To Have Contract Extended!";
-		m_Article.newsStory = generateRumourArticleContractExtension(MainTeam.getName(), playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleContractExtension(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
+		break;
+	case 10:
+		m_Article.headline = "Player Unrest At " + MainTeam.getName();
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePlayerUnrest(MainTeam.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 11:
+		m_Article.headline = playerStory.getName() + " Offered Pay Cut To Re-sign";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePayCut(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
+		break;
+	case 12:
+		m_Article.headline = playerStory.getName() + "'s Retirment Rumours!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleRetirement(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 13:
+		m_Article.headline = "Rival Players Raise Awareness!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Goalpost.bmp", 7, 7));
+		break;
+	case 14:
+		m_Article.headline = "Opinion: " +playerStory.getName() + " Should Swap Teams";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 15:
+		m_Article.headline = "Fan Poll: " + MainTeam.getName() + "'s Best Player";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(MainTeam.getName(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
 	default:
 		m_Article.headline = playerStory.getName() + " Helps Sick Kids In Hospital";
-		m_Article.newsStory = generateFeelGoodArticleSickKids(playerStory.getName());
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	}
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_Article);

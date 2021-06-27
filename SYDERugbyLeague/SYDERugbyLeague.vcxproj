@@ -148,6 +148,7 @@
     <ClCompile Include="SRL.cpp" />
     <ClCompile Include="SRLGame.cpp" />
     <ClCompile Include="SRLNameGenerator.cpp" />
+    <ClCompile Include="SRLNewsStoryGenerator.cpp" />
     <ClCompile Include="SRLPlayer.cpp" />
     <ClCompile Include="SRLTeam.cpp" />
     <ClCompile Include="SYDERugbyLeague.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="SRL.h" />
     <ClInclude Include="SRLGame.h" />
     <ClInclude Include="SRLNameGenerator.h" />
+    <ClInclude Include="SRLNewsStoryGenerator.h" />
     <ClInclude Include="SRLPlayer.h" />
     <ClInclude Include="SRLTeam.h" />
   </ItemGroup>

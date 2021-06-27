@@ -6,6 +6,7 @@
 #include "SYDEEngineUI.h"
 #include "SYDEFileDefaults.h"
 #include "SRLNameGenerator.h"
+#include "SRLNewsStoryGenerator.h"
 #include "SYDESounds.h"
 #include "Vector2.h"
 #include "SRLGame.h"
@@ -320,24 +321,6 @@ public:
 
 	static void saveGameSettings();
 	static void loadGameSettings();
-
-	vector<string> generateMinorPremiershipArticle(string teamName);
-	vector<string> generatePremiershipArticle(string teamName);
-	vector<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);
-	vector<string> generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2);
-	vector<string> generateFeelGoodArticleSickKids(string Player1);
-	vector<string> generateFeelGoodArticleSavesDrowner(string Player1);
-	vector<string> generateFeelGoodArticleDonatesToCharity(string Player1);
-
-	vector<string> generateRumourArticlePlayerRelease(string Team1, string Player1);
-	vector<string> generateRumourArticleContractExtension(string Team1, string Player1);
-
-	vector<string> generateFeelBadArticleSexScandal(string Player1);
-	vector<string> generateFeelBadArticlePunchUp(string Player1);
-	vector<string> generateFeelBadArticleGambling(string Player1);
-
-	vector<string> generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1);
-	vector<string> generateArticleWalksOutOnClub(string Team1, string Player1, int team1, int player1);
 
 	void sortOutNews();
 	void offContractTrade();

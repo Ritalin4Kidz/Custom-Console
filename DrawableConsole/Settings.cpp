@@ -121,7 +121,7 @@ void Settings::ColourPalette(HANDLE hOut)
 	pInfo.dwMaximumWindowSize.X = getConsoleWidth() + 10;
 	pInfo.dwMaximumWindowSize.Y = getConsoleHeight() + 10;
 	SetConsoleScreenBufferInfoEx(hOut, &pInfo);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 }
 
 AdvancedSettings::AdvancedSettings(string settingsFile)

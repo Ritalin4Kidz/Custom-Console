@@ -24,6 +24,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.5.0 beta
+- Export include news stories
+
 ###  0.9.4.1 beta
 - Fixed sin bin bug (again)
 

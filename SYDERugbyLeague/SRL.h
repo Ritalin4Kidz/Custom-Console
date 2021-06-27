@@ -111,6 +111,25 @@ enum SRLPriorBets_State
 
 #pragma endregion
 
+enum FinalsSeriesType
+{
+	Top8Normal,
+	Top4Normal,
+	Top2Normal,
+	Top8Knockout,
+	Top4Knockout,
+};
+
+struct FinalsSeries
+{
+	FinalsSeries() {}
+	FinalsSeries(string str, FinalsSeriesType type, int r, int no) { FinalsStr = str; fsType = type; rounds = r; noTeams = no; }
+	string FinalsStr;
+	FinalsSeriesType fsType;
+	int rounds;
+	int noTeams;
+};
+
 struct SRLBetPrice
 {
 	SRLBetPrice() {}
@@ -421,7 +440,7 @@ public:
 
 	static int playerClicked;
 	static bool playerCall;
-
+	static bool finalsSystemCall;
 private:
 	SYDEClickableButton m_StartSeasonBtn;
 	SYDEClickableButton m_NextTeamSeasonCfgBtn;
@@ -523,6 +542,7 @@ private:
 	SYDEClickableButton m_SettingsInjuryBtn;
 	SYDEClickableButton m_SettingsSinBinBtn;
 	SYDEClickableButton m_SettingsEventsBtn;
+	SYDEClickableButton m_SettingsFinalsBtn;
 
 
 	//KEYPAD
@@ -587,6 +607,18 @@ private:
 	SRLBetPrice m_CustomBet = SRLBetPrice(42, 30);
 
 	bool finals = false;
+	int finalsThreshold = 8;
+	int finalsRounds = 4;
+	int finalsSystemInt = 0;
+	FinalsSeriesType fsType = Top8Normal;
+	string finalsSettingStr = "Top 8 Normal";
+	vector<FinalsSeries> m_FSTYPES = vector<FinalsSeries>({
+		FinalsSeries("Top 8 Normal", Top8Normal, 4, 8),
+		FinalsSeries("Top 4 Normal", Top4Normal, 3, 4),
+		FinalsSeries("Top 2 Normal", Top2Normal, 1, 2),
+		FinalsSeries("Top 8 Knock-Out", Top8Knockout, 3, 8),
+		FinalsSeries("Top 4 Knock-Out", Top4Knockout, 2, 4),
+		});
 
 	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));
 

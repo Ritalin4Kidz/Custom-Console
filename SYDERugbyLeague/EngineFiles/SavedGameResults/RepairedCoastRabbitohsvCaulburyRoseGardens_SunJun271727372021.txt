@@ -1,0 +1,202 @@
+----------LINE-UPS----------
+Home Team: Repaired Coast Rabbitohs
+1: Peter MacDonald
+2: Trent North
+3: Thomas Singh
+4: Matt Harnett
+5: Dom Sullivan
+6: Josh Kriis
+7: Lois Brasi
+8: Cooper Gillard
+9: Robert Dean
+10: Avery Smith
+11: Jarrod Fox
+12: Jim O' Sullivan
+13: Velento O' Sullivan
+14: Andrew Aaronson
+15: Niko Cotric
+16: Dominic Papiai
+17: Ash Montoya
+Away Team: Caulbury Rose Gardens
+1: Corey Costa
+2: Jane Develo
+3: Ann Ujhazzy
+4: Jr. Loomer
+5: Kevin South
+6: Jordan Jackington
+7: Jeni Sunnerson
+8: Avery Croker
+9: Sr. Tedesco
+10: Carl Cummins
+11: Don Port
+12: Dylan Stanley
+13: Brett Hunt
+14: Tommy Cummins
+15: Jordan Alexander
+16: Allie Cooper
+17: Jack Junior
+----------GAME-STAT---------
+Weather: Humid
+----------------------------
+00:00 - KICK OFF - Repaired Coast Rabbitohs: 0 v Caulbury Rose Gardens: 0
+00:14 - Jr. Loomer - Penalty
+01:46 - Robert Dean - 6th Tackle Changeover
+01:59 - Corey Costa - Over The Sideline
+03:33 - Peter MacDonald - 6th Tackle Changeover
+06:05 - Corey Costa - Over The Sideline
+06:44 - Don Port - Intercepted Off A Jarrod Fox Pass
+07:57 - Don Port - 6th Tackle Changeover
+08:50 - Caulbury Rose Gardens Interchanged Players Ann Ujhazzy & Allie Cooper
+10:08 - Jane Develo - Knock On
+10:22 - Caulbury Rose Gardens Interchanged Players Sr. Tedesco & Jordan Alexander
+10:55 - Repaired Coast Rabbitohs Interchanged Players Velento O' Sullivan & Dominic Papiai
+12:54 - Cooper Gillard - Intercepted Off A Don Port Pass
+13:49 - Trent North - Over The Sideline
+15:17 - Dylan Stanley - 6th Tackle Changeover
+15:32 - Jane Develo - Intercepted Off A Trent North Pass
+15:32 - ------VIDEO REFEREE------
+15:32 - Jane Develo - TRY - Repaired Coast Rabbitohs: 0 v Caulbury Rose Gardens: 4
+16:32 - Carl Cummins - GOAL - Repaired Coast Rabbitohs: 0 v Caulbury Rose Gardens: 6
+17:50 - Repaired Coast Rabbitohs Interchanged Players Cooper Gillard & Ash Montoya
+21:06 - Caulbury Rose Gardens Interchanged Players Jr. Loomer & Sr. Tedesco
+23:12 - Robert Dean - Intercepted Off A Brett Hunt Pass
+23:26 - Ash Montoya - TRY - Repaired Coast Rabbitohs: 4 v Caulbury Rose Gardens: 6
+24:26 - Jarrod Fox - GOAL - Repaired Coast Rabbitohs: 6 v Caulbury Rose Gardens: 6
+27:28 - Ash Montoya - Intercepted Off A Corey Costa Pass
+28:35 - Jordan Alexander - Intercepted Off A Avery Smith Pass
+29:02 - Kevin South - Forward Pass
+30:02 - Jeni Sunnerson - Penalty
+31:04 - Josh Kriis - TRY - Repaired Coast Rabbitohs: 10 v Caulbury Rose Gardens: 6
+32:04 - Jarrod Fox - GOAL - Repaired Coast Rabbitohs: 12 v Caulbury Rose Gardens: 6
+33:50 - Lois Brasi - Over The Sideline
+34:04 - Jordan Alexander - TRY - Repaired Coast Rabbitohs: 12 v Caulbury Rose Gardens: 10
+35:04 - Carl Cummins - GOAL - Repaired Coast Rabbitohs: 12 v Caulbury Rose Gardens: 12
+36:59 - Allie Cooper - Forward Pass
+38:00 - Repaired Coast Rabbitohs Interchanged Players Thomas Singh & Andrew Aaronson
+38:00 - Caulbury Rose Gardens Interchanged Players Don Port & Jack Junior
+38:17 - Jack Junior - Intercepted Off A Avery Smith Pass
+38:47 - Dominic Papiai - Penalty
+39:49 - Josh Kriis - Intercepted Off A Brett Hunt Pass
+40:00 - HALF TIME - Repaired Coast Rabbitohs: 12 v Caulbury Rose Gardens: 12
+40:07 - Repaired Coast Rabbitohs Interchanged Players Avery Smith & Cooper Gillard
+40:20 - Repaired Coast Rabbitohs Interchanged Players Peter MacDonald & Niko Cotric
+40:35 - Repaired Coast Rabbitohs Interchanged Players Jim O' Sullivan & Velento O' Sullivan
+41:08 - Robert Dean - Intercepted Off A Jack Junior Pass
+41:08 - Robert Dean - TRY - Repaired Coast Rabbitohs: 16 v Caulbury Rose Gardens: 12
+42:08 - Jarrod Fox - GOAL - Repaired Coast Rabbitohs: 18 v Caulbury Rose Gardens: 12
+44:33 - Niko Cotric - Penalty
+45:24 - Sr. Tedesco - TRY - Repaired Coast Rabbitohs: 18 v Caulbury Rose Gardens: 16
+46:24 - Carl Cummins - GOAL - Repaired Coast Rabbitohs: 18 v Caulbury Rose Gardens: 18
+47:40 - Repaired Coast Rabbitohs Interchanged Players Robert Dean & Peter MacDonald
+49:40 - Jarrod Fox - Knock On
+50:21 - Repaired Coast Rabbitohs Interchanged Players Velento O' Sullivan & Avery Smith
+50:37 - Caulbury Rose Gardens Interchanged Players Dylan Stanley & Tommy Cummins
+51:36 - Caulbury Rose Gardens Interchanged Players Carl Cummins & Ann Ujhazzy
+53:42 - Kevin South - 6th Tackle Changeover
+53:58 - Jarrod Fox - Knock On
+55:22 - Sr. Tedesco - TRY - Repaired Coast Rabbitohs: 18 v Caulbury Rose Gardens: 22
+56:22 - Jordan Jackington - GOAL - Repaired Coast Rabbitohs: 18 v Caulbury Rose Gardens: 24
+59:57 - Niko Cotric - 6th Tackle Changeover
+60:46 - Caulbury Rose Gardens Interchanged Players Ann Ujhazzy & Jr. Loomer
+61:03 - Caulbury Rose Gardens Interchanged Players Jordan Alexander & Dylan Stanley
+61:18 - Dom Sullivan - Intercepted Off A Corey Costa Pass
+62:16 - Dom Sullivan - TRY - Repaired Coast Rabbitohs: 22 v Caulbury Rose Gardens: 24
+63:16 - Jarrod Fox - GOAL - Repaired Coast Rabbitohs: 24 v Caulbury Rose Gardens: 24
+65:15 - Trent North - Incorrect Play The Ball
+65:15 - Trent North - Penalty
+65:15 - Jordan Jackington - PENALTY GOAL - Repaired Coast Rabbitohs: 24 v Caulbury Rose Gardens: 26
+66:15 - Trent North - Knock On
+66:47 - Andrew Aaronson - TRY - Repaired Coast Rabbitohs: 28 v Caulbury Rose Gardens: 26
+67:47 - Jarrod Fox - GOAL - Repaired Coast Rabbitohs: 30 v Caulbury Rose Gardens: 26
+68:58 - Avery Smith - Over The Sideline
+69:12 - Jr. Loomer - TRY - Repaired Coast Rabbitohs: 30 v Caulbury Rose Gardens: 30
+70:12 - Jordan Jackington - CONVERSION MISSED
+72:07 - Allie Cooper - Knock On
+72:24 - ------VIDEO REFEREE------
+72:24 - Trent North - TRY - Repaired Coast Rabbitohs: 34 v Caulbury Rose Gardens: 30
+73:24 - Jarrod Fox - GOAL - Repaired Coast Rabbitohs: 36 v Caulbury Rose Gardens: 30
+74:36 - Cooper Gillard - Forward Pass
+74:48 - Jane Develo - TRY - Repaired Coast Rabbitohs: 36 v Caulbury Rose Gardens: 34
+75:48 - Jordan Jackington - GOAL - Repaired Coast Rabbitohs: 36 v Caulbury Rose Gardens: 36
+78:05 - Dom Sullivan - Penalty
+78:35 - Corey Costa - Forward Pass
+80:00 - EXTRA TIME - Repaired Coast Rabbitohs: 36 v Caulbury Rose Gardens: 36
+80:17 - Jordan Jackington - Forward Pass
+80:32 - Andrew Aaronson - FIELD GOAL - Repaired Coast Rabbitohs: 37 v Caulbury Rose Gardens: 36
+80:32 - FULL TIME - Repaired Coast Rabbitohs: 37 v Caulbury Rose Gardens: 36
+                             
+--------PLAYER STATS--------
+Home Team: Repaired Coast Rabbitohs
+1: Niko Cotric |Time Played: 40:13 |Metres: 49 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+2: Trent North |Time Played: 80:33 |Metres: 60 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+3: Andrew Aaronson |Time Played: 42:33 |Metres: 10 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 1 |Total Points: 5 |Fantasy Points: 15
+4: Matt Harnett |Time Played: 80:33 |Metres: 4 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+5: Dom Sullivan |Time Played: 80:33 |Metres: 14 |Tackles: 8 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 17
+6: Josh Kriis |Time Played: 80:33 |Metres: 32 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 29
+7: Lois Brasi |Time Played: 80:33 |Metres: 8 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+8: Ash Montoya |Time Played: 62:43 |Metres: 33 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 34
+9: Peter MacDonald |Time Played: 73:13 |Metres: 42 |Tackles: 9 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 37
+10: Cooper Gillard |Time Played: 58:16 |Metres: 32 |Tackles: 4 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Jarrod Fox |Time Played: 80:33 |Metres: 21 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 6 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 6
+12: Avery Smith |Time Played: 70:19 |Metres: 17 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+13: Dominic Papiai |Time Played: 69:38 |Metres: 33 |Tackles: 11 |Kicks: 2 |Kick Metres: 91 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+14: Thomas Singh |Time Played: 38:00 |Metres: 14 |Tackles: 9 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 34
+15: Robert Dean |Time Played: 47:40 |Metres: 11 |Tackles: 8 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 35
+16: Jim O' Sullivan |Time Played: 40:35 |Metres: 27 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+17: Velento O' Sullivan |Time Played: 20:41 |Metres: 14 |Tackles: 6 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+Highlights:                 
+Most Tackles: Dominic Papiai: 11
+Most Points: Jarrod Fox: 12
+Most Metres: Trent North: 60
+Most Errors: Jarrod Fox: 2
+                             
+Away Team: Caulbury Rose Gardens
+1: Corey Costa |Time Played: 80:33 |Metres: 20 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+2: Jane Develo |Time Played: 80:33 |Metres: 40 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 23
+3: Allie Cooper |Time Played: 71:43 |Metres: 29 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+4: Sr. Tedesco |Time Played: 69:49 |Metres: 102 |Tackles: 4 |Kicks: 1 |Kick Metres: 19 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 67
+5: Kevin South |Time Played: 80:33 |Metres: 30 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+6: Jordan Jackington |Time Played: 80:33 |Metres: 85 |Tackles: 15 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 37
+7: Jeni Sunnerson |Time Played: 80:33 |Metres: 8 |Tackles: 13 |Kicks: 2 |Kick Metres: 95 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+8: Avery Croker |Time Played: 80:33 |Metres: 44 |Tackles: 3 |Kicks: 2 |Kick Metres: 67 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 41
+9: Dylan Stanley |Time Played: 70:07 |Metres: 4 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+10: Jr. Loomer |Time Played: 40:53 |Metres: 64 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 20
+11: Jack Junior |Time Played: 42:33 |Metres: 28 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+12: Tommy Cummins |Time Played: 29:56 |Metres: 2 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+13: Brett Hunt |Time Played: 80:33 |Metres: 9 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Jordan Alexander |Time Played: 50:41 |Metres: 40 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 32
+15: Ann Ujhazzy |Time Played: 18:00 |Metres: 14 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+16: Carl Cummins |Time Played: 51:36 |Metres: 18 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 15
+17: Don Port |Time Played: 38:00 |Metres: 29 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+Highlights:                 
+Most Tackles: Jordan Jackington: 15
+Most Points: Jane Develo: 8
+Most Metres: Sr. Tedesco: 102
+Most Errors: Corey Costa: 3
+                             
+---------TEAM STATS---------
+Home Team: Repaired Coast Rabbitohs
+Total Metres: 421
+Total Kick Metres: 257
+Total Errors: 6
+Total Tackles: 111
+Total Tries: 6
+Total Goals: 6
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Caulbury Rose Gardens
+Total Metres: 566
+Total Kick Metres: 226
+Total Errors: 8
+Total Tackles: 112
+Total Tries: 6
+Total Goals: 6
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Sr. Tedesco
+2nd (2 Points) -- Avery Croker
+3rd (1 Point) -- Jordan Jackington
+----------------------------

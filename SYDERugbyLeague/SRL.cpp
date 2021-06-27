@@ -55,6 +55,7 @@ bool SRLGame::formatConfirmedCall = false;
 bool SRLGame::exitCall = false;
 bool SRLGame::exitConfirmedCall = false;
 bool SRLGame::finalsSystemCall = false;
+vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
 SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
@@ -2162,7 +2163,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.5.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.6.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2850,6 +2851,7 @@ void SRLGame::SimulateGames()
 				{
 					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets[ii].betState = Bet_Lost;
 				}
+				checkSpecificBetAchievements(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets[ii]);
 			}
 
 			if (!finals)
@@ -2936,6 +2938,7 @@ void SRLGame::SimulateGames()
 					{
 						m_BetMoney.addBetPrice(m_Season.m_PremiershipBets[ii].ReturnBetWinnings());
 						m_Season.m_PremiershipBets[ii].betState = Bet_Won;
+						AchievementStrings.push_back("SRL_PREMIERSHIP_TIP");
 					}
 					else
 					{
@@ -2950,6 +2953,32 @@ void SRLGame::SimulateGames()
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_PremiershipArticle);
 				m_ArticlesRemaining--;
 				UpdateBets();
+				AchievementStrings.push_back("SRL_FIRST_SEASON");
+				if (seasonLength == Length_ShortSeason)
+				{
+					AchievementStrings.push_back("SRL_SHORT_SEASON");
+				}
+				else if (seasonLength == Length_MediumSeason)
+				{
+					AchievementStrings.push_back("SRL_MEDIUM_SEASON");
+				}
+				else if (seasonLength == Length_NormalSeason)
+				{
+					AchievementStrings.push_back("SRL_NORMAL_SEASON");
+				}
+				else if (seasonLength == Length_LongSeason)
+				{
+					AchievementStrings.push_back("SRL_LONG_SEASON");
+				}
+				else if (seasonLength == Length_ExtremeSeason)
+				{
+					AchievementStrings.push_back("SRL_EXTREME_SEASON");
+				}
+				else if (seasonLength == Length_EnduranceSeason)
+				{
+					AchievementStrings.push_back("SRL_ENDURANCE_SEASON");
+				}
+				checkBetAchievements();
 			}
 			else
 			{
@@ -3181,6 +3210,37 @@ void SRLGame::sortOutNews()
 		a_Headline.SetFunc(ArticleClick);
 		a_Headline.setTag(to_string(i));
 		m_NewsHeadlines.push_back(a_Headline);
+	}
+}
+
+void SRLGame::checkSpecificBetAchievements(SRLGameBet _bet)
+{
+	if (_bet.betAmount.dollars >= 1000)
+	{
+		if (_bet.betOdds.dollars > 3 && _bet.betState == Bet_Won)
+		{
+			AchievementStrings.push_back("SRL_NO_DOUBT");
+		}
+		if (_bet.betOdds.dollars = 1 && _bet.betOdds.cents < 40 && _bet.betState == Bet_Lost)
+		{
+			AchievementStrings.push_back("SRL_ALWAYS_DOUBT");
+		}
+	}
+}
+
+void SRLGame::checkBetAchievements()
+{
+	if (m_BetMoney.dollars == 0 && m_BetMoney.cents == 0)
+	{
+		AchievementStrings.push_back("SRL_BANKRUPT");
+	}
+	if (m_BetMoney.dollars >= 10000)
+	{
+		AchievementStrings.push_back("SRL_HIGH_ROLLER");
+	}
+	if (m_BetMoney.dollars == 0 && m_BetMoney.cents == 1)
+	{
+		AchievementStrings.push_back("SRL_HANGING_ON");
 	}
 }
 

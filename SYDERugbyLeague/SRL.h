@@ -350,6 +350,8 @@ public:
 	static void loadGameSettings();
 
 	void sortOutNews();
+	void checkSpecificBetAchievements(SRLGameBet _bet);
+	void checkBetAchievements();
 	void offContractTrade();
 	void offContractTrade(int team1, int player1);
 	void TeamTrade();
@@ -437,6 +439,8 @@ public:
 
 	static int priorBetNumberLine;
 	void sortOutResultsScreen();
+
+	static vector<string> AchievementStrings;
 
 	static int playerClicked;
 	static bool playerCall;

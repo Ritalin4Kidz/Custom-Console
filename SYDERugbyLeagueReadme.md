@@ -24,6 +24,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.4.0 beta
+- Fixed sin bin bug
+- suspended impossible bets
+
 ###  0.9.3.0 beta
 - Team formatting
 

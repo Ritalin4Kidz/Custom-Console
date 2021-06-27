@@ -2137,7 +2137,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.3.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.4.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2628,31 +2628,41 @@ void SRLGame::CalculatePremiershipOdds()
 	m_PremiershipBetButtons.clear();
 	for (int i = 0; i < m_Season.m_Ladder.m_Ladder.size(); i++)
 	{
+		int currentThreshold = m_Season.m_Ladder.m_Ladder[7].points;
 		int winDiff = m_Season.m_Ladder.m_Ladder[i].won - m_Season.m_Ladder.m_Ladder[i].lost;
 		int maxPointsSeason = seasonLength * 2;
-		int maxPoints = m_roundToSimulate * 2;
+		int maxPointsCurrent = m_roundToSimulate * 2;
+		int maxPointsPotential = m_Season.m_Ladder.m_Ladder[i].points + ((seasonLength - m_roundToSimulate) * 2);
 		if (m_roundToSimulate >= seasonLength)
 		{
-			maxPoints = maxPointsSeason;
+			maxPointsCurrent = maxPointsSeason;
 		}
-		if (maxPoints == 0)
+		if (maxPointsCurrent == 0)
 		{
-			maxPoints = 1;
+			maxPointsCurrent = 1;
 		}
-		int pointPercent = (m_Season.m_Ladder.m_Ladder[i].points / maxPoints) * 100;
+
+		int pointPercent = (m_Season.m_Ladder.m_Ladder[i].points / maxPointsCurrent) * 100;
 		int ladderAdj = i * 25;
 		int oddsCents = 500;
 		oddsCents += ladderAdj;
 		oddsCents -= pointPercent;
 		m_Season.m_Ladder.m_Ladder[i].premiershipOdds = SRLBetPrice(oddsCents / 100, oddsCents % 100);
-		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtn.SetFunc(BetMatchClick);
-		a_BetBtn.setTag(to_string(i) + ";10;0;" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
-		m_PremiershipBetButtons.push_back(a_BetBtn);
-		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtnCustom.SetFunc(CustomBetClick);
-		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
-		m_PremiershipBetButtons.push_back(a_BetBtnCustom);
+		if (currentThreshold > maxPointsPotential)
+		{
+			m_Season.m_Ladder.m_Ladder[i].premiershipOdds.suspended = true;
+		}
+		if (!m_Season.m_Ladder.m_Ladder[i].premiershipOdds.suspended)
+		{
+			SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+			a_BetBtn.SetFunc(BetMatchClick);
+			a_BetBtn.setTag(to_string(i) + ";10;0;" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
+			m_PremiershipBetButtons.push_back(a_BetBtn);
+			SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 3), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+			a_BetBtnCustom.SetFunc(CustomBetClick);
+			a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "P;" + m_Season.m_Ladder.m_Ladder[i].teamName);
+			m_PremiershipBetButtons.push_back(a_BetBtnCustom);
+		}
 	}
 }
 
@@ -3513,6 +3523,10 @@ bool SRLBetPrice::greaterThan(SRLBetPrice bet)
 
 string SRLBetPrice::ReturnPrice()
 {
+	if (suspended)
+	{
+		return "Suspended";
+	}
 	string priceStr = "$" + to_string(dollars);
 	string centsStr = to_string(cents);
 	if (centsStr.length() == 1)

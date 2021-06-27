@@ -118,6 +118,8 @@ struct SRLBetPrice
 	int dollars;
 	int cents;
 
+	bool suspended = false;
+
 	void addCents(int c);
 	void addBetPrice(SRLBetPrice bet);
 

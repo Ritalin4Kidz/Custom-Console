@@ -398,7 +398,26 @@ void SRLGameManager::play()
 	if (!m_HomeTeamHasBall)
 	{
 		defender = m_HomeTeam.getRandomPlayer();
+		while (defender.getPlayerSent())
+		{
+			defender = m_HomeTeam.getRandomPlayer();
+		}
 		attacker = m_AwayTeam.getRandomPlayer();
+		while (attacker.getPlayerSent())
+		{
+			attacker = m_HomeTeam.getRandomPlayer();
+		}
+	}
+	else
+	{
+		while (defender.getPlayerSent())
+		{
+			defender = m_AwayTeam.getRandomPlayer();
+		}
+		while (attacker.getPlayerSent())
+		{
+			attacker = m_HomeTeam.getRandomPlayer();
+		}
 	}
 
 	//MOVEMENT

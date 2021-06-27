@@ -49,6 +49,12 @@ std::vector<std::string> SYDEFileDefaults::getAllFileNamesInFolder(std::string p
 	return getAllFileNamesInFolder(path, format, false);
 }
 
+void SYDEFileDefaults::deleteAllFilesInFolder(const std::string& dir_path)
+{
+	for (const auto& entry : fs::directory_iterator(dir_path))
+		fs::remove_all(entry.path());
+}
+
 int SYDEFileDefaults::getFileCount(std::string path, std::string format)
 {
 	return getAllFileNamesInFolder(path,format).size();

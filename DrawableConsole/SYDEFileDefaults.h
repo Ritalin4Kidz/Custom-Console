@@ -48,6 +48,7 @@ public:
 	/// <returns>filenames</returns>
 	static std::vector<std::string> getAllFileNamesInFolder(std::string path, std::string format);
 
+	static void deleteAllFilesInFolder(const std::string& dir_path);
 
 	static int getFileCount(std::string path, std::string format);
 

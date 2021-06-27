@@ -24,6 +24,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.3.0 beta
+- Team formatting
+
 ###  0.9.2.1 beta
 - Config colour pallete fix
 

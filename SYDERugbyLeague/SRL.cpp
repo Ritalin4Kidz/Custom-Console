@@ -50,6 +50,10 @@ string SRLGame::betTag = "";
 bool SRLGame::betCall = false;
 bool SRLGame::exportCall = false;
 bool SRLGame::exportConfirmedCall = false;
+bool SRLGame::formatCall = false;
+bool SRLGame::formatConfirmedCall = false;
+bool SRLGame::exitCall = false;
+bool SRLGame::exitConfirmedCall = false;
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
 SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
@@ -87,6 +91,20 @@ vector<string> Split(string a_String, char splitter)
 
 #pragma region ButtonVoids
 
+void ExitButtonClick()
+{
+	SRLGame::exitCall = true;
+}
+
+void ExitOKClick()
+{
+	SRLGame::exitConfirmedCall = true;
+}
+void ExitCNCLClick()
+{
+	SRLGame::exitCall = false;
+}
+
 void ExportButtonClick()
 {
 	SRLGame::exportCall = true;
@@ -99,6 +117,20 @@ void ExportOKClick()
 void ExportCNCLClick()
 {
 	SRLGame::exportCall = false;
+}
+
+void FormatButtonClick()
+{
+	SRLGame::formatCall = true;
+}
+
+void FormatOKClick()
+{
+	SRLGame::formatConfirmedCall = true;
+}
+void FormatCNCLClick()
+{
+	SRLGame::formatCall = false;
 }
 
 void PlayerClick()
@@ -833,6 +865,18 @@ void SRLGame::init()
 	m_TeamInDepthView.setHighLight(RED);
 	m_TeamInDepthView.SetFunc(InDepthTeamViewClick);
 
+	m_ExitGame = SYDEClickableButton("  Exit Application  ", Vector2(40, 19), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_ExitGame.setHighLight(RED);
+	m_ExitGame.SetFunc(ExitButtonClick);
+
+	m_ExitGameOK = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_ExitGameOK.setHighLight(RED);
+	m_ExitGameOK.SetFunc(ExitOKClick);
+
+	m_ExitGameCNL = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_ExitGameCNL.setHighLight(RED);
+	m_ExitGameCNL.SetFunc(ExitCNCLClick);
+
 #pragma endregion
 
 #pragma region GameSettings
@@ -916,6 +960,19 @@ void SRLGame::init()
 	m_SettingsEventsBtn = SYDEClickableButton(" Season Events:", Vector2(36, 4), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsEventsBtn.setHighLight(RED);
 	m_SettingsEventsBtn.SetFunc(ToggleEventsClick);
+
+	m_FormatTeamsBtn = SYDEClickableButton(" Format Teams ", Vector2(7, 10), Vector2(14, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_FormatTeamsBtn.setHighLight(RED);
+	m_FormatTeamsBtn.SetFunc(FormatButtonClick);
+
+
+	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_FormatTeamsOKBtn.setHighLight(RED);
+	m_FormatTeamsOKBtn.SetFunc(FormatOKClick);
+
+	m_FormatTeamsCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_FormatTeamsCNCLBtn.setHighLight(RED);
+	m_FormatTeamsCNCLBtn.SetFunc(FormatCNCLClick);
 #pragma endregion
 
 #pragma region keypad
@@ -1110,6 +1167,14 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	{
 		return ExportPop_UP(window, windowWidth, windowHeight);
 	}
+	if (exitCall)
+	{
+		return ExitPopUp(window, windowWidth, windowHeight);
+	}
+	if (formatCall)
+	{
+		return FormatPopUp(window, windowWidth, windowHeight);
+	}
 	if (errorCall)
 	{
 		return ErrorPop_UP(window, windowWidth, windowHeight);
@@ -1228,6 +1293,7 @@ ConsoleWindow SRLGame::main_menu_scene(ConsoleWindow window, int windowWidth, in
 	}
 	window = drawMainMenuTabs(window);
 	window = m_TeamInDepthView.draw_ui(window);
+	window = m_ExitGame.draw_ui(window);
 	//window.setTextAtPoint(Vector2(0, 19), "", BLACK_BRIGHTWHITE_BG);
 	return window;
 }
@@ -2032,6 +2098,7 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 			window.setTextAtPoint(Vector2(22, 8), "Medium", BRIGHTWHITE);
 			break;
 		}
+		window = m_FormatTeamsBtn.draw_ui(window);
 	}
 	return window;
 }
@@ -2070,7 +2137,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.2.1-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.3.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2088,6 +2155,55 @@ ConsoleWindow SRLGame::SimulatePopUp(ConsoleWindow window, int windowWidth, int 
 	window.setTextAtPoint(Vector2(6, 6),"SIMULATING....PLEASE WAIT...." , BLACK_BRIGHTYELLOW_BG);
 	window.setTextAtPoint(Vector2(6, 7), "Please note simulation will take longer", BLACK_BRIGHTYELLOW_BG);
 	window.setTextAtPoint(Vector2(6, 8), "the more rounds simulated at once", BLACK_BRIGHTYELLOW_BG);
+	return window;
+}
+
+ConsoleWindow SRLGame::FormatPopUp(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	if (formatConfirmedCall)
+	{
+		formatCall = false;
+		formatConfirmedCall = false;
+		try
+		{
+			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Teams");
+			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\OffContract");
+			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Players");
+		}
+		catch (exception e)
+		{
+			errorCall = true;
+			errorMessage = "Error Occured When Formatting";
+		}
+	}
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Are you sure you want to delete team data?", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(6, 7), "This cannot be undone!", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(6, 8), "New teams will be generated when opening", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(6, 9), "In depth view mode or new season", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window = m_FormatTeamsOKBtn.draw_ui(window);
+	window = m_FormatTeamsCNCLBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::ExitPopUp(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Are you sure you want to exit?", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window = m_ExitGameOK.draw_ui(window);
+	window = m_ExitGameCNL.draw_ui(window);
 	return window;
 }
 

@@ -304,6 +304,8 @@ public:
 	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow SimulatePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow FormatPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow ExitPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow drawTabs(ConsoleWindow window);
 	ConsoleWindow drawBetTabs(ConsoleWindow window);
@@ -376,6 +378,10 @@ public:
 	static bool menuCall;
 	static bool exportCall;
 	static bool exportConfirmedCall;
+	static bool formatCall;
+	static bool formatConfirmedCall;
+	static bool exitCall;
+	static bool exitConfirmedCall;
 
 	static bool m_GoalKicker;
 	static bool m_Weather;
@@ -489,6 +495,9 @@ private:
 	SYDEClickableButton m_SoundTrackOnBtn;
 	SYDEClickableButton m_SoundTrackNextBtn;
 	SYDEClickableButton m_SoundTrackVolume;
+	SYDEClickableButton m_FormatTeamsBtn;
+	SYDEClickableButton m_FormatTeamsOKBtn;
+	SYDEClickableButton m_FormatTeamsCNCLBtn;
 
 	//Results Page
 	SYDEClickableButton m_GameResultSummaryBtn;
@@ -547,6 +556,10 @@ private:
 	SYDEClickableButton m_PrevTeamInDepth;
 	SYDEClickableButton m_TeamListInDepth;
 	SYDEClickableButton m_BackTeamListInDepth;
+
+	SYDEClickableButton m_ExitGame;
+	SYDEClickableButton m_ExitGameOK;
+	SYDEClickableButton m_ExitGameCNL;
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;

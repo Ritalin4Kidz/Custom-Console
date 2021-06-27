@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
 	//SYDEGamePlay::showFPS(true);
 	window.setStartingLine(1);
 	SRLGame m_SRL;
-	while (true)
+	while (!SRLGame::exitConfirmedCall)
 	{
 		window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		window = SRLGame::m_GamePlaySoundtrack.playWindow(window);

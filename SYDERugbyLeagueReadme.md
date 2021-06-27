@@ -4,17 +4,6 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR BETA (As Of 25-06-2021)
-
-- Save Game Application Settings To A File (0.7.2.0alpha)
-
-- SRL Game simulation updates
-- - Add play for 80 min full time (0.7.1.0alpha)
-- - More video ref outcomes (0.7.1.0alpha)
-
-- Best Player calculation improvements
-
-
 ## GOALS FOR GOLD
 
 - Increase the amount of player names & team names to more than double
@@ -27,11 +16,17 @@ SRL Simulation game made inside the SYDE Framework.
 
 - full soundtrack implementation
 
+- export play by play to file saved in documents
+
 ## ABANDONED IDEAS
 
 - Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
 ## Release Notes
+
+###  0.9.2.0 beta
+- Game exporting to file
+- season exporting to file
 
 ###  0.9.1.0 beta 
 - News Article Updates

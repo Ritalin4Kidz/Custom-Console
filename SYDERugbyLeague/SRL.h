@@ -296,6 +296,9 @@ public:
 
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
 
+	void LeaderboardOutputStrings(vector<string> &mainVec, vector<SRLLeaderboardPosition> ldrboard);
+
+
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow NewsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -313,6 +316,7 @@ public:
 	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
@@ -370,6 +374,8 @@ public:
 
 	static bool errorCall;
 	static bool menuCall;
+	static bool exportCall;
+	static bool exportConfirmedCall;
 
 	static bool m_GoalKicker;
 	static bool m_Weather;
@@ -524,6 +530,9 @@ private:
 	SYDEClickableButton m_KeypadBtn_OK;
 	SYDEClickableButton m_KeypadBtn_CNCL;
 
+	SYDEClickableButton m_ExportBtn;
+	SYDEClickableButton m_ExportOKBtn;
+	SYDEClickableButton m_ExportCNCLBtn;
 
 	vector<SYDEClickableButton> m_BetButtons;
 	vector<SYDEClickableButton> m_PremiershipBetButtons;

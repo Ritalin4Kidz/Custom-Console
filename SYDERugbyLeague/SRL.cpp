@@ -48,6 +48,8 @@ string SRLGame::errorMessage = "";
 int SRLGame::articleClicked = 0;
 string SRLGame::betTag = "";
 bool SRLGame::betCall = false;
+bool SRLGame::exportCall = false;
+bool SRLGame::exportConfirmedCall = false;
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
 SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
@@ -84,6 +86,20 @@ vector<string> Split(string a_String, char splitter)
 }
 
 #pragma region ButtonVoids
+
+void ExportButtonClick()
+{
+	SRLGame::exportCall = true;
+}
+
+void ExportOKClick()
+{
+	SRLGame::exportConfirmedCall = true;
+}
+void ExportCNCLClick()
+{
+	SRLGame::exportCall = false;
+}
 
 void PlayerClick()
 {
@@ -853,6 +869,18 @@ void SRLGame::init()
 	m_MenuCnclViewBtn.setHighLight(RED);
 	m_MenuCnclViewBtn.SetFunc(MenuCNCLClick);
 
+	m_ExportBtn = SYDEClickableButton(" Export", Vector2(50, 18), Vector2(8, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_ExportBtn.setHighLight(RED);
+	m_ExportBtn.SetFunc(ExportButtonClick);
+
+	m_ExportOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_ExportOKBtn.setHighLight(RED);
+	m_ExportOKBtn.SetFunc(ExportOKClick);
+
+	m_ExportCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_ExportCNCLBtn.setHighLight(RED);
+	m_ExportCNCLBtn.SetFunc(ExportCNCLClick);
+
 #pragma endregion
 
 #pragma region GameSettingsOptions
@@ -1077,6 +1105,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	if (SimulateCall)
 	{
 		return SimulatePopUp(window, windowWidth, windowHeight);
+	}
+	if (exportCall)
+	{
+		return ExportPop_UP(window, windowWidth, windowHeight);
 	}
 	if (errorCall)
 	{
@@ -1391,7 +1423,7 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 		window.setTextAtPoint(Vector2(34, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].AwayTeam, WHITE);
 	}
 	SimulateGames();
-
+	window = m_ExportBtn.draw_ui(window);
 	return window;
 }
 
@@ -1741,6 +1773,8 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 		{
 			window.setTextAtPoint(Vector2(1, 3 + i), m_ResultsScreenVector[i + m_LineResults], WHITE);
 		}
+
+		window = m_ExportBtn.draw_ui(window);
 	}
 	return window;
 }
@@ -1863,6 +1897,14 @@ ConsoleWindow SRLGame::LeaderboardPositions(ConsoleWindow window, vector<SRLLead
 		}
 	}
 	return window;
+}
+
+void SRLGame::LeaderboardOutputStrings(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		mainVec.push_back(to_string(i + 1) + ". " + ldrboard[i].Player + "-" + ldrboard[i].TeamName + " : " + to_string(ldrboard[i].points));
+	}
 }
 
 ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -2028,7 +2070,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.1.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.2.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2166,6 +2208,185 @@ ConsoleWindow SRLGame::ErrorPop_UP(ConsoleWindow window, int windowWidth, int wi
 	}
 	window.setTextAtPoint(Vector2(6, 6), errorMessage, BRIGHTWHITE_BRIGHTRED_BG);
 	window = m_ErrorOkViewBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	if (exportConfirmedCall)
+	{
+		exportCall = false;
+		exportConfirmedCall = false;
+		try
+		{
+			if (currentState == ResultsViewState)
+			{
+				if (m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay.empty())
+				{
+					errorCall = true;
+					errorMessage = "No data to export";
+					return window;
+				}
+
+				std::chrono::system_clock currentTime;
+				std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+				std::string time = std::ctime(&t);
+				time.resize(time.size() - 1);
+				string fileName = "EngineFiles\\SavedGameResults\\" + m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam + "v" + m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam + "_" + time + ".txt";
+				fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+				fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+				std::ofstream output_file(fileName.c_str());
+				for (const auto& e : m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay) output_file << e << "\n";
+			}
+			else if (currentState == SeasonModeState)
+			{
+				if (m_roundToSimulate < BaseSeasonGames + 4)
+				{
+					errorCall = true;
+					errorMessage = "Season must be complete first";
+					return window;
+				}
+				vector<string> temp;
+				temp.push_back("LADDER RESULTS");
+				temp.push_back("--------------------------------");
+				for (int i = 0; i < m_Season.m_Ladder.m_Ladder.size(); i++)
+				{
+					temp.push_back(to_string(i + 1) + ". " + m_Season.m_Ladder.m_Ladder[i].teamName + " Wins: " + to_string(m_Season.m_Ladder.m_Ladder[i].won) + "| Lost: " + to_string(m_Season.m_Ladder.m_Ladder[i].lost) + "| PD: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsDifference) + "| Points: " + to_string(m_Season.m_Ladder.m_Ladder[i].points));
+				}
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				for (int i = 0; i < m_Season.m_Draw.m_Rounds.size(); i++)
+				{
+					temp.push_back("Round " + to_string(i + 1) + " Results");
+					temp.push_back("--------------------------------");
+					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_Games.size(); ii++)
+					{
+						temp.push_back(m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam + " " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore) + " v " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore) + " " + m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam);
+					}
+					temp.push_back("--------------------------------");
+					temp.push_back("");
+				}
+				temp.push_back("Top Try Scorers");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopTries.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Top Goal Scorers");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopGoals.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Top Field Goal Scorers");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopFieldGoals.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Metres Ran");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopMetres.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Tackles Made");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopTackles.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most 40/20's Kicked");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_Top4020.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Kicking Metres");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopKickMetres.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Steals");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopSteals.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most No Tries");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopNoTries.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Errors");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopErrors.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Penalties");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopPenalty.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Ruck Infringements");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopRuckErrors.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Sin Bins");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopSinBin.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Send Offs");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopSendOff.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Most Injuries");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopInjuries.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Top Point Scores");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopPoints.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				temp.push_back("Top Players Of The Season");
+				temp.push_back("--------------------------------");
+				LeaderboardOutputStrings(temp, m_Season.m_TopPlayers.shortlist);
+				temp.push_back("--------------------------------");
+				temp.push_back("");
+				std::chrono::system_clock currentTime;
+				std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+				std::string time = std::ctime(&t);
+				time.resize(time.size() - 1);
+				string fileName = "EngineFiles\\SavedSeasonResults\\Season_" + time + ".txt";
+				fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+				fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+				std::ofstream output_file(fileName.c_str());
+				for (const auto& e : temp) output_file << e << "\n";
+
+			}
+		}
+		catch (exception e)
+		{
+			errorCall = true;
+			errorMessage = "Export Failed: unexpected error";
+		}
+		return window;
+	}
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", GREEN_GREEN_BG);
+		}
+	}
+	if (currentState == ResultsViewState)
+	{
+		window.setTextAtPoint(Vector2(6, 6), "Export Game To Text File?", BRIGHTWHITE_GREEN_BG);
+	}
+	else if (currentState == SeasonModeState)
+	{
+		window.setTextAtPoint(Vector2(6, 6), "Export Season To Text File?", BRIGHTWHITE_GREEN_BG);
+	}
+	window = m_ExportOKBtn.draw_ui(window);
+	window = m_ExportCNCLBtn.draw_ui(window);
 	return window;
 }
 

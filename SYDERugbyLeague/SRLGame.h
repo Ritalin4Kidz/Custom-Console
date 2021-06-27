@@ -34,6 +34,8 @@ public:
 	void addSumaryNoMinutes(string a_Play);
 	void addSummary(string a_Play, SRLPlayer player);
 
+	void addMinute();
+
 	void generateWeather();
 
 	SRLTeam getHomeTeam() { return m_HomeTeam; }

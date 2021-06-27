@@ -423,7 +423,7 @@ SRLPlayer SRLTeam::getGoalKicker()
 	int temp1 = 0;
 	for (int i = 0; i < 13; i++)
 	{
-		if (m_TeamList[i].getGoalKicking() > temp)
+		if (m_TeamList[i].getGoalKicking() > temp && m_TeamList[i].getPlayerSent() == false)
 		{
 			temp = m_TeamList[i].getGoalKicking();
 			temp1 = i;

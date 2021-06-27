@@ -1,0 +1,215 @@
+----------LINE-UPS----------
+Home Team: Arcoomer Heat
+1: Bill Perry
+2: Ryan Vianna
+3: Pauly Meikle
+4: Adole Kylze
+5: Brett Thompson
+6: Kelin Tramion
+7: Luke West
+8: Jeremy Barter
+9: Cooper Sua
+10: Reimis Normandy
+11: Christian Lindsell
+12: Bob Gillard
+13: Karl Cleary
+14: Norman Holland
+15: Nick Stanley
+16: Karli Sua
+17: Nico Valenta
+Away Team: Anywheston Jellyfish
+1: Mitchell Mitt
+2: Velento Mallett
+3: Tom Hannington
+4: Sr. Mitt
+5: Jared Stimson
+6: Luke Hughes
+7: Ryan Winger
+8: Mitchell Hughes
+9: Chase Hing
+10: Lindsay Potter
+11: Pete Britt
+12: Lois Cotric
+13: Ash Winger
+14: Carl Cooper
+15: Jay Vianna
+16: Amy Silwedel
+17: Jim Xander
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - Arcoomer Heat: 0 v Anywheston Jellyfish: 0
+00:31 - Brett Thompson - Forward Pass
+01:38 - ------VIDEO REFEREE------
+01:38 - Jared Stimson - NO TRY - Offside
+01:38 - Jared Stimson - Penalty
+03:31 - Mitchell Mitt - Forward Pass
+04:15 - Kelin Tramion - TRY - Arcoomer Heat: 4 v Anywheston Jellyfish: 0
+05:15 - Cooper Sua - CONVERSION MISSED
+06:46 - Pauly Meikle - Knock On
+08:02 - ------VIDEO REFEREE------
+08:02 - Velento Mallett - TRY - Arcoomer Heat: 4 v Anywheston Jellyfish: 4
+09:02 - Mitchell Mitt - GOAL - Arcoomer Heat: 4 v Anywheston Jellyfish: 6
+10:19 - Sr. Mitt - Knock On
+10:47 - Bill Perry - Forward Pass
+10:59 - Chase Hing - Forward Pass
+11:17 - ------VIDEO REFEREE------
+11:17 - Bill Perry - TRY - Arcoomer Heat: 8 v Anywheston Jellyfish: 6
+12:17 - Cooper Sua - CONVERSION MISSED
+14:30 - Arcoomer Heat Interchanged Players Ryan Vianna & Norman Holland
+14:57 - Sr. Mitt - Knock On
+16:29 - Brett Thompson - 6th Tackle Changeover
+17:36 - Velento Mallett - Knock On
+18:02 - Chase Hing - Penalty
+18:02 - Cooper Sua - PENALTY GOAL - Arcoomer Heat: 10 v Anywheston Jellyfish: 6
+20:35 - Arcoomer Heat Interchanged Players Adole Kylze & Ryan Vianna
+20:50 - Ryan Vianna - Intercepted Off A Ryan Winger Pass
+21:01 - Jeremy Barter - Injury - Broken Jaw
+21:01 - Sr. Mitt - SIN BIN
+21:01 - Sr. Mitt - Penalty
+21:01 - Arcoomer Heat Interchanged Players Jeremy Barter & Adole Kylze
+21:46 - Kelin Tramion - TRY - Arcoomer Heat: 14 v Anywheston Jellyfish: 6
+22:46 - Cooper Sua - CONVERSION MISSED
+25:58 - Norman Holland - Intercepted Off A Ash Winger Pass
+26:58 - Brett Thompson - Knock On
+28:24 - Ryan Vianna - Penalty
+28:48 - Bill Perry - TRY - Arcoomer Heat: 14 v Anywheston Jellyfish: 10
+29:48 - Mitchell Mitt - GOAL - Arcoomer Heat: 14 v Anywheston Jellyfish: 12
+30:48 - Anywheston Jellyfish Interchanged Players Mitchell Hughes & Jay Vianna
+31:00 - Jared Stimson - Injury - Broken Jaw
+31:00 - Bob Gillard - SIN BIN
+31:00 - Bob Gillard - Penalty
+31:00 - Anywheston Jellyfish Interchanged Players Jared Stimson & Carl Cooper
+31:16 - SIN BIN RETURN - Sr. Mitt
+32:05 - Brett Thompson - Penalty
+32:32 - Ash Winger - Forward Pass
+33:57 - Ryan Vianna - Intercepted Off A Jay Vianna Pass
+34:14 - Adole Kylze - TRY - Arcoomer Heat: 18 v Anywheston Jellyfish: 12
+35:14 - Cooper Sua - GOAL - Arcoomer Heat: 20 v Anywheston Jellyfish: 12
+36:41 - Norman Holland - Over The Sideline
+37:24 - Carl Cooper - TRY - Arcoomer Heat: 20 v Anywheston Jellyfish: 16
+38:24 - Mitchell Mitt - CONVERSION MISSED
+40:00 - HALF TIME - Arcoomer Heat: 20 v Anywheston Jellyfish: 16
+40:06 - Arcoomer Heat Interchanged Players Cooper Sua & Karli Sua
+40:21 - Jay Vianna - Forward Pass
+40:21 - Arcoomer Heat Interchanged Players Norman Holland & Cooper Sua
+40:21 - Anywheston Jellyfish Interchanged Players Chase Hing & Jim Xander
+40:33 - Reimis Normandy - TRY - Arcoomer Heat: 24 v Anywheston Jellyfish: 16
+41:33 - Cooper Sua - GOAL - Arcoomer Heat: 26 v Anywheston Jellyfish: 16
+42:49 - Luke West - Over The Sideline
+43:04 - Jay Vianna - TRY - Arcoomer Heat: 26 v Anywheston Jellyfish: 20
+44:04 - Mitchell Mitt - GOAL - Arcoomer Heat: 26 v Anywheston Jellyfish: 22
+46:05 - Ryan Vianna - Intercepted Off A Tom Hannington Pass
+47:06 - Adole Kylze - 6th Tackle Changeover
+47:30 - Arcoomer Heat Interchanged Players Adole Kylze & Norman Holland
+48:12 - Lindsay Potter - Forward Pass
+48:59 - Karl Cleary - Knock On
+50:14 - Anywheston Jellyfish Interchanged Players Lois Cotric & Jared Stimson
+50:27 - Arcoomer Heat Interchanged Players Cooper Sua & Jeremy Barter
+50:38 - Anywheston Jellyfish Interchanged Players Ryan Winger & Lois Cotric
+50:54 - Pauly Meikle - Incorrect Play The Ball
+50:54 - Pauly Meikle - Penalty
+50:54 - Pauly Meikle - TRY - Arcoomer Heat: 26 v Anywheston Jellyfish: 26
+51:54 - Mitchell Mitt - GOAL - Arcoomer Heat: 26 v Anywheston Jellyfish: 28
+53:49 - Norman Holland - Stripped Ball Off Jay Vianna
+54:34 - Kelin Tramion - TRY - Arcoomer Heat: 30 v Anywheston Jellyfish: 28
+55:34 - Jeremy Barter - CONVERSION MISSED
+58:12 - Ryan Vianna - Intercepted Off A Lindsay Potter Pass
+59:10 - Norman Holland - Forward Pass
+60:17 - Luke Hughes - Over The Sideline
+60:47 - Kelin Tramion - Forward Pass
+60:47 - Anywheston Jellyfish Interchanged Players Carl Cooper & Amy Silwedel
+60:58 - Anywheston Jellyfish Interchanged Players Velento Mallett & Chase Hing
+61:09 - Jim Xander - Over The Sideline
+61:09 - Arcoomer Heat Interchanged Players Brett Thompson & Cooper Sua
+61:21 - Jared Stimson - Stripped Ball Off Pauly Meikle
+61:36 - Anywheston Jellyfish Interchanged Players Amy Silwedel & Velento Mallett
+66:04 - Christian Lindsell - Knock On
+66:19 - Bob Gillard - Ruck Infringement
+68:48 - Sr. Mitt - Over The Sideline
+69:05 - Jared Stimson - Penalty
+69:38 - ------VIDEO REFEREE------
+69:38 - Norman Holland - TRY - Arcoomer Heat: 34 v Anywheston Jellyfish: 28
+70:38 - Cooper Sua - GOAL - Arcoomer Heat: 36 v Anywheston Jellyfish: 28
+74:21 - Kelin Tramion - Penalty
+74:35 - Velento Mallett - Forward Pass
+77:00 - Ash Winger - Knock On
+77:48 - Mitchell Mitt - Intercepted Off A Bill Perry Pass
+79:26 - Karl Cleary - Forward Pass
+80:00 - FULL TIME - Arcoomer Heat: 36 v Anywheston Jellyfish: 28
+                             
+--------PLAYER STATS--------
+Home Team: Arcoomer Heat
+1: Bill Perry |Time Played: 80:08 |Metres: 21 |Tackles: 9 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+2: Jeremy Barter |Time Played: 50:42 |Metres: 16 |Tackles: 4 |Kicks: 1 |Kick Metres: 32 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+3: Pauly Meikle |Time Played: 80:08 |Metres: 18 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+4: Ryan Vianna |Time Played: 74:03 |Metres: 75 |Tackles: 10 |Kicks: 1 |Kick Metres: 55 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+5: Cooper Sua |Time Played: 69:11 |Metres: 22 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 4 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 25
+6: Kelin Tramion |Time Played: 80:08 |Metres: 128 |Tackles: 9 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 1 |Tries: 3 |Goals: 0 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 31
+7: Luke West |Time Played: 80:08 |Metres: 6 |Tackles: 8 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+8: Norman Holland |Time Played: 58:29 |Metres: 57 |Tackles: 7 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+9: Karli Sua |Time Played: 40:02 |Metres: 6 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+10: Reimis Normandy |Time Played: 80:08 |Metres: 109 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 63
+11: Christian Lindsell |Time Played: 80:08 |Metres: 44 |Tackles: 9 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+12: Bob Gillard |Time Played: 69:35 |Metres: 36 |Tackles: 12 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+13: Karl Cleary |Time Played: 80:08 |Metres: 14 |Tackles: 10 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+14: Brett Thompson |Time Played: 61:09 |Metres: 19 |Tackles: 7 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+15: Nick Stanley |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Adole Kylze |Time Played: 47:04 |Metres: 32 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 23
+17: Nico Valenta |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Bob Gillard: 12
+Most Points: Kelin Tramion: 12
+Most Metres: Kelin Tramion: 128
+Most Errors: Norman Holland: 2
+                             
+Away Team: Anywheston Jellyfish
+1: Mitchell Mitt |Time Played: 80:08 |Metres: 73 |Tackles: 11 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 4 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 31
+2: Chase Hing |Time Played: 59:31 |Metres: 6 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+3: Tom Hannington |Time Played: 80:08 |Metres: 68 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+4: Sr. Mitt |Time Played: 69:53 |Metres: 26 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+5: Velento Mallett |Time Played: 79:30 |Metres: 65 |Tackles: 8 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+6: Luke Hughes |Time Played: 80:08 |Metres: 44 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+7: Lois Cotric |Time Played: 79:44 |Metres: 6 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+8: Jay Vianna |Time Played: 49:20 |Metres: 25 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+9: Jim Xander |Time Played: 39:47 |Metres: 23 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+10: Lindsay Potter |Time Played: 80:08 |Metres: 14 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+11: Pete Britt |Time Played: 80:08 |Metres: 8 |Tackles: 7 |Kicks: 1 |Kick Metres: 54 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+12: Jared Stimson |Time Played: 60:54 |Metres: 56 |Tackles: 16 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+13: Ash Winger |Time Played: 80:08 |Metres: 24 |Tackles: 8 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+14: Ryan Winger |Time Played: 50:38 |Metres: 21 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+15: Mitchell Hughes |Time Played: 30:48 |Metres: 2 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+16: Carl Cooper |Time Played: 29:47 |Metres: 13 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+17: Amy Silwedel |Time Played: 00:49 |Metres: 13 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+Highlights:                 
+Most Tackles: Jared Stimson: 16
+Most Points: Mitchell Mitt: 8
+Most Metres: Mitchell Mitt: 73
+Most Errors: Sr. Mitt: 3
+                             
+---------TEAM STATS---------
+Home Team: Arcoomer Heat
+Total Metres: 603
+Total Kick Metres: 269
+Total Errors: 11
+Total Tackles: 115
+Total Tries: 7
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Anywheston Jellyfish
+Total Metres: 487
+Total Kick Metres: 134
+Total Errors: 13
+Total Tackles: 113
+Total Tries: 3
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Reimis Normandy
+2nd (2 Points) -- Cooper Sua
+3rd (1 Point) -- Mitchell Mitt
+----------------------------

@@ -82,6 +82,35 @@ void SRLGameManager::addSummary(string a_Play, SRLPlayer player)
 	m_Summary.push_back(minutesStr + ":" + secondsStr + " - " + player.getName() + " - " + a_Play);
 }
 
+void SRLGameManager::addMinute()
+{
+	m_MinutesPassed++;
+	int timeToAddPlayers = 60;
+	if (!halfTimeHasPassed && m_MinutesPassed >= 40)
+	{
+		m_MinutesPassed = 40;
+		timeToAddPlayers -= m_SecondsPassed;
+		m_SecondsPassed = 0;
+	}
+	if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+	{
+		m_MinutesPassed = 80;
+		timeToAddPlayers -= m_SecondsPassed;
+		m_SecondsPassed = 0;
+	}
+	vector<string> SinBinPlays;
+	SinBinPlays = m_HomeTeam.addTimeOnField(timeToAddPlayers);
+	for (int i = 0; i < SinBinPlays.size(); i++)
+	{
+		addPlay(SinBinPlays[i]);
+	}
+	SinBinPlays = m_AwayTeam.addTimeOnField(timeToAddPlayers);
+	for (int i = 0; i < SinBinPlays.size(); i++)
+	{
+		addPlay(SinBinPlays[i]);
+	}
+}
+
 void SRLGameManager::generateWeather()
 {
 	if (!m_Weather)
@@ -1033,19 +1062,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		addSummary("TRY - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 		m_HomeTeam.addPlayerTry(attacker.getName());
 		m_HomeTeam.addPlayerStamina(attacker.getName(), 5);
-		m_MinutesPassed++;
-		m_HomeTeam.addTimeOnField(60);
-		m_AwayTeam.addTimeOnField(60);
-		if (!halfTimeHasPassed && m_MinutesPassed >= 40)
-		{
-			m_MinutesPassed = 40;
-			m_SecondsPassed = 0;
-		}
-		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
-		{
-			m_MinutesPassed = 80;
-			m_SecondsPassed = 0;
-		}
+		addMinute();
 		if (m_MainGoalKickers)
 		{
 			attacker = m_HomeTeam.getGoalKicker();
@@ -1072,9 +1089,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		{
 			addPlay("CONVERSION MISSED", attacker);
 		}
-		m_MinutesPassed++;
-		m_HomeTeam.addTimeOnField(60);
-		m_AwayTeam.addTimeOnField(60);
+		addMinute();
 		if (m_MinutesPassed >= 40 && halfTimeHasPassed == false)
 		{
 			halfTimeHasPassed = true;
@@ -1083,11 +1098,6 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_HomeTeamHasBall = false;
 			m_Tackle = 0;
 			return true;
-		}
-		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
-		{
-			m_MinutesPassed = 80;
-			m_SecondsPassed = 0;
 		}
 		m_BallPosition = 100;
 		m_Tackle = 0;
@@ -1195,19 +1205,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		addSummary("TRY - " + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 		m_AwayTeam.addPlayerTry(attacker.getName());
 		m_AwayTeam.addPlayerStamina(attacker.getName(), 5);
-		m_MinutesPassed++;
-		m_HomeTeam.addTimeOnField(60);
-		m_AwayTeam.addTimeOnField(60);
-		if (!halfTimeHasPassed && m_MinutesPassed >= 40)
-		{
-			m_MinutesPassed = 40;
-			m_SecondsPassed = 0;
-		}
-		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
-		{
-			m_MinutesPassed = 80;
-			m_SecondsPassed = 0;
-		}
+		addMinute();
 		if (m_MainGoalKickers)
 		{
 			attacker = m_AwayTeam.getGoalKicker();
@@ -1234,9 +1232,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		{
 			addPlay("CONVERSION MISSED", attacker);
 		}
-		m_MinutesPassed++;
-		m_HomeTeam.addTimeOnField(60);
-		m_AwayTeam.addTimeOnField(60);
+		addMinute();
 		if (m_MinutesPassed >= 40 && halfTimeHasPassed == false)
 		{
 			halfTimeHasPassed = true;
@@ -1245,11 +1241,6 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			m_HomeTeamHasBall = false;
 			m_Tackle = 0;
 			return true;
-		}
-		if (!fullTimeHasPassed && m_MinutesPassed >= 80)
-		{
-			m_MinutesPassed = 80;
-			m_SecondsPassed = 0;
 		}
 		m_BallPosition = 0;
 		m_Tackle = 0;
@@ -1391,19 +1382,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 				addPlay("PENALTY GOAL MISSED", attacker);
 				m_BallPosition = 50;
 			}
-			m_MinutesPassed++;
-			m_HomeTeam.addTimeOnField(60);
-			m_AwayTeam.addTimeOnField(60);
-			if (!halfTimeHasPassed && m_MinutesPassed >= 40)
-			{
-				m_MinutesPassed = 40;
-				m_SecondsPassed = 0;
-			}
-			if (!fullTimeHasPassed && m_MinutesPassed >= 80)
-			{
-				m_MinutesPassed = 80;
-				m_SecondsPassed = 0;
-			}
+			addMinute();
 		}
 		else if (m_BallPosition < 30)
 		{
@@ -1441,19 +1420,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 				addPlay("PENALTY GOAL MISSED", attacker);
 				m_BallPosition = 50;
 			}
-			m_MinutesPassed++;
-			m_HomeTeam.addTimeOnField(60);
-			m_AwayTeam.addTimeOnField(60);
-			if (!halfTimeHasPassed && m_MinutesPassed >= 40)
-			{
-				m_MinutesPassed = 40;
-				m_SecondsPassed = 0;
-			}
-			if (!fullTimeHasPassed && m_MinutesPassed >= 80)
-			{
-				m_MinutesPassed = 80;
-				m_SecondsPassed = 0;
-			}
+			addMinute();
 		}
 		else if (m_BallPosition > 70)
 		{

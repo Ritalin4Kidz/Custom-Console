@@ -33,6 +33,17 @@ enum EAchievements
 	SRL_LONG_SEASON = 10,
 	SRL_EXTREME_SEASON = 11,
 	SRL_ENDURANCE_SEASON = 12,
+	SRL_GAMBLING_ADDICT = 13,
+	SRL_NOT_PROBLEM = 14,
+	SRL_BIG_PROBLEM = 15,
+	SRL_FORMAT_TEAMS = 16,
+	SRL_NEWSPAPER = 17,
+	SRL_CONTROVERSY = 18,
+	SRL_SPOONBET = 19,
+	SRL_BET_CHALLENGE1 = 20,
+	SRL_BET_CHALLENGE2 = 21,
+	SRL_BET_CHALLENGE3 = 22,
+	SRL_BET_CHALLENGE4 = 23,
 };
 
 // Achievement array which will hold data about the achievements and their state
@@ -50,6 +61,17 @@ Achievement_t g_Achievements[] =
 	_ACH_ID(SRL_LONG_SEASON, "Making Up For Lost Time"),
 	_ACH_ID(SRL_EXTREME_SEASON, "24 Hours 7 Days A Week"),
 	_ACH_ID(SRL_ENDURANCE_SEASON, "Cult Of Rugby League"),
+	_ACH_ID(SRL_GAMBLING_ADDICT, "Addicted"),
+	_ACH_ID(SRL_NOT_PROBLEM, "Not A Problem If I'm Winning"),
+	_ACH_ID(SRL_BIG_PROBLEM, "1800-858-858"),
+	_ACH_ID(SRL_FORMAT_TEAMS, "Fresh Start"),
+	_ACH_ID(SRL_NEWSPAPER, "SYDE Daily"),
+	_ACH_ID(SRL_CONTROVERSY, "Bad PR"),
+	_ACH_ID(SRL_SPOONBET, "Disappointment"),
+	_ACH_ID(SRL_BET_CHALLENGE1, "Master Tipper"),
+	_ACH_ID(SRL_BET_CHALLENGE2, "Quit Whilst You're Ahead"),
+	_ACH_ID(SRL_BET_CHALLENGE3, "50/50"),
+	_ACH_ID(SRL_BET_CHALLENGE4, "Close But No Cigar"),
 };
 
 // Global access to Achievements object
@@ -96,7 +118,7 @@ int main(int argc, char* argv[])
 	// Create the SteamAchievements object if Steam was successfully initialized
 	if (bRet)
 	{
-		g_SteamAchievements = new CSteamAchievements(g_Achievements, 4);
+		g_SteamAchievements = new CSteamAchievements(g_Achievements, 24);
 	}
 
 

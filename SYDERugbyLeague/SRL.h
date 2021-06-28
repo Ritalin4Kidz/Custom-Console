@@ -614,6 +614,14 @@ private:
 	int finalsThreshold = 8;
 	int finalsRounds = 4;
 	int finalsSystemInt = 0;
+
+	int currentWonBetsSeason = 0;
+	int currentLostBetsSeason = 0;
+	int currentBetsTotalSeason = 0;
+	int currentWonBetsSeasonMatchOnly = 0;
+	int currentLostBetsSeasonMatchOnly = 0;
+	int currentBetsTotalSeasonMatchOnly = 0;
+
 	FinalsSeriesType fsType = Top8Normal;
 	string finalsSettingStr = "Top 8 Normal";
 	vector<FinalsSeries> m_FSTYPES = vector<FinalsSeries>({

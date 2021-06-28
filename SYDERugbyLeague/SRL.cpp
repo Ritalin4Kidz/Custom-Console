@@ -2135,6 +2135,14 @@ ConsoleWindow SRLGame::NewsView(ConsoleWindow window, int windowWidth, int windo
 	if (headlineCall)
 	{
 		m_Article = m_Season.m_Draw.m_Rounds[m_round].newsStories[articleClicked];
+		if (m_Article.type == SRLAT_Normal)
+		{
+			AchievementStrings.push_back("SRL_NEWSPAPER");
+		}
+		else if (m_Article.type == SRLAT_DropPlayer)
+		{
+			AchievementStrings.push_back("SRL_CONTROVERSY");
+		}
 		articleState = ArticleFullViewState;
 		headlineCall = false;
 	}
@@ -2163,7 +2171,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.6.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.6.1-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2190,6 +2198,7 @@ ConsoleWindow SRLGame::FormatPopUp(ConsoleWindow window, int windowWidth, int wi
 	{
 		formatCall = false;
 		formatConfirmedCall = false;
+		AchievementStrings.push_back("SRL_FORMAT_TEAMS");
 		try
 		{
 			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Teams");
@@ -2943,6 +2952,14 @@ void SRLGame::SimulateGames()
 					else
 					{
 						m_Season.m_PremiershipBets[ii].betState = Bet_Lost;
+						if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].LosingTeam)
+						{
+							AchievementStrings.push_back("SRL_BET_CHALLENGE4");
+						}
+						else if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Ladder.m_Ladder[m_Season.m_Ladder.m_Ladder.size() - 1].teamName)
+						{
+							AchievementStrings.push_back("SRL_SPOONBET");
+						}
 					}
 				}
 				SRLNewsArticle m_PremiershipArticle;
@@ -2953,6 +2970,18 @@ void SRLGame::SimulateGames()
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_PremiershipArticle);
 				m_ArticlesRemaining--;
 				UpdateBets();
+				if (currentBetsTotalSeasonMatchOnly >= 36 && currentWonBetsSeasonMatchOnly == currentBetsTotalSeasonMatchOnly)
+				{
+					AchievementStrings.push_back("SRL_BET_CHALLENGE1");
+				}
+				else if (currentBetsTotalSeasonMatchOnly == 1 && currentWonBetsSeasonMatchOnly == 0)
+				{
+					AchievementStrings.push_back("SRL_BET_CHALLENGE2");
+				}
+				else if (currentBetsTotalSeasonMatchOnly == 100 && currentWonBetsSeasonMatchOnly == 50)
+				{
+					AchievementStrings.push_back("SRL_BET_CHALLENGE3");
+				}
 				AchievementStrings.push_back("SRL_FIRST_SEASON");
 				if (seasonLength == Length_ShortSeason)
 				{
@@ -3428,6 +3457,9 @@ void SRLGame::UpdateBets()
 {
 	m_GameBetsWriteUp.clear();
 	m_PremiershipBetsWriteUp.clear();
+	currentWonBetsSeason = 0;
+	currentLostBetsSeason = 0;
+	currentBetsTotalSeason = 0;
 	for (int i = 0; i < m_Season.m_Draw.m_Rounds.size(); i++)
 	{
 		for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_Bets.size(); ii++)
@@ -3437,15 +3469,21 @@ void SRLGame::UpdateBets()
 			switch (m_Season.m_Draw.m_Rounds[i].m_Bets[ii].betState)
 			{
 			case Bet_Won:
+				currentWonBetsSeason++;
+				currentWonBetsSeasonMatchOnly++;
 				writeUp.colour = GREEN;
 				break;
 			case Bet_Lost:
+				currentLostBetsSeason++;
+				currentLostBetsSeasonMatchOnly++;
 				writeUp.colour = RED;
 				break;
 			default:
 				writeUp.colour = BRIGHTWHITE;
 				break;
 			}
+			currentBetsTotalSeason++;
+			currentBetsTotalSeasonMatchOnly++;
 			m_GameBetsWriteUp.push_back(writeUp);
 		}
 	}
@@ -3456,16 +3494,31 @@ void SRLGame::UpdateBets()
 		switch (m_Season.m_PremiershipBets[ii].betState)
 		{
 		case Bet_Won:
+			currentWonBetsSeason++;
 			writeUp.colour = GREEN;
 			break;
 		case Bet_Lost:
+			currentLostBetsSeason++;
 			writeUp.colour = RED;
 			break;
 		default:
 			writeUp.colour = BRIGHTWHITE;
 			break;
 		}
+		currentBetsTotalSeason++;
 		m_PremiershipBetsWriteUp.push_back(writeUp);
+	}
+	if (currentBetsTotalSeason >= 100)
+	{
+		AchievementStrings.push_back("SRL_GAMBLING_ADDICT");
+	}
+	if (currentWonBetsSeason >= 100)
+	{
+		AchievementStrings.push_back("SRL_NOT_PROBLEM");
+	}
+	if (currentLostBetsSeason >= 100)
+	{
+		AchievementStrings.push_back("SRL_BIG_PROBLEM");
 	}
 }
 

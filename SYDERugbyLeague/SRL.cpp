@@ -1569,6 +1569,10 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			betPlaceCall = false;
 			if (m_BetMoney.greaterThan(m_BetAmount) || m_BetMoney.equal(m_BetAmount))
 			{
+				if (m_BetAmount.equal(SRLBetPrice(420, 69)))
+				{
+					AchievementStrings.push_back("SRL_BET_NICE");
+				}
 				m_BetMoney.removeBetPrice(m_BetAmount);
 				if (homeTeamBet)
 				{
@@ -1613,6 +1617,10 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			betPlaceCall = false;
 			if (m_BetMoney.greaterThan(m_BetAmount) || m_BetMoney.equal(m_BetAmount))
 			{
+				if (m_BetAmount.equal(SRLBetPrice(420, 69)))
+				{
+					AchievementStrings.push_back("SRL_BET_NICE");
+				}
 				m_BetMoney.removeBetPrice(m_BetAmount);
 				m_Season.m_PremiershipBets.push_back(SRLGameBet(betTag, m_Season.m_Ladder.m_Ladder[gameNumberBet].premiershipOdds, m_BetAmount, true));
 				UpdateBets();

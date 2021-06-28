@@ -118,14 +118,18 @@ void DoAchievements(vector<string> temp)
 int main(int argc, char* argv[])
 {
 	config.ColourPalette(hOut);
+	bool fmodInit = SRLGame::m_GamePlaySoundtrack.init();
+	if (!fmodInit)
+	{
+		return 0;
+	}
 	// Initialize Steam
 	bool bRet = SteamAPI_Init();
 	// Create the SteamAchievements object if Steam was successfully initialized
-	if (bRet)
-	{
-		g_SteamAchievements = new CSteamAchievements(g_Achievements, 26);
-	}
-
+	//if (bRet)
+	//{
+	//	g_SteamAchievements = new CSteamAchievements(g_Achievements, 26);
+	//}
 
 
 	bool debug = false;
@@ -172,16 +176,23 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 	//SYDEGamePlay::showFPS(true);
 	window.setStartingLine(1);
-	SRLGame m_SRL;
-	while (!SRLGame::exitConfirmedCall)
-	{
-		window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		SteamAPI_RunCallbacks();
-		window = SRLGame::m_GamePlaySoundtrack.playWindow(window);
-		window.writeConsoleOptimized();
-		DoAchievements(SRLGame::AchievementStrings);
-		SRLGame::AchievementStrings.clear();
+	try {
+		SRLGame m_SRL;
+		while (!SRLGame::exitConfirmedCall)
+		{
+			window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
+			SteamAPI_RunCallbacks();
+			window = SRLGame::m_GamePlaySoundtrack.playWindow(window);
+			window.writeConsoleOptimized();
+			DoAchievements(SRLGame::AchievementStrings);
+			SRLGame::AchievementStrings.clear();
+		}
 	}
+	catch (exception e)
+	{
+
+	}
+	SRLGame::m_GamePlaySoundtrack.shutdown();
 	CONSOLE_CURSOR_INFO cInfo;
 	GetConsoleCursorInfo(hOut, &cInfo);
 	cInfo.bVisible = false;

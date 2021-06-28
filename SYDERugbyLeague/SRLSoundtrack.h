@@ -8,6 +8,9 @@
 
 #include "SYDESounds.h"
 
+#include <iostream>
+#include <fstream>
+
 #include <fmod.h>
 #include <fmod.hpp>
 #include <fmod_common.h>
@@ -32,14 +35,18 @@ struct SRLSoundtrackEntry
 
 class SRLSoundtrack {
 public:
-	SRLSoundtrack() {}
+	SRLSoundtrack() { }
 	string getSongPlaying() { return m_Soundtrack[selectedSong].m_SongArtist + "-" + m_Soundtrack[selectedSong].m_SongTitle; }
 	void addSong(string file, string title, string artist, string feat, int time) { m_Soundtrack.push_back(SRLSoundtrackEntry(file,title, artist, feat, time)); }
 	void addSong(SRLSoundtrackEntry file) { m_Soundtrack.push_back(file); }
 	void start();
 	ConsoleWindow displaySongInformation(ConsoleWindow window, int baseX);
-	void play();
+	bool play();
 	void stop();
+
+	bool init();
+
+	void shutdown();
 
 	void setOn(bool isOn) { playing = isOn; }
 

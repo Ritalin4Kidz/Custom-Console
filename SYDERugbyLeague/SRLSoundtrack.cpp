@@ -33,43 +33,28 @@ ConsoleWindow SRLSoundtrack::displaySongInformation(ConsoleWindow window, int ba
 	return window;
 }
 
-void SRLSoundtrack::play()
+bool SRLSoundtrack::play()
 {
 	if (playing)
 	{
 		m_pSound->release();
-		m_pFmodSystem->close();
-		m_pFmodSystem->release();
-
 
 		FMOD_RESULT result;
-		m_pFmodSystem = NULL;
-		//result = m_pChannel->setFrequency(musicSpeed);
-		// Create the main system object. 
-		result = FMOD::System_Create(&m_pFmodSystem);
-		if (result != FMOD_OK)
-		{
-			//printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-			return;
-		} // Initialize FMOD with 512 channels 
-		result = m_pFmodSystem->init(512, FMOD_INIT_NORMAL, 0);
-		if (result != FMOD_OK)
-		{
-			//printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
-			return;
-		}
-
 		//FMOD::Sound* m_pSound;
-		result = m_pFmodSystem->createSound(m_Soundtrack[selectedSong].m_SoundFile.c_str(), FMOD_DEFAULT, 0, &m_pSound);
-		result = m_pFmodSystem->playSound(m_pSound, 0, true, &m_pChannel);
-		result = m_pChannel->setVolume(getDefaultSoundAsFloat());
-		//result - m_pChannel->setFrequency(musicSpeed * m_speed);
-		result = m_pChannel->setPaused(false);
 
 		FMOD::ChannelGroup* pChannelGroup;
 		result = m_pFmodSystem->createChannelGroup("MyChannelGroup", &pChannelGroup);
-		result = m_pFmodSystem->playSound(m_pSound, pChannelGroup, false, &m_pChannel);
+		if (result != FMOD_OK)
+		{
+			return false;
+		}
 
+		result = m_pFmodSystem->createSound(m_Soundtrack[selectedSong].m_SoundFile.c_str(), FMOD_DEFAULT, 0, &m_pSound);
+		if (result != FMOD_OK)
+		{
+			return false;
+		}
+		result = m_pFmodSystem->playSound(m_pSound, pChannelGroup, false, &m_pChannel);
 		displaySongInfo = true;
 		songInfoPosition = (m_Soundtrack[selectedSong].getLongerString().size() + 4);
 		songInfoPosition = -songInfoPosition;
@@ -79,6 +64,34 @@ void SRLSoundtrack::play()
 }
 
 void SRLSoundtrack::stop()
+{
+	m_pSound->release();
+}
+
+bool SRLSoundtrack::init()
+{
+	// Initialize FMOD 
+	FMOD_RESULT result;
+	m_pFmodSystem = NULL;
+	// Create the main system object. 
+	result = FMOD::System_Create(&m_pFmodSystem);
+	if (result != FMOD_OK)
+	{
+		std::ofstream output_file("EngineFiles\\GameResults\\MainGame.txt");
+		output_file << FMOD_ErrorString(result) << "\n";
+		return false;
+	}
+	result = m_pFmodSystem->init(512, FMOD_INIT_NORMAL, 0);
+	if (result != FMOD_OK)
+	{
+		std::ofstream output_file("EngineFiles\\GameResults\\MainGame.txt");
+		output_file << FMOD_ErrorString(result) << "\n";
+		return false;
+	}
+	return true;
+}
+
+void SRLSoundtrack::shutdown()
 {
 	m_pSound->release();
 	m_pFmodSystem->close();

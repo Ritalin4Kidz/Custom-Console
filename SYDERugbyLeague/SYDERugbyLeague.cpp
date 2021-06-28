@@ -126,10 +126,10 @@ int main(int argc, char* argv[])
 	// Initialize Steam
 	bool bRet = SteamAPI_Init();
 	// Create the SteamAchievements object if Steam was successfully initialized
-	//if (bRet)
-	//{
-	//	g_SteamAchievements = new CSteamAchievements(g_Achievements, 26);
-	//}
+	if (bRet)
+	{
+		g_SteamAchievements = new CSteamAchievements(g_Achievements, 26);
+	}
 
 
 	bool debug = false;

@@ -24,6 +24,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.8.0 beta
+- Upgraded to FMOD sound systems
+
 ###  0.9.7.0 beta
 - Players now have a country of origin
 - players can now be randomized inside the in depth view

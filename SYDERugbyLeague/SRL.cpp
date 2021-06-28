@@ -4,7 +4,7 @@
 
 AssetsClass SRLGame::astVars = AssetsClass();
 GameStateSYDE SRLGame::currentState = Unknown_STATE;
-GameStateSYDE SRLGame::newState = MainMenu_STATE;
+GameStateSYDE SRLGame::newState = FMODSplashScreenState;
 GameStateBettingSYDE SRLGame::bettingState = CurrentRound_STATE;
 GameStateLeaderboardSYDE SRLGame::ldrState = Tries_State;
 GameStateResultSYDE SRLGame::resultState = Summary_STATE;
@@ -60,7 +60,7 @@ bool SRLGame::finalsSystemCall = false;
 vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
-SYDESoundtrack SRLGame::m_GamePlaySoundtrack = SYDESoundtrack();
+SRLSoundtrack SRLGame::m_GamePlaySoundtrack = SRLSoundtrack();
 
 #pragma endregion
 
@@ -659,6 +659,7 @@ void nextSongClick()
 	if (SRLGame::soundTrackOn)
 	{
 		SRLGame::m_GamePlaySoundtrack.next();
+		SRLGame::m_GamePlaySoundtrack.play();
 	}
 }
 
@@ -681,20 +682,17 @@ void SRLGame::init()
 	loadGameSettings();
 #pragma region SoundTrack
 
-	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\01MeetMeOneDay.wav"), 165);
-	m_GamePlaySoundtrack.editSongInfo(0, "Meet Me One Day", "Rit@lin4Kidz");
-	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\02IThink.wav"), 93);
-	m_GamePlaySoundtrack.editSongInfo(1, "I Think, Therefore I Suck", "Handsprime","(Rit@lin4Kidz Remix)");
-	m_GamePlaySoundtrack.addSong(SYDESoundFile("EngineFiles\\Soundtrack\\03Waterfall.wav"), 133);
-	m_GamePlaySoundtrack.editSongInfo(2, "Waterfall", "Handsprime","(Rit@lin4Kidz Remix)");
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz","", 168);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
 
 	m_GamePlaySoundtrack.setYPos(14);
-
+	m_GamePlaySoundtrack.setOn(true);
 	if (soundTrackOn)
 	{
 		m_GamePlaySoundtrack.start();
 	}
-	m_GamePlaySoundtrack.shuffleSongs(true, soundTrackOn);
+	m_GamePlaySoundtrack.shuffleSongs(true, false);
 
 #pragma endregion
 
@@ -1242,6 +1240,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	if (newState != currentState)
 	{
 		currentState = newState;
+		if (currentState == FMODSplashScreenState)
+		{
+			AssignState(std::bind(&SRLGame::fmodSplashScreen, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
 		if (currentState == MainMenu_STATE)
 		{
 			AssignState(std::bind(&SRLGame::main_menu_scene, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
@@ -1494,6 +1496,22 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		}
 	}
 
+	return window;
+}
+
+ConsoleWindow SRLGame::fmodSplashScreen(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = m_FmodSplash.draw_asset(window, Vector2(0, 0));
+	if (splashScreenInit)
+	{
+		splashScreenInit = false;
+		return window;
+	}
+	splashScreenTime += SYDEDefaults::getDeltaTime();
+	if (splashScreenTime >= 3.5f)
+	{
+		newState = MainMenu_STATE;
+	}
 	return window;
 }
 
@@ -2211,7 +2229,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.7.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.8.0-beta", BRIGHTWHITE);
 	return window;
 }
 

@@ -71,6 +71,9 @@ public:
 	/// <param name="artVars"></param>
 	static void activate_bySplashscreen(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars);
 
+
+	static void customSplashscreen(ConsoleWindow& window, int windowWidth, int windowHeight, CustomAsset splashscreen);
+
 	static void hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, AssetsClass astVars);
 	/// <summary>
 	/// reset the window to initialize settings, useful if window starts to mess up

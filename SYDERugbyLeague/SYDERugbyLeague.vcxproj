@@ -105,15 +105,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;$(ProjectDir)\steam;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;$(ProjectDir)\steam;$(ProjectDir)\fmod\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Release;%(AdditionalLibraryDirectories);$(ProjectDir)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SYDEEngine.lib;Winmm.lib;%(AdditionalDependencies);steam_api.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Release;%(AdditionalLibraryDirectories);$(ProjectDir)\lib;$(ProjectDir)\fmod\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SYDEEngine.lib;Winmm.lib;%(AdditionalDependencies);steam_api.lib;fmodL_vc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -150,6 +150,7 @@
     <ClCompile Include="SRLNameGenerator.cpp" />
     <ClCompile Include="SRLNewsStoryGenerator.cpp" />
     <ClCompile Include="SRLPlayer.cpp" />
+    <ClCompile Include="SRLSoundtrack.cpp" />
     <ClCompile Include="SRLSteamAchievements.cpp" />
     <ClCompile Include="SRLTeam.cpp" />
     <ClCompile Include="SYDERugbyLeague.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="SRLNameGenerator.h" />
     <ClInclude Include="SRLNewsStoryGenerator.h" />
     <ClInclude Include="SRLPlayer.h" />
+    <ClInclude Include="SRLSoundtrack.h" />
     <ClInclude Include="SRLSteamAchievements.h" />
     <ClInclude Include="SRLTeam.h" />
   </ItemGroup>

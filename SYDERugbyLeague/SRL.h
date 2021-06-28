@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "SYDEstdafx.h"
 #include "SYDEScreenshot.h"
 #include "SYDEEngineAssets.h"
@@ -8,16 +7,20 @@
 #include "SRLNameGenerator.h"
 #include "SRLNewsStoryGenerator.h"
 #include "SYDESounds.h"
+#include "SRLSoundtrack.h"
 #include "Vector2.h"
 #include "SRLGame.h"
 #include <iostream>
 #include <fstream>
 #include <iterator>
+
+
 #pragma region states
 
 enum GameStateSYDE
 {
 	Unknown_STATE,
+	FMODSplashScreenState,
 	MainMenu_STATE,
 	Exhibition_LoadState,
 	SeasonConfig_State,
@@ -304,7 +307,7 @@ public:
 	ConsoleWindow main_menu_scene(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow exhibition_match_settings(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow season_config_settings(ConsoleWindow window, int windowWidth, int windowHeight);
-
+	ConsoleWindow fmodSplashScreen(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow season_mode(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow LadderView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow BettingView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -418,7 +421,7 @@ public:
 	static bool m_SeasonEvents;
 
 
-	static SYDESoundtrack m_GamePlaySoundtrack;
+	static SRLSoundtrack m_GamePlaySoundtrack;
 	static bool soundTrackOn;
 	static bool m_ResultsTabCall;
 
@@ -448,6 +451,7 @@ public:
 	static int playerClicked;
 	static bool playerCall;
 	static bool finalsSystemCall;
+
 private:
 	SYDEClickableButton m_StartSeasonBtn;
 	SYDEClickableButton m_NextTeamSeasonCfgBtn;
@@ -639,7 +643,9 @@ private:
 		});
 
 	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));
-
+	CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
+	float splashScreenTime = 0;
+	bool splashScreenInit = true;
 	SRLTeam m_InDepthTeamView;
 	CustomAsset m_JerseyView;
 	int m_TeamViewing = 0;

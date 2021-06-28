@@ -116,10 +116,10 @@ void Settings::ColourPalette(HANDLE hOut)
 	pInfo.ColorTable[13] = COLORREF(_LIGHTPURPLE.toRGB());
 	pInfo.ColorTable[14] = COLORREF(_BRIGHTYELLOW.toRGB());
 	pInfo.ColorTable[15] = COLORREF(_BRIGHTWHITE.toRGB());
-	pInfo.dwSize.X = getConsoleWidth() + 10;
-	pInfo.dwSize.Y = getConsoleHeight() + 10;
-	pInfo.dwMaximumWindowSize.X = getConsoleWidth() + 10;
-	pInfo.dwMaximumWindowSize.Y = getConsoleHeight() + 10;
+	pInfo.dwSize.X = getConsoleWidth() + 50;
+	pInfo.dwSize.Y = getConsoleHeight() + 50;
+	pInfo.dwMaximumWindowSize.X = getConsoleWidth() + 50;
+	pInfo.dwMaximumWindowSize.Y = getConsoleHeight() + 50;
 	SetConsoleScreenBufferInfoEx(hOut, &pInfo);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 }

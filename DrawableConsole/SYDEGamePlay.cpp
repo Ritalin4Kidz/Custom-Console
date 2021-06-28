@@ -110,6 +110,20 @@ void SYDEGamePlay::activate_bySplashscreen(LPCWSTR chimePath, COORD start, const
 	Sleep(1000);
 	_activated = true;
 }
+void SYDEGamePlay::customSplashscreen(ConsoleWindow& window, int windowWidth, int windowHeight, CustomAsset splashscreen)
+{
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
+		}
+	}
+	window = splashscreen.draw_asset(window, Vector2(0, 0));
+	window.writeConsole();
+	Sleep(3000);
+	window.ClearWindow(false);
+}
 void SYDEGamePlay::hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight, AssetsClass astVars)
 {
 	//SCENE 10

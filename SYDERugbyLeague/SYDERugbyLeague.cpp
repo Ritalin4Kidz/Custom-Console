@@ -117,6 +117,7 @@ void DoAchievements(vector<string> temp)
 // MAIN FUNCTION
 int main(int argc, char* argv[])
 {
+	config.ColourPalette(hOut);
 	// Initialize Steam
 	bool bRet = SteamAPI_Init();
 	// Create the SteamAchievements object if Steam was successfully initialized
@@ -133,6 +134,7 @@ int main(int argc, char* argv[])
 	LPCWSTR title = L"SYDE Rugby League Simulator";
 	SYDECredits::_GAMETITLE = "SYDE Rugby League Simulator";
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
+	SYDECredits::_OTHERCREDITS = "Made with FMOD Studio by Firelight Technologies Pty Ltd.";
 	SetConsoleTitleW(title);
 	//ARGUMENT SETTINGS
 	for (int i = 0; i < argc; i++)
@@ -144,7 +146,6 @@ int main(int argc, char* argv[])
 		}
 	}
 	BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_NML);
-	config.ColourPalette(hOut);
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
 	SYDETIME deltaTime;
@@ -157,7 +158,9 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
+		//CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
 		SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+		//SYDEGamePlay::customSplashscreen(window,windowWidth, windowHeight, m_FmodSplash);
 	}
 	SYDEGamePlay::EnableClicking(hOut);
 

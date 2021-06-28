@@ -54,6 +54,8 @@ bool SRLGame::formatCall = false;
 bool SRLGame::formatConfirmedCall = false;
 bool SRLGame::exitCall = false;
 bool SRLGame::exitConfirmedCall = false;
+bool SRLGame::randomizeCall = false;
+bool SRLGame::randomizeConfirmedCall = false;
 bool SRLGame::finalsSystemCall = false;
 vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
@@ -96,6 +98,20 @@ vector<string> Split(string a_String, char splitter)
 void FinalsSystemClick()
 {
 	SRLGame::finalsSystemCall = true;
+}
+
+void RandomizeButtonClick()
+{
+	SRLGame::randomizeCall = true;
+}
+
+void RandomizeOKClick()
+{
+	SRLGame::randomizeConfirmedCall = true;
+}
+void RandomizeCNCLClick()
+{
+	SRLGame::randomizeCall = false;
 }
 
 void ExitButtonClick()
@@ -1080,6 +1096,16 @@ void SRLGame::init()
 	m_BackTeamListInDepth.setHighLight(RED);
 	m_BackTeamListInDepth.SetFunc(InDepthTeamListBackClick);
 
+	m_RegeneratePlayerBtn = SYDEClickableButton(" Randomize ", Vector2(47, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_RegeneratePlayerBtn.setHighLight(RED);
+	m_RegeneratePlayerBtn.SetFunc(RandomizeButtonClick);
+
+	m_RegeneratePlayerOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_RegeneratePlayerOKBtn.setHighLight(RED);
+	m_RegeneratePlayerOKBtn.SetFunc(RandomizeOKClick);
+	m_RegeneratePlayerCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_RegeneratePlayerCNCLBtn.setHighLight(RED);
+	m_RegeneratePlayerCNCLBtn.SetFunc(RandomizeCNCLClick);
 
 	for (int i = 0; i < 17; i++)
 	{
@@ -1100,7 +1126,7 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 17; i++)
 	{
-		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20));
+		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20));
 	}
 	return m_Team;
 }
@@ -1108,9 +1134,9 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 vector<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
 {
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 300; i++)
 	{
-		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20)));
+		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20)));
 	}
 	return m_Team;
 }
@@ -1120,7 +1146,7 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 17; i++)
 	{
-		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier));
+		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier));
 	}
 	return m_Team;
 }
@@ -1173,6 +1199,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	if (SimulateCall)
 	{
 		return SimulatePopUp(window, windowWidth, windowHeight);
+	}
+	if (randomizeCall)
+	{
+		return RandomizePopUp(window, windowWidth, windowHeight);
 	}
 	if (exportCall)
 	{
@@ -1961,6 +1991,8 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 
 	window.setTextAtPoint(Vector2(2, 9), "Player Rating: " + to_string(m_PlayerView.getRating()), BRIGHTWHITE);
 
+	window.setTextAtPoint(Vector2(2, 18), "Country Of Origin: " + m_PlayerView.getOrigin(), BRIGHTWHITE);
+	window = m_RegeneratePlayerBtn.draw_ui(window);
 	return window;
 }
 
@@ -2171,7 +2203,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.6.2-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.7.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2239,6 +2271,35 @@ ConsoleWindow SRLGame::ExitPopUp(ConsoleWindow window, int windowWidth, int wind
 	window.setTextAtPoint(Vector2(6, 6), "Are you sure you want to exit?", BRIGHTWHITE_BRIGHTGREEN_BG);
 	window = m_ExitGameOK.draw_ui(window);
 	window = m_ExitGameCNL.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::RandomizePopUp(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	if (randomizeConfirmedCall)
+	{
+		randomizeCall = false;
+		randomizeConfirmedCall = false;
+		AchievementStrings.push_back("SRL_REGEN");
+		int id = m_PlayerView.getID();
+		m_PlayerView = SRLPlayer(SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+		m_PlayerView.setID(id);
+		m_PlayerView.savePlayer();
+
+		setUpTeamInDepthView(m_TeamViewing);
+		setUpPlayer();
+	}
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Are you sure you want to randomize?", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window.setTextAtPoint(Vector2(6, 7), "This cannot be undone", BRIGHTWHITE_BRIGHTGREEN_BG);
+	window = m_RegeneratePlayerOKBtn.draw_ui(window);
+	window = m_RegeneratePlayerCNCLBtn.draw_ui(window);
 	return window;
 }
 

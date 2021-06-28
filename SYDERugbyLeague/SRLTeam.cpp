@@ -124,7 +124,8 @@ void SRLTeam::loadTeam(string path)
 	secondaryColour = static_cast<ColourClass>(save_file["secondary"]);
 	badgeColour = static_cast<ColourClass>(save_file["badge"]);
 	jerseryTypeInt = save_file["jerseytype"];
-	for (int i = 0; i < 17; i++)
+	int numberOfPlayers = save_file["playeramt"];
+	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		int playerID = save_file["players"][to_string(i)];
 		SRLPlayer newPlayer = SRLPlayer();
@@ -139,7 +140,8 @@ void SRLTeam::loadTeamOffContract(string path)
 	std::ifstream ifs{ path };
 	json save_file = json::parse(ifs);
 	setName(save_file["name"]);
-	for (int i = 0; i < 200; i++)
+	int numberOfPlayers = save_file["playeramt"];
+	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		int playerID = save_file["players"][to_string(i)];
 		SRLPlayer newPlayer = SRLPlayer();
@@ -158,7 +160,8 @@ void SRLTeam::saveTeam()
 	save_file["primary"] = static_cast<int>(primaryColour);
 	save_file["secondary"] = static_cast<int>(secondaryColour);
 	save_file["badge"] = static_cast<int>(badgeColour);
-	for (int i = 0; i < 17; i++)
+	save_file["playeramt"] = m_TeamList.size();
+	for (int i = 0; i < m_TeamList.size(); i++)
 	{
 		m_TeamList[i].savePlayer();
 		save_file["players"][to_string(i)] = m_TeamList[i].getID();
@@ -174,6 +177,7 @@ void SRLTeam::saveTeamOffContract()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_Name;
+	save_file["playeramt"] = m_TeamList.size();
 	for (int i = 0; i < m_TeamList.size(); i++)
 	{
 		m_TeamList[i].savePlayer();

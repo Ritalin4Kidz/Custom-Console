@@ -1,5 +1,27 @@
 #include "SRLNameGenerator.h"
 
+vector<string> SRLNameGenerator::countriesOfOrigin = vector<string>
+{
+	"Australia",
+	"New Zealand",
+	"England",
+	"Wales",
+	"Scotland",
+	"France",
+	"Canada",
+	"United States",
+	"Suoonnia",
+	"Kylzer Isles",
+	"SYDE Island",
+	"Papau New Guinea",
+	"Fiji",
+	"Samoa",
+	"Italy",
+	"Lebanon",
+	"Turniostan",
+	"Xyler Union"
+};
+
 vector<string> SRLNameGenerator::FirstNames = vector<string>
 {
 	"Avery",
@@ -127,7 +149,15 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Connor",
 	"Dreka",
 	"Imm",
-	"Dasi"
+	"Dasi",
+	"Vitaliy",
+	"Opus",
+	"Huretio",
+	"Kimberly",
+	"Isaak",
+	"Isaac",
+	"Earl",
+	"Em"
 };
 
 vector<string> SRLNameGenerator::LastNames = vector<string>
@@ -268,7 +298,15 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Dharo",
 	"Xylxed",
 	"Kylze",
-	"Normandy"
+	"Normandy",
+	"Brekston",
+	"Brock",
+	"Pimmers",
+	"Ingodio",
+	"Yzzer",
+	"Quess",
+	"Sitea",
+	"Imposia"
 };
 
 vector<string> SRLNameGenerator::TeamNames = vector<string>
@@ -408,7 +446,23 @@ vector<string> SRLNameGenerator::TeamNames = vector<string>
 	"Tradies",
 	"Diggers",
 	"Callers",
-	"Accountants"
+	"Accountants",
+	"Spiders",
+	"Medicine",
+	"Venom",
+	"Maples",
+	"Penguins",
+	"Dolphins",
+	"Whales",
+	"Seals",
+	"Hoarders",
+	"Riflers",
+	"Snipers",
+	"Robots",
+	"Network",
+	"Donkeys",
+	"Emus",
+	"Fracture"
 };
 
 vector<string> SRLNameGenerator::CityNames = vector<string>
@@ -597,9 +651,25 @@ vector<string> SRLNameGenerator::CityNames = vector<string>
 	"Normville",
 	"Bakini",
 	"Hurstville",
-	"Neutral Bay"
+	"Neutral Bay",
+	"Braybrook",
+	"Monot",
+	"Hilga",
+	"Umbota",
+	"Hillstown",
+	"Gymber",
+	"Vento",
+	"Nexium",
+	"Leeds",
+	"Port Hayver"
 };
 
+
+string SRLNameGenerator::generateRandomOriginCountry()
+{
+	int number = rand() % countriesOfOrigin.size();
+	return countriesOfOrigin[number];
+}
 
 string SRLNameGenerator::generateRandomName()
 {

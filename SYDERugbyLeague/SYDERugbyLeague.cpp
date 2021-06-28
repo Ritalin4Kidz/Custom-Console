@@ -44,6 +44,7 @@ enum EAchievements
 	SRL_BET_CHALLENGE2 = 21,
 	SRL_BET_CHALLENGE3 = 22,
 	SRL_BET_CHALLENGE4 = 23,
+	SRL_REGEN = 24,
 };
 
 // Achievement array which will hold data about the achievements and their state
@@ -72,6 +73,7 @@ Achievement_t g_Achievements[] =
 	_ACH_ID(SRL_BET_CHALLENGE2, "Quit Whilst You're Ahead"),
 	_ACH_ID(SRL_BET_CHALLENGE3, "50/50"),
 	_ACH_ID(SRL_BET_CHALLENGE4, "Close But No Cigar"),
+	_ACH_ID(SRL_REGEN, "Regeneration Powers"),
 };
 
 // Global access to Achievements object
@@ -118,7 +120,7 @@ int main(int argc, char* argv[])
 	// Create the SteamAchievements object if Steam was successfully initialized
 	if (bRet)
 	{
-		g_SteamAchievements = new CSteamAchievements(g_Achievements, 24);
+		g_SteamAchievements = new CSteamAchievements(g_Achievements, 25);
 	}
 
 

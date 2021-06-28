@@ -16,13 +16,17 @@ SRL Simulation game made inside the SYDE Framework.
 
 - full soundtrack implementation
 
-- export play by play to file saved in documents
+- export play by play to file saved in documents - done
 
 ## ABANDONED IDEAS
 
 - Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
 ## Release Notes
+
+###  0.9.7.0 beta
+- Players now have a country of origin
+- players can now be randomized inside the in depth view
 
 ###  0.9.6.2 beta
 - Fixed bug with some steam achievements not working

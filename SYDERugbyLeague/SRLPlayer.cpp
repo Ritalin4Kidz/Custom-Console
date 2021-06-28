@@ -4,9 +4,10 @@ SRLPlayer::SRLPlayer()
 {
 }
 
-SRLPlayer::SRLPlayer(string name, int speed, int attack, int defence,int kicking, int goalKicking, int handling)
+SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling)
 {
 	m_PlayerName = name;
+	m_CountryOfOrigin = country;
 	m_BaseSpeed = speed;
 	m_BaseAttack = attack;
 	m_BaseDefence = defence;
@@ -26,6 +27,7 @@ void SRLPlayer::loadPlayer(string path)
 	json save_file = json::parse(ifs);
 	this->m_BaseAttack = (save_file["atk"]);
 	setName(save_file["name"]);
+	setOrigin(save_file["origin"]);
 	this->m_BaseDefence = (save_file["def"]);
 	this->m_BaseSpeed = (save_file["spd"]);
 	this->id = (save_file["id"]);
@@ -43,6 +45,7 @@ void SRLPlayer::savePlayer()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_PlayerName;
+	save_file["origin"] = m_CountryOfOrigin;
 	save_file["spd"] = m_BaseAttack;
 	save_file["def"] = m_BaseDefence;
 	save_file["atk"] = m_BaseSpeed;

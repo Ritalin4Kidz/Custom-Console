@@ -11,7 +11,7 @@ using json = nlohmann::json;
 class SRLPlayer {
 public:
 	SRLPlayer();
-	SRLPlayer(string name, int speed, int attack, int defence,int kicking, int goalKicking, int handling);
+	SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling);
 
 
 	virtual ~SRLPlayer();
@@ -19,7 +19,9 @@ public:
 	bool getPlayerSent() { return m_Sent || m_Sinbin; }
 	void setPlayerOff(bool sendOff) { if (sendOff) { m_Sent = true; m_SendOffs++; } else { m_Sinbin = true; m_SinBins++; } }
 	string getName() { return m_PlayerName; }
+	string getOrigin() { return m_CountryOfOrigin; }
 	void setName(string name) { m_PlayerName = name; }
+	void setOrigin(string country) { m_CountryOfOrigin = country; }
 	int getSpeed() { return m_BaseSpeed; }
 
 	int getAttack() { return m_BaseAttack; }
@@ -36,6 +38,8 @@ public:
 	void addStamina(int stamina) { m_Stamina += stamina; }
 
 	int getID() { return id; }
+	void setID(int _id) { id = _id; }
+
 
 	int getGoalKicking() { return m_GoalKicking; }
 
@@ -114,6 +118,7 @@ public:
 private:
 
 	string m_PlayerName;
+	string m_CountryOfOrigin;
 	//HOW FAST THE PLAYER RUNS
 	int m_BaseSpeed;
 	//GENERAL ATTACKING STAT

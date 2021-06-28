@@ -7,9 +7,11 @@
 using namespace std;
 
 
+
 class SRLNameGenerator
 {
 public:
+	static string generateRandomOriginCountry();
 	static string generateRandomName();
 	static string generateRandomTeamName();
 private:
@@ -23,4 +25,5 @@ private:
 	static vector<string> LastNames;
 	static vector<string> CityNames;
 	static vector<string> TeamNames;
+	static vector<string> countriesOfOrigin;
 };

@@ -327,6 +327,7 @@ public:
 	ConsoleWindow SimulatePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow FormatPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExitPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow RandomizePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow drawTabs(ConsoleWindow window);
 	ConsoleWindow drawBetTabs(ConsoleWindow window);
@@ -405,6 +406,8 @@ public:
 	static bool formatConfirmedCall;
 	static bool exitCall;
 	static bool exitConfirmedCall;
+	static bool randomizeCall;
+	static bool randomizeConfirmedCall;
 
 	static bool m_GoalKicker;
 	static bool m_Weather;
@@ -582,6 +585,9 @@ private:
 	SYDEClickableButton m_PrevTeamInDepth;
 	SYDEClickableButton m_TeamListInDepth;
 	SYDEClickableButton m_BackTeamListInDepth;
+	SYDEClickableButton m_RegeneratePlayerBtn;
+	SYDEClickableButton m_RegeneratePlayerOKBtn;
+	SYDEClickableButton m_RegeneratePlayerCNCLBtn;
 
 	SYDEClickableButton m_ExitGame;
 	SYDEClickableButton m_ExitGameOK;

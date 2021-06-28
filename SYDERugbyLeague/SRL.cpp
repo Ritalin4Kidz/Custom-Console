@@ -2171,7 +2171,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.6.1-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.6.2-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -3460,6 +3460,9 @@ void SRLGame::UpdateBets()
 	currentWonBetsSeason = 0;
 	currentLostBetsSeason = 0;
 	currentBetsTotalSeason = 0;
+	currentWonBetsSeasonMatchOnly = 0;
+	currentLostBetsSeasonMatchOnly = 0;
+	currentBetsTotalSeasonMatchOnly = 0;
 	for (int i = 0; i < m_Season.m_Draw.m_Rounds.size(); i++)
 	{
 		for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_Bets.size(); ii++)

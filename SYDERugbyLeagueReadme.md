@@ -24,6 +24,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.6.2 beta
+- Fixed bug with some steam achievements not working
+
 ###  0.9.6.1 beta
 - More Steam Achievements
 

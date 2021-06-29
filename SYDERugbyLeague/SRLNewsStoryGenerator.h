@@ -19,6 +19,7 @@ public:
 	static vector<string> generateFeelBadArticleSexScandal(string Player1);
 	static vector<string> generateFeelBadArticlePunchUp(string Player1);
 	static vector<string> generateFeelBadArticleGambling(string Player1);
+	static vector<string> generateFeelBadEligibilityCrisis(string Country, string Player1);
 #pragma endregion
 
 #pragma region Rumours
@@ -32,6 +33,7 @@ public:
 #pragma region Opinion
 	static vector<string> generateOpinionArticlePlayerShouldSwap(string Team1, string Player1);
 	static vector<string> generateOpinionArticlePlayerOfYear(string Team1, string Player1);
+	static vector<string> generateOpinionArticlePlayerShouldCaptain(string Country, string Player1);
 #pragma endregion
 
 #pragma region SeasonEvents

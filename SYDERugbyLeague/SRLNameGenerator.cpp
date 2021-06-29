@@ -306,7 +306,66 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Yzzer",
 	"Quess",
 	"Sitea",
-	"Imposia"
+	"Imposia",
+	"Way",
+	"Nguyen",
+	"Deon",
+	"Wye",
+	"Oak",
+	"Terrio",
+	"Pardi",
+	"Klomono",
+	"Xyer",
+	"Manfredi",
+	"Wrabel",
+	"Spice",
+	"Whare",
+	"Penatoras",
+	"Locke",
+	"Stone",
+	"Jacklin",
+	"Churchill",
+	"Crane",
+	"Million",
+	"Yahtzel",
+	"Berry",
+	"Berninger",
+	"Elroii",
+	"Jay",
+	"Lee",
+	"Banks",
+	"O'Donovan",
+	"Bergman",
+	"Folick",
+	"Fresh",
+	"Robinson",
+	"Daley",
+	"Pearce",
+	"John",
+	"Morier",
+	"Chadwick",
+	"Etten",
+	"Atlas",
+	"Hull",
+	"Harris",
+	"Kelly",
+	"Glass",
+	"McMahon",
+	"Parkson",
+	"Questa",
+	"Iomino",
+	"Drayersun",
+	"Treamery",
+	"Weas",
+	"Boeaste",
+	"Unres",
+	"Freit",
+	"Pout",
+	"Resfa",
+	"Miniota",
+	"Caldato",
+	"Farrell",
+
 };
 
 vector<string> SRLNameGenerator::TeamNames = vector<string>
@@ -462,7 +521,25 @@ vector<string> SRLNameGenerator::TeamNames = vector<string>
 	"Network",
 	"Donkeys",
 	"Emus",
-	"Fracture"
+	"Fracture",
+	"Mice",
+	"Birds",
+	"Pixies",
+	"Vultures",
+	"Scorpions",
+	"Executors",
+	"Swans",
+	"Bakers",
+	"Fireballs",
+	"Citizens",
+	"Zebras",
+	"Icebergs",
+	"Oaks",
+	"Bloods",
+	"Ox",
+	"Chargers",
+	"Magpies",
+	"Bombers",
 };
 
 vector<string> SRLNameGenerator::CityNames = vector<string>
@@ -677,6 +754,23 @@ string SRLNameGenerator::generateRandomName()
 }
 
 string SRLNameGenerator::generateRandomTeamName()
+{
+	string TeamName = generateRandomCity() + " " + generateRandomTeam();
+	int attempts = 0;
+	string FileName = "EngineFiles\\GameResults\\Teams\\" + TeamName + ".json";
+	while (SYDEFileDefaults::exists(FileName.c_str()))
+	{
+		attempts++;
+		string TeamName = generateRandomCity() + " " + generateRandomTeam();
+		if (attempts >= 20)
+		{
+			return "Could Not Generate Error";
+		}
+	}
+	return TeamName;
+}
+
+string SRLNameGenerator::generateRandomTeamNameSafe()
 {
 	return generateRandomCity() + " " + generateRandomTeam();
 }

@@ -128,7 +128,7 @@ vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(str
 	temp.push_back("being wasted and they would be much better off if they");
 	temp.push_back("found a home elsewhere. I don't think I've ever seen a player");
 	temp.push_back("player get as screwed over by their teammates in game");
-	temp.push_back("as much as " + Player1 + "does");
+	temp.push_back("as much as " + Player1 + " does");
 	temp.push_back("PASS EM THE BLOODY BALL");
 	return temp;
 }
@@ -144,6 +144,20 @@ vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(string 
 	temp.push_back("viral. Speculation is that the club is now");
 	temp.push_back("considering resigning them for another 2");
 	temp.push_back("years!");
+	return temp;
+}
+
+vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(string Country, string Player1)
+{
+	vector<string> temp;
+	temp.push_back("With rumours of a world cup coming end of season, ");
+	temp.push_back(Country + " must start looking quick to");
+	temp.push_back("become a major contender for the title. To start,");
+	temp.push_back(Player1 + " should be given the role of captain.");
+	temp.push_back("In my opinion, they have stepped up and showed");
+	temp.push_back("leadership when no one else has. This simple");
+	temp.push_back("change could see " + Country + " become");
+	temp.push_back("a quick favourite.");
 	return temp;
 }
 
@@ -180,6 +194,22 @@ vector<string> SRLNewsStoryGenerator::generateFeelBadArticleGambling(string Play
 	temp.push_back("responded by pushing us aside, and claiming that we were");
 	temp.push_back("'bringing bad luck to the machine'.");
 	temp.push_back("We'll have more as this story develops");
+	return temp;
+}
+
+vector<string> SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(string Country, string Player1)
+{
+	vector<string> temp;
+	temp.push_back(Country + " have been dealt a possibly huge blow");
+	temp.push_back("after " + Player1 + " was announced");
+	temp.push_back("to be under investigation for possible ineligibility");
+	temp.push_back("to play for the country. This comes after rumours");
+	temp.push_back("that they did not move to that country and play");
+	temp.push_back("rugby, before the age of 13.");
+	temp.push_back(Player1 + " has denied the allegations, ");
+	temp.push_back("claiming that the investigation will lead only");
+	temp.push_back("to prove innocence. The player is allowed to play");
+	temp.push_back("for the country in the meantime");
 	return temp;
 }
 

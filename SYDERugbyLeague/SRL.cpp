@@ -685,7 +685,7 @@ void SRLGame::init()
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz","", 168);
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
-
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
 	m_GamePlaySoundtrack.setYPos(14);
 	m_GamePlaySoundtrack.setOn(true);
 	if (soundTrackOn)
@@ -1124,7 +1124,21 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 17; i++)
 	{
-		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20));
+		bool canAddPlayer = true;
+		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+		for (int ii = 0; ii < i; ii++)
+		{
+			if (player.getName() == m_Team[ii].getName())
+			{
+				canAddPlayer = false;
+				i--;
+				break;
+			}
+		}
+		if (canAddPlayer)
+		{
+			m_Team.push_back(SRLPlayer(player));
+		}
 	}
 	return m_Team;
 }
@@ -1132,9 +1146,23 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 vector<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
 {
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
-	for (int i = 0; i < 300; i++)
+	for (int i = 0; i < 200; i++)
 	{
-		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20), ((rand() % 80) + 20)));
+		bool canAddPlayer = true;
+		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+		for (int ii = 0; ii < i; ii++)
+		{
+			if (player.getName() == m_Team[ii].getName())
+			{
+				canAddPlayer = false;
+				i--;
+				break;
+			}
+		}
+		if (canAddPlayer)
+		{
+			m_Team.push_back(SRLPlayer(player));
+		}
 	}
 	return m_Team;
 }
@@ -1144,7 +1172,21 @@ vector<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
 	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 17; i++)
 	{
-		m_Team.push_back(SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier));
+		bool canAddPlayer = true;
+		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier);
+		for (int ii = 0; ii < i; ii++)
+		{
+			if (player.getName() == m_Team[ii].getName())
+			{
+				canAddPlayer = false;
+				i--;
+				break;
+			}
+		}
+		if (canAddPlayer)
+		{
+			m_Team.push_back(SRLPlayer(player));
+		}
 	}
 	return m_Team;
 }
@@ -1179,7 +1221,7 @@ void SRLGame::test()
 
 SRLTeam SRLGame::generateRandomTeam()
 {
-	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamName());
+	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe());
 }
 
 SRLTeam SRLGame::generateOffSeasonTeam()
@@ -1189,7 +1231,7 @@ SRLTeam SRLGame::generateOffSeasonTeam()
 
 SRLTeam SRLGame::generateRandomTeam(float multiplier)
 {
-	return SRLTeam(createRandomTeam("", multiplier), SRLNameGenerator::generateRandomTeamName());
+	return SRLTeam(createRandomTeam("", multiplier), SRLNameGenerator::generateRandomTeamNameSafe());
 }
 
 ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -1281,7 +1323,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
 			{
 				SRLTeam HomeTeam = generateRandomTeam();
-				HomeTeam.saveTeam();
+				if (HomeTeam.getName() != "Could Not Generate Error")
+				{
+					HomeTeam.saveTeam();
+				}
 			}
 			if (!SYDEFileDefaults::exists("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json"))
 			{
@@ -1307,7 +1352,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
 			{
 				SRLTeam HomeTeam = generateRandomTeam();
-				HomeTeam.saveTeam();
+				if (HomeTeam.getName() != "Could Not Generate Error")
+				{
+					HomeTeam.saveTeam();
+				}
 			}
 			if (!SYDEFileDefaults::exists("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json"))
 			{
@@ -1434,8 +1482,16 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		if (m_SeasonTeams.size() < 16)
 		{
 			SRLTeam HomeTeam = generateRandomTeam();
-			HomeTeam.saveTeam();
-			m_SeasonTeams.push_back(HomeTeam.getName());
+			if (HomeTeam.getName() != "Could Not Generate Error")
+			{
+				HomeTeam.saveTeam();
+				m_SeasonTeams.push_back(HomeTeam.getName());
+			}
+			else
+			{
+				errorCall = true;
+				errorMessage = "Error creating new team: Try Again";
+			}
 		}
 		else
 		{
@@ -2229,7 +2285,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.8.3-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.9.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -3372,6 +3428,15 @@ void SRLGame::offContractTrade()
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	for (int i = 0; i < MainTeam.getPlayers().size(); i++)
+	{
+		//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
+		if (MainTeam.getPlayers()[i].getName() == Player2Character.getName())
+		{
+			return;
+		}
+	}
+
 	MainTeam.setPlayer(player1, Player2Character);
 	offContract.setPlayer(player2, Player1Character);
 	SRLNewsArticle m_SigningArticle;
@@ -3421,7 +3486,7 @@ void SRLGame::offContractTrade()
 	offContract.saveTeamOffContract();
 }
 
-void SRLGame::offContractTrade(int team1, int player1)
+bool SRLGame::offContractTrade(int team1, int player1)
 {
 	//TRADE OFF CONTRACT
 	SRLTeam offContract;
@@ -3431,6 +3496,14 @@ void SRLGame::offContractTrade(int team1, int player1)
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	for (int i = 0; i < MainTeam.getPlayers().size(); i++)
+	{
+		//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
+		if (MainTeam.getPlayers()[i].getName() == Player2Character.getName())
+		{
+			return false;
+		}
+	}
 	MainTeam.setPlayer(player1, Player2Character);
 	offContract.setPlayer(player2, Player1Character);
 
@@ -3472,6 +3545,7 @@ void SRLGame::offContractTrade(int team1, int player1)
 
 	MainTeam.saveTeam();
 	offContract.saveTeamOffContract();
+	return true;
 }
 
 void SRLGame::TeamTrade()
@@ -3491,6 +3565,18 @@ void SRLGame::TeamTrade()
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	for (int i = 0; i < MainTeam.getPlayers().size(); i++)
+	{
+		//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
+		if (MainTeam.getPlayers()[i].getName() == Player2Character.getName())
+		{
+			return;
+		}
+		else if (offContract.getPlayers()[i].getName() == Player1Character.getName())
+		{
+			return;
+		}
+	}
 	MainTeam.setPlayer(player1, Player2Character);
 	offContract.setPlayer(player2, Player1Character);
 	SRLNewsArticle m_SigningArticle;
@@ -3648,19 +3734,19 @@ void SRLGame::setUpPlayer()
 	m_PlayerAsset.changeAllInstancesOfColour(BLACK, m_PlayerView.getSecondary());
 	m_PlayerAsset.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_PlayerView.getTertiary());
 }
-
 void SRLGame::otherArticles()
 {
 	SRLNewsArticle m_Article;
-	int articleType = rand() % 16;
+	int articleType = rand() % 18;
 	int team = rand() % 16;
 	SRLTeam MainTeam;
 	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
 	int player = MainTeam.getRandomPlayerInt();
 	SRLPlayer playerStory = MainTeam.getPlayers()[player];
+
 	switch (articleType)
 	{
-
+#pragma region Articles
 	case 1:
 		m_Article.headline = playerStory.getName() + " Saves Local Man From Drowning";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(playerStory.getName());
@@ -3689,11 +3775,13 @@ void SRLGame::otherArticles()
 	case 6:
 		if (m_SeasonEvents)
 		{
-			m_Article.headline = MainTeam.getName() + " Drop " + playerStory.getName();
-			m_Article.newsStory = SRLNewsStoryGenerator::generateArticleDropControversialPlayer(MainTeam.getName(), playerStory.getName(), team, player);
-			m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-			offContractTrade(team, player);
-			m_Article.type = SRLAT_DropPlayer;
+			if (offContractTrade(team, player))
+			{
+				m_Article.headline = MainTeam.getName() + " Drop " + playerStory.getName();
+				m_Article.newsStory = SRLNewsStoryGenerator::generateArticleDropControversialPlayer(MainTeam.getName(), playerStory.getName(), team, player);
+				m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+				m_Article.type = SRLAT_DropPlayer;
+			}
 		}
 		else
 		{
@@ -3708,11 +3796,13 @@ void SRLGame::otherArticles()
 	case 8:
 		if (m_SeasonEvents)
 		{
-			m_Article.headline = playerStory.getName() + " Walks Out On " + MainTeam.getName();
-			m_Article.newsStory = SRLNewsStoryGenerator::generateArticleWalksOutOnClub(MainTeam.getName(), playerStory.getName(), team, player);
-			m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-			offContractTrade(team, player);
-			m_Article.type = SRLAT_DropPlayer;
+			if (offContractTrade(team, player))
+			{
+				m_Article.headline = playerStory.getName() + " Walks Out On " + MainTeam.getName();
+				m_Article.newsStory = SRLNewsStoryGenerator::generateArticleWalksOutOnClub(MainTeam.getName(), playerStory.getName(), team, player);
+				m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+				m_Article.type = SRLAT_DropPlayer;
+			}
 		}
 		else
 		{
@@ -3754,11 +3844,22 @@ void SRLGame::otherArticles()
 		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(MainTeam.getName(), playerStory.getName());
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
+	case 16:
+		m_Article.headline = "Opinion: " + playerStory.getName() + " Should Captain " + playerStory.getOrigin();
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(playerStory.getOrigin(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 17:
+		m_Article.headline = playerStory.getName() + "'s Eligibility Crisis!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(playerStory.getOrigin(), playerStory.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
 	default:
 		m_Article.headline = playerStory.getName() + " Helps Sick Kids In Hospital";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(playerStory.getName());
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
+#pragma endregion
 	}
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_Article);
 }

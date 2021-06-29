@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-
+#include "SYDEFileDefaults.h"
 #include <vector>
 
 using namespace std;
@@ -14,6 +14,9 @@ public:
 	static string generateRandomOriginCountry();
 	static string generateRandomName();
 	static string generateRandomTeamName();
+
+	static string generateRandomTeamNameSafe();
+
 private:
 	static string generateRandomFirstName();
 	static string generateRandomLastName();

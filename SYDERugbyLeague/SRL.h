@@ -357,7 +357,7 @@ public:
 	void checkSpecificBetAchievements(SRLGameBet _bet);
 	void checkBetAchievements();
 	void offContractTrade();
-	void offContractTrade(int team1, int player1);
+	bool offContractTrade(int team1, int player1);
 	void TeamTrade();
 	void UpdateBets();
 

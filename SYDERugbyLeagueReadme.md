@@ -24,13 +24,22 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.9.0 beta
+- Teams can no longer have players with the same name
+- Teams can not trade players with the same name or have a player with the same name on their team
+- Teams with same name cannot be generated twice
+- One new song in soundtrack
+- Two new news articles
+- more names in the generation
+- more jerseys and player styles
+
 ###  0.9.8.3 beta
 - soundtrack bug fix
 
 ###  0.9.8.2 beta
 - Workaround for api failures
 
-###  0.9.8.0 beta
+###  0.9.8.0 beta 29-06-2021
 - Upgraded to FMOD sound systems
 
 ###  0.9.7.0 beta
@@ -43,7 +52,7 @@ SRL Simulation game made inside the SYDE Framework.
 ###  0.9.6.1 beta
 - More Steam Achievements
 
-###  0.9.6.0 beta
+###  0.9.6.0 beta 28-06-2021
 - Steam Achievements
 
 ###  0.9.5.0 beta

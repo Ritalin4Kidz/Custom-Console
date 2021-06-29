@@ -3,6 +3,8 @@
 
 void SRLSoundtrack::start()
 {
+	playing = true;
+	timeSongPassed = 0;
 	play();
 }
 
@@ -66,6 +68,7 @@ bool SRLSoundtrack::play()
 void SRLSoundtrack::stop()
 {
 	m_pSound->release();
+	playing = false;
 }
 
 bool SRLSoundtrack::init()

@@ -24,6 +24,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.9.8.3 beta
+- soundtrack bug fix
+
 ###  0.9.8.2 beta
 - Workaround for api failures
 

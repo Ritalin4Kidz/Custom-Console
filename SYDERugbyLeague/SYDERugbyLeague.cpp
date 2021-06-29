@@ -13,6 +13,10 @@ BASED OFF D6 Game
 #include "SYDESounds.h"
 #include "SRLSteamAchievements.h"
 #include "steam_api.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+extern char** environ;
 
 using namespace std;
 using namespace Gdiplus;
@@ -117,7 +121,28 @@ void DoAchievements(vector<string> temp)
 // MAIN FUNCTION
 int main(int argc, char* argv[])
 {
-	config.ColourPalette(hOut);
+	for (char** current = environ; *current; current++) {
+		//puts(*current);
+		cout << *current << endl;
+	}
+	bool api_init = true;
+	bool debug = false;	//ARGUMENT SETTINGS
+	for (int i = 0; i < argc; i++)
+	{
+		std::string arg = argv[i];
+		if (arg == "--Debug")
+		{
+			debug = true;
+		}
+		if (arg == "--NoInit")
+		{
+			api_init = false;
+		}
+	}
+	config.ColourPalette(hOut); 
+	HWND hwnd = GetConsoleWindow();
+	HMENU hmenu = GetSystemMenu(hwnd, FALSE);
+	EnableMenuItem(hmenu, SC_CLOSE, MF_GRAYED);
 	bool fmodInit = SRLGame::m_GamePlaySoundtrack.init();
 	if (!fmodInit)
 	{
@@ -128,11 +153,14 @@ int main(int argc, char* argv[])
 	// Create the SteamAchievements object if Steam was successfully initialized
 	if (bRet)
 	{
+		cout << "Steam API Initialization Successful" << endl;
 		g_SteamAchievements = new CSteamAchievements(g_Achievements, 26);
 	}
-
-
-	bool debug = false;
+	else
+	{
+		cout << "Steam API Initialization Was Not Successful" << endl;
+	}
+	system("pause");
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	LPCWSTR title = L"SYDE Rugby League Simulator";
@@ -140,15 +168,6 @@ int main(int argc, char* argv[])
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
 	SYDECredits::_OTHERCREDITS = "Made with FMOD Studio by Firelight Technologies Pty Ltd.";
 	SetConsoleTitleW(title);
-	//ARGUMENT SETTINGS
-	for (int i = 0; i < argc; i++)
-	{
-		std::string arg = argv[i];
-		if (arg == "--Debug")
-		{
-			debug = true;
-		}
-	}
 	BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_NML);
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
@@ -192,6 +211,7 @@ int main(int argc, char* argv[])
 	{
 
 	}
+	EnableMenuItem(hmenu, SC_CLOSE, MF_ENABLED);
 	SRLGame::m_GamePlaySoundtrack.shutdown();
 	CONSOLE_CURSOR_INFO cInfo;
 	GetConsoleCursorInfo(hOut, &cInfo);

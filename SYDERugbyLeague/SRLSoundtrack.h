@@ -67,7 +67,7 @@ private:
 	int selectedSong = 0;
 	float timeSongPassed = 0;
 
-	int baseY = 2;
+	int baseY = 14;
 
 	bool playing = false;
 	bool shuffle = false;

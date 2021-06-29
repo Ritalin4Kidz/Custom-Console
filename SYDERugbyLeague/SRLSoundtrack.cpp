@@ -11,7 +11,7 @@ ConsoleWindow SRLSoundtrack::displaySongInformation(ConsoleWindow window, int ba
 	int length = m_Soundtrack[selectedSong].getLongerString().length() + 4;
 	for (int i = baseX; i < baseX + length; i++)
 	{
-		for (int ii = baseY; ii < baseY + 3; ii++)
+		for (int ii = 14; ii < 17; ii++)
 		{
 			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTWHITE_BRIGHTRED_BG);
 		}
@@ -23,12 +23,12 @@ ConsoleWindow SRLSoundtrack::displaySongInformation(ConsoleWindow window, int ba
 	}
 	for (int i = baseX + 2, j = 0; i < Artists.length(); i++, j++)
 	{
-		window.setTextAtPoint(Vector2(i, baseY), Artists.substr(j, j + 1), BRIGHTWHITE_BRIGHTRED_BG);
+		window.setTextAtPoint(Vector2(i, 14), Artists.substr(j, j + 1), BRIGHTWHITE_BRIGHTRED_BG);
 	}
 
 	for (int i = baseX + 2, j = 0; i < m_Soundtrack[selectedSong].m_SongTitle.length(); i++, j++)
 	{
-		window.setTextAtPoint(Vector2(i, baseY + 1), m_Soundtrack[selectedSong].m_SongTitle.substr(j, j + 1), BRIGHTWHITE_BRIGHTRED_BG);
+		window.setTextAtPoint(Vector2(i, 15), m_Soundtrack[selectedSong].m_SongTitle.substr(j, j + 1), BRIGHTWHITE_BRIGHTRED_BG);
 	}
 	return window;
 }
@@ -81,7 +81,7 @@ bool SRLSoundtrack::init()
 		output_file << FMOD_ErrorString(result) << "\n";
 		return false;
 	}
-	result = m_pFmodSystem->init(512, FMOD_INIT_NORMAL, 0);
+	result = m_pFmodSystem->init(32, FMOD_INIT_NORMAL, 0);
 	if (result != FMOD_OK)
 	{
 		std::ofstream output_file("EngineFiles\\GameResults\\MainGame.txt");
@@ -119,6 +119,7 @@ void SRLSoundtrack::next()
 		}
 		selectedSong = selectedSong2;
 	}
+	timeSongPassed = 0;
 }
 
 

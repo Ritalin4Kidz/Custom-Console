@@ -122,6 +122,8 @@ enum FinalsSeriesType
 	Top2Normal,
 	Top8Knockout,
 	Top4Knockout,
+	KnockoutTournament,
+	KnockoutTournamentDouble,
 };
 
 struct FinalsSeries
@@ -626,6 +628,8 @@ private:
 		FinalsSeries("Top 2 Normal", Top2Normal, 1, 2),
 		FinalsSeries("Top 8 Knock-Out", Top8Knockout, 3, 8),
 		FinalsSeries("Top 4 Knock-Out", Top4Knockout, 2, 4),
+		FinalsSeries("Knockout Tourny", KnockoutTournament, 4, 16),
+		FinalsSeries("Double Elim Tourny", KnockoutTournamentDouble, 8, 16),
 		});
 
 	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));

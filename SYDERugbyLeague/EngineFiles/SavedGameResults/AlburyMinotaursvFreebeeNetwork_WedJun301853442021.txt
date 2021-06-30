@@ -1,0 +1,212 @@
+----------LINE-UPS----------
+Home Team: Albury Minotaurs
+1: Amy Berry
+2: Alister Davis
+3: Em Rose
+4: Kyle McKenzie
+5: Ali Som
+6: Trent Atoni
+7: Mitchell Crane
+8: Carl Greenberg
+9: Daniel Martin
+10: Trixie Lee
+11: Arnole Ballsut
+12: Frank Parkson
+13: Pete Manfredi
+14: James Deon
+15: Kevin Wott
+16: Kam Waterhouse
+17: Miles Ese'ese
+Away Team: Freebee Network
+1: Callum Hands
+2: Luke Alexander
+3: Peter Waterhouse
+4: Ali Vianna
+5: Ashleigh Allsopp
+6: Amy Manfredi
+7: Simon Armstrong
+8: Lindsay Hands
+9: Kelin Miao
+10: Kyle Phillips
+11: Andrew Russell
+12: Cameron Rose
+13: Dominic Chicocki
+14: Trixie Emerson
+15: Addison Stewart
+16: Alex Armstrong
+17: Mitchell Lynn
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Albury Minotaurs: 0 v Freebee Network: 0
+01:46 - Cameron Rose - Over The Sideline
+04:56 - Andrew Russell - Penalty
+05:52 - ------VIDEO REFEREE------
+05:52 - Ali Som - NO TRY - Double Movement
+05:52 - Ali Som - Penalty
+06:16 - Arnole Ballsut - Stripped Ball Off Dominic Chicocki
+07:13 - Daniel Martin - Over The Sideline
+07:26 - Trixie Lee - Stripped Ball Off Lindsay Hands
+08:47 - Kyle McKenzie - 6th Tackle Changeover
+09:29 - Ashleigh Allsopp - Over The Sideline
+09:43 - Kelin Miao - Intercepted Off A Ali Som Pass
+10:11 - Freebee Network Interchanged Players Amy Manfredi & Mitchell Lynn
+11:37 - Freebee Network Interchanged Players Simon Armstrong & Trixie Emerson
+12:12 - Trent Atoni - 6th Tackle Changeover
+12:23 - Ali Som - Penalty
+16:38 - Lindsay Hands - Penalty
+18:13 - Mitchell Crane - 6th Tackle Changeover
+19:00 - Freebee Network Interchanged Players Andrew Russell & Alex Armstrong
+19:15 - Mitchell Crane - Penalty
+19:31 - Carl Greenberg - Penalty
+20:15 - Freebee Network Interchanged Players Kyle Phillips & Andrew Russell
+20:43 - Freebee Network Interchanged Players Alex Armstrong & Kyle Phillips
+21:00 - Ali Vianna - 6th Tackle Changeover
+21:12 - Kyle Phillips - Ruck Infringement
+21:25 - Albury Minotaurs Interchanged Players Em Rose & Kevin Wott
+21:36 - Pete Manfredi - Forward Pass
+22:39 - Kelin Miao - TRY - Albury Minotaurs: 0 v Freebee Network: 4
+23:39 - Callum Hands - GOAL - Albury Minotaurs: 0 v Freebee Network: 6
+25:09 - Mitchell Crane - Intercepted Off A Lindsay Hands Pass
+25:09 - Mitchell Crane - TRY - Albury Minotaurs: 4 v Freebee Network: 6
+26:09 - Trixie Lee - CONVERSION MISSED
+30:45 - Freebee Network Interchanged Players Trixie Emerson & Addison Stewart
+31:02 - Albury Minotaurs Interchanged Players Ali Som & James Deon
+31:20 - Kyle Phillips - Over The Sideline
+31:20 - Albury Minotaurs Interchanged Players Trixie Lee & Miles Ese'ese
+31:34 - ------VIDEO REFEREE------
+31:34 - Pete Manfredi - NO TRY - 20m Restart
+31:45 - Albury Minotaurs Interchanged Players Kyle McKenzie & Ali Som
+32:00 - Kelin Miao - Forward Pass
+32:47 - Pete Manfredi - Over The Sideline
+35:34 - Daniel Martin - Stripped Ball Off Lindsay Hands
+36:29 - Mitchell Lynn - Penalty
+36:29 - Ali Som - PENALTY GOAL - Albury Minotaurs: 6 v Freebee Network: 6
+38:09 - Ali Vianna - Intercepted Off A Frank Parkson Pass
+38:39 - Kelin Miao - TRY - Albury Minotaurs: 6 v Freebee Network: 10
+39:39 - Callum Hands - GOAL - Albury Minotaurs: 6 v Freebee Network: 12
+40:00 - HALF TIME - Albury Minotaurs: 6 v Freebee Network: 12
+41:11 - Kelin Miao - Forward Pass
+41:11 - Albury Minotaurs Interchanged Players Kevin Wott & Kyle McKenzie
+41:28 - ------VIDEO REFEREE------
+41:28 - Miles Ese'ese - TRY - Albury Minotaurs: 10 v Freebee Network: 12
+42:28 - Ali Som - CONVERSION MISSED
+44:19 - Ashleigh Allsopp - Intercepted Off A Frank Parkson Pass
+44:37 - Callum Hands - TRY - Albury Minotaurs: 10 v Freebee Network: 16
+45:37 - Callum Hands - GOAL - Albury Minotaurs: 10 v Freebee Network: 18
+46:55 - Carl Greenberg - Intercepted Off A Cameron Rose Pass
+47:06 - Alister Davis - TRY - Albury Minotaurs: 14 v Freebee Network: 18
+48:06 - Ali Som - CONVERSION MISSED
+50:12 - Andrew Russell - Intercepted Off A Frank Parkson Pass
+50:12 - Freebee Network Interchanged Players Mitchell Lynn & Alex Armstrong
+50:39 - Freebee Network Interchanged Players Peter Waterhouse & Trixie Emerson
+51:22 - Ali Vianna - 6th Tackle Changeover
+51:50 - Albury Minotaurs Interchanged Players Alister Davis & Kevin Wott
+53:31 - Trixie Emerson - Forward Pass
+53:55 - Alex Armstrong - Ruck Infringement
+54:12 - Pete Manfredi - Forward Pass
+54:47 - Alex Armstrong - Over The Sideline
+55:18 - Addison Stewart - Penalty
+55:45 - Pete Manfredi - Knock On
+56:32 - Mitchell Crane - Intercepted Off A Kyle Phillips Pass
+57:47 - Pete Manfredi - 6th Tackle Changeover
+58:42 - Kyle Phillips - Forward Pass
+60:12 - Frank Parkson - 6th Tackle Changeover
+60:57 - Albury Minotaurs Interchanged Players Frank Parkson & Em Rose
+61:42 - Albury Minotaurs Interchanged Players Trent Atoni & Kam Waterhouse
+61:58 - Ali Som - Knock On
+62:14 - Kelin Miao - Knock On
+63:57 - Kyle McKenzie - 6th Tackle Changeover
+64:52 - Amy Berry - Penalty
+65:44 - Miles Ese'ese - Penalty
+65:44 - Callum Hands - PENALTY GOAL - Albury Minotaurs: 14 v Freebee Network: 20
+67:09 - Carl Greenberg - Intercepted Off A Trixie Emerson Pass
+67:09 - Carl Greenberg - TRY - Albury Minotaurs: 18 v Freebee Network: 20
+68:09 - Ali Som - GOAL - Albury Minotaurs: 20 v Freebee Network: 20
+71:42 - Ali Vianna - Intercepted Off A Amy Berry Pass
+72:23 - ------VIDEO REFEREE------
+72:23 - Kelin Miao - NO TRY - 20m Restart
+72:56 - Ali Vianna - Ruck Infringement
+75:05 - James Deon - Ruck Infringement
+76:49 - Kelin Miao - Intercepted Off A Pete Manfredi Pass
+77:59 - Callum Hands - 6th Tackle Changeover
+79:59 - Trixie Emerson - Forward Pass
+80:00 - EXTRA TIME - Albury Minotaurs: 20 v Freebee Network: 20
+81:57 - Kyle McKenzie - FIELD GOAL - Albury Minotaurs: 21 v Freebee Network: 20
+81:57 - FULL TIME - Albury Minotaurs: 21 v Freebee Network: 20
+                             
+--------PLAYER STATS--------
+Home Team: Albury Minotaurs
+1: Amy Berry |Time Played: 82:14 |Metres: 21 |Tackles: 15 |Kicks: 2 |Kick Metres: 84 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+2: Kevin Wott |Time Played: 50:10 |Metres: 41 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+3: Kyle McKenzie |Time Played: 72:48 |Metres: 38 |Tackles: 8 |Kicks: 1 |Kick Metres: 44 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 43
+4: Ali Som |Time Played: 81:31 |Metres: 39 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 8
+5: James Deon |Time Played: 51:12 |Metres: 2 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+6: Kam Waterhouse |Time Played: 20:32 |Metres: 1 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+7: Mitchell Crane |Time Played: 82:14 |Metres: 84 |Tackles: 14 |Kicks: 2 |Kick Metres: 65 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 43
+8: Carl Greenberg |Time Played: 82:14 |Metres: 75 |Tackles: 10 |Kicks: 2 |Kick Metres: 67 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 38
+9: Daniel Martin |Time Played: 82:14 |Metres: 55 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+10: Miles Ese'ese |Time Played: 50:54 |Metres: 76 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 25
+11: Arnole Ballsut |Time Played: 82:14 |Metres: 44 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 42
+12: Em Rose |Time Played: 42:42 |Metres: 24 |Tackles: 9 |Kicks: 1 |Kick Metres: 24 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+13: Pete Manfredi |Time Played: 82:14 |Metres: 33 |Tackles: 6 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+14: Alister Davis |Time Played: 51:50 |Metres: 8 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+15: Frank Parkson |Time Played: 60:57 |Metres: 12 |Tackles: 7 |Kicks: 1 |Kick Metres: 17 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+16: Trent Atoni |Time Played: 61:42 |Metres: 12 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+17: Trixie Lee |Time Played: 31:20 |Metres: 63 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+Highlights:                 
+Most Tackles: Amy Berry: 15
+Most Points: Ali Som: 4
+Most Metres: Mitchell Crane: 84
+Most Errors: Pete Manfredi: 4
+                             
+Away Team: Freebee Network
+1: Callum Hands |Time Played: 82:14 |Metres: 60 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 4 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 38
+2: Luke Alexander |Time Played: 82:14 |Metres: 14 |Tackles: 12 |Kicks: 2 |Kick Metres: 60 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 42
+3: Trixie Emerson |Time Played: 50:43 |Metres: 6 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+4: Ali Vianna |Time Played: 82:14 |Metres: 53 |Tackles: 13 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+5: Ashleigh Allsopp |Time Played: 82:14 |Metres: 49 |Tackles: 8 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+6: Alex Armstrong |Time Played: 33:45 |Metres: 9 |Tackles: 7 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Addison Stewart |Time Played: 51:29 |Metres: 27 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+8: Lindsay Hands |Time Played: 82:14 |Metres: 11 |Tackles: 13 |Kicks: 3 |Kick Metres: 74 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+9: Kelin Miao |Time Played: 82:14 |Metres: 103 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 21
+10: Andrew Russell |Time Played: 80:59 |Metres: 34 |Tackles: 11 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+11: Kyle Phillips |Time Played: 81:46 |Metres: 11 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+12: Cameron Rose |Time Played: 82:14 |Metres: 26 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+13: Dominic Chicocki |Time Played: 82:14 |Metres: 10 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+14: Simon Armstrong |Time Played: 11:37 |Metres: 0 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+15: Peter Waterhouse |Time Played: 50:39 |Metres: 7 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+16: Mitchell Lynn |Time Played: 40:01 |Metres: 6 |Tackles: 4 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+17: Amy Manfredi |Time Played: 10:11 |Metres: 11 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+Highlights:                 
+Most Tackles: Kelin Miao: 15
+Most Points: Callum Hands: 12
+Most Metres: Kelin Miao: 103
+Most Errors: Kelin Miao: 3
+                             
+---------TEAM STATS---------
+Home Team: Albury Minotaurs
+Total Metres: 628
+Total Kick Metres: 331
+Total Errors: 6
+Total Tackles: 135
+Total Tries: 4
+Total Goals: 2
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Freebee Network
+Total Metres: 437
+Total Kick Metres: 295
+Total Errors: 10
+Total Tackles: 143
+Total Tries: 3
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Callum Hands
+2nd (2 Points) -- Mitchell Crane
+3rd (1 Point) -- Carl Greenberg
+----------------------------

@@ -26,6 +26,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.10.0.0 beta 
+- Knockout tournaments added as a setting for finals
+
 ###  0.9.10.0 beta 30-06-2021
 - More name generations
 - We-worked article randomizer so that dropped players are a rarity

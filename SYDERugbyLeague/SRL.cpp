@@ -1438,6 +1438,12 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			return window;
 		}
 		//DO CONFIG IN HERE
+		finals = false;
+		if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
+		{
+			BaseSeasonGames = 0;
+			finals = true;
+		}
 		vector<SRLLadderPosition> ladders;
 		for (int i = 0; i < m_SeasonTeams.size(); i++)
 		{
@@ -1447,6 +1453,20 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		}
 		SRLLadder Ladder = SRLLadder(ladders);
 		vector<SRLRound> rounds;
+		if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
+		{
+			vector<SRLGameMatchup> games;
+			vector<string> AvailableTeams = m_SeasonTeams;
+			games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
+			games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
+			games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
+			games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
+			games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
+			games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
+			games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
+			games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
+			rounds.push_back(SRLRound(games));
+		}
 		for (int i = 0; i < BaseSeasonGames; i++)
 		{
 			vector<SRLGameMatchup> games;
@@ -1472,7 +1492,6 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		newState = SeasonModeState;
 		m_round = 0;
 		m_roundToSimulate = 0;
-		finals = false;
 		CalculateOdds();
 		CalculatePremiershipOdds();
 		return window;
@@ -1746,7 +1765,7 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 				return window;
 			}
 		}
-		if (m_roundToSimulate >= seasonLength)
+		if (m_roundToSimulate >= BaseSeasonGames)
 		{
 			window.setTextAtPoint(Vector2(2, 3), "PREMIERSHIP BETS SUSPENDED", BRIGHTWHITE);
 		}
@@ -2344,7 +2363,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.10.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.0.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -3366,6 +3385,127 @@ void SRLGame::SimulateGames()
 				{
 					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+#pragma endregion
+				}
+				else if (fsType == KnockoutTournament)
+				{
+#pragma region 16 Team Knockout
+
+				/*
+					games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
+					games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
+					games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
+					games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
+					games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
+					games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
+					games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
+					games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
+				*/
+
+
+				if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].WinningTeam)); //4v5
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames+ 1].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+#pragma endregion
+				}
+				else if (fsType == KnockoutTournamentDouble)
+				{
+#pragma region 16 Team Knockout Double Elimination
+
+				/*
+					games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15])); 1v16
+					games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14])); 2v15
+					games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13])); 3v14
+					games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12])); 4v13
+					games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11])); 5v12
+					games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10])); 6v11
+					games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9])); 7v10
+					games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8])); 8v9
+				*/
+
+
+				if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].WinningTeam)); //4v5
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].LosingTeam)); //9v16
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].LosingTeam)); //10v15
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].LosingTeam)); //11v14
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].LosingTeam)); //12v13
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[7].WinningTeam)); //8v12
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[6].WinningTeam)); //7v11
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[5].WinningTeam)); //6v10
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[4].WinningTeam)); //5v9
+
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam)); //1v2
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[5].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam)); //5v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[4].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[3].WinningTeam)); //6v7
+
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 4)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[2].WinningTeam)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[1].WinningTeam)); //4v5
+
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 5)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[1].WinningTeam)); //3v4
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 6)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 5].m_Games[0].WinningTeam)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 7)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 6].m_Games[0].WinningTeam)); //1v2
 					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
 				}
 #pragma endregion

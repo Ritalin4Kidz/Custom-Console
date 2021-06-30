@@ -1,0 +1,221 @@
+----------LINE-UPS----------
+Home Team: Neutral Bay Hawks
+1: Nicholas Hull
+2: Opus Cotric
+3: David O' Sullivan
+4: Samuel Holland
+5: Velento Sunnerson
+6: Hubert Fowler
+7: Pauly Mitchell
+8: Dasi O' Donovan
+9: Sammy Costa
+10: Jimmy Kylze
+11: Isaac Daley
+12: Jay Junior
+13: Kate Woods
+14: Ash Locke
+15: Kyrsta Lindsell
+16: Vitaliy Fox
+17: James McDonald
+Away Team: Eastern Suburbs Martyrs
+1: Cooper Aaronson
+2: Jeremy Silwedel
+3: David Sua
+4: Adole Emerson
+5: David Lase
+6: Daniel Wott
+7: Junior Watne
+8: Dom Doomer
+9: Joshua Jackson
+10: Alister Barter
+11: Karl Manfredi
+12: Zach Stone
+13: Jonathon Brasi
+14: Castro McMahon
+15: Norman Costa
+16: Keith Harnett
+17: Arnole Ballsut
+----------GAME-STAT---------
+Weather: Cloudy
+----------------------------
+00:00 - KICK OFF - Neutral Bay Hawks: 0 v Eastern Suburbs Martyrs: 0
+00:12 - Jonathon Brasi - Ruck Infringement
+00:36 - Sammy Costa - Forward Pass
+01:41 - Karl Manfredi - TRY - Neutral Bay Hawks: 0 v Eastern Suburbs Martyrs: 4
+02:41 - Zach Stone - GOAL - Neutral Bay Hawks: 0 v Eastern Suburbs Martyrs: 6
+05:06 - Opus Cotric - Over The Sideline
+06:00 - Neutral Bay Hawks Interchanged Players Sammy Costa & Vitaliy Fox
+06:00 - Eastern Suburbs Martyrs Interchanged Players Dom Doomer & Norman Costa
+06:27 - David Lase - Forward Pass
+06:51 - Zach Stone - Ruck Infringement
+07:24 - Hubert Fowler - Forward Pass
+08:30 - Eastern Suburbs Martyrs Interchanged Players Karl Manfredi & Keith Harnett
+09:01 - Junior Watne - 6th Tackle Changeover
+10:16 - Keith Harnett - Penalty
+10:16 - Eastern Suburbs Martyrs Interchanged Players David Lase & Dom Doomer
+10:42 - Isaac Daley - TRY - Neutral Bay Hawks: 4 v Eastern Suburbs Martyrs: 6
+11:42 - Jay Junior - CONVERSION MISSED
+14:55 - Jay Junior - Ruck Infringement
+15:11 - Hubert Fowler - Intercepted Off A Cooper Aaronson Pass
+15:11 - Hubert Fowler - TRY - Neutral Bay Hawks: 8 v Eastern Suburbs Martyrs: 6
+16:11 - Jay Junior - GOAL - Neutral Bay Hawks: 10 v Eastern Suburbs Martyrs: 6
+18:37 - Adole Emerson - Forward Pass
+18:48 - Cooper Aaronson - Intercepted Off A Jimmy Kylze Pass
+20:07 - David Sua - 6th Tackle Changeover
+20:47 - Eastern Suburbs Martyrs Interchanged Players Cooper Aaronson & David Lase
+21:05 - Neutral Bay Hawks Interchanged Players Isaac Daley & Sammy Costa
+21:30 - Dasi O' Donovan - 6th Tackle Changeover
+22:56 - Daniel Wott - 6th Tackle Changeover
+24:37 - Joshua Jackson - Forward Pass
+25:26 - Sammy Costa - TRY - Neutral Bay Hawks: 14 v Eastern Suburbs Martyrs: 6
+26:26 - Jay Junior - GOAL - Neutral Bay Hawks: 16 v Eastern Suburbs Martyrs: 6
+29:00 - Velento Sunnerson - Intercepted Off A Jonathon Brasi Pass
+29:17 - Jonathon Brasi - Intercepted Off A Opus Cotric Pass
+29:30 - Eastern Suburbs Martyrs Interchanged Players Joshua Jackson & Cooper Aaronson
+30:16 - Neutral Bay Hawks Interchanged Players Vitaliy Fox & Isaac Daley
+30:34 - Adole Emerson - 6th Tackle Changeover
+30:34 - Eastern Suburbs Martyrs Interchanged Players Junior Watne & Arnole Ballsut
+31:04 - Cooper Aaronson - Intercepted Off A Jimmy Kylze Pass
+31:19 - Sammy Costa - Penalty
+31:19 - Eastern Suburbs Martyrs Interchanged Players Alister Barter & Castro McMahon
+31:32 - Keith Harnett - TRY - Neutral Bay Hawks: 16 v Eastern Suburbs Martyrs: 10
+32:32 - Zach Stone - GOAL - Neutral Bay Hawks: 16 v Eastern Suburbs Martyrs: 12
+34:12 - David Lase - Knock On
+34:55 - Jay Junior - TRY - Neutral Bay Hawks: 20 v Eastern Suburbs Martyrs: 12
+35:55 - Jay Junior - GOAL - Neutral Bay Hawks: 22 v Eastern Suburbs Martyrs: 12
+37:13 - Sammy Costa - Forward Pass
+37:26 - ------VIDEO REFEREE------
+37:26 - Adole Emerson - NO TRY - Obstruction
+37:26 - Adole Emerson - Penalty
+37:43 - Jimmy Kylze - Over The Sideline
+37:55 - Jeremy Silwedel - Over The Sideline
+39:00 - Neutral Bay Hawks Interchanged Players Hubert Fowler & Vitaliy Fox
+39:17 - Opus Cotric - Forward Pass
+40:00 - HALF TIME - Neutral Bay Hawks: 22 v Eastern Suburbs Martyrs: 12
+40:19 - Jay Junior - Intercepted Off A Arnole Ballsut Pass
+40:19 - ------VIDEO REFEREE------
+40:19 - Jay Junior - TRY - Neutral Bay Hawks: 26 v Eastern Suburbs Martyrs: 12
+41:19 - Jay Junior - GOAL - Neutral Bay Hawks: 28 v Eastern Suburbs Martyrs: 12
+43:45 - Arnole Ballsut - Forward Pass
+43:57 - Vitaliy Fox - Over The Sideline
+44:13 - David Lase - Knock On
+44:25 - ------VIDEO REFEREE------
+44:25 - Sammy Costa - TRY - Neutral Bay Hawks: 32 v Eastern Suburbs Martyrs: 12
+45:25 - Jay Junior - CONVERSION MISSED
+46:36 - Sammy Costa - Forward Pass
+46:49 - Vitaliy Fox - Penalty
+47:15 - David O' Sullivan - Intercepted Off A Dom Doomer Pass
+48:17 - Jimmy Kylze - Kick Out On The Full
+49:46 - David Sua - 6th Tackle Changeover
+50:17 - Neutral Bay Hawks Interchanged Players Isaac Daley & Kyrsta Lindsell
+50:17 - Eastern Suburbs Martyrs Interchanged Players Norman Costa & Junior Watne
+51:13 - Dasi O' Donovan - 6th Tackle Changeover
+51:28 - Jimmy Kylze - Penalty
+51:40 - Velento Sunnerson - Intercepted Off A Junior Watne Pass
+52:10 - David Sua - Penalty
+52:10 - Jay Junior - PENALTY GOAL MISSED
+53:10 - Neutral Bay Hawks Interchanged Players Sammy Costa & Isaac Daley
+53:24 - Castro McMahon - Penalty
+53:39 - Kate Woods - Forward Pass
+54:48 - Vitaliy Fox - Intercepted Off A Castro McMahon Pass
+55:19 - Vitaliy Fox - Over The Sideline
+58:26 - Opus Cotric - Intercepted Off A Jonathon Brasi Pass
+58:42 - ------VIDEO REFEREE------
+58:42 - Kate Woods - NO TRY - Double Movement
+58:42 - Kate Woods - Penalty
+60:03 - Castro McMahon - Forward Pass
+60:53 - Jimmy Kylze - Over The Sideline
+61:04 - David Sua - Forward Pass
+61:35 - ------VIDEO REFEREE------
+61:35 - Nicholas Hull - NO TRY - Goal Line Dropout
+62:35 - Nicholas Hull - TRY - Neutral Bay Hawks: 36 v Eastern Suburbs Martyrs: 12
+63:35 - Jay Junior - GOAL - Neutral Bay Hawks: 38 v Eastern Suburbs Martyrs: 12
+65:47 - Vitaliy Fox - Forward Pass
+66:00 - Castro McMahon - Over The Sideline
+67:30 - Isaac Daley - 6th Tackle Changeover
+68:10 - Castro McMahon - Forward Pass
+68:58 - Opus Cotric - TRY - Neutral Bay Hawks: 42 v Eastern Suburbs Martyrs: 12
+69:58 - Jay Junior - GOAL - Neutral Bay Hawks: 44 v Eastern Suburbs Martyrs: 12
+72:26 - Pauly Mitchell - 6th Tackle Changeover
+73:13 - Jay Junior - Intercepted Off A Daniel Wott Pass
+74:15 - Kyrsta Lindsell - TRY - Neutral Bay Hawks: 48 v Eastern Suburbs Martyrs: 12
+75:15 - Jay Junior - GOAL - Neutral Bay Hawks: 50 v Eastern Suburbs Martyrs: 12
+76:56 - Jay Junior - Knock On
+77:35 - Castro McMahon - Forward Pass
+80:00 - FULL TIME - Neutral Bay Hawks: 50 v Eastern Suburbs Martyrs: 12
+                             
+--------PLAYER STATS--------
+Home Team: Neutral Bay Hawks
+1: Nicholas Hull |Time Played: 80:11 |Metres: 150 |Tackles: 7 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 90
+2: Opus Cotric |Time Played: 80:11 |Metres: 91 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 21
+3: David O' Sullivan |Time Played: 80:11 |Metres: 55 |Tackles: 5 |Kicks: 1 |Kick Metres: 69 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 52
+4: Samuel Holland |Time Played: 80:11 |Metres: 69 |Tackles: 6 |Kicks: 2 |Kick Metres: 90 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 63
+5: Velento Sunnerson |Time Played: 80:11 |Metres: 87 |Tackles: 9 |Kicks: 2 |Kick Metres: 31 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 64
+6: Vitaliy Fox |Time Played: 65:27 |Metres: 30 |Tackles: 4 |Kicks: 1 |Kick Metres: 50 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Pauly Mitchell |Time Played: 80:11 |Metres: 104 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 66
+8: Dasi O' Donovan |Time Played: 80:11 |Metres: 42 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+9: Kyrsta Lindsell |Time Played: 29:54 |Metres: 53 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 33
+10: Jimmy Kylze |Time Played: 80:11 |Metres: 18 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+11: Isaac Daley |Time Played: 68:07 |Metres: 240 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 118
+12: Jay Junior |Time Played: 80:11 |Metres: 97 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 7 |Field Goals: 0 |Total Points: 22 |Fantasy Points: 25
+13: Kate Woods |Time Played: 80:11 |Metres: 119 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+14: Ash Locke |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Sammy Costa |Time Played: 38:05 |Metres: 81 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 11
+16: Hubert Fowler |Time Played: 39:00 |Metres: 11 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 11
+17: James McDonald |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Pauly Mitchell: 14
+Most Points: Jay Junior: 22
+Most Metres: Isaac Daley: 240
+Most Errors: Vitaliy Fox: 3
+                             
+Away Team: Eastern Suburbs Martyrs
+1: David Lase |Time Played: 69:40 |Metres: 24 |Tackles: 8 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+2: Jeremy Silwedel |Time Played: 80:11 |Metres: 3 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+3: David Sua |Time Played: 80:11 |Metres: 79 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+4: Adole Emerson |Time Played: 80:11 |Metres: 176 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+5: Dom Doomer |Time Played: 75:55 |Metres: 30 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+6: Daniel Wott |Time Played: 80:11 |Metres: 66 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+7: Arnole Ballsut |Time Played: 49:37 |Metres: 6 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+8: Junior Watne |Time Played: 60:28 |Metres: 28 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+9: Cooper Aaronson |Time Played: 71:28 |Metres: 21 |Tackles: 11 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+10: Castro McMahon |Time Played: 48:52 |Metres: 39 |Tackles: 5 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+11: Keith Harnett |Time Played: 71:41 |Metres: 140 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+12: Zach Stone |Time Played: 80:11 |Metres: 9 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+13: Jonathon Brasi |Time Played: 80:11 |Metres: 16 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Alister Barter |Time Played: 31:19 |Metres: 13 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+15: Joshua Jackson |Time Played: 29:30 |Metres: 25 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+16: Karl Manfredi |Time Played: 08:30 |Metres: 40 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 23
+17: Norman Costa |Time Played: 44:17 |Metres: 22 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+Highlights:                 
+Most Tackles: David Sua: 16
+Most Points: Keith Harnett: 4
+Most Metres: Adole Emerson: 176
+Most Errors: Castro McMahon: 4
+                             
+---------TEAM STATS---------
+Home Team: Neutral Bay Hawks
+Total Metres: 1247
+Total Kick Metres: 278
+Total Errors: 14
+Total Tackles: 106
+Total Tries: 9
+Total Goals: 7
+Total Field Goals: 0
+Interchanges Used: 6/8
+                             
+Away Team: Eastern Suburbs Martyrs
+Total Metres: 737
+Total Kick Metres: 56
+Total Errors: 12
+Total Tackles: 129
+Total Tries: 2
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Isaac Daley
+2nd (2 Points) -- Nicholas Hull
+3rd (1 Point) -- Samuel Holland
+----------------------------

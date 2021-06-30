@@ -26,6 +26,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+###  0.10.1.0 beta 
+- Achievement fix
+- Draws now have a max number of times teams can verse each other (still possible not to verse every team in a season however no longer possible to verse a team 6 times in a normal season)
+
 ###  0.10.0.0 beta 
 - Knockout tournaments added as a setting for finals
 

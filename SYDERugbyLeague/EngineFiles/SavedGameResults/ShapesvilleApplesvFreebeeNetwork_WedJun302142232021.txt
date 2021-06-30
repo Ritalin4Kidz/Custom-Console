@@ -1,0 +1,212 @@
+----------LINE-UPS----------
+Home Team: Shapesville Apples
+1: Jack Boeaste
+2: Anthony O' Donnell
+3: Kate Yemm
+4: Huretio Johns
+5: Reimis Davis
+6: Jeni Quess
+7: Kristian Potter
+8: Reimis Bergman
+9: Michael Parkson
+10: Calum Tamber
+11: James Chadwick
+12: Jeffrey Pout
+13: Callum Croker
+14: Robert Imposia
+15: Carter North
+16: Aaron Alexander
+17: Julian Spice
+Away Team: Freebee Network
+1: Callum Hands
+2: David Hull
+3: Peter Waterhouse
+4: Ali Vianna
+5: Ashleigh Allsopp
+6: Amy Manfredi
+7: Benji Humphrey
+8: James Deon
+9: Kelin Miao
+10: Kyle Phillips
+11: Andrew Russell
+12: Cameron Rose
+13: Joseph Cooper
+14: Trixie Emerson
+15: Tom Yacoub
+16: Alex Armstrong
+17: Mitchell Lynn
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Shapesville Apples: 0 v Freebee Network: 0
+02:31 - Kelin Miao - 6th Tackle Changeover
+03:02 - Benji Humphrey - Stripped Ball Off Jeni Quess
+04:33 - Reimis Davis - Penalty
+04:33 - Callum Hands - PENALTY GOAL - Shapesville Apples: 0 v Freebee Network: 2
+06:33 - Jack Boeaste - Penalty
+06:57 - Jack Boeaste - Penalty
+07:22 - Ashleigh Allsopp - TRY - Shapesville Apples: 0 v Freebee Network: 6
+08:22 - Callum Hands - GOAL - Shapesville Apples: 0 v Freebee Network: 8
+10:23 - James Chadwick - Intercepted Off A Benji Humphrey Pass
+10:23 - Shapesville Apples Interchanged Players Reimis Davis & Aaron Alexander
+10:52 - Freebee Network Interchanged Players Ali Vianna & Trixie Emerson
+11:21 - Freebee Network Interchanged Players Joseph Cooper & Mitchell Lynn
+11:36 - Kate Yemm - 6th Tackle Changeover
+11:36 - Freebee Network Interchanged Players Mitchell Lynn & Tom Yacoub
+12:56 - Jeffrey Pout - Intercepted Off A Tom Yacoub Pass
+13:48 - David Hull - Ruck Infringement
+14:20 - Benji Humphrey - Ruck Infringement
+14:20 - Shapesville Apples Interchanged Players Calum Tamber & Carter North
+14:20 - Freebee Network Interchanged Players Trixie Emerson & Mitchell Lynn
+14:52 - James Chadwick - TRY - Shapesville Apples: 4 v Freebee Network: 8
+15:52 - Anthony O' Donnell - GOAL - Shapesville Apples: 6 v Freebee Network: 8
+17:23 - Michael Parkson - Over The Sideline
+17:40 - Amy Manfredi - TRY - Shapesville Apples: 6 v Freebee Network: 12
+18:40 - Callum Hands - GOAL - Shapesville Apples: 6 v Freebee Network: 14
+21:38 - Callum Hands - Penalty
+21:38 - Shapesville Apples Interchanged Players Aaron Alexander & Reimis Davis
+22:23 - Kelin Miao - Ruck Infringement
+22:37 - Michael Parkson - Forward Pass
+25:13 - Jack Boeaste - 6th Tackle Changeover
+26:12 - Jeni Quess - Intercepted Off A Kyle Phillips Pass
+27:27 - Reimis Davis - 6th Tackle Changeover
+28:08 - Cameron Rose - Over The Sideline
+28:21 - Reimis Bergman - TRY - Shapesville Apples: 10 v Freebee Network: 14
+29:21 - Anthony O' Donnell - GOAL - Shapesville Apples: 12 v Freebee Network: 14
+30:50 - Shapesville Apples Interchanged Players Anthony O' Donnell & Calum Tamber
+32:16 - Andrew Russell - TRY - Shapesville Apples: 12 v Freebee Network: 18
+33:16 - Callum Hands - GOAL - Shapesville Apples: 12 v Freebee Network: 20
+34:28 - Kristian Potter - Stripped Ball Off Benji Humphrey
+34:40 - Jeni Quess - TRY - Shapesville Apples: 16 v Freebee Network: 20
+35:40 - Kate Yemm - CONVERSION MISSED
+39:28 - Peter Waterhouse - 6th Tackle Changeover
+40:00 - HALF TIME - Shapesville Apples: 16 v Freebee Network: 20
+40:45 - Shapesville Apples Interchanged Players Michael Parkson & Julian Spice
+45:16 - Cameron Rose - Knock On
+45:34 - Kelin Miao - Intercepted Off A Calum Tamber Pass
+49:22 - Kyle Phillips - 6th Tackle Changeover
+50:35 - Cameron Rose - Stripped Ball Off Callum Croker
+51:12 - Freebee Network Interchanged Players David Hull & Joseph Cooper
+51:53 - Tom Yacoub - 6th Tackle Changeover
+52:23 - Andrew Russell - Intercepted Off A Kate Yemm Pass
+53:33 - Reimis Davis - Ruck Infringement
+53:48 - ------VIDEO REFEREE------
+53:48 - Kelin Miao - NO TRY - Offside
+53:48 - Kelin Miao - Penalty
+56:20 - Shapesville Apples Interchanged Players Kristian Potter & Anthony O' Donnell
+57:15 - Callum Croker - Injury - ACL
+57:15 - Shapesville Apples Interchanged Players Callum Croker & Robert Imposia
+57:33 - Jeni Quess - TRY - Shapesville Apples: 20 v Freebee Network: 20
+58:33 - Julian Spice - CONVERSION MISSED
+60:23 - Jeni Quess - Injury - Broken Arm
+60:23 - Tom Yacoub - SIN BIN
+60:23 - Tom Yacoub - Penalty
+60:23 - Shapesville Apples Interchanged Players Jeni Quess & Callum Croker
+60:39 - Reimis Bergman - FIELD GOAL - Shapesville Apples: 21 v Freebee Network: 20
+66:26 - Huretio Johns - Over The Sideline
+67:37 - Kyle Phillips - FIELD GOAL - Shapesville Apples: 21 v Freebee Network: 21
+68:23 - Cameron Rose - Incorrect Play The Ball
+68:23 - Cameron Rose - Penalty
+68:23 - Julian Spice - PENALTY GOAL - Shapesville Apples: 23 v Freebee Network: 21
+69:55 - Peter Waterhouse - Ruck Infringement
+70:40 - SIN BIN RETURN - Tom Yacoub
+70:40 - Kate Yemm - Over The Sideline
+70:56 - ------VIDEO REFEREE------
+70:56 - Andrew Russell - TRY - Shapesville Apples: 23 v Freebee Network: 25
+71:56 - Callum Hands - GOAL - Shapesville Apples: 23 v Freebee Network: 27
+77:11 - James Chadwick - TRY - Shapesville Apples: 27 v Freebee Network: 27
+78:11 - Julian Spice - CONVERSION MISSED
+80:00 - EXTRA TIME - Shapesville Apples: 27 v Freebee Network: 27
+80:44 - Freebee Network Interchanged Players Mitchell Lynn & David Hull
+81:09 - Freebee Network Interchanged Players Ashleigh Allsopp & Trixie Emerson
+82:09 - Julian Spice - Incorrect Play The Ball
+82:09 - Julian Spice - Penalty
+82:44 - James Chadwick - Intercepted Off A James Deon Pass
+88:44 - Julian Spice - Forward Pass
+90:02 - Freebee Network Interchanged Players Trixie Emerson & Ali Vianna
+90:16 - Kelin Miao - 6th Tackle Changeover
+91:39 - Ali Vianna - Intercepted Off A Julian Spice Pass
+92:59 - Amy Manfredi - 6th Tackle Changeover
+94:35 - Carter North - 6th Tackle Changeover
+96:06 - Ali Vianna - 6th Tackle Changeover
+97:03 - Kelin Miao - Intercepted Off A Calum Tamber Pass
+97:34 - ------VIDEO REFEREE------
+97:34 - Peter Waterhouse - TRY - Shapesville Apples: 27 v Freebee Network: 31
+98:34 - Callum Hands - GOAL - Shapesville Apples: 27 v Freebee Network: 33
+99:34 - FULL TIME - Shapesville Apples: 27 v Freebee Network: 33
+                             
+--------PLAYER STATS--------
+Home Team: Shapesville Apples
+1: Jack Boeaste |Time Played: 99:46 |Metres: 36 |Tackles: 14 |Kicks: 1 |Kick Metres: 32 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+2: Calum Tamber |Time Played: 83:16 |Metres: 67 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 49
+3: Kate Yemm |Time Played: 99:46 |Metres: 15 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+4: Huretio Johns |Time Played: 99:46 |Metres: 42 |Tackles: 7 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+5: Reimis Davis |Time Played: 88:31 |Metres: 60 |Tackles: 14 |Kicks: 4 |Kick Metres: 155 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+6: Callum Croker |Time Played: 96:38 |Metres: 37 |Tackles: 16 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 48
+7: Anthony O' Donnell |Time Played: 74:16 |Metres: 17 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 23
+8: Reimis Bergman |Time Played: 99:46 |Metres: 78 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 1 |Total Points: 5 |Fantasy Points: 53
+9: Julian Spice |Time Played: 59:01 |Metres: 18 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 6
+10: Carter North |Time Played: 85:26 |Metres: 55 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 39
+11: James Chadwick |Time Played: 99:46 |Metres: 180 |Tackles: 11 |Kicks: 1 |Kick Metres: 68 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 130
+12: Jeffrey Pout |Time Played: 99:46 |Metres: 34 |Tackles: 14 |Kicks: 2 |Kick Metres: 56 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 55
+13: Robert Imposia |Time Played: 42:31 |Metres: 3 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+14: Jeni Quess |Time Played: 60:23 |Metres: 37 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 44
+15: Kristian Potter |Time Played: 56:20 |Metres: 6 |Tackles: 7 |Kicks: 2 |Kick Metres: 86 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+16: Aaron Alexander |Time Played: 11:15 |Metres: 2 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Michael Parkson |Time Played: 40:45 |Metres: 7 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+Highlights:                 
+Most Tackles: Callum Croker: 16
+Most Points: James Chadwick: 8
+Most Metres: James Chadwick: 180
+Most Errors: Michael Parkson: 2
+                             
+Away Team: Freebee Network
+1: Callum Hands |Time Played: 99:46 |Metres: 131 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 6 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 40
+2: Joseph Cooper |Time Played: 59:55 |Metres: 4 |Tackles: 7 |Kicks: 2 |Kick Metres: 44 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+3: Peter Waterhouse |Time Played: 99:46 |Metres: 53 |Tackles: 17 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 34
+4: David Hull |Time Played: 70:02 |Metres: 23 |Tackles: 9 |Kicks: 1 |Kick Metres: 50 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+5: Ali Vianna |Time Played: 20:24 |Metres: 37 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+6: Amy Manfredi |Time Played: 99:46 |Metres: 91 |Tackles: 11 |Kicks: 2 |Kick Metres: 65 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 80
+7: Benji Humphrey |Time Played: 99:46 |Metres: 24 |Tackles: 10 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+8: James Deon |Time Played: 99:46 |Metres: 10 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+9: Kelin Miao |Time Played: 99:46 |Metres: 143 |Tackles: 13 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+10: Kyle Phillips |Time Played: 99:46 |Metres: 46 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 35
+11: Andrew Russell |Time Played: 99:46 |Metres: 117 |Tackles: 11 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 88
+12: Cameron Rose |Time Played: 99:46 |Metres: 26 |Tackles: 14 |Kicks: 2 |Kick Metres: 58 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+13: Tom Yacoub |Time Played: 77:53 |Metres: 15 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+14: Trixie Emerson |Time Played: 12:21 |Metres: 3 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+15: Ashleigh Allsopp |Time Played: 81:21 |Metres: 32 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 45
+16: Alex Armstrong |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Mitchell Lynn |Time Played: 66:51 |Metres: 18 |Tackles: 4 |Kicks: 2 |Kick Metres: 56 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+Highlights:                 
+Most Tackles: Peter Waterhouse: 17
+Most Points: Callum Hands: 12
+Most Metres: Kelin Miao: 143
+Most Errors: Cameron Rose: 2
+                             
+---------TEAM STATS---------
+Home Team: Shapesville Apples
+Total Metres: 694
+Total Kick Metres: 432
+Total Errors: 5
+Total Tackles: 160
+Total Tries: 5
+Total Goals: 3
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Freebee Network
+Total Metres: 773
+Total Kick Metres: 395
+Total Errors: 2
+Total Tackles: 152
+Total Tries: 5
+Total Goals: 6
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- James Chadwick
+2nd (2 Points) -- Andrew Russell
+3rd (1 Point) -- Amy Manfredi
+----------------------------

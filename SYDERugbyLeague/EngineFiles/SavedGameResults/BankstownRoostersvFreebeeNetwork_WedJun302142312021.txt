@@ -1,0 +1,224 @@
+----------LINE-UPS----------
+Home Team: Bankstown Roosters
+1: Samantha Tamber
+2: Jeffrey Boeaste
+3: Walter Thurston
+4: Catherine Hunt
+5: Daniel Toa
+6: Avery Soa
+7: Phoebe Chappell
+8: Avery Montoya
+9: Andy Imposia
+10: Junior Morier
+11: Jane Elroii
+12: Jeni Meaney
+13: Callum Shannel
+14: Imm Cleary
+15: Benjamin Alexander
+16: Jonathon Port
+17: Arnold Montoya
+Away Team: Freebee Network
+1: Callum Hands
+2: David Hull
+3: Peter Waterhouse
+4: Ali Vianna
+5: Ashleigh Allsopp
+6: Amy Manfredi
+7: Benji Humphrey
+8: James Deon
+9: Kelin Miao
+10: Kyle Phillips
+11: Andrew Russell
+12: Cameron Rose
+13: Joseph Cooper
+14: Trixie Emerson
+15: Tom Yacoub
+16: Alex Armstrong
+17: Mitchell Lynn
+----------GAME-STAT---------
+Weather: Stormy
+----------------------------
+00:00 - KICK OFF - Bankstown Roosters: 0 v Freebee Network: 0
+02:35 - Ali Vianna - Intercepted Off A Avery Montoya Pass
+03:35 - James Deon - Knock On
+03:53 - Daniel Toa - Knock On
+05:08 - Peter Waterhouse - Forward Pass
+05:26 - Benji Humphrey - Penalty
+05:42 - Walter Thurston - Knock On
+05:55 - Benji Humphrey - Forward Pass
+07:34 - Phoebe Chappell - 6th Tackle Changeover
+08:13 - Callum Hands - Forward Pass
+09:00 - Bankstown Roosters Interchanged Players Callum Shannel & Arnold Montoya
+09:15 - Avery Soa - TRY - Bankstown Roosters: 4 v Freebee Network: 0
+10:15 - Catherine Hunt - CONVERSION MISSED
+12:13 - Walter Thurston - Over The Sideline
+12:43 - Phoebe Chappell - Penalty
+13:01 - Jeni Meaney - Penalty
+14:03 - ------VIDEO REFEREE------
+14:03 - Ali Vianna - TRY - Bankstown Roosters: 4 v Freebee Network: 4
+15:03 - Callum Hands - GOAL - Bankstown Roosters: 4 v Freebee Network: 6
+18:28 - Walter Thurston - Over The Sideline
+19:30 - Ali Vianna - TRY - Bankstown Roosters: 4 v Freebee Network: 10
+20:30 - Callum Hands - CONVERSION MISSED
+21:59 - Ali Vianna - Forward Pass
+22:54 - Jeffrey Boeaste - Knock On
+23:20 - Freebee Network Interchanged Players Callum Hands & Mitchell Lynn
+24:00 - Freebee Network Interchanged Players Peter Waterhouse & Tom Yacoub
+24:56 - Catherine Hunt - Forward Pass
+25:54 - Kelin Miao - Knock On
+26:10 - Tom Yacoub - Intercepted Off A Walter Thurston Pass
+26:10 - Tom Yacoub - TRY - Bankstown Roosters: 4 v Freebee Network: 14
+27:10 - Andrew Russell - CONVERSION MISSED
+28:10 - Freebee Network Interchanged Players Amy Manfredi & Peter Waterhouse
+29:20 - Avery Soa - Intercepted Off A Joseph Cooper Pass
+30:34 - Avery Soa - 6th Tackle Changeover
+31:25 - Mitchell Lynn - Knock On
+31:40 - Benji Humphrey - Intercepted Off A Walter Thurston Pass
+31:56 - Freebee Network Interchanged Players David Hull & Callum Hands
+33:05 - Junior Morier - Injury - HIA
+33:05 - Joseph Cooper - SEND OFF
+33:05 - Joseph Cooper - Penalty
+33:05 - Bankstown Roosters Interchanged Players Junior Morier & Imm Cleary
+34:32 - Samantha Tamber - 6th Tackle Changeover
+34:46 - Samantha Tamber - Intercepted Off A Walter Thurston Pass
+35:30 - Callum Hands - Ruck Infringement
+35:30 - Freebee Network Interchanged Players Tom Yacoub & Amy Manfredi
+36:02 - Jane Elroii - Forward Pass
+36:56 - Phoebe Chappell - Forward Pass
+37:52 - Jeni Meaney - Over The Sideline
+38:20 - Freebee Network Interchanged Players Kyle Phillips & Trixie Emerson
+38:49 - Andrew Russell - Over The Sideline
+40:00 - HALF TIME - Bankstown Roosters: 4 v Freebee Network: 14
+40:16 - Bankstown Roosters Interchanged Players Jane Elroii & Benjamin Alexander
+40:51 - Andrew Russell - Over The Sideline
+41:07 - Trixie Emerson - Stripped Ball Off Andy Imposia
+41:18 - Bankstown Roosters Interchanged Players Daniel Toa & Junior Morier
+42:36 - Kelin Miao - 6th Tackle Changeover
+43:56 - Ali Vianna - Intercepted Off A Benjamin Alexander Pass
+45:00 - Andrew Russell - Forward Pass
+45:00 - Bankstown Roosters Interchanged Players Avery Montoya & Jonathon Port
+45:44 - Kelin Miao - Intercepted Off A Andy Imposia Pass
+46:01 - Phoebe Chappell - Intercepted Off A Trixie Emerson Pass
+47:23 - Kelin Miao - Forward Pass
+47:38 - Andy Imposia - TRY - Bankstown Roosters: 8 v Freebee Network: 14
+48:38 - Catherine Hunt - GOAL - Bankstown Roosters: 10 v Freebee Network: 14
+49:50 - Bankstown Roosters Interchanged Players Catherine Hunt & Callum Shannel
+50:05 - Bankstown Roosters Interchanged Players Junior Morier & Catherine Hunt
+50:54 - Avery Soa - Over The Sideline
+51:05 - Andrew Russell - Forward Pass
+51:05 - Freebee Network Interchanged Players Callum Hands & Alex Armstrong
+51:18 - Benji Humphrey - Stripped Ball Off Arnold Montoya
+51:18 - Bankstown Roosters Interchanged Players Jeffrey Boeaste & Jane Elroii
+51:41 - Benji Humphrey - Over The Sideline
+51:53 - Ali Vianna - Intercepted Off A Avery Soa Pass
+53:03 - ------VIDEO REFEREE------
+53:03 - Ali Vianna - NO TRY - Obstruction
+53:03 - Ali Vianna - Penalty
+53:16 - Peter Waterhouse - Penalty
+54:35 - Andy Imposia - 6th Tackle Changeover
+55:33 - Ali Vianna - Over The Sideline
+55:48 - Ali Vianna - Intercepted Off A Andy Imposia Pass
+57:00 - Mitchell Lynn - 6th Tackle Changeover
+57:00 - Freebee Network Interchanged Players Kelin Miao & David Hull
+57:31 - Andy Imposia - Forward Pass
+57:42 - ------VIDEO REFEREE------
+57:42 - Ali Vianna - TRY - Bankstown Roosters: 10 v Freebee Network: 18
+58:42 - Andrew Russell - GOAL - Bankstown Roosters: 10 v Freebee Network: 20
+60:50 - Phoebe Chappell - Intercepted Off A Trixie Emerson Pass
+61:15 - Arnold Montoya - Forward Pass
+61:39 - Mitchell Lynn - Knock On
+62:04 - Andrew Russell - Penalty
+62:45 - Jane Elroii - Forward Pass
+64:47 - Walter Thurston - Knock On
+66:31 - Benji Humphrey - 6th Tackle Changeover
+68:49 - Benjamin Alexander - Intercepted Off A Samantha Tamber Pass
+69:56 - Callum Shannel - Over The Sideline
+70:30 - Imm Cleary - Penalty
+71:38 - Benji Humphrey - Kick Out On The Full
+73:41 - Phoebe Chappell - Intercepted Off A Cameron Rose Pass
+73:53 - Avery Soa - TRY - Bankstown Roosters: 14 v Freebee Network: 20
+74:53 - Catherine Hunt - GOAL - Bankstown Roosters: 16 v Freebee Network: 20
+76:06 - Jonathon Port - Knock On
+76:19 - Andrew Russell - TRY - Bankstown Roosters: 16 v Freebee Network: 24
+77:19 - Andrew Russell - CONVERSION MISSED
+78:36 - Trixie Emerson - Over The Sideline
+78:52 - ------VIDEO REFEREE------
+78:52 - Walter Thurston - TRY - Bankstown Roosters: 20 v Freebee Network: 24
+79:52 - Catherine Hunt - CONVERSION MISSED
+80:00 - FULL TIME - Bankstown Roosters: 20 v Freebee Network: 24
+                             
+--------PLAYER STATS--------
+Home Team: Bankstown Roosters
+1: Samantha Tamber |Time Played: 80:00 |Metres: 28 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+2: Jane Elroii |Time Played: 68:58 |Metres: 28 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+3: Walter Thurston |Time Played: 80:00 |Metres: 18 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 4 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 7
+4: Callum Shannel |Time Played: 39:10 |Metres: 69 |Tackles: 4 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+5: Catherine Hunt |Time Played: 79:45 |Metres: 33 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+6: Avery Soa |Time Played: 80:00 |Metres: 100 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 34
+7: Phoebe Chappell |Time Played: 80:00 |Metres: 99 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+8: Jonathon Port |Time Played: 35:00 |Metres: 12 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+9: Andy Imposia |Time Played: 80:00 |Metres: 23 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 17
+10: Imm Cleary |Time Played: 46:55 |Metres: 13 |Tackles: 3 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+11: Benjamin Alexander |Time Played: 39:44 |Metres: 25 |Tackles: 6 |Kicks: 1 |Kick Metres: 63 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+12: Jeni Meaney |Time Played: 80:00 |Metres: 33 |Tackles: 13 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+13: Arnold Montoya |Time Played: 71:00 |Metres: 7 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+14: Daniel Toa |Time Played: 41:18 |Metres: 14 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+15: Jeffrey Boeaste |Time Played: 51:18 |Metres: 35 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+16: Avery Montoya |Time Played: 45:00 |Metres: 4 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+17: Junior Morier |Time Played: 41:52 |Metres: 23 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+Highlights:                 
+Most Tackles: Walter Thurston: 14
+Most Points: Avery Soa: 8
+Most Metres: Avery Soa: 100
+Most Errors: Walter Thurston: 4
+                             
+Away Team: Freebee Network
+1: Mitchell Lynn |Time Played: 56:40 |Metres: 22 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+2: Alex Armstrong |Time Played: 28:55 |Metres: 20 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+3: Amy Manfredi |Time Played: 72:40 |Metres: 40 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+4: Ali Vianna |Time Played: 80:00 |Metres: 169 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 3 |Goals: 0 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 31
+5: Ashleigh Allsopp |Time Played: 80:00 |Metres: 55 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+6: Peter Waterhouse |Time Played: 75:50 |Metres: 65 |Tackles: 8 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+7: Benji Humphrey |Time Played: 80:00 |Metres: 33 |Tackles: 14 |Kicks: 1 |Kick Metres: 44 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+8: James Deon |Time Played: 80:00 |Metres: 8 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+9: David Hull |Time Played: 54:56 |Metres: 16 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+10: Trixie Emerson |Time Played: 41:40 |Metres: 5 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+11: Andrew Russell |Time Played: 80:00 |Metres: 135 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 4 |Tries: 1 |Goals: 1 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 14
+12: Cameron Rose |Time Played: 80:00 |Metres: 11 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+13: Joseph Cooper |Time Played: 33:05 |Metres: 17 |Tackles: 4 |Kicks: 2 |Kick Metres: 76 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+14: Kyle Phillips |Time Played: 38:20 |Metres: 3 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+15: Tom Yacoub |Time Played: 11:30 |Metres: 2 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 13
+16: Callum Hands |Time Played: 42:29 |Metres: 37 |Tackles: 8 |Kicks: 1 |Kick Metres: 56 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 14
+17: Kelin Miao |Time Played: 57:00 |Metres: 47 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+Highlights:                 
+Most Tackles: Ali Vianna: 15
+Most Points: Ali Vianna: 12
+Most Metres: Ali Vianna: 169
+Most Errors: Andrew Russell: 4
+                             
+---------TEAM STATS---------
+Home Team: Bankstown Roosters
+Total Metres: 564
+Total Kick Metres: 170
+Total Errors: 15
+Total Tackles: 135
+Total Tries: 4
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Freebee Network
+Total Metres: 685
+Total Kick Metres: 194
+Total Errors: 17
+Total Tackles: 122
+Total Tries: 5
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Benjamin Alexander
+2nd (2 Points) -- Avery Soa
+3rd (1 Point) -- Ali Vianna
+----------------------------

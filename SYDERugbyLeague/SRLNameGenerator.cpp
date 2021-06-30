@@ -407,6 +407,7 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Ujhazzy",
 	"Unres",
 	"Valenta",
+	"Viana",
 	"Vianna",
 	"Vlandys",
 	"Walker",

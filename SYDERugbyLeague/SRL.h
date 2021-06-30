@@ -313,6 +313,7 @@ public:
 	ConsoleWindow InfoView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow SimulatePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow CreateSeasonPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow FormatPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExitPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow RandomizePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -326,6 +327,8 @@ public:
 	ConsoleWindow configTabs(ConsoleWindow window);
 
 	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
+
+	bool addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams);
 
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -373,6 +376,7 @@ public:
 	static SRLSeasonLength seasonLength;
 
 	static bool SeasonStart;
+	static bool SeasonStartCall;
 
 	static bool Simulate;
 	static bool SimulateCall;
@@ -404,7 +408,7 @@ public:
 	static bool m_Injuries;
 	static bool m_SinBins;
 	static bool m_SeasonEvents;
-
+	static bool m_FaceOffLimit;
 
 	static SRLSoundtrack m_GamePlaySoundtrack;
 	static bool soundTrackOn;

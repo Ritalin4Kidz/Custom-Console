@@ -229,19 +229,6 @@ g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(2959): warning 
 g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(2978): warning C4018: '>=': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(3016): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(3038): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SYDESound.cpp
-g:\github repos\custom-console\drawableconsole\sydesound.cpp(53): warning C4715: 'BaseSYDESoundSettings::getDefaultVolumeState': not all control paths return a value
-  SYDESoundtrack.cpp
-g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
-g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydesoundtrack.cpp(23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydesoundtrack.cpp(31): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydesoundtrack.cpp(33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydesoundtrack.cpp(36): warning C4018: '<': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydesoundtrack.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydesoundtrack.cpp(67): warning C4018: '>=': signed/unsigned mismatch
   Settings.cpp
 g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\github repos\custom-console\drawableconsole\settings.cpp(11): warning C4018: '<': signed/unsigned mismatch

@@ -13,6 +13,7 @@ GameStateInDepthView SRLGame::inDepthState = NormalInDepthView;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
 bool SRLGame::SeasonStart = false;
+bool SRLGame::SeasonStartCall = false;
 bool SRLGame::NextRoundCall = false;
 bool SRLGame::PrevRoundCall = false;
 bool SRLGame::addCall = false;
@@ -57,6 +58,7 @@ bool SRLGame::exitConfirmedCall = false;
 bool SRLGame::randomizeCall = false;
 bool SRLGame::randomizeConfirmedCall = false;
 bool SRLGame::finalsSystemCall = false;
+bool SRLGame::m_FaceOffLimit = true;
 vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
@@ -407,7 +409,7 @@ void SeasonModeClick()
 
 void SeasonModeStartClick()
 {
-	SRLGame::SeasonStart = true;
+	SRLGame::SeasonStartCall = true;
 }
 
 
@@ -1240,6 +1242,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	{
 		return SimulatePopUp(window, windowWidth, windowHeight);
 	}
+	if (SeasonStartCall)
+	{
+		return CreateSeasonPopUp(window, windowWidth, windowHeight);
+	}
 	if (randomizeCall)
 	{
 		return RandomizePopUp(window, windowWidth, windowHeight);
@@ -1422,6 +1428,27 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 	window = configTabs(window);
 	if (SeasonStart)
 	{
+		//THE AMOUNT OF TIMES THE SAME MATCH-UP CAN HAPPEN IN A SEASON (WHERE HOME TEAM & AWAY TEAM ARE THE SAME)
+		int VersusLimit = 1;
+		if (seasonLength == Length_MediumSeason || seasonLength == Length_NormalSeason)
+		{
+			VersusLimit = 2;
+		}
+		if (seasonLength == Length_LongSeason)
+		{
+			//ACTUAL LIMIT SHOULD BE 3 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
+			VersusLimit = 4;
+		}
+		if (seasonLength == Length_ExtremeSeason)
+		{
+			//ACTUAL LIMIT SHOULD BE 5 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
+			VersusLimit = 6;
+		}
+		if (seasonLength == Length_EnduranceSeason)
+		{
+			//ACTUAL LIMIT SHOULD BE 7 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
+			VersusLimit = 8;
+		}
 		currentWonBetsSeason = 0;
 		currentLostBetsSeason = 0;
 		currentBetsTotalSeason = 0;
@@ -1452,7 +1479,7 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			ladders.push_back(newPosition);
 		}
 		SRLLadder Ladder = SRLLadder(ladders);
-		vector<SRLRound> rounds;
+		vector<SRLRound> rounds = vector<SRLRound>();
 		if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
 		{
 			vector<SRLGameMatchup> games;
@@ -1469,19 +1496,30 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		}
 		for (int i = 0; i < BaseSeasonGames; i++)
 		{
+			bool pushBack = true;
 			vector<SRLGameMatchup> games;
 			vector<string> AvailableTeams = m_SeasonTeams;
 			for (int ii = 0; ii < 8; ii++)
 			{
-				int team1 = rand() % AvailableTeams.size();
-				string team1Name = AvailableTeams[team1];
-				AvailableTeams.erase(AvailableTeams.begin() + team1);
-				int team2 = rand() % AvailableTeams.size();
-				string team2Name = AvailableTeams[team2];
-				AvailableTeams.erase(AvailableTeams.begin() + team2);
-				games.push_back(SRLGameMatchup(team1Name, team2Name));
+				if (!addGame(VersusLimit, rounds, games, AvailableTeams))
+				{
+					if (ii == 0)
+					{
+						ii--;
+					}
+					else
+					{
+						i--;
+						pushBack = false;
+						games.clear();
+						break;
+					}
+				}
 			}
-			rounds.push_back(SRLRound(games));
+			if (pushBack)
+			{
+				rounds.push_back(SRLRound(games));
+			}
 		}
 		SRLDraw Draw(rounds);
 		m_Season = SRLSeason(Draw, Ladder);
@@ -2363,7 +2401,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.0.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.1.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2381,6 +2419,23 @@ ConsoleWindow SRLGame::SimulatePopUp(ConsoleWindow window, int windowWidth, int 
 	window.setTextAtPoint(Vector2(6, 6),"SIMULATING....PLEASE WAIT...." , BLACK_BRIGHTYELLOW_BG);
 	window.setTextAtPoint(Vector2(6, 7), "Please note simulation will take longer", BLACK_BRIGHTYELLOW_BG);
 	window.setTextAtPoint(Vector2(6, 8), "the more rounds simulated at once", BLACK_BRIGHTYELLOW_BG);
+	return window;
+}
+
+ConsoleWindow SRLGame::CreateSeasonPopUp(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	SeasonStartCall = false;
+	SeasonStart = true;
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Generating Season Draw", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 7), "Please note generation will take longer", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 8), "the more rounds in the season", BLACK_BRIGHTYELLOW_BG);
 	return window;
 }
 
@@ -2567,6 +2622,45 @@ ConsoleWindow SRLGame::KeypadPop_Up(ConsoleWindow window, int windowWidth, int w
 	window = m_KeypadBtn_OK.draw_ui(window);
 	window = m_KeypadBtn_CNCL.draw_ui(window);
 	return window;
+}
+
+bool SRLGame::addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams)
+{
+	int team1 = rand() % teams.size();
+	string team1Name = teams[team1];
+	teams.erase(teams.begin() + team1);
+	int team2 = rand() % teams.size();
+	string team2Name = teams[team2];
+	teams.erase(teams.begin() + team2);
+	if (m_FaceOffLimit)
+	{
+		int count = 0;
+		int exactLineUp = 0;
+		for (int j = 0; j < rounds.size(); j++)
+		{
+			for (int jj = 0; jj < 8; jj++)
+			{
+				bool VersedBefore1 = (rounds[j].m_Games[jj].HomeTeam == team1Name) && (rounds[j].m_Games[jj].AwayTeam == team2Name);
+				bool VersedBefore2 = (rounds[j].m_Games[jj].HomeTeam == team2Name) && (rounds[j].m_Games[jj].AwayTeam == team1Name);
+				if (VersedBefore1 || VersedBefore2)
+				{
+					count++;
+					if (VersedBefore1)
+					{
+						exactLineUp++;
+					}
+					if (count >= limit || exactLineUp > limit/2)
+					{
+						teams.push_back(team1Name);
+						teams.push_back(team2Name);
+						return false;
+					}
+				}
+			}
+		}
+	}
+	games.push_back(SRLGameMatchup(team1Name, team2Name));
+	return true;
 }
 
 ConsoleWindow SRLGame::ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)

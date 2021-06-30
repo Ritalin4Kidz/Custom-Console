@@ -6,7 +6,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamFreebeeNetwork(string& team)
 	TeamList.push_back(SRLPlayer("Callum Hands", "Australia", 45, 88, 35, 79, 83, 99, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 4));
 	TeamList.push_back(SRLPlayer("Luke Alexander", "Australia", 85, 65, 75, 29, 33, 87, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 1));
 	TeamList.push_back(SRLPlayer("Peter Waterhouse", "Australia", 50, 78, 72, 48, 22, 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 40));
-	TeamList.push_back(SRLPlayer("Ali Vianna", "Australia", 95, 93, 65, 20, 25, 59, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 68));
+	TeamList.push_back(SRLPlayer("Ali Viana", "Australia", 95, 93, 65, 20, 25, 59, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 68));
 	TeamList.push_back(SRLPlayer("Ashleigh Allsopp", "Australia", 65, 68, 95, 29, 23, 59, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, PURPLE_PURPLE_BG, 17));
 	TeamList.push_back(SRLPlayer("Ryan Mallett", "Australia", 25, 48, 85, 39, 45, 63, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 5));
 	TeamList.push_back(SRLPlayer("Simon Armstrong", "Australia", 78, 22, 78, 22, 78, 22, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 38));

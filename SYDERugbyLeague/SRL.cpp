@@ -3204,27 +3204,27 @@ void SRLGame::SimulateGames()
 					AchievementStrings.push_back("SRL_BET_CHALLENGE3");
 				}
 				AchievementStrings.push_back("SRL_FIRST_SEASON");
-				if (seasonLength == Length_ShortSeason)
+				if (seasonLength == Length_ShortSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_SHORT_SEASON");
 				}
-				else if (seasonLength == Length_MediumSeason)
+				else if (seasonLength == Length_MediumSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_MEDIUM_SEASON");
 				}
-				else if (seasonLength == Length_NormalSeason)
+				else if (seasonLength == Length_NormalSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_NORMAL_SEASON");
 				}
-				else if (seasonLength == Length_LongSeason)
+				else if (seasonLength == Length_LongSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_LONG_SEASON");
 				}
-				else if (seasonLength == Length_ExtremeSeason)
+				else if (seasonLength == Length_ExtremeSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_EXTREME_SEASON");
 				}
-				else if (seasonLength == Length_EnduranceSeason)
+				else if (seasonLength == Length_EnduranceSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_ENDURANCE_SEASON");
 				}

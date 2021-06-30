@@ -6,6 +6,7 @@
 #include "SYDEFileDefaults.h"
 #include "SRLNameGenerator.h"
 #include "SRLNewsStoryGenerator.h"
+#include "SRLCustomTeams.h"
 #include "SYDESounds.h"
 #include "SRLSoundtrack.h"
 #include "Vector2.h"
@@ -211,25 +212,6 @@ struct SRLGameBetsWriting
 	string name;
 	ColourClass colour;
 };
-
-enum SRLArticleType
-{
-	SRLAT_Premiership,
-	SRLAT_PlayerTrade,
-	SRLAT_PlayerSign,
-	SRLAT_Normal,
-	SRLAT_DropPlayer,
-};
-
-struct SRLNewsArticle
-{
-	SRLNewsArticle() {}
-	string headline;
-	vector<string> newsStory;
-	CustomAsset newsPicture;
-	SRLArticleType type = SRLAT_Normal;
-};
-
 struct SRLRound
 {
 	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
@@ -321,7 +303,8 @@ public:
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
 
 	void LeaderboardOutputStrings(vector<string> &mainVec, vector<SRLLeaderboardPosition> ldrboard);
-
+	void LeaderboardOutputStringsTopScorer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard);
+	void LeaderboardOutputStringsTopPlayer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard);
 
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow NewsView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -451,6 +434,9 @@ public:
 	static int playerClicked;
 	static bool playerCall;
 	static bool finalsSystemCall;
+
+private:
+	const int customTeamGenerateChance = 9999;
 
 private:
 	SYDEClickableButton m_StartSeasonBtn;

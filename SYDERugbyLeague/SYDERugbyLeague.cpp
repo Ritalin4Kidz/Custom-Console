@@ -50,6 +50,8 @@ enum EAchievements
 	SRL_BET_CHALLENGE4 = 23,
 	SRL_REGEN = 24,
 	SRL_BET_NICE = 25,
+	SRL_FREEBEE_NETWORK = 26,
+	SRL_AUSMUSIC_TEAM = 27,
 };
 
 // Achievement array which will hold data about the achievements and their state
@@ -80,6 +82,8 @@ Achievement_t g_Achievements[] =
 	_ACH_ID(SRL_BET_CHALLENGE4, "Close But No Cigar"),
 	_ACH_ID(SRL_REGEN, "Regeneration Powers"),
 	_ACH_ID(SRL_BET_NICE, "Nice"),
+	_ACH_ID(SRL_FREEBEE_NETWORK, "Freebee Network"),
+	_ACH_ID(SRL_AUSMUSIC_TEAM, "AusMusic Community"),
 };
 
 // Global access to Achievements object

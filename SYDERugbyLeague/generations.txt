@@ -1,0 +1,11 @@
+As of 0.9.9.0beta
+
+Amount Of Different Player Names = 202 x 133 = 26,866
+Amount Of Different Player Designs = 130,416
+Amount Of Different Countries = 18
+
+Total Amount Of Player Possibilites (Not including stats) = 2,347,488
+
+Amount Of Different Team Names = 169 x 194 = 32,786
+Amount Of Different Jerseys = 226,590
+Amount Of Different Team Generations (Not including players) = 7,428,979,740

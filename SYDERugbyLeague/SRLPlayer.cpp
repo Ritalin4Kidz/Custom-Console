@@ -17,6 +17,22 @@ SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int def
 	generateFeatures();
 }
 
+SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle)
+{
+	m_PlayerName = name;
+	m_CountryOfOrigin = country;
+	m_BaseSpeed = speed;
+	m_BaseAttack = attack;
+	m_BaseDefence = defence;
+	m_BaseKicking = kicking;
+	m_GoalKicking = goalKicking;
+	m_BaseHandling = handling;
+	primaryColour = prim;
+	secondaryColour = seco;
+	tertiaryColour = tert;
+	playerTypeInt = playerStyle;
+}
+
 SRLPlayer::~SRLPlayer()
 {
 }

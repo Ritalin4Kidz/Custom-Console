@@ -1,13 +1,36 @@
 #pragma once
 #include <vector>
 #include <string>
-
-
+#include "SRLTeam.h"
+#include "CustomAsset.h"
+#include "AssetsClass.h"
 using namespace std;
+
+enum SRLArticleType
+{
+	SRLAT_Premiership,
+	SRLAT_PlayerTrade,
+	SRLAT_PlayerSign,
+	SRLAT_Normal,
+	SRLAT_DropPlayer,
+};
+
+
+struct SRLNewsArticle
+{
+	SRLNewsArticle() {}
+	string headline;
+	vector<string> newsStory;
+	CustomAsset newsPicture;
+	SRLArticleType type = SRLAT_Normal;
+};
 
 class SRLNewsStoryGenerator
 {
 public:
+
+	static SRLNewsArticle getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, AssetsClass astVars);
+
 #pragma region FeelGood
 	static vector<string> generateFeelGoodArticleSickKids(string Player1);
 	static vector<string> generateFeelGoodArticleSavesDrowner(string Player1);
@@ -34,6 +57,7 @@ public:
 	static vector<string> generateOpinionArticlePlayerShouldSwap(string Team1, string Player1);
 	static vector<string> generateOpinionArticlePlayerOfYear(string Team1, string Player1);
 	static vector<string> generateOpinionArticlePlayerShouldCaptain(string Country, string Player1);
+	static vector<string> generateOpinionArticleCoachWantsFinalsSystem(string Team1);
 #pragma endregion
 
 #pragma region SeasonEvents

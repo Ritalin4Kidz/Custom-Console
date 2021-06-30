@@ -52,6 +52,101 @@ vector<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, str
 	return temp;
 }
 
+SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, AssetsClass astVars)
+{
+	SRLNewsArticle m_Article;
+	int articleType = rand() % 17;
+	switch (articleType)
+	{
+	case 0:
+		m_Article.headline = MainPlayer.getName() + " Saves Local Man From Drowning";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		break;
+	case 1:
+		m_Article.headline = MainPlayer.getName() + " Donates To Controverisal Charity";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleDonatesToCharity(MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
+		break;
+	case 2:
+		m_Article.headline = MainPlayer.getName() + " Involved In Sexting Scandal";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticleSexScandal(MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Phone.bmp", 7, 7));
+		break;
+	case 3:
+		m_Article.headline = MainPlayer.getName() + " Assaults RSL Bouncer";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticlePunchUp(MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		break;
+	case 4:
+		m_Article.headline = MainPlayer.getName() + "'s Large-Scale Gambling Problem";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticleGambling(MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Coin.bmp", 7, 7));
+		break;
+	case 5:
+		m_Article.headline = MainPlayer.getName() + " At Risk Of An Early Release!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePlayerRelease(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 6:
+		m_Article.headline = MainPlayer.getName() + " To Have Contract Extended!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleContractExtension(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
+		break;
+	case 7:
+		m_Article.headline = "Player Unrest At " + MainTeam.getName();
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePlayerUnrest(MainTeam.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 8:
+		m_Article.headline = MainPlayer.getName() + " Offered Pay Cut To Re-sign";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePayCut(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
+		break;
+	case 9:
+		m_Article.headline = MainPlayer.getName() + "'s Retirment Rumours!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleRetirement(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	//case 10:
+	//	m_Article.headline = "Rival Players Raise Awareness!";
+	//	m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(MainTeam.getName(), MainPlayer.getName());
+	//	m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Goalpost.bmp", 7, 7));
+	//	break;
+	case 11:
+		m_Article.headline = "Opinion: " + MainPlayer.getName() + " Should Swap Teams";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 12:
+		m_Article.headline = "Fan Poll: " + MainTeam.getName() + "'s Best Player";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 13:
+		m_Article.headline = "Opinion: " + MainPlayer.getName() + " Should Captain " + MainPlayer.getOrigin();
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(MainPlayer.getOrigin(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 14:
+		m_Article.headline = MainPlayer.getName() + "'s Eligibility Crisis!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(MainPlayer.getOrigin(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 15:
+		m_Article.headline = "Coach Proposes New Finals System!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticleCoachWantsFinalsSystem(MainTeam.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	default:
+		m_Article.headline = MainPlayer.getName() + " Helps Sick Kids In Hospital";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		break;
+	}
+	return m_Article;
+}
+
 vector<string> SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(string Player1)
 {
 	vector<string> temp;
@@ -158,6 +253,20 @@ vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(
 	temp.push_back("leadership when no one else has. This simple");
 	temp.push_back("change could see " + Country + " become");
 	temp.push_back("a quick favourite.");
+	return temp;
+}
+
+vector<string> SRLNewsStoryGenerator::generateOpinionArticleCoachWantsFinalsSystem(string Team1)
+{
+	vector<string> temp;
+	temp.push_back(Team1 +"'s coach has proposed");
+	temp.push_back("a new finals system to the SRL Today. This new");
+	temp.push_back("system would see the top 11 teams go through,");
+	temp.push_back("with the minor premiers getting week 1 off.");
+	temp.push_back("Criticism has come over it's complicated");
+	temp.push_back("structure, and 11 week system.");
+	temp.push_back("'It's just an idea at the moment', the coach");
+	temp.push_back("responded, 'don't get too involved yet'");
 	return temp;
 }
 

@@ -687,7 +687,7 @@ void SRLGame::init()
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
 	m_GamePlaySoundtrack.setYPos(14);
-	m_GamePlaySoundtrack.setOn(true);
+	m_GamePlaySoundtrack.setOn(soundTrackOn);
 	if (soundTrackOn)
 	{
 		m_GamePlaySoundtrack.start();
@@ -1322,7 +1322,18 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		{
 			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
 			{
-				SRLTeam HomeTeam = generateRandomTeam();
+				SRLTeam HomeTeam;
+				int chance = rand() % customTeamGenerateChance;
+				if (chance == 0)
+				{
+					string CustomTeamStr;
+					HomeTeam = SRLCustomTeamGenerator::generateRandomCustomTeam(CustomTeamStr);
+					AchievementStrings.push_back(CustomTeamStr);
+				}
+				else
+				{
+					HomeTeam = generateRandomTeam();
+				}
 				if (HomeTeam.getName() != "Could Not Generate Error")
 				{
 					HomeTeam.saveTeam();
@@ -1351,7 +1362,18 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		{
 			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
 			{
-				SRLTeam HomeTeam = generateRandomTeam();
+				SRLTeam HomeTeam;
+				int chance = rand() % customTeamGenerateChance;
+				if (chance == 0)
+				{
+					string CustomTeamStr;
+					HomeTeam = SRLCustomTeamGenerator::generateRandomCustomTeam(CustomTeamStr);
+					AchievementStrings.push_back(CustomTeamStr);
+				}
+				else
+				{
+					HomeTeam = generateRandomTeam();
+				}
 				if (HomeTeam.getName() != "Could Not Generate Error")
 				{
 					HomeTeam.saveTeam();
@@ -1400,6 +1422,13 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 	window = configTabs(window);
 	if (SeasonStart)
 	{
+		currentWonBetsSeason = 0;
+		currentLostBetsSeason = 0;
+		currentBetsTotalSeason = 0;
+		currentWonBetsSeasonMatchOnly = 0;
+		currentLostBetsSeasonMatchOnly = 0;
+		currentBetsTotalSeasonMatchOnly = 0;
+
 		BaseSeasonGames = static_cast<int>(seasonLength);
 		SeasonStart = false;
 		if (m_SeasonTeams.size() != 16)
@@ -1481,7 +1510,18 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		generateCall = false;
 		if (m_SeasonTeams.size() < 16)
 		{
-			SRLTeam HomeTeam = generateRandomTeam();
+			SRLTeam HomeTeam;
+			int chance = rand() % customTeamGenerateChance;
+			if (chance == 0)
+			{
+				string CustomTeamStr;
+				HomeTeam = SRLCustomTeamGenerator::generateRandomCustomTeam(CustomTeamStr);
+				AchievementStrings.push_back(CustomTeamStr);
+			}
+			else
+			{
+				HomeTeam = generateRandomTeam();
+			}
 			if (HomeTeam.getName() != "Could Not Generate Error")
 			{
 				HomeTeam.saveTeam();
@@ -1783,6 +1823,9 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 	else if (bettingState == Account_STATE)
 	{
 		window.setTextAtPoint(Vector2(2, 3), "Account Balance: " + m_BetMoney.ReturnPrice(), BRIGHTWHITE);
+
+		window.setTextAtPoint(Vector2(2, 5), "Bets Won: " + to_string(currentWonBetsSeason), BRIGHTGREEN);
+		window.setTextAtPoint(Vector2(2, 6), "Bets Lost: " + to_string(currentLostBetsSeason), RED);
 	}
 
 
@@ -2098,6 +2141,22 @@ void SRLGame::LeaderboardOutputStrings(vector<string>& mainVec, vector<SRLLeader
 	}
 }
 
+void SRLGame::LeaderboardOutputStringsTopScorer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard)
+{
+	for (int i = 0; i < 25; i++)
+	{
+		mainVec.push_back(to_string(i + 1) + ". " + ldrboard[i].Player + "-" + ldrboard[i].TeamName + " : " + to_string(ldrboard[i].points));
+	}
+}
+
+void SRLGame::LeaderboardOutputStringsTopPlayer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard)
+{
+	for (int i = 0; i < 25; i++)
+	{
+		mainVec.push_back(to_string(i + 1) + ". " + ldrboard[i].Player + "-" + ldrboard[i].TeamName + " : " + to_string(ldrboard[i].points));
+	}
+}
+
 ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawMainMenuTabs(window);
@@ -2285,7 +2344,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.9.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.9.10.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2637,12 +2696,12 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 				temp.push_back("");
 				temp.push_back("Top Point Scores");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopPoints.shortlist);
+				LeaderboardOutputStringsTopScorer(temp, m_Season.m_TopPoints.shortlist);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Top Players Of The Season");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopPlayers.shortlist);
+				LeaderboardOutputStringsTopPlayer(temp, m_Season.m_TopPlayers.shortlist);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("News Stories");
@@ -3737,7 +3796,7 @@ void SRLGame::setUpPlayer()
 void SRLGame::otherArticles()
 {
 	SRLNewsArticle m_Article;
-	int articleType = rand() % 18;
+	int articleType = rand() % 1000;
 	int team = rand() % 16;
 	SRLTeam MainTeam;
 	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
@@ -3747,32 +3806,7 @@ void SRLGame::otherArticles()
 	switch (articleType)
 	{
 #pragma region Articles
-	case 1:
-		m_Article.headline = playerStory.getName() + " Saves Local Man From Drowning";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
-		break;
-	case 2:
-		m_Article.headline = playerStory.getName() + " Donates To Controverisal Charity";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleDonatesToCharity(playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
-		break;
-	case 3:
-		m_Article.headline = playerStory.getName() + " Involved In Sexting Scandal";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticleSexScandal(playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Phone.bmp", 7, 7));
-		break;
-	case 4:
-		m_Article.headline = playerStory.getName() + " Assaults RSL Bouncer";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticlePunchUp(playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
-		break;
-	case 5:
-		m_Article.headline = playerStory.getName() + "'s Large-Scale Gambling Problem";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadArticleGambling(playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Coin.bmp", 7, 7));
-		break;
-	case 6:
+	case 0:
 		if (m_SeasonEvents)
 		{
 			if (offContractTrade(team, player))
@@ -3788,12 +3822,8 @@ void SRLGame::otherArticles()
 			return;
 		}
 		break;
-	case 7:
-		m_Article.headline = playerStory.getName() + " At Risk Of An Early Release!";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePlayerRelease(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
-	case 8:
+	case 10:
 		if (m_SeasonEvents)
 		{
 			if (offContractTrade(team, player))
@@ -3809,55 +3839,8 @@ void SRLGame::otherArticles()
 			return;
 		}
 		break;
-	case 9:
-		m_Article.headline = playerStory.getName() + " To Have Contract Extended!";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleContractExtension(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
-		break;
-	case 10:
-		m_Article.headline = "Player Unrest At " + MainTeam.getName();
-		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePlayerUnrest(MainTeam.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-		break;
-	case 11:
-		m_Article.headline = playerStory.getName() + " Offered Pay Cut To Re-sign";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticlePayCut(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Cash.bmp", 7, 7));
-		break;
-	case 12:
-		m_Article.headline = playerStory.getName() + "'s Retirment Rumours!";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleRetirement(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-		break;
-	case 13:
-		m_Article.headline = "Rival Players Raise Awareness!";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Goalpost.bmp", 7, 7));
-		break;
-	case 14:
-		m_Article.headline = "Opinion: " +playerStory.getName() + " Should Swap Teams";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-		break;
-	case 15:
-		m_Article.headline = "Fan Poll: " + MainTeam.getName() + "'s Best Player";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(MainTeam.getName(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-		break;
-	case 16:
-		m_Article.headline = "Opinion: " + playerStory.getName() + " Should Captain " + playerStory.getOrigin();
-		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(playerStory.getOrigin(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-		break;
-	case 17:
-		m_Article.headline = playerStory.getName() + "'s Eligibility Crisis!";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(playerStory.getOrigin(), playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
-		break;
 	default:
-		m_Article.headline = playerStory.getName() + " Helps Sick Kids In Hospital";
-		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(playerStory.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		m_Article = SRLNewsStoryGenerator::getRandomStory(MainTeam, playerStory, astVars);
 		break;
 #pragma endregion
 	}

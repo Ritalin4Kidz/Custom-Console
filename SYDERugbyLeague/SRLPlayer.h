@@ -12,7 +12,7 @@ class SRLPlayer {
 public:
 	SRLPlayer();
 	SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling);
-
+	SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle);
 
 	virtual ~SRLPlayer();
 

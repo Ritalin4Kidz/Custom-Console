@@ -1,0 +1,197 @@
+----------LINE-UPS----------
+Home Team: Freebee Network
+1: Callum Hands
+2: Luke Alexander
+3: Peter Waterhouse
+4: Ali Vianna
+5: Ashleigh Allsopp
+6: Ryan Mallett
+7: Simon Armstrong
+8: Lindsay Hands
+9: Kelin Miao
+10: Kyle Phillips
+11: Andrew Russell
+12: Cameron Rose
+13: Dominic Chicocki
+14: Trixie Emerson
+15: Addison Stewart
+16: Alex Armstrong
+17: Mitchell Lynn
+Away Team: Albury Bees
+1: Pete Develo
+2: Alexander Thurston
+3: Myles Develo
+4: Arnold Tramion
+5: Andrew Horter
+6: Dreka Normandy
+7: Avery Potter
+8: Kristian Emerson
+9: Jarrod Quess
+10: Karli Winger
+11: Chase Wott
+12: Lois Kerr
+13: Jay Nguyen
+14: Julian Rose
+15: Mitch Kat
+16: Velento James
+17: Trixie Zari
+----------GAME-STAT---------
+Weather: Cloudy
+----------------------------
+00:00 - KICK OFF - Freebee Network: 0 v Albury Bees: 0
+00:12 - Dominic Chicocki - Over The Sideline
+00:28 - Lois Kerr - TRY - Freebee Network: 0 v Albury Bees: 4
+01:28 - Kristian Emerson - GOAL - Freebee Network: 0 v Albury Bees: 6
+04:58 - Luke Alexander - 6th Tackle Changeover
+07:49 - Andrew Russell - Intercepted Off A Karli Winger Pass
+07:49 - Andrew Russell - TRY - Freebee Network: 4 v Albury Bees: 6
+08:49 - Callum Hands - GOAL - Freebee Network: 6 v Albury Bees: 6
+10:16 - Freebee Network Interchanged Players Simon Armstrong & Mitchell Lynn
+10:16 - Albury Bees Interchanged Players Chase Wott & Julian Rose
+11:05 - Freebee Network Interchanged Players Cameron Rose & Addison Stewart
+11:18 - Ali Vianna - Intercepted Off A Karli Winger Pass
+11:33 - Albury Bees Interchanged Players Avery Potter & Trixie Zari
+11:45 - Albury Bees Interchanged Players Julian Rose & Avery Potter
+12:28 - Mitchell Lynn - 6th Tackle Changeover
+14:10 - Callum Hands - Over The Sideline
+14:10 - Freebee Network Interchanged Players Andrew Russell & Cameron Rose
+15:43 - Avery Potter - 6th Tackle Changeover
+16:42 - Ryan Mallett - Over The Sideline
+16:57 - Luke Alexander - Intercepted Off A Jay Nguyen Pass
+18:04 - Mitchell Lynn - 6th Tackle Changeover
+19:47 - Jarrod Quess - Intercepted Off A Dominic Chicocki Pass
+20:40 - Albury Bees Interchanged Players Myles Develo & Chase Wott
+20:58 - Andrew Horter - 6th Tackle Changeover
+20:58 - Albury Bees Interchanged Players Karli Winger & Velento James
+21:15 - Freebee Network Interchanged Players Kyle Phillips & Andrew Russell
+21:29 - Dominic Chicocki - Forward Pass
+21:45 - Ali Vianna - Intercepted Off A Jay Nguyen Pass
+21:56 - Albury Bees Interchanged Players Velento James & Mitch Kat
+23:00 - Addison Stewart - 6th Tackle Changeover
+23:54 - Jarrod Quess - Forward Pass
+25:26 - Dominic Chicocki - 6th Tackle Changeover
+25:40 - Kelin Miao - Intercepted Off A Jay Nguyen Pass
+25:40 - Kelin Miao - TRY - Freebee Network: 10 v Albury Bees: 6
+26:40 - Callum Hands - GOAL - Freebee Network: 12 v Albury Bees: 6
+28:39 - Mitch Kat - Intercepted Off A Andrew Russell Pass
+29:46 - Dreka Normandy - 6th Tackle Changeover
+30:17 - Freebee Network Interchanged Players Addison Stewart & Trixie Emerson
+30:17 - Albury Bees Interchanged Players Arnold Tramion & Julian Rose
+30:29 - Freebee Network Interchanged Players Andrew Russell & Simon Armstrong
+31:16 - Ali Vianna - Intercepted Off A Trixie Zari Pass
+31:33 - Albury Bees Interchanged Players Jarrod Quess & Arnold Tramion
+32:37 - Dominic Chicocki - 6th Tackle Changeover
+32:49 - Ali Vianna - Intercepted Off A Trixie Zari Pass
+34:02 - Ashleigh Allsopp - 6th Tackle Changeover
+34:18 - Avery Potter - Forward Pass
+35:02 - Trixie Emerson - Over The Sideline
+36:03 - Andrew Horter - Over The Sideline
+37:11 - Ali Vianna - TRY - Freebee Network: 16 v Albury Bees: 6
+38:11 - Callum Hands - GOAL - Freebee Network: 18 v Albury Bees: 6
+39:42 - Lindsay Hands - Over The Sideline
+39:56 - Kelin Miao - Intercepted Off A Trixie Zari Pass
+40:00 - HALF TIME - Freebee Network: 18 v Albury Bees: 6
+40:10 - Freebee Network Interchanged Players Simon Armstrong & Alex Armstrong
+40:26 - Kelin Miao - Intercepted Off A Chase Wott Pass
+40:26 - Kelin Miao - TRY - Freebee Network: 22 v Albury Bees: 6
+41:26 - Callum Hands - GOAL - Freebee Network: 24 v Albury Bees: 6
+44:49 - Kelin Miao - Intercepted Off A Jay Nguyen Pass
+45:45 - Andrew Horter - Intercepted Off A Alex Armstrong Pass
+46:50 - Kristian Emerson - 6th Tackle Changeover
+48:06 - Dominic Chicocki - Forward Pass
+48:54 - Lois Kerr - Over The Sideline
+50:09 - Chase Wott - Penalty
+51:14 - Lindsay Hands - FIELD GOAL - Freebee Network: 25 v Albury Bees: 6
+51:52 - Freebee Network Interchanged Players Alex Armstrong & Kyle Phillips
+53:46 - Julian Rose - 6th Tackle Changeover
+55:14 - Kyle Phillips - Penalty
+55:47 - Arnold Tramion - Forward Pass
+60:48 - 20m Restart - Freebee Network
+62:09 - Peter Waterhouse - Forward Pass
+63:31 - Kyle Phillips - Intercepted Off A Jay Nguyen Pass
+66:05 - Avery Potter - Stripped Ball Off Kyle Phillips
+66:05 - Avery Potter - TRY - Freebee Network: 25 v Albury Bees: 10
+67:05 - Kristian Emerson - CONVERSION MISSED
+70:43 - Luke Alexander - Intercepted Off A Jay Nguyen Pass
+71:40 - Kelin Miao - Knock On
+72:29 - Kelin Miao - Intercepted Off A Dreka Normandy Pass
+73:36 - Cameron Rose - 6th Tackle Changeover
+76:13 - Dominic Chicocki - 6th Tackle Changeover
+78:55 - Ryan Mallett - 6th Tackle Changeover
+80:00 - FULL TIME - Freebee Network: 25 v Albury Bees: 10
+                             
+--------PLAYER STATS--------
+Home Team: Freebee Network
+1: Callum Hands |Time Played: 80:08 |Metres: 26 |Tackles: 15 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 4 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 20
+2: Luke Alexander |Time Played: 80:08 |Metres: 55 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+3: Peter Waterhouse |Time Played: 80:08 |Metres: 25 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+4: Ali Vianna |Time Played: 80:08 |Metres: 72 |Tackles: 8 |Kicks: 1 |Kick Metres: 52 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 74
+5: Ashleigh Allsopp |Time Played: 80:08 |Metres: 124 |Tackles: 5 |Kicks: 2 |Kick Metres: 56 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 75
+6: Ryan Mallett |Time Played: 80:08 |Metres: 13 |Tackles: 6 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+7: Mitchell Lynn |Time Played: 69:52 |Metres: 8 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+8: Lindsay Hands |Time Played: 80:08 |Metres: 14 |Tackles: 4 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 9
+9: Kelin Miao |Time Played: 80:08 |Metres: 57 |Tackles: 8 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 34
+10: Kyle Phillips |Time Played: 49:31 |Metres: 15 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+11: Cameron Rose |Time Played: 77:03 |Metres: 27 |Tackles: 11 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+12: Trixie Emerson |Time Played: 49:51 |Metres: 9 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+13: Dominic Chicocki |Time Played: 80:08 |Metres: 12 |Tackles: 7 |Kicks: 2 |Kick Metres: 59 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+14: Addison Stewart |Time Played: 19:12 |Metres: 27 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+15: Alex Armstrong |Time Played: 11:42 |Metres: 6 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+16: Simon Armstrong |Time Played: 19:57 |Metres: 3 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+17: Andrew Russell |Time Played: 23:24 |Metres: 8 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+Highlights:                 
+Most Tackles: Callum Hands: 15
+Most Points: Callum Hands: 8
+Most Metres: Ashleigh Allsopp: 124
+Most Errors: Dominic Chicocki: 3
+                             
+Away Team: Albury Bees
+1: Pete Develo |Time Played: 80:08 |Metres: 50 |Tackles: 11 |Kicks: 2 |Kick Metres: 96 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 65
+2: Alexander Thurston |Time Played: 80:08 |Metres: 7 |Tackles: 11 |Kicks: 2 |Kick Metres: 72 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+3: Chase Wott |Time Played: 69:44 |Metres: 7 |Tackles: 12 |Kicks: 1 |Kick Metres: 36 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+4: Julian Rose |Time Played: 51:20 |Metres: 9 |Tackles: 7 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+5: Andrew Horter |Time Played: 80:08 |Metres: 17 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+6: Dreka Normandy |Time Played: 80:08 |Metres: 32 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+7: Trixie Zari |Time Played: 68:35 |Metres: 9 |Tackles: 9 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+8: Kristian Emerson |Time Played: 80:08 |Metres: 24 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 27
+9: Arnold Tramion |Time Played: 78:52 |Metres: 15 |Tackles: 6 |Kicks: 1 |Kick Metres: 49 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+10: Mitch Kat |Time Played: 58:12 |Metres: 20 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+11: Avery Potter |Time Played: 79:56 |Metres: 31 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 22
+12: Lois Kerr |Time Played: 80:08 |Metres: 49 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 25
+13: Jay Nguyen |Time Played: 80:08 |Metres: 14 |Tackles: 11 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+14: Myles Develo |Time Played: 20:40 |Metres: 4 |Tackles: 3 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+15: Velento James |Time Played: 00:58 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Karli Winger |Time Played: 20:58 |Metres: 2 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+17: Jarrod Quess |Time Played: 31:33 |Metres: 22 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+Highlights:                 
+Most Tackles: Avery Potter: 14
+Most Points: Avery Potter: 4
+Most Metres: Pete Develo: 50
+Most Errors: Andrew Horter: 1
+                             
+---------TEAM STATS---------
+Home Team: Freebee Network
+Total Metres: 501
+Total Kick Metres: 266
+Total Errors: 9
+Total Tackles: 121
+Total Tries: 4
+Total Goals: 4
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Albury Bees
+Total Metres: 312
+Total Kick Metres: 332
+Total Errors: 5
+Total Tackles: 157
+Total Tries: 2
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Ali Vianna
+2nd (2 Points) -- Ashleigh Allsopp
+3rd (1 Point) -- Pete Develo
+----------------------------

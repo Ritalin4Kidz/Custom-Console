@@ -1,0 +1,214 @@
+----------LINE-UPS----------
+Home Team: Hryold Berries
+1: Ann Yahtzel
+2: Jeffrey John
+3: Kyle Unres
+4: Damien Mariner
+5: Ezra Miniota
+6: Alister Dellio
+7: Jeremy Hughes
+8: Luke Yemm
+9: Ben Unres
+10: Chris Hands
+11: Jeremy Questa
+12: Dreka Miniota
+13: Kris Brekston
+14: Cameron Freit
+15: Ben Pardi
+16: Frank Yzzer
+17: Trent Spice
+Away Team: Freebee Network
+1: Callum Hands
+2: Luke Alexander
+3: Peter Waterhouse
+4: Ali Vianna
+5: Ashleigh Allsopp
+6: Ryan Mallett
+7: Simon Armstrong
+8: Lindsay Hands
+9: Kelin Miao
+10: Kyle Phillips
+11: Andrew Russell
+12: Cameron Rose
+13: Dominic Chicocki
+14: Trixie Emerson
+15: Addison Stewart
+16: Alex Armstrong
+17: Mitchell Lynn
+----------GAME-STAT---------
+Weather: Windy
+----------------------------
+00:00 - KICK OFF - Hryold Berries: 0 v Freebee Network: 0
+01:48 - Dreka Miniota - Intercepted Off A Dominic Chicocki Pass
+03:01 - Ben Unres - 6th Tackle Changeover
+06:21 - Ben Unres - Intercepted Off A Andrew Russell Pass
+07:25 - Jeremy Hughes - 6th Tackle Changeover
+07:39 - Callum Hands - Over The Sideline
+08:33 - Jeremy Questa - Knock On
+09:38 - Kyle Unres - Intercepted Off A Dominic Chicocki Pass
+09:55 - Alister Dellio - Over The Sideline
+10:38 - Freebee Network Interchanged Players Ali Vianna & Addison Stewart
+11:07 - Freebee Network Interchanged Players Lindsay Hands & Alex Armstrong
+11:24 - Kelin Miao - 6th Tackle Changeover
+11:24 - Hryold Berries Interchanged Players Jeremy Hughes & Frank Yzzer
+14:39 - Chris Hands - Forward Pass
+16:45 - Kyle Unres - Forward Pass
+18:17 - Simon Armstrong - 6th Tackle Changeover
+19:50 - Luke Yemm - 6th Tackle Changeover
+19:50 - Freebee Network Interchanged Players Kyle Phillips & Ali Vianna
+22:25 - Dreka Miniota - 6th Tackle Changeover
+22:47 - Alex Armstrong - Over The Sideline
+24:07 - Ben Unres - 6th Tackle Changeover
+24:52 - Luke Yemm - Intercepted Off A Alex Armstrong Pass
+25:37 - Ann Yahtzel - TRY - Hryold Berries: 4 v Freebee Network: 0
+26:37 - Luke Yemm - CONVERSION MISSED
+28:50 - Ryan Mallett - Stripped Ball Off Frank Yzzer
+28:50 - Freebee Network Interchanged Players Dominic Chicocki & Mitchell Lynn
+29:05 - Peter Waterhouse - Forward Pass
+29:33 - Frank Yzzer - Knock On
+29:49 - Damien Mariner - Penalty
+30:07 - Hryold Berries Interchanged Players Luke Yemm & Ben Pardi
+30:20 - Ali Vianna - Knock On
+30:49 - Callum Hands - Ruck Infringement
+31:06 - Hryold Berries Interchanged Players Damien Mariner & Jeremy Hughes
+31:06 - Freebee Network Interchanged Players Alex Armstrong & Kyle Phillips
+31:18 - Ali Vianna - Intercepted Off A Frank Yzzer Pass
+31:32 - Kyle Phillips - Incorrect Play The Ball
+31:32 - Kyle Phillips - Penalty
+32:08 - Ben Pardi - Over The Sideline
+32:54 - Ryan Mallett - Knock On
+33:24 - Jeffrey John - Knock On
+35:17 - Callum Hands - Over The Sideline
+37:20 - Alister Dellio - Intercepted Off A Andrew Russell Pass
+38:02 - Ali Vianna - Intercepted Off A Ben Pardi Pass
+38:40 - Kelin Miao - Forward Pass
+39:44 - Luke Alexander - Intercepted Off A Kris Brekston Pass
+40:00 - HALF TIME - Hryold Berries: 4 v Freebee Network: 0
+42:30 - 20m Restart - Freebee Network
+42:30 - Freebee Network Interchanged Players Kyle Phillips & Alex Armstrong
+44:45 - Ali Vianna - Intercepted Off A Chris Hands Pass
+45:30 - Cameron Rose - TRY - Hryold Berries: 4 v Freebee Network: 4
+46:30 - Callum Hands - CONVERSION MISSED
+47:30 - Hryold Berries Interchanged Players Ben Unres & Luke Yemm
+47:43 - Alister Dellio - Intercepted Off A Alex Armstrong Pass
+47:58 - ------VIDEO REFEREE------
+47:58 - Jeremy Hughes - TRY - Hryold Berries: 8 v Freebee Network: 4
+48:58 - Luke Yemm - CONVERSION MISSED
+50:10 - Freebee Network Interchanged Players Addison Stewart & Dominic Chicocki
+50:24 - Freebee Network Interchanged Players Ali Vianna & Trixie Emerson
+50:37 - Ashleigh Allsopp - Intercepted Off A Frank Yzzer Pass
+51:01 - ------VIDEO REFEREE------
+51:01 - Trixie Emerson - NO TRY - Offside
+51:01 - Trixie Emerson - Penalty
+51:12 - Hryold Berries Interchanged Players Kris Brekston & Damien Mariner
+51:54 - Ezra Miniota - Over The Sideline
+51:54 - Hryold Berries Interchanged Players Chris Hands & Trent Spice
+52:22 - Jeffrey John - Intercepted Off A Alex Armstrong Pass
+52:50 - Hryold Berries Interchanged Players Jeffrey John & Chris Hands
+53:33 - Trent Spice - Over The Sideline
+54:10 - Hryold Berries Interchanged Players Alister Dellio & Kris Brekston
+54:27 - Ben Pardi - Penalty
+55:00 - Kelin Miao - Forward Pass
+55:29 - Alex Armstrong - Ruck Infringement
+58:09 - Alex Armstrong - 6th Tackle Changeover
+58:32 - Ashleigh Allsopp - Intercepted Off A Jeremy Questa Pass
+59:19 - Ann Yahtzel - Intercepted Off A Alex Armstrong Pass
+59:37 - Kris Brekston - Over The Sideline
+61:09 - Alex Armstrong - 6th Tackle Changeover
+61:22 - Kelin Miao - Intercepted Off A Frank Yzzer Pass
+61:22 - Kelin Miao - TRY - Hryold Berries: 8 v Freebee Network: 8
+62:22 - Callum Hands - CONVERSION MISSED
+65:26 - Luke Yemm - FIELD GOAL - Hryold Berries: 9 v Freebee Network: 8
+65:40 - Luke Yemm - Over The Sideline
+66:08 - ------VIDEO REFEREE------
+66:08 - Ashleigh Allsopp - NO TRY - Obstruction
+66:08 - Ashleigh Allsopp - Penalty
+66:23 - Luke Alexander - Intercepted Off A Luke Yemm Pass
+67:28 - Dominic Chicocki - 6th Tackle Changeover
+71:47 - Trixie Emerson - FIELD GOAL - Hryold Berries: 9 v Freebee Network: 9
+73:59 - Peter Waterhouse - Intercepted Off A Trent Spice Pass
+77:46 - Simon Armstrong - 6th Tackle Changeover
+79:03 - Luke Alexander - Intercepted Off A Trent Spice Pass
+79:46 - Chris Hands - Penalty
+80:00 - EXTRA TIME - Hryold Berries: 9 v Freebee Network: 9
+81:32 - Ashleigh Allsopp - Intercepted Off A Jeremy Questa Pass
+81:32 - ------VIDEO REFEREE------
+81:32 - Ashleigh Allsopp - TRY - Hryold Berries: 9 v Freebee Network: 13
+82:32 - Callum Hands - CONVERSION MISSED
+83:32 - FULL TIME - Hryold Berries: 9 v Freebee Network: 13
+                             
+--------PLAYER STATS--------
+Home Team: Hryold Berries
+1: Ann Yahtzel |Time Played: 83:44 |Metres: 105 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 67
+2: Chris Hands |Time Played: 82:48 |Metres: 50 |Tackles: 8 |Kicks: 1 |Kick Metres: 49 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+3: Kyle Unres |Time Played: 83:44 |Metres: 56 |Tackles: 20 |Kicks: 1 |Kick Metres: 43 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+4: Jeremy Hughes |Time Played: 64:02 |Metres: 26 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 37
+5: Ezra Miniota |Time Played: 83:44 |Metres: 11 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+6: Kris Brekston |Time Played: 80:46 |Metres: 10 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+7: Frank Yzzer |Time Played: 72:20 |Metres: 11 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+8: Ben Pardi |Time Played: 53:37 |Metres: 53 |Tackles: 11 |Kicks: 1 |Kick Metres: 70 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+9: Luke Yemm |Time Played: 66:21 |Metres: 72 |Tackles: 8 |Kicks: 3 |Kick Metres: 86 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 35
+10: Trent Spice |Time Played: 31:50 |Metres: 6 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+11: Jeremy Questa |Time Played: 83:44 |Metres: 16 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+12: Dreka Miniota |Time Played: 83:44 |Metres: 36 |Tackles: 13 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 46
+13: Damien Mariner |Time Played: 63:38 |Metres: 14 |Tackles: 10 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Cameron Freit |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Ben Unres |Time Played: 47:30 |Metres: 81 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+16: Alister Dellio |Time Played: 54:10 |Metres: 45 |Tackles: 7 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+17: Jeffrey John |Time Played: 52:50 |Metres: 45 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+Highlights:                 
+Most Tackles: Kyle Unres: 20
+Most Points: Ann Yahtzel: 4
+Most Metres: Ann Yahtzel: 105
+Most Errors: Chris Hands: 1
+                             
+Away Team: Freebee Network
+1: Callum Hands |Time Played: 83:44 |Metres: 46 |Tackles: 16 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+2: Luke Alexander |Time Played: 83:44 |Metres: 72 |Tackles: 13 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 61
+3: Peter Waterhouse |Time Played: 83:44 |Metres: 66 |Tackles: 10 |Kicks: 2 |Kick Metres: 64 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+4: Dominic Chicocki |Time Played: 62:24 |Metres: 4 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+5: Ashleigh Allsopp |Time Played: 83:44 |Metres: 70 |Tackles: 13 |Kicks: 3 |Kick Metres: 88 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 44
+6: Ryan Mallett |Time Played: 83:44 |Metres: 14 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+7: Simon Armstrong |Time Played: 83:44 |Metres: 55 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+8: Alex Armstrong |Time Played: 61:13 |Metres: 22 |Tackles: 10 |Kicks: 1 |Kick Metres: 57 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+9: Kelin Miao |Time Played: 83:44 |Metres: 182 |Tackles: 14 |Kicks: 1 |Kick Metres: 52 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+10: Trixie Emerson |Time Played: 33:20 |Metres: 8 |Tackles: 5 |Kicks: 2 |Kick Metres: 47 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 13
+11: Andrew Russell |Time Played: 83:44 |Metres: 41 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+12: Cameron Rose |Time Played: 83:44 |Metres: 57 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 46
+13: Mitchell Lynn |Time Played: 54:54 |Metres: 4 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Ali Vianna |Time Played: 41:12 |Metres: 51 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+15: Kyle Phillips |Time Played: 31:14 |Metres: 4 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+16: Lindsay Hands |Time Played: 11:07 |Metres: 2 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+17: Addison Stewart |Time Played: 39:32 |Metres: 21 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+Highlights:                 
+Most Tackles: Callum Hands: 16
+Most Points: Ashleigh Allsopp: 4
+Most Metres: Kelin Miao: 182
+Most Errors: Callum Hands: 2
+                             
+---------TEAM STATS---------
+Home Team: Hryold Berries
+Total Metres: 637
+Total Kick Metres: 305
+Total Errors: 11
+Total Tackles: 159
+Total Tries: 2
+Total Goals: 0
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Freebee Network
+Total Metres: 719
+Total Kick Metres: 340
+Total Errors: 8
+Total Tackles: 151
+Total Tries: 3
+Total Goals: 0
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Ann Yahtzel
+2nd (2 Points) -- Cameron Rose
+3rd (1 Point) -- Ashleigh Allsopp
+----------------------------

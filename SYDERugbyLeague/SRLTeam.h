@@ -34,7 +34,7 @@ public:
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
 
 	void clearTeam();
-
+	void setJersey(ColourClass p, ColourClass s, ColourClass b, int JerseyType) { primaryColour = p; secondaryColour = s; badgeColour = b; jerseryTypeInt = JerseyType; }
 	string getName() { return m_Name; }
 	void setName(string name) { m_Name = name; }
 	void loadTeam(string path);

@@ -450,7 +450,10 @@ void SRLGameManager::play()
 	}
 
 	//MOVEMENT
-	doRegularMovement(defender, attacker);
+	if (!doRegularMovement(defender, attacker))
+	{
+		return;
+	}
 
 	int chance1 = rand() % injuryChance;
 	if (chance1 == 0)
@@ -752,7 +755,7 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 	return 0;
 }
 
-void SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
+bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 {
 	int chance1 = rand() % incorrectPlayTheBallChance;
 	if (chance1 > attacker.getHandling() * 10)
@@ -772,6 +775,7 @@ void SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 				attacker = m_HomeTeam.getRandomPlayer();
 			}
 			doPenalty(defender, attacker);
+			return false;
 		}
 	}
 	if (m_HomeTeamHasBall)
@@ -807,6 +811,7 @@ void SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 		m_HomeTeam.addPlayerTackle(defender.getName());
 	}
 	m_Tackle++;
+	return true;
 }
 
 bool SRLGameManager::checkIntercept(SRLPlayer defender, SRLPlayer attacker)

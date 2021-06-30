@@ -14,6 +14,8 @@ SRL Simulation game made inside the SYDE Framework.
 
 - bug fixes
 
+ - - Bug with soundtrack continuing to play even when off
+
 - full soundtrack implementation
 
 - export play by play to file saved in documents - done
@@ -23,6 +25,13 @@ SRL Simulation game made inside the SYDE Framework.
 - Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
 ## Release Notes
+
+###  0.9.10.0 beta 30-06-2021
+- More name generations
+- We-worked article randomizer so that dropped players are a rarity
+- Custom teams
+- More achievements
+- bug fixes
 
 ###  0.9.9.0 beta
 - Teams can no longer have players with the same name

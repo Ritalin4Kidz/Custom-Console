@@ -1,0 +1,216 @@
+----------LINE-UPS----------
+Home Team: Emeralton Snipers
+1: Isaac John
+2: Jimmy Tamber
+3: Georgio Deon
+4: Julian Paul
+5: Cam Tuo
+6: Ray Worsent
+7: Kam Harrigan
+8: Dapper Miniota
+9: Gerry Etten
+10: Tommy Johnson
+11: Xander Potter
+12: Ronald Papiai
+13: Benjamin Potter
+14: Imm Reynolds
+15: Alister Loomer
+16: Peter Stimson
+17: Kam South
+Away Team: Emeralton Jokers
+1: Ashleigh Perry
+2: Herman Penatoras
+3: Ashley Kelly
+4: Robert Winger
+5: Allie O' Thomas
+6: Xander Dempsey
+7: Kevin Sandra
+8: Castro Daley
+9: Isaac Johnson
+10: Ben Berry
+11: Benjamin Watne
+12: Joseph Smith
+13: Chase Zillman
+14: James Holland
+15: Billie Ese'ese
+16: Hubert Wood
+17: Monty Elroii
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - Emeralton Snipers: 0 v Emeralton Jokers: 0
+00:15 - Isaac Johnson - Stripped Ball Off Benjamin Potter
+00:28 - ------VIDEO REFEREE------
+00:28 - Joseph Smith - NO TRY - 20m Restart
+02:10 - Ray Worsent - 6th Tackle Changeover
+04:15 - Isaac John - Over The Sideline
+04:33 - Allie O' Thomas - Forward Pass
+04:44 - Gerry Etten - Forward Pass
+05:17 - Benjamin Watne - Knock On
+05:59 - Robert Winger - Intercepted Off A Isaac John Pass
+08:03 - 20m Restart - Emeralton Jokers
+08:40 - Emeralton Jokers Interchanged Players Ashleigh Perry & Monty Elroii
+09:18 - Herman Penatoras - Knock On
+09:30 - Cam Tuo - Knock On
+09:30 - Emeralton Jokers Interchanged Players Allie O' Thomas & Ashleigh Perry
+10:14 - Emeralton Snipers Interchanged Players Georgio Deon & Imm Reynolds
+10:31 - Emeralton Snipers Interchanged Players Imm Reynolds & Kam South
+11:00 - Herman Penatoras - Kick Out On The Full
+11:45 - Emeralton Snipers Interchanged Players Kam Harrigan & Alister Loomer
+12:27 - Julian Paul - Forward Pass
+13:21 - Chase Zillman - Over The Sideline
+14:15 - Herman Penatoras - Intercepted Off A Gerry Etten Pass
+15:39 - Robert Winger - Intercepted Off A Tommy Johnson Pass
+16:52 - Ashley Kelly - 6th Tackle Changeover
+18:09 - Julian Paul - 6th Tackle Changeover
+18:20 - Emeralton Jokers Interchanged Players Robert Winger & James Holland
+18:37 - Ray Worsent - Intercepted Off A James Holland Pass
+18:37 - ------VIDEO REFEREE------
+18:37 - Ray Worsent - NO TRY - Obstruction
+18:37 - Ray Worsent - Penalty
+19:06 - Joseph Smith - Forward Pass
+20:08 - Xander Potter - Knock On
+20:21 - Emeralton Jokers Interchanged Players Ben Berry & Billie Ese'ese
+22:42 - Jimmy Tamber - Knock On
+23:43 - Ashleigh Perry - Over The Sideline
+24:30 - Emeralton Jokers Interchanged Players Benjamin Watne & Ben Berry
+25:02 - Ray Worsent - Over The Sideline
+25:41 - Gerry Etten - Intercepted Off A Ashley Kelly Pass
+27:50 - Emeralton Jokers Interchanged Players Ben Berry & Hubert Wood
+29:24 - Tommy Johnson - 6th Tackle Changeover
+30:42 - Emeralton Snipers Interchanged Players Gerry Etten & Kam Harrigan
+31:27 - Emeralton Jokers Interchanged Players Xander Dempsey & Ben Berry
+31:44 - Emeralton Snipers Interchanged Players Cam Tuo & Gerry Etten
+31:44 - Emeralton Jokers Interchanged Players James Holland & Robert Winger
+31:57 - Julian Paul - 6th Tackle Changeover
+33:25 - Ronald Papiai - Over The Sideline
+33:42 - Ray Worsent - Intercepted Off A Billie Ese'ese Pass
+33:57 - Ray Worsent - Knock On
+34:41 - Dapper Miniota - Intercepted Off A Ashley Kelly Pass
+35:34 - ------VIDEO REFEREE------
+35:34 - Jimmy Tamber - NO TRY - Held Up
+35:52 - Herman Penatoras - Intercepted Off A Benjamin Potter Pass
+38:04 - Herman Penatoras - Intercepted Off A Alister Loomer Pass
+38:21 - Tommy Johnson - Stripped Ball Off Ben Berry
+38:21 - Tommy Johnson - TRY - Emeralton Snipers: 4 v Emeralton Jokers: 0
+39:21 - Dapper Miniota - GOAL - Emeralton Snipers: 6 v Emeralton Jokers: 0
+40:00 - HALF TIME - Emeralton Snipers: 6 v Emeralton Jokers: 0
+40:00 - Emeralton Snipers Interchanged Players Ray Worsent & Georgio Deon
+40:47 - Emeralton Snipers Interchanged Players Tommy Johnson & Imm Reynolds
+41:13 - Emeralton Snipers Interchanged Players Benjamin Potter & Ray Worsent
+42:40 - Isaac John - 6th Tackle Changeover
+43:14 - Ashley Kelly - Over The Sideline
+44:03 - ------VIDEO REFEREE------
+44:03 - Alister Loomer - TRY - Emeralton Snipers: 10 v Emeralton Jokers: 0
+45:03 - Dapper Miniota - GOAL - Emeralton Snipers: 12 v Emeralton Jokers: 0
+46:15 - Hubert Wood - Ruck Infringement
+46:15 - Hubert Wood - Penalty
+48:55 - Herman Penatoras - Intercepted Off A Isaac John Pass
+48:55 - Herman Penatoras - TRY - Emeralton Snipers: 12 v Emeralton Jokers: 4
+49:55 - Billie Ese'ese - CONVERSION MISSED
+52:00 - Kam Harrigan - Intercepted Off A Castro Daley Pass
+52:23 - Kam South - TRY - Emeralton Snipers: 16 v Emeralton Jokers: 4
+53:23 - Dapper Miniota - CONVERSION MISSED
+56:35 - Billie Ese'ese - Knock On
+57:57 - Julian Paul - FIELD GOAL - Emeralton Snipers: 17 v Emeralton Jokers: 4
+58:23 - Robert Winger - Intercepted Off A Gerry Etten Pass
+58:23 - Robert Winger - TRY - Emeralton Snipers: 17 v Emeralton Jokers: 8
+59:23 - Billie Ese'ese - CONVERSION MISSED
+61:48 - Ashleigh Perry - Over The Sideline
+62:06 - Kam South - TRY - Emeralton Snipers: 21 v Emeralton Jokers: 8
+63:06 - Dapper Miniota - CONVERSION MISSED
+64:35 - Isaac John - Knock On
+64:47 - Robert Winger - TRY - Emeralton Snipers: 21 v Emeralton Jokers: 12
+65:47 - Billie Ese'ese - GOAL - Emeralton Snipers: 21 v Emeralton Jokers: 14
+66:58 - Monty Elroii - Knock On
+67:41 - ------VIDEO REFEREE------
+67:41 - Kam South - NO TRY - Goal Line Dropout
+68:57 - Dapper Miniota - 6th Tackle Changeover
+72:32 - Joseph Smith - Stripped Ball Off Jimmy Tamber
+72:43 - Herman Penatoras - Forward Pass
+72:55 - Gerry Etten - Forward Pass
+73:42 - ------VIDEO REFEREE------
+73:42 - Joseph Smith - NO TRY - Held Up
+74:23 - Ronald Papiai - Intercepted Off A Herman Penatoras Pass
+75:06 - Dapper Miniota - Knock On
+75:33 - Isaac Johnson - Over The Sideline
+77:00 - Georgio Deon - 6th Tackle Changeover
+78:00 - Ashley Kelly - Over The Sideline
+79:57 - Ronald Papiai - Intercepted Off A Isaac Johnson Pass
+80:00 - FULL TIME - Emeralton Snipers: 21 v Emeralton Jokers: 14
+                             
+--------PLAYER STATS--------
+Home Team: Emeralton Snipers
+1: Isaac John |Time Played: 80:08 |Metres: 43 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+2: Jimmy Tamber |Time Played: 80:08 |Metres: 24 |Tackles: 11 |Kicks: 1 |Kick Metres: 71 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+3: Kam South |Time Played: 69:37 |Metres: 125 |Tackles: 7 |Kicks: 2 |Kick Metres: 74 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 96
+4: Julian Paul |Time Played: 80:08 |Metres: 39 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 16
+5: Gerry Etten |Time Played: 79:06 |Metres: 30 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+6: Georgio Deon |Time Played: 50:22 |Metres: 39 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+7: Alister Loomer |Time Played: 68:23 |Metres: 62 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 49
+8: Dapper Miniota |Time Played: 80:08 |Metres: 123 |Tackles: 11 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 42
+9: Kam Harrigan |Time Played: 61:11 |Metres: 67 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 38
+10: Imm Reynolds |Time Played: 39:38 |Metres: 33 |Tackles: 3 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+11: Xander Potter |Time Played: 80:08 |Metres: 8 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+12: Ronald Papiai |Time Played: 80:08 |Metres: 178 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 47
+13: Ray Worsent |Time Played: 78:55 |Metres: 71 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+14: Benjamin Potter |Time Played: 41:13 |Metres: 10 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+15: Cam Tuo |Time Played: 31:44 |Metres: 22 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+16: Peter Stimson |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Tommy Johnson |Time Played: 40:47 |Metres: 21 |Tackles: 6 |Kicks: 1 |Kick Metres: 51 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 41
+Highlights:                 
+Most Tackles: Gerry Etten: 17
+Most Points: Kam South: 8
+Most Metres: Ronald Papiai: 178
+Most Errors: Isaac John: 2
+                             
+Away Team: Emeralton Jokers
+1: Monty Elroii |Time Played: 71:28 |Metres: 56 |Tackles: 10 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+2: Herman Penatoras |Time Played: 80:08 |Metres: 49 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+3: Ashley Kelly |Time Played: 80:08 |Metres: 10 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+4: Robert Winger |Time Played: 66:44 |Metres: 120 |Tackles: 9 |Kicks: 3 |Kick Metres: 120 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 119
+5: Ashleigh Perry |Time Played: 79:18 |Metres: 18 |Tackles: 11 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+6: Ben Berry |Time Played: 72:22 |Metres: 25 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+7: Kevin Sandra |Time Played: 80:08 |Metres: 62 |Tackles: 12 |Kicks: 4 |Kick Metres: 125 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 80
+8: Castro Daley |Time Played: 80:08 |Metres: 75 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+9: Isaac Johnson |Time Played: 80:08 |Metres: 17 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+10: Billie Ese'ese |Time Played: 59:47 |Metres: 22 |Tackles: 4 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 13
+11: Hubert Wood |Time Played: 52:18 |Metres: 24 |Tackles: 10 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+12: Joseph Smith |Time Played: 80:08 |Metres: 43 |Tackles: 12 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+13: Chase Zillman |Time Played: 80:08 |Metres: 22 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+14: James Holland |Time Played: 13:24 |Metres: 2 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+15: Benjamin Watne |Time Played: 24:30 |Metres: 5 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+16: Xander Dempsey |Time Played: 31:27 |Metres: 5 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+17: Allie O' Thomas |Time Played: 09:30 |Metres: 1 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+Highlights:                 
+Most Tackles: Isaac Johnson: 14
+Most Points: Robert Winger: 8
+Most Metres: Robert Winger: 120
+Most Errors: Herman Penatoras: 3
+                             
+---------TEAM STATS---------
+Home Team: Emeralton Snipers
+Total Metres: 895
+Total Kick Metres: 268
+Total Errors: 12
+Total Tackles: 132
+Total Tries: 4
+Total Goals: 2
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Emeralton Jokers
+Total Metres: 556
+Total Kick Metres: 413
+Total Errors: 14
+Total Tackles: 145
+Total Tries: 3
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Robert Winger
+2nd (2 Points) -- Kam South
+3rd (1 Point) -- Kevin Sandra
+----------------------------

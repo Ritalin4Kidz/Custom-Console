@@ -71,7 +71,7 @@ public:
 	bool checkError(SRLPlayer defender, SRLPlayer attacker);
 	int checkKick(SRLPlayer defender, SRLPlayer attacker);
 	int doKick(SRLPlayer defender, SRLPlayer attacker);
-	void doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
+	bool doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
 	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);

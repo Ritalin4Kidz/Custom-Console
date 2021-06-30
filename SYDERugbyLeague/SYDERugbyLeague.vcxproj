@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SRL.cpp" />
+    <ClCompile Include="SRLCustomTeams.cpp" />
     <ClCompile Include="SRLGame.cpp" />
     <ClCompile Include="SRLNameGenerator.cpp" />
     <ClCompile Include="SRLNewsStoryGenerator.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="json.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SRL.h" />
+    <ClInclude Include="SRLCustomTeams.h" />
     <ClInclude Include="SRLGame.h" />
     <ClInclude Include="SRLNameGenerator.h" />
     <ClInclude Include="SRLNewsStoryGenerator.h" />

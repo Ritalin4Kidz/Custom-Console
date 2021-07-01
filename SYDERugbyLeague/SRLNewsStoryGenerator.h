@@ -29,7 +29,7 @@ class SRLNewsStoryGenerator
 {
 public:
 
-	static SRLNewsArticle getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, AssetsClass astVars);
+	static SRLNewsArticle getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, SRLTeam OtherTeam, SRLPlayer OtherPlayer, AssetsClass astVars);
 
 #pragma region FeelGood
 	static vector<string> generateFeelGoodArticleSickKids(string Player1);
@@ -43,6 +43,7 @@ public:
 	static vector<string> generateFeelBadArticlePunchUp(string Player1);
 	static vector<string> generateFeelBadArticleGambling(string Player1);
 	static vector<string> generateFeelBadEligibilityCrisis(string Country, string Player1);
+	static vector<string> generateFeelBadRSLFight(string Player1, string Player2);
 #pragma endregion
 
 #pragma region Rumours

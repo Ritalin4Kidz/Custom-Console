@@ -52,10 +52,10 @@ vector<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, str
 	return temp;
 }
 
-SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, AssetsClass astVars)
+SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, SRLTeam OtherTeam, SRLPlayer OtherPlayer, AssetsClass astVars)
 {
 	SRLNewsArticle m_Article;
-	int articleType = rand() % 17;
+	int articleType = rand() % 18;
 	switch (articleType)
 	{
 	case 0:
@@ -108,11 +108,11 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer
 		m_Article.newsStory = SRLNewsStoryGenerator::generateRumourArticleRetirement(MainTeam.getName(), MainPlayer.getName());
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
-	//case 10:
-	//	m_Article.headline = "Rival Players Raise Awareness!";
-	//	m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(MainTeam.getName(), MainPlayer.getName());
-	//	m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Goalpost.bmp", 7, 7));
-	//	break;
+	case 10:
+		m_Article.headline = "Rival Players Raise Awareness!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(OtherPlayer.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Goalpost.bmp", 7, 7));
+		break;
 	case 11:
 		m_Article.headline = "Opinion: " + MainPlayer.getName() + " Should Swap Teams";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(MainTeam.getName(), MainPlayer.getName());
@@ -136,6 +136,11 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer
 	case 15:
 		m_Article.headline = "Coach Proposes New Finals System!";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateOpinionArticleCoachWantsFinalsSystem(MainTeam.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 16:
+		m_Article.headline = "Players Fight At Local RSL!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadRSLFight(OtherPlayer.getName(), MainPlayer.getName());
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
 	default:
@@ -322,6 +327,21 @@ vector<string> SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(string Co
 	return temp;
 }
 
+vector<string> SRLNewsStoryGenerator::generateFeelBadRSLFight(string Player1, string Player2)
+{
+	vector<string> temp;
+	temp.push_back(Player1 + " & " + Player2 + " are in");
+	temp.push_back("hot water today after the two were caught on");
+	temp.push_back("camera having a drunken brawl at a local RSL.");
+	temp.push_back("The two players are set to face court over the");
+	temp.push_back("alleged incident, however they will be free");
+	temp.push_back("to continue to play in the SRL in the time");
+	temp.push_back("being.");
+	temp.push_back("Neither player responded when asked for a");
+	temp.push_back("comment on the matter.");
+	return temp;
+}
+
 vector<string> SRLNewsStoryGenerator::generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1)
 {
 	vector<string> temp;
@@ -404,8 +424,9 @@ vector<string> SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(string
 	temp.push_back("today put their SRL rivalry aside to host a charity event");
 	temp.push_back("to help raise money for SYDE Disease awareness.");
 	temp.push_back("The event was hosted in East Kylzebrek, & saw the two");
-	temp.push_back("players coach teams of kids play touch footy games,");
-	temp.push_back("some of those kids which are inflicted with the disease themselves.");
+	temp.push_back("players coach teams of kids, who would then play");
+	temp.push_back("touch footy games. Some of those kids are inflicted");
+	temp.push_back("with the disease themselves.");
 	temp.push_back(Player2 + ": 'Yeah it's a good cause'");
 	return temp;
 }

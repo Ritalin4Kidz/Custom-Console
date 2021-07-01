@@ -52,6 +52,33 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamAusmusicCommunity(string& team
 	return AusMusic;
 }
 
+SRLTeam SRLCustomTeamGenerator::generateCustomTeamMinimmeCommunity(string& team)
+{
+	//TODO: Properly adjust variables
+	vector<SRLPlayer> TeamList;
+	TeamList.push_back(SRLPlayer("Minimme", "Australia", 75, 48, 25, 29, 63, 69, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 59));
+	TeamList.push_back(SRLPlayer("Arcana", "England", 85, 65, 75, 29, 33, 87, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 9));
+	TeamList.push_back(SRLPlayer("Xindictive", "United States", 50, 78, 72, 48, 22, 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 41));
+	TeamList.push_back(SRLPlayer("Golden Bolt", "Australia", 95, 93, 65, 20, 25, 59, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 38));
+	TeamList.push_back(SRLPlayer("Evilchickon", "Australia", 65, 68, 95, 29, 23, 59, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 19));
+	TeamList.push_back(SRLPlayer("Firstforecast", "United States", 25, 48, 85, 39, 45, 63, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 0));
+	TeamList.push_back(SRLPlayer("Dr. Smoothy", "United States", 78, 22, 78, 22, 78, 22, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 29));
+	TeamList.push_back(SRLPlayer("Jordan", "United States", 25, 38, 75, 55, 55, 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 16));
+	TeamList.push_back(SRLPlayer("Labcat", "United States", 99, 99, 25, 21, 33, 49, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 33));
+	TeamList.push_back(SRLPlayer("Tricksmusic", "United States", 59, 59, 59, 59, 59, 59, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 17));
+	TeamList.push_back(SRLPlayer("Jdthmas", "United States", 45, 88, 35, 79, 83, 99, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 15));
+	TeamList.push_back(SRLPlayer("Schelgo", "United States", 65, 34, 88, 30, 23, 49, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 18));
+	TeamList.push_back(SRLPlayer("Jeff Schleg", "United States", 25, 35, 78, 65, 57, 69, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 34));
+	TeamList.push_back(SRLPlayer("Dominic", "United States", 23, 24, 75, 45, 63, 35, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 1));
+	TeamList.push_back(SRLPlayer("Rit@lin", "Australia", 90, 90, 90, 21, 22, 50, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 20));
+	TeamList.push_back(SRLPlayer("Mrs. Minimme", "Australia", 79, 78, 72, 78, 72, 78, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 2));
+	TeamList.push_back(SRLPlayer("Deleted User", "?????", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
+	SRLTeam MinimmeCommunity = SRLTeam(TeamList, "Minimme Community");
+	MinimmeCommunity.setJersey(BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 11);
+	team = "SRL_AUSMUSIC_TEAM";
+	return MinimmeCommunity;
+}
+
 SRLTeam SRLCustomTeamGenerator::generateRandomCustomTeam(string& team)
 {
 	int chance = rand() % 2;
@@ -61,6 +88,8 @@ SRLTeam SRLCustomTeamGenerator::generateRandomCustomTeam(string& team)
 		return generateCustomTeamFreebeeNetwork(team);
 	case 1:
 		return generateCustomTeamAusmusicCommunity(team);
+	case 2:
+		return generateCustomTeamMinimmeCommunity(team);
 	}
 	return generateCustomTeamFreebeeNetwork(team);
 }

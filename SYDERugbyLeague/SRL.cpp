@@ -2401,7 +2401,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.1.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.2.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -4032,10 +4032,19 @@ void SRLGame::otherArticles()
 	SRLNewsArticle m_Article;
 	int articleType = rand() % 1000;
 	int team = rand() % 16;
+	int team2 = rand() % 16;
+	while (team2 == team)
+	{
+		team2 = rand() % 16;
+	}
 	SRLTeam MainTeam;
 	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
 	int player = MainTeam.getRandomPlayerInt();
 	SRLPlayer playerStory = MainTeam.getPlayers()[player];
+	SRLTeam OtherTeam;
+	OtherTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team2].teamName + ".json");
+	int player2 = OtherTeam.getRandomPlayerInt();
+	SRLPlayer playerOther = OtherTeam.getPlayers()[player2];
 
 	switch (articleType)
 	{
@@ -4074,7 +4083,7 @@ void SRLGame::otherArticles()
 		}
 		break;
 	default:
-		m_Article = SRLNewsStoryGenerator::getRandomStory(MainTeam, playerStory, astVars);
+		m_Article = SRLNewsStoryGenerator::getRandomStory(MainTeam, playerStory,OtherTeam, playerOther, astVars);
 		break;
 #pragma endregion
 	}

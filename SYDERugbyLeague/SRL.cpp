@@ -1868,7 +1868,21 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		window = m_PriorBetsPremiershipBtn.draw_ui(window);
 		if (priorBetsState == IndividualGameBets_State)
 		{
-			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+			{
+				if (priorBetNumberLine > 0)
+				{
+					priorBetNumberLine--;
+				}
+			}
+			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+			{
+				if (priorBetNumberLine < m_GameBetsWriteUp.size() - 1)
+				{
+					priorBetNumberLine++;
+				}
+			}
+			else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 			{
 				ScrollTickTime += SYDEDefaults::getDeltaTime();
 				if (ScrollTickTime >= maxScrollTickTime)
@@ -1904,7 +1918,21 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		}
 		else if (priorBetsState == PremiershipWinnerBets_State)
 		{
-			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+			{
+				if (priorBetNumberLine > 0)
+				{
+					priorBetNumberLine--;
+				}
+			}
+			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+			{
+				if (priorBetNumberLine < m_PremiershipBetsWriteUp.size() - 1)
+				{
+					priorBetNumberLine++;
+				}
+			}
+			else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 			{
 				ScrollTickTime += SYDEDefaults::getDeltaTime();
 				if (ScrollTickTime >= maxScrollTickTime)
@@ -2081,7 +2109,21 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 		window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam, BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(26, 3), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].awayTeamScore), BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(34, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam, BLACK_BRIGHTWHITE_BG);
-		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+		{
+			if (m_LineResults > 0)
+			{
+				m_LineResults--;
+			}
+		}
+		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+		{
+			if (m_LineResults < m_SummaryScreenVector.size() - 1)
+			{
+				m_LineResults++;
+			}
+		}
+		else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 		{
 			ScrollTickTime += SYDEDefaults::getDeltaTime();
 			if (ScrollTickTime >= maxScrollTickTime)
@@ -2093,7 +2135,6 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 				ScrollTickTime = 0;
 			}
 		}
-
 		else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 		{
 			ScrollTickTime += SYDEDefaults::getDeltaTime();
@@ -2118,7 +2159,33 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	}
 	if (resultState == PlayByPlay_STATE)
 	{
-		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+		{
+			if (m_LineResults > 0)
+			{
+				m_LineResults--;
+			}
+		}
+		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+		{
+			if (m_LineResults < m_ResultsScreenVector.size() - 1)
+			{
+				m_LineResults++;
+			}
+		}
+		else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+		{
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
+			{
+				if (m_LineResults > 0)
+				{
+					m_LineResults--;
+				}
+				ScrollTickTime = 0;
+			}
+		}
+		else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 		{
 			ScrollTickTime += SYDEDefaults::getDeltaTime();
 			if (ScrollTickTime >= maxScrollTickTime)

@@ -1,0 +1,779 @@
+LADDER RESULTS
+--------------------------------
+1. Dam City Messiahs Wins: 14| Lost: 1| PD: 125| Points: 28
+2. Oakleigh Clowns Wins: 13| Lost: 2| PD: 307| Points: 26
+3. Albury Eels Wins: 13| Lost: 2| PD: 137| Points: 26
+4. Leeds Dinosaurs Wins: 10| Lost: 5| PD: 148| Points: 20
+5. Umbota Cannonballs Wins: 9| Lost: 6| PD: 55| Points: 18
+6. Parramatta Mice Wins: 8| Lost: 7| PD: 9| Points: 16
+7. Arcoomer Dolphins Wins: 8| Lost: 7| PD: -40| Points: 16
+8. North Head Bears Wins: 8| Lost: 7| PD: -52| Points: 16
+9. Hobart University Wins: 7| Lost: 8| PD: 70| Points: 14
+10. Epping Chargers Wins: 7| Lost: 8| PD: -97| Points: 14
+11. Emeralton Seagulls Wins: 6| Lost: 9| PD: -5| Points: 12
+12. The Entrance Messiahs Wins: 6| Lost: 9| PD: -44| Points: 12
+13. Rhofields Minotaurs Wins: 5| Lost: 10| PD: -57| Points: 10
+14. Nexium Sharks Wins: 4| Lost: 11| PD: -97| Points: 8
+15. Glebe Bombers Wins: 2| Lost: 13| PD: -114| Points: 4
+16. Xylerbrek Speedboats Wins: 0| Lost: 15| PD: -345| Points: 0
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Oakleigh Clowns 36 v 0 Xylerbrek Speedboats
+Rhofields Minotaurs 18 v 20 The Entrance Messiahs
+North Head Bears 35 v 10 Nexium Sharks
+Parramatta Mice 26 v 16 Glebe Bombers
+Albury Eels 24 v 6 Arcoomer Dolphins
+Umbota Cannonballs 24 v 40 Dam City Messiahs
+Epping Chargers 21 v 20 Hobart University
+Emeralton Seagulls 10 v 23 Leeds Dinosaurs
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Xylerbrek Speedboats 10 v 34 Rhofields Minotaurs
+Dam City Messiahs 30 v 29 Epping Chargers
+Emeralton Seagulls 20 v 40 Oakleigh Clowns
+North Head Bears 12 v 26 Arcoomer Dolphins
+Nexium Sharks 14 v 15 The Entrance Messiahs
+Umbota Cannonballs 16 v 18 Leeds Dinosaurs
+Hobart University 35 v 26 Glebe Bombers
+Albury Eels 25 v 12 Parramatta Mice
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Nexium Sharks 17 v 16 Glebe Bombers
+North Head Bears 20 v 16 Rhofields Minotaurs
+Umbota Cannonballs 23 v 26 Arcoomer Dolphins
+Albury Eels 27 v 16 Leeds Dinosaurs
+Parramatta Mice 4 v 23 Oakleigh Clowns
+Emeralton Seagulls 22 v 33 Dam City Messiahs
+The Entrance Messiahs 29 v 10 Epping Chargers
+Xylerbrek Speedboats 6 v 50 Hobart University
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Leeds Dinosaurs 38 v 6 North Head Bears
+Nexium Sharks 36 v 24 Rhofields Minotaurs
+Xylerbrek Speedboats 25 v 38 Arcoomer Dolphins
+The Entrance Messiahs 14 v 21 Emeralton Seagulls
+Oakleigh Clowns 20 v 24 Umbota Cannonballs
+Hobart University 16 v 24 Albury Eels
+Epping Chargers 22 v 6 Glebe Bombers
+Dam City Messiahs 16 v 14 Parramatta Mice
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Rhofields Minotaurs 14 v 44 Oakleigh Clowns
+Leeds Dinosaurs 40 v 6 Xylerbrek Speedboats
+Dam City Messiahs 31 v 18 North Head Bears
+Nexium Sharks 24 v 36 Hobart University
+Arcoomer Dolphins 6 v 21 Epping Chargers
+Emeralton Seagulls 17 v 20 Parramatta Mice
+The Entrance Messiahs 23 v 10 Glebe Bombers
+Albury Eels 23 v 6 Umbota Cannonballs
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Parramatta Mice 20 v 21 Umbota Cannonballs
+Leeds Dinosaurs 32 v 18 Glebe Bombers
+Xylerbrek Speedboats 4 v 42 Emeralton Seagulls
+Hobart University 40 v 14 Rhofields Minotaurs
+Albury Eels 26 v 27 Dam City Messiahs
+Nexium Sharks 8 v 15 Arcoomer Dolphins
+Epping Chargers 12 v 14 North Head Bears
+Oakleigh Clowns 34 v 22 The Entrance Messiahs
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Arcoomer Dolphins 34 v 35 Hobart University
+Parramatta Mice 18 v 20 Rhofields Minotaurs
+Xylerbrek Speedboats 27 v 32 Epping Chargers
+The Entrance Messiahs 14 v 17 North Head Bears
+Glebe Bombers 4 v 8 Albury Eels
+Emeralton Seagulls 21 v 20 Umbota Cannonballs
+Leeds Dinosaurs 0 v 25 Oakleigh Clowns
+Nexium Sharks 10 v 21 Dam City Messiahs
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Albury Eels 19 v 10 The Entrance Messiahs
+Epping Chargers 10 v 50 Oakleigh Clowns
+Dam City Messiahs 18 v 13 Hobart University
+Arcoomer Dolphins 30 v 22 Emeralton Seagulls
+Glebe Bombers 10 v 17 Rhofields Minotaurs
+North Head Bears 3 v 2 Umbota Cannonballs
+Xylerbrek Speedboats 6 v 14 Parramatta Mice
+Leeds Dinosaurs 30 v 20 Nexium Sharks
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Leeds Dinosaurs 34 v 12 Arcoomer Dolphins
+Albury Eels 15 v 12 Rhofields Minotaurs
+Oakleigh Clowns 31 v 0 Nexium Sharks
+Dam City Messiahs 24 v 4 The Entrance Messiahs
+Parramatta Mice 34 v 22 Epping Chargers
+Xylerbrek Speedboats 10 v 36 North Head Bears
+Hobart University 12 v 20 Emeralton Seagulls
+Glebe Bombers 14 v 18 Umbota Cannonballs
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Leeds Dinosaurs 22 v 23 Parramatta Mice
+Nexium Sharks 36 v 40 Epping Chargers
+The Entrance Messiahs 33 v 32 Hobart University
+North Head Bears 12 v 10 Emeralton Seagulls
+Dam City Messiahs 14 v 12 Oakleigh Clowns
+Glebe Bombers 16 v 24 Arcoomer Dolphins
+Umbota Cannonballs 20 v 12 Rhofields Minotaurs
+Xylerbrek Speedboats 10 v 29 Albury Eels
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Emeralton Seagulls 30 v 34 Epping Chargers
+North Head Bears 28 v 20 Glebe Bombers
+Leeds Dinosaurs 28 v 14 The Entrance Messiahs
+Oakleigh Clowns 26 v 12 Albury Eels
+Parramatta Mice 12 v 10 Hobart University
+Dam City Messiahs 34 v 10 Xylerbrek Speedboats
+Arcoomer Dolphins 8 v 22 Rhofields Minotaurs
+Nexium Sharks 6 v 34 Umbota Cannonballs
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Glebe Bombers 10 v 6 Xylerbrek Speedboats
+Oakleigh Clowns 54 v 16 Arcoomer Dolphins
+Hobart University 12 v 23 Umbota Cannonballs
+Parramatta Mice 34 v 10 The Entrance Messiahs
+North Head Bears 6 v 20 Albury Eels
+Dam City Messiahs 16 v 27 Rhofields Minotaurs
+Epping Chargers 6 v 42 Leeds Dinosaurs
+Emeralton Seagulls 22 v 12 Nexium Sharks
+--------------------------------
+
+Round 13 Results
+--------------------------------
+Oakleigh Clowns 33 v 20 North Head Bears
+Epping Chargers 6 v 16 Umbota Cannonballs
+Parramatta Mice 28 v 42 Arcoomer Dolphins
+Hobart University 22 v 18 Leeds Dinosaurs
+Xylerbrek Speedboats 12 v 37 The Entrance Messiahs
+Nexium Sharks 14 v 18 Albury Eels
+Emeralton Seagulls 22 v 18 Rhofields Minotaurs
+Dam City Messiahs 24 v 8 Glebe Bombers
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Albury Eels 16 v 10 Emeralton Seagulls
+Parramatta Mice 20 v 26 Nexium Sharks
+Dam City Messiahs 30 v 20 Leeds Dinosaurs
+The Entrance Messiahs 25 v 30 Arcoomer Dolphins
+Epping Chargers 34 v 30 Rhofields Minotaurs
+Hobart University 37 v 6 North Head Bears
+Xylerbrek Speedboats 4 v 22 Umbota Cannonballs
+Oakleigh Clowns 26 v 12 Glebe Bombers
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Leeds Dinosaurs 42 v 20 Rhofields Minotaurs
+Arcoomer Dolphins 20 v 24 Dam City Messiahs
+Oakleigh Clowns 27 v 6 Hobart University
+Parramatta Mice 22 v 16 North Head Bears
+Emeralton Seagulls 6 v 12 Glebe Bombers
+Nexium Sharks 27 v 0 Xylerbrek Speedboats
+Umbota Cannonballs 23 v 12 The Entrance Messiahs
+Albury Eels 30 v 4 Epping Chargers
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Dam City Messiahs 7 v 4 North Head Bears
+Oakleigh Clowns 21 v 20 Arcoomer Dolphins
+Albury Eels 28 v 8 Parramatta Mice
+Leeds Dinosaurs 17 v 0 Umbota Cannonballs
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Dam City Messiahs 34 v 22 Leeds Dinosaurs
+Oakleigh Clowns 4 v 17 Albury Eels
+Umbota Cannonballs 21 v 40 North Head Bears
+Parramatta Mice 12 v 22 Arcoomer Dolphins
+--------------------------------
+
+Round 18 Results
+--------------------------------
+Dam City Messiahs 11 v 10 Albury Eels
+Leeds Dinosaurs 27 v 6 North Head Bears
+Oakleigh Clowns 30 v 14 Arcoomer Dolphins
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Leeds Dinosaurs 20 v 24 Oakleigh Clowns
+--------------------------------
+
+Round 20 Results
+--------------------------------
+Albury Eels 12 v 14 Oakleigh Clowns
+--------------------------------
+
+Round 21 Results
+--------------------------------
+Dam City Messiahs 16 v 14 Oakleigh Clowns
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Neo Loomer-Albury Eels : 17
+2. Dapper Unres-North Head Bears : 15
+3. Kam Martin-Oakleigh Clowns : 15
+4. Pete Yahtzel-Oakleigh Clowns : 13
+5. Junior Johnson-Hobart University : 12
+6. Dylan Greenberg-Hobart University : 12
+7. Thom Cummins-Emeralton Seagulls : 12
+8. Jane Jackington-Leeds Dinosaurs : 12
+9. Homer Yemm-Leeds Dinosaurs : 12
+10. Jr. MacDonald-Off Contract Players : 11
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Nicki Chricton-Off Contract Players : 49
+2. Diana Dunn-Epping Chargers : 34
+3. Walter Tyrell-Umbota Cannonballs : 32
+4. Luna Russell-Dam City Messiahs : 30
+5. Antonio Rice-Umbota Cannonballs : 29
+6. Paul de Marit-Parramatta Mice : 26
+7. Norman Yemm-Off Contract Players : 25
+8. Carl Hands-Rhofields Minotaurs : 25
+9. Huretio Atoni-Oakleigh Clowns : 25
+10. Dan Vianna-Arcoomer Dolphins : 22
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Kate Spice-Dam City Messiahs : 2
+2. Antonio Lapper-Dam City Messiahs : 2
+3. Abraham Hannington-Albury Eels : 2
+4. Ryan Jackington-The Entrance Messiahs : 2
+5. Jon Dunn-The Entrance Messiahs : 2
+6. Pete Claypool-The Entrance Messiahs : 2
+7. Kelin Yemm-Emeralton Seagulls : 2
+8. Antonio Potter-Dam City Messiahs : 2
+9. Jane Jackington-Leeds Dinosaurs : 2
+10. Dom Xyer-Albury Eels : 2
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Homer Yemm-Leeds Dinosaurs : 2089
+2. Kam Martin-Oakleigh Clowns : 1971
+3. Pete Yahtzel-Oakleigh Clowns : 1884
+4. Ed Pout-Arcoomer Dolphins : 1716
+5. Dapper Unres-North Head Bears : 1693
+6. Diana O' Donovan-Oakleigh Clowns : 1582
+7. Jack Manfredi-Leeds Dinosaurs : 1560
+8. Andres Stewart-Oakleigh Clowns : 1514
+9. Trixie Campbell-Albury Eels : 1508
+10. Jay Kriis-Parramatta Mice : 1505
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Bob Singh-Oakleigh Clowns : 191
+2. Ed Pout-Arcoomer Dolphins : 190
+3. Trixie Campbell-Albury Eels : 187
+4. Christopher Burt-Oakleigh Clowns : 186
+5. Kelin Yemm-Emeralton Seagulls : 184
+6. Pete Yahtzel-Oakleigh Clowns : 183
+7. Kristian Latui-Nexium Sharks : 182
+8. Lindsay Domino-Oakleigh Clowns : 181
+9. Abraham Hannington-Albury Eels : 177
+10. Albert Morrison-Parramatta Mice : 176
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Declan Besti-Xylerbrek Speedboats : 1
+2. Jay Kriis-Parramatta Mice : 1
+3. George Xyer-Rhofields Minotaurs : 1
+4. Paul Zorsta-Albury Eels : 1
+5. Charles Harris-Leeds Dinosaurs : 1
+6. Junior Hull-Leeds Dinosaurs : 1
+7. Bob Singh-Oakleigh Clowns : 0
+8. Kam Martin-Oakleigh Clowns : 0
+9. Tom Manfredi-Leeds Dinosaurs : 0
+10. Christopher Burt-Oakleigh Clowns : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Walter West-Emeralton Seagulls : 775
+2. Norman Yemm-Off Contract Players : 688
+3. George O' Donovan-Hobart University : 648
+4. Junior Hull-Leeds Dinosaurs : 637
+5. Trixie Campbell-Albury Eels : 626
+6. Clint Sandra-Umbota Cannonballs : 625
+7. Kam Martin-Oakleigh Clowns : 579
+8. Albert Maxx-Umbota Cannonballs : 574
+9. Andres Stewart-Oakleigh Clowns : 568
+10. David Way-Oakleigh Clowns : 568
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Ray Xander-Off Contract Players : 30
+2. Ed Pout-Arcoomer Dolphins : 26
+3. Jane Jackington-Leeds Dinosaurs : 23
+4. Jarrod Papiai-Arcoomer Dolphins : 23
+5. Dylan Greenberg-Hobart University : 22
+6. Homer Yemm-Leeds Dinosaurs : 22
+7. Ryan Jackington-The Entrance Messiahs : 21
+8. Damien Cummins-Dam City Messiahs : 21
+9. Thom Cummins-Emeralton Seagulls : 21
+10. Trixie Campbell-Albury Eels : 21
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Ray Xander-Off Contract Players : 5
+2. Kyuss Barrett-Off Contract Players : 2
+3. Ray Russell-Emeralton Seagulls : 2
+4. Luna Russell-Dam City Messiahs : 2
+5. Jay Jackston-Xylerbrek Speedboats : 2
+6. Julian Xander-Epping Chargers : 2
+7. Junior Cleary-Emeralton Seagulls : 2
+8. Allie Cooper-Albury Eels : 2
+9. Dylan Greenberg-Hobart University : 2
+10. Jimmy Humm-The Entrance Messiahs : 2
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Alister Aaronson-Parramatta Mice : 25
+2. Will Viana-Glebe Bombers : 24
+3. Kate Spice-Dam City Messiahs : 23
+4. Nicholas Indigo-Dam City Messiahs : 21
+5. Brenton Mitt-Arcoomer Dolphins : 21
+6. Velento Alexander-Arcoomer Dolphins : 21
+7. Albert Morrison-Parramatta Mice : 20
+8. Asher Som-Rhofields Minotaurs : 20
+9. Raymond Fowler-The Entrance Messiahs : 20
+10. Miles Meikle-Albury Eels : 20
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Christopher Burt-Oakleigh Clowns : 9
+2. Anthony Bridgers-Oakleigh Clowns : 9
+3. Kyuss Barrett-Off Contract Players : 8
+4. Miles Meikle-Albury Eels : 8
+5. Jay Jackston-Xylerbrek Speedboats : 8
+6. Diana Arrust-Leeds Dinosaurs : 7
+7. Emily James-Hobart University : 7
+8. Walter West-Emeralton Seagulls : 7
+9. Cooper Humphrey-Emeralton Seagulls : 6
+10. Damien Hill-Rhofields Minotaurs : 6
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Josh Lase-Xylerbrek Speedboats : 7
+2. Jon Fallon-Xylerbrek Speedboats : 7
+3. Julian Xander-Epping Chargers : 6
+4. Paul Weas-Oakleigh Clowns : 6
+5. Junior Johnson-Hobart University : 5
+6. Lindsey Romney-Emeralton Seagulls : 5
+7. Ryan Dean-Umbota Cannonballs : 5
+8. Ray Xander-Off Contract Players : 5
+9. Damien Hill-Rhofields Minotaurs : 5
+10. Thomas Winger-North Head Bears : 5
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Antonio Lapper-Dam City Messiahs : 2
+2. Antonio Potter-Dam City Messiahs : 1
+3. Dave Ballsut-Umbota Cannonballs : 1
+4. Opus Sunnerson-Albury Eels : 1
+5. Diana Dunn-Epping Chargers : 1
+6. Carl Hands-Rhofields Minotaurs : 1
+7. Andy Wott-Off Contract Players : 1
+8. Ann Pearce-Xylerbrek Speedboats : 1
+9. Hubert Maxx-Rhofields Minotaurs : 1
+10. Kyrsta Potter-Epping Chargers : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Alan Wott-Oakleigh Clowns : 1
+2. Burt Taki-Glebe Bombers : 1
+3. Jill Fresh-The Entrance Messiahs : 1
+4. David Way-Oakleigh Clowns : 0
+5. Pete Yahtzel-Oakleigh Clowns : 0
+6. Diana O' Donovan-Oakleigh Clowns : 0
+7. Bob Singh-Oakleigh Clowns : 0
+8. Kam Martin-Oakleigh Clowns : 0
+9. Tom Manfredi-Leeds Dinosaurs : 0
+10. Christopher Burt-Oakleigh Clowns : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Dan Vianna-Arcoomer Dolphins : 2
+2. Andrew Sunnerson-Rhofields Minotaurs : 2
+3. Christian Costa-Leeds Dinosaurs : 2
+4. Bill Atoni-Nexium Sharks : 2
+5. Cam Way-Epping Chargers : 1
+6. Kyuss Berry-Emeralton Seagulls : 1
+7. Paul de Marit-Parramatta Mice : 1
+8. Kimberly Lewis-Xylerbrek Speedboats : 1
+9. Kyrsta Potter-Epping Chargers : 1
+10. Myles Yemm-Glebe Bombers : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Nicki Chricton-Off Contract Players : 118
+2. Paul de Marit-Parramatta Mice : 84
+3. Diana Dunn-Epping Chargers : 76
+4. Luna Russell-Dam City Messiahs : 76
+5. Walter Tyrell-Umbota Cannonballs : 73
+6. Huretio Atoni-Oakleigh Clowns : 70
+7. Neo Loomer-Albury Eels : 68
+8. Carl Hands-Rhofields Minotaurs : 66
+9. Cam Sins-Arcoomer Dolphins : 64
+10. Jane Jackington-Leeds Dinosaurs : 62
+11. Aaron Costa-Hobart University : 62
+12. Kam Martin-Oakleigh Clowns : 61
+13. Dapper Unres-North Head Bears : 60
+14. Norman Yemm-Off Contract Players : 59
+15. Antonio Rice-Umbota Cannonballs : 59
+16. Bob Singh-Oakleigh Clowns : 58
+17. Dan Vianna-Arcoomer Dolphins : 53
+18. Pete Yahtzel-Oakleigh Clowns : 52
+19. George O' Donovan-Hobart University : 50
+20. Dylan Greenberg-Hobart University : 48
+21. Thom Cummins-Emeralton Seagulls : 48
+22. Junior Johnson-Hobart University : 48
+23. Joseph Ngu-North Head Bears : 48
+24. Homer Yemm-Leeds Dinosaurs : 48
+25. Antonio Lapper-Dam City Messiahs : 46
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Kam Martin-Oakleigh Clowns : 291
+2. Andres Stewart-Oakleigh Clowns : 217
+3. Pete Yahtzel-Oakleigh Clowns : 216
+4. Dylan Greenberg-Hobart University : 202
+5. Lindsay Domino-Oakleigh Clowns : 200
+6. Ed Pout-Arcoomer Dolphins : 198
+7. Neo Loomer-Albury Eels : 196
+8. Dapper Unres-North Head Bears : 189
+9. Jay Kriis-Parramatta Mice : 188
+10. Antonio Lapper-Dam City Messiahs : 184
+11. Jr. Hall-Oakleigh Clowns : 180
+12. Trixie Campbell-Albury Eels : 180
+13. Abraham Hannington-Albury Eels : 177
+14. Jack Manfredi-Leeds Dinosaurs : 176
+15. Albert Maxx-Umbota Cannonballs : 168
+16. Jane Jackington-Leeds Dinosaurs : 165
+17. James Chappell-Rhofields Minotaurs : 163
+18. Don Way-Parramatta Mice : 160
+19. Allie Cooper-Albury Eels : 160
+20. Luna Russell-Dam City Messiahs : 160
+21. Norman Yemm-Off Contract Players : 159
+22. Kelin Yemm-Emeralton Seagulls : 157
+23. Clint Sandra-Umbota Cannonballs : 156
+24. Ryan Jackington-The Entrance Messiahs : 155
+25. Nicki Chricton-Off Contract Players : 154
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Arcoomer Dolphins Sign Callum Junior
+Nexium Sharks Sign Xander Alexander
+The Entrance Messiahs Sign Norman Cummins
+Jr. MacDonald Assaults RSL Bouncer
+Barry Fox Involved In Sexting Scandal
+Opinion: Kurt de Zerta Should Swap Teams
+Players Fight At Local RSL!
+Kyrsta Potter's Retirment Rumours!
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Parramatta Mice Sign Nicholas Worker
+Nexium Sharks Sign Bill Atoni
+Carl Hands At Risk Of An Early Release!
+Coach Proposes New Finals System!
+Dominic Nguyen Donates To Controverisal Charity
+George O' Donovan Involved In Sexting Scandal
+Players Fight At Local RSL!
+Player Unrest At Nexium Sharks
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Parramatta Mice Sign Zach Oak
+Glebe Bombers Sign Charles Woods
+Glebe Bombers Sign Dapper Costa
+Ronald O' Donovan Assaults RSL Bouncer
+Jimmy Cook Involved In Sexting Scandal
+Rival Players Raise Awareness!
+Opinion: Christopher Burt Should Swap Teams
+Opinion: Ed Pout Should Captain Suoonnia
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+North Head Bears Sign Aaron Flower
+Leeds Dinosaurs Sign Raymond Berry
+Opinion: Thomas Barter Should Captain Fiji
+Zack Ballsut's Large-Scale Gambling Problem
+Jon Vlandys To Have Contract Extended!
+Burt Taki Saves Local Man From Drowning
+Albert Holland At Risk Of An Early Release!
+Cooper Humphrey Donates To Controverisal Charity
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Coach Proposes New Finals System!
+Jenny Hands Helps Sick Kids In Hospital
+Opinion: Antonio Potter Should Captain England
+Dapper Unres Assaults RSL Bouncer
+Rival Players Raise Awareness!
+Allie Hill Helps Sick Kids In Hospital
+Ray Taylor At Risk Of An Early Release!
+David Way's Eligibility Crisis!
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Dam City Messiahs Sign Brendan Junior
+Leeds Dinosaurs Sign Christian Costa
+Hobart University Sign Norman Yemm
+Alan Wott Offered Pay Cut To Re-sign
+Barry Fox At Risk Of An Early Release!
+Players Fight At Local RSL!
+Rival Players Raise Awareness!
+Fan Poll: Glebe Bombers's Best Player
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Rhofields Minotaurs Sign Asher Zari
+Rhofields Minotaurs Sign Sam Sullivan
+Opinion: Diana O' Donovan Should Swap Teams
+Opinion: Sr. Sunnerson Should Swap Teams
+Kristian Ingodio Donates To Controverisal Charity
+Opinion: Connor Aaronson Should Swap Teams
+David Way's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+North Head Bears Sign Andre Best
+Umbota Cannonballs Sign Albert Maxx
+Ashleigh Lase Involved In Sexting Scandal
+Rival Players Raise Awareness!
+Pauly de Zerta Helps Sick Kids In Hospital
+Joshua Worsent Helps Sick Kids In Hospital
+Rival Players Raise Awareness!
+Player Unrest At Nexium Sharks
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Dapper Unres Helps Sick Kids In Hospital
+Coach Proposes New Finals System!
+Opinion: Jenny Holland Should Captain Xyler Union
+Coach Proposes New Finals System!
+Opinion: Billie Gagai Should Captain England
+Dave Ballsut To Have Contract Extended!
+Jeni Morier's Eligibility Crisis!
+Lindsay Domino Assaults RSL Bouncer
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+David Way Helps Sick Kids In Hospital
+Player Unrest At Arcoomer Dolphins
+Myles Arrust Offered Pay Cut To Re-sign
+Brenton Mitt Involved In Sexting Scandal
+Anthony Bridgers Involved In Sexting Scandal
+Emily Lase Assaults RSL Bouncer
+Miles Meikle At Risk Of An Early Release!
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Leeds Dinosaurs Sign Charles Harris
+Oakleigh Clowns Sign Matt Meaney
+Rhofields Minotaurs Sign Anthony Klomono
+Oakleigh Clowns Sign Dave Thompson
+Dylan Greenberg To Have Contract Extended!
+Fan Poll: North Head Bears's Best Player
+Xander Alexander Donates To Controverisal Charity
+Dreka Drayersun's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Hobart University Sign Mitchell Deon
+Oakleigh Clowns Sign Billie Watne
+Oakleigh Clowns Sign Josh Hull
+Umbota Cannonballs Sign Clint Sandra
+Opinion: Julian Xander Should Swap Teams
+George Lee's Eligibility Crisis!
+Adrien Chricton Assaults RSL Bouncer
+Jay Kriis's Eligibility Crisis!
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Glebe Bombers Sign Kris Etten
+Xylerbrek Speedboats Sign Frank Questa
+Antonio Potter's Eligibility Crisis!
+Player Unrest At Albury Eels
+Rival Players Raise Awareness!
+Trent Holland To Have Contract Extended!
+Kyuss Xylxed Donates To Controverisal Charity
+Opinion: Earl Weas Should Swap Teams
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Glebe Bombers Sign Jonathon Sandra
+Fan Poll: Hobart University's Best Player
+Fan Poll: Umbota Cannonballs's Best Player
+Gwen Lase's Eligibility Crisis!
+Jill Fresh Donates To Controverisal Charity
+Fan Poll: Emeralton Seagulls's Best Player
+Opinion: Antonio Lapper Should Swap Teams
+Junior McMahon Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Hobart University Sign Christian Besti
+The Entrance Messiahs Sign George Lee
+Dam City Messiahs Wins Minor Premiership!
+Walter West Assaults RSL Bouncer
+Fan Poll: Albury Eels's Best Player
+Jon Dunn Offered Pay Cut To Re-sign
+Hubert Maxx At Risk Of An Early Release!
+Jarrod Papiai Donates To Controverisal Charity
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+Umbota Cannonballs Sign Jane Martin
+Dam City Messiahs Sign Bob Kimley
+Earl Weas Donates To Controverisal Charity
+Christian Costa Involved In Sexting Scandal
+Connor Aaronson's Retirment Rumours!
+Fan Poll: North Head Bears's Best Player
+Jill Fresh's Eligibility Crisis!
+Opinion: Gwen Gealo Should Swap Teams
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+Emeralton Seagulls Sign Kelin Yemm
+Rival Players Raise Awareness!
+Jon Vlandys Saves Local Man From Drowning
+Will Bergman Assaults RSL Bouncer
+Benji Arcana To Have Contract Extended!
+Paul Zorsta's Retirment Rumours!
+Frank Questa's Retirment Rumours!
+Diana Deon's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+North Head Bears Sign Clint Dean
+Dam City Messiahs Sign Kam Ngu
+Tom Sitea's Large-Scale Gambling Problem
+Rival Players Raise Awareness!
+Rival Players Raise Awareness!
+Will Bergman At Risk Of An Early Release!
+Carl Barrett Donates To Controverisal Charity
+Mitchell de Zerta Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Hobart University Sign Sr. Fowler
+Nexium Sharks Sign Alistair de Flatio
+Cooper Humphrey Donates To Controverisal Charity
+Calum Toa's Large-Scale Gambling Problem
+Hubert Maxx Donates To Controverisal Charity
+Players Fight At Local RSL!
+Opinion: Burt Taki Should Swap Teams
+Jon Dunn Assaults RSL Bouncer
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+Kris Etten's Large-Scale Gambling Problem
+George Lee's Eligibility Crisis!
+Declan Lammi Involved In Sexting Scandal
+Opinion: Burt Taki Should Swap Teams
+Fan Poll: Emeralton Seagulls's Best Player
+Diana Dunn At Risk Of An Early Release!
+Pete Claypool Donates To Controverisal Charity
+Thom Indigo To Have Contract Extended!
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+Leeds Dinosaurs Sign Al Freit
+North Head Bears Sign Brendan Drayersun
+Arcoomer Dolphins Sign Ed Pout
+Xylerbrek Speedboats Sign Thomas Barter
+Dam City Messiahs Wins Premiership!
+Trixie Campbell At Risk Of An Early Release!
+Jeremy Silwedel At Risk Of An Early Release!
+Diana O' Donovan Involved In Sexting Scandal
+--------------------------------
+

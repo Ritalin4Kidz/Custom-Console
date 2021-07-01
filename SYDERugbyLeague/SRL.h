@@ -93,6 +93,7 @@ enum GameStateLeaderboardSYDE
 enum SRLSeasonLength
 {
 	Length_ShortSeason = 10,
+	Length_RoundRobin = 15,
 	Length_MediumSeason = 20,
 	Length_NormalSeason = 26,
 	Length_LongSeason = 40,
@@ -122,6 +123,7 @@ enum FinalsSeriesType
 	Top2Normal,
 	Top8Knockout,
 	Top4Knockout,
+	Top8DoubleElim,
 	KnockoutTournament,
 	KnockoutTournamentDouble,
 };
@@ -328,7 +330,7 @@ public:
 
 	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
 
-	bool addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams);
+	bool addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams, vector<string>& AttemptedTeams);
 
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -632,6 +634,7 @@ private:
 		FinalsSeries("Top 2 Normal", Top2Normal, 1, 2),
 		FinalsSeries("Top 8 Knock-Out", Top8Knockout, 3, 8),
 		FinalsSeries("Top 4 Knock-Out", Top4Knockout, 2, 4),
+		FinalsSeries("Top 8 Double-Elim", Top8DoubleElim, 6, 8),
 		FinalsSeries("Knockout Tourny", KnockoutTournament, 4, 16),
 		FinalsSeries("Double Elim Tourny", KnockoutTournamentDouble, 8, 16),
 		});

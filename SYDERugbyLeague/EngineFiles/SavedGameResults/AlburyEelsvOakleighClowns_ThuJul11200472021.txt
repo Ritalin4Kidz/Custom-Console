@@ -1,0 +1,208 @@
+----------LINE-UPS----------
+Home Team: Albury Eels
+1: Pete Gulli
+2: Greta Arcana
+3: Neo Loomer
+4: Opus Sunnerson
+5: Miles Meikle
+6: Abraham Hannington
+7: Trixie Campbell
+8: Calum de Zerta
+9: Paul Zorsta
+10: Allie Cooper
+11: Ronald Shannel
+12: Jane Allsopp
+13: Barry Fox
+14: Zack Ballsut
+15: Dom Xyer
+16: Kelin Martin
+17: Brenton Harrigan
+Away Team: Oakleigh Clowns
+1: Andres Stewart
+2: Pete Yahtzel
+3: Jr. Hall
+4: David Way
+5: Alan Wott
+6: Diana O' Donovan
+7: Bob Singh
+8: Kam Martin
+9: Lindsay Domino
+10: Christopher Burt
+11: Anthony Bridgers
+12: Matt Meaney
+13: Billie Watne
+14: Josh Hull
+15: Dave Thompson
+16: Paul Weas
+17: Huretio Atoni
+----------GAME-STAT---------
+Weather: Heat Wave
+----------------------------
+00:00 - KICK OFF - Albury Eels: 0 v Oakleigh Clowns: 0
+01:17 - Calum de Zerta - Kick Out On The Full
+02:39 - Bob Singh - 6th Tackle Changeover
+04:33 - Neo Loomer - Intercepted Off A Bob Singh Pass
+04:46 - Billie Watne - Ruck Infringement
+05:04 - Miles Meikle - Forward Pass
+07:58 - Alan Wott - Injury - Broken Leg
+07:58 - Oakleigh Clowns Interchanged Players Alan Wott & Josh Hull
+10:16 - Neo Loomer - 6th Tackle Changeover
+10:27 - Oakleigh Clowns Interchanged Players Lindsay Domino & Huretio Atoni
+11:09 - Albury Eels Interchanged Players Ronald Shannel & Zack Ballsut
+11:09 - Oakleigh Clowns Interchanged Players Billie Watne & Alan Wott
+12:36 - 20m Restart - Oakleigh Clowns
+14:18 - Bob Singh - 6th Tackle Changeover
+14:30 - Huretio Atoni - Penalty
+14:30 - Oakleigh Clowns Interchanged Players Jr. Hall & Dave Thompson
+14:41 - Anthony Bridgers - Penalty
+14:57 - Zack Ballsut - Over The Sideline
+16:27 - Pete Yahtzel - Intercepted Off A Jane Allsopp Pass
+16:57 - Dave Thompson - Over The Sideline
+18:07 - Barry Fox - Over The Sideline
+19:34 - Matt Meaney - 6th Tackle Changeover
+20:15 - Albury Eels Interchanged Players Calum de Zerta & Kelin Martin
+20:59 - Allie Cooper - Intercepted Off A David Way Pass
+21:33 - ------VIDEO REFEREE------
+21:33 - Kelin Martin - TRY - Albury Eels: 4 v Oakleigh Clowns: 0
+22:33 - Jane Allsopp - CONVERSION MISSED
+25:50 - Albury Eels Interchanged Players Allie Cooper & Ronald Shannel
+26:45 - Kelin Martin - Knock On
+27:10 - Oakleigh Clowns Interchanged Players Josh Hull & Billie Watne
+28:24 - Matt Meaney - 6th Tackle Changeover
+29:43 - Zack Ballsut - Over The Sideline
+30:28 - Billie Watne - Incorrect Play The Ball
+30:28 - Billie Watne - Penalty
+30:40 - Oakleigh Clowns Interchanged Players Kam Martin & Jr. Hall
+31:50 - Opus Sunnerson - 6th Tackle Changeover
+32:08 - Neo Loomer - Intercepted Off A David Way Pass
+32:08 - Neo Loomer - TRY - Albury Eels: 8 v Oakleigh Clowns: 0
+33:08 - Jane Allsopp - CONVERSION MISSED
+36:18 - Huretio Atoni - TRY - Albury Eels: 8 v Oakleigh Clowns: 4
+37:18 - Huretio Atoni - GOAL - Albury Eels: 8 v Oakleigh Clowns: 6
+38:51 - Diana O' Donovan - Forward Pass
+39:48 - Andres Stewart - Stripped Ball Off Opus Sunnerson
+40:00 - HALF TIME - Albury Eels: 8 v Oakleigh Clowns: 6
+40:01 - Oakleigh Clowns Interchanged Players David Way & Kam Martin
+40:15 - Matt Meaney - Incorrect Play The Ball
+40:15 - Matt Meaney - Penalty
+40:15 - Jane Allsopp - PENALTY GOAL MISSED
+41:15 - Albury Eels Interchanged Players Miles Meikle & Brenton Harrigan
+41:15 - Oakleigh Clowns Interchanged Players Alan Wott & Paul Weas
+41:47 - Albury Eels Interchanged Players Zack Ballsut & Dom Xyer
+42:49 - Paul Zorsta - 6th Tackle Changeover
+45:07 - Greta Arcana - Over The Sideline
+46:32 - Paul Weas - 6th Tackle Changeover
+46:45 - Anthony Bridgers - Penalty
+48:16 - Kelin Martin - 6th Tackle Changeover
+48:27 - Neo Loomer - Intercepted Off A Billie Watne Pass
+49:06 - Greta Arcana - Knock On
+50:20 - Albury Eels Interchanged Players Neo Loomer & Allie Cooper
+50:31 - Christopher Burt - Forward Pass
+51:03 - Dave Thompson - Intercepted Off A Brenton Harrigan Pass
+51:20 - Albury Eels Interchanged Players Brenton Harrigan & Neo Loomer
+52:03 - Trixie Campbell - Intercepted Off A Christopher Burt Pass
+53:52 - Billie Watne - Knock On
+55:27 - Jane Allsopp - 6th Tackle Changeover
+55:38 - Diana O' Donovan - Forward Pass
+56:26 - Paul Zorsta - TRY - Albury Eels: 12 v Oakleigh Clowns: 6
+57:26 - Jane Allsopp - CONVERSION MISSED
+63:26 - Kelin Martin - Forward Pass
+63:54 - Pete Yahtzel - Knock On
+64:12 - Ronald Shannel - Forward Pass
+65:00 - Albury Eels Interchanged Players Allie Cooper & Miles Meikle
+65:29 - Pete Yahtzel - Knock On
+66:49 - Barry Fox - Forward Pass
+67:36 - Paul Weas - TRY - Albury Eels: 12 v Oakleigh Clowns: 10
+68:36 - Huretio Atoni - GOAL - Albury Eels: 12 v Oakleigh Clowns: 12
+71:38 - Billie Watne - Stripped Ball Off Jane Allsopp
+72:35 - Opus Sunnerson - Penalty
+72:35 - Huretio Atoni - PENALTY GOAL MISSED
+74:08 - Andres Stewart - Forward Pass
+75:05 - Miles Meikle - Knock On
+76:43 - Diana O' Donovan - 6th Tackle Changeover
+76:54 - Miles Meikle - Incorrect Play The Ball
+76:54 - Miles Meikle - Penalty
+77:11 - Opus Sunnerson - Penalty
+77:11 - Huretio Atoni - PENALTY GOAL - Albury Eels: 12 v Oakleigh Clowns: 14
+79:01 - Christopher Burt - Over The Sideline
+79:31 - Anthony Bridgers - Ruck Infringement
+79:45 - ------VIDEO REFEREE------
+79:45 - Miles Meikle - NO TRY - Offside
+79:45 - Miles Meikle - Penalty
+80:00 - FULL TIME - Albury Eels: 12 v Oakleigh Clowns: 14
+                             
+--------PLAYER STATS--------
+Home Team: Albury Eels
+1: Pete Gulli |Time Played: 80:13 |Metres: 37 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+2: Greta Arcana |Time Played: 80:13 |Metres: 20 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+3: Miles Meikle |Time Played: 56:28 |Metres: 92 |Tackles: 9 |Kicks: 1 |Kick Metres: 51 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+4: Opus Sunnerson |Time Played: 80:13 |Metres: 38 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+5: Neo Loomer |Time Played: 79:13 |Metres: 54 |Tackles: 12 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 64
+6: Abraham Hannington |Time Played: 80:13 |Metres: 42 |Tackles: 6 |Kicks: 1 |Kick Metres: 62 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+7: Trixie Campbell |Time Played: 80:13 |Metres: 41 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 39
+8: Kelin Martin |Time Played: 59:58 |Metres: 43 |Tackles: 9 |Kicks: 2 |Kick Metres: 99 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 22
+9: Paul Zorsta |Time Played: 80:13 |Metres: 73 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 51
+10: Ronald Shannel |Time Played: 65:32 |Metres: 41 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+11: Dom Xyer |Time Played: 38:26 |Metres: 4 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+12: Jane Allsopp |Time Played: 80:13 |Metres: 24 |Tackles: 13 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+13: Barry Fox |Time Played: 80:13 |Metres: 31 |Tackles: 12 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+14: Brenton Harrigan |Time Played: 10:05 |Metres: 3 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Zack Ballsut |Time Played: 30:38 |Metres: 11 |Tackles: 1 |Kicks: 1 |Kick Metres: 52 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+16: Calum de Zerta |Time Played: 20:15 |Metres: 9 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+17: Allie Cooper |Time Played: 40:30 |Metres: 19 |Tackles: 3 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+Highlights:                 
+Most Tackles: Pete Gulli: 15
+Most Points: Neo Loomer: 4
+Most Metres: Miles Meikle: 92
+Most Errors: Greta Arcana: 2
+                             
+Away Team: Oakleigh Clowns
+1: Andres Stewart |Time Played: 80:13 |Metres: 65 |Tackles: 12 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+2: Pete Yahtzel |Time Played: 80:13 |Metres: 80 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+3: Dave Thompson |Time Played: 65:43 |Metres: 34 |Tackles: 12 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+4: Kam Martin |Time Played: 70:52 |Metres: 29 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+5: Billie Watne |Time Played: 64:12 |Metres: 5 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+6: Diana O' Donovan |Time Played: 80:13 |Metres: 65 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+7: Bob Singh |Time Played: 80:13 |Metres: 42 |Tackles: 12 |Kicks: 1 |Kick Metres: 32 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+8: Jr. Hall |Time Played: 64:03 |Metres: 40 |Tackles: 13 |Kicks: 1 |Kick Metres: 47 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+9: Huretio Atoni |Time Played: 69:46 |Metres: 56 |Tackles: 12 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 3 |Field Goals: 0 |Total Points: 10 |Fantasy Points: 29
+10: Christopher Burt |Time Played: 80:13 |Metres: 50 |Tackles: 10 |Kicks: 3 |Kick Metres: 88 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+11: Anthony Bridgers |Time Played: 80:13 |Metres: 37 |Tackles: 15 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+12: Matt Meaney |Time Played: 80:13 |Metres: 70 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+13: Paul Weas |Time Played: 38:58 |Metres: 7 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+14: Josh Hull |Time Played: 19:12 |Metres: 10 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+15: David Way |Time Played: 40:01 |Metres: 17 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+16: Alan Wott |Time Played: 38:04 |Metres: 17 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+17: Lindsay Domino |Time Played: 10:27 |Metres: 0 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+Highlights:                 
+Most Tackles: Anthony Bridgers: 15
+Most Points: Huretio Atoni: 10
+Most Metres: Pete Yahtzel: 80
+Most Errors: Pete Yahtzel: 2
+                             
+---------TEAM STATS---------
+Home Team: Albury Eels
+Total Metres: 582
+Total Kick Metres: 370
+Total Errors: 12
+Total Tackles: 136
+Total Tries: 3
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Oakleigh Clowns
+Total Metres: 624
+Total Kick Metres: 276
+Total Errors: 9
+Total Tackles: 136
+Total Tries: 2
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Neo Loomer
+2nd (2 Points) -- Paul Zorsta
+3rd (1 Point) -- Jr. Hall
+----------------------------

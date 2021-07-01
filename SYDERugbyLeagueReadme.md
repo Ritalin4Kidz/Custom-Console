@@ -29,6 +29,8 @@ SRL Simulation game made inside the SYDE Framework.
 ###  0.10.2.0 beta 1-07-2021
 - More Player Names
 - New Custom Team
+- Round Robin
+- Double Elim top 8 finals type
 
 ###  0.10.1.0 beta 
 - Achievement fix

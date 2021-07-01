@@ -1,0 +1,215 @@
+----------LINE-UPS----------
+Home Team: Dam City Messiahs
+1: Brendan Junior
+2: Luna Russell
+3: Jeni Morier
+4: Kate Spice
+5: Antonio Lapper
+6: Davey Caldato
+7: Jenny Holland
+8: Kris Dean
+9: Antonio Potter
+10: Nicholas Indigo
+11: Clinton Hall
+12: Tom Hing
+13: Damien Cummins
+14: Earl BamertBanks
+15: Ed Farmer
+16: Kyrsta Maxwell
+17: Dominic Nguyen
+Away Team: North Head Bears
+1: Joseph Ngu
+2: Thomas Winger
+3: Ray Xander
+4: Christian Bergman
+5: Ben Potter
+6: Andre Best
+7: Phoebe Folick
+8: Ed Pout
+9: Alister Priest
+10: Carl Lapper
+11: Alan Gulli
+12: Jenny Fresh
+13: Michael O' Donovan
+14: Davey South
+15: Aaron Flower
+16: Carl Barrett
+17: Castro Reynolds
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - Dam City Messiahs: 0 v North Head Bears: 0
+01:15 - Nicholas Indigo - Forward Pass
+01:31 - Kate Spice - Penalty
+01:31 - Joseph Ngu - PENALTY GOAL MISSED
+02:48 - Jenny Fresh - Over The Sideline
+04:16 - Antonio Lapper - 6th Tackle Changeover
+05:24 - Tom Hing - Intercepted Off A Alan Gulli Pass
+05:48 - Ed Pout - Intercepted Off A Tom Hing Pass
+08:19 - Kate Spice - 6th Tackle Changeover
+10:45 - North Head Bears Interchanged Players Michael O' Donovan & Castro Reynolds
+10:56 - Ray Xander - Intercepted Off A Davey Caldato Pass
+11:50 - Dam City Messiahs Interchanged Players Clinton Hall & Ed Farmer
+12:13 - Ed Pout - Intercepted Off A Jeni Morier Pass
+13:35 - Ben Potter - 6th Tackle Changeover
+14:46 - 20m Restart - North Head Bears
+17:33 - Ed Farmer - 6th Tackle Changeover
+18:03 - Jenny Fresh - Over The Sideline
+19:26 - Tom Hing - Knock On
+20:05 - Dam City Messiahs Interchanged Players Davey Caldato & Dominic Nguyen
+21:01 - Castro Reynolds - Intercepted Off A Kate Spice Pass
+21:47 - Ben Potter - Knock On
+23:17 - Jeni Morier - Kick Out On The Full
+24:08 - Antonio Lapper - Intercepted Off A Alan Gulli Pass
+24:23 - Jenny Holland - Forward Pass
+24:40 - Ed Pout - Over The Sideline
+24:40 - North Head Bears Interchanged Players Phoebe Folick & Aaron Flower
+26:23 - Kris Dean - Ruck Infringement
+26:23 - Kris Dean - Penalty
+26:23 - Kris Dean - SIN BIN
+26:37 - Tom Hing - Intercepted Off A Alister Priest Pass
+28:37 - 20m Restart - Dam City Messiahs
+29:17 - Jeni Morier - Over The Sideline
+29:58 - Dominic Nguyen - Penalty
+29:58 - Joseph Ngu - PENALTY GOAL MISSED
+31:27 - North Head Bears Interchanged Players Aaron Flower & Carl Barrett
+32:09 - Castro Reynolds - Forward Pass
+33:00 - Dam City Messiahs Interchanged Players Jeni Morier & Earl BamertBanks
+33:26 - Kate Spice - 6th Tackle Changeover
+35:10 - Jenny Fresh - Ruck Infringement
+36:35 - SIN BIN RETURN - Kris Dean
+36:35 - Antonio Potter - Over The Sideline
+37:04 - Ben Potter - Forward Pass
+37:59 - Ray Xander - Intercepted Off A Dominic Nguyen Pass
+39:17 - Ray Xander - 6th Tackle Changeover
+40:00 - HALF TIME - Dam City Messiahs: 0 v North Head Bears: 0
+41:09 - Alan Gulli - Forward Pass
+41:09 - North Head Bears Interchanged Players Alan Gulli & Michael O' Donovan
+41:40 - Brendan Junior - Knock On
+41:58 - Castro Reynolds - Knock On
+41:58 - Dam City Messiahs Interchanged Players Luna Russell & Davey Caldato
+42:13 - ------VIDEO REFEREE------
+42:13 - Kris Dean - TRY - Dam City Messiahs: 4 v North Head Bears: 0
+43:13 - Nicholas Indigo - CONVERSION MISSED
+45:34 - Carl Barrett - Injury - Broken Jaw
+45:34 - Antonio Lapper - SIN BIN
+45:34 - Antonio Lapper - Penalty
+45:34 - North Head Bears Interchanged Players Carl Barrett & Davey South
+45:47 - Ray Xander - Over The Sideline
+46:19 - Nicholas Indigo - Forward Pass
+46:50 - North Head Bears Interchanged Players Thomas Winger & Aaron Flower
+47:53 - Brendan Junior - Forward Pass
+48:34 - Ray Xander - TRY - Dam City Messiahs: 4 v North Head Bears: 4
+49:34 - Davey South - CONVERSION MISSED
+50:51 - North Head Bears Interchanged Players Alister Priest & Carl Barrett
+51:20 - North Head Bears Interchanged Players Michael O' Donovan & Thomas Winger
+51:43 - Brendan Junior - Incorrect Play The Ball
+51:43 - Brendan Junior - Penalty
+53:11 - Andre Best - 6th Tackle Changeover
+53:23 - Tom Hing - Forward Pass
+53:40 - Ben Potter - Forward Pass
+54:24 - Kate Spice - Over The Sideline
+55:41 - SIN BIN RETURN - Antonio Lapper
+55:52 - Ray Xander - 6th Tackle Changeover
+56:23 - Nicholas Indigo - Forward Pass
+57:46 - Joseph Ngu - 6th Tackle Changeover
+59:36 - Antonio Potter - Stripped Ball Off Carl Lapper
+59:36 - Antonio Potter - FIELD GOAL - Dam City Messiahs: 5 v North Head Bears: 4
+60:24 - Kris Dean - Forward Pass
+60:57 - ------VIDEO REFEREE------
+60:57 - Ray Xander - NO TRY - Held Up
+61:10 - Jenny Fresh - Forward Pass
+63:49 - Thomas Winger - 6th Tackle Changeover
+64:30 - Joseph Ngu - Stripped Ball Off Davey Caldato
+64:30 - Dam City Messiahs Interchanged Players Kris Dean & Luna Russell
+64:44 - Luna Russell - Stripped Ball Off Carl Lapper
+65:30 - Dam City Messiahs Interchanged Players Brendan Junior & Kris Dean
+66:12 - Ed Farmer - 6th Tackle Changeover
+67:34 - Ed Pout - Penalty
+68:16 - Thomas Winger - Ruck Infringement
+69:06 - Castro Reynolds - Penalty
+69:06 - Luna Russell - PENALTY GOAL - Dam City Messiahs: 7 v North Head Bears: 4
+70:22 - Christian Bergman - Penalty
+70:33 - Dam City Messiahs Interchanged Players Tom Hing & Jeni Morier
+71:39 - Luna Russell - 6th Tackle Changeover
+73:16 - Ed Pout - Intercepted Off A Antonio Potter Pass
+75:55 - Jenny Fresh - Forward Pass
+77:24 - Dominic Nguyen - 6th Tackle Changeover
+78:32 - 20m Restart - Dam City Messiahs
+80:00 - FULL TIME - Dam City Messiahs: 7 v North Head Bears: 4
+                             
+--------PLAYER STATS--------
+Home Team: Dam City Messiahs
+1: Kris Dean |Time Played: 68:48 |Metres: 130 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 13
+2: Davey Caldato |Time Played: 58:07 |Metres: 8 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+3: Earl BamertBanks |Time Played: 47:00 |Metres: 13 |Tackles: 6 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+4: Kate Spice |Time Played: 80:00 |Metres: 30 |Tackles: 15 |Kicks: 2 |Kick Metres: 67 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+5: Antonio Lapper |Time Played: 69:53 |Metres: 39 |Tackles: 10 |Kicks: 1 |Kick Metres: 44 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+6: Dominic Nguyen |Time Played: 59:55 |Metres: 23 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+7: Jenny Holland |Time Played: 80:00 |Metres: 13 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+8: Luna Russell |Time Played: 57:28 |Metres: 71 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 42
+9: Antonio Potter |Time Played: 80:00 |Metres: 16 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 15
+10: Nicholas Indigo |Time Played: 80:00 |Metres: 127 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Ed Farmer |Time Played: 68:10 |Metres: 65 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 41
+12: Jeni Morier |Time Played: 42:27 |Metres: 20 |Tackles: 6 |Kicks: 1 |Kick Metres: 62 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+13: Damien Cummins |Time Played: 80:00 |Metres: 103 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 64
+14: Tom Hing |Time Played: 70:33 |Metres: 56 |Tackles: 8 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+15: Clinton Hall |Time Played: 11:50 |Metres: 10 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+16: Kyrsta Maxwell |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Brendan Junior |Time Played: 65:30 |Metres: 110 |Tackles: 8 |Kicks: 1 |Kick Metres: 24 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+Highlights:                 
+Most Tackles: Kate Spice: 15
+Most Points: Kris Dean: 4
+Most Metres: Kris Dean: 130
+Most Errors: Nicholas Indigo: 3
+                             
+Away Team: North Head Bears
+1: Joseph Ngu |Time Played: 80:00 |Metres: 10 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+2: Aaron Flower |Time Played: 39:57 |Metres: 7 |Tackles: 7 |Kicks: 1 |Kick Metres: 36 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+3: Ray Xander |Time Played: 80:00 |Metres: 121 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 37
+4: Christian Bergman |Time Played: 80:00 |Metres: 38 |Tackles: 18 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+5: Ben Potter |Time Played: 80:00 |Metres: 109 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+6: Andre Best |Time Played: 80:00 |Metres: 47 |Tackles: 8 |Kicks: 2 |Kick Metres: 44 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+7: Davey South |Time Played: 34:26 |Metres: 13 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+8: Ed Pout |Time Played: 80:00 |Metres: 83 |Tackles: 15 |Kicks: 1 |Kick Metres: 54 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+9: Carl Barrett |Time Played: 43:16 |Metres: 12 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+10: Carl Lapper |Time Played: 80:00 |Metres: 11 |Tackles: 19 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 42
+11: Thomas Winger |Time Played: 75:30 |Metres: 61 |Tackles: 12 |Kicks: 2 |Kick Metres: 58 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+12: Jenny Fresh |Time Played: 80:00 |Metres: 8 |Tackles: 9 |Kicks: 1 |Kick Metres: 19 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+13: Castro Reynolds |Time Played: 69:15 |Metres: 27 |Tackles: 7 |Kicks: 2 |Kick Metres: 105 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Alister Priest |Time Played: 50:51 |Metres: 27 |Tackles: 5 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+15: Phoebe Folick |Time Played: 24:40 |Metres: 3 |Tackles: 2 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+16: Michael O' Donovan |Time Played: 20:56 |Metres: 0 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+17: Alan Gulli |Time Played: 41:09 |Metres: 10 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+Highlights:                 
+Most Tackles: Carl Lapper: 19
+Most Points: Ray Xander: 4
+Most Metres: Ray Xander: 121
+Most Errors: Jenny Fresh: 4
+                             
+---------TEAM STATS---------
+Home Team: Dam City Messiahs
+Total Metres: 834
+Total Kick Metres: 237
+Total Errors: 13
+Total Tackles: 147
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 1
+Interchanges Used: 7/8
+                             
+Away Team: North Head Bears
+Total Metres: 587
+Total Kick Metres: 419
+Total Errors: 12
+Total Tackles: 153
+Total Tries: 1
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Damien Cummins
+2nd (2 Points) -- Luna Russell
+3rd (1 Point) -- Andre Best
+----------------------------

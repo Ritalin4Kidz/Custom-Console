@@ -75,7 +75,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamMinimmeCommunity(string& team)
 	TeamList.push_back(SRLPlayer("Deleted User", "?????", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
 	SRLTeam MinimmeCommunity = SRLTeam(TeamList, "Minimme Community");
 	MinimmeCommunity.setJersey(BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 11);
-	team = "SRL_AUSMUSIC_TEAM";
+	team = "SRL_MINIMME_COMM";
 	return MinimmeCommunity;
 }
 

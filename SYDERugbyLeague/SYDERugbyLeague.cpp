@@ -52,6 +52,8 @@ enum EAchievements
 	SRL_BET_NICE = 25,
 	SRL_FREEBEE_NETWORK = 26,
 	SRL_AUSMUSIC_TEAM = 27,
+	SRL_ROUND_ROBIN = 28,
+	SRL_MINIMME_COMM = 29
 };
 
 // Achievement array which will hold data about the achievements and their state
@@ -84,6 +86,8 @@ Achievement_t g_Achievements[] =
 	_ACH_ID(SRL_BET_NICE, "Nice"),
 	_ACH_ID(SRL_FREEBEE_NETWORK, "Freebee Network"),
 	_ACH_ID(SRL_AUSMUSIC_TEAM, "AusMusic Community"),
+	_ACH_ID(SRL_ROUND_ROBIN, "Enough To Go Around"),
+	_ACH_ID(SRL_MINIMME_COMM, "Minimme Community"),
 };
 
 // Global access to Achievements object
@@ -158,7 +162,7 @@ int main(int argc, char* argv[])
 	if (bRet)
 	{
 		cout << "Steam API Initialization Successful" << endl;
-		g_SteamAchievements = new CSteamAchievements(g_Achievements, 26);
+		g_SteamAchievements = new CSteamAchievements(g_Achievements, 30);
 	}
 	else
 	{

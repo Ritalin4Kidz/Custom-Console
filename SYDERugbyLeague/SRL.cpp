@@ -621,6 +621,10 @@ void SettingsLengthViewClick()
 {
 	if (SRLGame::seasonLength == Length_ShortSeason)
 	{
+		SRLGame::seasonLength = Length_RoundRobin;
+	}
+	else if (SRLGame::seasonLength == Length_RoundRobin)
+	{
 		SRLGame::seasonLength = Length_MediumSeason;
 	}
 	else if (SRLGame::seasonLength == Length_MediumSeason)
@@ -1499,11 +1503,12 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			bool pushBack = true;
 			vector<SRLGameMatchup> games;
 			vector<string> AvailableTeams = m_SeasonTeams;
+			vector<string> AttemptedTeams = vector<string>();
 			for (int ii = 0; ii < 8; ii++)
 			{
-				if (!addGame(VersusLimit, rounds, games, AvailableTeams))
+				if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
 				{
-					if (ii == 0)
+					if (ii == 0 && AvailableTeams.size() > 2)
 					{
 						ii--;
 					}
@@ -1514,6 +1519,14 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 						games.clear();
 						break;
 					}
+				}
+				else
+				{
+					for (int j = 0;j < AttemptedTeams.size(); j++)
+					{
+						AvailableTeams.push_back(AttemptedTeams[j]);
+					}
+					AttemptedTeams.clear();
 				}
 			}
 			if (pushBack)
@@ -2254,6 +2267,9 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		case Length_ShortSeason:
 			window.setTextAtPoint(Vector2(22, 10), "Short", BRIGHTWHITE);
 			break;
+		case Length_RoundRobin:
+			window.setTextAtPoint(Vector2(22, 10), "Round Robin", BRIGHTWHITE);
+			break;
 		case Length_MediumSeason:
 			window.setTextAtPoint(Vector2(22, 10), "Medium", BRIGHTWHITE);
 			break;
@@ -2434,8 +2450,10 @@ ConsoleWindow SRLGame::CreateSeasonPopUp(ConsoleWindow window, int windowWidth, 
 		}
 	}
 	window.setTextAtPoint(Vector2(6, 6), "Generating Season Draw", BLACK_BRIGHTYELLOW_BG);
-	window.setTextAtPoint(Vector2(6, 7), "Please note generation will take longer", BLACK_BRIGHTYELLOW_BG);
-	window.setTextAtPoint(Vector2(6, 8), "the more rounds in the season", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 7), "Please note generation can take a while", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 8), "due to face off limits and randomness", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 9), "more specific seasons (e.g. round robin)", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 10), "will take longer to generate the draw", BLACK_BRIGHTYELLOW_BG);
 	return window;
 }
 
@@ -2624,8 +2642,12 @@ ConsoleWindow SRLGame::KeypadPop_Up(ConsoleWindow window, int windowWidth, int w
 	return window;
 }
 
-bool SRLGame::addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams)
+bool SRLGame::addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams, vector<string>& AttemptedTeams)
 {
+	if (teams.size() < 2)
+	{
+		return false;
+	}
 	int team1 = rand() % teams.size();
 	string team1Name = teams[team1];
 	teams.erase(teams.begin() + team1);
@@ -2651,8 +2673,8 @@ bool SRLGame::addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>
 					}
 					if (count >= limit || exactLineUp > limit/2)
 					{
-						teams.push_back(team1Name);
-						teams.push_back(team2Name);
+						AttemptedTeams.push_back(team1Name);
+						AttemptedTeams.push_back(team2Name);
 						return false;
 					}
 				}
@@ -3302,6 +3324,10 @@ void SRLGame::SimulateGames()
 				{
 					AchievementStrings.push_back("SRL_SHORT_SEASON");
 				}
+				else if (seasonLength == Length_RoundRobin && BaseSeasonGames != 0)
+				{
+					AchievementStrings.push_back("SRL_ROUND_ROBIN");
+				}
 				else if (seasonLength == Length_MediumSeason && BaseSeasonGames != 0)
 				{
 					AchievementStrings.push_back("SRL_MEDIUM_SEASON");
@@ -3430,7 +3456,7 @@ void SRLGame::SimulateGames()
 						vector<SRLGameMatchup> games;
 						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
 						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //3v6
+						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
 						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[3].teamName, m_Season.m_Ladder.m_Ladder[4].teamName)); //4v5
 						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
 
@@ -3479,6 +3505,65 @@ void SRLGame::SimulateGames()
 				{
 					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+#pragma endregion
+				}
+				else if (fsType == Top8DoubleElim)
+				{
+#pragma region top 8 knockout double elimination simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[3].teamName, m_Season.m_Ladder.m_Ladder[4].teamName)); //4v5
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam)); //5v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam)); //6v7
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam));//3v5
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam));//4v6
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam));//3v4
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 4)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam));//2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 5)
+				{
+					vector<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam));//1v2
 					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
 				}
 #pragma endregion

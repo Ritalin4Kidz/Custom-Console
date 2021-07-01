@@ -21,6 +21,7 @@ bool SRLGame::removeCall = false;
 bool SRLGame::Simulate = false;
 bool SRLGame::SimulateCall = false;
 bool SRLGame::generateCall = false;
+bool SRLGame::generateStartCall = false;
 bool SRLGame::randomFillCall = false;
 bool SRLGame::errorCall = false;
 bool SRLGame::menuCall = false;
@@ -540,6 +541,7 @@ void NormalSettingsViewClick()
 void GenerateTeamViewClick()
 {
 	SRLGame::generateCall = true;
+	SRLGame::generateStartCall = true;
 }
 void ToggleSinBinClick()
 {
@@ -1242,6 +1244,10 @@ SRLTeam SRLGame::generateRandomTeam(float multiplier)
 
 ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (generateStartCall)
+	{
+		return GenerationPopUp(window, windowWidth, windowHeight);
+	}
 	if (SimulateCall)
 	{
 		return SimulatePopUp(window, windowWidth, windowHeight);
@@ -1291,6 +1297,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	}
 	if (newState != currentState)
 	{
+		GameStateSYDE oldState = currentState;
 		currentState = newState;
 		if (currentState == FMODSplashScreenState)
 		{
@@ -1330,8 +1337,16 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		}
 		else if (currentState == TeamInDepthViewState)
 		{
+			if (!generateCall && SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
+			{
+				generateCall = true;
+				generateStartCall = true;
+				currentState = oldState;
+				return window;
+			}
 			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
 			{
+				generateCall = false;
 				SRLTeam HomeTeam;
 				int chance = rand() % customTeamGenerateChance;
 				if (chance == 0)
@@ -1370,8 +1385,16 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		}
 		else if (currentState == SeasonConfig_State)
 		{
+			if (!generateCall && SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
+			{
+				generateCall = true;
+				generateStartCall = true;
+				currentState = oldState;
+				return window;
+			}
 			while (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") < 17)
 			{
+				generateCall = false;
 				SRLTeam HomeTeam;
 				int chance = rand() % customTeamGenerateChance;
 				if (chance == 0)
@@ -1847,18 +1870,31 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		{
 			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 			{
-				if (priorBetNumberLine > 0)
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
 				{
-					priorBetNumberLine--;
+					if (priorBetNumberLine > 0)
+					{
+						priorBetNumberLine--;
+					}
+					ScrollTickTime = 0;
 				}
 			}
-
-			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+			else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 			{
-				if (priorBetNumberLine < m_GameBetsWriteUp.size() - 1)
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
 				{
-					priorBetNumberLine++;
+					if (priorBetNumberLine < m_GameBetsWriteUp.size() - 1)
+					{
+						priorBetNumberLine++;
+					}
+					ScrollTickTime = 0;
 				}
+			}
+			else
+			{
+				ScrollTickTime = 0;
 			}
 
 			for (int i = 0; i + priorBetNumberLine < m_GameBetsWriteUp.size() && i < 14; i++)
@@ -1870,18 +1906,31 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 		{
 			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 			{
-				if (priorBetNumberLine > 0)
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
 				{
-					priorBetNumberLine--;
+					if (priorBetNumberLine > 0)
+					{
+						priorBetNumberLine--;
+					}
+					ScrollTickTime = 0;
 				}
 			}
-
-			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+			else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 			{
-				if (priorBetNumberLine < m_PremiershipBetsWriteUp.size() - 1)
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
 				{
-					priorBetNumberLine++;
+					if (priorBetNumberLine < m_PremiershipBetsWriteUp.size() - 1)
+					{
+						priorBetNumberLine++;
+					}
+					ScrollTickTime = 0;
 				}
+			}
+			else
+			{
+				ScrollTickTime = 0;
 			}
 
 			for (int i = 0; i + priorBetNumberLine < m_PremiershipBetsWriteUp.size() && i < 14; i++)
@@ -2032,20 +2081,34 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 		window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam, BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(26, 3), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].awayTeamScore), BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(34, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam, BLACK_BRIGHTWHITE_BG);
-		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 		{
-			if (m_LineResults > 0)
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
 			{
-				m_LineResults--;
+				if (m_LineResults > 0)
+				{
+					m_LineResults--;
+				}
+				ScrollTickTime = 0;
 			}
 		}
 
-		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+		else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 		{
-			if (m_LineResults < m_SummaryScreenVector.size() - 1)
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
 			{
-				m_LineResults++;
+				if (m_LineResults < m_SummaryScreenVector.size() - 1)
+				{
+					m_LineResults++;
+				}
+				ScrollTickTime = 0;
 			}
+		}
+		else
+		{
+			ScrollTickTime = 0;
 		}
 
 		for (int i = 0; i + m_LineResults < m_SummaryScreenVector.size() && i < 14; i++)
@@ -2057,18 +2120,32 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	{
 		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
 		{
-			if (m_LineResults > 0)
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
 			{
-				m_LineResults--;
+				if (m_LineResults > 0)
+				{
+					m_LineResults--;
+				}
+				ScrollTickTime = 0;
 			}
 		}
 
-		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+		else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
 		{
-			if (m_LineResults < m_ResultsScreenVector.size() - 1)
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
 			{
-				m_LineResults++;
+				if (m_LineResults < m_ResultsScreenVector.size() - 1)
+				{
+					m_LineResults++;
+				}
+				ScrollTickTime = 0;
 			}
+		}
+		else
+		{
+			ScrollTickTime = 0;
 		}
 
 		for (int i = 0; i + m_LineResults < m_ResultsScreenVector.size() && i < 15; i++)
@@ -2417,7 +2494,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.2.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.3.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2454,6 +2531,23 @@ ConsoleWindow SRLGame::CreateSeasonPopUp(ConsoleWindow window, int windowWidth, 
 	window.setTextAtPoint(Vector2(6, 8), "due to face off limits and randomness", BLACK_BRIGHTYELLOW_BG);
 	window.setTextAtPoint(Vector2(6, 9), "more specific seasons (e.g. round robin)", BLACK_BRIGHTYELLOW_BG);
 	window.setTextAtPoint(Vector2(6, 10), "will take longer to generate the draw", BLACK_BRIGHTYELLOW_BG);
+	return window;
+}
+
+ConsoleWindow SRLGame::GenerationPopUp(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	generateStartCall = false;
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 5; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTYELLOW_BRIGHTYELLOW_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Generating Teams", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 7), "Please note generation can take a while", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 8), "especially if already a large number of", BLACK_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(6, 9), "teams, or first time playing", BLACK_BRIGHTYELLOW_BG);
 	return window;
 }
 

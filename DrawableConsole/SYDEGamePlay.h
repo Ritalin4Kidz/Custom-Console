@@ -24,6 +24,9 @@ using namespace std;
 using namespace Gdiplus;
 class SYDEGamePlay {
 public:
+
+	static void setConfig(Settings _Config) { config = _Config; }
+	static Settings getConfig() { return config; }
 	/// <summary>
 	/// Initialize window to the size windows class created with
 	/// </summary>

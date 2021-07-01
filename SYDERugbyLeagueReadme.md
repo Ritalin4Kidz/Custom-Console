@@ -12,19 +12,25 @@ SRL Simulation game made inside the SYDE Framework.
 
 - better odds calculations
 
-- bug fixes
-
- - - Bug with soundtrack continuing to play even when off
+- Pop Up Display for when teams are generating
 
 - full soundtrack implementation
 
-- export play by play to file saved in documents - done
+Feedback:
+Labcat - -
+	Would be nice to be able to move between rounds in the Season News.
+	And have what round it was.
+	To check team stats I have to go to the main menu, right? That would also be neat to be able to check contextually.
+	Maybe you could put a "featured match" in the Season tab, with the two closest matched teams being in a seperate tab
 
 ## ABANDONED IDEAS
 
 - Watch the next game (live feed of play by play comes in and screen updates accordingly)
 
 ## Release Notes
+
+###  0.10.3.0 beta 1-07-2021
+- Add -NoOffset command for users running the game in earlier OS systems
 
 ###  0.10.2.0 beta 1-07-2021
 - More Player Names

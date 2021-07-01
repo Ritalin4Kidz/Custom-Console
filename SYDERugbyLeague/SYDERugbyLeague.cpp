@@ -129,6 +129,10 @@ void DoAchievements(vector<string> temp)
 // MAIN FUNCTION
 int main(int argc, char* argv[])
 {
+	//override the config
+	//BASE WINDOWS 10
+	config.setOffset(2, 0);
+
 	for (char** current = environ; *current; current++) {
 		//puts(*current);
 		cout << *current << endl;
@@ -142,12 +146,17 @@ int main(int argc, char* argv[])
 		{
 			debug = true;
 		}
+		if (arg == "--NoOffset")
+		{
+			config.setOffset(0, 0);
+		}
 		if (arg == "--NoInit")
 		{
 			api_init = false;
 		}
 	}
-	config.ColourPalette(hOut); 
+	SYDEGamePlay::setConfig(config);
+	SYDEGamePlay::getConfig().ColourPalette(hOut);
 	HWND hwnd = GetConsoleWindow();
 	HMENU hmenu = GetSystemMenu(hwnd, FALSE);
 	EnableMenuItem(hmenu, SC_CLOSE, MF_GRAYED);

@@ -316,6 +316,7 @@ public:
 
 	ConsoleWindow SimulatePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow CreateSeasonPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow GenerationPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow FormatPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExitPopUp(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow RandomizePopUp(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -431,6 +432,8 @@ public:
 	static bool premiershipBet;
 	static bool keyPadCall;
 	static int gameNumberBet;
+
+	static bool generateStartCall;
 
 	static int articleClicked;
 
@@ -618,6 +621,9 @@ private:
 	int finalsThreshold = 8;
 	int finalsRounds = 4;
 	int finalsSystemInt = 0;
+
+	float ScrollTickTime = 0;
+	const float maxScrollTickTime = 0.05f;
 
 	int currentWonBetsSeason = 0;
 	int currentLostBetsSeason = 0;

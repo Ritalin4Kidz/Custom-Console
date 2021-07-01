@@ -29,6 +29,9 @@ Labcat - -
 
 ## Release Notes
 
+###  0.10.4.0 beta 
+- Custom Offset Command for users who want a custom terminal offset
+
 ###  0.10.3.0 beta 1-07-2021
 - Add -NoOffset command for users running the game in earlier OS systems
 

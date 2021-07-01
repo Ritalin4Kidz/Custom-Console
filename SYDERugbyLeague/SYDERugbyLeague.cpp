@@ -131,14 +131,9 @@ int main(int argc, char* argv[])
 {
 	//override the config
 	//BASE WINDOWS 10
-	config.setOffset(2, 0);
-
-	for (char** current = environ; *current; current++) {
-		//puts(*current);
-		cout << *current << endl;
-	}
-	bool api_init = true;
+	bool customOffset = false;;
 	bool debug = false;	//ARGUMENT SETTINGS
+	bool api_init = true;
 	for (int i = 0; i < argc; i++)
 	{
 		std::string arg = argv[i];
@@ -150,10 +145,23 @@ int main(int argc, char* argv[])
 		{
 			config.setOffset(0, 0);
 		}
+		if (arg == "--CustomOffset")
+		{
+			customOffset = true;
+		}
 		if (arg == "--NoInit")
 		{
 			api_init = false;
 		}
+	}
+	if (!customOffset)
+	{
+		config.setOffset(2, 0);
+	}
+
+	for (char** current = environ; *current; current++) {
+		//puts(*current);
+		cout << *current << endl;
 	}
 	SYDEGamePlay::setConfig(config);
 	SYDEGamePlay::getConfig().ColourPalette(hOut);

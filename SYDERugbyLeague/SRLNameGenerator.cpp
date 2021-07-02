@@ -1,5 +1,13 @@
 #include "SRLNameGenerator.h"
 
+vector<vector<string>> SRLNameGenerator::BetSentence = vector<vector<string>>
+{
+	vector<string>({"This bet is a no brainer.", "I put quite an amount on it myself.", "It's basically free money!"}),
+	vector<string>({"I've seen a lot of disagreements,", "but i'm defiant that they'll get", "the job done here tonight"}),
+	vector<string>({"This was a tough one, but", "I've looked at the stats,","I'd say they're a safe bet"}),
+	vector<string>({"Absolute lock here,","don't miss out on this one!"}),
+};
+
 vector<string> SRLNameGenerator::countriesOfOrigin = vector<string>
 {
 	"Australia",
@@ -60,10 +68,12 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Ben",
 	"Benji",
 	"Benjamin",
+	"Bert",
 	"Bill",
 	"Billie",
 	"Billy",
 	"Bob",
+	"Bort",
 	"Brayden",
 	"Brendan",
 	"Brenton",
@@ -105,6 +115,7 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Earl",
 	"Ed",
 	"Edward",
+	"Eduardo",
 	"Em",
 	"Emily",
 	"Ezra",
@@ -121,8 +132,10 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Hubert",
 	"Huretio",
 	"Imm",
+	"Inotas",
 	"Isaac",
 	"Isaak",
+	"Isabel",
 	"Jack",
 	"Jackson",
 	"James",
@@ -169,6 +182,7 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Kyuss",
 	"Lindsay",
 	"Lindsey",
+	"Lizzy",
 	"Lois",
 	"Lorenzo",
 	"Luca",
@@ -193,6 +207,7 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Niko",
 	"Nita",
 	"Norman",
+	"Oliver",
 	"Opus",
 	"Paul",
 	"Pauly",
@@ -212,6 +227,7 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Scott",
 	"Simon",
 	"Sr.",
+	"Suelen",
 	"Sully",
 	"Tariq",
 	"Thomas",
@@ -221,6 +237,8 @@ vector<string> SRLNameGenerator::FirstNames = vector<string>
 	"Trent",
 	"Trixie",
 	"Turni",
+	"Valian",
+	"Vanessa",
 	"Velento",
 	"Vitaliy",
 	"Walter",
@@ -247,7 +265,7 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Atlas",
 	"Atoni",
 	"Ballsut",
-	"Bamert"
+	"Bamert",
 	"Banks",
 	"Barrett",
 	"Barry",
@@ -378,6 +396,7 @@ vector<string> SRLNameGenerator::LastNames = vector<string>
 	"Martin",
 	"Maxwell",
 	"Maxx",
+	"McCallum",
 	"McDonald",
 	"McDonalson",
 	"McKenzie",
@@ -690,6 +709,7 @@ vector<string> SRLNameGenerator::TeamNames = vector<string>
 	"Whales",
 	"Wildcats",
 	"Wizards",
+	"Wolves",
 	"Workers",
 	"Zebras",
 };
@@ -936,6 +956,16 @@ string SRLNameGenerator::generateRandomTeamName()
 string SRLNameGenerator::generateRandomTeamNameSafe()
 {
 	return generateRandomCity() + " " + generateRandomTeam();
+}
+
+void SRLNameGenerator::generateAndAddToVector(vector<string>& vec)
+{
+	int number = rand() % BetSentence.size();
+	vector<string> bets = BetSentence[number];
+	for (int i = 0; i < bets.size(); i++)
+	{
+		vec.push_back(bets[i]);
+	}
 }
 
 string SRLNameGenerator::generateRandomFirstName()

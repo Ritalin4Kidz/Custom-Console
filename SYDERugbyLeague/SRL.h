@@ -36,6 +36,14 @@ enum GameStateSYDE
 	TeamInDepthViewState,
 };
 
+enum SeasonDrawViewState
+{
+	SeasonDrawMainView,
+	FeaturedMatchView,
+	GameSettingsInSeasonView,
+	TippingMasterView
+};
+
 enum GameStateInDepthView
 {
 	NormalInDepthView,
@@ -153,6 +161,11 @@ struct SRLBetPrice
 	void removeBetPrice(SRLBetPrice bet);
 	bool equal(SRLBetPrice bet) { return dollars == bet.dollars && cents == bet.cents; }
 	bool greaterThan(SRLBetPrice bet);
+	bool lessThan(SRLBetPrice bet);
+
+	void absolute();
+
+	int getAsCents() { return (dollars * 100) + cents; }
 
 	string ReturnPrice();
 };
@@ -216,12 +229,31 @@ struct SRLGameBetsWriting
 	string name;
 	ColourClass colour;
 };
+
+struct FeaturedGame
+{
+	FeaturedGame() {}
+	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds);
+	bool featuredGameAvail = false;
+	int fg_homeTeamScore = 0;
+	int fg_awayTeamScore = 0;
+	int gameNumber = 0;
+	SRLTeam fg_homeTeam;
+	CustomAsset fg_homeTeamJersey;
+	SRLTeam fg_awayTeam;
+	CustomAsset fg_awayTeamJersey;
+
+	SRLBetPrice fg_homeOdds;
+	SRLBetPrice fg_awayOdds;
+};
+
 struct SRLRound
 {
 	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
 	vector<SRLGameMatchup> m_Games;
 	vector<SRLGameBet> m_Bets;
 	vector<SRLNewsArticle> newsStories;
+	FeaturedGame gameToFeature;
 };
 
 struct SRLDraw
@@ -327,6 +359,8 @@ public:
 	ConsoleWindow drawMainMenuTabs(ConsoleWindow window);
 	ConsoleWindow drawResultTabs(ConsoleWindow window);
 
+	ConsoleWindow drawSeasonModeTabs(ConsoleWindow window);
+
 	ConsoleWindow configTabs(ConsoleWindow window);
 
 	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -340,6 +374,8 @@ public:
 	void CalculateOdds();
 	void CalculatePremiershipOdds();
 	void SimulateGames();
+	void CalculateFeaturedGame();
+	void CalculateTipMaster();
 
 	static void saveGameSettings();
 	static void loadGameSettings();
@@ -375,6 +411,7 @@ public:
 	static GameStateSettingsSYDE settingsState;
 	static SRLPriorBets_State priorBetsState;
 	static ArticleViewingState articleState;
+	static SeasonDrawViewState drawViewState;
 
 	static SRLSeasonLength seasonLength;
 
@@ -590,9 +627,19 @@ private:
 	SYDEClickableButton m_RegeneratePlayerOKBtn;
 	SYDEClickableButton m_RegeneratePlayerCNCLBtn;
 
+	//EXIT GAME BUTTONS
 	SYDEClickableButton m_ExitGame;
 	SYDEClickableButton m_ExitGameOK;
 	SYDEClickableButton m_ExitGameCNL;
+
+	//FEATURED MATCH UP
+	SYDEClickableButton m_FeatureViewBtn;
+	SYDEClickableButton m_MainDrawViewBtn;
+	SYDEClickableButton m_MainSettingsViewBtn;
+	SYDEClickableButton m_TipMasterViewBtn;
+	CustomAsset m_TipMasterImg = CustomAsset(22, 11, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\Tipmaster.bmp", 11, 11));
+	vector<string> TipMasterBets;
+
 
 	vector<string> m_SavedTeams;
 	vector<string> m_SeasonTeams;

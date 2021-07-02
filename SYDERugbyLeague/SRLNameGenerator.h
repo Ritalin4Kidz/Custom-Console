@@ -17,6 +17,8 @@ public:
 
 	static string generateRandomTeamNameSafe();
 
+	static void generateAndAddToVector(vector<string>& vec);
+
 private:
 	static string generateRandomFirstName();
 	static string generateRandomLastName();
@@ -29,4 +31,6 @@ private:
 	static vector<string> CityNames;
 	static vector<string> TeamNames;
 	static vector<string> countriesOfOrigin;
+
+	static vector<vector<string>> BetSentence;
 };

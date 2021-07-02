@@ -174,16 +174,19 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 	// Initialize Steam
-	bool bRet = SteamAPI_Init();
-	// Create the SteamAchievements object if Steam was successfully initialized
-	if (bRet)
+	if (api_init)
 	{
-		cout << "Steam API Initialization Successful" << endl;
-		g_SteamAchievements = new CSteamAchievements(g_Achievements, 30);
-	}
-	else
-	{
-		cout << "Steam API Initialization Was Not Successful" << endl;
+		bool bRet = SteamAPI_Init();
+		// Create the SteamAchievements object if Steam was successfully initialized
+		if (bRet)
+		{
+			cout << "Steam API Initialization Successful" << endl;
+			g_SteamAchievements = new CSteamAchievements(g_Achievements, 30);
+		}
+		else
+		{
+			cout << "Steam API Initialization Was Not Successful" << endl;
+		}
 	}
 	system("pause");
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);

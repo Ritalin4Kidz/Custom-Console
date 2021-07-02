@@ -29,6 +29,12 @@ Labcat - -
 
 ## Release Notes
 
+###  0.11.0.0 beta 2-07-2021
+- Featured Games now available for every round inside the main season
+- Reduced frequency of interchanges
+- name additions
+- Tip Master
+
 ###  0.10.4.0 beta 
 - Custom Offset Command for users who want a custom terminal offset
 

@@ -347,12 +347,12 @@ void SRLGameManager::endStats()
 void SRLGameManager::play()
 {
 	//DO WE DO AN INTERCHANGE
-	if ((m_SecondsPassed % 10 == 0 || m_MinutesPassed % 10 <= 1)  && m_MinutesPassed > 5)
+	if (m_SecondsPassed % 20 < 5 && m_MinutesPassed % 5 <= 1  && m_MinutesPassed > 15)
 	{
 		int interchangeHomeTeam = (rand() % 50) + 1;
 		int interchangeAwayTeam = (rand() % 50) + 1;
 
-		if (interchangeHomeTeam > 40)
+		if (interchangeHomeTeam > 27)
 		{
 			string swap = m_HomeTeam.Interchange();
 			if (swap != "")
@@ -361,7 +361,7 @@ void SRLGameManager::play()
 			}
 		}
 
-		if (interchangeAwayTeam > 40)
+		if (interchangeAwayTeam > 27)
 		{
 			string swap = m_AwayTeam.Interchange();
 			if (swap != "")

@@ -10,6 +10,7 @@ GameStateLeaderboardSYDE SRLGame::ldrState = Tries_State;
 GameStateResultSYDE SRLGame::resultState = Summary_STATE;
 GameStateSettingsSYDE SRLGame::settingsState = SeasonSettings_STATE;
 GameStateInDepthView SRLGame::inDepthState = NormalInDepthView;
+SeasonDrawViewState SRLGame::drawViewState = SeasonDrawMainView;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
 bool SRLGame::SeasonStart = false;
@@ -101,6 +102,26 @@ vector<string> Split(string a_String, char splitter)
 void FinalsSystemClick()
 {
 	SRLGame::finalsSystemCall = true;
+}
+
+void MainDrawViewClick()
+{
+	SRLGame::drawViewState = SeasonDrawMainView;
+}
+
+void TipMasterViewClick()
+{
+	SRLGame::drawViewState = TippingMasterView;
+}
+
+void InGameSettingsViewClick()
+{
+	SRLGame::drawViewState = GameSettingsInSeasonView;
+}
+
+void FeaturedMatchViewClick()
+{
+	SRLGame::drawViewState = FeaturedMatchView;
 }
 
 void RandomizeButtonClick()
@@ -740,6 +761,22 @@ void SRLGame::init()
 	m_MainMenuViewBtn = SYDEClickableButton("  Main Menu ", Vector2(0, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
 	m_MainMenuViewBtn.setHighLight(RED);
 	m_MainMenuViewBtn.SetFunc(MainMenuViewClick);
+
+
+	m_FeatureViewBtn = SYDEClickableButton(" Featured", Vector2(15, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_FeatureViewBtn.setHighLight(RED);
+	m_FeatureViewBtn.SetFunc(FeaturedMatchViewClick);
+	m_MainDrawViewBtn = SYDEClickableButton(" Main Draw", Vector2(3, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_MainDrawViewBtn.setHighLight(RED);
+	m_MainDrawViewBtn.SetFunc(MainDrawViewClick);
+
+	m_MainSettingsViewBtn = SYDEClickableButton(" Settings", Vector2(26, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_MainSettingsViewBtn.setHighLight(RED);
+	m_MainSettingsViewBtn.SetFunc(InGameSettingsViewClick);
+
+	m_TipMasterViewBtn = SYDEClickableButton(" TipMaster", Vector2(37, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_TipMasterViewBtn.setHighLight(RED);
+	m_TipMasterViewBtn.SetFunc(TipMasterViewClick);
 
 	//BLANK BUTTONS EDIT LATER
 	m_NewsViewBtn = SYDEClickableButton("Season News ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -1505,6 +1542,7 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			newPosition.teamName = m_SeasonTeams[i];
 			ladders.push_back(newPosition);
 		}
+#pragma region Add Rounds
 		SRLLadder Ladder = SRLLadder(ladders);
 		vector<SRLRound> rounds = vector<SRLRound>();
 		if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
@@ -1557,6 +1595,10 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 				rounds.push_back(SRLRound(games));
 			}
 		}
+#pragma endregion
+		//FEATURE A GAME
+		int _HighlightedFirstGame = rand() % 8;
+		rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, SRLBetPrice(0,0), SRLBetPrice(0, 0));
 		SRLDraw Draw(rounds);
 		m_Season = SRLSeason(Draw, Ladder);
 		m_Season.m_PremiershipBets.clear();
@@ -1566,7 +1608,10 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		newState = SeasonModeState;
 		m_round = 0;
 		m_roundToSimulate = 0;
+		drawViewState = SeasonDrawMainView;
 		CalculateOdds();
+		m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_homeOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].homeTeamOdds;
+		m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_awayOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].awayTeamOdds;
 		CalculatePremiershipOdds();
 		return window;
 	}
@@ -1711,6 +1756,71 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 	//after the game is complete, adjust the ladder with the new values
 	// the ladder should be sorted by Points - P/D - Points For - Played - Alphabetical
 	window = drawTabs(window);
+	if (drawViewState == GameSettingsInSeasonView)
+	{
+		//SANITY
+		NextRoundCall = false;
+		PrevRoundCall = false;
+		SimulateCall = false;
+
+
+		window = m_SoundTrackOnBtn.draw_ui(window);
+		if (soundTrackOn)
+		{
+			window.setTextAtPoint(Vector2(22, 4), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(22, 4), "Off", BRIGHTWHITE);
+		}
+		window = m_SoundTrackNextBtn.draw_ui(window);
+		window.setTextAtPoint(Vector2(22, 6), m_GamePlaySoundtrack.getSongPlaying(), BRIGHTWHITE);
+		window = m_SoundTrackVolume.draw_ui(window);
+		switch (BaseSYDESoundSettings::getDefaultVolumeState())
+		{
+		case SYDE_VOLUME_OFF:
+			window.setTextAtPoint(Vector2(22, 8), "Off", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_LOW:
+			window.setTextAtPoint(Vector2(22, 8), "Low", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_HIG:
+			window.setTextAtPoint(Vector2(22, 8), "High", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_NML:
+			window.setTextAtPoint(Vector2(22, 8), "Normal", BRIGHTWHITE);
+			break;
+		case SYDE_VOLUME_MED:
+			window.setTextAtPoint(Vector2(22, 8), "Medium", BRIGHTWHITE);
+			break;
+		}
+		window = drawSeasonModeTabs(window);
+		return window;
+	}
+	else if (drawViewState == TippingMasterView)
+	{
+		//SANITY
+		NextRoundCall = false;
+		PrevRoundCall = false;
+		SimulateCall = false;
+
+		window = drawSeasonModeTabs(window);
+
+		window = m_TipMasterImg.draw_asset(window, Vector2(38, 3));
+		if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+		{
+			for (int i = 0; i < TipMasterBets.size(); i++)
+			{
+				window.setTextAtPoint(Vector2(0, 3 + i), TipMasterBets[i], WHITE);
+			}
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(0, 3), "THE SEASON IS OVER", WHITE);
+			window.setTextAtPoint(Vector2(0, 4), "I MUST SLEEP UNTIL THE NEXT", WHITE);
+		}
+		return window;
+	}
 	if (NextRoundCall)
 	{
 		NextRoundCall = false;
@@ -1729,15 +1839,39 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 			m_round = m_Season.m_Draw.m_Rounds.size() - 1;
 		}
 	}
-	window.setTextAtPoint(Vector2(0, 2), "SRL ROUND " + std::to_string(m_round + 1), WHITE);
-	for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_round].m_Games.size(); i++)
+	if (drawViewState == SeasonDrawMainView)
 	{
-		window.setTextAtPoint(Vector2(0, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].HomeTeam, WHITE);
-		window.setTextAtPoint(Vector2(26, 3 + i), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), WHITE);
-		window.setTextAtPoint(Vector2(34, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].AwayTeam, WHITE);
+		window.setTextAtPoint(Vector2(0, 2), "SRL ROUND " + std::to_string(m_round + 1), WHITE);
+		for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_round].m_Games.size(); i++)
+		{
+			window.setTextAtPoint(Vector2(0, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].HomeTeam, WHITE);
+			window.setTextAtPoint(Vector2(26, 3 + i), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), WHITE);
+			window.setTextAtPoint(Vector2(34, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].AwayTeam, WHITE);
+		}
+	}
+	else if (drawViewState == FeaturedMatchView)
+	{
+		window.setTextAtPoint(Vector2(0, 2), "SRL ROUND " + std::to_string(m_round + 1), WHITE);
+		string awayTeamText = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_awayTeam.getName();
+		if (m_Season.m_Draw.m_Rounds[m_round].gameToFeature.featuredGameAvail)
+		{
+			int sizeText = awayTeamText.length();
+
+			window = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_homeTeamJersey.draw_asset(window, Vector2(0, 3));
+			window = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_awayTeamJersey.draw_asset(window, Vector2(30, 3));
+			window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_homeTeam.getName(), WHITE);
+			window.setTextAtPoint(Vector2(60 - sizeText, 3), awayTeamText, WHITE);
+
+			window.setTextAtPoint(Vector2(12, 17), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_homeOdds.ReturnPrice(), WHITE);
+			window.setTextAtPoint(Vector2(42, 17), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_awayOdds.ReturnPrice(), WHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(0, 3), "NO FEATURED GAME FOR THIS ROUND AT THE MOMENT", WHITE);
+		}
 	}
 	SimulateGames();
-	window = m_ExportBtn.draw_ui(window);
+	window = drawSeasonModeTabs(window);
 	return window;
 }
 
@@ -2522,6 +2656,10 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 ConsoleWindow SRLGame::NewsView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawTabs(window);
+	if (m_Season.m_Draw.m_Rounds[m_round].newsStories.size() == 0)
+	{
+		window.setTextAtPoint(Vector2(0, 2), "NO NEWS FOR THIS ROUND AT THE MOMENT", BRIGHTWHITE);
+	}
 	if (headlineCall)
 	{
 		m_Article = m_Season.m_Draw.m_Rounds[m_round].newsStories[articleClicked];
@@ -2561,7 +2699,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.10.4.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.11.0.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2760,6 +2898,16 @@ ConsoleWindow SRLGame::drawResultTabs(ConsoleWindow window)
 {
 	window = m_GameResultSummaryBtn.draw_ui(window);
 	window = m_GameResultPlayByPlayBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::drawSeasonModeTabs(ConsoleWindow window)
+{
+	window = m_FeatureViewBtn.draw_ui(window);
+	window = m_MainDrawViewBtn.draw_ui(window);
+	window = m_ExportBtn.draw_ui(window);
+	window = m_MainSettingsViewBtn.draw_ui(window);
+	window = m_TipMasterViewBtn.draw_ui(window);
 	return window;
 }
 
@@ -3168,6 +3316,7 @@ void SRLGame::CalculateOdds()
 		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds = SRLBetPrice(oddsHCents / 100, oddsHCents % 100);
 		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds = SRLBetPrice(oddsACents / 100, oddsACents % 100);
 	}
+	CalculateTipMaster();
 }
 
 void SRLGame::CalculatePremiershipOdds()
@@ -3263,6 +3412,11 @@ void SRLGame::SimulateGames()
 			m_srlmanager.endStats();
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore = m_srlmanager.getHomeScore();
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore = m_srlmanager.getAwayScore();
+			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.gameNumber == i)
+			{
+				m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.fg_homeTeamScore = m_srlmanager.getHomeScore();
+				m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.fg_awayTeamScore = m_srlmanager.getAwayScore();
+			}
 
 			if (m_srlmanager.getHomeScore() > m_srlmanager.getAwayScore())
 			{
@@ -3413,7 +3567,6 @@ void SRLGame::SimulateGames()
 		{
 			m_Season.m_Ladder.sortLadder();
 		}
-		//Simulate = false;
 		m_roundToSimulate++;
 
 		//NEWS STORIES
@@ -3705,8 +3858,8 @@ void SRLGame::SimulateGames()
 					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
 
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam));//3v5
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam));//4v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam));//3v5
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam));//4v6
 					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 3)
@@ -3861,8 +4014,102 @@ void SRLGame::SimulateGames()
 			CalculateOdds();
 			CalculatePremiershipOdds();
 			UpdateBets();
+			CalculateFeaturedGame();
 		}
 	}
+}
+
+void SRLGame::CalculateFeaturedGame()
+{
+	int featureGameNumber = 0;
+	if (finals)
+	{
+		int difference = 10000;
+		for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
+		{
+			int price1 = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds.getAsCents();
+			
+			price1 -= m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds.getAsCents();
+			if (price1 < 0)
+			{
+				price1 = -price1;
+			}
+			if (price1 < difference)
+			{
+				difference = price1;
+				featureGameNumber = i;
+			}
+		}
+	}
+	else
+	{
+		int ladderDifference = 10000;
+		int highestPos = 10000;
+		for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
+		{
+			int homeTeamPos, awayTeamPos = 0;
+			for (int ii = 0; ii < m_Season.m_Ladder.m_Ladder.size(); ii++)
+			{
+				if (m_Season.m_Ladder.m_Ladder[ii].teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam)
+				{
+					homeTeamPos = ii;
+				}
+				if (m_Season.m_Ladder.m_Ladder[ii].teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam)
+				{
+					awayTeamPos = ii;
+				}
+			}
+			int diff = homeTeamPos - awayTeamPos;
+			if (diff < 0)
+			{
+				diff = -diff;
+			}
+			if (diff < ladderDifference)
+			{
+				ladderDifference = diff;
+				if (homeTeamPos < highestPos)
+				{
+					highestPos = homeTeamPos;
+				}
+				if (awayTeamPos < highestPos)
+				{
+					highestPos = awayTeamPos;
+				}
+				featureGameNumber = i;
+			}
+			else if (diff == ladderDifference)
+			{
+				if (homeTeamPos < highestPos)
+				{
+					highestPos = homeTeamPos;
+					featureGameNumber = i;
+				}
+				if (awayTeamPos < highestPos)
+				{
+					highestPos = awayTeamPos;
+					featureGameNumber = i;
+				}
+			}
+
+		}	
+	}
+	m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature = FeaturedGame(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].HomeTeam, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].AwayTeam, astVars, featureGameNumber, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].homeTeamOdds, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].awayTeamOdds);
+}
+
+void SRLGame::CalculateTipMaster()
+{
+	TipMasterBets.clear();
+	int gameBetOn = rand() % m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size();
+	int homeTeam = rand() % 50;
+	if (homeTeam > 25)
+	{
+		TipMasterBets.push_back(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameBetOn].HomeTeam + " @ " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameBetOn].homeTeamOdds.ReturnPrice());
+	}
+	else
+	{
+		TipMasterBets.push_back(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameBetOn].AwayTeam + " @ " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameBetOn].awayTeamOdds.ReturnPrice());
+	}
+	SRLNameGenerator::generateAndAddToVector(TipMasterBets);
 }
 
 void SRLGame::saveGameSettings()
@@ -4455,6 +4702,31 @@ bool SRLBetPrice::greaterThan(SRLBetPrice bet)
 	return false;
 }
 
+bool SRLBetPrice::lessThan(SRLBetPrice bet)
+{
+	if (dollars < bet.dollars)
+	{
+		return true;
+	}
+	else if (dollars == bet.dollars && cents < bet.cents)
+	{
+		return true;
+	}
+	return false;
+}
+
+void SRLBetPrice::absolute()
+{
+	if (dollars < 0)
+	{
+		dollars = -dollars;
+	}
+	if (cents < 0)
+	{
+		cents = -cents;
+	}
+}
+
 string SRLBetPrice::ReturnPrice()
 {
 	if (suspended)
@@ -4537,4 +4809,39 @@ SRLBetPrice SRLGameBet::ReturnBetWinnings()
 	betAmount.dollars = newDollars;
 	betAmount.cents = newCents;
 	return betAmount;
+}
+
+FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds)
+{	
+	gameNumber = gameNo;
+	fg_homeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + home + ".json");
+
+	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_homeTeam.getJerseryType()) + ".bmp";
+	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	fg_homeTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	fg_homeTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	fg_homeTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	fg_homeTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_homeTeam.getPrimary());
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_homeTeam.getSecondary());
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_homeTeam.getBadge());
+
+	fg_awayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + away + ".json");
+
+	JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_awayTeam.getJerseryType()) + ".bmp";
+	wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	fg_awayTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	fg_awayTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	fg_awayTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	fg_awayTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_awayTeam.getPrimary());
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_awayTeam.getSecondary());
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_awayTeam.getBadge());
+
+	featuredGameAvail = true;
+
+	fg_homeOdds = homeOdds;
+	fg_awayOdds = awayOdds;
 }

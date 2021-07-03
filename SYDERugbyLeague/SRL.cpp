@@ -43,6 +43,7 @@ bool SRLGame::headlineCall = false;
 bool SRLGame::keyPadCall = false;
 bool SRLGame::playerCall = false;
 int SRLGame::playerClicked = 0;
+float SRLGame::m_ScrollingSpeed = 1.0f;
 string SRLGame::customAmountStr = "";
 SRLBetPrice SRLGame::m_BetAmount = SRLBetPrice(10, 0);
 int SRLGame::gameNumberBet = 0;
@@ -704,11 +705,26 @@ void PremiershipResultsViewClick()
 	SRLGame::priorBetNumberLine = 0;
 }
 
+void FeaturedMatchSwitchViewClick()
+{
+	if (SRLGame::drawViewState == FeaturedMatchView)
+	{
+		SRLGame::drawViewState = FeaturedMatchTeamListView;
+	}
+	else
+	{
+		SRLGame::drawViewState = FeaturedMatchView;
+	}
+}
+
 #pragma endregion
 
 void SRLGame::init()
 {
 	loadGameSettings();
+
+	maxScrollTickTime = maxScrollTickTime / m_ScrollingSpeed;
+
 #pragma region SoundTrack
 
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz","", 168);
@@ -777,6 +793,11 @@ void SRLGame::init()
 	m_TipMasterViewBtn = SYDEClickableButton(" TipMaster", Vector2(37, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_TipMasterViewBtn.setHighLight(RED);
 	m_TipMasterViewBtn.SetFunc(TipMasterViewClick);
+
+	m_FeatureSwitchViewBtn = SYDEClickableButton(" Alt View ", Vector2(25, 16), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_FeatureSwitchViewBtn.setHighLight(RED);
+	m_FeatureSwitchViewBtn.SetFunc(FeaturedMatchSwitchViewClick);
+
 
 	//BLANK BUTTONS EDIT LATER
 	m_NewsViewBtn = SYDEClickableButton("Season News ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -1569,7 +1590,7 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			{
 				if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
 				{
-					if (ii == 0 && AvailableTeams.size() > 2)
+					if (AvailableTeams.size() > 2)
 					{
 						ii--;
 					}
@@ -1848,9 +1869,12 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 			window.setTextAtPoint(Vector2(26, 3 + i), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), WHITE);
 			window.setTextAtPoint(Vector2(34, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].AwayTeam, WHITE);
 		}
+		SimulateGames();
 	}
 	else if (drawViewState == FeaturedMatchView)
 	{
+		//SANITY
+		SimulateCall = false;
 		window.setTextAtPoint(Vector2(0, 2), "SRL ROUND " + std::to_string(m_round + 1), WHITE);
 		string awayTeamText = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_awayTeam.getName();
 		if (m_Season.m_Draw.m_Rounds[m_round].gameToFeature.featuredGameAvail)
@@ -1869,8 +1893,40 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 		{
 			window.setTextAtPoint(Vector2(0, 3), "NO FEATURED GAME FOR THIS ROUND AT THE MOMENT", WHITE);
 		}
+		window = m_FeatureSwitchViewBtn.draw_ui(window);
 	}
-	SimulateGames();
+	else if (drawViewState == FeaturedMatchTeamListView)
+	{
+		//SANITY
+		SimulateCall = false;
+		window.setTextAtPoint(Vector2(0, 2), "SRL ROUND " + std::to_string(m_round + 1), WHITE);
+		string awayTeamText = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_awayTeam.getName();
+		if (m_Season.m_Draw.m_Rounds[m_round].gameToFeature.featuredGameAvail)
+		{
+			int sizeText = awayTeamText.length();
+			window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.fg_homeTeam.getName(), WHITE);
+			window.setTextAtPoint(Vector2(60 - sizeText, 3), awayTeamText, WHITE);
+			window.setTextAtPoint(Vector2(24, 4), "KEY PLAYERS:", WHITE);
+			for (int i = 0; i < 5; i++)
+			{
+				int sizeText = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.awayTeamKeyPlayers[i].length();
+				window.setTextAtPoint(Vector2(0, 5 + i), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.homeTeamKeyPlayers[i], BRIGHTGREEN);
+				window.setTextAtPoint(Vector2(60 - sizeText, 5 + i), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.awayTeamKeyPlayers[i], BRIGHTGREEN);
+			}
+			window.setTextAtPoint(Vector2(23, 10), "MATCH HISTORY:", WHITE);
+			for (int i = 0; i < 5 && i < m_Season.m_Draw.m_Rounds[m_round].gameToFeature.MatchHistory.size(); i++)
+			{
+				int sizeText = m_Season.m_Draw.m_Rounds[m_round].gameToFeature.MatchHistory[i].length();
+				int spacing = (60 - sizeText) / 2;
+				window.setTextAtPoint(Vector2(spacing, 11 + i), m_Season.m_Draw.m_Rounds[m_round].gameToFeature.MatchHistory[i], BRIGHTGREEN);
+			}
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(0, 3), "NO FEATURED GAME FOR THIS ROUND AT THE MOMENT", WHITE);
+		}
+		window = m_FeatureSwitchViewBtn.draw_ui(window);
+	}
 	window = drawSeasonModeTabs(window);
 	return window;
 }
@@ -2699,7 +2755,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.11.0.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.11.1.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2982,7 +3038,7 @@ bool SRLGame::addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>
 					}
 					if (count >= limit || exactLineUp > limit/2)
 					{
-						AttemptedTeams.push_back(team1Name);
+						teams.push_back(team1Name);
 						AttemptedTeams.push_back(team2Name);
 						return false;
 					}
@@ -4094,6 +4150,23 @@ void SRLGame::CalculateFeaturedGame()
 		}	
 	}
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature = FeaturedGame(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].HomeTeam, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].AwayTeam, astVars, featureGameNumber, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].homeTeamOdds, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].awayTeamOdds);
+	for (int i = 0; i < m_roundToSimulate;i++)
+	{
+		for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[ii].m_Games.size(); ii++)
+		{
+			bool homeTeamInMatch = m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].HomeTeam || m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].AwayTeam;
+			bool awayTeamInMatch = m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].HomeTeam || m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam == m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[featureGameNumber].AwayTeam;
+			if (homeTeamInMatch && awayTeamInMatch)
+			{
+				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.MatchHistory[0] == "No Match History To Show")
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.MatchHistory.clear();
+				}
+				m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.MatchHistory.push_back(m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam + " " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore) + " v " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore) + " " + m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam);
+			}
+		}
+	}
+	reverse(m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.MatchHistory.begin(), m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.MatchHistory.end());
 }
 
 void SRLGame::CalculateTipMaster()
@@ -4118,6 +4191,7 @@ void SRLGame::saveGameSettings()
 	//PlayerStats
 	save_file["soundvolume"] = static_cast<int>(BaseSYDESoundSettings::getDefaultVolumeState());
 	save_file["soundtrackon"] = static_cast<int>(soundTrackOn);
+	save_file["scrollspeed"] = m_ScrollingSpeed;
 	string filePath = string("EngineFiles\\Settings\\gameSettings.json");
 	std::ofstream ofs(filePath);
 	ofs << save_file;
@@ -4135,6 +4209,7 @@ void SRLGame::loadGameSettings()
 			BaseSYDESoundSettings::changeDefaultVolume(static_cast<SYDESoundVolume>(volume));
 			volume = save_file["soundtrackon"];
 			soundTrackOn = static_cast<bool>(volume);
+			m_ScrollingSpeed = save_file["scrollspeed"];
 		}
 		catch (exception e)
 		{
@@ -4844,4 +4919,10 @@ FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int ga
 
 	fg_homeOdds = homeOdds;
 	fg_awayOdds = awayOdds;
+
+	homeTeamKeyPlayers.clear();
+	fg_homeTeam.addBestPlayers(homeTeamKeyPlayers, 5);
+	awayTeamKeyPlayers.clear();
+	fg_awayTeam.addBestPlayers(awayTeamKeyPlayers, 5);
+
 }

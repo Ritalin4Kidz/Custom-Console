@@ -29,6 +29,11 @@ Labcat - -
 
 ## Release Notes
 
+###  0.11.1.0 beta 2-07-2021
+- Featured Games now has seperate view for key players and match history
+- draw generation fix
+
+
 ###  0.11.0.0 beta 2-07-2021
 - Featured Games now available for every round inside the main season
 - Reduced frequency of interchanges

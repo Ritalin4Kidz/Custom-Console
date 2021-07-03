@@ -421,6 +421,29 @@ vector<string> SRLTeam::addTimeOnField(int time)
 	return temp;
 }
 
+void SRLTeam::addBestPlayers(vector<string>& vec, int amount)
+{
+	vector<SRLPlayer> temp = getPlayers();
+	for (int i = 0; i < temp.size(); i++)
+	{
+		for (int ii = i + 1; ii < temp.size(); ii++)
+		{
+			if (temp[ii].getRating() > temp[i].getRating())
+			{
+				SRLPlayer temp2 = temp[ii];
+				temp[ii] = temp[i];
+				temp[i] = temp2;
+				i = 0;
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < amount; i++)
+	{
+		vec.push_back(temp[i].getName());
+	}
+}
+
 SRLPlayer SRLTeam::getGoalKicker()
 {
 	int temp = 0;

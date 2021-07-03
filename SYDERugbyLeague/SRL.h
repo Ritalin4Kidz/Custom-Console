@@ -40,6 +40,7 @@ enum SeasonDrawViewState
 {
 	SeasonDrawMainView,
 	FeaturedMatchView,
+	FeaturedMatchTeamListView,
 	GameSettingsInSeasonView,
 	TippingMasterView
 };
@@ -245,6 +246,11 @@ struct FeaturedGame
 
 	SRLBetPrice fg_homeOdds;
 	SRLBetPrice fg_awayOdds;
+
+	vector<string> homeTeamKeyPlayers;
+	vector<string> awayTeamKeyPlayers;
+
+	vector<string> MatchHistory = vector<string>({"No Match History To Show"});
 };
 
 struct SRLRound
@@ -634,6 +640,7 @@ private:
 
 	//FEATURED MATCH UP
 	SYDEClickableButton m_FeatureViewBtn;
+	SYDEClickableButton m_FeatureSwitchViewBtn;
 	SYDEClickableButton m_MainDrawViewBtn;
 	SYDEClickableButton m_MainSettingsViewBtn;
 	SYDEClickableButton m_TipMasterViewBtn;
@@ -670,7 +677,7 @@ private:
 	int finalsSystemInt = 0;
 
 	float ScrollTickTime = 0;
-	const float maxScrollTickTime = 0.05f;
+	float maxScrollTickTime = 0.05f;
 
 	int currentWonBetsSeason = 0;
 	int currentLostBetsSeason = 0;
@@ -678,6 +685,8 @@ private:
 	int currentWonBetsSeasonMatchOnly = 0;
 	int currentLostBetsSeasonMatchOnly = 0;
 	int currentBetsTotalSeasonMatchOnly = 0;
+
+	static float m_ScrollingSpeed;
 
 	FinalsSeriesType fsType = Top8Normal;
 	string finalsSettingStr = "Top 8 Normal";

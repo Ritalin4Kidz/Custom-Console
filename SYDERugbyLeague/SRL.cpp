@@ -2893,6 +2893,24 @@ ConsoleWindow SRLGame::RandomizePopUp(ConsoleWindow window, int windowWidth, int
 
 ConsoleWindow SRLGame::drawTabs(ConsoleWindow window)
 {
+	if (NextRoundCall)
+	{
+		NextRoundCall = false;
+	}
+	if (PrevRoundCall)
+	{
+		PrevRoundCall = false;
+	}
+	if (SYDEKeyCode::get_key(VK_RIGHT)._CompareState(KEYDOWN))
+	{
+		NextRoundCall = true;
+	}
+	else if (SYDEKeyCode::get_key(VK_LEFT)._CompareState(KEYDOWN))
+	{
+		PrevRoundCall = true;
+	}
+
+
 	window = m_SeasonViewBtn.draw_ui(window);
 	window = m_LadderViewBtn.draw_ui(window);
 	window = m_ResultsViewBtn.draw_ui(window);

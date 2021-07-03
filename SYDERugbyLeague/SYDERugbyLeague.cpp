@@ -159,10 +159,10 @@ int main(int argc, char* argv[])
 		config.setOffset(2, 0);
 	}
 
-	for (char** current = environ; *current; current++) {
+	//for (char** current = environ; *current; current++) {
 		//puts(*current);
-		cout << *current << endl;
-	}
+		//cout << *current << endl;
+	//}
 	SYDEGamePlay::setConfig(config);
 	SYDEGamePlay::getConfig().ColourPalette(hOut);
 	HWND hwnd = GetConsoleWindow();
@@ -215,12 +215,11 @@ int main(int argc, char* argv[])
 	}
 	SYDEGamePlay::EnableClicking(hOut);
 
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
+	//SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_UP));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_DOWN));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_LEFT));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_RIGHT));
 	//SYDEGamePlay::showFPS(true);
 	window.setStartingLine(1);
 	try {

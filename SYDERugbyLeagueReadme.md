@@ -29,7 +29,10 @@ Labcat - -
 
 ## Release Notes
 
-###  0.12.0.0 beta 4-07-2021
+###  0.12.1.0 beta 4-07-2021
+- Fixed crashing bugs
+
+###  0.12.1.0 beta 4-07-2021
 - Any time try scorer bets
 - More names in generation
 - more jersey & player styles

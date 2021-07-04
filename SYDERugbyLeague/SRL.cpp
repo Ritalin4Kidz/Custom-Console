@@ -1398,7 +1398,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		else if (currentState == BettingViewState)
 		{
 			m_SelectedGame = 0;
-			CalculateTryScorerOdds();
+			if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+			{
+				CalculateTryScorerOdds();
+			}
 			AssignState(std::bind(&SRLGame::BettingView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == SettingsState)
@@ -2895,7 +2898,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.12.0.1-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.12.1.0-beta", BRIGHTWHITE);
 	return window;
 }
 

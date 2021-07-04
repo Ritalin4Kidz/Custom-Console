@@ -38,6 +38,7 @@ bool SRLGame::soundTrackOn = true;
 bool SRLGame::homeTeamBet = false;
 bool SRLGame::betPlaceCall = false;
 bool SRLGame::premiershipBet = false;
+bool SRLGame::homeTeamTryBet = false;
 bool SRLGame::m_SeasonEvents = true;
 bool SRLGame::headlineCall = false;
 bool SRLGame::keyPadCall = false;
@@ -297,7 +298,7 @@ void KeypadClickOK()
 		SRLGame::errorMessage = "Bet must be greater than $0.00";
 		return;
 	}
-	SRLGame::errorMessage = "Confirm " + SRLGame::m_BetAmount.ReturnPrice() + " Bet On " + SRLGame::betTag + "?";
+	SRLGame::errorMessage = "Confirm " + SRLGame::m_BetAmount.ReturnPrice() + " Bet On " + Split(SRLGame::betTag,'#')[0] + "?";
 	SRLGame::betCall = true;
 }
 
@@ -348,6 +349,7 @@ void CustomBetClick()
 	SRLGame::betTag = bets[4];
 	SRLGame::homeTeamBet = bets[3] == "H";
 	SRLGame::premiershipBet = bets[3] == "P";
+	SRLGame::homeTeamTryBet = bets[3] == "TH";
 	SRLGame::gameNumberBet = stoi(bets[0]);
 	SRLGame::keyPadCall = true;
 }
@@ -361,10 +363,11 @@ void BetMatchClick()
 	SRLGame::m_BetAmount.cents = stoi(bets[2]);
 	SRLGame::homeTeamBet = bets[3] == "H";
 	SRLGame::premiershipBet = bets[3] == "P";
+	SRLGame::homeTeamTryBet = bets[3] == "TH";
 	SRLGame::gameNumberBet = stoi(bets[0]);
 	SRLGame::betCall = true;
 
-	SRLGame::errorMessage = "Confirm " + SRLGame::m_BetAmount.ReturnPrice() +" Bet On " + SRLGame::betTag + "?";
+	SRLGame::errorMessage = "Confirm " + SRLGame::m_BetAmount.ReturnPrice() +" Bet On " + Split(SRLGame::betTag, '#')[0] + "?";
 }
 
 void ArticleClick()
@@ -603,18 +606,12 @@ void PlayByPlayRsltViewClick()
 
 void NextRoundViewClick()
 {
-	if (SRLGame::currentState == SeasonModeState || SRLGame::currentState == ResultsViewState || SRLGame::currentState == SeasonConfig_State || SRLGame::currentState == TeamInDepthViewState)
-	{
-		SRLGame::NextRoundCall = true;
-	}
+	SRLGame::NextRoundCall = true;
 }
 
 void PrevRoundViewClick()
 {
-	if (SRLGame::currentState == SeasonModeState || SRLGame::currentState == ResultsViewState || SRLGame::currentState == SeasonConfig_State || SRLGame::currentState == TeamInDepthViewState)
-	{
-		SRLGame::PrevRoundCall = true;
-	}
+	SRLGame::PrevRoundCall = true;
 }
 
 void MainMenuViewClick()
@@ -628,6 +625,10 @@ void MainMenuViewClick()
 	SRLGame::menuCall = true;
 }
 
+void TryScorersViewBetClick()
+{
+	SRLGame::bettingState = TryScorers_STATE;
+}
 
 void SettingsViewClick()
 {
@@ -702,6 +703,12 @@ void GameResultsViewClick()
 void PremiershipResultsViewClick()
 {
 	SRLGame::priorBetsState = PremiershipWinnerBets_State;
+	SRLGame::priorBetNumberLine = 0;
+}
+
+void TryScorerBetsViewClick()
+{
+	SRLGame::priorBetsState = TryScorerBets_State;
 	SRLGame::priorBetNumberLine = 0;
 }
 
@@ -816,16 +823,19 @@ void SRLGame::init()
 #pragma endregion
 
 #pragma region BettingOptions
-	m_BetBtnCurrentRound = SYDEClickableButton(" Current Round  ", Vector2(0, 2), Vector2(15, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetBtnCurrentRound = SYDEClickableButton(" This Round ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
 	m_BetBtnCurrentRound.setHighLight(RED);
 	m_BetBtnCurrentRound.SetFunc(CurrentRoundViewClick);
-	m_BetBtnFutures = SYDEClickableButton("    Futures     ", Vector2(15, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
+	m_BetBtnFutures = SYDEClickableButton("  Futures  ", Vector2(12, 2), Vector2(12, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
 	m_BetBtnFutures.setHighLight(RED);
 	m_BetBtnFutures.SetFunc(FuturesViewClick);
-	m_BetBtnViewBets = SYDEClickableButton("Betting History", Vector2(30, 2), Vector2(15, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetTryscorers = SYDEClickableButton(" Try Scorers", Vector2(24, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetTryscorers.setHighLight(RED);
+	m_BetTryscorers.SetFunc(TryScorersViewBetClick);
+	m_BetBtnViewBets = SYDEClickableButton(" Bet History", Vector2(36, 2), Vector2(12, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
 	m_BetBtnViewBets.setHighLight(RED);
 	m_BetBtnViewBets.SetFunc(PastBetViewClick);
-	m_BetBtnAccount = SYDEClickableButton("     Account    ", Vector2(45, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
+	m_BetBtnAccount = SYDEClickableButton(" My Account ", Vector2(48, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
 	m_BetBtnAccount.setHighLight(RED);
 	m_BetBtnAccount.SetFunc(AccountViewClick);
 
@@ -837,13 +847,17 @@ void SRLGame::init()
 	m_BetCnclViewBtn.setHighLight(RED);
 	m_BetCnclViewBtn.SetFunc(betCNCLClick);
 
-	m_PriorBetsGameBtn = SYDEClickableButton("    Individual Game Results    ", Vector2(0, 3), Vector2(30, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_PriorBetsGameBtn = SYDEClickableButton("  Match Bet Results ", Vector2(0, 3), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_PriorBetsGameBtn.setHighLight(RED);
 	m_PriorBetsGameBtn.SetFunc(GameResultsViewClick);
 
-	m_PriorBetsPremiershipBtn = SYDEClickableButton("    Premiership Winner Bets    ", Vector2(30, 3), Vector2(30, 1), BRIGHTWHITE_RED_BG, false);
+	m_PriorBetsPremiershipBtn = SYDEClickableButton("Premiership Results ", Vector2(20, 3), Vector2(20, 1), BRIGHTWHITE_RED_BG, false);
 	m_PriorBetsPremiershipBtn.setHighLight(RED);
 	m_PriorBetsPremiershipBtn.SetFunc(PremiershipResultsViewClick);
+
+	m_PriorBetsTryScorerBtn = SYDEClickableButton(" Try Scorer Betting ", Vector2(40, 3), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_PriorBetsTryScorerBtn.setHighLight(RED);
+	m_PriorBetsTryScorerBtn.SetFunc(TryScorerBetsViewClick);
 #pragma endregion
 
 #pragma region SeasonConfig
@@ -1383,6 +1397,8 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		}
 		else if (currentState == BettingViewState)
 		{
+			m_SelectedGame = 0;
+			CalculateTryScorerOdds();
 			AssignState(std::bind(&SRLGame::BettingView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == SettingsState)
@@ -2019,7 +2035,7 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 					AchievementStrings.push_back("SRL_BET_NICE");
 				}
 				m_BetMoney.removeBetPrice(m_BetAmount);
-				m_Season.m_PremiershipBets.push_back(SRLGameBet(betTag, m_Season.m_Ladder.m_Ladder[gameNumberBet].premiershipOdds, m_BetAmount, true));
+				m_Season.m_PremiershipBets.push_back(SRLGameBet(betTag, m_Season.m_Ladder.m_Ladder[gameNumberBet].premiershipOdds, m_BetAmount, BetType_Premiership));
 				UpdateBets();
 			}
 			else
@@ -2052,10 +2068,84 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			}
 		}
 	}
+	else if (bettingState == TryScorers_STATE)
+	{
+		if (betPlaceCall)
+		{
+			betPlaceCall = false;
+			if (m_BetMoney.greaterThan(m_BetAmount) || m_BetMoney.equal(m_BetAmount))
+			{
+				if (m_BetAmount.equal(SRLBetPrice(420, 69)))
+				{
+					AchievementStrings.push_back("SRL_BET_NICE");
+				}
+				m_BetMoney.removeBetPrice(m_BetAmount);
+				if (homeTeamTryBet)
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].homeTeamTryOdds[gameNumberBet], m_BetAmount, BetType_Try));
+				}
+				else
+				{
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.push_back(SRLGameBet(betTag, m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].awayTeamTryOdds[gameNumberBet], m_BetAmount, BetType_Try));
+				}
+				UpdateBets();
+			}
+			else
+			{
+				errorCall = true;
+				errorMessage = "Not Enough Money To Bet";
+				return window;
+			}
+		}
+		if (m_roundToSimulate >= BaseSeasonGames + finalsRounds)
+		{
+			window.setTextAtPoint(Vector2(2, 3), "TRY SCORER BETS SUSPENDED", BRIGHTWHITE);
+		}
+		else
+		{
+			if (NextRoundCall)
+			{
+				NextRoundCall = false;
+				m_SelectedGame++;
+				if (m_SelectedGame >= m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size())
+				{
+					m_SelectedGame = 0;
+				}
+				CalculateTryScorerOdds();
+			}
+			if (PrevRoundCall)
+			{
+				PrevRoundCall = false;
+				m_SelectedGame--;
+				if (m_SelectedGame < 0)
+				{
+					m_SelectedGame = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size() - 1;
+				}
+				CalculateTryScorerOdds();
+			}
+
+			window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].HomeTeam, BRIGHTGREEN);
+			for (int i = 0; i < AttackersHome.size(); i++)
+			{
+				window.setTextAtPoint(Vector2(0, 4 + i), AttackersHome[i] + " (" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].homeTeamTryOdds[i].ReturnPrice() + ")", BRIGHTWHITE);
+			}
+			window.setTextAtPoint(Vector2(0, 11), m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].AwayTeam, BRIGHTGREEN);
+			for (int i = 0; i < AttackersAway.size(); i++)
+			{
+				window.setTextAtPoint(Vector2(0, 12 + i), AttackersAway[i] + " (" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].awayTeamTryOdds[i].ReturnPrice() + ")", BRIGHTWHITE);
+			}
+
+			for (int i = 0; i < m_TryScorerBetButtons.size(); i++)
+			{
+				window = m_TryScorerBetButtons[i].draw_ui(window);
+			}
+		}
+	}
 	else if (bettingState == ViewBets_STATE)
 	{
 		window = m_PriorBetsGameBtn.draw_ui(window);
 		window = m_PriorBetsPremiershipBtn.draw_ui(window);
+		window = m_PriorBetsTryScorerBtn.draw_ui(window);
 		if (priorBetsState == IndividualGameBets_State)
 		{
 			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
@@ -2104,6 +2194,56 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			for (int i = 0; i + priorBetNumberLine < m_GameBetsWriteUp.size() && i < 14; i++)
 			{
 				window.setTextAtPoint(Vector2(1, 4 + i), m_GameBetsWriteUp[i + priorBetNumberLine].name, m_GameBetsWriteUp[i + priorBetNumberLine].colour);
+			}
+		}
+		else if(priorBetsState == TryScorerBets_State)
+		{
+			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+			{
+				if (priorBetNumberLine > 0)
+				{
+					priorBetNumberLine--;
+				}
+			}
+			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+			{
+				if (priorBetNumberLine < m_TryScorerBetsWriteUp.size() - 1)
+				{
+					priorBetNumberLine++;
+				}
+			}
+			else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+			{
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
+				{
+					if (priorBetNumberLine > 0)
+					{
+						priorBetNumberLine--;
+					}
+					ScrollTickTime = 0;
+				}
+			}
+			else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+			{
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
+				{
+					if (priorBetNumberLine < m_TryScorerBetsWriteUp.size() - 1)
+					{
+						priorBetNumberLine++;
+					}
+					ScrollTickTime = 0;
+				}
+			}
+			else
+			{
+				ScrollTickTime = 0;
+			}
+
+			for (int i = 0; i + priorBetNumberLine < m_TryScorerBetsWriteUp.size() && i < 14; i++)
+			{
+				window.setTextAtPoint(Vector2(1, 4 + i), m_TryScorerBetsWriteUp[i + priorBetNumberLine].name, m_TryScorerBetsWriteUp[i + priorBetNumberLine].colour);
 			}
 		}
 		else if (priorBetsState == PremiershipWinnerBets_State)
@@ -2755,7 +2895,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.11.1.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.12.0.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -2930,6 +3070,7 @@ ConsoleWindow SRLGame::drawBetTabs(ConsoleWindow window)
 	window = m_BetBtnFutures.draw_ui(window);
 	window = m_BetBtnViewBets.draw_ui(window);
 	window = m_BetBtnAccount.draw_ui(window);
+	window = m_BetTryscorers.draw_ui(window);
 	return window;
 }
 
@@ -3436,6 +3577,57 @@ void SRLGame::CalculatePremiershipOdds()
 	}
 }
 
+void SRLGame::CalculateTryScorerOdds()
+{
+	m_TryScorerBetButtons.clear();
+	SRLTeam oddsHomeTeam;
+	oddsHomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].HomeTeam + ".json");
+	SRLTeam oddsAwayTeam;
+	oddsAwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].AwayTeam + ".json");
+	//12 TryScorer Bets For Each Game
+	AttackersHome.clear();
+	AttackersAway.clear();
+
+	vector<SRLPlayer> homePlayers = oddsHomeTeam.addBestAttackers(AttackersHome, 6);
+	vector<SRLPlayer> awayPlayers = oddsAwayTeam.addBestAttackers(AttackersAway, 6);
+	for (int i = 0; i < 6; i++)
+	{
+		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtn.SetFunc(BetMatchClick);
+		a_BetBtn.setTag(to_string(m_SelectedGame) + ";10;0;" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
+		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtnCustom.SetFunc(CustomBetClick);
+		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
+		m_TryScorerBetButtons.push_back(a_BetBtn);
+		m_TryScorerBetButtons.push_back(a_BetBtnCustom);
+
+		SRLPlayer playerOdds = homePlayers[i];
+		int oddsCents = 200;
+		int additionCents = 10520 / playerOdds.getAttack();
+		oddsCents += additionCents;
+		
+		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].homeTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
+	}
+	for (int i = 0; i < 6; i++)
+	{
+		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtn.SetFunc(BetMatchClick);
+		a_BetBtn.setTag(to_string(m_SelectedGame) + ";10;0;" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());
+		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtnCustom.SetFunc(CustomBetClick);
+		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());
+		m_TryScorerBetButtons.push_back(a_BetBtn);
+		m_TryScorerBetButtons.push_back(a_BetBtnCustom);
+
+		SRLPlayer playerOdds = awayPlayers[i];
+		int oddsCents = 200;
+		int additionCents = 10520 / playerOdds.getAttack();
+		oddsCents += additionCents;
+
+		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].awayTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
+	}
+}
+
 void SRLGame::SimulateGames()
 {
 	int roundsSimulated = 0;
@@ -3513,6 +3705,20 @@ void SRLGame::SimulateGames()
 			{
 				m_Season.m_TopPlayers.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getDallyMPointsWorth());
 				m_Season.m_TopTries.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getTries());
+				if (m_srlmanager.getHomeTeam().getPlayers()[i].getTries() > 0)
+				{
+					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
+					{
+						if (Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#')[0] == m_srlmanager.getHomeTeam().getPlayers()[i].getName())
+						{
+							if (Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#')[1] == m_srlmanager.getHomeTeam().getName())
+							{
+								m_BetMoney.addBetPrice(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].ReturnBetWinnings());
+								m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].betState = Bet_Won;
+							}
+						}
+					}
+				}
 				m_Season.m_TopGoals.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getGoals());
 				m_Season.m_TopPoints.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getPoints());
 				m_Season.m_TopMetres.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getMetres());
@@ -3529,10 +3735,34 @@ void SRLGame::SimulateGames()
 				m_Season.m_TopSendOff.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getSendOffs());
 				m_Season.m_TopInjuries.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getInjuries());
 			}
+			for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
+			{
+				if (Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#')[1] == m_srlmanager.getHomeTeam().getName())
+				{
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].betState != Bet_Won)
+					{
+						m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].betState = Bet_Lost;
+					}
+				}
+			}
 			for (int i = 0; i < m_srlmanager.getAwayTeam().getPlayers().size(); i++)
 			{
 				m_Season.m_TopPlayers.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getDallyMPointsWorth());
 				m_Season.m_TopTries.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getTries());
+				if (m_srlmanager.getAwayTeam().getPlayers()[i].getTries() > 0)
+				{
+					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
+					{
+						if (Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#')[0] == m_srlmanager.getAwayTeam().getPlayers()[i].getName())
+						{
+							if (Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#')[1] == m_srlmanager.getAwayTeam().getName())
+							{
+								m_BetMoney.addBetPrice(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].ReturnBetWinnings());
+								m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].betState = Bet_Won;
+							}
+						}
+					}
+				}
 				m_Season.m_TopGoals.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getGoals());
 				m_Season.m_TopPoints.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getPoints());
 				m_Season.m_TopMetres.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getMetres());
@@ -3548,6 +3778,16 @@ void SRLGame::SimulateGames()
 				m_Season.m_TopSinBin.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getSinBins());
 				m_Season.m_TopSendOff.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getSendOffs());
 				m_Season.m_TopInjuries.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getInjuries());
+			}
+			for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
+			{
+				if (Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#')[1] == m_srlmanager.getAwayTeam().getName())
+				{
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].betState != Bet_Won)
+					{
+						m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].betState = Bet_Lost;
+					}
+				}
 			}
 			m_Season.m_TopPlayers.orderShortlist();
 			m_Season.m_TopTries.orderShortlist();
@@ -4509,6 +4749,7 @@ void SRLGame::UpdateBets()
 {
 	m_GameBetsWriteUp.clear();
 	m_PremiershipBetsWriteUp.clear();
+	m_TryScorerBetsWriteUp.clear();
 	currentWonBetsSeason = 0;
 	currentLostBetsSeason = 0;
 	currentBetsTotalSeason = 0;
@@ -4540,6 +4781,27 @@ void SRLGame::UpdateBets()
 			currentBetsTotalSeason++;
 			currentBetsTotalSeasonMatchOnly++;
 			m_GameBetsWriteUp.push_back(writeUp);
+		}
+		for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_TryScorerBets.size(); ii++)
+		{
+			SRLGameBetsWriting writeUp;
+			writeUp.name = "Round " + to_string(i + 1) + ": " + Split(m_Season.m_Draw.m_Rounds[i].m_TryScorerBets[ii].m_teamName, '#')[0] + " " + m_Season.m_Draw.m_Rounds[i].m_TryScorerBets[ii].originalBetAmount.ReturnPrice() + " @ " + m_Season.m_Draw.m_Rounds[i].m_TryScorerBets[ii].betOdds.ReturnPrice();
+			switch (m_Season.m_Draw.m_Rounds[i].m_TryScorerBets[ii].betState)
+			{
+			case Bet_Won:
+				currentWonBetsSeason++;
+				writeUp.colour = GREEN;
+				break;
+			case Bet_Lost:
+				currentLostBetsSeason++;
+				writeUp.colour = RED;
+				break;
+			default:
+				writeUp.colour = BRIGHTWHITE;
+				break;
+			}
+			currentBetsTotalSeason++;
+			m_TryScorerBetsWriteUp.push_back(writeUp);
 		}
 	}
 	for (int ii = 0; ii < m_Season.m_PremiershipBets.size(); ii++)

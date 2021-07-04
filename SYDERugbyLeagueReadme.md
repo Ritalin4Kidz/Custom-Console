@@ -29,6 +29,11 @@ Labcat - -
 
 ## Release Notes
 
+###  0.12.0.0 beta 4-07-2021
+- Any time try scorer bets
+- More names in generation
+- more jersey & player styles
+
 ###  0.11.1.0 beta 2-07-2021
 - Featured Games now has seperate view for key players and match history
 - draw generation fix

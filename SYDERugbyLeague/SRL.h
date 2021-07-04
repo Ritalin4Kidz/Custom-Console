@@ -63,7 +63,8 @@ enum GameStateBettingSYDE
 	CurrentRound_STATE,
 	Futures_STATE,
 	ViewBets_STATE,
-	Account_STATE
+	Account_STATE,
+	TryScorers_STATE
 };
 
 enum GameStateResultSYDE
@@ -120,7 +121,8 @@ enum SRLBetTag
 enum SRLPriorBets_State
 {
 	IndividualGameBets_State,
-	PremiershipWinnerBets_State
+	PremiershipWinnerBets_State,
+	TryScorerBets_State,
 };
 
 #pragma endregion
@@ -184,15 +186,22 @@ struct SRLLadderPosition
 	SRLBetPrice premiershipOdds = SRLBetPrice(5, 0);
 };
 
+enum SRLBetType
+{
+	BetType_Game,
+	BetType_Premiership,
+	BetType_Try,
+};
+
 struct SRLGameBet
 {
 	SRLGameBet() {}
 	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; originalBetAmount = betAmount; }
-	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet, bool bet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; premiershipBet = bet; originalBetAmount = betAmount;}
+	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet, SRLBetType bet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; _BetType = bet; originalBetAmount = betAmount;}
 	SRLBetPrice betOdds;
 	SRLBetPrice betAmount;
 	SRLBetPrice originalBetAmount;
-	bool premiershipBet = false;
+	SRLBetType _BetType = BetType_Game;
 	SRLBetPrice ReturnBetWinnings();
 	SRLBetTag betState = Bet_InProgress;
 	string m_teamName;
@@ -215,6 +224,9 @@ struct SRLGameMatchup
 	string AwayTeam;
 	vector<string> ResultPlayByPlay;
 	vector<string> SummaryPlayByPlay;
+
+	vector<SRLBetPrice> homeTeamTryOdds = vector<SRLBetPrice>();
+	vector<SRLBetPrice> awayTeamTryOdds = vector<SRLBetPrice>();
 
 	int homeTeamScore = 0;
 	int awayTeamScore = 0;
@@ -258,6 +270,7 @@ struct SRLRound
 	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
 	vector<SRLGameMatchup> m_Games;
 	vector<SRLGameBet> m_Bets;
+	vector<SRLGameBet> m_TryScorerBets;
 	vector<SRLNewsArticle> newsStories;
 	FeaturedGame gameToFeature;
 };
@@ -379,6 +392,7 @@ public:
 	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
 	void CalculatePremiershipOdds();
+	void CalculateTryScorerOdds();
 	void SimulateGames();
 	void CalculateFeaturedGame();
 	void CalculateTipMaster();
@@ -473,6 +487,7 @@ public:
 	static bool betPlaceCall;
 	static bool homeTeamBet;
 	static bool premiershipBet;
+	static bool homeTeamTryBet;
 	static bool keyPadCall;
 	static int gameNumberBet;
 
@@ -537,6 +552,7 @@ private:
 	SYDEClickableButton m_BetBtnViewBets;
 	SYDEClickableButton m_BetBtnFutures;
 	SYDEClickableButton m_BetBtnAccount;
+	SYDEClickableButton m_BetTryscorers;
 
 	SYDEClickableButton m_LeaderboardBtnMostTries;
 	SYDEClickableButton m_LeaderboardBtnMostGoals;
@@ -582,6 +598,7 @@ private:
 	//GameSettingsPage
 	SYDEClickableButton m_PriorBetsGameBtn;
 	SYDEClickableButton m_PriorBetsPremiershipBtn;
+	SYDEClickableButton m_PriorBetsTryScorerBtn;
 
 	//View Season
 	SYDEClickableButton m_SettingsGoalKickerBtn;
@@ -618,6 +635,7 @@ private:
 
 	vector<SYDEClickableButton> m_BetButtons;
 	vector<SYDEClickableButton> m_PremiershipBetButtons;
+	vector<SYDEClickableButton> m_TryScorerBetButtons;
 
 	vector<SYDEClickableButton> m_NewsHeadlines;
 	SYDEClickableButton m_BackHeadline;
@@ -658,6 +676,9 @@ private:
 
 	vector<SRLGameBetsWriting> m_GameBetsWriteUp;
 	vector<SRLGameBetsWriting> m_PremiershipBetsWriteUp;
+	vector<SRLGameBetsWriting> m_TryScorerBetsWriteUp;
+	vector<string> AttackersHome = vector<string>();
+	vector<string> AttackersAway = vector<string>();
 
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;

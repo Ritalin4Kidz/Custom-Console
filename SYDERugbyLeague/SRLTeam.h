@@ -69,6 +69,8 @@ public:
 
 	void addBestPlayers(vector<string> &vec, int amount);
 
+	vector<SRLPlayer> addBestAttackers(vector<string>& vec, int amount);
+
 	SRLPlayer getGoalKicker();
 	SRLPlayer getGoalKickerNoLimit();
 	int getInterchanges() { return m_Interchanges; }

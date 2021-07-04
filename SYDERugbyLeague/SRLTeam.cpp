@@ -444,6 +444,30 @@ void SRLTeam::addBestPlayers(vector<string>& vec, int amount)
 	}
 }
 
+vector<SRLPlayer> SRLTeam::addBestAttackers(vector<string>& vec, int amount)
+{
+	vector<SRLPlayer> temp = getPlayers();
+	for (int i = 0; i < temp.size(); i++)
+	{
+		for (int ii = i + 1; ii < temp.size(); ii++)
+		{
+			if (temp[ii].getAttack() > temp[i].getAttack())
+			{
+				SRLPlayer temp2 = temp[ii];
+				temp[ii] = temp[i];
+				temp[i] = temp2;
+				i = 0;
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < amount; i++)
+	{
+		vec.push_back(temp[i].getName());
+	}
+	return temp;
+}
+
 SRLPlayer SRLTeam::getGoalKicker()
 {
 	int temp = 0;

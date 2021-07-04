@@ -735,22 +735,6 @@ void SRLGame::init()
 
 	maxScrollTickTime = maxScrollTickTime / m_ScrollingSpeed;
 
-#pragma region SoundTrack
-
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz","", 168);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
-	m_GamePlaySoundtrack.setYPos(14);
-	m_GamePlaySoundtrack.setOn(soundTrackOn);
-	if (soundTrackOn)
-	{
-		m_GamePlaySoundtrack.start();
-	}
-	m_GamePlaySoundtrack.shuffleSongs(true, false);
-
-#pragma endregion
-
 #pragma region SoundTrackSettings
 
 	m_SoundTrackOnBtn =SYDEClickableButton(" Background Music:", Vector2(3, 4), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -1198,6 +1182,23 @@ void SRLGame::init()
 	}
 
 #pragma endregion
+
+#pragma region SoundTrack
+
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz", "", 168);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
+	m_GamePlaySoundtrack.setYPos(14);
+	m_GamePlaySoundtrack.setOn(soundTrackOn);
+	if (soundTrackOn)
+	{
+		m_GamePlaySoundtrack.start();
+	}
+	m_GamePlaySoundtrack.shuffleSongs(true, false);
+
+#pragma endregion
+
 }
 
 #pragma region Misc
@@ -2904,7 +2905,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.12.1.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.12.3.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -5269,7 +5270,7 @@ ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
 	switch (summaryTextType)
 	{
 		case GSTType_Points:
-			colourToUse = BRIGHTWHITE_BRIGHTGREEN_BG;
+			colourToUse = BRIGHTWHITE_GREEN_BG;
 			break;
 		case GSTType_Error:
 			colourToUse = BLACK_BRIGHTWHITE_BG;

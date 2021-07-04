@@ -227,6 +227,7 @@ int main(int argc, char* argv[])
 	{
 		try 
 		{
+			SRLGame::m_GamePlaySoundtrack.setOn(SRLGame::soundTrackOn);
 			window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
 			SteamAPI_RunCallbacks();
 			window = SRLGame::m_GamePlaySoundtrack.playWindow(window);

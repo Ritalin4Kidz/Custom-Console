@@ -29,7 +29,10 @@ Labcat - -
 
 ## Release Notes
 
-###  0.12.1.0 beta 4-07-2021
+###  0.12.3.0 beta 5-07-2021
+- Fixed bug where soundtrack would not continue after the first song was played
+
+###  0.12.2.0 beta 4-07-2021
 - Fixed crashing bugs
 
 ###  0.12.1.0 beta 4-07-2021

@@ -159,10 +159,10 @@ int main(int argc, char* argv[])
 		config.setOffset(2, 0);
 	}
 
-	//for (char** current = environ; *current; current++) {
-		//puts(*current);
-		//cout << *current << endl;
-	//}
+	for (char** current = environ; *current; current++) {
+		puts(*current);
+		cout << *current << endl;
+	}
 	SYDEGamePlay::setConfig(config);
 	SYDEGamePlay::getConfig().ColourPalette(hOut);
 	HWND hwnd = GetConsoleWindow();

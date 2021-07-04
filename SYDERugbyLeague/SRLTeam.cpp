@@ -15,7 +15,7 @@ SRLTeam::~SRLTeam()
 {
 }
 
-string SRLTeam::Interchange()
+string SRLTeam::Interchange(string& summaryPlay)
 {
 	if (m_Interchanges >= 8)
 	{
@@ -44,12 +44,13 @@ string SRLTeam::Interchange()
 		return "";
 	}
 	string swap = getName() + " Interchanged Players " + m_TeamList[interchange1].getName() + " & " + m_TeamList[interchange2].getName();
+	summaryPlay = m_TeamList[interchange1].getName() + "#INTERCHANGE#" + m_TeamList[interchange2].getName();
 	iter_swap(m_TeamList.begin() + interchange1,m_TeamList.begin() + interchange2);
 	m_Interchanges++;
 	return swap;
 }
 
-string SRLTeam::SafeInterchange(string playerName)
+string SRLTeam::SafeInterchange(string playerName, string& summaryPlay)
 {
 	if (m_Interchanges >= 8)
 	{
@@ -77,6 +78,7 @@ string SRLTeam::SafeInterchange(string playerName)
 		{
 			m_TeamList[i].setInjured();
 			string swap = getName() + " Interchanged Players " + m_TeamList[Interchange1].getName() + " & " + m_TeamList[i].getName();
+			summaryPlay = m_TeamList[Interchange1].getName() + "#INTERCHANGE#" + m_TeamList[i].getName();
 			iter_swap(m_TeamList.begin() + Interchange1, m_TeamList.begin() + i);
 			m_Interchanges++;
 			return swap;

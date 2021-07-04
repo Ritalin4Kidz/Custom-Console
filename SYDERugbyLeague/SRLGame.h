@@ -33,6 +33,7 @@ public:
 	void addSumary(string a_Play);
 	void addSumaryNoMinutes(string a_Play);
 	void addSummary(string a_Play, SRLPlayer player);
+	void addSummaryDirect(string a_Play);
 
 	void addMinute();
 

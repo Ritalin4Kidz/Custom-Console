@@ -14,13 +14,13 @@ public:
 	SRLTeam(vector<SRLPlayer> a_TeamList, string name);
 	virtual ~SRLTeam();
 
-	string Interchange();
+	string Interchange(string& summaryPlay);
 	/// <summary>
 	/// Don't use for regular interchange as it injures the player
 	/// </summary>
 	/// <param name="playerName"></param>
 	/// <returns></returns>
-	string SafeInterchange(string playerName);
+	string SafeInterchange(string playerName, string& summaryPlay);
 
 	void generateJerseys();
 	

@@ -222,9 +222,10 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_RIGHT));
 	//SYDEGamePlay::showFPS(true);
 	window.setStartingLine(1);
-	try {
-		SRLGame m_SRL;
-		while (!SRLGame::exitConfirmedCall)
+	SRLGame m_SRL;
+	while (!SRLGame::exitConfirmedCall)
+	{
+		try 
 		{
 			window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
 			SteamAPI_RunCallbacks();
@@ -233,10 +234,32 @@ int main(int argc, char* argv[])
 			DoAchievements(SRLGame::AchievementStrings);
 			SRLGame::AchievementStrings.clear();
 		}
-	}
-	catch (exception e)
-	{
-
+		catch (std::exception& message)
+		{
+			SRLGame::exitConfirmedCall = true;
+			std::chrono::system_clock currentTime;
+			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+			std::string time = std::ctime(&t);
+			time.resize(time.size() - 1);
+			string fileName = "EngineFiles\\SYDERLCrashDump_" + time + ".txt";
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+			std::ofstream output_file(fileName.c_str());
+			output_file << message.what() << "\n";
+		}
+		catch (const char* message)
+		{
+			SRLGame::exitConfirmedCall = true;
+			std::chrono::system_clock currentTime;
+			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+			std::string time = std::ctime(&t);
+			time.resize(time.size() - 1);
+			string fileName = "EngineFiles\\SYDERLCrashDump_" + time + ".txt";
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+			std::ofstream output_file(fileName.c_str());
+			output_file << message << "\n";
+		}
 	}
 	EnableMenuItem(hmenu, SC_CLOSE, MF_ENABLED);
 	SRLGame::m_GamePlaySoundtrack.shutdown();

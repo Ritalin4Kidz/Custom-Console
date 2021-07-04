@@ -728,6 +728,9 @@ void FeaturedMatchSwitchViewClick()
 
 void SRLGame::init()
 {
+	CustomAnimationAsset::SetDeltatimeBasedAnimation(true);
+	m_MainMenuBG.setMaxDeltatime(0.03f);
+	m_MainMenuBG.setLooping(false);
 	loadGameSettings();
 
 	maxScrollTickTime = maxScrollTickTime / m_ScrollingSpeed;
@@ -1377,6 +1380,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		}
 		if (currentState == MainMenu_STATE)
 		{
+			m_MainMenuBG.setFrame(0);
 			AssignState(std::bind(&SRLGame::main_menu_scene, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == Exhibition_LoadState)
@@ -2406,13 +2410,6 @@ ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, in
 
 ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	window = drawTabs(window);
-	window = drawResultTabs(window);
-	if (m_ResultsTabCall)
-	{
-		m_ResultsTabCall = false;
-		m_LineResults = 0;
-	}
 	if (NextRoundCall)
 	{
 		NextRoundCall = false;
@@ -2435,10 +2432,24 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	}
 	if (resultState == Summary_STATE)
 	{
+		for (int i = 0; i < (m_SummaryScreenVector.size()); i++)
+		{
+			window = m_SummaryScreenVector[i].draw(window, Vector2(5, (((i * 5) + 5)) - m_LineResults));
+		}
 		for (int i = 0; i < windowWidth; i++)
 		{
 			window.setTextAtPoint(Vector2(i, 3), " ", BLACK_BRIGHTWHITE_BG);
 		}
+	}
+	window = drawTabs(window);
+	window = drawResultTabs(window);
+	if (m_ResultsTabCall)
+	{
+		m_ResultsTabCall = false;
+		m_LineResults = 0;
+	}
+	if (resultState == Summary_STATE)
+	{
 		window.setTextAtPoint(Vector2(0, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam, BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(26, 3), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].awayTeamScore), BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(34, 3), m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam, BLACK_BRIGHTWHITE_BG);
@@ -2451,7 +2462,7 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 		}
 		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
 		{
-			if (m_LineResults < m_SummaryScreenVector.size() - 1)
+			if (m_LineResults < (m_SummaryScreenVector.size() * 5))
 			{
 				m_LineResults++;
 			}
@@ -2473,7 +2484,7 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 			ScrollTickTime += SYDEDefaults::getDeltaTime();
 			if (ScrollTickTime >= maxScrollTickTime)
 			{
-				if (m_LineResults < m_SummaryScreenVector.size() - 1)
+				if (m_LineResults < (m_SummaryScreenVector.size() * 5))
 				{
 					m_LineResults++;
 				}
@@ -2483,11 +2494,6 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 		else
 		{
 			ScrollTickTime = 0;
-		}
-
-		for (int i = 0; i + m_LineResults < m_SummaryScreenVector.size() && i < 14; i++)
-		{
-			window.setTextAtPoint(Vector2(1, 4 + i), m_SummaryScreenVector[i + m_LineResults], WHITE);
 		}
 	}
 	if (resultState == PlayByPlay_STATE)
@@ -4941,6 +4947,27 @@ void SRLGame::otherArticles()
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_Article);
 }
 
+ConsoleWindow SRLGame::DoState(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	try {
+		window = m_State(window, windowWidth, windowHeight);
+	}
+	catch (...)
+	{
+		SRLGame::exitConfirmedCall = true;
+		std::chrono::system_clock currentTime;
+		std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+		std::string time = std::ctime(&t);
+		time.resize(time.size() - 1);
+		string fileName = "EngineFiles\\SYDERLCrashDump_" + time + ".txt";
+		fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+		fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+		std::ofstream output_file(fileName.c_str());
+		output_file << "Unknown Error" << "\n";
+	}
+	return window;
+}
+
 void SRLGame::addCustomStrString(string charAdd)
 {
 	int maxLength = 4;
@@ -4981,7 +5008,8 @@ void SRLGame::sortOutResultsScreen()
 	vector<string> temp2 = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].SummaryPlayByPlay;
 	for (int i = 0; i < temp2.size(); i++)
 	{
-		m_SummaryScreenVector.push_back(temp2[i]);
+		vector<string> temp3 = Split(temp2[i], '#');
+		m_SummaryScreenVector.push_back(GameSummaryText(temp3[0],temp3[2],temp3[1],temp3[3]));
 	}
 	m_LineResults = 0;
 }
@@ -5208,4 +5236,73 @@ FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int ga
 	awayTeamKeyPlayers.clear();
 	fg_awayTeam.addBestPlayers(awayTeamKeyPlayers, 5);
 
+}
+
+GameSummaryText::GameSummaryText(string t, string p, string player, string s)
+{
+	Time = t; Play = p; Player = player; ScoreText = s;
+	if (Play == "TRY" || Play == "GOAL" || Play == "FIELD GOAL" || Play == "PENALTY GOAL")
+	{
+		summaryTextType = GSTType_Points;
+	}
+	else if (Play == "SEND OFF" || Play == "SIN BIN")
+	{
+		summaryTextType = GSTType_Sent;
+	}
+	else if (Play == "INJURY" || Play == "INTERCHANGE")
+	{
+		summaryTextType = GSTType_Interchange_Injury;
+	}
+	else if (Play == "KNOCK ON" || Play == "FORWARD PASS" || Play == "RUCK INFRINGEMENT")
+	{
+		summaryTextType = GSTType_Error;
+	}
+	else if (Play == "PENALTY")
+	{
+		summaryTextType = GSTType_Penalty;
+	}
+}
+
+ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
+{
+	ColourClass colourToUse = BLACK_BRIGHTWHITE_BG;
+	switch (summaryTextType)
+	{
+		case GSTType_Points:
+			colourToUse = BRIGHTWHITE_BRIGHTGREEN_BG;
+			break;
+		case GSTType_Error:
+			colourToUse = BLACK_BRIGHTWHITE_BG;
+			break;
+		case GSTType_Penalty:
+			colourToUse = BRIGHTWHITE_BRIGHTRED_BG;
+			break;
+		case GSTType_Interchange_Injury:
+			colourToUse = RED_BRIGHTWHITE_BG;
+			break;
+		case GSTType_Sent:
+			colourToUse = BRIGHTWHITE_RED_BG;
+			break;
+	}
+	for (int i = point.getX(); i < point.getX() + 50; i++)
+	{
+		for (int ii = point.getY(); ii < point.getY() + 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", colourToUse);
+		}
+	}
+	if (Time != "!")
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY()), Time, colourToUse);
+	}
+	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 1), Play, colourToUse);
+	if (Player != "!")
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 2), Player, colourToUse);
+	}
+	if (ScoreText != "!")
+	{
+		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 3), ScoreText, colourToUse);
+	}
+	return window;
 }

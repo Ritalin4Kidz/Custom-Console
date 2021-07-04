@@ -325,6 +325,26 @@ struct SRLSeason
 	SRLLeaderboard m_TopInjuries;
 };
 
+enum GameSummaryTextType
+{
+	GSTType_Error = 0,
+	GSTType_Points = 1,
+	GSTType_Penalty = 2,
+	GSTType_Sent = 3,
+	GSTType_Interchange_Injury = 4,
+};
+
+struct GameSummaryText
+{
+	GameSummaryText(string t, string p, string player, string s);
+	ConsoleWindow draw(ConsoleWindow window, Vector2 point);
+	string Time;
+	string Play;
+	string Player;
+	string ScoreText;
+	GameSummaryTextType summaryTextType;
+};
+
 class SRLGame : public SYDEWindowGame {
 public:
 	SRLGame() { init(); }
@@ -418,7 +438,7 @@ public:
 
 	void AssignState(std::function<ConsoleWindow(ConsoleWindow, int, int)> newState) { m_State = newState; }
 
-	ConsoleWindow DoState(ConsoleWindow window, int windowWidth, int windowHeight) { return m_State(window, windowWidth, windowHeight); }
+	ConsoleWindow DoState(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	static GameStateSYDE currentState;
 	static GameStateSYDE newState;
@@ -672,7 +692,7 @@ private:
 	SRLSeason m_Season;
 
 	vector<string> m_ResultsScreenVector;
-	vector<string> m_SummaryScreenVector;
+	vector<GameSummaryText> m_SummaryScreenVector;
 
 	vector<SRLGameBetsWriting> m_GameBetsWriteUp;
 	vector<SRLGameBetsWriting> m_PremiershipBetsWriteUp;
@@ -722,7 +742,7 @@ private:
 		FinalsSeries("Double Elim Tourny", KnockoutTournamentDouble, 8, 16),
 		});
 
-	CustomAsset m_MainMenuBG = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\mainMenuBmp.bmp", 30, 20));
+	CustomAnimationAsset m_MainMenuBG = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\mainmenuAnim.bmp", astVars, 180, 280, 30, 20, 0, 81));
 	CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
 	float splashScreenTime = 0;
 	bool splashScreenInit = true;

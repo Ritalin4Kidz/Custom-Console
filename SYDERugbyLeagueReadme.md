@@ -12,9 +12,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 - better odds calculations
 
-- Pop Up Display for when teams are generating
-
 - full soundtrack implementation
+
+- CRASH LOGS
 
 Feedback:
 Labcat - -

@@ -56,6 +56,13 @@ public:
 	void addPlayerStrip(string playerName);
 	void addPlayerStamina(string playerName, int Stamina);
 
+
+	void addPlayerAtk(string playerName,int val);
+	void addPlayerDef(string playerName,int val);
+	void addPlayerSpd(string playerName,int val);
+	void addPlayerHdl(string playerName,int val);
+	void addPlayerKck(string playerName,int val);
+
 	void setPlayerInjured(string playerName);
 	void setPlayerSent(string playerName, bool sendOff);
 

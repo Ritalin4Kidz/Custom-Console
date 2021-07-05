@@ -12,6 +12,7 @@ GameStateSettingsSYDE SRLGame::settingsState = SeasonSettings_STATE;
 GameStateInDepthView SRLGame::inDepthState = NormalInDepthView;
 SeasonDrawViewState SRLGame::drawViewState = SeasonDrawMainView;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
+CoachingViewDrawState SRLGame::coachDrawState = CoachingMain_STATE;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
 bool SRLGame::SeasonStart = false;
 bool SRLGame::SeasonStartCall = false;
@@ -43,6 +44,10 @@ bool SRLGame::m_SeasonEvents = true;
 bool SRLGame::headlineCall = false;
 bool SRLGame::keyPadCall = false;
 bool SRLGame::playerCall = false;
+bool SRLGame::performTradeCall = false;
+bool SRLGame::performTradeConfirmedCall = false;
+bool SRLGame::performTrainCall = false;
+bool SRLGame::performTrainConfirmedCall = false;
 int SRLGame::playerClicked = 0;
 float SRLGame::m_ScrollingSpeed = 1.0f;
 string SRLGame::customAmountStr = "";
@@ -63,6 +68,13 @@ bool SRLGame::randomizeCall = false;
 bool SRLGame::randomizeConfirmedCall = false;
 bool SRLGame::finalsSystemCall = false;
 bool SRLGame::m_FaceOffLimit = true;
+bool SRLGame::coachingMode = false;
+bool SRLGame::selectedTeamCall = false;
+SRLTrainingType SRLGame::trainType = Training_Attack;
+int SRLGame::playerMainTeamTrade = 0;
+int SRLGame::playerOtherTeamTrade = 0;
+SRLTeam SRLGame::otherTeamTrade = SRLTeam();
+
 vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
@@ -100,6 +112,70 @@ vector<string> Split(string a_String, char splitter)
 }
 
 #pragma region ButtonVoids
+
+void DoTrainCallClick()
+{
+	SRLGame::performTrainCall = true;
+	vector<string> training = Split(SYDEClickableButton::getLastButtonTag(), ';');
+	SRLGame::playerMainTeamTrade = stoi(training[1]);
+	SRLGame::m_BetAmount.dollars = stoi(training[2]);
+	SRLGame::m_BetAmount.cents = stoi(training[3]);
+	SRLGame::trainType = static_cast<SRLTrainingType>(stoi(training[4]));
+}
+
+void DoTrainCallOKClick()
+{
+	SRLGame::performTrainCall = false;
+	SRLGame::performTrainConfirmedCall = true;
+}
+
+void DoTrainCallCNCLClick()
+{
+	SRLGame::performTrainCall = false;
+}
+
+void DoTradeCallClick()
+{
+	SRLGame::performTradeCall = true;
+	vector<string> tags = Split(SYDEClickableButton::getLastButtonTag(), ';');
+	//a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(playerID2) + ";" + offContract.getName());
+	SRLGame::playerMainTeamTrade = stoi(tags[1]);
+	SRLGame::playerOtherTeamTrade = stoi(tags[2]);
+	string tName = tags[3];
+	if (tName == "Off Contract Players")
+	{
+		SRLTeam newTeam;
+		newTeam.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");
+		SRLGame::otherTeamTrade = newTeam;
+	}
+	else
+	{
+		SRLTeam newTeam;
+		newTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + tName + ".json");
+		SRLGame::otherTeamTrade = newTeam;
+	}
+}
+
+void DoTradeCallOKClick()
+{
+	SRLGame::performTradeCall = false;
+	SRLGame::performTradeConfirmedCall = true;
+}
+
+void DoTradeCallCNCLClick()
+{
+	SRLGame::performTradeCall = false;
+}
+
+void SelectTeamCallBtnClick()
+{
+	SRLGame::selectedTeamCall = true;
+}
+
+void CoachingModeEnableClick()
+{
+	SRLGame::coachingMode = !SRLGame::coachingMode;
+}
 
 void FinalsSystemClick()
 {
@@ -459,11 +535,35 @@ void BettingViewClick()
 {
 	SRLGame::newState = BettingViewState;
 }
-
+void CoachingViewClick()
+{
+	SRLGame::newState = CoachingViewState;
+}
 void CurrentRoundViewClick()
 {
 	SRLGame::bettingState = CurrentRound_STATE;
 }
+
+void CoachMainViewClick()
+{
+	SRLGame::coachDrawState = CoachingMain_STATE;
+}
+void CoachTeamViewClick()
+{
+	SRLGame::coachDrawState = CoachingTeamList_STATE;
+}
+
+void CoachTradeViewClick()
+{
+	SRLGame::coachDrawState = CoachingTrades_STATE;
+}
+
+void CoachTrainViewClick()
+{
+	SRLGame::coachDrawState = CoachingTraining_STATE;
+}
+
+
 void FuturesViewClick()
 {
 	SRLGame::bettingState = Futures_STATE;
@@ -751,6 +851,39 @@ void SRLGame::init()
 
 #pragma endregion
 
+#pragma region Coaching View
+	m_SelectTeamBtn = SYDEClickableButton("Start Season", Vector2(48, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_SelectTeamBtn.setHighLight(RED);
+	m_SelectTeamBtn.SetFunc(SelectTeamCallBtnClick);
+
+	m_CoachMainStateBtn = SYDEClickableButton("  Team Summary ", Vector2(0, 2), Vector2(15, 1), BRIGHTWHITE_RED_BG, false);
+	m_CoachMainStateBtn.setHighLight(RED);
+	m_CoachMainStateBtn.SetFunc(CoachMainViewClick);
+	m_CoachTradeStateBtn = SYDEClickableButton("  Trade Offers ", Vector2(15, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTradeStateBtn.setHighLight(RED);
+	m_CoachTradeStateBtn.SetFunc(CoachTradeViewClick);
+	m_CoachTrainStateBtn = SYDEClickableButton(" Team Training ", Vector2(30, 2), Vector2(15, 1), BRIGHTWHITE_RED_BG, false);
+	m_CoachTrainStateBtn.setHighLight(RED);
+	m_CoachTrainStateBtn.SetFunc(CoachTrainViewClick);
+	m_CoachTeamStateBtn = SYDEClickableButton(" View Team List", Vector2(45, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTeamStateBtn.setHighLight(RED);
+	m_CoachTeamStateBtn.SetFunc(CoachTeamViewClick);
+
+	m_CoachTradeConfirmOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTradeConfirmOKBtn.setHighLight(RED);
+	m_CoachTradeConfirmOKBtn.SetFunc(DoTradeCallOKClick);
+
+	m_CoachTradeConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTradeConfirmCNCLBtn.setHighLight(RED);
+	m_CoachTradeConfirmCNCLBtn.SetFunc(DoTradeCallCNCLClick);
+
+	m_CoachTrainConfirmOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTrainConfirmOKBtn.setHighLight(RED);
+	m_CoachTrainConfirmOKBtn.SetFunc(DoTrainCallOKClick);
+	m_CoachTrainConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTrainConfirmCNCLBtn.setHighLight(RED);
+	m_CoachTrainConfirmCNCLBtn.SetFunc(DoTrainCallCNCLClick);
+#pragma endregion
 
 #pragma region SeasonOptions
 	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -762,6 +895,9 @@ void SRLGame::init()
 	m_BettingViewBtn = SYDEClickableButton("   Betting   ", Vector2(24, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_BettingViewBtn.setHighLight(RED);
 	m_BettingViewBtn.SetFunc(BettingViewClick);
+	m_CoachingViewBtn = SYDEClickableButton("  Coaching   ", Vector2(24, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachingViewBtn.setHighLight(RED);
+	m_CoachingViewBtn.SetFunc(CoachingViewClick);
 	m_ResultsViewBtn = SYDEClickableButton("   Results  ", Vector2(36, 1), Vector2(12, 1), BLACK_WHITE_BG, false);
 	m_ResultsViewBtn.setHighLight(RED);
 	m_ResultsViewBtn.SetFunc(ResultsViewClick);
@@ -1049,6 +1185,10 @@ void SRLGame::init()
 	m_SettingsEventsBtn.setHighLight(RED);
 	m_SettingsEventsBtn.SetFunc(ToggleEventsClick);
 
+	m_SettingsCoachBtn = SYDEClickableButton(" Coaching Mode:", Vector2(36, 6), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsCoachBtn.setHighLight(RED);
+	m_SettingsCoachBtn.SetFunc(CoachingModeEnableClick);
+
 	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsFinalsBtn.setHighLight(RED);
 	m_SettingsFinalsBtn.SetFunc(FinalsSystemClick);
@@ -1320,6 +1460,15 @@ SRLTeam SRLGame::generateRandomTeam(float multiplier)
 
 ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+#pragma region pop-ups
+	if (performTradeCall)
+	{
+		return TradingPop_UP(window, windowWidth, windowHeight);
+	}
+	if (performTrainCall)
+	{
+		return TrainingPop_UP(window, windowWidth, windowHeight);
+	}
 	if (generateStartCall)
 	{
 		return GenerationPopUp(window, windowWidth, windowHeight);
@@ -1364,6 +1513,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	{
 		return BetPop_UP(window, windowWidth, windowHeight);
 	}
+#pragma endregion
 	for (int i = 0; i < windowWidth; i++)
 	{
 		for (int ii = 0; ii < windowHeight; ii++)
@@ -1399,6 +1549,15 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		else if (currentState == LeaderboardViewState)
 		{
 			AssignState(std::bind(&SRLGame::LeaderboardView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
+		else if (currentState == SelectTeamCoachingState)
+		{
+			setUpSelectedTeamView();
+			AssignState(std::bind(&SRLGame::SelectTeamCoachingView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
+		else if (currentState == CoachingViewState)
+		{
+			AssignState(std::bind(&SRLGame::CoachingView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == BettingViewState)
 		{
@@ -1650,7 +1809,14 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		m_GameBetsWriteUp.clear();
 		m_PremiershipBetsWriteUp.clear();
 		m_BetMoney = SRLBetPrice(500, 0);
-		newState = SeasonModeState;
+		if (coachingMode)
+		{
+			newState = SelectTeamCoachingState;
+		}
+		else
+		{
+			newState = SeasonModeState;
+		}
 		m_round = 0;
 		m_roundToSimulate = 0;
 		drawViewState = SeasonDrawMainView;
@@ -2317,6 +2483,263 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 	return window;
 }
 
+ConsoleWindow SRLGame::SelectTeamCoachingView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(0, 1), "SELECT TEAM TO COACH", BLACK_BRIGHTWHITE_BG);
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	if (SYDEKeyCode::get_key(VK_RIGHT)._CompareState(KEYDOWN))
+	{
+		NextRoundCall = true;
+	}
+	else if (SYDEKeyCode::get_key(VK_LEFT)._CompareState(KEYDOWN))
+	{
+		PrevRoundCall = true;
+	}
+	if (NextRoundCall)
+	{
+		NextRoundCall = false;
+		teamSelected++;
+		if (teamSelected >= m_SeasonTeams.size())
+		{
+			teamSelected = 0;
+		}
+		setUpSelectedTeamView();
+	}
+	if (PrevRoundCall)
+	{
+		PrevRoundCall = false;
+		teamSelected--;
+		if (teamSelected < 0)
+		{
+			teamSelected = m_SeasonTeams.size() - 1;
+		}
+		setUpSelectedTeamView();
+	}
+	if (selectedTeamCall)
+	{
+		selectedTeamCall = false;
+		sortOutTrainingOptions();
+		sortOutTradingOptions();
+		newState = SeasonModeState;
+		m_BetMoney = SRLBetPrice(2500, 0);
+		return window;
+	}
+	window.setTextAtPoint(Vector2(0, 2), teamCoached, BRIGHTWHITE);
+	window = m_SelectedTeamJerseyView.draw_asset(window, Vector2(15, 3));
+	window.setTextAtPoint(Vector2(29, 18), to_string(teamSelectedRating), BRIGHTWHITE);
+	window = m_SelectTeamBtn.draw_ui(window);
+	window = m_NextTeamSeasonCfgBtn.draw_ui(window);
+	window = m_PrevTeamSeasonCfgBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = drawTabs(window);
+	window = drawCoachingTabs(window);
+	if (coachDrawState == CoachingMain_STATE)
+	{
+		window.setTextAtPoint(Vector2(0, 3), teamCoached, BRIGHTWHITE);
+		window = m_SelectedTeamJerseyView.draw_asset(window, Vector2(0, 4));
+
+		m_CoachedTeam.CalculateAverages();
+		window.setTextAtPoint(Vector2(30, 4), "Remaining Budget: " + m_BetMoney.ReturnPrice(), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(30, 6), "Attack: " + to_string(m_CoachedTeam.averageAttackStat()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(30, 7), "Defence: " + to_string(m_CoachedTeam.averageDefenceStat()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(30, 8), "Speed: " + to_string(m_CoachedTeam.averageSpeedStat()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(30, 9), "Kicking: " + to_string(m_CoachedTeam.averageKickStat()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(30, 10), "Handling: " + to_string(m_CoachedTeam.averageHandlingStat()), BRIGHTWHITE);
+									  
+		window.setTextAtPoint(Vector2(30, 12), "Rating: " + to_string(m_CoachedTeam.TeamRating()), BRIGHTWHITE);
+	}
+	else if (coachDrawState == CoachingTraining_STATE)
+	{
+		if (performTrainConfirmedCall)
+		{
+			performTrainConfirmedCall = false;
+			//SRLGame::playerMainTeamTrade = stoi(training[1]);
+			//SRLGame::m_BetAmount.dollars = stoi(training[2]);
+			//SRLGame::m_BetAmount.cents = stoi(training[3]);
+			//SRLGame::trainType = static_cast<SRLTrainingType>(stoi(training[4]));
+			if (m_BetMoney.greaterThan(m_BetAmount) || m_BetMoney.equal(m_BetAmount))
+			{
+				m_BetMoney.removeBetPrice(m_BetAmount);
+				int statBoost = m_BetAmount.dollars / 10;
+				switch (trainType)
+				{
+				case Training_Attack:
+					m_CoachedTeam.addPlayerAtk(m_CoachedTeam.getPlayers()[playerMainTeamTrade].getName(), statBoost);
+					break;
+				case Training_Defence:
+					m_CoachedTeam.addPlayerDef(m_CoachedTeam.getPlayers()[playerMainTeamTrade].getName(), statBoost);
+					break;
+				case Training_Speed:
+					m_CoachedTeam.addPlayerSpd(m_CoachedTeam.getPlayers()[playerMainTeamTrade].getName(), statBoost);
+					break;
+				case Training_Handling:
+					m_CoachedTeam.addPlayerHdl(m_CoachedTeam.getPlayers()[playerMainTeamTrade].getName(), statBoost);
+					break;
+				case Training_Kick:
+					m_CoachedTeam.addPlayerKck(m_CoachedTeam.getPlayers()[playerMainTeamTrade].getName(), statBoost);
+					break;
+				}
+				m_CoachedTeam.saveTeam();
+			}
+			else
+			{
+				errorCall = true;
+				errorMessage = "Not Enough Money To Train";
+				return window;
+			}
+			sortOutTrainingOptions();
+			return window;
+		}
+		if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+		{
+			window = _trainingOptions[0].draw(window, (Vector2(5, 5)));
+			window = _trainingOptions[1].draw(window, (Vector2(5, 9)));
+			window = _trainingOptions[2].draw(window, (Vector2(5, 13)));
+			for (int i = 0; i < m_TrainingButtons.size(); i++)
+			{
+				window = m_TrainingButtons[i].draw_ui(window);
+			}
+		}
+
+		else
+		{
+			window.setTextAtPoint(Vector2(0, 3), "SEASON OVER, NO TRAINING AVAILABLE", BRIGHTWHITE);
+		}
+	}
+	else if (coachDrawState == CoachingTrades_STATE)
+	{
+		if (performTradeConfirmedCall)
+		{
+			performTradeConfirmedCall = false;
+			SRLPlayer Player1Character = m_CoachedTeam.getPlayers()[playerMainTeamTrade];
+			SRLPlayer Player2Character = otherTeamTrade.getPlayers()[playerOtherTeamTrade];
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
+			{
+				//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
+				if (m_CoachedTeam.getPlayers()[i].getName() == Player2Character.getName())
+				{
+					errorCall = true;
+					errorMessage = "Could Not Perform Trade With Players";
+					return window;
+				}
+				else if (otherTeamTrade.getPlayers()[i].getName() == Player1Character.getName())
+				{
+					errorCall = true;
+					errorMessage = "Could Not Perform Trade With Players";
+					return window;
+				}
+			}
+			m_CoachedTeam.setPlayer(playerMainTeamTrade, Player2Character);
+			otherTeamTrade.setPlayer(playerOtherTeamTrade, Player1Character);
+			if (otherTeamTrade.getName() == "Off Contract Players")
+			{
+				SRLNewsArticle m_SigningArticle;
+				m_SigningArticle.headline = m_CoachedTeam.getName() + " Sign " + Player2Character.getName();
+				m_SigningArticle.newsStory = SRLNewsStoryGenerator::generateOffContractTradeArticle(m_CoachedTeam.getName(), Player2Character.getName(), Player1Character.getName());
+				m_SigningArticle.type = SRLAT_PlayerSign;
+				m_SigningArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+				m_Season.m_Draw.m_Rounds[m_roundToSimulate].newsStories.push_back(m_SigningArticle);
+			}
+			else
+			{
+				SRLNewsArticle m_SigningArticle;
+				m_SigningArticle.headline = m_CoachedTeam.getName() + " Sign " + Player2Character.getName();
+				m_SigningArticle.newsStory = SRLNewsStoryGenerator::generateTradeArticle(m_CoachedTeam.getName(), otherTeamTrade.getName(), Player1Character.getName(), Player2Character.getName());
+				m_SigningArticle.type = SRLAT_PlayerTrade;
+				m_SigningArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+				m_Season.m_Draw.m_Rounds[m_roundToSimulate].newsStories.push_back(m_SigningArticle);
+			}
+
+			m_Season.m_TopPlayers.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopTries.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopGoals.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopPoints.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopMetres.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopFieldGoals.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_Top4020.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopTackles.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopKickMetres.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopErrors.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopPenalty.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopSteals.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopNoTries.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopRuckErrors.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopSinBin.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopSendOff.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopInjuries.changePlayerTeam(Player1Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+
+			m_Season.m_TopPlayers.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopTries.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopGoals.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopPoints.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopMetres.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopFieldGoals.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_Top4020.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopTackles.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopKickMetres.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopErrors.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopPenalty.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopSteals.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopNoTries.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopRuckErrors.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopSinBin.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopSendOff.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+			m_Season.m_TopInjuries.changePlayerTeam(Player2Character.getName(), m_CoachedTeam.getName(), otherTeamTrade.getName());
+
+			m_CoachedTeam.saveTeam();
+			if (otherTeamTrade.getName() == "Off Contract Players")
+			{
+				otherTeamTrade.saveTeamOffContract();
+			}
+			else
+			{
+				otherTeamTrade.saveTeam();
+			}
+			tradingAvailable = false;
+		}
+		if (m_roundToSimulate < BaseSeasonGames + finalsRounds && tradingAvailable)
+		{
+			window = _tradingOptions[0].draw(window, (Vector2(5, 5)));
+			window = _tradingOptions[1].draw(window, (Vector2(5, 9)));
+			window = _tradingOptions[2].draw(window, (Vector2(5, 13)));
+			for (int i = 0; i < m_TradingButtons.size(); i++)
+			{
+				window = m_TradingButtons[i].draw_ui(window);
+			}
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(0, 3), "NO TRADING AVAILABLE AT CURRENT POINT", BRIGHTWHITE);
+		}
+	}
+	else if (coachDrawState == CoachingTeamList_STATE)
+	{
+		for (int i = 0; i < m_CoachedTeam.getPlayers().size();i++)
+		{
+			if (i < 10)
+			{
+				window.setTextAtPoint(Vector2(0, i + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName(), BRIGHTWHITE);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(30, (i - 10) + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName(), BRIGHTWHITE);
+			}
+		}
+	}
+	return window;
+}
+
 ConsoleWindow SRLGame::LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawTabs(window);
@@ -2806,6 +3229,15 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		{
 			window.setTextAtPoint(Vector2(52, 4), "Off", BRIGHTWHITE);
 		}
+		window = m_SettingsCoachBtn.draw_ui(window);
+		if (coachingMode)
+		{
+			window.setTextAtPoint(Vector2(52, 6), "On", BRIGHTWHITE);
+		}
+		else
+		{
+			window.setTextAtPoint(Vector2(52, 6), "Off", BRIGHTWHITE);
+		}
 		window = m_SettingsFinalsBtn.draw_ui(window);
 		if (finalsSystemCall)
 		{
@@ -2905,7 +3337,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.12.3.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.13.0.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -3064,7 +3496,14 @@ ConsoleWindow SRLGame::drawTabs(ConsoleWindow window)
 	window = m_SeasonViewBtn.draw_ui(window);
 	window = m_LadderViewBtn.draw_ui(window);
 	window = m_ResultsViewBtn.draw_ui(window);
-	window = m_BettingViewBtn.draw_ui(window);
+	if (coachingMode)
+	{
+		window = m_CoachingViewBtn.draw_ui(window);
+	}
+	else
+	{
+		window = m_BettingViewBtn.draw_ui(window);
+	}
 	window = m_LeaderboardViewBtn.draw_ui(window);
 	window = m_MainMenuViewBtn.draw_ui(window);
 	window = m_NewsViewBtn.draw_ui(window);
@@ -3123,6 +3562,15 @@ ConsoleWindow SRLGame::drawResultTabs(ConsoleWindow window)
 {
 	window = m_GameResultSummaryBtn.draw_ui(window);
 	window = m_GameResultPlayByPlayBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::drawCoachingTabs(ConsoleWindow window)
+{
+	window = m_CoachMainStateBtn.draw_ui(window);
+	window = m_CoachTradeStateBtn.draw_ui(window);
+	window = m_CoachTrainStateBtn.draw_ui(window);
+	window = m_CoachTeamStateBtn.draw_ui(window);
 	return window;
 }
 
@@ -3456,6 +3904,38 @@ ConsoleWindow SRLGame::ConfirmPop_UP(ConsoleWindow window, int windowWidth, int 
 	return window;
 }
 
+ConsoleWindow SRLGame::TradingPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", GREEN_GREEN_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Confirm Trade With " + otherTeamTrade.getName() + "?", BRIGHTWHITE_GREEN_BG);
+	window.setTextAtPoint(Vector2(6, 7), "In: " + otherTeamTrade.getPlayers()[playerOtherTeamTrade].getName(), BRIGHTWHITE_GREEN_BG);
+	window.setTextAtPoint(Vector2(6, 8), "Out: " + m_CoachedTeam.getPlayers()[playerMainTeamTrade].getName(), BRIGHTWHITE_GREEN_BG);
+	window = m_CoachTradeConfirmOKBtn.draw_ui(window);
+	window = m_CoachTradeConfirmCNCLBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::TrainingPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 5; i < windowWidth - 5; i++)
+	{
+		for (int ii = 5; ii < windowHeight - 4; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", GREEN_GREEN_BG);
+		}
+	}
+	window.setTextAtPoint(Vector2(6, 6), "Confirm Training", BRIGHTWHITE_GREEN_BG);
+	window = m_CoachTrainConfirmOKBtn.draw_ui(window);
+	window = m_CoachTrainConfirmCNCLBtn.draw_ui(window);
+	return window;
+}
+
 #pragma endregion
 
 #pragma region Simulate
@@ -3643,7 +4123,7 @@ void SRLGame::SimulateGames()
 	int roundsSimulated = 0;
 	while (Simulate)
 	{
-		int m_ArticlesRemaining = newsArticlesPerRound;
+		int m_ArticlesRemaining = newsArticlesPerRound - m_Season.m_Draw.m_Rounds[m_roundToSimulate].newsStories.size();
 		if (m_round < m_roundToSimulate)
 		{
 			Simulate = false;
@@ -4339,6 +4819,11 @@ void SRLGame::SimulateGames()
 			CalculatePremiershipOdds();
 			UpdateBets();
 			CalculateFeaturedGame();
+			if (coachingMode)
+			{
+				sortOutTrainingOptions();
+				sortOutTradingOptions();
+			}
 		}
 	}
 }
@@ -4557,6 +5042,14 @@ void SRLGame::offContractTrade()
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	if (coachingMode)
+	{
+		//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
+		if (m_Season.m_Ladder.m_Ladder[team1].teamName == teamCoached)
+		{
+			return;
+		}
+	}
 	for (int i = 0; i < MainTeam.getPlayers().size(); i++)
 	{
 		//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
@@ -4625,6 +5118,14 @@ bool SRLGame::offContractTrade(int team1, int player1)
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+	if (coachingMode)
+	{
+		//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
+		if (m_Season.m_Ladder.m_Ladder[team1].teamName == teamCoached)
+		{
+			return false;
+		}
+	}
 	for (int i = 0; i < MainTeam.getPlayers().size(); i++)
 	{
 		//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
@@ -4690,6 +5191,14 @@ void SRLGame::TeamTrade()
 	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team1].teamName + ".json");
 	SRLTeam offContract;
 	offContract.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team2].teamName + ".json");
+	if (coachingMode)
+	{
+		//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
+		if (m_Season.m_Ladder.m_Ladder[team2].teamName == teamCoached || m_Season.m_Ladder.m_Ladder[team1].teamName == teamCoached)
+		{
+			return;
+		}
+	}
 	int player1 = MainTeam.getRandomPlayerInt();
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
@@ -4870,6 +5379,27 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_InDepthTeamView.CalculateAverages();
 }
 
+void SRLGame::setUpSelectedTeamView()
+{
+	SRLTeam a_selectedTeamView;
+	a_selectedTeamView.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_SeasonTeams[teamSelected] + ".json");
+	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(a_selectedTeamView.getJerseryType()) + ".bmp";
+	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
+	m_SelectedTeamJerseyView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	m_SelectedTeamJerseyView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	m_SelectedTeamJerseyView.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	m_SelectedTeamJerseyView.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	m_SelectedTeamJerseyView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, a_selectedTeamView.getPrimary());
+	m_SelectedTeamJerseyView.changeAllInstancesOfColour(BLACK_WHITE_BG, a_selectedTeamView.getSecondary());
+	m_SelectedTeamJerseyView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, a_selectedTeamView.getBadge());
+	a_selectedTeamView.CalculateAverages();
+	teamSelectedRating = a_selectedTeamView.TeamRating();
+	m_CoachedTeam = a_selectedTeamView;
+	teamCoached = m_SeasonTeams[teamSelected];
+}
+
 void SRLGame::setUpPlayer()
 {
 	m_PlayerView = m_InDepthTeamView.getPlayers()[playerClicked];
@@ -5015,295 +5545,61 @@ void SRLGame::sortOutResultsScreen()
 	m_LineResults = 0;
 }
 
-#pragma endregion
-
-#pragma region Ladder
-void SRLLadder::sortLadder()
+void SRLGame::sortOutTrainingOptions()
 {
-	for (int i = 0; i < m_Ladder.size(); i++)
+	_trainingOptions.clear();
+	m_TrainingButtons.clear();
+	for (int i = 0; i < 3; i++)
 	{
-		for (int ii = i + 1; ii < m_Ladder.size(); ii++)
+		int trainingType = rand() % 5;
+		int playerID = rand() % m_CoachedTeam.getPlayers().size();
+		_trainingOptions.push_back(SRLTrainingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID,static_cast<SRLTrainingType>(trainingType)));
+		SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Train", Vector2(47, (i * 4) + 7), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_TradeBtn.SetFunc(DoTrainCallClick);
+		a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(_trainingOptions[i]._price.dollars) + ";" + to_string(_trainingOptions[i]._price.cents) + ';' + to_string(static_cast<int>(_trainingOptions[i].training)));
+		m_TrainingButtons.push_back(a_TradeBtn);
+	}
+}
+
+void SRLGame::sortOutTradingOptions()
+{
+	//TRADE OFF
+	_tradingOptions.clear();
+	m_TradingButtons.clear();
+	for (int i = 0; i < 3; i++)
+	{
+		int team = rand() % 16;
+		if (m_Season.m_Ladder.m_Ladder[team].teamName == teamCoached)
 		{
-			if (m_Ladder[ii].points > m_Ladder[i].points)
-			{
-				SRLLadderPosition temp;
-				temp = m_Ladder[i];
-				m_Ladder[i] = m_Ladder[ii];
-				m_Ladder[ii] = temp;
-				i = 0;
-				ii = i + 1;
-			}
-			else if (m_Ladder[ii].points == m_Ladder[i].points && m_Ladder[ii].pointsDifference > m_Ladder[i].pointsDifference)
-			{
-				SRLLadderPosition temp;
-				temp = m_Ladder[i];
-				m_Ladder[i] = m_Ladder[ii];
-				m_Ladder[ii] = temp;
-				i = 0;
-				ii = i + 1;
-			}
+			SRLTeam offContract;
+			offContract.loadTeamOffContract("EngineFiles\\GameResults\\\OffContract\\Off Contract Players.json");
+			//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
+			int playerID = rand() % m_CoachedTeam.getPlayers().size();
+			int playerID2 = offContract.getRandomPlayerInt();
+			_tradingOptions.push_back(SRLTradingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID, offContract.getPlayers()[playerID2].getName(), playerID2, offContract.getName()));
+			SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Trade", Vector2(47, (i * 4) + 7), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
+			a_TradeBtn.SetFunc(DoTradeCallClick);
+			a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(playerID2) + ";" + offContract.getName());
+			m_TradingButtons.push_back(a_TradeBtn);
+		}
+		else
+		{
+			SRLTeam offContract;
+			offContract.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
+			//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
+			int playerID = rand() % m_CoachedTeam.getPlayers().size();
+			int playerID2 = offContract.getRandomPlayerInt();
+			_tradingOptions.push_back(SRLTradingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID, offContract.getPlayers()[playerID2].getName(), playerID2, offContract.getName()));
+			SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Trade", Vector2(47, (i * 4) + 7), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
+			a_TradeBtn.SetFunc(DoTradeCallClick);
+			a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(playerID2) + ";" + offContract.getName());
+			m_TradingButtons.push_back(a_TradeBtn);
 		}
 	}
-}
-
-void SRLBetPrice::addCents(int c)
-{
-	int currentBalance = (dollars * 100) + cents;
-	currentBalance += c;
-	dollars = currentBalance / 100;
-	cents = currentBalance % 100;
-}
-
-void SRLBetPrice::addBetPrice(SRLBetPrice bet)
-{
-	dollars += bet.dollars;
-	cents += bet.cents;
-	while (cents >= 100)
-	{
-		dollars++;
-		cents -= 100;
-	}
-}
-
-void SRLBetPrice::removeBetPrice(SRLBetPrice bet)
-{
-	dollars -= bet.dollars;
-	cents -= bet.cents;
-	while (cents < 0)
-	{
-		dollars--;
-		cents += 100;
-	}
-}
-
-bool SRLBetPrice::greaterThan(SRLBetPrice bet)
-{
-	if (dollars > bet.dollars)
-	{
-		return true;
-	}
-	else if (dollars == bet.dollars && cents > bet.cents)
-	{
-		return true;
-	}
-	return false;
-}
-
-bool SRLBetPrice::lessThan(SRLBetPrice bet)
-{
-	if (dollars < bet.dollars)
-	{
-		return true;
-	}
-	else if (dollars == bet.dollars && cents < bet.cents)
-	{
-		return true;
-	}
-	return false;
-}
-
-void SRLBetPrice::absolute()
-{
-	if (dollars < 0)
-	{
-		dollars = -dollars;
-	}
-	if (cents < 0)
-	{
-		cents = -cents;
-	}
-}
-
-string SRLBetPrice::ReturnPrice()
-{
-	if (suspended)
-	{
-		return "Suspended";
-	}
-	string priceStr = "$" + to_string(dollars);
-	string centsStr = to_string(cents);
-	if (centsStr.length() == 1)
-	{
-		centsStr = "0" + centsStr;
-	}
-	return priceStr + "." + centsStr;
-}
-
-void SRLLeaderboard::addToShortlist(string playerName, string teamName, int points)
-{
-	for (int i = 0; i < shortlist.size(); i++)
-	{
-		if (shortlist[i].TeamName == teamName && shortlist[i].Player == playerName)
-		{
-			shortlist[i].points += points;
-			return;
-		}
-	}
-	SRLLeaderboardPosition newPosition;
-	newPosition.Player = playerName;
-	newPosition.TeamName = teamName;
-	newPosition.points = points;
-	shortlist.push_back(newPosition);
-}
-
-void SRLLeaderboard::orderShortlist()
-{
-	for (int i = 0; i < shortlist.size(); i++)
-	{
-		for (int ii = i + 1; ii < shortlist.size(); ii++)
-		{
-			if (shortlist[ii].points > shortlist[i].points)
-			{
-				SRLLeaderboardPosition temp;
-				temp = shortlist[i];
-				shortlist[i] = shortlist[ii];
-				shortlist[ii] = temp;
-				i = 0;
-				ii = i + 1;
-			}
-		}
-	}
-}
-
-void SRLLeaderboard::changePlayerTeam(string playerName, string oldTeam, string newTeam)
-{
-	for (int i = 0; i < shortlist.size(); i++)
-	{
-		if (shortlist[i].TeamName == oldTeam && shortlist[i].Player == playerName)
-		{
-			shortlist[i].TeamName = newTeam;
-			return;
-		}
-	}
+	tradingAvailable = true;
 }
 
 #pragma endregion
 
-SRLBetPrice SRLGameBet::ReturnBetWinnings()
-{
-	float betOddsF = betOdds.dollars;
-	float centsTemp = betOdds.cents;
-	betOddsF += (centsTemp / 100);
-	float newDollars = 0;
-	float newCents = betAmount.dollars * 100;
-	newCents += betAmount.cents;
-	newCents *= betOddsF;
-	while (newCents >= 100)
-	{
-		newDollars++;
-		newCents -= 100;
-	}
-	betAmount.dollars = newDollars;
-	betAmount.cents = newCents;
-	return betAmount;
-}
+#pragma region Ladder
 
-FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds)
-{	
-	gameNumber = gameNo;
-	fg_homeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + home + ".json");
-
-	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_homeTeam.getJerseryType()) + ".bmp";
-	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
-	fg_homeTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
-	fg_homeTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
-	fg_homeTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
-	fg_homeTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
-
-	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_homeTeam.getPrimary());
-	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_homeTeam.getSecondary());
-	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_homeTeam.getBadge());
-
-	fg_awayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + away + ".json");
-
-	JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_awayTeam.getJerseryType()) + ".bmp";
-	wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
-	fg_awayTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
-	fg_awayTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
-	fg_awayTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
-	fg_awayTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
-
-	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_awayTeam.getPrimary());
-	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_awayTeam.getSecondary());
-	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_awayTeam.getBadge());
-
-	featuredGameAvail = true;
-
-	fg_homeOdds = homeOdds;
-	fg_awayOdds = awayOdds;
-
-	homeTeamKeyPlayers.clear();
-	fg_homeTeam.addBestPlayers(homeTeamKeyPlayers, 5);
-	awayTeamKeyPlayers.clear();
-	fg_awayTeam.addBestPlayers(awayTeamKeyPlayers, 5);
-
-}
-
-GameSummaryText::GameSummaryText(string t, string p, string player, string s)
-{
-	Time = t; Play = p; Player = player; ScoreText = s;
-	if (Play == "TRY" || Play == "GOAL" || Play == "FIELD GOAL" || Play == "PENALTY GOAL")
-	{
-		summaryTextType = GSTType_Points;
-	}
-	else if (Play == "SEND OFF" || Play == "SIN BIN")
-	{
-		summaryTextType = GSTType_Sent;
-	}
-	else if (Play == "INJURY" || Play == "INTERCHANGE")
-	{
-		summaryTextType = GSTType_Interchange_Injury;
-	}
-	else if (Play == "KNOCK ON" || Play == "FORWARD PASS" || Play == "RUCK INFRINGEMENT")
-	{
-		summaryTextType = GSTType_Error;
-	}
-	else if (Play == "PENALTY")
-	{
-		summaryTextType = GSTType_Penalty;
-	}
-}
-
-ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
-{
-	ColourClass colourToUse = BLACK_BRIGHTWHITE_BG;
-	switch (summaryTextType)
-	{
-		case GSTType_Points:
-			colourToUse = BRIGHTWHITE_GREEN_BG;
-			break;
-		case GSTType_Error:
-			colourToUse = BLACK_BRIGHTWHITE_BG;
-			break;
-		case GSTType_Penalty:
-			colourToUse = BRIGHTWHITE_BRIGHTRED_BG;
-			break;
-		case GSTType_Interchange_Injury:
-			colourToUse = RED_BRIGHTWHITE_BG;
-			break;
-		case GSTType_Sent:
-			colourToUse = BRIGHTWHITE_RED_BG;
-			break;
-	}
-	for (int i = point.getX(); i < point.getX() + 50; i++)
-	{
-		for (int ii = point.getY(); ii < point.getY() + 4; ii++)
-		{
-			window.setTextAtPoint(Vector2(i, ii), " ", colourToUse);
-		}
-	}
-	if (Time != "!")
-	{
-		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY()), Time, colourToUse);
-	}
-	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 1), Play, colourToUse);
-	if (Player != "!")
-	{
-		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 2), Player, colourToUse);
-	}
-	if (ScoreText != "!")
-	{
-		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 3), ScoreText, colourToUse);
-	}
-	return window;
-}

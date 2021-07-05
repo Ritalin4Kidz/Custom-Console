@@ -23,17 +23,22 @@ public:
 	void setName(string name) { m_PlayerName = name; }
 	void setOrigin(string country) { m_CountryOfOrigin = country; }
 	int getSpeed() { return m_BaseSpeed; }
+	void addSpeed(int spd) { m_BaseSpeed += spd; if (m_BaseSpeed > 99) { m_BaseSpeed = 99; } }
 
 	int getAttack() { return m_BaseAttack; }
+	void addAttack(int atk);
 
 	int getDefence() { return m_BaseDefence; }
+	void addDefence(int def) { m_BaseDefence += def; if (m_BaseDefence > 99) { m_BaseDefence = 99; } }
+
 
 	int getKicking() { return m_BaseKicking; }
+	void addKicking(int def) { m_BaseKicking += def; if (m_BaseKicking > 99) { m_BaseKicking = 99; } }
 
 	int getRating() { int rating = m_BaseAttack + m_BaseDefence + m_BaseSpeed + m_BaseKicking + m_BaseHandling; return rating / 5; }
 
 	int getHandling() { return m_BaseHandling; }
-
+	void addHandling(int def) { m_BaseHandling += def; if (m_BaseHandling > 99) { m_BaseHandling = 99; } }
 	float getStamina() { return m_Stamina / 100; }
 	void addStamina(int stamina) { m_Stamina += stamina; }
 

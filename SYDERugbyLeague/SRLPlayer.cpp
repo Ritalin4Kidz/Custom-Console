@@ -37,6 +37,15 @@ SRLPlayer::~SRLPlayer()
 {
 }
 
+void SRLPlayer::addAttack(int atk)
+{
+	m_BaseAttack += atk; 
+	if (m_BaseAttack > 99) 
+	{
+		m_BaseAttack = 99; 
+	}
+}
+
 void SRLPlayer::loadPlayer(string path)
 {
 	std::ifstream ifs{ path };
@@ -62,9 +71,9 @@ void SRLPlayer::savePlayer()
 	//PlayerStats
 	save_file["name"] = m_PlayerName;
 	save_file["origin"] = m_CountryOfOrigin;
-	save_file["spd"] = m_BaseAttack;
+	save_file["atk"] = m_BaseAttack;
 	save_file["def"] = m_BaseDefence;
-	save_file["atk"] = m_BaseSpeed;
+	save_file["spd"] = m_BaseSpeed;
 	save_file["kick"] = m_BaseKicking;
 	save_file["goalkick"] = m_GoalKicking;
 	save_file["hand"] = m_BaseHandling;

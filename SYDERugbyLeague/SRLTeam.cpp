@@ -335,6 +335,66 @@ void SRLTeam::addPlayerStamina(string playerName, int Stamina)
 	}
 }
 
+void SRLTeam::addPlayerAtk(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addAttack(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerDef(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addDefence(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerSpd(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addSpeed(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerHdl(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addHandling(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerKck(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addKicking(val);
+			return;
+		}
+	}
+}
+
 void SRLTeam::setPlayerInjured(string playerName)
 {
 	for (int i = 0; i < m_TeamList.size(); i++)

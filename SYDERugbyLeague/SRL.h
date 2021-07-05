@@ -11,6 +11,7 @@
 #include "SRLSoundtrack.h"
 #include "Vector2.h"
 #include "SRLGame.h"
+#include "SRLStructs.h"
 #include <iostream>
 #include <fstream>
 #include <iterator>
@@ -29,11 +30,21 @@ enum GameStateSYDE
 	LadderViewState,
 	ResultsViewState,
 	BettingViewState,
+	SelectTeamCoachingState,
+	CoachingViewState,
 	LeaderboardViewState,
 	SettingsState,
 	InformationState,
 	NewsViewState,
 	TeamInDepthViewState,
+};
+
+enum CoachingViewDrawState
+{
+	CoachingMain_STATE,
+	CoachingTeamList_STATE,
+	CoachingTrades_STATE,
+	CoachingTraining_STATE
 };
 
 enum SeasonDrawViewState
@@ -111,13 +122,6 @@ enum SRLSeasonLength
 	Length_EnduranceSeason = 100
 };
 
-enum SRLBetTag
-{
-	Bet_Lost,
-	Bet_Won,
-	Bet_InProgress
-};
-
 enum SRLPriorBets_State
 {
 	IndividualGameBets_State,
@@ -126,224 +130,6 @@ enum SRLPriorBets_State
 };
 
 #pragma endregion
-
-enum FinalsSeriesType
-{
-	Top8Normal,
-	Top4Normal,
-	Top2Normal,
-	Top8Knockout,
-	Top4Knockout,
-	Top8DoubleElim,
-	KnockoutTournament,
-	KnockoutTournamentDouble,
-};
-
-struct FinalsSeries
-{
-	FinalsSeries() {}
-	FinalsSeries(string str, FinalsSeriesType type, int r, int no) { FinalsStr = str; fsType = type; rounds = r; noTeams = no; }
-	string FinalsStr;
-	FinalsSeriesType fsType;
-	int rounds;
-	int noTeams;
-};
-
-struct SRLBetPrice
-{
-	SRLBetPrice() {}
-	SRLBetPrice(int d, int c) { dollars = d; cents = c; }
-	int dollars;
-	int cents;
-
-	bool suspended = false;
-
-	void addCents(int c);
-	void addBetPrice(SRLBetPrice bet);
-
-	void removeBetPrice(SRLBetPrice bet);
-	bool equal(SRLBetPrice bet) { return dollars == bet.dollars && cents == bet.cents; }
-	bool greaterThan(SRLBetPrice bet);
-	bool lessThan(SRLBetPrice bet);
-
-	void absolute();
-
-	int getAsCents() { return (dollars * 100) + cents; }
-
-	string ReturnPrice();
-};
-
-struct SRLLadderPosition
-{
-	string teamName = "";
-	int played = 0;
-	int won = 0;
-	int lost = 0;
-	int points = 0;
-	int pointsFor = 0;
-	int pointsAgainst = 0;
-	int pointsDifference = 0;
-	SRLBetPrice premiershipOdds = SRLBetPrice(5, 0);
-};
-
-enum SRLBetType
-{
-	BetType_Game,
-	BetType_Premiership,
-	BetType_Try,
-};
-
-struct SRLGameBet
-{
-	SRLGameBet() {}
-	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; originalBetAmount = betAmount; }
-	SRLGameBet(string teamName, SRLBetPrice odds, SRLBetPrice amountBet, SRLBetType bet) { m_teamName = teamName; betOdds = odds; betAmount = amountBet; _BetType = bet; originalBetAmount = betAmount;}
-	SRLBetPrice betOdds;
-	SRLBetPrice betAmount;
-	SRLBetPrice originalBetAmount;
-	SRLBetType _BetType = BetType_Game;
-	SRLBetPrice ReturnBetWinnings();
-	SRLBetTag betState = Bet_InProgress;
-	string m_teamName;
-};
-
-struct SRLLadder
-{
-	SRLLadder() {}
-	SRLLadder(vector<SRLLadderPosition> ladder) { m_Ladder = ladder; }
-	void sortLadder();
-	vector<SRLLadderPosition> m_Ladder;
-};
-
-struct SRLGameMatchup
-{
-	SRLGameMatchup(string homeTeam, string awayTeam) { HomeTeam = homeTeam; AwayTeam = awayTeam; }
-	SRLBetPrice homeTeamOdds = SRLBetPrice(1,90);
-	SRLBetPrice awayTeamOdds = SRLBetPrice(1,90);
-	string HomeTeam;
-	string AwayTeam;
-	vector<string> ResultPlayByPlay;
-	vector<string> SummaryPlayByPlay;
-
-	vector<SRLBetPrice> homeTeamTryOdds = vector<SRLBetPrice>();
-	vector<SRLBetPrice> awayTeamTryOdds = vector<SRLBetPrice>();
-
-	int homeTeamScore = 0;
-	int awayTeamScore = 0;
-
-	bool tiedGame = false;
-
-	string WinningTeam;
-	string LosingTeam;
-};
-
-struct SRLGameBetsWriting
-{
-	string name;
-	ColourClass colour;
-};
-
-struct FeaturedGame
-{
-	FeaturedGame() {}
-	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds);
-	bool featuredGameAvail = false;
-	int fg_homeTeamScore = 0;
-	int fg_awayTeamScore = 0;
-	int gameNumber = 0;
-	SRLTeam fg_homeTeam;
-	CustomAsset fg_homeTeamJersey;
-	SRLTeam fg_awayTeam;
-	CustomAsset fg_awayTeamJersey;
-
-	SRLBetPrice fg_homeOdds;
-	SRLBetPrice fg_awayOdds;
-
-	vector<string> homeTeamKeyPlayers;
-	vector<string> awayTeamKeyPlayers;
-
-	vector<string> MatchHistory = vector<string>({"No Match History To Show"});
-};
-
-struct SRLRound
-{
-	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
-	vector<SRLGameMatchup> m_Games;
-	vector<SRLGameBet> m_Bets;
-	vector<SRLGameBet> m_TryScorerBets;
-	vector<SRLNewsArticle> newsStories;
-	FeaturedGame gameToFeature;
-};
-
-struct SRLDraw
-{
-	SRLDraw() {}
-	SRLDraw(vector<SRLRound> rounds) { m_Rounds = rounds; }
-	vector<SRLRound> m_Rounds;
-};
-
-struct SRLLeaderboardPosition
-{
-	string Player;
-	string TeamName;
-	int points;
-};
-
-struct SRLLeaderboard
-{
-	void addToShortlist(string playerName, string teamName, int points);
-	vector<SRLLeaderboardPosition> shortlist;
-	void orderShortlist();
-
-	void changePlayerTeam(string playerName, string oldTeam, string newTeam);
-};
-
-struct SRLSeason
-{
-	SRLSeason() {}
-	SRLSeason(SRLDraw draw, SRLLadder ladder) { m_Draw = draw; m_Ladder = ladder; }
-	SRLDraw m_Draw;
-	vector<SRLGameBet> m_PremiershipBets;
-	SRLLadder m_Ladder;
-	SRLLeaderboard m_TopPlayers;
-	SRLLeaderboard m_TopTries;
-	SRLLeaderboard m_TopGoals;
-	SRLLeaderboard m_TopPoints;
-	SRLLeaderboard m_TopMetres;
-	SRLLeaderboard m_TopFieldGoals;
-	SRLLeaderboard m_TopTackles;
-	SRLLeaderboard m_Top4020;
-	SRLLeaderboard m_TopKickMetres;
-	SRLLeaderboard m_TopSteals;
-	SRLLeaderboard m_TopErrors;
-	SRLLeaderboard m_TopPenalty;
-	SRLLeaderboard m_TopRuckErrors;
-	SRLLeaderboard m_TopNoTries;
-
-	SRLLeaderboard m_TopSinBin;
-	SRLLeaderboard m_TopSendOff;
-	SRLLeaderboard m_TopInjuries;
-};
-
-enum GameSummaryTextType
-{
-	GSTType_Error = 0,
-	GSTType_Points = 1,
-	GSTType_Penalty = 2,
-	GSTType_Sent = 3,
-	GSTType_Interchange_Injury = 4,
-};
-
-struct GameSummaryText
-{
-	GameSummaryText(string t, string p, string player, string s);
-	ConsoleWindow draw(ConsoleWindow window, Vector2 point);
-	string Time;
-	string Play;
-	string Player;
-	string ScoreText;
-	GameSummaryTextType summaryTextType;
-};
 
 class SRLGame : public SYDEWindowGame {
 public:
@@ -368,6 +154,8 @@ public:
 	ConsoleWindow season_mode(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow LadderView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow BettingView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow SelectTeamCoachingView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow CoachingView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 
@@ -397,6 +185,7 @@ public:
 	ConsoleWindow drawLeaderboardTabs(ConsoleWindow window);
 	ConsoleWindow drawMainMenuTabs(ConsoleWindow window);
 	ConsoleWindow drawResultTabs(ConsoleWindow window);
+	ConsoleWindow drawCoachingTabs(ConsoleWindow window);
 
 	ConsoleWindow drawSeasonModeTabs(ConsoleWindow window);
 
@@ -410,6 +199,8 @@ public:
 	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ConfirmPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow TradingPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow TrainingPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	void CalculateOdds();
 	void CalculatePremiershipOdds();
 	void CalculateTryScorerOdds();
@@ -429,6 +220,7 @@ public:
 	void UpdateBets();
 
 	void setUpTeamInDepthView(int teamViewing);
+	void setUpSelectedTeamView();
 
 	void setUpPlayer();
 
@@ -452,6 +244,7 @@ public:
 	static SRLPriorBets_State priorBetsState;
 	static ArticleViewingState articleState;
 	static SeasonDrawViewState drawViewState;
+	static CoachingViewDrawState coachDrawState;
 
 	static SRLSeasonLength seasonLength;
 
@@ -517,6 +310,8 @@ public:
 
 	static int priorBetNumberLine;
 	void sortOutResultsScreen();
+	void sortOutTrainingOptions();
+	void sortOutTradingOptions();
 
 	static vector<string> AchievementStrings;
 
@@ -524,6 +319,20 @@ public:
 	static bool playerCall;
 	static bool finalsSystemCall;
 
+#pragma region coaching mode
+	static bool coachingMode;
+	static bool selectedTeamCall;
+	static bool performTradeCall;
+	static bool performTradeConfirmedCall;
+
+	static bool performTrainCall;
+	static bool performTrainConfirmedCall;
+
+	static int playerMainTeamTrade;
+	static int playerOtherTeamTrade;
+	static SRLTeam otherTeamTrade;
+	static SRLTrainingType trainType;
+#pragma endregion
 private:
 	const int customTeamGenerateChance = 9999;
 
@@ -553,6 +362,8 @@ private:
 	SYDEClickableButton m_LadderViewBtn;
 	//View Betting
 	SYDEClickableButton m_BettingViewBtn;
+	//VIEW COACHING
+	SYDEClickableButton m_CoachingViewBtn;
 	//View In Depth Results
 	SYDEClickableButton m_ResultsViewBtn;
 	//View Season Leader
@@ -630,6 +441,7 @@ private:
 	SYDEClickableButton m_SettingsInjuryBtn;
 	SYDEClickableButton m_SettingsSinBinBtn;
 	SYDEClickableButton m_SettingsEventsBtn;
+	SYDEClickableButton m_SettingsCoachBtn;
 	SYDEClickableButton m_SettingsFinalsBtn;
 
 
@@ -752,4 +564,29 @@ private:
 	vector<SYDEClickableButton> m_PlayerButtons;
 	SRLPlayer m_PlayerView;
 	CustomAsset m_PlayerAsset;
+
+#pragma region COACHING
+	SRLTeam m_CoachedTeam;
+	string teamCoached = "";
+	int teamSelected = 0;
+	CustomAsset m_SelectedTeamJerseyView;
+	int teamSelectedRating = 0;
+	SYDEClickableButton m_SelectTeamBtn;
+	SYDEClickableButton m_CoachMainStateBtn;
+	SYDEClickableButton m_CoachTradeStateBtn;
+	SYDEClickableButton m_CoachTrainStateBtn;
+	SYDEClickableButton m_CoachTeamStateBtn;
+
+	SYDEClickableButton m_CoachTradeConfirmOKBtn;
+	SYDEClickableButton m_CoachTradeConfirmCNCLBtn;
+
+	SYDEClickableButton m_CoachTrainConfirmOKBtn;
+	SYDEClickableButton m_CoachTrainConfirmCNCLBtn;
+
+	vector<SRLTrainingOption> _trainingOptions;
+	vector<SRLTradingOption> _tradingOptions;
+	vector<SYDEClickableButton> m_TradingButtons;
+	vector<SYDEClickableButton> m_TrainingButtons;
+	bool tradingAvailable = false;
+#pragma endregion
 };

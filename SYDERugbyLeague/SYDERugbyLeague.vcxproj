@@ -153,6 +153,7 @@
     <ClCompile Include="SRLPlayer.cpp" />
     <ClCompile Include="SRLSoundtrack.cpp" />
     <ClCompile Include="SRLSteamAchievements.cpp" />
+    <ClCompile Include="SRLStructs.cpp" />
     <ClCompile Include="SRLTeam.cpp" />
     <ClCompile Include="SYDERugbyLeague.cpp" />
   </ItemGroup>
@@ -167,6 +168,7 @@
     <ClInclude Include="SRLPlayer.h" />
     <ClInclude Include="SRLSoundtrack.h" />
     <ClInclude Include="SRLSteamAchievements.h" />
+    <ClInclude Include="SRLStructs.h" />
     <ClInclude Include="SRLTeam.h" />
   </ItemGroup>
   <ItemGroup>

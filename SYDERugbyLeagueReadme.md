@@ -29,6 +29,9 @@ Labcat - -
 
 ## Release Notes
 
+###  0.13.0.0 beta 5-07-2021
+- COACHING MODE UPDATE!
+
 ###  0.12.3.0 beta 5-07-2021
 - Fixed bug where soundtrack would not continue after the first song was played
 

@@ -333,7 +333,7 @@ ConsoleWindow SRLTradingOption::draw(ConsoleWindow window, Vector2 point)
 		}
 	}
 	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY()), OtherTeam, BLACK_BRIGHTYELLOW_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 1), player1, RED_BRIGHTYELLOW_BG);
-	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 2), player2, GREEN_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 1), player1 + " A:" + to_string(player1_atk) + " D:" + to_string(player1_def) + " S:" + to_string(player1_spd) + " H:" + to_string(player1_hand) + " K:" + to_string(player1_kick), RED_BRIGHTYELLOW_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 2), player2 + " A:" + to_string(player2_atk) + " D:" + to_string(player2_def) + " S:" + to_string(player2_spd) + " H:" + to_string(player2_hand) + " K:" + to_string(player2_kick), GREEN_BRIGHTYELLOW_BG);
 	return window;
 }

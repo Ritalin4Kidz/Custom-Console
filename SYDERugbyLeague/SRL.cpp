@@ -2529,6 +2529,18 @@ ConsoleWindow SRLGame::SelectTeamCoachingView(ConsoleWindow window, int windowWi
 		sortOutTradingOptions();
 		newState = SeasonModeState;
 		m_BetMoney = SRLBetPrice(2500, 0);
+		int featureGameNumber = 0;
+		if (coachingMode)
+		{
+			for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
+			{
+				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam == teamCoached || m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam == teamCoached)
+				{
+					featureGameNumber = i;
+				}
+			}
+		}
+		m_Season.m_Draw.m_Rounds[0].gameToFeature = FeaturedGame(m_Season.m_Draw.m_Rounds[0].m_Games[featureGameNumber].HomeTeam, m_Season.m_Draw.m_Rounds[0].m_Games[featureGameNumber].AwayTeam, astVars, featureGameNumber, m_Season.m_Draw.m_Rounds[0].m_Games[featureGameNumber].homeTeamOdds, m_Season.m_Draw.m_Rounds[0].m_Games[featureGameNumber].awayTeamOdds);
 		return window;
 	}
 	window.setTextAtPoint(Vector2(0, 2), teamCoached, BRIGHTWHITE);
@@ -4831,7 +4843,38 @@ void SRLGame::SimulateGames()
 void SRLGame::CalculateFeaturedGame()
 {
 	int featureGameNumber = 0;
-	if (finals)
+	if (coachingMode)
+	{
+		bool foundGame = false;
+		for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
+		{
+			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam == teamCoached || m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam == teamCoached)
+			{
+				featureGameNumber = i;
+				foundGame = true;
+			}
+		}
+		if (!foundGame)
+		{
+			int difference = 10000;
+			for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
+			{
+				int price1 = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds.getAsCents();
+
+				price1 -= m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds.getAsCents();
+				if (price1 < 0)
+				{
+					price1 = -price1;
+				}
+				if (price1 < difference)
+				{
+					difference = price1;
+					featureGameNumber = i;
+				}
+			}
+		}
+	}
+	else if (finals)
 	{
 		int difference = 10000;
 		for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
@@ -5576,8 +5619,19 @@ void SRLGame::sortOutTradingOptions()
 			//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
 			int playerID = rand() % m_CoachedTeam.getPlayers().size();
 			int playerID2 = offContract.getRandomPlayerInt();
-			_tradingOptions.push_back(SRLTradingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID, offContract.getPlayers()[playerID2].getName(), playerID2, offContract.getName()));
-			SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Trade", Vector2(47, (i * 4) + 7), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
+			SRLTradingOption option = SRLTradingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID, offContract.getPlayers()[playerID2].getName(), playerID2, offContract.getName());
+			option.player1_atk = m_CoachedTeam.getPlayers()[playerID].getAttack();
+			option.player1_def = m_CoachedTeam.getPlayers()[playerID].getDefence();
+			option.player1_spd = m_CoachedTeam.getPlayers()[playerID].getSpeed();
+			option.player1_hand = m_CoachedTeam.getPlayers()[playerID].getHandling();
+			option.player1_kick = m_CoachedTeam.getPlayers()[playerID].getKicking();
+			option.player2_atk = offContract.getPlayers()[playerID2].getAttack();
+			option.player2_def = offContract.getPlayers()[playerID2].getDefence();
+			option.player2_spd = offContract.getPlayers()[playerID2].getSpeed();
+			option.player2_hand = offContract.getPlayers()[playerID2].getHandling();
+			option.player2_kick = offContract.getPlayers()[playerID2].getKicking();
+			_tradingOptions.push_back(option);
+			SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Trade", Vector2(47, (i * 4) + 5), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
 			a_TradeBtn.SetFunc(DoTradeCallClick);
 			a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(playerID2) + ";" + offContract.getName());
 			m_TradingButtons.push_back(a_TradeBtn);
@@ -5589,8 +5643,19 @@ void SRLGame::sortOutTradingOptions()
 			//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
 			int playerID = rand() % m_CoachedTeam.getPlayers().size();
 			int playerID2 = offContract.getRandomPlayerInt();
-			_tradingOptions.push_back(SRLTradingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID, offContract.getPlayers()[playerID2].getName(), playerID2, offContract.getName()));
-			SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Trade", Vector2(47, (i * 4) + 7), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
+			SRLTradingOption option = SRLTradingOption(m_CoachedTeam.getPlayers()[playerID].getName(), playerID, offContract.getPlayers()[playerID2].getName(), playerID2, offContract.getName());
+			option.player1_atk = m_CoachedTeam.getPlayers()[playerID].getAttack();
+			option.player1_def = m_CoachedTeam.getPlayers()[playerID].getDefence();
+			option.player1_spd = m_CoachedTeam.getPlayers()[playerID].getSpeed();
+			option.player1_hand = m_CoachedTeam.getPlayers()[playerID].getHandling();
+			option.player1_kick = m_CoachedTeam.getPlayers()[playerID].getKicking();
+			option.player2_atk = offContract.getPlayers()[playerID2].getAttack();
+			option.player2_def = offContract.getPlayers()[playerID2].getDefence();
+			option.player2_spd = offContract.getPlayers()[playerID2].getSpeed();
+			option.player2_hand = offContract.getPlayers()[playerID2].getHandling();
+			option.player2_kick = offContract.getPlayers()[playerID2].getKicking();
+			_tradingOptions.push_back(option);
+			SYDEClickableButton a_TradeBtn = SYDEClickableButton("Do Trade", Vector2(47, (i * 4) + 5), Vector2(8, 1), BLACK_BRIGHTWHITE_BG, false);
 			a_TradeBtn.SetFunc(DoTradeCallClick);
 			a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(playerID2) + ";" + offContract.getName());
 			m_TradingButtons.push_back(a_TradeBtn);

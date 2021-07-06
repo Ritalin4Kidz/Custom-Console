@@ -337,3 +337,25 @@ ConsoleWindow SRLTradingOption::draw(ConsoleWindow window, Vector2 point)
 	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 2), player2 + " A:" + to_string(player2_atk) + " D:" + to_string(player2_def) + " S:" + to_string(player2_spd) + " H:" + to_string(player2_hand) + " K:" + to_string(player2_kick), GREEN_BRIGHTYELLOW_BG);
 	return window;
 }
+
+void SRLSeason::clear()
+{
+	m_Draw = SRLDraw(); m_PremiershipBets.clear(); m_Ladder = SRLLadder();
+	m_TopPlayers.clear();
+	m_TopTries.clear();
+	m_TopGoals.clear();
+	m_TopPoints.clear();
+	m_TopMetres.clear();
+	m_TopFieldGoals.clear();
+	m_TopTackles.clear();
+	m_Top4020.clear();
+	m_TopKickMetres.clear();
+	m_TopSteals.clear();
+	m_TopErrors.clear();
+	m_TopPenalty.clear();
+	m_TopRuckErrors.clear();
+	m_TopNoTries.clear();
+	m_TopSinBin.clear();
+	m_TopSendOff.clear();
+	m_TopInjuries.clear();
+}

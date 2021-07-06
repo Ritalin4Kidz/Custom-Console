@@ -1,0 +1,199 @@
+----------LINE-UPS----------
+Home Team: Dubbo Rose Gardens
+1: Mike Harnett
+2: Samantha Humphrey
+3: Mike Tan
+4: Luna Barter
+5: Oliver Sunnerson
+6: Asher Reio
+7: Jr. Tamber
+8: Catherine Taki
+9: Xavier Feltch
+10: Phillip Spice
+11: Sully Port
+12: Kate Crane
+13: Trixie Allen
+14: Janerio Soa
+15: Aaron Manfredi
+16: John Mitchell
+17: Arnold Jackston
+Away Team: Saltio City Berries
+1: Cooper Manfredi
+2: Jameson Fallon
+3: George Davis
+4: Brett Oak
+5: Luke Mariner
+6: Frank MacDonald
+7: Lorenzo Crane
+8: Lindsey Lynn
+9: Alexis Resfa
+10: Lindsay Fox
+11: Imm Holland
+12: Samuel Reynolds
+13: Lizzy Reio
+14: Adrien Pimmers
+15: Ash Kimley
+16: Will de Flatio
+17: Kev Rice
+----------GAME-STAT---------
+Weather: Cloudy
+----------------------------
+00:00 - KICK OFF - Dubbo Rose Gardens: 0 v Saltio City Berries: 0
+01:18 - Sully Port - 6th Tackle Changeover
+02:03 - Jr. Tamber - Intercepted Off A Luke Mariner Pass
+02:18 - Sully Port - TRY - Dubbo Rose Gardens: 4 v Saltio City Berries: 0
+03:18 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 6 v Saltio City Berries: 0
+06:54 - Phillip Spice - Knock On
+07:50 - Lindsay Fox - Knock On
+08:17 - Samantha Humphrey - TRY - Dubbo Rose Gardens: 10 v Saltio City Berries: 0
+09:17 - Jr. Tamber - CONVERSION MISSED
+11:13 - Phillip Spice - Forward Pass
+11:29 - Xavier Feltch - Intercepted Off A Cooper Manfredi Pass
+12:23 - Samantha Humphrey - TRY - Dubbo Rose Gardens: 14 v Saltio City Berries: 0
+13:23 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 16 v Saltio City Berries: 0
+14:39 - Phillip Spice - Forward Pass
+15:10 - Lindsey Lynn - TRY - Dubbo Rose Gardens: 16 v Saltio City Berries: 4
+16:10 - Lizzy Reio - GOAL - Dubbo Rose Gardens: 16 v Saltio City Berries: 6
+17:25 - Kate Crane - Intercepted Off A Frank MacDonald Pass
+17:25 - Kate Crane - TRY - Dubbo Rose Gardens: 20 v Saltio City Berries: 6
+18:25 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 22 v Saltio City Berries: 6
+20:44 - Saltio City Berries Interchanged Players Imm Holland & Adrien Pimmers
+21:20 - Dubbo Rose Gardens Interchanged Players Sully Port & Aaron Manfredi
+22:43 - ------VIDEO REFEREE------
+22:43 - Xavier Feltch - TRY - Dubbo Rose Gardens: 26 v Saltio City Berries: 6
+23:43 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 28 v Saltio City Berries: 6
+25:41 - Jameson Fallon - Ruck Infringement
+26:09 - Oliver Sunnerson - TRY - Dubbo Rose Gardens: 32 v Saltio City Berries: 6
+27:09 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 34 v Saltio City Berries: 6
+30:56 - Luke Mariner - 6th Tackle Changeover
+31:41 - Luna Barter - Over The Sideline
+31:41 - Dubbo Rose Gardens Interchanged Players Oliver Sunnerson & John Mitchell
+32:09 - Samantha Humphrey - Stripped Ball Off Alexis Resfa
+32:44 - Samantha Humphrey - TRY - Dubbo Rose Gardens: 38 v Saltio City Berries: 6
+33:44 - Jr. Tamber - CONVERSION MISSED
+36:11 - Asher Reio - 6th Tackle Changeover
+39:23 - Jameson Fallon - Knock On
+40:00 - HALF TIME - Dubbo Rose Gardens: 38 v Saltio City Berries: 6
+40:18 - Lindsey Lynn - Over The Sideline
+40:31 - Samantha Humphrey - TRY - Dubbo Rose Gardens: 42 v Saltio City Berries: 6
+41:31 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 44 v Saltio City Berries: 6
+45:03 - Dubbo Rose Gardens Interchanged Players John Mitchell & Oliver Sunnerson
+45:03 - Saltio City Berries Interchanged Players Frank MacDonald & Imm Holland
+45:17 - Lorenzo Crane - 6th Tackle Changeover
+46:04 - Saltio City Berries Interchanged Players Lorenzo Crane & Frank MacDonald
+46:36 - Oliver Sunnerson - 6th Tackle Changeover
+47:14 - Catherine Taki - Intercepted Off A Adrien Pimmers Pass
+47:14 - Catherine Taki - TRY - Dubbo Rose Gardens: 48 v Saltio City Berries: 6
+48:14 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 50 v Saltio City Berries: 6
+50:00 - Dubbo Rose Gardens Interchanged Players Catherine Taki & Arnold Jackston
+50:41 - Oliver Sunnerson - 6th Tackle Changeover
+50:41 - Saltio City Berries Interchanged Players Alexis Resfa & Kev Rice
+50:55 - Brett Oak - Knock On
+51:24 - Saltio City Berries Interchanged Players George Davis & Will de Flatio
+51:52 - Mike Tan - TRY - Dubbo Rose Gardens: 54 v Saltio City Berries: 6
+52:52 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 56 v Saltio City Berries: 6
+55:00 - Dubbo Rose Gardens Interchanged Players Mike Tan & John Mitchell
+55:00 - Saltio City Berries Interchanged Players Lindsay Fox & George Davis
+56:22 - Dubbo Rose Gardens Interchanged Players Jr. Tamber & Janerio Soa
+56:22 - Saltio City Berries Interchanged Players Jameson Fallon & Lorenzo Crane
+57:24 - Samantha Humphrey - 6th Tackle Changeover
+58:23 - John Mitchell - Penalty
+59:41 - Will de Flatio - 6th Tackle Changeover
+60:21 - Dubbo Rose Gardens Interchanged Players Janerio Soa & Catherine Taki
+61:04 - Mike Harnett - Knock On
+61:04 - Dubbo Rose Gardens Interchanged Players Luna Barter & Janerio Soa
+61:17 - Oliver Sunnerson - Penalty
+62:31 - Trixie Allen - Stripped Ball Off Lizzy Reio
+63:34 - Phillip Spice - TRY - Dubbo Rose Gardens: 60 v Saltio City Berries: 6
+64:34 - Trixie Allen - GOAL - Dubbo Rose Gardens: 62 v Saltio City Berries: 6
+66:00 - Saltio City Berries Interchanged Players Luke Mariner & Lindsay Fox
+67:01 - Kate Crane - 6th Tackle Changeover
+68:39 - Samantha Humphrey - Knock On
+70:00 - John Mitchell - Intercepted Off A Samuel Reynolds Pass
+71:12 - Oliver Sunnerson - 6th Tackle Changeover
+71:29 - Oliver Sunnerson - Stripped Ball Off Samuel Reynolds
+71:56 - Catherine Taki - TRY - Dubbo Rose Gardens: 66 v Saltio City Berries: 6
+72:56 - Trixie Allen - CONVERSION MISSED
+74:10 - Arnold Jackston - Over The Sideline
+74:38 - Trixie Allen - Intercepted Off A Frank MacDonald Pass
+75:36 - Trixie Allen - FIELD GOAL - Dubbo Rose Gardens: 67 v Saltio City Berries: 6
+77:20 - Trixie Allen - Intercepted Off A Lizzy Reio Pass
+77:53 - Kate Crane - TRY - Dubbo Rose Gardens: 71 v Saltio City Berries: 6
+78:53 - Trixie Allen - GOAL - Dubbo Rose Gardens: 73 v Saltio City Berries: 6
+80:00 - FULL TIME - Dubbo Rose Gardens: 73 v Saltio City Berries: 6
+                             
+--------PLAYER STATS--------
+Home Team: Dubbo Rose Gardens
+1: Mike Harnett |Time Played: 80:04 |Metres: 106 |Tackles: 5 |Kicks: 1 |Kick Metres: 19 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+2: Samantha Humphrey |Time Played: 80:04 |Metres: 302 |Tackles: 4 |Kicks: 1 |Kick Metres: 58 |40/20: 0 |Errors: 1 |Tries: 4 |Goals: 0 |Field Goals: 0 |Total Points: 16 |Fantasy Points: 88
+3: John Mitchell |Time Played: 38:26 |Metres: 27 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+4: Janerio Soa |Time Played: 22:59 |Metres: 13 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+5: Oliver Sunnerson |Time Played: 66:42 |Metres: 134 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 38
+6: Asher Reio |Time Played: 80:04 |Metres: 107 |Tackles: 4 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 55
+7: Catherine Taki |Time Played: 69:43 |Metres: 106 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 61
+8: Arnold Jackston |Time Played: 30:04 |Metres: 12 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+9: Xavier Feltch |Time Played: 80:04 |Metres: 32 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 29
+10: Phillip Spice |Time Played: 80:04 |Metres: 151 |Tackles: 4 |Kicks: 2 |Kick Metres: 43 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 21
+11: Aaron Manfredi |Time Played: 58:44 |Metres: 107 |Tackles: 8 |Kicks: 1 |Kick Metres: 40 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 68
+12: Kate Crane |Time Played: 80:04 |Metres: 90 |Tackles: 12 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 81
+13: Trixie Allen |Time Played: 80:04 |Metres: 60 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 1 |Total Points: 5 |Fantasy Points: 46
+14: Jr. Tamber |Time Played: 56:22 |Metres: 79 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 8 |Field Goals: 0 |Total Points: 16 |Fantasy Points: 55
+15: Sully Port |Time Played: 21:20 |Metres: 7 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 9
+16: Mike Tan |Time Played: 55:00 |Metres: 35 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 30
+17: Luna Barter |Time Played: 61:04 |Metres: 34 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+Highlights:                 
+Most Tackles: Kate Crane: 12
+Most Points: Samantha Humphrey: 16
+Most Metres: Samantha Humphrey: 302
+Most Errors: Phillip Spice: 3
+                             
+Away Team: Saltio City Berries
+1: Cooper Manfredi |Time Played: 80:04 |Metres: 6 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+2: Lorenzo Crane |Time Played: 69:46 |Metres: 6 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+3: Will de Flatio |Time Played: 28:40 |Metres: 2 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+4: Brett Oak |Time Played: 80:04 |Metres: 24 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+5: Lindsay Fox |Time Played: 69:04 |Metres: 5 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+6: Imm Holland |Time Played: 55:45 |Metres: 6 |Tackles: 15 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+7: Frank MacDonald |Time Played: 79:03 |Metres: 5 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+8: Lindsey Lynn |Time Played: 80:04 |Metres: 16 |Tackles: 14 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 20
+9: Kev Rice |Time Played: 29:23 |Metres: 5 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+10: George Davis |Time Played: 76:28 |Metres: 10 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+11: Adrien Pimmers |Time Played: 59:20 |Metres: 2 |Tackles: 8 |Kicks: 1 |Kick Metres: 52 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+12: Samuel Reynolds |Time Played: 80:04 |Metres: 22 |Tackles: 10 |Kicks: 1 |Kick Metres: 55 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+13: Lizzy Reio |Time Played: 80:04 |Metres: 18 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 21
+14: Jameson Fallon |Time Played: 56:22 |Metres: 8 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+15: Ash Kimley |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Luke Mariner |Time Played: 66:00 |Metres: 14 |Tackles: 4 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+17: Alexis Resfa |Time Played: 50:41 |Metres: 1 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+Highlights:                 
+Most Tackles: Imm Holland: 15
+Most Points: Lindsey Lynn: 4
+Most Metres: Brett Oak: 24
+Most Errors: Brett Oak: 1
+                             
+---------TEAM STATS---------
+Home Team: Dubbo Rose Gardens
+Total Metres: 1402
+Total Kick Metres: 207
+Total Errors: 7
+Total Tackles: 83
+Total Tries: 13
+Total Goals: 10
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Saltio City Berries
+Total Metres: 150
+Total Kick Metres: 149
+Total Errors: 4
+Total Tackles: 134
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Samantha Humphrey
+2nd (2 Points) -- Kate Crane
+3rd (1 Point) -- Catherine Taki
+----------------------------

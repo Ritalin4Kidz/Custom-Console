@@ -337,180 +337,180 @@ private:
 	const int customTeamGenerateChance = 9999;
 
 private:
-	SYDEClickableButton m_StartSeasonBtn;
-	SYDEClickableButton m_NextTeamSeasonCfgBtn;
-	SYDEClickableButton m_PrevTeamSeasonCfgBtn;
-	SYDEClickableButton m_AddTeamSeasonCfgBtn;
-	SYDEClickableButton m_RemoveTeamSeasonCfgBtn;
-	SYDEClickableButton m_GenerateTeamSeasonCfgBtn;
-	SYDEClickableButton m_RandomFillSeasonCfgBtn;
+	SYDEClickableButton m_StartSeasonBtn = SYDEClickableButton();
+	SYDEClickableButton m_NextTeamSeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_PrevTeamSeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_AddTeamSeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_RemoveTeamSeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_GenerateTeamSeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_RandomFillSeasonCfgBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_ErrorOkViewBtn;
+	SYDEClickableButton m_ErrorOkViewBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_MenuOkViewBtn;
-	SYDEClickableButton m_MenuCnclViewBtn;
+	SYDEClickableButton m_MenuOkViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_MenuCnclViewBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_BetOkViewBtn;
-	SYDEClickableButton m_BetCnclViewBtn;
+	SYDEClickableButton m_BetOkViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_BetCnclViewBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_SeasonViewBtn;
+	SYDEClickableButton m_SeasonViewBtn = SYDEClickableButton();
 	//View Ladder
-	SYDEClickableButton m_LadderViewBtn;
+	SYDEClickableButton m_LadderViewBtn = SYDEClickableButton();
 	//View Betting
-	SYDEClickableButton m_BettingViewBtn;
+	SYDEClickableButton m_BettingViewBtn = SYDEClickableButton();
 	//VIEW COACHING
-	SYDEClickableButton m_CoachingViewBtn;
+	SYDEClickableButton m_CoachingViewBtn = SYDEClickableButton();
 	//View In Depth Results
-	SYDEClickableButton m_ResultsViewBtn;
+	SYDEClickableButton m_ResultsViewBtn = SYDEClickableButton();
 	//View Season Leader
-	SYDEClickableButton m_LeaderboardViewBtn;
+	SYDEClickableButton m_LeaderboardViewBtn = SYDEClickableButton();
 	//View Main menu
-	SYDEClickableButton m_MainMenuViewBtn;
+	SYDEClickableButton m_MainMenuViewBtn = SYDEClickableButton();
 
-	SYDEClickableButton m_NewsViewBtn;
+	SYDEClickableButton m_NewsViewBtn = SYDEClickableButton();
 
-	SYDEClickableButton m_PreviousRoundViewBtn;
+	SYDEClickableButton m_PreviousRoundViewBtn = SYDEClickableButton();
 
-	SYDEClickableButton m_NextRoundViewBtn;
+	SYDEClickableButton m_NextRoundViewBtn = SYDEClickableButton();
 
-	SYDEClickableButton m_SimulateBtn;
+	SYDEClickableButton m_SimulateBtn = SYDEClickableButton();
 
-	SYDEClickableButton m_BetBtnCurrentRound;
-	SYDEClickableButton m_BetBtnViewBets;
-	SYDEClickableButton m_BetBtnFutures;
-	SYDEClickableButton m_BetBtnAccount;
-	SYDEClickableButton m_BetTryscorers;
+	SYDEClickableButton m_BetBtnCurrentRound = SYDEClickableButton();
+	SYDEClickableButton m_BetBtnViewBets = SYDEClickableButton();
+	SYDEClickableButton m_BetBtnFutures = SYDEClickableButton();
+	SYDEClickableButton m_BetBtnAccount = SYDEClickableButton();
+	SYDEClickableButton m_BetTryscorers = SYDEClickableButton();
 
-	SYDEClickableButton m_LeaderboardBtnMostTries;
-	SYDEClickableButton m_LeaderboardBtnMostGoals;
-	SYDEClickableButton m_LeaderboardBtnMostMetres;
-	SYDEClickableButton m_LeaderboardBtnMostPoints;
-	SYDEClickableButton m_LeaderboardBtnMostDallyM;
+	SYDEClickableButton m_LeaderboardBtnMostTries = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostGoals = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostMetres = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostPoints = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostDallyM = SYDEClickableButton();
 
-	SYDEClickableButton m_LeaderboardBtnMostFieldGoals;
-	SYDEClickableButton m_LeaderboardBtnMostTackles;
-	SYDEClickableButton m_LeaderboardBtnMostKickMetres;
-	SYDEClickableButton m_LeaderboardBtnMost4020;
-	SYDEClickableButton m_LeaderboardBtnMostSteals;
+	SYDEClickableButton m_LeaderboardBtnMostFieldGoals = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostTackles = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostKickMetres = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMost4020 = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostSteals = SYDEClickableButton();
 
-	SYDEClickableButton m_LeaderboardBtnMostErrors;
-	SYDEClickableButton m_LeaderboardBtnMostPenalties;
-	SYDEClickableButton m_LeaderboardBtnMostNoTries;
-	SYDEClickableButton m_LeaderboardBtnMostRuckErrors;
+	SYDEClickableButton m_LeaderboardBtnMostErrors = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostPenalties = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostNoTries = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostRuckErrors = SYDEClickableButton();
 
-	SYDEClickableButton m_LeaderboardBtnMostSinBin;
-	SYDEClickableButton m_LeaderboardBtnMostSendOff;
-	SYDEClickableButton m_LeaderboardBtnMostInjuries;
+	SYDEClickableButton m_LeaderboardBtnMostSinBin = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostSendOff = SYDEClickableButton();
+	SYDEClickableButton m_LeaderboardBtnMostInjuries = SYDEClickableButton();
 
-	SYDEClickableButton m_BackSeasonCfgBtn;
-	SYDEClickableButton m_SeasonCfgBtn;
-	SYDEClickableButton m_GameSettingsBtn;
-	SYDEClickableButton m_GameInfoBtn;
+	SYDEClickableButton m_BackSeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_SeasonCfgBtn = SYDEClickableButton();
+	SYDEClickableButton m_GameSettingsBtn = SYDEClickableButton();
+	SYDEClickableButton m_GameInfoBtn = SYDEClickableButton();
 
-	SYDEClickableButton m_SoundTrackOnBtn;
-	SYDEClickableButton m_SoundTrackNextBtn;
-	SYDEClickableButton m_SoundTrackVolume;
-	SYDEClickableButton m_FormatTeamsBtn;
-	SYDEClickableButton m_FormatTeamsOKBtn;
-	SYDEClickableButton m_FormatTeamsCNCLBtn;
+	SYDEClickableButton m_SoundTrackOnBtn = SYDEClickableButton();
+	SYDEClickableButton m_SoundTrackNextBtn = SYDEClickableButton();
+	SYDEClickableButton m_SoundTrackVolume = SYDEClickableButton();
+	SYDEClickableButton m_FormatTeamsBtn = SYDEClickableButton();
+	SYDEClickableButton m_FormatTeamsOKBtn = SYDEClickableButton();
+	SYDEClickableButton m_FormatTeamsCNCLBtn = SYDEClickableButton();
 
 	//Results Page
-	SYDEClickableButton m_GameResultSummaryBtn;
-	SYDEClickableButton m_GameResultPlayByPlayBtn;
+	SYDEClickableButton m_GameResultSummaryBtn = SYDEClickableButton();
+	SYDEClickableButton m_GameResultPlayByPlayBtn = SYDEClickableButton();
 
 	//GameSettingsPage
-	SYDEClickableButton m_GameSettingsSeasonBtn;
-	SYDEClickableButton m_GameSettingsNormalBtn;
+	SYDEClickableButton m_GameSettingsSeasonBtn = SYDEClickableButton();
+	SYDEClickableButton m_GameSettingsNormalBtn = SYDEClickableButton();
 
 	//GameSettingsPage
-	SYDEClickableButton m_PriorBetsGameBtn;
-	SYDEClickableButton m_PriorBetsPremiershipBtn;
-	SYDEClickableButton m_PriorBetsTryScorerBtn;
+	SYDEClickableButton m_PriorBetsGameBtn = SYDEClickableButton();
+	SYDEClickableButton m_PriorBetsPremiershipBtn = SYDEClickableButton();
+	SYDEClickableButton m_PriorBetsTryScorerBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_SettingsGoalKickerBtn;
+	SYDEClickableButton m_SettingsGoalKickerBtn = SYDEClickableButton();
 	//View Season
-	SYDEClickableButton m_SettingsWeatherBtn;
-	SYDEClickableButton m_SettingsStaminaBtn;
-	SYDEClickableButton m_SettingsSeasonLengthBtn;
-	SYDEClickableButton m_SettingsExtraTimeBtn;
-	SYDEClickableButton m_SettingsInjuryBtn;
-	SYDEClickableButton m_SettingsSinBinBtn;
-	SYDEClickableButton m_SettingsEventsBtn;
-	SYDEClickableButton m_SettingsCoachBtn;
-	SYDEClickableButton m_SettingsFinalsBtn;
+	SYDEClickableButton m_SettingsWeatherBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsStaminaBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsSeasonLengthBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsExtraTimeBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsInjuryBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsSinBinBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsEventsBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsCoachBtn = SYDEClickableButton();
+	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
 
 
 	//KEYPAD
-	SYDEClickableButton m_KeypadBtn_1;
-	SYDEClickableButton m_KeypadBtn_2;
-	SYDEClickableButton m_KeypadBtn_3;
-	SYDEClickableButton m_KeypadBtn_4;
-	SYDEClickableButton m_KeypadBtn_5;
-	SYDEClickableButton m_KeypadBtn_6;
-	SYDEClickableButton m_KeypadBtn_7;
-	SYDEClickableButton m_KeypadBtn_8;
-	SYDEClickableButton m_KeypadBtn_9;
-	SYDEClickableButton m_KeypadBtn_0;
-	SYDEClickableButton m_KeypadBtn_DOT;
-	SYDEClickableButton m_KeypadBtn_CLEAR;
-	SYDEClickableButton m_KeypadBtn_OK;
-	SYDEClickableButton m_KeypadBtn_CNCL;
+	SYDEClickableButton m_KeypadBtn_1 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_2 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_3 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_4 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_5 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_6 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_7 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_8 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_9 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_0 = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_DOT = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_CLEAR = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_OK = SYDEClickableButton();
+	SYDEClickableButton m_KeypadBtn_CNCL = SYDEClickableButton();
 
-	SYDEClickableButton m_ExportBtn;
-	SYDEClickableButton m_ExportOKBtn;
-	SYDEClickableButton m_ExportCNCLBtn;
+	SYDEClickableButton m_ExportBtn = SYDEClickableButton();
+	SYDEClickableButton m_ExportOKBtn = SYDEClickableButton();
+	SYDEClickableButton m_ExportCNCLBtn = SYDEClickableButton();
 
-	vector<SYDEClickableButton> m_BetButtons;
-	vector<SYDEClickableButton> m_PremiershipBetButtons;
-	vector<SYDEClickableButton> m_TryScorerBetButtons;
+	vector<SYDEClickableButton> m_BetButtons = vector<SYDEClickableButton>({});
+	vector<SYDEClickableButton> m_PremiershipBetButtons = vector<SYDEClickableButton>({});
+	vector<SYDEClickableButton> m_TryScorerBetButtons = vector<SYDEClickableButton>({});
 
-	vector<SYDEClickableButton> m_NewsHeadlines;
-	SYDEClickableButton m_BackHeadline;
+	vector<SYDEClickableButton> m_NewsHeadlines = vector<SYDEClickableButton>({});
+	SYDEClickableButton m_BackHeadline = SYDEClickableButton();
 	SRLNewsArticle m_Article;
 
-	SYDEClickableButton m_TeamInDepthView;
-	SYDEClickableButton m_BackTeamInDepth;
-	SYDEClickableButton m_NextTeamInDepth;
-	SYDEClickableButton m_PrevTeamInDepth;
-	SYDEClickableButton m_TeamListInDepth;
-	SYDEClickableButton m_BackTeamListInDepth;
-	SYDEClickableButton m_RegeneratePlayerBtn;
-	SYDEClickableButton m_RegeneratePlayerOKBtn;
-	SYDEClickableButton m_RegeneratePlayerCNCLBtn;
+	SYDEClickableButton m_TeamInDepthView = SYDEClickableButton();;
+	SYDEClickableButton m_BackTeamInDepth = SYDEClickableButton();;
+	SYDEClickableButton m_NextTeamInDepth = SYDEClickableButton();;
+	SYDEClickableButton m_PrevTeamInDepth = SYDEClickableButton();;
+	SYDEClickableButton m_TeamListInDepth = SYDEClickableButton();;
+	SYDEClickableButton m_BackTeamListInDepth = SYDEClickableButton();;
+	SYDEClickableButton m_RegeneratePlayerBtn = SYDEClickableButton();;
+	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();;
+	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();;
 
 	//EXIT GAME BUTTONS
-	SYDEClickableButton m_ExitGame;
-	SYDEClickableButton m_ExitGameOK;
-	SYDEClickableButton m_ExitGameCNL;
+	SYDEClickableButton m_ExitGame = SYDEClickableButton();;
+	SYDEClickableButton m_ExitGameOK = SYDEClickableButton();;
+	SYDEClickableButton m_ExitGameCNL = SYDEClickableButton();;
 
 	//FEATURED MATCH UP
-	SYDEClickableButton m_FeatureViewBtn;
-	SYDEClickableButton m_FeatureSwitchViewBtn;
-	SYDEClickableButton m_MainDrawViewBtn;
-	SYDEClickableButton m_MainSettingsViewBtn;
-	SYDEClickableButton m_TipMasterViewBtn;
+	SYDEClickableButton m_FeatureViewBtn = SYDEClickableButton();;
+	SYDEClickableButton m_FeatureSwitchViewBtn = SYDEClickableButton();;
+	SYDEClickableButton m_MainDrawViewBtn = SYDEClickableButton();;
+	SYDEClickableButton m_MainSettingsViewBtn = SYDEClickableButton();;
+	SYDEClickableButton m_TipMasterViewBtn = SYDEClickableButton();;
 	CustomAsset m_TipMasterImg = CustomAsset(22, 11, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\Tipmaster.bmp", 11, 11));
-	vector<string> TipMasterBets;
+	vector<string> TipMasterBets = vector<string>({});
 
 
-	vector<string> m_SavedTeams;
-	vector<string> m_SeasonTeams;
+	vector<string> m_SavedTeams = vector<string>({});;
+	vector<string> m_SeasonTeams = vector<string>({});;
 	int m_SelectedTeam = 0;
 	SRLSeason m_Season;
 
-	vector<string> m_ResultsScreenVector;
+	vector<string> m_ResultsScreenVector = vector<string>({});;
 	vector<GameSummaryText> m_SummaryScreenVector;
 
 	vector<SRLGameBetsWriting> m_GameBetsWriteUp;
 	vector<SRLGameBetsWriting> m_PremiershipBetsWriteUp;
 	vector<SRLGameBetsWriting> m_TryScorerBetsWriteUp;
-	vector<string> AttackersHome = vector<string>();
-	vector<string> AttackersAway = vector<string>();
+	vector<string> AttackersHome = vector<string>({});
+	vector<string> AttackersAway = vector<string>({});
 
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;

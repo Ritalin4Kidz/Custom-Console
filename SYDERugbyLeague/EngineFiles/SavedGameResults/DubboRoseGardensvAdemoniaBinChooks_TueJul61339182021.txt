@@ -1,0 +1,205 @@
+----------LINE-UPS----------
+Home Team: Dubbo Rose Gardens
+1: Monty Harrigan
+2: Samantha Humphrey
+3: Ezra Hing
+4: Huretio South
+5: Diana Wye
+6: Asher Reio
+7: Jr. Tamber
+8: Catherine Taki
+9: Xavier Feltch
+10: Phillip Spice
+11: Sully Port
+12: Kate Crane
+13: Trixie Allen
+14: Chase Mitchell
+15: Aaron Manfredi
+16: Trent Pardi
+17: Arnold Jackston
+Away Team: Ademonia Bin Chooks
+1: Nicki Barter
+2: Albert MacDonald
+3: Earl Kerr
+4: Zach Bad
+5: Junior Thompson
+6: Arnole Dellio
+7: Tom Elroii
+8: Luna Barter
+9: Kev O' Sullivan
+10: Aaron Woods
+11: Andrew Tramion
+12: Opus Chappell
+13: Opus Valenta
+14: Benjamin Bamert
+15: Kurt Wye
+16: Benji Chricton
+17: Dylan Hall
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Dubbo Rose Gardens: 0 v Ademonia Bin Chooks: 0
+01:23 - Catherine Taki - 6th Tackle Changeover
+01:35 - Kate Crane - Stripped Ball Off Opus Chappell
+01:35 - Kate Crane - TRY - Dubbo Rose Gardens: 4 v Ademonia Bin Chooks: 0
+02:35 - Jr. Tamber - CONVERSION MISSED
+04:57 - Huretio South - 6th Tackle Changeover
+06:12 - Huretio South - Intercepted Off A Opus Valenta Pass
+06:12 - Huretio South - TRY - Dubbo Rose Gardens: 8 v Ademonia Bin Chooks: 0
+07:12 - Jr. Tamber - CONVERSION MISSED
+09:33 - Ezra Hing - 6th Tackle Changeover
+10:15 - Xavier Feltch - Intercepted Off A Zach Bad Pass
+11:15 - ------VIDEO REFEREE------
+11:15 - Jr. Tamber - TRY - Dubbo Rose Gardens: 12 v Ademonia Bin Chooks: 0
+12:15 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 14 v Ademonia Bin Chooks: 0
+14:59 - Andrew Tramion - Forward Pass
+15:36 - Phillip Spice - Knock On
+15:50 - Diana Wye - Stripped Ball Off Opus Valenta
+17:05 - Jr. Tamber - TRY - Dubbo Rose Gardens: 18 v Ademonia Bin Chooks: 0
+18:05 - Jr. Tamber - CONVERSION MISSED
+20:30 - Samantha Humphrey - Knock On
+20:41 - Catherine Taki - Intercepted Off A Junior Thompson Pass
+20:41 - ------VIDEO REFEREE------
+20:41 - Catherine Taki - TRY - Dubbo Rose Gardens: 22 v Ademonia Bin Chooks: 0
+21:41 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 24 v Ademonia Bin Chooks: 0
+23:39 - Zach Bad - Ruck Infringement
+24:50 - 20m Restart - Ademonia Bin Chooks
+25:31 - Junior Thompson - Forward Pass
+25:42 - Ademonia Bin Chooks Interchanged Players Tom Elroii & Benjamin Bamert
+26:23 - Dubbo Rose Gardens Interchanged Players Samantha Humphrey & Aaron Manfredi
+26:55 - Huretio South - 6th Tackle Changeover
+27:12 - Catherine Taki - Intercepted Off A Earl Kerr Pass
+27:12 - Catherine Taki - TRY - Dubbo Rose Gardens: 28 v Ademonia Bin Chooks: 0
+28:12 - Jr. Tamber - CONVERSION MISSED
+31:09 - Andrew Tramion - Over The Sideline
+31:26 - Kate Crane - TRY - Dubbo Rose Gardens: 32 v Ademonia Bin Chooks: 0
+32:26 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 34 v Ademonia Bin Chooks: 0
+33:38 - Xavier Feltch - Knock On
+34:19 - Nicki Barter - TRY - Dubbo Rose Gardens: 34 v Ademonia Bin Chooks: 4
+35:19 - Benjamin Bamert - CONVERSION MISSED
+36:42 - Trixie Allen - Intercepted Off A Earl Kerr Pass
+36:42 - Trixie Allen - TRY - Dubbo Rose Gardens: 38 v Ademonia Bin Chooks: 4
+37:42 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 40 v Ademonia Bin Chooks: 4
+40:00 - HALF TIME - Dubbo Rose Gardens: 40 v Ademonia Bin Chooks: 4
+40:43 - Phillip Spice - Intercepted Off A Opus Chappell Pass
+40:43 - Phillip Spice - TRY - Dubbo Rose Gardens: 44 v Ademonia Bin Chooks: 4
+41:43 - Jr. Tamber - CONVERSION MISSED
+42:59 - Earl Kerr - Ruck Infringement
+44:16 - Kate Crane - 6th Tackle Changeover
+44:33 - Jr. Tamber - Intercepted Off A Luna Barter Pass
+45:29 - Catherine Taki - TRY - Dubbo Rose Gardens: 48 v Ademonia Bin Chooks: 4
+46:29 - Jr. Tamber - CONVERSION MISSED
+49:00 - Aaron Manfredi - Intercepted Off A Earl Kerr Pass
+49:32 - ------VIDEO REFEREE------
+49:32 - Xavier Feltch - TRY - Dubbo Rose Gardens: 52 v Ademonia Bin Chooks: 4
+50:32 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 54 v Ademonia Bin Chooks: 4
+53:03 - Aaron Manfredi - 6th Tackle Changeover
+54:31 - Zach Bad - Ruck Infringement
+55:02 - Ademonia Bin Chooks Interchanged Players Albert MacDonald & Dylan Hall
+56:23 - Kate Crane - Stripped Ball Off Benjamin Bamert
+56:38 - ------VIDEO REFEREE------
+56:38 - Phillip Spice - TRY - Dubbo Rose Gardens: 58 v Ademonia Bin Chooks: 4
+57:38 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 60 v Ademonia Bin Chooks: 4
+59:51 - 20m Restart - Ademonia Bin Chooks
+60:22 - Aaron Manfredi - Intercepted Off A Andrew Tramion Pass
+60:22 - Dubbo Rose Gardens Interchanged Players Kate Crane & Chase Mitchell
+60:53 - Sully Port - TRY - Dubbo Rose Gardens: 64 v Ademonia Bin Chooks: 4
+61:53 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 66 v Ademonia Bin Chooks: 4
+64:19 - Trixie Allen - 6th Tackle Changeover
+64:59 - Trixie Allen - Intercepted Off A Dylan Hall Pass
+64:59 - Trixie Allen - TRY - Dubbo Rose Gardens: 70 v Ademonia Bin Chooks: 4
+65:59 - Jr. Tamber - GOAL - Dubbo Rose Gardens: 72 v Ademonia Bin Chooks: 4
+68:15 - Arnole Dellio - Stripped Ball Off Xavier Feltch
+68:26 - Trixie Allen - Intercepted Off A Dylan Hall Pass
+69:42 - Chase Mitchell - 6th Tackle Changeover
+70:12 - Benjamin Bamert - Forward Pass
+70:23 - Dubbo Rose Gardens Interchanged Players Jr. Tamber & Samantha Humphrey
+70:23 - Ademonia Bin Chooks Interchanged Players Luna Barter & Tom Elroii
+70:41 - Ademonia Bin Chooks Interchanged Players Junior Thompson & Benji Chricton
+71:03 - Ademonia Bin Chooks Interchanged Players Earl Kerr & Luna Barter
+71:15 - Catherine Taki - TRY - Dubbo Rose Gardens: 76 v Ademonia Bin Chooks: 4
+72:15 - Trixie Allen - GOAL - Dubbo Rose Gardens: 78 v Ademonia Bin Chooks: 4
+73:32 - Kev O' Sullivan - Penalty
+74:16 - Benjamin Bamert - Ruck Infringement
+75:03 - Ezra Hing - TRY - Dubbo Rose Gardens: 82 v Ademonia Bin Chooks: 4
+76:03 - Trixie Allen - CONVERSION MISSED
+78:26 - Phillip Spice - Intercepted Off A Aaron Woods Pass
+79:32 - Trixie Allen - FIELD GOAL - Dubbo Rose Gardens: 83 v Ademonia Bin Chooks: 4
+79:48 - Catherine Taki - Forward Pass
+80:00 - FULL TIME - Dubbo Rose Gardens: 83 v Ademonia Bin Chooks: 4
+                             
+--------PLAYER STATS--------
+Home Team: Dubbo Rose Gardens
+1: Monty Harrigan |Time Played: 80:00 |Metres: 95 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+2: Aaron Manfredi |Time Played: 53:37 |Metres: 81 |Tackles: 4 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 57
+3: Ezra Hing |Time Played: 80:00 |Metres: 119 |Tackles: 0 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 69
+4: Huretio South |Time Played: 80:00 |Metres: 215 |Tackles: 1 |Kicks: 1 |Kick Metres: 68 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 118
+5: Diana Wye |Time Played: 80:00 |Metres: 39 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+6: Asher Reio |Time Played: 80:00 |Metres: 75 |Tackles: 3 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 43
+7: Samantha Humphrey |Time Played: 36:00 |Metres: 35 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+8: Catherine Taki |Time Played: 80:00 |Metres: 254 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 4 |Goals: 0 |Field Goals: 0 |Total Points: 16 |Fantasy Points: 71
+9: Xavier Feltch |Time Played: 80:00 |Metres: 113 |Tackles: 4 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 35
+10: Phillip Spice |Time Played: 80:00 |Metres: 80 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 31
+11: Sully Port |Time Played: 80:00 |Metres: 168 |Tackles: 2 |Kicks: 1 |Kick Metres: 17 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 84
+12: Chase Mitchell |Time Played: 19:38 |Metres: 27 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+13: Trixie Allen |Time Played: 80:00 |Metres: 65 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 1 |Field Goals: 1 |Total Points: 11 |Fantasy Points: 59
+14: Kate Crane |Time Played: 60:22 |Metres: 45 |Tackles: 4 |Kicks: 1 |Kick Metres: 40 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 54
+15: Jr. Tamber |Time Played: 70:23 |Metres: 59 |Tackles: 2 |Kicks: 1 |Kick Metres: 88 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 8 |Field Goals: 0 |Total Points: 24 |Fantasy Points: 74
+16: Trent Pardi |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Arnold Jackston |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Phillip Spice: 7
+Most Points: Jr. Tamber: 24
+Most Metres: Catherine Taki: 254
+Most Errors: Samantha Humphrey: 1
+                             
+Away Team: Ademonia Bin Chooks
+1: Nicki Barter |Time Played: 80:00 |Metres: 4 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 20
+2: Dylan Hall |Time Played: 24:58 |Metres: 3 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+3: Luna Barter |Time Played: 79:20 |Metres: 6 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+4: Zach Bad |Time Played: 80:00 |Metres: 1 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+5: Benji Chricton |Time Played: 09:19 |Metres: 0 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+6: Arnole Dellio |Time Played: 80:00 |Metres: 0 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+7: Benjamin Bamert |Time Played: 54:18 |Metres: 8 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+8: Tom Elroii |Time Played: 35:19 |Metres: 2 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+9: Kev O' Sullivan |Time Played: 80:00 |Metres: 2 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+10: Aaron Woods |Time Played: 80:00 |Metres: 6 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+11: Andrew Tramion |Time Played: 80:00 |Metres: 10 |Tackles: 18 |Kicks: 1 |Kick Metres: 68 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+12: Opus Chappell |Time Played: 80:00 |Metres: 3 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+13: Opus Valenta |Time Played: 80:00 |Metres: 5 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+14: Earl Kerr |Time Played: 71:03 |Metres: 6 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+15: Kurt Wye |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Junior Thompson |Time Played: 70:41 |Metres: 6 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+17: Albert MacDonald |Time Played: 55:02 |Metres: 4 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+Highlights:                 
+Most Tackles: Andrew Tramion: 18
+Most Points: Nicki Barter: 4
+Most Metres: Andrew Tramion: 10
+Most Errors: Andrew Tramion: 2
+                             
+---------TEAM STATS---------
+Home Team: Dubbo Rose Gardens
+Total Metres: 1470
+Total Kick Metres: 371
+Total Errors: 4
+Total Tackles: 45
+Total Tries: 16
+Total Goals: 9
+Total Field Goals: 1
+Interchanges Used: 3/8
+                             
+Away Team: Ademonia Bin Chooks
+Total Metres: 66
+Total Kick Metres: 68
+Total Errors: 4
+Total Tackles: 144
+Total Tries: 1
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 5/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Huretio South
+2nd (2 Points) -- Sully Port
+3rd (1 Point) -- Catherine Taki
+----------------------------

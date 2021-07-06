@@ -235,6 +235,19 @@ int main(int argc, char* argv[])
 			DoAchievements(SRLGame::AchievementStrings);
 			SRLGame::AchievementStrings.clear();
 		}
+		catch (std::bad_alloc& message)
+		{
+			SRLGame::exitConfirmedCall = true;
+			std::chrono::system_clock currentTime;
+			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+			std::string time = std::ctime(&t);
+			time.resize(time.size() - 1);
+			string fileName = "EngineFiles\\SYDERLCrashDump_BA" + time + ".txt";
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+			std::ofstream output_file(fileName.c_str());
+			output_file << message.what() << "\n";
+		}
 		catch (std::exception& message)
 		{
 			SRLGame::exitConfirmedCall = true;
@@ -242,7 +255,7 @@ int main(int argc, char* argv[])
 			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
 			std::string time = std::ctime(&t);
 			time.resize(time.size() - 1);
-			string fileName = "EngineFiles\\SYDERLCrashDump_" + time + ".txt";
+			string fileName = "EngineFiles\\SYDERLCrashDump_EX" + time + ".txt";
 			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
 			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
 			std::ofstream output_file(fileName.c_str());
@@ -255,7 +268,7 @@ int main(int argc, char* argv[])
 			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
 			std::string time = std::ctime(&t);
 			time.resize(time.size() - 1);
-			string fileName = "EngineFiles\\SYDERLCrashDump_" + time + ".txt";
+			string fileName = "EngineFiles\\SYDERLCrashDump_UK" + time + ".txt";
 			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
 			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
 			std::ofstream output_file(fileName.c_str());

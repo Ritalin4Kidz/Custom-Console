@@ -188,7 +188,7 @@ struct SRLLeaderboard
 	void addToShortlist(string playerName, string teamName, int points);
 	vector<SRLLeaderboardPosition> shortlist;
 	void orderShortlist();
-
+	void clear() { shortlist.clear(); }
 	void changePlayerTeam(string playerName, string oldTeam, string newTeam);
 };
 
@@ -196,6 +196,7 @@ struct SRLSeason
 {
 	SRLSeason() {}
 	SRLSeason(SRLDraw draw, SRLLadder ladder) { m_Draw = draw; m_Ladder = ladder; }
+	void clear();
 	SRLDraw m_Draw;
 	vector<SRLGameBet> m_PremiershipBets;
 	SRLLadder m_Ladder;

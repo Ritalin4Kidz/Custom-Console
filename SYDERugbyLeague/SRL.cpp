@@ -1696,6 +1696,7 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 	window = configTabs(window);
 	if (SeasonStart)
 	{
+		m_Season.clear();
 		//THE AMOUNT OF TIMES THE SAME MATCH-UP CAN HAPPEN IN A SEASON (WHERE HOME TEAM & AWAY TEAM ARE THE SAME)
 		int VersusLimit = 1;
 		if (seasonLength == Length_MediumSeason || seasonLength == Length_NormalSeason)
@@ -2059,7 +2060,15 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 			window.setTextAtPoint(Vector2(26, 3 + i), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), WHITE);
 			window.setTextAtPoint(Vector2(34, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].AwayTeam, WHITE);
 		}
-		SimulateGames();
+		try
+		{
+			SimulateGames();
+		}
+		catch (exception e)
+		{
+			errorCall = true;
+			errorMessage = e.what();
+		}
 	}
 	else if (drawViewState == FeaturedMatchView)
 	{
@@ -2741,11 +2750,11 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 		{
 			if (i < 10)
 			{
-				window.setTextAtPoint(Vector2(0, i + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName(), BRIGHTWHITE);
+				window.setTextAtPoint(Vector2(0, i + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
 			}
 			else
 			{
-				window.setTextAtPoint(Vector2(30, (i - 10) + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName(), BRIGHTWHITE);
+				window.setTextAtPoint(Vector2(30, (i - 10) + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
 			}
 		}
 	}
@@ -5496,7 +5505,6 @@ void SRLGame::otherArticles()
 			return;
 		}
 		break;
-		break;
 	case 10:
 		if (m_SeasonEvents)
 		{
@@ -5523,22 +5531,7 @@ void SRLGame::otherArticles()
 
 ConsoleWindow SRLGame::DoState(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	try {
-		window = m_State(window, windowWidth, windowHeight);
-	}
-	catch (...)
-	{
-		SRLGame::exitConfirmedCall = true;
-		std::chrono::system_clock currentTime;
-		std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
-		std::string time = std::ctime(&t);
-		time.resize(time.size() - 1);
-		string fileName = "EngineFiles\\SYDERLCrashDump_" + time + ".txt";
-		fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
-		fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
-		std::ofstream output_file(fileName.c_str());
-		output_file << "Unknown Error" << "\n";
-	}
+	window = m_State(window, windowWidth, windowHeight);
 	return window;
 }
 
@@ -5579,12 +5572,15 @@ void SRLGame::sortOutResultsScreen()
 		}
 		m_ResultsScreenVector.push_back(temp[i]);
 	}
+	temp.clear();
 	vector<string> temp2 = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].SummaryPlayByPlay;
 	for (int i = 0; i < temp2.size(); i++)
 	{
 		vector<string> temp3 = Split(temp2[i], '#');
 		m_SummaryScreenVector.push_back(GameSummaryText(temp3[0],temp3[2],temp3[1],temp3[3]));
+		temp3.clear();
 	}
+	temp2.clear();
 	m_LineResults = 0;
 }
 

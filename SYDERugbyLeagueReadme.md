@@ -29,6 +29,9 @@ Labcat - -
 
 ## Release Notes
 
+###  0.13.3.0 beta 7-07-2021
+- fixed crash with betting
+
 ###  0.13.2.0 beta 7-07-2021
 - fixed bug which would cause a crash in simulations
 

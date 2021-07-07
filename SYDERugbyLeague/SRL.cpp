@@ -3399,7 +3399,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.13.2.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.13.3.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -4142,7 +4142,7 @@ void SRLGame::CalculateTryScorerOdds()
 
 	deque<SRLPlayer> homePlayers = oddsHomeTeam.addBestAttackers(AttackersHome, 6);
 	deque<SRLPlayer> awayPlayers = oddsAwayTeam.addBestAttackers(AttackersAway, 6);
-	for (int i = 0; i < homePlayers.size(); i++)
+	for (int i = 0; i < AttackersHome.size(); i++)
 	{
 		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtn.SetFunc(BetMatchClick);
@@ -4160,7 +4160,7 @@ void SRLGame::CalculateTryScorerOdds()
 		
 		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].homeTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
 	}
-	for (int i = 0; i < awayPlayers.size(); i++)
+	for (int i = 0; i < AttackersAway.size(); i++)
 	{
 		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtn.SetFunc(BetMatchClick);

@@ -84,6 +84,10 @@ void SRLGameManager::addSummary(string a_Play, SRLPlayer player)
 
 void SRLGameManager::addSummaryDirect(string a_Play)
 {
+	if (a_Play == "")
+	{
+		return;
+	}
 	string minutesStr = to_string(m_MinutesPassed);
 	if (minutesStr.length() == 1)
 	{
@@ -113,7 +117,7 @@ void SRLGameManager::addMinute()
 		timeToAddPlayers -= m_SecondsPassed;
 		m_SecondsPassed = 0;
 	}
-	vector<string> SinBinPlays;
+	deque<string> SinBinPlays;
 	SinBinPlays = m_HomeTeam.addTimeOnField(timeToAddPlayers);
 	for (int i = 0; i < SinBinPlays.size(); i++)
 	{
@@ -393,7 +397,7 @@ void SRLGameManager::play()
 	//CALLED EVERY SECOND
 	int timeSecondSkip = minTimeSecondSkip + (rand() % (maxTimeSecondSkip - minTimeSecondSkip));
 	m_SecondsPassed += timeSecondSkip;
-	vector<string> SinBinPlays;
+	deque<string> SinBinPlays;
 	SinBinPlays = m_HomeTeam.addTimeOnField(timeSecondSkip); 
 	for (int i = 0; i < SinBinPlays.size(); i++)
 	{

@@ -14,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <iterator>
+#include <deque>
 enum FinalsSeriesType
 {
 	Top8Normal,
@@ -104,9 +105,9 @@ struct SRLGameBet
 struct SRLLadder
 {
 	SRLLadder() {}
-	SRLLadder(vector<SRLLadderPosition> ladder) { m_Ladder = ladder; }
+	SRLLadder(deque<SRLLadderPosition> ladder) { m_Ladder = ladder; }
 	void sortLadder();
-	vector<SRLLadderPosition> m_Ladder;
+	deque<SRLLadderPosition> m_Ladder;
 };
 
 struct SRLGameMatchup
@@ -116,11 +117,11 @@ struct SRLGameMatchup
 	SRLBetPrice awayTeamOdds = SRLBetPrice(1, 90);
 	string HomeTeam;
 	string AwayTeam;
-	vector<string> ResultPlayByPlay;
-	vector<string> SummaryPlayByPlay;
+	deque<string> ResultPlayByPlay;
+	deque<string> SummaryPlayByPlay;
 
-	vector<SRLBetPrice> homeTeamTryOdds = vector<SRLBetPrice>();
-	vector<SRLBetPrice> awayTeamTryOdds = vector<SRLBetPrice>();
+	deque<SRLBetPrice> homeTeamTryOdds = deque<SRLBetPrice>();
+	deque<SRLBetPrice> awayTeamTryOdds = deque<SRLBetPrice>();
 
 	int homeTeamScore = 0;
 	int awayTeamScore = 0;
@@ -153,27 +154,27 @@ struct FeaturedGame
 	SRLBetPrice fg_homeOdds;
 	SRLBetPrice fg_awayOdds;
 
-	vector<string> homeTeamKeyPlayers;
-	vector<string> awayTeamKeyPlayers;
+	deque<string> homeTeamKeyPlayers;
+	deque<string> awayTeamKeyPlayers;
 
-	vector<string> MatchHistory = vector<string>({ "No Match History To Show" });
+	deque<string> MatchHistory = deque<string>({ "No Match History To Show" });
 };
 
 struct SRLRound
 {
-	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
-	vector<SRLGameMatchup> m_Games;
-	vector<SRLGameBet> m_Bets;
-	vector<SRLGameBet> m_TryScorerBets;
-	vector<SRLNewsArticle> newsStories;
+	SRLRound(deque<SRLGameMatchup> games) { m_Games = games; }
+	deque<SRLGameMatchup> m_Games;
+	deque<SRLGameBet> m_Bets;
+	deque<SRLGameBet> m_TryScorerBets;
+	deque<SRLNewsArticle> newsStories;
 	FeaturedGame gameToFeature;
 };
 
 struct SRLDraw
 {
 	SRLDraw() {}
-	SRLDraw(vector<SRLRound> rounds) { m_Rounds = rounds; }
-	vector<SRLRound> m_Rounds;
+	SRLDraw(deque<SRLRound> rounds) { m_Rounds = rounds; }
+	deque<SRLRound> m_Rounds;
 };
 
 struct SRLLeaderboardPosition
@@ -186,7 +187,7 @@ struct SRLLeaderboardPosition
 struct SRLLeaderboard
 {
 	void addToShortlist(string playerName, string teamName, int points);
-	vector<SRLLeaderboardPosition> shortlist;
+	deque<SRLLeaderboardPosition> shortlist;
 	void orderShortlist();
 	void clear() { shortlist.clear(); }
 	void changePlayerTeam(string playerName, string oldTeam, string newTeam);
@@ -198,7 +199,7 @@ struct SRLSeason
 	SRLSeason(SRLDraw draw, SRLLadder ladder) { m_Draw = draw; m_Ladder = ladder; }
 	void clear();
 	SRLDraw m_Draw;
-	vector<SRLGameBet> m_PremiershipBets;
+	deque<SRLGameBet> m_PremiershipBets;
 	SRLLadder m_Ladder;
 	SRLLeaderboard m_TopPlayers;
 	SRLLeaderboard m_TopTries;

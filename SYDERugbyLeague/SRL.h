@@ -137,9 +137,9 @@ public:
 	virtual ~SRLGame() {}
 	void init();
 
-	vector<SRLPlayer> createRandomTeam(string prefix);
-	vector<SRLPlayer> createOffSeasonTeam(string prefix);
-	vector<SRLPlayer> createRandomTeam(string prefix, float multiplier);
+	deque<SRLPlayer> createRandomTeam(string prefix);
+	deque<SRLPlayer> createOffSeasonTeam(string prefix);
+	deque<SRLPlayer> createRandomTeam(string prefix, float multiplier);
 	void test();
 	static AssetsClass astVars;
 	SRLTeam generateRandomTeam();
@@ -163,11 +163,11 @@ public:
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow PlayerInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 
-	ConsoleWindow LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard);
+	ConsoleWindow LeaderboardPositions(ConsoleWindow window, deque<SRLLeaderboardPosition> ldrboard);
 
-	void LeaderboardOutputStrings(vector<string> &mainVec, vector<SRLLeaderboardPosition> ldrboard);
-	void LeaderboardOutputStringsTopScorer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard);
-	void LeaderboardOutputStringsTopPlayer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard);
+	void LeaderboardOutputStrings(deque<string> &mainVec, deque<SRLLeaderboardPosition> ldrboard);
+	void LeaderboardOutputStringsTopScorer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard);
+	void LeaderboardOutputStringsTopPlayer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard);
 
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow NewsView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -193,7 +193,7 @@ public:
 
 	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
 
-	bool addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams, vector<string>& AttemptedTeams);
+	bool addGame(int limit, deque<SRLRound> rounds, deque<SRLGameMatchup>& games, deque<string>& teams, deque<string>& AttemptedTeams);
 
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -313,7 +313,7 @@ public:
 	void sortOutTrainingOptions();
 	void sortOutTradingOptions();
 
-	static vector<string> AchievementStrings;
+	static deque<string> AchievementStrings;
 
 	static int playerClicked;
 	static bool playerCall;
@@ -465,11 +465,11 @@ private:
 	SYDEClickableButton m_ExportOKBtn = SYDEClickableButton();
 	SYDEClickableButton m_ExportCNCLBtn = SYDEClickableButton();
 
-	vector<SYDEClickableButton> m_BetButtons = vector<SYDEClickableButton>({});
-	vector<SYDEClickableButton> m_PremiershipBetButtons = vector<SYDEClickableButton>({});
-	vector<SYDEClickableButton> m_TryScorerBetButtons = vector<SYDEClickableButton>({});
+	deque<SYDEClickableButton> m_BetButtons = deque<SYDEClickableButton>({});
+	deque<SYDEClickableButton> m_PremiershipBetButtons = deque<SYDEClickableButton>({});
+	deque<SYDEClickableButton> m_TryScorerBetButtons = deque<SYDEClickableButton>({});
 
-	vector<SYDEClickableButton> m_NewsHeadlines = vector<SYDEClickableButton>({});
+	deque<SYDEClickableButton> m_NewsHeadlines = deque<SYDEClickableButton>({});
 	SYDEClickableButton m_BackHeadline = SYDEClickableButton();
 	SRLNewsArticle m_Article;
 
@@ -495,22 +495,22 @@ private:
 	SYDEClickableButton m_MainSettingsViewBtn = SYDEClickableButton();;
 	SYDEClickableButton m_TipMasterViewBtn = SYDEClickableButton();;
 	CustomAsset m_TipMasterImg = CustomAsset(22, 11, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\Tipmaster.bmp", 11, 11));
-	vector<string> TipMasterBets = vector<string>({});
+	deque<string> TipMasterBets = deque<string>({});
 
 
 	vector<string> m_SavedTeams = vector<string>({});;
-	vector<string> m_SeasonTeams = vector<string>({});;
+	deque<string> m_SeasonTeams = deque<string>({});;
 	int m_SelectedTeam = 0;
 	SRLSeason m_Season;
 
-	vector<string> m_ResultsScreenVector = vector<string>({});;
-	vector<GameSummaryText> m_SummaryScreenVector;
+	deque<string> m_ResultsScreenVector = deque<string>({});;
+	deque<GameSummaryText> m_SummaryScreenVector;
 
-	vector<SRLGameBetsWriting> m_GameBetsWriteUp;
-	vector<SRLGameBetsWriting> m_PremiershipBetsWriteUp;
-	vector<SRLGameBetsWriting> m_TryScorerBetsWriteUp;
-	vector<string> AttackersHome = vector<string>({});
-	vector<string> AttackersAway = vector<string>({});
+	deque<SRLGameBetsWriting> m_GameBetsWriteUp;
+	deque<SRLGameBetsWriting> m_PremiershipBetsWriteUp;
+	deque<SRLGameBetsWriting> m_TryScorerBetsWriteUp;
+	deque<string> AttackersHome = deque<string>({});
+	deque<string> AttackersAway = deque<string>({});
 
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;
@@ -543,7 +543,7 @@ private:
 
 	FinalsSeriesType fsType = Top8Normal;
 	string finalsSettingStr = "Top 8 Normal";
-	vector<FinalsSeries> m_FSTYPES = vector<FinalsSeries>({
+	deque<FinalsSeries> m_FSTYPES = deque<FinalsSeries>({
 		FinalsSeries("Top 8 Normal", Top8Normal, 4, 8),
 		FinalsSeries("Top 4 Normal", Top4Normal, 3, 4),
 		FinalsSeries("Top 2 Normal", Top2Normal, 1, 2),
@@ -561,7 +561,7 @@ private:
 	SRLTeam m_InDepthTeamView;
 	CustomAsset m_JerseyView;
 	int m_TeamViewing = 0;
-	vector<SYDEClickableButton> m_PlayerButtons;
+	deque<SYDEClickableButton> m_PlayerButtons;
 	SRLPlayer m_PlayerView;
 	CustomAsset m_PlayerAsset;
 
@@ -583,10 +583,10 @@ private:
 	SYDEClickableButton m_CoachTrainConfirmOKBtn;
 	SYDEClickableButton m_CoachTrainConfirmCNCLBtn;
 
-	vector<SRLTrainingOption> _trainingOptions;
-	vector<SRLTradingOption> _tradingOptions;
-	vector<SYDEClickableButton> m_TradingButtons;
-	vector<SYDEClickableButton> m_TrainingButtons;
+	deque<SRLTrainingOption> _trainingOptions;
+	deque<SRLTradingOption> _tradingOptions;
+	deque<SYDEClickableButton> m_TradingButtons;
+	deque<SYDEClickableButton> m_TrainingButtons;
 	bool tradingAvailable = false;
 #pragma endregion
 };

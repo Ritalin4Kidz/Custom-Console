@@ -29,6 +29,9 @@ Labcat - -
 
 ## Release Notes
 
+###  0.13.1.0 beta 7-07-2021
+- fixed bug which would cause a crash in summary view due to invalid summaries being added
+
 ###  0.13.0.0 beta 5-07-2021
 - COACHING MODE UPDATE!
 

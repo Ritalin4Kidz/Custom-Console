@@ -1,0 +1,195 @@
+----------LINE-UPS----------
+Home Team: Central Platypi
+1: Simon Yzzer
+2: Amy Bridgers
+3: Bert Berninger
+4: Pauly Brasi
+5: Will Fletcher
+6: Monty O' Donnell
+7: Norman Waterhouse
+8: Nita Hughes
+9: Alistair Fox
+10: Zack Jacklin
+11: Ezra Hing
+12: Declan Doomer
+13: Jenny Tuo
+14: Allie Worsent
+15: Bob Fallon
+16: Ashleigh Vianna
+17: Nicki Barter
+Away Team: Repaired Coast Emus
+1: Jonathon East
+2: Kimberly Yahtzel
+3: Dom Soa
+4: Nicki Taki
+5: Frank de Marit
+6: Velento Thurston
+7: Callum Beltio
+8: Dave Claypool
+9: Al Johns
+10: Connor Thompson
+11: Phoebe Winger
+12: Samantha Humphrey
+13: Gerald Suatoma
+14: Jeni Kimberly
+15: Barry Claypool
+16: Avery Campbell
+17: Jackson Pout
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Central Platypi: 0 v Repaired Coast Emus: 0
+00:29 - Alistair Fox - Forward Pass
+00:43 - Dave Claypool - TRY - Central Platypi: 0 v Repaired Coast Emus: 4
+01:43 - Dom Soa - GOAL - Central Platypi: 0 v Repaired Coast Emus: 6
+03:43 - Amy Bridgers - Stripped Ball Off Gerald Suatoma
+05:17 - Pauly Brasi - Forward Pass
+08:19 - Samantha Humphrey - TRY - Central Platypi: 0 v Repaired Coast Emus: 10
+09:19 - Dom Soa - CONVERSION MISSED
+10:30 - Jonathon East - Over The Sideline
+10:47 - Connor Thompson - Penalty
+11:17 - Bert Berninger - TRY - Central Platypi: 4 v Repaired Coast Emus: 10
+12:17 - Zack Jacklin - GOAL - Central Platypi: 6 v Repaired Coast Emus: 10
+14:15 - Jonathon East - Stripped Ball Off Will Fletcher
+15:16 - Monty O' Donnell - Intercepted Off A Connor Thompson Pass
+16:22 - Central Platypi Interchanged Players Zack Jacklin & Ashleigh Vianna
+18:16 - Ezra Hing - Knock On
+19:56 - Frank de Marit - 6th Tackle Changeover
+20:42 - Central Platypi Interchanged Players Will Fletcher & Bob Fallon
+22:36 - Monty O' Donnell - Intercepted Off A Gerald Suatoma Pass
+23:17 - Al Johns - Intercepted Off A Bert Berninger Pass
+24:25 - Gerald Suatoma - 6th Tackle Changeover
+25:39 - Samantha Humphrey - Intercepted Off A Amy Bridgers Pass
+26:25 - Monty O' Donnell - Intercepted Off A Velento Thurston Pass
+26:43 - Central Platypi Interchanged Players Declan Doomer & Zack Jacklin
+27:41 - Amy Bridgers - 6th Tackle Changeover
+28:45 - Bert Berninger - Intercepted Off A Connor Thompson Pass
+29:12 - Amy Bridgers - Over The Sideline
+30:08 - Nicki Taki - Knock On
+31:26 - Frank de Marit - Intercepted Off A Bert Berninger Pass
+32:37 - Kimberly Yahtzel - 6th Tackle Changeover
+33:55 - Al Johns - Intercepted Off A Alistair Fox Pass
+35:23 - Central Platypi Interchanged Players Jenny Tuo & Declan Doomer
+35:23 - Repaired Coast Emus Interchanged Players Frank de Marit & Jeni Kimberly
+35:41 - Ashleigh Vianna - Knock On
+35:41 - Central Platypi Interchanged Players Alistair Fox & Allie Worsent
+36:45 - ------VIDEO REFEREE------
+36:45 - Al Johns - NO TRY - Obstruction
+36:45 - Al Johns - Penalty
+38:01 - Bert Berninger - Kick Out On The Full
+39:19 - Callum Beltio - Over The Sideline
+40:00 - HALF TIME - Central Platypi: 6 v Repaired Coast Emus: 10
+42:51 - Amy Bridgers - 6th Tackle Changeover
+43:42 - Callum Beltio - Over The Sideline
+44:11 - Kimberly Yahtzel - Penalty
+44:23 - Bob Fallon - TRY - Central Platypi: 10 v Repaired Coast Emus: 10
+45:23 - Ashleigh Vianna - GOAL - Central Platypi: 12 v Repaired Coast Emus: 10
+46:23 - Repaired Coast Emus Interchanged Players Phoebe Winger & Barry Claypool
+46:41 - Central Platypi Interchanged Players Ashleigh Vianna & Nicki Barter
+49:14 - Ezra Hing - Forward Pass
+49:51 - Allie Worsent - Intercepted Off A Gerald Suatoma Pass
+51:00 - Simon Yzzer - 6th Tackle Changeover
+51:00 - Central Platypi Interchanged Players Pauly Brasi & Ashleigh Vianna
+51:00 - Repaired Coast Emus Interchanged Players Samantha Humphrey & Phoebe Winger
+51:29 - Allie Worsent - Intercepted Off A Callum Beltio Pass
+51:42 - Dave Claypool - Penalty
+51:42 - Ashleigh Vianna - PENALTY GOAL - Central Platypi: 14 v Repaired Coast Emus: 10
+54:04 - Jonathon East - Forward Pass
+54:59 - ------VIDEO REFEREE------
+54:59 - Ashleigh Vianna - TRY - Central Platypi: 18 v Repaired Coast Emus: 10
+55:59 - Ashleigh Vianna - CONVERSION MISSED
+59:04 - Nicki Barter - Penalty
+60:36 - Gerald Suatoma - 6th Tackle Changeover
+65:00 - Monty O' Donnell - Intercepted Off A Al Johns Pass
+65:00 - Central Platypi Interchanged Players Bob Fallon & Pauly Brasi
+65:00 - Repaired Coast Emus Interchanged Players Gerald Suatoma & Avery Campbell
+65:58 - Ashleigh Vianna - TRY - Central Platypi: 22 v Repaired Coast Emus: 10
+66:58 - Ashleigh Vianna - GOAL - Central Platypi: 24 v Repaired Coast Emus: 10
+68:43 - Dave Claypool - Intercepted Off A Declan Doomer Pass
+68:43 - Dave Claypool - TRY - Central Platypi: 24 v Repaired Coast Emus: 14
+69:43 - Dom Soa - GOAL - Central Platypi: 24 v Repaired Coast Emus: 16
+70:43 - Repaired Coast Emus Interchanged Players Jonathon East & Jackson Pout
+72:42 - Ashleigh Vianna - Forward Pass
+74:32 - Phoebe Winger - Intercepted Off A Bert Berninger Pass
+75:42 - Callum Beltio - 6th Tackle Changeover
+75:42 - Repaired Coast Emus Interchanged Players Callum Beltio & Jonathon East
+78:29 - Kimberly Yahtzel - 6th Tackle Changeover
+79:10 - Pauly Brasi - Over The Sideline
+79:55 - Zack Jacklin - Penalty
+80:00 - FULL TIME - Central Platypi: 24 v Repaired Coast Emus: 16
+                             
+--------PLAYER STATS--------
+Home Team: Central Platypi
+1: Simon Yzzer |Time Played: 80:07 |Metres: 16 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+2: Amy Bridgers |Time Played: 80:07 |Metres: 38 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+3: Bert Berninger |Time Played: 80:07 |Metres: 64 |Tackles: 7 |Kicks: 2 |Kick Metres: 88 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 35
+4: Ashleigh Vianna |Time Played: 59:26 |Metres: 37 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 2 |Goals: 3 |Field Goals: 0 |Total Points: 14 |Fantasy Points: 14
+5: Pauly Brasi |Time Played: 66:07 |Metres: 2 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+6: Monty O' Donnell |Time Played: 80:07 |Metres: 100 |Tackles: 10 |Kicks: 1 |Kick Metres: 52 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 82
+7: Norman Waterhouse |Time Played: 80:07 |Metres: 18 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+8: Nita Hughes |Time Played: 80:07 |Metres: 10 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+9: Allie Worsent |Time Played: 44:26 |Metres: 39 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+10: Nicki Barter |Time Played: 33:26 |Metres: 55 |Tackles: 5 |Kicks: 2 |Kick Metres: 51 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+11: Ezra Hing |Time Played: 80:07 |Metres: 153 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+12: Zack Jacklin |Time Played: 69:46 |Metres: 26 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 14
+13: Declan Doomer |Time Played: 71:27 |Metres: 29 |Tackles: 6 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+14: Alistair Fox |Time Played: 35:41 |Metres: 12 |Tackles: 5 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+15: Will Fletcher |Time Played: 20:42 |Metres: 14 |Tackles: 2 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+16: Jenny Tuo |Time Played: 35:23 |Metres: 46 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+17: Bob Fallon |Time Played: 44:18 |Metres: 82 |Tackles: 4 |Kicks: 1 |Kick Metres: 50 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 60
+Highlights:                 
+Most Tackles: Amy Bridgers: 14
+Most Points: Ashleigh Vianna: 14
+Most Metres: Ezra Hing: 153
+Most Errors: Ashleigh Vianna: 2
+                             
+Away Team: Repaired Coast Emus
+1: Jackson Pout |Time Played: 09:24 |Metres: 4 |Tackles: 1 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+2: Kimberly Yahtzel |Time Played: 80:07 |Metres: 34 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+3: Dom Soa |Time Played: 80:07 |Metres: 92 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 61
+4: Nicki Taki |Time Played: 80:07 |Metres: 8 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+5: Jeni Kimberly |Time Played: 44:44 |Metres: 34 |Tackles: 3 |Kicks: 2 |Kick Metres: 61 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+6: Velento Thurston |Time Played: 80:07 |Metres: 3 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+7: Jonathon East |Time Played: 75:08 |Metres: 33 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+8: Dave Claypool |Time Played: 80:07 |Metres: 50 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 24
+9: Al Johns |Time Played: 80:07 |Metres: 95 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+10: Connor Thompson |Time Played: 80:07 |Metres: 24 |Tackles: 18 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+11: Barry Claypool |Time Played: 33:44 |Metres: 18 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+12: Phoebe Winger |Time Played: 75:30 |Metres: 25 |Tackles: 10 |Kicks: 1 |Kick Metres: 60 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+13: Avery Campbell |Time Played: 15:07 |Metres: 0 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+14: Frank de Marit |Time Played: 35:23 |Metres: 14 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+15: Samantha Humphrey |Time Played: 51:00 |Metres: 107 |Tackles: 8 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 80
+16: Gerald Suatoma |Time Played: 65:00 |Metres: 19 |Tackles: 10 |Kicks: 2 |Kick Metres: 84 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 47
+17: Callum Beltio |Time Played: 75:42 |Metres: 34 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+Highlights:                 
+Most Tackles: Connor Thompson: 18
+Most Points: Dave Claypool: 8
+Most Metres: Samantha Humphrey: 107
+Most Errors: Jonathon East: 2
+                             
+---------TEAM STATS---------
+Home Team: Central Platypi
+Total Metres: 741
+Total Kick Metres: 314
+Total Errors: 9
+Total Tackles: 130
+Total Tries: 4
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Repaired Coast Emus
+Total Metres: 594
+Total Kick Metres: 312
+Total Errors: 5
+Total Tackles: 135
+Total Tries: 3
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 6/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Monty O' Donnell
+2nd (2 Points) -- Dom Soa
+3rd (1 Point) -- Phoebe Winger
+----------------------------

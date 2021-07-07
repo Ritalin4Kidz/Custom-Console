@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <vector>
+#include <deque>
 #include "ConsoleWindow.h"
 #include "SRLPlayer.h"
 
@@ -11,7 +11,7 @@ class SRLTeam {
 public:
 	SRLTeam();
 	SRLTeam(string name) {m_Name= name;}
-	SRLTeam(vector<SRLPlayer> a_TeamList, string name);
+	SRLTeam(deque<SRLPlayer> a_TeamList, string name);
 	virtual ~SRLTeam();
 
 	string Interchange(string& summaryPlay);
@@ -72,17 +72,17 @@ public:
 	void addPlayerRuckInfringment(string playerName);
 	void addPlayerNoTry(string playerName);
 
-	vector<string> addTimeOnField(int time);
+	deque<string> addTimeOnField(int time);
 
-	void addBestPlayers(vector<string> &vec, int amount);
+	void addBestPlayers(deque<string> &vec, int amount);
 
-	vector<SRLPlayer> addBestAttackers(vector<string>& vec, int amount);
+	deque<SRLPlayer> addBestAttackers(deque<string>& vec, int amount);
 
 	SRLPlayer getGoalKicker();
 	SRLPlayer getGoalKickerNoLimit();
 	int getInterchanges() { return m_Interchanges; }
 
-	vector<SRLPlayer> getPlayers() { return m_TeamList; }
+	deque<SRLPlayer> getPlayers() { return m_TeamList; }
 
 	void setPlayer(int index, SRLPlayer p) { m_TeamList[index] = p; }
 
@@ -132,7 +132,7 @@ private:
 	ColourClass secondaryColour = WHITE;
 	ColourClass badgeColour = WHITE;
 
-	vector<SRLPlayer> m_TeamList = vector<SRLPlayer>();
+	deque<SRLPlayer> m_TeamList = deque<SRLPlayer>();
 	int m_Interchanges = 0;
 
 	int averageAttack = 0;

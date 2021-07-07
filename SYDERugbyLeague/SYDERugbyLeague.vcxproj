@@ -114,6 +114,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Release;%(AdditionalLibraryDirectories);$(ProjectDir)\lib;$(ProjectDir)\fmod\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>SYDEEngine.lib;Winmm.lib;%(AdditionalDependencies);steam_api.lib;fmodL_vc.lib</AdditionalDependencies>
+      <StackReserveSize>4194304</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

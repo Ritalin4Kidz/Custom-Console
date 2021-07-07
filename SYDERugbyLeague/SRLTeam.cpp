@@ -64,11 +64,11 @@ string SRLTeam::SafeInterchange(string playerName, string& summaryPlay)
 			Interchange1 = i;
 		}
 	}
-	if (m_TeamList[Interchange1].getPlayerSent())
+	if (Interchange1 == -1)
 	{
 		return "";
 	}
-	if (Interchange1 == -1)
+	if (m_TeamList[Interchange1].getPlayerSent())
 	{
 		return "";
 	}

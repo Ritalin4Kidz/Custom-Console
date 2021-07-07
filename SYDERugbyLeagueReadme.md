@@ -29,6 +29,9 @@ Labcat - -
 
 ## Release Notes
 
+###  0.13.2.0 beta 7-07-2021
+- fixed bug which would cause a crash in simulations
+
 ###  0.13.1.0 beta 7-07-2021
 - fixed bug which would cause a crash in summary view due to invalid summaries being added
 

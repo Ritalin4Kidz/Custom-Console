@@ -4535,7 +4535,7 @@ void SRLGame::SimulateGames()
 		bool blacklistAchievement = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size() >= 6;
 		for (int j = 0; j < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); j++)
 		{
-			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[j].betState = Bet_Won)
+			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[j].betState == Bet_Won)
 			{
 				blacklistAchievement = false;
 			}

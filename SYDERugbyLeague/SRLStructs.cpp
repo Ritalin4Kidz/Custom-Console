@@ -300,7 +300,7 @@ ConsoleWindow SRLTrainingOption::draw(ConsoleWindow window, Vector2 point)
 			window.setTextAtPoint(Vector2(i, ii), " ", BRIGHTWHITE_BLUE_BG);
 		}
 	}
-	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY()), player, BRIGHTWHITE_BLUE_BG);
+	window.setTextAtPoint(Vector2(point.getX() + 2, point.getY()), player + " - " + to_string(player1_currentStat), BRIGHTWHITE_BLUE_BG);
 	switch (training)
 	{
 	case Training_Attack:
@@ -358,4 +358,25 @@ void SRLSeason::clear()
 	m_TopSinBin.clear();
 	m_TopSendOff.clear();
 	m_TopInjuries.clear();
+}
+
+void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
+{
+	int lead = 0;
+	if (homeScore > awayScore)
+	{
+		lead = homeScore - awayScore;
+		if (lead > homeTeamBiggestLead)
+		{
+			homeTeamBiggestLead = lead;
+		}
+	}
+	else
+	{
+		lead = awayScore - homeScore;
+		if (lead > awayTeamBiggestLead)
+		{
+			awayTeamBiggestLead = lead;
+		}
+	}
 }

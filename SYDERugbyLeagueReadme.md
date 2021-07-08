@@ -29,6 +29,10 @@ Labcat - -
 
 ## Release Notes
 
+###  0.13.4.0 beta 8-07-2021
+- Coaching adjustments
+- Last of the steam achievements
+
 ###  0.13.3.0 beta 7-07-2021
 - fixed crash with betting
 

@@ -13,6 +13,7 @@ enum SRLArticleType
 	SRLAT_PlayerSign,
 	SRLAT_Normal,
 	SRLAT_DropPlayer,
+	SRLAT_Training
 };
 
 
@@ -30,6 +31,7 @@ class SRLNewsStoryGenerator
 public:
 
 	static SRLNewsArticle getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, SRLTeam OtherTeam, SRLPlayer OtherPlayer, AssetsClass astVars);
+	static SRLNewsArticle getRandomTraining(SRLTeam MainTeam, SRLPlayer MainPlayer, AssetsClass astVars);
 
 #pragma region FeelGood
 	static deque<string> generateFeelGoodArticleSickKids(string Player1);
@@ -68,5 +70,6 @@ public:
 	static deque<string> generatePremiershipArticle(string teamName);
 	static deque<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);
 	static deque<string> generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2);
+	static deque<string> generateTrainingArticle(string teamName1, string Player1);
 #pragma endregion
 };

@@ -120,11 +120,17 @@ struct SRLGameMatchup
 	deque<string> ResultPlayByPlay;
 	deque<string> SummaryPlayByPlay;
 
+
+	void calculateBiggestLeads(int homeScore, int awayScore);
+
 	deque<SRLBetPrice> homeTeamTryOdds = deque<SRLBetPrice>();
 	deque<SRLBetPrice> awayTeamTryOdds = deque<SRLBetPrice>();
 
 	int homeTeamScore = 0;
 	int awayTeamScore = 0;
+
+	int homeTeamBiggestLead = 0;
+	int awayTeamBiggestLead = 0;
 
 	bool tiedGame = false;
 
@@ -252,12 +258,13 @@ enum SRLTrainingType
 
 struct SRLTrainingOption
 {
-	SRLTrainingOption(string p, int i, SRLTrainingType t) { player = p; playerID = i; training = t; _price = SRLBetPrice(((rand() % 9) + 1) * 10, 0); }
+	SRLTrainingOption(string p, int i, SRLTrainingType t, int stat) { player = p; playerID = i; training = t; _price = SRLBetPrice(((rand() % 9) + 1) * 10, 0); player1_currentStat = stat; }
 	ConsoleWindow draw(ConsoleWindow window, Vector2 point);
 	SRLBetPrice _price;
 	string player;
 	int playerID;
 	SRLTrainingType training;
+	int player1_currentStat;
 };
 
 struct SRLTradingOption

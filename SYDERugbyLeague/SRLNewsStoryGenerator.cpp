@@ -52,6 +52,19 @@ deque<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, stri
 	return temp;
 }
 
+deque<string> SRLNewsStoryGenerator::generateTrainingArticle(string teamName1, string Player1)
+{
+	deque<string> temp;
+	temp.push_back(Player1 + " has had a rough season");
+	temp.push_back("this year, but the player says that after");
+	temp.push_back("an inspiring training session, that they're");
+	temp.push_back("ready to come in to the next game with a new");
+	temp.push_back("attitude.");
+	temp.push_back("'Yeah it's rough training here over at the");
+	temp.push_back(teamName1 + ", but it's good'");
+	return temp;
+}
+
 SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, SRLTeam OtherTeam, SRLPlayer OtherPlayer, AssetsClass astVars)
 {
 	SRLNewsArticle m_Article;
@@ -149,6 +162,22 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	}
+	return m_Article;
+}
+
+SRLNewsArticle SRLNewsStoryGenerator::getRandomTraining(SRLTeam MainTeam, SRLPlayer MainPlayer, AssetsClass astVars)
+{
+	SRLNewsArticle m_Article;
+	int articleType = rand() % 1;
+	switch (articleType)
+	{
+	case 0:
+		m_Article.headline = MainPlayer.getName() + "'s Tough Training Session";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateTrainingArticle(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		break;
+	}
+	m_Article.type = SRLAT_Training;
 	return m_Article;
 }
 

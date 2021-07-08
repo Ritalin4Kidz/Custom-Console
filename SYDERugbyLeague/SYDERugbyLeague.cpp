@@ -53,7 +53,17 @@ enum EAchievements
 	SRL_FREEBEE_NETWORK = 26,
 	SRL_AUSMUSIC_TEAM = 27,
 	SRL_ROUND_ROBIN = 28,
-	SRL_MINIMME_COMM = 29
+	SRL_MINIMME_COMM = 29,
+	SRL_BEST_COACH = 30,
+	SRL_COACHING_MASTERCLASS = 31,
+	SRL_UNDERDOGS = 32,
+	SRL_MAX_TRAINING = 33,
+	SRL_SACKED = 34,
+	SRL_IMPLOSION = 35,
+	SRL_SALARY_CAP = 36,
+	SRL_CHOKE = 37,
+	SRL_TRYSCORER = 38,
+	SRL_BLACKLIST =  39
 };
 
 // Achievement array which will hold data about the achievements and their state
@@ -88,6 +98,16 @@ Achievement_t g_Achievements[] =
 	_ACH_ID(SRL_AUSMUSIC_TEAM, "AusMusic Community"),
 	_ACH_ID(SRL_ROUND_ROBIN, "Enough To Go Around"),
 	_ACH_ID(SRL_MINIMME_COMM, "Minimme Community"),
+	_ACH_ID(SRL_BEST_COACH, "#1 Coach In The League"),
+	_ACH_ID(SRL_COACHING_MASTERCLASS, "Coaching Masterclass"),
+	_ACH_ID(SRL_UNDERDOGS, "Underdogs"),
+	_ACH_ID(SRL_MAX_TRAINING, "Maximum Power"),
+	_ACH_ID(SRL_SACKED, "Facing The Sack"),
+	_ACH_ID(SRL_IMPLOSION, "You've Lost The Dressing Room"),
+	_ACH_ID(SRL_SALARY_CAP, "Breaking The Salary Cap"),
+	_ACH_ID(SRL_CHOKE, "Bring Back The Bears"),
+	_ACH_ID(SRL_TRYSCORER, "Tryscorer Predictor"),
+	_ACH_ID(SRL_BLACKLIST, "Z's Blacklist"),
 };
 
 // Global access to Achievements object
@@ -181,7 +201,7 @@ int main(int argc, char* argv[])
 		if (bRet)
 		{
 			cout << "Steam API Initialization Successful" << endl;
-			g_SteamAchievements = new CSteamAchievements(g_Achievements, 30);
+			g_SteamAchievements = new CSteamAchievements(g_Achievements, 40);
 		}
 		else
 		{

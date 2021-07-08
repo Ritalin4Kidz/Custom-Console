@@ -214,6 +214,7 @@ public:
 	void sortOutNews();
 	void checkSpecificBetAchievements(SRLGameBet _bet);
 	void checkBetAchievements();
+	void checkCoachingAchievements();
 	void offContractTrade();
 	bool offContractTrade(int team1, int player1);
 	void TeamTrade();
@@ -324,6 +325,8 @@ public:
 	static bool selectedTeamCall;
 	static bool performTradeCall;
 	static bool performTradeConfirmedCall;
+
+	static bool performRefreshOptionsCall;
 
 	static bool performTrainCall;
 	static bool performTrainConfirmedCall;
@@ -582,6 +585,13 @@ private:
 
 	SYDEClickableButton m_CoachTrainConfirmOKBtn;
 	SYDEClickableButton m_CoachTrainConfirmCNCLBtn;
+
+	SYDEClickableButton m_CoachTrainRefreshBtn;
+	const int maxRefreshes = 3;
+	int refreshAvailable = 0;
+	bool trainingAvailable = false;
+
+	int startingRating = 99;
 
 	deque<SRLTrainingOption> _trainingOptions;
 	deque<SRLTradingOption> _tradingOptions;

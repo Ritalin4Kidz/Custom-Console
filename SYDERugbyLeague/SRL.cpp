@@ -4595,16 +4595,16 @@ void SRLGame::SimulateGames()
 		{
 			finals = true;
 			//THAT WAS GRAND FINAL, FINISH SEASON
-			if (coachingMode)
-			{
-				if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
-				{
-					AchievementStrings.push_back("SRL_BEST_COACH");
-				}
-			}
 
 			if (m_roundToSimulate >= BaseSeasonGames + finalsRounds)
 			{
+				if (coachingMode)
+				{
+					if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
+					{
+						AchievementStrings.push_back("SRL_BEST_COACH");
+					}
+				}
 				for (int ii = 0; ii < m_Season.m_PremiershipBets.size(); ii++)
 				{
 					if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate -1].m_Games[0].WinningTeam)

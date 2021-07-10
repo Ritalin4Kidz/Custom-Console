@@ -38,6 +38,7 @@ enum GameStateSYDE
 	NewsViewState,
 	TeamInDepthViewState,
 	ProfileViewState,
+	SponsorChallengeViewState
 };
 
 enum CoachingViewDrawState
@@ -130,11 +131,18 @@ enum SRLPriorBets_State
 	TryScorerBets_State,
 };
 
+enum SRLSponsorTypeState
+{
+	SponsorState_Casino,
+	SponsorState_Shoes,
+	SponsorState_Zeckfast
+};
+
 #pragma endregion
 
 class SRLGame : public SYDEWindowGame {
 public:
-	SRLGame() { init(); }
+	SRLGame() { initSponsors();  init(); }
 	virtual ~SRLGame() {}
 	void init();
 
@@ -160,6 +168,7 @@ public:
 	ConsoleWindow LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ProfileView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow ChallengesView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -250,6 +259,8 @@ public:
 	static CoachingViewDrawState coachDrawState;
 
 	static SRLSeasonLength seasonLength;
+
+	static SRLSponsorTypeState sponsorState;
 
 	static bool SeasonStart;
 	static bool SeasonStartCall;
@@ -610,4 +621,15 @@ private:
 	deque<SYDEClickableButton> m_TrainingButtons;
 	bool tradingAvailable = false;
 #pragma endregion
+
+
+#pragma region Challenges
+
+	SYDEClickableButton m_Sponsor_Clarity_CasinoBtn = SYDEClickableButton();
+	SYDEClickableButton m_Sponsor_Northkellion_ShoesBtn = SYDEClickableButton();
+	SYDEClickableButton m_Sponsor_ZeckfastBtn = SYDEClickableButton();
+
+	void initSponsors();
+#pragma endregion
+
 };

@@ -381,6 +381,21 @@ void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
 	}
 }
 
+void SRLProfile::initChallenges()
+{
+	deque<SRLSponsorChallenge> casinoChallenges;
+	casinoChallenges.push_back(SRLSponsorChallenge("TestA"));
+	Sponsor_Clarity_Casino = SRLSponsor("Clarity Casino", casinoChallenges);
+
+	deque<SRLSponsorChallenge> northChallenges;
+	northChallenges.push_back(SRLSponsorChallenge("TestB"));
+	Sponsor_Northkellion_Shoes = SRLSponsor("Northkellion Shoes", northChallenges);
+
+	deque<SRLSponsorChallenge> zeckChallenges;
+	zeckChallenges.push_back(SRLSponsorChallenge("TestC"));
+	Sponsor_Zeckfast = SRLSponsor("Zeckfast Cafes", zeckChallenges);
+}
+
 void SRLProfile::LoadSettings()
 {
 	if (SYDEFileDefaults::exists("EngineFiles\\Settings\\playerProfile.json"))
@@ -390,6 +405,18 @@ void SRLProfile::LoadSettings()
 			std::ifstream ifs{ "EngineFiles\\Settings\\playerProfile.json" };
 			json save_file = json::parse(ifs);
 			seasonsSimulated = save_file["seasonsCompleted"];
+			for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
+			{
+				Sponsor_Clarity_Casino.challenges[i].Completed = save_file["casinoSponsor"][to_string(i)];
+			}
+			for (int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
+			{
+				Sponsor_Northkellion_Shoes.challenges[i].Completed = save_file["northkellion"][to_string(i)];
+			}
+			for (int i = 0; i < Sponsor_Zeckfast.challenges.size(); i++)
+			{
+				Sponsor_Zeckfast.challenges[i].Completed = save_file["zeckfast"][to_string(i)];
+			}
 		}
 		catch (exception e)
 		{
@@ -403,6 +430,18 @@ void SRLProfile::SaveSettings()
 	json save_file;
 	//PlayerStats
 	save_file["seasonsCompleted"] = seasonsSimulated;
+	for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
+	{
+		save_file["casinoSponsor"][to_string(i)] = Sponsor_Clarity_Casino.challenges[i].Completed;
+	}
+	for (int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
+	{
+		save_file["northkellion"][to_string(i)] = Sponsor_Northkellion_Shoes.challenges[i].Completed;
+	}
+	for (int i = 0; i < Sponsor_Zeckfast.challenges.size(); i++)
+	{
+		save_file["zeckfast"][to_string(i)] = Sponsor_Zeckfast.challenges[i].Completed;
+	}
 	std::ofstream ofs("EngineFiles\\Settings\\playerProfile.json");
 	ofs << save_file;
 }

@@ -281,14 +281,36 @@ struct SRLTradingOption
 	int player2_atk, player2_def, player2_spd, player2_hand, player2_kick = 0;
 };
 
+struct SRLSponsorChallenge
+{
+	SRLSponsorChallenge() {}
+	SRLSponsorChallenge(string c) { challenge = c; }
+	string challenge;
+	bool Completed = false;
+};
+
+struct SRLSponsor
+{
+	SRLSponsor() {}
+	SRLSponsor(string name, deque<SRLSponsorChallenge> c) { SponsorName = name; challenges = c; }
+	string SponsorName;
+	deque<SRLSponsorChallenge> challenges;
+};
 
 struct SRLProfile
 {
 public:
-	SRLProfile() { LoadSettings(); }
+	SRLProfile() { initChallenges();  LoadSettings(); SaveSettings(); }
 	double seasonsSimulated = 0;
 
+	SRLSponsor Sponsor_Clarity_Casino;
+	SRLSponsor Sponsor_Northkellion_Shoes;
+	SRLSponsor Sponsor_Zeckfast;
+
+
 	void addSeasonSimulated() { seasonsSimulated++; SaveSettings(); }
+
+	void initChallenges();
 
 	void LoadSettings();
 	void SaveSettings();

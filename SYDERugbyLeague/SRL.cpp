@@ -75,6 +75,7 @@ bool SRLGame::performRefreshOptionsCall = false;
 SRLTrainingType SRLGame::trainType = Training_Attack;
 int SRLGame::playerMainTeamTrade = 0;
 int SRLGame::playerOtherTeamTrade = 0;
+SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
 
 deque<string> SRLGame::AchievementStrings = deque<string>();
@@ -703,6 +704,13 @@ void InjuryLdrViewClick()
 {
 	SRLGame::ldrState = Injury_State;
 }
+
+void SponsorButtonClick()
+{
+	SRLGame::newState = SponsorChallengeViewState;
+	SRLGame::sponsorState = static_cast<SRLSponsorTypeState>(stoi(SYDEClickableButton::getLastButtonTag()));
+}
+
 void SeasonSettingsViewClick()
 {
 	SRLGame::settingsState = SeasonSettings_STATE;
@@ -1602,6 +1610,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		else if (currentState == Exhibition_LoadState)
 		{
 			AssignState(std::bind(&SRLGame::exhibition_match_settings, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
+		else if (currentState == SponsorChallengeViewState)
+		{
+			AssignState(std::bind(&SRLGame::ChallengesView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == SeasonModeState)
 		{
@@ -3133,6 +3145,62 @@ ConsoleWindow SRLGame::ProfileView(ConsoleWindow window, int windowWidth, int wi
 	window.setTextAtPoint(Vector2(0, 1), "Your Profile", BLACK_BRIGHTWHITE_BG);
 	window.setTextAtPoint(Vector2(0, 3), "Seasons Complete: " + to_string((int)m_GameProfile.seasonsSimulated), BRIGHTWHITE);
 	window = m_ProfileLogo.draw_asset(window, Vector2(40, 2));
+	window = m_BackTeamInDepth.draw_ui(window);
+	window = m_Sponsor_Clarity_CasinoBtn.draw_ui(window);
+	window = m_Sponsor_Northkellion_ShoesBtn.draw_ui(window);
+	window = m_Sponsor_ZeckfastBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::ChallengesView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 0; i < windowWidth; i++)
+	{
+		window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	if (sponsorState == SponsorState_Casino)
+	{
+		for (int i = 0; i < m_GameProfile.Sponsor_Clarity_Casino.challenges.size(); i++)
+		{
+			if (m_GameProfile.Sponsor_Clarity_Casino.challenges[i].Completed)
+			{
+				window.setTextAtPoint(Vector2(0, i + 2), m_GameProfile.Sponsor_Clarity_Casino.challenges[i].challenge, GREEN);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(0, i + 2), m_GameProfile.Sponsor_Clarity_Casino.challenges[i].challenge, RED);
+			}
+		}
+	}
+	else if (sponsorState == SponsorState_Shoes)
+	{
+		for (int i = 0; i < m_GameProfile.Sponsor_Northkellion_Shoes.challenges.size(); i++)
+		{
+			if (m_GameProfile.Sponsor_Northkellion_Shoes.challenges[i].Completed)
+			{
+				window.setTextAtPoint(Vector2(0, i + 2), m_GameProfile.Sponsor_Northkellion_Shoes.challenges[i].challenge, GREEN);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(0, i + 2), m_GameProfile.Sponsor_Northkellion_Shoes.challenges[i].challenge, RED);
+			}
+		}
+	}
+	else if (sponsorState == SponsorState_Zeckfast)
+	{
+		for (int i = 0; i < m_GameProfile.Sponsor_Zeckfast.challenges.size(); i++)
+		{
+			if (m_GameProfile.Sponsor_Zeckfast.challenges[i].Completed)
+			{
+				window.setTextAtPoint(Vector2(0, i + 2), m_GameProfile.Sponsor_Zeckfast.challenges[i].challenge, GREEN);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(0, i + 2), m_GameProfile.Sponsor_Zeckfast.challenges[i].challenge, RED);
+			}
+		}
+	}
 	window = m_BackTeamInDepth.draw_ui(window);
 	return window;
 }
@@ -5235,6 +5303,7 @@ void SRLGame::saveGameSettings()
 	save_file["soundvolume"] = static_cast<int>(BaseSYDESoundSettings::getDefaultVolumeState());
 	save_file["soundtrackon"] = static_cast<int>(soundTrackOn);
 	save_file["scrollspeed"] = m_ScrollingSpeed;
+
 	string filePath = string("EngineFiles\\Settings\\gameSettings.json");
 	std::ofstream ofs(filePath);
 	ofs << save_file;
@@ -6000,6 +6069,27 @@ void SRLGame::sortOutTradingOptions()
 		}
 	}
 	tradingAvailable = true;
+}
+
+void SRLGame::initSponsors()
+{
+	m_Sponsor_Clarity_CasinoBtn = SYDEClickableButton("                                              Sponsorship: Clarity Casino", Vector2(0, 5), Vector2(40, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_Sponsor_Clarity_CasinoBtn.setHighLight(RED);
+	m_Sponsor_Clarity_CasinoBtn.SetFunc(SponsorButtonClick);
+	m_Sponsor_Clarity_CasinoBtn._WrapText(true);
+	m_Sponsor_Clarity_CasinoBtn.setTag("0");
+
+	m_Sponsor_Northkellion_ShoesBtn = SYDEClickableButton("                                            Sponsorship: Northkellion Shoes", Vector2(0, 9), Vector2(40, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_Sponsor_Northkellion_ShoesBtn.setHighLight(RED);
+	m_Sponsor_Northkellion_ShoesBtn.SetFunc(SponsorButtonClick);
+	m_Sponsor_Northkellion_ShoesBtn._WrapText(true);
+	m_Sponsor_Northkellion_ShoesBtn.setTag("1");
+
+	m_Sponsor_ZeckfastBtn = SYDEClickableButton("                                              Sponsorship: Zeckfast Cafes", Vector2(0, 13), Vector2(40, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_Sponsor_ZeckfastBtn.setHighLight(RED);
+	m_Sponsor_ZeckfastBtn.SetFunc(SponsorButtonClick);
+	m_Sponsor_ZeckfastBtn._WrapText(true);
+	m_Sponsor_ZeckfastBtn.setTag("2");
 }
 
 #pragma endregion

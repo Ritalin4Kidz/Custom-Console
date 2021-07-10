@@ -22,6 +22,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamFreebeeNetwork(string& team)
 	TeamList.push_back(SRLPlayer("Mitchell Lynn", "Australia", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 20));
 	SRLTeam FreebeeNetwork = SRLTeam(TeamList, "Freebee Network");
 	FreebeeNetwork.setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, BRIGHTRED_BRIGHTRED_BG, YELLOW_YELLOW_BG, 4);
+	FreebeeNetwork.setLogoCustom("TeamFreebee");
 	team = "SRL_FREEBEE_NETWORK";
 	return FreebeeNetwork;
 }
@@ -48,6 +49,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamAusmusicCommunity(string& team
 	TeamList.push_back(SRLPlayer("Hingers", "Australia", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
 	SRLTeam AusMusic = SRLTeam(TeamList, "AusMusic Community");
 	AusMusic.setJersey(LIGHTGREY_LIGHTGREY_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 70);
+	AusMusic.setLogoCustom("Ausmusic");
 	team = "SRL_AUSMUSIC_TEAM";
 	return AusMusic;
 }
@@ -75,13 +77,14 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamMinimmeCommunity(string& team)
 	TeamList.push_back(SRLPlayer("Deleted User", "?????", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
 	SRLTeam MinimmeCommunity = SRLTeam(TeamList, "Minimme Community");
 	MinimmeCommunity.setJersey(BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 11);
+	MinimmeCommunity.setLogoCustom("Minimme");
 	team = "SRL_MINIMME_COMM";
 	return MinimmeCommunity;
 }
 
 SRLTeam SRLCustomTeamGenerator::generateRandomCustomTeam(string& team)
 {
-	int chance = rand() % 2;
+	int chance = rand() % 3;
 	switch (chance)
 	{
 	case 0:

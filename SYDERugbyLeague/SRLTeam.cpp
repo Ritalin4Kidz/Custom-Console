@@ -128,6 +128,7 @@ void SRLTeam::loadTeam(string path)
 	badgeColour = static_cast<ColourClass>(save_file["badge"]);
 	jerseryTypeInt = save_file["jerseytype"];
 	logoTypeInt = save_file["logotype"];
+	setLogoCustom(save_file["customlogo"]);
 	int numberOfPlayers = save_file["playeramt"];
 	for (int i = 0; i < numberOfPlayers; i++)
 	{
@@ -166,6 +167,7 @@ void SRLTeam::saveTeam()
 	save_file["secondary"] = static_cast<int>(secondaryColour);
 	save_file["badge"] = static_cast<int>(badgeColour);
 	save_file["playeramt"] = m_TeamList.size();
+	save_file["customlogo"] = m_CustomLogo;
 	for (int i = 0; i < m_TeamList.size(); i++)
 	{
 		m_TeamList[i].savePlayer();

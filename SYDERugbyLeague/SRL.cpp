@@ -5716,6 +5716,10 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(m_InDepthTeamView.getJerseryType()) + ".bmp";
 	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
 	string LogoBmp = "EngineFiles\\TeamLogos\\TeamLogo" + to_string(m_InDepthTeamView.getLogoType()) + ".bmp";
+	if (m_InDepthTeamView.getLogoCustom() != "")
+	{
+		LogoBmp = "EngineFiles\\CustomLogos\\" + m_InDepthTeamView.getLogoCustom() + ".bmp";
+	}
 	wstring wLogoBmp = wstring(LogoBmp.begin(), LogoBmp.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
 	m_JerseyView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
@@ -5728,13 +5732,16 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_JerseyView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
 
 	m_LogoView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wLogoBmp.c_str(), 15, 15));
-	m_LogoView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
-	m_LogoView.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
-	m_LogoView.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+	if (m_InDepthTeamView.getLogoCustom() == "")
+	{
+		m_LogoView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+		m_LogoView.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+		m_LogoView.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
 
-	m_LogoView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
-	m_LogoView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
-	m_LogoView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
+		m_LogoView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
+		m_LogoView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
+		m_LogoView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
+	}
 
 	m_InDepthTeamView.CalculateAverages();
 }

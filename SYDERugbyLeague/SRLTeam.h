@@ -37,6 +37,8 @@ public:
 
 	void clearTeam();
 	void setJersey(ColourClass p, ColourClass s, ColourClass b, int JerseyType) { primaryColour = p; secondaryColour = s; badgeColour = b; jerseryTypeInt = JerseyType; }
+	void setLogoCustom(string _Logo) { m_CustomLogo = _Logo; }
+	string getLogoCustom() { return m_CustomLogo; }
 	string getName() { return m_Name; }
 	void setName(string name) { m_Name = name; }
 	void loadTeam(string path);
@@ -134,6 +136,8 @@ private:
 	ColourClass primaryColour = WHITE;
 	ColourClass secondaryColour = WHITE;
 	ColourClass badgeColour = WHITE;
+
+	string m_CustomLogo = "";
 
 	deque<SRLPlayer> m_TeamList = deque<SRLPlayer>();
 	int m_Interchanges = 0;

@@ -6,26 +6,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## GOALS FOR GOLD
 
-- Increase the amount of player names & team names to more than double
-
-- at least 50 different news stories
-
-- better odds calculations
-
-- full soundtrack implementation
-
-- CRASH LOGS
-
-Feedback:
-Labcat - -
-	Would be nice to be able to move between rounds in the Season News.
-	And have what round it was.
-	To check team stats I have to go to the main menu, right? That would also be neat to be able to check contextually.
-	Maybe you could put a "featured match" in the Season tab, with the two closest matched teams being in a seperate tab
-
-## ABANDONED IDEAS
-
-- Watch the next game (live feed of play by play comes in and screen updates accordingly)
+-- TODO: Make custom team's logos fixed to specific logos (possibly custom)
 
 ## Release Notes
 

@@ -380,3 +380,29 @@ void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
 		}
 	}
 }
+
+void SRLProfile::LoadSettings()
+{
+	if (SYDEFileDefaults::exists("EngineFiles\\Settings\\playerProfile.json"))
+	{
+		try
+		{
+			std::ifstream ifs{ "EngineFiles\\Settings\\playerProfile.json" };
+			json save_file = json::parse(ifs);
+			seasonsSimulated = save_file["seasonsCompleted"];
+		}
+		catch (exception e)
+		{
+			//DON'T WORRY
+		}
+	}
+}
+
+void SRLProfile::SaveSettings()
+{
+	json save_file;
+	//PlayerStats
+	save_file["seasonsCompleted"] = seasonsSimulated;
+	std::ofstream ofs("EngineFiles\\Settings\\playerProfile.json");
+	ofs << save_file;
+}

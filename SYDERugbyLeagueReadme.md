@@ -29,6 +29,10 @@ Labcat - -
 
 ## Release Notes
 
+###  0.14.0.0 beta 10-07-2021
+- Profile View Start
+- Team Logos
+
 ###  0.13.4.0 beta 8-07-2021
 - Coaching adjustments
 - Last of the steam achievements

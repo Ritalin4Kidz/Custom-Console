@@ -90,8 +90,9 @@ string SRLTeam::SafeInterchange(string playerName, string& summaryPlay)
 void SRLTeam::generateJerseys()
 {
 	int noJerseys = SYDEFileDefaults::getFileCount("EngineFiles\\JerseyFeatures", ".bmp");
+	int noLogos = SYDEFileDefaults::getFileCount("EngineFiles\\TeamLogos", ".bmp");
 	jerseryTypeInt = rand() % noJerseys;
-
+	logoTypeInt = rand() % noLogos;
 	primaryColour = getRandomColour();
 	secondaryColour = getRandomColour();
 	while (primaryColour == secondaryColour)
@@ -126,6 +127,7 @@ void SRLTeam::loadTeam(string path)
 	secondaryColour = static_cast<ColourClass>(save_file["secondary"]);
 	badgeColour = static_cast<ColourClass>(save_file["badge"]);
 	jerseryTypeInt = save_file["jerseytype"];
+	logoTypeInt = save_file["logotype"];
 	int numberOfPlayers = save_file["playeramt"];
 	for (int i = 0; i < numberOfPlayers; i++)
 	{
@@ -159,6 +161,7 @@ void SRLTeam::saveTeam()
 	//PlayerStats
 	save_file["name"] = m_Name;
 	save_file["jerseytype"] = jerseryTypeInt;
+	save_file["logotype"] = logoTypeInt;
 	save_file["primary"] = static_cast<int>(primaryColour);
 	save_file["secondary"] = static_cast<int>(secondaryColour);
 	save_file["badge"] = static_cast<int>(badgeColour);

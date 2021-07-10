@@ -48,6 +48,7 @@ bool SRLGame::performTradeCall = false;
 bool SRLGame::performTradeConfirmedCall = false;
 bool SRLGame::performTrainCall = false;
 bool SRLGame::performTrainConfirmedCall = false;
+bool SRLGame::TeamInDepthViewingJerseyAsset = true;
 int SRLGame::playerClicked = 0;
 float SRLGame::m_ScrollingSpeed = 1.0f;
 string SRLGame::customAmountStr = "";
@@ -293,6 +294,16 @@ void InDepthTeamListViewClick()
 void InDepthTeamListBackClick()
 {
 	SRLGame::inDepthState = NormalInDepthView;
+}
+
+void PlayerProfileViewClick()
+{
+	SRLGame::newState = ProfileViewState;
+}
+
+void TeamAssetSwitchViewClick()
+{
+	SRLGame::TeamInDepthViewingJerseyAsset = !SRLGame::TeamInDepthViewingJerseyAsset;
 }
 
 void InDepthTeamViewClick()
@@ -1131,6 +1142,14 @@ void SRLGame::init()
 	m_TeamInDepthView.setHighLight(RED);
 	m_TeamInDepthView.SetFunc(InDepthTeamViewClick);
 
+	m_TeamAssetSwitchView = SYDEClickableButton(" Switch Logo View ", Vector2(2, 18), Vector2(18, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_TeamAssetSwitchView.setHighLight(RED);
+	m_TeamAssetSwitchView.SetFunc(TeamAssetSwitchViewClick);
+
+	m_ProfileViewBtn = SYDEClickableButton("    Your Profile    ", Vector2(20, 19), Vector2(20, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_ProfileViewBtn.setHighLight(RED);
+	m_ProfileViewBtn.SetFunc(PlayerProfileViewClick);
+
 	m_ExitGame = SYDEClickableButton("  Exit Application  ", Vector2(40, 19), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_ExitGame.setHighLight(RED);
 	m_ExitGame.SetFunc(ExitButtonClick);
@@ -1576,6 +1595,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 			m_MainMenuBG.setFrame(0);
 			AssignState(std::bind(&SRLGame::main_menu_scene, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
+		else if (currentState == ProfileViewState)
+		{
+			AssignState(std::bind(&SRLGame::ProfileView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
 		else if (currentState == Exhibition_LoadState)
 		{
 			AssignState(std::bind(&SRLGame::exhibition_match_settings, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
@@ -1722,6 +1745,7 @@ ConsoleWindow SRLGame::main_menu_scene(ConsoleWindow window, int windowWidth, in
 	}
 	window = drawMainMenuTabs(window);
 	window = m_TeamInDepthView.draw_ui(window);
+	window = m_ProfileViewBtn.draw_ui(window);
 	window = m_ExitGame.draw_ui(window);
 	//window.setTextAtPoint(Vector2(0, 19), "", BLACK_BRIGHTWHITE_BG);
 	return window;
@@ -3099,6 +3123,20 @@ ConsoleWindow SRLGame::ResultsView(ConsoleWindow window, int windowWidth, int wi
 	return window;
 }
 
+ConsoleWindow SRLGame::ProfileView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 0; i < windowWidth; i++)
+	{
+		window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(0, 1), "Your Profile", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(0, 3), "Seasons Complete: " + to_string((int)m_GameProfile.seasonsSimulated), BRIGHTWHITE);
+	window = m_ProfileLogo.draw_asset(window, Vector2(40, 2));
+	window = m_BackTeamInDepth.draw_ui(window);
+	return window;
+}
+
 ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	if (playerCall)
@@ -3154,7 +3192,15 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 
 	window.setTextAtPoint(Vector2(2, 11), "Goal Kicker: " + m_InDepthTeamView.getGoalKickerNoLimit().getName(), BRIGHTWHITE);
 
-	window = m_JerseyView.draw_asset(window, Vector2(30,3));
+	if (TeamInDepthViewingJerseyAsset)
+	{
+		window = m_JerseyView.draw_asset(window, Vector2(30, 3));
+	}
+	else
+	{
+		window = m_LogoView.draw_asset(window, Vector2(30, 3));
+	}
+	window = m_TeamAssetSwitchView.draw_ui(window);
 	window = m_BackTeamInDepth.draw_ui(window);
 	window = m_PrevTeamInDepth.draw_ui(window);
 	window = m_NextTeamInDepth.draw_ui(window);
@@ -3457,7 +3503,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 0.13.4.0-beta", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 0.14.0.0-beta", BRIGHTWHITE);
 	return window;
 }
 
@@ -4595,9 +4641,9 @@ void SRLGame::SimulateGames()
 		{
 			finals = true;
 			//THAT WAS GRAND FINAL, FINISH SEASON
-
 			if (m_roundToSimulate >= BaseSeasonGames + finalsRounds)
 			{
+				m_GameProfile.addSeasonSimulated();
 				if (coachingMode)
 				{
 					if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
@@ -5669,6 +5715,8 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_InDepthTeamView.loadTeam("EngineFiles\\GameResults\\Teams\\" + teamLoad + ".json");
 	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(m_InDepthTeamView.getJerseryType()) + ".bmp";
 	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	string LogoBmp = "EngineFiles\\TeamLogos\\TeamLogo" + to_string(m_InDepthTeamView.getLogoType()) + ".bmp";
+	wstring wLogoBmp = wstring(LogoBmp.begin(), LogoBmp.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
 	m_JerseyView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
 	m_JerseyView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
@@ -5678,6 +5726,15 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_JerseyView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
 	m_JerseyView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
 	m_JerseyView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
+
+	m_LogoView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wLogoBmp.c_str(), 15, 15));
+	m_LogoView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	m_LogoView.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	m_LogoView.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	m_LogoView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
+	m_LogoView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
+	m_LogoView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
 
 	m_InDepthTeamView.CalculateAverages();
 }

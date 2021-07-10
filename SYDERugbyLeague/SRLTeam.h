@@ -26,6 +26,8 @@ public:
 	
 	int getJerseryType() { return jerseryTypeInt; }
 
+	int getLogoType() { return logoTypeInt; }
+
 	ColourClass getPrimary() { return primaryColour; }
 	ColourClass getSecondary() { return secondaryColour; }
 	ColourClass getBadge() { return badgeColour; }
@@ -127,6 +129,7 @@ private:
 	string m_Name;
 
 	int jerseryTypeInt;
+	int logoTypeInt;
 
 	ColourClass primaryColour = WHITE;
 	ColourClass secondaryColour = WHITE;

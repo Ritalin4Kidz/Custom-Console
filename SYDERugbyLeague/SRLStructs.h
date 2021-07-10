@@ -280,3 +280,16 @@ struct SRLTradingOption
 	int player1_atk, player1_def, player1_spd, player1_hand, player1_kick = 0;
 	int player2_atk, player2_def, player2_spd, player2_hand, player2_kick = 0;
 };
+
+
+struct SRLProfile
+{
+public:
+	SRLProfile() { LoadSettings(); }
+	double seasonsSimulated = 0;
+
+	void addSeasonSimulated() { seasonsSimulated++; SaveSettings(); }
+
+	void LoadSettings();
+	void SaveSettings();
+};

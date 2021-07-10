@@ -37,6 +37,7 @@ enum GameStateSYDE
 	InformationState,
 	NewsViewState,
 	TeamInDepthViewState,
+	ProfileViewState,
 };
 
 enum CoachingViewDrawState
@@ -158,6 +159,7 @@ public:
 	ConsoleWindow CoachingView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow LeaderboardView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow ProfileView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -331,6 +333,8 @@ public:
 	static bool performTrainCall;
 	static bool performTrainConfirmedCall;
 
+	static bool TeamInDepthViewingJerseyAsset;
+
 	static int playerMainTeamTrade;
 	static int playerOtherTeamTrade;
 	static SRLTeam otherTeamTrade;
@@ -476,27 +480,30 @@ private:
 	SYDEClickableButton m_BackHeadline = SYDEClickableButton();
 	SRLNewsArticle m_Article;
 
-	SYDEClickableButton m_TeamInDepthView = SYDEClickableButton();;
-	SYDEClickableButton m_BackTeamInDepth = SYDEClickableButton();;
-	SYDEClickableButton m_NextTeamInDepth = SYDEClickableButton();;
-	SYDEClickableButton m_PrevTeamInDepth = SYDEClickableButton();;
-	SYDEClickableButton m_TeamListInDepth = SYDEClickableButton();;
-	SYDEClickableButton m_BackTeamListInDepth = SYDEClickableButton();;
-	SYDEClickableButton m_RegeneratePlayerBtn = SYDEClickableButton();;
-	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();;
-	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();;
+	SYDEClickableButton m_TeamInDepthView = SYDEClickableButton();
+	SYDEClickableButton m_TeamAssetSwitchView = SYDEClickableButton();
+	SYDEClickableButton m_BackTeamInDepth = SYDEClickableButton();
+	SYDEClickableButton m_NextTeamInDepth = SYDEClickableButton();
+	SYDEClickableButton m_PrevTeamInDepth = SYDEClickableButton();
+	SYDEClickableButton m_TeamListInDepth = SYDEClickableButton();
+	SYDEClickableButton m_BackTeamListInDepth = SYDEClickableButton();
+	SYDEClickableButton m_RegeneratePlayerBtn = SYDEClickableButton();
+	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();
+	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();
+
+	SYDEClickableButton m_ProfileViewBtn = SYDEClickableButton();
 
 	//EXIT GAME BUTTONS
-	SYDEClickableButton m_ExitGame = SYDEClickableButton();;
-	SYDEClickableButton m_ExitGameOK = SYDEClickableButton();;
-	SYDEClickableButton m_ExitGameCNL = SYDEClickableButton();;
+	SYDEClickableButton m_ExitGame = SYDEClickableButton();
+	SYDEClickableButton m_ExitGameOK = SYDEClickableButton();
+	SYDEClickableButton m_ExitGameCNL = SYDEClickableButton();
 
 	//FEATURED MATCH UP
-	SYDEClickableButton m_FeatureViewBtn = SYDEClickableButton();;
-	SYDEClickableButton m_FeatureSwitchViewBtn = SYDEClickableButton();;
-	SYDEClickableButton m_MainDrawViewBtn = SYDEClickableButton();;
-	SYDEClickableButton m_MainSettingsViewBtn = SYDEClickableButton();;
-	SYDEClickableButton m_TipMasterViewBtn = SYDEClickableButton();;
+	SYDEClickableButton m_FeatureViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_FeatureSwitchViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_MainDrawViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_MainSettingsViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_TipMasterViewBtn = SYDEClickableButton();
 	CustomAsset m_TipMasterImg = CustomAsset(22, 11, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\Tipmaster.bmp", 11, 11));
 	deque<string> TipMasterBets = deque<string>({});
 
@@ -559,14 +566,18 @@ private:
 
 	CustomAnimationAsset m_MainMenuBG = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\mainmenuAnim.bmp", astVars, 180, 280, 30, 20, 0, 81));
 	CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
+	CustomAsset m_ProfileLogo = CustomAsset(20, 10, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\DefaultLogo.bmp", 10, 10));
 	float splashScreenTime = 0;
 	bool splashScreenInit = true;
 	SRLTeam m_InDepthTeamView;
 	CustomAsset m_JerseyView;
+	CustomAsset m_LogoView;
 	int m_TeamViewing = 0;
 	deque<SYDEClickableButton> m_PlayerButtons;
 	SRLPlayer m_PlayerView;
 	CustomAsset m_PlayerAsset;
+
+	SRLProfile m_GameProfile;
 
 #pragma region COACHING
 	SRLTeam m_CoachedTeam;

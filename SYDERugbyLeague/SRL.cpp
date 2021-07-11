@@ -2708,7 +2708,10 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 					break;
 				}
 				m_CoachedTeam.saveTeam();
-				sortOutTradingOptions();
+				if (tradingAvailable)
+				{
+					sortOutTradingOptions();
+				}
 				trainingAvailable = false;
 				if (m_CoachedTeam.getPlayers()[playerMainTeamTrade].getRating() >= 99)
 				{
@@ -2850,7 +2853,10 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 			{
 				otherTeamTrade.saveTeam();
 			}
-			sortOutTrainingOptions();
+			if (trainingAvailable)
+			{
+				sortOutTrainingOptions();
+			}
 			tradingAvailable = false;
 		}
 		if (m_roundToSimulate < BaseSeasonGames + finalsRounds && tradingAvailable)
@@ -4318,7 +4324,7 @@ void SRLGame::CalculateTryScorerOdds()
 	{
 		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtn.SetFunc(BetMatchClick);
-		a_BetBtn.setTag(to_string(m_SelectedGame) + ";10;0;" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
+		a_BetBtn.setTag(to_string(i) + ";10;0;" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
 		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtnCustom.SetFunc(CustomBetClick);
 		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
@@ -4336,7 +4342,7 @@ void SRLGame::CalculateTryScorerOdds()
 	{
 		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtn.SetFunc(BetMatchClick);
-		a_BetBtn.setTag(to_string(m_SelectedGame) + ";10;0;" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());
+		a_BetBtn.setTag(to_string(i) + ";10;0;" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());
 		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
 		a_BetBtnCustom.SetFunc(CustomBetClick);
 		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());

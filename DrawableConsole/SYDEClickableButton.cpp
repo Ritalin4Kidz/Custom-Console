@@ -77,12 +77,17 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 	}
 	_CheckState();
 	
-	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()))
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()) &&canClick)
 	{
 		lastTag = tag;
+		canClick = false;
 		DoFunc();
 	}
 
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
+	{
+		canClick = true;
+	}
 	return window;
 }
 

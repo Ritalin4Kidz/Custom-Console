@@ -307,6 +307,7 @@ public:
 	SRLSponsor Sponsor_Northkellion_Shoes;
 	SRLSponsor Sponsor_Zeckfast;
 
+	void completeChallenge(string name);
 
 	void addSeasonSimulated() { seasonsSimulated++; SaveSettings(); }
 

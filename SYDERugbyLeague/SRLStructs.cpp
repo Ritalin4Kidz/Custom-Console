@@ -381,10 +381,38 @@ void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
 	}
 }
 
+void SRLProfile::completeChallenge(string name)
+{
+	for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
+	{
+		if (Sponsor_Clarity_Casino.challenges[i].challenge == name)
+		{
+			Sponsor_Clarity_Casino.challenges[i].Completed = true;
+		}
+	}
+	for (int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
+	{
+		if (Sponsor_Northkellion_Shoes.challenges[i].challenge == name)
+		{
+			Sponsor_Northkellion_Shoes.challenges[i].Completed = true;
+		}
+	}
+	for (int i = 0; i < Sponsor_Zeckfast.challenges.size(); i++)
+	{
+		if (Sponsor_Zeckfast.challenges[i].challenge == name)
+		{
+			Sponsor_Zeckfast.challenges[i].Completed = true;
+		}
+	}
+	SaveSettings();
+}
+
 void SRLProfile::initChallenges()
 {
 	deque<SRLSponsorChallenge> casinoChallenges;
-	casinoChallenges.push_back(SRLSponsorChallenge("TestA"));
+	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 50 Times In A Completed Season"));
+	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 100 Times In A Completed Season"));
+	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 500 Times In A Completed Season"));
 	Sponsor_Clarity_Casino = SRLSponsor("Clarity Casino", casinoChallenges);
 
 	deque<SRLSponsorChallenge> northChallenges;
@@ -392,7 +420,7 @@ void SRLProfile::initChallenges()
 	Sponsor_Northkellion_Shoes = SRLSponsor("Northkellion Shoes", northChallenges);
 
 	deque<SRLSponsorChallenge> zeckChallenges;
-	zeckChallenges.push_back(SRLSponsorChallenge("TestC"));
+	zeckChallenges.push_back(SRLSponsorChallenge("Coach A Team To A Premiership"));
 	Sponsor_Zeckfast = SRLSponsor("Zeckfast Cafes", zeckChallenges);
 }
 

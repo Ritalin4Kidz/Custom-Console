@@ -4723,6 +4723,7 @@ void SRLGame::SimulateGames()
 					if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
 					{
 						AchievementStrings.push_back("SRL_BEST_COACH");
+						m_GameProfile.completeChallenge("Coach A Team To A Premiership");
 					}
 				}
 				for (int ii = 0; ii < m_Season.m_PremiershipBets.size(); ii++)
@@ -5403,6 +5404,19 @@ void SRLGame::checkBetAchievements()
 	if (m_BetMoney.dollars == 0 && m_BetMoney.cents == 1)
 	{
 		AchievementStrings.push_back("SRL_HANGING_ON");
+	}
+
+	if (currentBetsTotalSeason >= 50)
+	{
+		m_GameProfile.completeChallenge("Bet At Least 50 Times In A Completed Season");
+	}
+	if (currentBetsTotalSeason >= 100)
+	{
+		m_GameProfile.completeChallenge("Bet At Least 100 Times In A Completed Season");
+	}
+	if (currentBetsTotalSeason >= 500)
+	{
+		m_GameProfile.completeChallenge("Bet At Least 500 Times In A Completed Season");
 	}
 }
 

@@ -198,7 +198,7 @@ struct SRLLeaderboard
 	deque<SRLLeaderboardPosition> shortlist;
 	void orderShortlist();
 	void clear() { shortlist.clear(); }
-	void changePlayerTeam(string playerName, string oldTeam, string newTeam);
+	void changePlayerTeam(string playerName, string oldTeam, string newTeam, int oldplayerID, int newplayerID);
 };
 
 struct SRLSeason

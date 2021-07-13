@@ -96,8 +96,10 @@ struct SRLGameBet
 	SRLBetPrice betOdds;
 	SRLBetPrice betAmount;
 	SRLBetPrice originalBetAmount;
+
 	SRLBetType _BetType = BetType_Game;
 	SRLBetPrice ReturnBetWinnings();
+	SRLBetPrice ReturnBetWinningsSafe();
 	SRLBetTag betState = Bet_InProgress;
 	string m_teamName;
 };
@@ -307,9 +309,9 @@ public:
 	SRLSponsor Sponsor_Northkellion_Shoes;
 	SRLSponsor Sponsor_Zeckfast;
 
-	void completeChallenge(string name);
+	void completeChallenge(string name, deque<string> &vec);
 
-	void addSeasonSimulated() { seasonsSimulated++; SaveSettings(); }
+	void addSeasonSimulated(deque<string>& vec) { seasonsSimulated++; if (seasonsSimulated >= 1000) { completeChallenge("Simulated 1000 Total Seasons",vec); } SaveSettings(); }
 
 	void initChallenges();
 

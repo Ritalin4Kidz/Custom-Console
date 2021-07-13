@@ -63,7 +63,10 @@ enum EAchievements
 	SRL_SALARY_CAP = 36,
 	SRL_CHOKE = 37,
 	SRL_TRYSCORER = 38,
-	SRL_BLACKLIST =  39
+	SRL_BLACKLIST =  39,
+	SRL_CLARITY_CASINO = 40,
+	SRL_NORTHKELLION = 41,
+	SRL_ZECKFAST = 42
 };
 
 // Achievement array which will hold data about the achievements and their state
@@ -108,6 +111,9 @@ Achievement_t g_Achievements[] =
 	_ACH_ID(SRL_CHOKE, "Bring Back The Bears"),
 	_ACH_ID(SRL_TRYSCORER, "Tryscorer Predictor"),
 	_ACH_ID(SRL_BLACKLIST, "Z's Blacklist"),
+	_ACH_ID(SRL_CLARITY_CASINO, "Clarity Casino Sponsorship"),
+	_ACH_ID(SRL_NORTHKELLION, "Northkellion Shoes Sponsorship"),
+	_ACH_ID(SRL_ZECKFAST, "Zeckfast Cafes Sponsorship"),
 };
 
 // Global access to Achievements object
@@ -150,6 +156,7 @@ void DoAchievements(deque<string> temp)
 int main(int argc, char* argv[])
 {
 	//override the config
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	//BASE WINDOWS 10
 	bool customOffset = false;;
 	bool debug = false;	//ARGUMENT SETTINGS
@@ -201,7 +208,7 @@ int main(int argc, char* argv[])
 		if (bRet)
 		{
 			cout << "Steam API Initialization Successful" << endl;
-			g_SteamAchievements = new CSteamAchievements(g_Achievements, 40);
+			g_SteamAchievements = new CSteamAchievements(g_Achievements, 43);
 		}
 		else
 		{

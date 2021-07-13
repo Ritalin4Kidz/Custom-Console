@@ -97,6 +97,12 @@ void Settings::volumeControl(int volume)
 
 void Settings::ColourPalette(HANDLE hOut)
 {
+	_COORD coord;
+	coord.X = getConsoleWidth() + 50;
+	coord.Y = getConsoleHeight() + 50;
+	SetConsoleScreenBufferSize(hOut, coord);
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	CONSOLE_SCREEN_BUFFER_INFOEX pInfo;
 	pInfo.cbSize = sizeof(pInfo);
 	GetConsoleScreenBufferInfoEx(hOut, &pInfo);
@@ -121,7 +127,6 @@ void Settings::ColourPalette(HANDLE hOut)
 	pInfo.dwMaximumWindowSize.X = getConsoleWidth() + 50;
 	pInfo.dwMaximumWindowSize.Y = getConsoleHeight() + 50;
 	SetConsoleScreenBufferInfoEx(hOut, &pInfo);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 }
 
 AdvancedSettings::AdvancedSettings(string settingsFile)

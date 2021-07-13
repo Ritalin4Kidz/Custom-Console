@@ -181,6 +181,23 @@ SRLBetPrice SRLGameBet::ReturnBetWinnings()
 	return betAmount;
 }
 
+SRLBetPrice SRLGameBet::ReturnBetWinningsSafe()
+{
+	float betOddsF = betOdds.dollars;
+	float centsTemp = betOdds.cents;
+	betOddsF += (centsTemp / 100);
+	float newDollars = 0;
+	float newCents = betAmount.dollars * 100;
+	newCents += betAmount.cents;
+	newCents *= betOddsF;
+	while (newCents >= 100)
+	{
+		newDollars++;
+		newCents -= 100;
+	}
+	return SRLBetPrice(newDollars, newCents);
+}
+
 FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds)
 {
 	gameNumber = gameNo;
@@ -381,7 +398,7 @@ void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
 	}
 }
 
-void SRLProfile::completeChallenge(string name)
+void SRLProfile::completeChallenge(string name, deque<string>& vec)
 {
 	for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
 	{
@@ -390,13 +407,35 @@ void SRLProfile::completeChallenge(string name)
 			Sponsor_Clarity_Casino.challenges[i].Completed = true;
 		}
 	}
-	for (int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
+	bool casinoChallenges = true;
+	for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
+	{
+		casinoChallenges = Sponsor_Clarity_Casino.challenges[i].Completed;
+	}
+
+	if (casinoChallenges)
+	{
+		vec.push_back("SRL_CLARITY_CASINO");
+	}
+
+	for
+		(int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
 	{
 		if (Sponsor_Northkellion_Shoes.challenges[i].challenge == name)
 		{
 			Sponsor_Northkellion_Shoes.challenges[i].Completed = true;
 		}
 	}
+	bool shoeChallenges = true;
+	for (int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
+	{
+		shoeChallenges = Sponsor_Northkellion_Shoes.challenges[i].Completed;
+	}
+	if (shoeChallenges)
+	{
+		vec.push_back("SRL_NORTHKELLION");
+	}
+
 	for (int i = 0; i < Sponsor_Zeckfast.challenges.size(); i++)
 	{
 		if (Sponsor_Zeckfast.challenges[i].challenge == name)
@@ -404,23 +443,63 @@ void SRLProfile::completeChallenge(string name)
 			Sponsor_Zeckfast.challenges[i].Completed = true;
 		}
 	}
+	bool cafeChallenges = true;
+	for (int i = 0; i < Sponsor_Zeckfast.challenges.size(); i++)
+	{
+		cafeChallenges = Sponsor_Zeckfast.challenges[i].Completed;
+	}
+	if (cafeChallenges)
+	{
+		vec.push_back("SRL_ZECKFAST");
+	}
 	SaveSettings();
 }
 
 void SRLProfile::initChallenges()
 {
 	deque<SRLSponsorChallenge> casinoChallenges;
-	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 50 Times In A Completed Season"));
-	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 100 Times In A Completed Season"));
-	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 500 Times In A Completed Season"));
+	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 50 Times In A Completed Season")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 100 Times In A Completed Season")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 500 Times In A Completed Season")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Throw A 16 Point Lead In A Match")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Simulated 1000 Total Seasons")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("End A Season With $100k+")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Lose Every Game In A Season")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Win Every Game In A Season But The Grand Final")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Win The Premiership From Lower Than 6th")); //Implemented
+	casinoChallenges.push_back(SRLSponsorChallenge("End The Season With $36.36 In Your Account")); //Implemented
+	casinoChallenges.push_back(SRLSponsorChallenge("Win Over 100 Bets In A Season")); //IMPLEMENTED
+	casinoChallenges.push_back(SRLSponsorChallenge("Win Over 500 Bets In A Season")); //IMPLEMENTED
 	Sponsor_Clarity_Casino = SRLSponsor("Clarity Casino", casinoChallenges);
 
 	deque<SRLSponsorChallenge> northChallenges;
-	northChallenges.push_back(SRLSponsorChallenge("TestB"));
+	northChallenges.push_back(SRLSponsorChallenge("Train A Team To A 99 Speed Stat")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Max Out A Player's Stats")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Go From A Team Rating Of < 40 to 60+")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Have A Player Score 3 Tries In A Match")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Coach The Player Of The Season")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Win A Game By 50+ Points")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Win A Game By A Point")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Win A Finals Game In Extra Time")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Hold The Other Team To 0")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Lose A Game By 50+ Points")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Score 100 Points In A Game")); //IMPLEMENTED
+	northChallenges.push_back(SRLSponsorChallenge("Win A Grand Final Having Been Down At Anytime")); //IMPLEMENTED
 	Sponsor_Northkellion_Shoes = SRLSponsor("Northkellion Shoes", northChallenges);
 
 	deque<SRLSponsorChallenge> zeckChallenges;
-	zeckChallenges.push_back(SRLSponsorChallenge("Coach A Team To A Premiership"));
+	zeckChallenges.push_back(SRLSponsorChallenge("Coach A Team To A Premiership")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Comeback From A 12 Point Deficit")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Win A Game With 10 Or Less Total Points")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Win A Game With 60 Or More Total Points")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Lose A Grand Final After Having Been Up At Anytime")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Win A Grand Final By A Point")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Randomize A Player With a 90+ Rating")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Format The Teams And Start Over")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Have Over 50 Teams Existing")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Simulate A Tied Game")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Win Over $1k On A Single Bet")); //IMPLEMENTED
+	zeckChallenges.push_back(SRLSponsorChallenge("Place a $10k Bet And Win It")); //IMPLEMENTED
 	Sponsor_Zeckfast = SRLSponsor("Zeckfast Cafes", zeckChallenges);
 }
 

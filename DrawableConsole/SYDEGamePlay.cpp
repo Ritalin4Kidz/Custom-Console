@@ -33,6 +33,10 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 		SetWindowLong(WINDOW_HWND, GWL_STYLE, GetWindowLong(WINDOW_HWND, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_MINIMIZEBOX & ~WS_SIZEBOX);
 		SetWindowPos(WINDOW_HWND, NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED);
 		SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
+		_COORD coord;
+		coord.X = config.getConsoleWidth() + 50;
+		coord.Y = config.getConsoleHeight() + 50;
+		SetConsoleScreenBufferSize(hOut, coord);
 		SetConsoleWindowInfo(hOut, TRUE, &windowSize);
 	}
 	if (remove_scrollbar)

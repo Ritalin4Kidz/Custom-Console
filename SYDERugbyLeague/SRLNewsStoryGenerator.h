@@ -4,6 +4,7 @@
 #include "SRLTeam.h"
 #include "CustomAsset.h"
 #include "AssetsClass.h"
+#include "SRLNameGenerator.h"
 using namespace std;
 
 enum SRLArticleType
@@ -55,6 +56,9 @@ public:
 	static deque<string> generateRumourArticlePlayerRelease(string Team1, string Player1);
 	static deque<string> generateRumourArticleContractExtension(string Team1, string Player1);
 #pragma endregion
+
+#pragma region General Stories
+	static deque<string> generateGeneralArticle_PassedAway(string Player);
 
 #pragma region Opinion
 	static deque<string> generateOpinionArticlePlayerShouldSwap(string Team1, string Player1);

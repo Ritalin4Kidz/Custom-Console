@@ -10,7 +10,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
-###  0.14.0.0 beta 10-07-2021
+###  0.14.0.0 beta 13-07-2021
 - Profile View Start
 - Team Logos
 - Sponsor Challenges

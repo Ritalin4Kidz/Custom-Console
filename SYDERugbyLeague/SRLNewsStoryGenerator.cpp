@@ -69,6 +69,7 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer
 {
 	SRLNewsArticle m_Article;
 	int articleType = rand() % 18;
+	string fakePlayer = SRLNameGenerator::generateRandomName();
 	switch (articleType)
 	{
 	case 0:
@@ -155,6 +156,11 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer
 		m_Article.headline = "Players Fight At Local RSL!";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateFeelBadRSLFight(OtherPlayer.getName(), MainPlayer.getName());
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 17:
+		m_Article.headline = fakePlayer +  " Passes Away After Illness";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(fakePlayer);
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	default:
 		m_Article.headline = MainPlayer.getName() + " Helps Sick Kids In Hospital";
@@ -248,6 +254,16 @@ deque<string> SRLNewsStoryGenerator::generateRumourArticleContractExtension(stri
 	return temp;
 }
 
+deque<string> SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(string Player)
+{
+	deque<string> temp;
+	temp.push_back("After a lengthy battle with terminal illness, it is");
+	temp.push_back("with deep sadness that we report the death of beloved");
+	temp.push_back("player " + Player + " passed away today.");
+	temp.push_back("They were aged 74");
+	return temp;
+}
+
 deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(string Team1, string Player1)
 {
 	deque<string> temp;
@@ -255,7 +271,7 @@ deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(stri
 	temp.push_back("as long as I have for " + Team1 +",");
 	temp.push_back("I have come to the conclusion that their potential is");
 	temp.push_back("being wasted and they would be much better off if they");
-	temp.push_back("found a home elsewhere. I don't think I've ever seen a player");
+	temp.push_back("found a home elsewhere. I don't think I've ever seen a");
 	temp.push_back("player get as screwed over by their teammates in game");
 	temp.push_back("as much as " + Player1 + " does");
 	temp.push_back("PASS EM THE BLOODY BALL");
@@ -268,7 +284,7 @@ deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(string T
 	temp.push_back("The fans have spoken, and they claim that the best");
 	temp.push_back("player for " + Team1 + " is no other");
 	temp.push_back("than " + Player1 + "!");
-	temp.push_back(Player1 + "won with 70% of the vote,");
+	temp.push_back(Player1 + " won with 70% of the vote,");
 	temp.push_back("after a social media campaign from them went");
 	temp.push_back("viral. Speculation is that the club is now");
 	temp.push_back("considering resigning them for another 2");

@@ -1860,19 +1860,19 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 					}
 					else
 					{
-						i--;
-						pushBack = false;
-						games.clear();
-						break;
+					i--;
+					pushBack = false;
+					games.clear();
+					break;
 					}
 				}
 				else
 				{
-					for (int j = 0;j < AttemptedTeams.size(); j++)
-					{
-						AvailableTeams.push_back(AttemptedTeams[j]);
-					}
-					AttemptedTeams.clear();
+				for (int j = 0; j < AttemptedTeams.size(); j++)
+				{
+					AvailableTeams.push_back(AttemptedTeams[j]);
+				}
+				AttemptedTeams.clear();
 				}
 			}
 			if (pushBack)
@@ -1883,7 +1883,7 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 #pragma endregion
 		//FEATURE A GAME
 		int _HighlightedFirstGame = rand() % 8;
-		rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, SRLBetPrice(0,0), SRLBetPrice(0, 0));
+		rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, SRLBetPrice(0, 0), SRLBetPrice(0, 0));
 		SRLDraw Draw(rounds);
 		m_Season = SRLSeason(Draw, Ladder);
 		m_Season.m_PremiershipBets.clear();
@@ -1956,6 +1956,10 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			{
 				HomeTeam.saveTeam();
 				m_SeasonTeams.push_back(HomeTeam.getName());
+				if (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") > 50)
+				{
+					m_GameProfile.completeChallenge("Have Over 50 Teams Existing", AchievementStrings);
+				}
 			}
 			else
 			{
@@ -2712,11 +2716,16 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 				{
 					sortOutTradingOptions();
 				}
+				m_CoachedTeam.CalculateAverages();
+				if (m_CoachedTeam.averageSpeedStat() == 99)
+				{
+					m_GameProfile.completeChallenge("Train A Team To A 99 Speed Stat", AchievementStrings);
+				}
 				trainingAvailable = false;
 				if (m_CoachedTeam.getPlayers()[playerMainTeamTrade].getRating() >= 99)
 				{
 					AchievementStrings.push_back("SRL_MAX_TRAINING");
-					m_CoachedTeam.CalculateAverages();
+					m_GameProfile.completeChallenge("Max Out A Player's Stats", AchievementStrings);
 					if (m_CoachedTeam.TeamRating() == 99)
 					{
 						AchievementStrings.push_back("SRL_SALARY_CAP");
@@ -3145,10 +3154,10 @@ ConsoleWindow SRLGame::ProfileView(ConsoleWindow window, int windowWidth, int wi
 {
 	for (int i = 0; i < windowWidth; i++)
 	{
-		window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
-		window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(i, 1), " ", WHITE_WHITE_BG);
+		window.setTextAtPoint(Vector2(i, 19), " ", WHITE_WHITE_BG);
 	}
-	window.setTextAtPoint(Vector2(0, 1), "Your Profile", BLACK_BRIGHTWHITE_BG);
+	window.setTextAtPoint(Vector2(0, 1), "Your Profile", BLACK_WHITE_BG);
 	window.setTextAtPoint(Vector2(0, 3), "Seasons Complete: " + to_string((int)m_GameProfile.seasonsSimulated), BRIGHTWHITE);
 	window = m_ProfileLogo.draw_asset(window, Vector2(40, 2));
 	window = m_BackTeamInDepth.draw_ui(window);
@@ -3162,11 +3171,12 @@ ConsoleWindow SRLGame::ChallengesView(ConsoleWindow window, int windowWidth, int
 {
 	for (int i = 0; i < windowWidth; i++)
 	{
-		window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
-		window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(i, 1), " ", WHITE_WHITE_BG);
+		window.setTextAtPoint(Vector2(i, 19), " ", WHITE_WHITE_BG);
 	}
 	if (sponsorState == SponsorState_Casino)
 	{
+		window.setTextAtPoint(Vector2(0, 1), "Clarity Casino Challenges", BLACK_WHITE_BG);
 		for (int i = 0; i < m_GameProfile.Sponsor_Clarity_Casino.challenges.size(); i++)
 		{
 			if (m_GameProfile.Sponsor_Clarity_Casino.challenges[i].Completed)
@@ -3181,6 +3191,7 @@ ConsoleWindow SRLGame::ChallengesView(ConsoleWindow window, int windowWidth, int
 	}
 	else if (sponsorState == SponsorState_Shoes)
 	{
+		window.setTextAtPoint(Vector2(0, 1), "Northkellion Shoes Challenges", BLACK_WHITE_BG);
 		for (int i = 0; i < m_GameProfile.Sponsor_Northkellion_Shoes.challenges.size(); i++)
 		{
 			if (m_GameProfile.Sponsor_Northkellion_Shoes.challenges[i].Completed)
@@ -3195,6 +3206,7 @@ ConsoleWindow SRLGame::ChallengesView(ConsoleWindow window, int windowWidth, int
 	}
 	else if (sponsorState == SponsorState_Zeckfast)
 	{
+		window.setTextAtPoint(Vector2(0, 1), "Zeckfast Cafes Challenges", BLACK_WHITE_BG);
 		for (int i = 0; i < m_GameProfile.Sponsor_Zeckfast.challenges.size(); i++)
 		{
 			if (m_GameProfile.Sponsor_Zeckfast.challenges[i].Completed)
@@ -3207,7 +3219,7 @@ ConsoleWindow SRLGame::ChallengesView(ConsoleWindow window, int windowWidth, int
 			}
 		}
 	}
-	window = m_BackTeamInDepth.draw_ui(window);
+	window = m_ProfileViewBtn.draw_ui(window, Vector2(0,19));
 	return window;
 }
 
@@ -3641,6 +3653,7 @@ ConsoleWindow SRLGame::FormatPopUp(ConsoleWindow window, int windowWidth, int wi
 		formatCall = false;
 		formatConfirmedCall = false;
 		AchievementStrings.push_back("SRL_FORMAT_TEAMS");
+		m_GameProfile.completeChallenge("Format The Teams And Start Over", AchievementStrings);
 		try
 		{
 			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Teams");
@@ -3692,6 +3705,10 @@ ConsoleWindow SRLGame::RandomizePopUp(ConsoleWindow window, int windowWidth, int
 		randomizeConfirmedCall = false;
 		AchievementStrings.push_back("SRL_REGEN");
 		int id = m_PlayerView.getID();
+		if (m_PlayerView.getRating() >= 90)
+		{
+			m_GameProfile.completeChallenge("Randomize A Player With a 90+ Rating", AchievementStrings);
+		}
 		m_PlayerView = SRLPlayer(SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
 		m_PlayerView.setID(id);
 		m_PlayerView.savePlayer();
@@ -4433,14 +4450,67 @@ void SRLGame::SimulateGames()
 			else
 			{
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].tiedGame = true;
+				m_GameProfile.completeChallenge("Simulate A Tied Game", AchievementStrings);
 			}
 			if (coachingMode)
 			{
+				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached && m_srlmanager.getMinutesPassed() > 80 && m_roundToSimulate >= BaseSeasonGames)
+				{
+					m_GameProfile.completeChallenge("Win A Finals Game In Extra Time", AchievementStrings);
+				}
+				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached && m_srlmanager.getHomeScore() + m_srlmanager.getAwayScore() <= 10)
+				{
+					m_GameProfile.completeChallenge("Win A Game With 10 Or Less Total Points", AchievementStrings);
+				}
+				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached && m_srlmanager.getHomeScore() + m_srlmanager.getAwayScore() >= 60)
+				{
+					m_GameProfile.completeChallenge("Win A Game With 60 Or More Total Points", AchievementStrings);
+				}
 				if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam == teamCoached)
 				{
 					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamBiggestLead >= 12 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam != teamCoached)
 					{
 						AchievementStrings.push_back("SRL_CHOKE");
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamBiggestLead >= 12 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached)
+					{
+						m_GameProfile.completeChallenge("Comeback From A 12 Point Deficit", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamBiggestLead >= 1 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached && m_roundToSimulate == (BaseSeasonGames + finalsRounds - 1))
+					{
+						m_GameProfile.completeChallenge("Win A Grand Final Having Been Down At Anytime", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamBiggestLead >= 1 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam != teamCoached && m_roundToSimulate == (BaseSeasonGames + finalsRounds - 1))
+					{
+						m_GameProfile.completeChallenge("Lose A Grand Final After Having Been Up At Anytime", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamBiggestLead >= 16 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam != teamCoached)
+					{
+						m_GameProfile.completeChallenge("Throw A 16 Point Lead In A Match", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore - m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore >= 50)
+					{
+						m_GameProfile.completeChallenge("Win A Game By 50+ Points", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore - m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore <= -50)
+					{
+						m_GameProfile.completeChallenge("Lose A Game By 50+ Points", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore - m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore == 1)
+					{
+						m_GameProfile.completeChallenge("Win A Game By A Point", AchievementStrings);
+						if (m_roundToSimulate == (BaseSeasonGames + finalsRounds - 1))
+						{
+							m_GameProfile.completeChallenge("Win A Grand Final By A Point", AchievementStrings);
+						}
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore >= 100)
+					{
+						m_GameProfile.completeChallenge("Score 100 Points In A Game", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore == 0)
+					{
+						m_GameProfile.completeChallenge("Hold The Other Team To 0", AchievementStrings);
 					}
 				}
 				else if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam == teamCoached)
@@ -4448,6 +4518,46 @@ void SRLGame::SimulateGames()
 					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamBiggestLead >= 12 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam != teamCoached)
 					{
 						AchievementStrings.push_back("SRL_CHOKE");
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamBiggestLead >= 12 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached)
+					{
+						m_GameProfile.completeChallenge("Comeback From A 12 Point Deficit", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamBiggestLead >= 1 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam == teamCoached && m_roundToSimulate == (BaseSeasonGames + finalsRounds - 1))
+					{
+						m_GameProfile.completeChallenge("Win A Grand Final Having Been Down At Anytime", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamBiggestLead >= 1 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam != teamCoached && m_roundToSimulate == (BaseSeasonGames + finalsRounds - 1))
+					{
+						m_GameProfile.completeChallenge("Lose A Grand Final After Having Been Up At Anytime", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamBiggestLead >= 16 && m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].WinningTeam != teamCoached)
+					{
+						m_GameProfile.completeChallenge("Throw A 16 Point Lead In A Match", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore - m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore >= 50)
+					{
+						m_GameProfile.completeChallenge("Win A Game By 50+ Points", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore - m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore <= -50)
+					{
+						m_GameProfile.completeChallenge("Lose A Game By 50+ Points", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore - m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore == 1)
+					{
+						m_GameProfile.completeChallenge("Win A Game By A Point", AchievementStrings);
+						if (m_roundToSimulate == (BaseSeasonGames + finalsRounds - 1))
+						{
+							m_GameProfile.completeChallenge("Win A Grand Final By A Point", AchievementStrings);
+						}
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore >= 100)
+					{
+						m_GameProfile.completeChallenge("Score 100 Points In A Game", AchievementStrings);
+					}
+					if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore == 0)
+					{
+						m_GameProfile.completeChallenge("Hold The Other Team To 0", AchievementStrings);
 					}
 				}
 			}
@@ -4460,6 +4570,16 @@ void SRLGame::SimulateGames()
 				m_Season.m_TopTries.addToShortlist(m_srlmanager.getHomeTeam().getPlayers()[i].getName(), m_srlmanager.getHomeTeam().getName(), m_srlmanager.getHomeTeam().getPlayers()[i].getTries());
 				if (m_srlmanager.getHomeTeam().getPlayers()[i].getTries() > 0)
 				{
+					if (coachingMode)
+					{
+						if (m_srlmanager.getHomeTeam().getName() == teamCoached)
+						{
+							if (m_srlmanager.getHomeTeam().getPlayers()[i].getTries() >= 3)
+							{
+								m_GameProfile.completeChallenge("Have A Player Score 3 Tries In A Match", AchievementStrings);
+							}
+						}
+					}
 					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
 					{
 						deque<string> betTemp = Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#');
@@ -4513,6 +4633,16 @@ void SRLGame::SimulateGames()
 				m_Season.m_TopTries.addToShortlist(m_srlmanager.getAwayTeam().getPlayers()[i].getName(), m_srlmanager.getAwayTeam().getName(), m_srlmanager.getAwayTeam().getPlayers()[i].getTries());
 				if (m_srlmanager.getAwayTeam().getPlayers()[i].getTries() > 0)
 				{
+					if (coachingMode)
+					{
+						if (m_srlmanager.getAwayTeam().getName() == teamCoached)
+						{
+							if (m_srlmanager.getAwayTeam().getPlayers()[i].getTries() >= 3)
+							{
+								m_GameProfile.completeChallenge("Have A Player Score 3 Tries In A Match", AchievementStrings);
+							}
+						}
+					}
 					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
 					{
 						deque<string> betTemp = Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#');
@@ -4577,6 +4707,15 @@ void SRLGame::SimulateGames()
 			m_Season.m_TopSinBin.orderShortlist();
 			m_Season.m_TopSendOff.orderShortlist();
 			m_Season.m_TopInjuries.orderShortlist();
+
+			if (m_roundToSimulate == BaseSeasonGames + finalsRounds && coachingMode)
+			{
+				if (m_Season.m_TopPlayers.shortlist[0].TeamName == teamCoached)
+				{
+					m_GameProfile.completeChallenge("Coach The Player Of The Season", AchievementStrings);
+				}
+			}
+
 
 			for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets.size(); ii++)
 			{
@@ -4717,13 +4856,23 @@ void SRLGame::SimulateGames()
 			//THAT WAS GRAND FINAL, FINISH SEASON
 			if (m_roundToSimulate >= BaseSeasonGames + finalsRounds)
 			{
-				m_GameProfile.addSeasonSimulated();
+				m_GameProfile.addSeasonSimulated(AchievementStrings);
 				if (coachingMode)
 				{
 					if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
 					{
 						AchievementStrings.push_back("SRL_BEST_COACH");
-						m_GameProfile.completeChallenge("Coach A Team To A Premiership");
+						m_GameProfile.completeChallenge("Coach A Team To A Premiership", AchievementStrings);
+						for (int j = 0; j < m_Season.m_Ladder.m_Ladder.size(); j++)
+						{
+							if (teamCoached == m_Season.m_Ladder.m_Ladder[j].teamName)
+							{
+								if (j >= 6)
+								{
+									m_GameProfile.completeChallenge("Win The Premiership From Lower Than 6th", AchievementStrings);
+								}
+							}
+						}
 					}
 				}
 				for (int ii = 0; ii < m_Season.m_PremiershipBets.size(); ii++)
@@ -5374,6 +5523,17 @@ void SRLGame::checkSpecificBetAchievements(SRLGameBet _bet)
 	{
 		return;
 	}
+	if (_bet.betState == Bet_Won)
+	{
+		if (_bet.betAmount.dollars >= 10000)
+		{
+			m_GameProfile.completeChallenge("Place a $10k Bet And Win It", AchievementStrings);
+		}
+		if (_bet.ReturnBetWinningsSafe().dollars >= 1000)
+		{
+			m_GameProfile.completeChallenge("Win Over $1k On A Single Bet", AchievementStrings);
+		}
+	}
 	if (_bet.betAmount.dollars >= 1000)
 	{
 		if (_bet.betOdds.dollars > 3 && _bet.betState == Bet_Won)
@@ -5401,22 +5561,38 @@ void SRLGame::checkBetAchievements()
 	{
 		AchievementStrings.push_back("SRL_HIGH_ROLLER");
 	}
+	if (m_BetMoney.dollars >= 100000)
+	{
+		m_GameProfile.completeChallenge("End A Season With $100k+", AchievementStrings);
+	}
 	if (m_BetMoney.dollars == 0 && m_BetMoney.cents == 1)
 	{
 		AchievementStrings.push_back("SRL_HANGING_ON");
 	}
+	if (m_BetMoney.dollars == 36 && m_BetMoney.cents == 36)
+	{
+		m_GameProfile.completeChallenge("End The Season With $36.36 In Your Account", AchievementStrings);
+	}
 
 	if (currentBetsTotalSeason >= 50)
 	{
-		m_GameProfile.completeChallenge("Bet At Least 50 Times In A Completed Season");
+		m_GameProfile.completeChallenge("Bet At Least 50 Times In A Completed Season", AchievementStrings);
 	}
 	if (currentBetsTotalSeason >= 100)
 	{
-		m_GameProfile.completeChallenge("Bet At Least 100 Times In A Completed Season");
+		m_GameProfile.completeChallenge("Bet At Least 100 Times In A Completed Season", AchievementStrings);
 	}
 	if (currentBetsTotalSeason >= 500)
 	{
-		m_GameProfile.completeChallenge("Bet At Least 500 Times In A Completed Season");
+		m_GameProfile.completeChallenge("Bet At Least 500 Times In A Completed Season", AchievementStrings);
+	}
+	if (currentWonBetsSeason >= 100)
+	{
+		m_GameProfile.completeChallenge("Win Over 100 Bets In A Season", AchievementStrings);
+	}
+	if (currentWonBetsSeason >= 500)
+	{
+		m_GameProfile.completeChallenge("Win Over 500 Bets In A Season", AchievementStrings);
 	}
 }
 
@@ -5424,7 +5600,14 @@ void SRLGame::checkCoachingAchievements()
 {
 	if (coachingMode)
 	{
+		m_CoachedTeam.CalculateAverages();
+		if (startingRating <= 40 && m_CoachedTeam.TeamRating() >= 60)
+		{
+			m_GameProfile.completeChallenge("Go From A Team Rating Of < 40 to 60+", AchievementStrings);
+		}
 		bool undefeated = true;
+		bool NoWins = true;
+		bool grandFinalLoss = false;
 		for (int i = 0; i < m_Season.m_Ladder.m_Ladder.size(); i++)
 		{
 			if (m_Season.m_Ladder.m_Ladder[i].teamName == teamCoached)
@@ -5454,9 +5637,23 @@ void SRLGame::checkCoachingAchievements()
 			{
 				for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_Games.size(); ii++)
 				{
+					if (undefeated)
+					{
+						if (i = BaseSeasonGames + finalsRounds - 1)
+						{
+							if (m_Season.m_Draw.m_Rounds[i].m_Games[ii].LosingTeam == teamCoached)
+							{
+								grandFinalLoss = true;
+							}
+						}
+					}
 					if (m_Season.m_Draw.m_Rounds[i].m_Games[ii].LosingTeam == teamCoached)
 					{
 						undefeated = false;
+					}
+					if (m_Season.m_Draw.m_Rounds[i].m_Games[ii].WinningTeam == teamCoached)
+					{
+						NoWins = false;
 					}
 				}
 			}
@@ -5464,6 +5661,14 @@ void SRLGame::checkCoachingAchievements()
 		if (undefeated)
 		{
 			AchievementStrings.push_back("SRL_COACHING_MASTERCLASS");
+		}
+		if (NoWins)
+		{
+			m_GameProfile.completeChallenge("Lose Every Game In A Season", AchievementStrings);
+		}
+		if (grandFinalLoss)
+		{
+			m_GameProfile.completeChallenge("Win Every Game In A Season But The Grand Final", AchievementStrings);
 		}
 	}
 }

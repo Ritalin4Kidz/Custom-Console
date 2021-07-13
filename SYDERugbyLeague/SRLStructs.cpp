@@ -148,13 +148,14 @@ void SRLLeaderboard::orderShortlist()
 	}
 }
 
-void SRLLeaderboard::changePlayerTeam(string playerName, string oldTeam, string newTeam)
+void SRLLeaderboard::changePlayerTeam(string playerName, string oldTeam, string newTeam, int oldplayerID, int newplayerID)
 {
 	for (int i = 0; i < shortlist.size(); i++)
 	{
-		if (shortlist[i].TeamName == oldTeam && shortlist[i].Player == playerName)
+		if (shortlist[i].TeamName == oldTeam && shortlist[i].Player == playerName && shortlist[i].playerID == oldplayerID)
 		{
 			shortlist[i].TeamName = newTeam;
+			shortlist[i].playerID = newplayerID;
 			return;
 		}
 	}

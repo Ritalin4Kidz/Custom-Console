@@ -112,11 +112,11 @@ string SRLBetPrice::ReturnPrice()
 	return priceStr + "." + centsStr;
 }
 
-void SRLLeaderboard::addToShortlist(string playerName, string teamName, int points)
+void SRLLeaderboard::addToShortlist(string playerName, string teamName, int points, int PlayerID)
 {
 	for (int i = 0; i < shortlist.size(); i++)
 	{
-		if (shortlist[i].TeamName == teamName && shortlist[i].Player == playerName)
+		if (shortlist[i].TeamName == teamName && shortlist[i].Player == playerName && shortlist[i].playerID == PlayerID)
 		{
 			shortlist[i].points += points;
 			return;
@@ -125,6 +125,7 @@ void SRLLeaderboard::addToShortlist(string playerName, string teamName, int poin
 	SRLLeaderboardPosition newPosition;
 	newPosition.Player = playerName;
 	newPosition.TeamName = teamName;
+	newPosition.playerID = PlayerID;
 	newPosition.points = points;
 	shortlist.push_back(newPosition);
 }

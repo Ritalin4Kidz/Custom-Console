@@ -194,7 +194,7 @@ struct SRLLeaderboardPosition
 
 struct SRLLeaderboard
 {
-	void addToShortlist(string playerName, string teamName, int points);
+	void addToShortlist(string playerName, string teamName, int points, int PlayerID);
 	deque<SRLLeaderboardPosition> shortlist;
 	void orderShortlist();
 	void clear() { shortlist.clear(); }

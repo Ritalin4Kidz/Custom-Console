@@ -189,6 +189,7 @@ struct SRLLeaderboardPosition
 {
 	string Player;
 	string TeamName;
+	int playerID;
 	int points;
 };
 

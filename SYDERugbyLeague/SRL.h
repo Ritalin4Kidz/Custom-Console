@@ -176,9 +176,9 @@ public:
 
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, deque<SRLLeaderboardPosition> ldrboard);
 
-	void LeaderboardOutputStrings(deque<string> &mainVec, deque<SRLLeaderboardPosition> ldrboard);
-	void LeaderboardOutputStringsTopScorer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard);
-	void LeaderboardOutputStringsTopPlayer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard);
+	void LeaderboardOutputStrings(deque<string> &mainVec, deque<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName);
+	void LeaderboardOutputStringsTopScorer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName);
+	void LeaderboardOutputStringsTopPlayer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName);
 
 	ConsoleWindow SettingsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow NewsView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -332,6 +332,8 @@ public:
 	static int playerClicked;
 	static bool playerCall;
 	static bool finalsSystemCall;
+
+	static bool allowJsonExportingSeason;
 
 #pragma region coaching mode
 	static bool coachingMode;

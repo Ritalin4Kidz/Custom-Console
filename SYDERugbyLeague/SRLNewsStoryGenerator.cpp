@@ -65,6 +65,20 @@ deque<string> SRLNewsStoryGenerator::generateTrainingArticle(string teamName1, s
 	return temp;
 }
 
+deque<string> SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(string teamName1, string Player1)
+{
+	deque<string> temp;
+	temp.push_back(Player1 + " has had a slow season so far.");
+	temp.push_back("But after feeling inspired by the criticism,");
+	temp.push_back(Player1 + " has promised fans that");
+	temp.push_back("they will be 'unleashed' in the upcoming");
+	temp.push_back("games.");
+	temp.push_back(teamName1 + " have backed these claims,");
+	temp.push_back("stating that the player has been slowing");
+	temp.push_back("down in their alcohol intake.");
+	return temp;
+}
+
 SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, SRLTeam OtherTeam, SRLPlayer OtherPlayer, AssetsClass astVars)
 {
 	SRLNewsArticle m_Article;
@@ -160,6 +174,11 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer
 	case 17:
 		m_Article.headline = fakePlayer +  " Passes Away After Illness";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(fakePlayer);
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Tombstone.bmp", 7, 7));
+		break;
+	case 18:
+		m_Article.headline = fakePlayer + " Talks Retirement!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateGeneralArticle_TalksRetirement(fakePlayer);
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	default:
@@ -180,6 +199,11 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomTraining(SRLTeam MainTeam, SRLPla
 	case 0:
 		m_Article.headline = MainPlayer.getName() + "'s Tough Training Session";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateTrainingArticle(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		break;
+	case 1:
+		m_Article.headline = MainPlayer.getName() + " To Be Unleashed!";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(MainTeam.getName(), MainPlayer.getName());
 		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
 		break;
 	}
@@ -260,7 +284,20 @@ deque<string> SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(string Pl
 	temp.push_back("After a lengthy battle with terminal illness, it is");
 	temp.push_back("with deep sadness that we report the death of beloved");
 	temp.push_back("player " + Player + " passed away today.");
+	temp.push_back("Players of the league will be remembering their");
+	temp.push_back("legacy with a moment of silence before each game");
+	temp.push_back("this round.");
 	temp.push_back("They were aged 74");
+	return temp;
+}
+
+deque<string> SRLNewsStoryGenerator::generateGeneralArticle_TalksRetirement(string Player)
+{
+	deque<string> temp;
+	temp.push_back("After a beloved career that was cut short 2 years ago,");
+	temp.push_back(Player + " has taken the time to speak");
+	temp.push_back("out about retirement today.");
+	temp.push_back("'My Brain Hurts'");
 	return temp;
 }
 

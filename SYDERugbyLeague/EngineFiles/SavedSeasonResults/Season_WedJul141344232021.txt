@@ -1,0 +1,616 @@
+LADDER RESULTS
+--------------------------------
+1. Dam City Executors Wins: 8| Lost: 2| PD: 75| Points: 16
+2. Manilla Milkers Wins: 8| Lost: 2| PD: 72| Points: 16
+3. Westellio Diamonds Wins: 7| Lost: 3| PD: 99| Points: 14
+4. Tomatown Honey Magnets Wins: 7| Lost: 3| PD: 49| Points: 14
+5. Yass Pigs Wins: 6| Lost: 4| PD: 45| Points: 12
+6. Wy Rabbits Wins: 6| Lost: 4| PD: 27| Points: 12
+7. SW Rocks Sea Eagles Wins: 6| Lost: 4| PD: 24| Points: 12
+8. Harroldton Mice Wins: 5| Lost: 5| PD: 11| Points: 10
+9. New Xylsdia Dancers Wins: 5| Lost: 5| PD: 0| Points: 10
+10. Taumatawhaka Workers Wins: 5| Lost: 5| PD: -56| Points: 10
+11. Saltio City Astros Wins: 4| Lost: 6| PD: 11| Points: 8
+12. Westellio Southpaw Wins: 4| Lost: 6| PD: -45| Points: 8
+13. North Xyler Bulldogs Wins: 4| Lost: 6| PD: -53| Points: 8
+14. Lane Cove Explorers Wins: 3| Lost: 7| PD: -81| Points: 6
+15. Toplefia Jellyfish Wins: 1| Lost: 9| PD: -49| Points: 2
+16. Bonesville Clowns Wins: 1| Lost: 9| PD: -129| Points: 2
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Harroldton Mice 6 v 20 Wy Rabbits
+Toplefia Jellyfish 16 v 18 Saltio City Astros
+Westellio Diamonds 38 v 10 Taumatawhaka Workers
+SW Rocks Sea Eagles 18 v 17 Yass Pigs
+Westellio Southpaw 25 v 22 New Xylsdia Dancers
+Manilla Milkers 13 v 12 Lane Cove Explorers
+Tomatown Honey Magnets 38 v 12 Bonesville Clowns
+Dam City Executors 32 v 6 North Xyler Bulldogs
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Tomatown Honey Magnets 28 v 24 SW Rocks Sea Eagles
+Yass Pigs 18 v 24 Manilla Milkers
+Westellio Diamonds 32 v 26 Wy Rabbits
+Dam City Executors 24 v 20 New Xylsdia Dancers
+Harroldton Mice 28 v 32 Toplefia Jellyfish
+Saltio City Astros 44 v 0 Lane Cove Explorers
+Taumatawhaka Workers 22 v 35 Westellio Southpaw
+Bonesville Clowns 4 v 10 North Xyler Bulldogs
+--------------------------------
+
+Round 3 Results
+--------------------------------
+New Xylsdia Dancers 34 v 24 Toplefia Jellyfish
+Bonesville Clowns 6 v 37 Yass Pigs
+Harroldton Mice 20 v 10 Westellio Southpaw
+Wy Rabbits 15 v 14 Manilla Milkers
+Westellio Diamonds 28 v 30 Saltio City Astros
+Tomatown Honey Magnets 41 v 16 North Xyler Bulldogs
+Lane Cove Explorers 14 v 8 SW Rocks Sea Eagles
+Dam City Executors 36 v 24 Taumatawhaka Workers
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Lane Cove Explorers 0 v 32 Yass Pigs
+Westellio Diamonds 18 v 8 North Xyler Bulldogs
+Saltio City Astros 30 v 18 Bonesville Clowns
+Tomatown Honey Magnets 33 v 22 Westellio Southpaw
+SW Rocks Sea Eagles 26 v 18 Toplefia Jellyfish
+Harroldton Mice 24 v 10 Taumatawhaka Workers
+Wy Rabbits 24 v 17 New Xylsdia Dancers
+Manilla Milkers 12 v 22 Dam City Executors
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Manilla Milkers 21 v 20 Toplefia Jellyfish
+SW Rocks Sea Eagles 19 v 10 North Xyler Bulldogs
+Wy Rabbits 18 v 20 Yass Pigs
+Westellio Southpaw 24 v 14 Bonesville Clowns
+Dam City Executors 22 v 30 Tomatown Honey Magnets
+Taumatawhaka Workers 21 v 10 Saltio City Astros
+Westellio Diamonds 23 v 4 New Xylsdia Dancers
+Harroldton Mice 36 v 18 Lane Cove Explorers
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Dam City Executors 24 v 22 Lane Cove Explorers
+North Xyler Bulldogs 14 v 18 Taumatawhaka Workers
+Harroldton Mice 14 v 16 Manilla Milkers
+Toplefia Jellyfish 13 v 16 Yass Pigs
+Westellio Southpaw 6 v 29 Westellio Diamonds
+Wy Rabbits 27 v 14 Saltio City Astros
+SW Rocks Sea Eagles 19 v 12 Bonesville Clowns
+New Xylsdia Dancers 23 v 16 Tomatown Honey Magnets
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Bonesville Clowns 14 v 36 Dam City Executors
+SW Rocks Sea Eagles 10 v 6 Westellio Diamonds
+Toplefia Jellyfish 13 v 24 Westellio Southpaw
+Lane Cove Explorers 20 v 4 Taumatawhaka Workers
+Wy Rabbits 23 v 27 Tomatown Honey Magnets
+Saltio City Astros 12 v 14 Harroldton Mice
+Manilla Milkers 32 v 6 North Xyler Bulldogs
+New Xylsdia Dancers 46 v 28 Yass Pigs
+--------------------------------
+
+Round 8 Results
+--------------------------------
+North Xyler Bulldogs 35 v 16 Saltio City Astros
+Harroldton Mice 18 v 22 Yass Pigs
+Lane Cove Explorers 24 v 20 Toplefia Jellyfish
+Bonesville Clowns 21 v 24 Taumatawhaka Workers
+Wy Rabbits 34 v 32 Dam City Executors
+Tomatown Honey Magnets 26 v 33 Westellio Diamonds
+Westellio Southpaw 10 v 20 Manilla Milkers
+New Xylsdia Dancers 15 v 14 SW Rocks Sea Eagles
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Saltio City Astros 7 v 10 Yass Pigs
+Lane Cove Explorers 24 v 28 Tomatown Honey Magnets
+SW Rocks Sea Eagles 12 v 19 Harroldton Mice
+Wy Rabbits 19 v 12 Toplefia Jellyfish
+Manilla Milkers 42 v 24 Bonesville Clowns
+North Xyler Bulldogs 19 v 4 Westellio Southpaw
+Westellio Diamonds 16 v 20 Dam City Executors
+Taumatawhaka Workers 22 v 18 New Xylsdia Dancers
+--------------------------------
+
+Round 10 Results
+--------------------------------
+New Xylsdia Dancers 19 v 18 Saltio City Astros
+Westellio Diamonds 22 v 6 Harroldton Mice
+North Xyler Bulldogs 19 v 12 Toplefia Jellyfish
+Manilla Milkers 29 v 10 Tomatown Honey Magnets
+Bonesville Clowns 32 v 26 Lane Cove Explorers
+SW Rocks Sea Eagles 33 v 20 Westellio Southpaw
+Dam City Executors 29 v 24 Yass Pigs
+Wy Rabbits 17 v 22 Taumatawhaka Workers
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Dam City Executors 28 v 10 Tomatown Honey Magnets
+Manilla Milkers 27 v 22 Westellio Diamonds
+Yass Pigs 17 v 10 Harroldton Mice
+Wy Rabbits 20 v 40 SW Rocks Sea Eagles
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Tomatown Honey Magnets 34 v 24 Yass Pigs
+Westellio Diamonds 27 v 24 SW Rocks Sea Eagles
+--------------------------------
+
+Round 13 Results
+--------------------------------
+Dam City Executors 31 v 16 Westellio Diamonds
+Manilla Milkers 28 v 12 Tomatown Honey Magnets
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Dam City Executors 33 v 8 Manilla Milkers
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Thomas Sandra-Dam City Executors : 15
+2. Dapper Barrett-Dam City Executors : 13
+3. Gordon Dean-Dam City Executors : 10
+4. Jameson Tramion-SW Rocks Sea Eagles : 10
+5. Scott Robinson-Dam City Executors : 10
+6. Alexander Treamery-Manilla Milkers : 10
+7. Bart Million-Manilla Milkers : 9
+8. Neo Ratey-Bonesville Clowns : 8
+9. Billy Chadwick-Tomatown Honey Magnets : 8
+10. Gerry Ese'ese-Wy Rabbits : 8
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Diana Woods-Dam City Executors : 36
+2. Edward Kimley-Yass Pigs : 31
+3. Junior Warrant-Tomatown Honey Magnets : 27
+4. Cameron Zillman-Westellio Diamonds : 25
+5. Carl Humm-Manilla Milkers : 24
+6. Kyuss Humphrey-Harroldton Mice : 23
+7. Kyuss Romney-SW Rocks Sea Eagles : 23
+8. Mark Roberts-Wy Rabbits : 21
+9. Xander Flower-Westellio Diamonds : 18
+10. Jane Farmer-New Xylsdia Dancers : 17
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Lorenzo Weas-Wy Rabbits : 2
+2. Jeni Taki-Yass Pigs : 2
+3. Sully Cotric-SW Rocks Sea Eagles : 1
+4. Felix Barter-Westellio Southpaw : 1
+5. Josh John-Manilla Milkers : 1
+6. Bort Besti-Taumatawhaka Workers : 1
+7. Alexander Sitea-Yass Pigs : 1
+8. Mike Viana-Westellio Southpaw : 1
+9. Declan Lewis-Yass Pigs : 1
+10. Kyuss Beltio-Wy Rabbits : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Jameson Tramion-SW Rocks Sea Eagles : 1569
+2. Gordon Dean-Dam City Executors : 1506
+3. Alexander Sitea-Yass Pigs : 1296
+4. Dapper Barrett-Dam City Executors : 1256
+5. Alexander Treamery-Manilla Milkers : 1239
+6. Scott Robinson-Dam City Executors : 1185
+7. Frank Cook-Tomatown Honey Magnets : 1157
+8. Bill Flanagan-Toplefia Jellyfish : 1153
+9. Andy Stone-Harroldton Mice : 1150
+10. Bart Million-Manilla Milkers : 1108
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Jon Price-Manilla Milkers : 136
+2. Huretio Dean-Yass Pigs : 134
+3. Carl Humm-Manilla Milkers : 134
+4. Christian Xylxed-Dam City Executors : 134
+5. Earl Uate-Westellio Diamonds : 133
+6. Jenny Bad-Westellio Diamonds : 122
+7. Edward Kimley-Yass Pigs : 122
+8. Dylan Hing-Dam City Executors : 122
+9. Jane Allen-Manilla Milkers : 122
+10. Velento Stone-Manilla Milkers : 121
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. John Pout-Lane Cove Explorers : 1
+2. Brett Flanagan-Westellio Southpaw : 1
+3. Diana Watne-Wy Rabbits : 1
+4. Burt Yzzer-Manilla Milkers : 1
+5. Thomas Sandra-Dam City Executors : 1
+6. Aaron Fletcher-Harroldton Mice : 0
+7. Farrah Kat-Westellio Southpaw : 0
+8. Callum Costa-Harroldton Mice : 0
+9. Karl Arrow-Saltio City Astros : 0
+10. Earl Morrison-Off Contract Players : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Earl Uate-Westellio Diamonds : 579
+2. Peter Questa-SW Rocks Sea Eagles : 474
+3. Alan Johns-Westellio Diamonds : 471
+4. Jane Allen-Manilla Milkers : 467
+5. Daniel Kimley-Harroldton Mice : 457
+6. William Morrison-Wy Rabbits : 438
+7. Albert Emerson-Westellio Diamonds : 437
+8. Alexander Sitea-Yass Pigs : 434
+9. Karl Harnett-SW Rocks Sea Eagles : 413
+10. Julie Cleary-Yass Pigs : 401
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Andy Stone-Harroldton Mice : 20
+2. Bill Northson-Manilla Milkers : 19
+3. Josh John-Manilla Milkers : 18
+4. Julian Harrigan-Off Contract Players : 18
+5. Dapper Barrett-Dam City Executors : 17
+6. Albert Emerson-Westellio Diamonds : 15
+7. Bart Million-Manilla Milkers : 15
+8. Declan Lewis-Yass Pigs : 14
+9. Dylan Cook-Harroldton Mice : 14
+10. Thomas Sandra-Dam City Executors : 14
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Bill Northson-Manilla Milkers : 2
+2. Zach Stimson-Dam City Executors : 2
+3. Ali South-Off Contract Players : 2
+4. Josh Sandra-North Xyler Bulldogs : 2
+5. Kam Maxx-Bonesville Clowns : 2
+6. Alexander Treamery-Manilla Milkers : 2
+7. Catherine Perry-Westellio Diamonds : 2
+8. Finn Harnett-Yass Pigs : 2
+9. Catherine Barrett-Dam City Executors : 2
+10. Felix Barter-Westellio Southpaw : 1
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Carl Ballsut-Off Contract Players : 20
+2. Valian Uate-Dam City Executors : 19
+3. Carl Jacklin-Westellio Diamonds : 17
+4. Velento Stone-Manilla Milkers : 17
+5. Burt Yzzer-Manilla Milkers : 17
+6. Josh John-Manilla Milkers : 16
+7. Jill Walker-Tomatown Honey Magnets : 15
+8. Vanessa Bergman-Westellio Diamonds : 15
+9. Will Whare-North Xyler Bulldogs : 14
+10. Nick King-North Xyler Bulldogs : 13
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Tom Way-North Xyler Bulldogs : 6
+2. Aaron Fletcher-Harroldton Mice : 6
+3. Kam Maxx-Bonesville Clowns : 6
+4. Bill Northson-Manilla Milkers : 6
+5. Junior Warrant-Tomatown Honey Magnets : 6
+6. Kate Bridgers-Dam City Executors : 5
+7. Joshua Hing-SW Rocks Sea Eagles : 5
+8. Homer Hall-Tomatown Honey Magnets : 5
+9. Jackson Domino-SW Rocks Sea Eagles : 5
+10. Miles Elroii-SW Rocks Sea Eagles : 5
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Junior Warrant-Tomatown Honey Magnets : 5
+2. Alan Warrant-Lane Cove Explorers : 4
+3. Jayden Flower-North Xyler Bulldogs : 4
+4. Bort Port-Bonesville Clowns : 4
+5. Kris Hunt-Taumatawhaka Workers : 4
+6. Julian Harrigan-Off Contract Players : 4
+7. Norman Atoni-Yass Pigs : 4
+8. Kevin Berry-Yass Pigs : 4
+9. Catherine Armstrong-Harroldton Mice : 3
+10. Cooper Britt-Bonesville Clowns : 3
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Dylan Harris-Harroldton Mice : 1
+2. Tom Way-North Xyler Bulldogs : 1
+3. Billie Develo-New Xylsdia Dancers : 1
+4. Ashley Flower-Taumatawhaka Workers : 1
+5. Julian Harrigan-Off Contract Players : 1
+6. Ed Arrow-Westellio Southpaw : 1
+7. Felix Barter-Westellio Southpaw : 1
+8. Will Whare-North Xyler Bulldogs : 1
+9. Mike Fox-Tomatown Honey Magnets : 1
+10. Earl Morrison-Off Contract Players : 0
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Jameson Tajtu-Lane Cove Explorers : 1
+2. Kevin Berry-Yass Pigs : 1
+3. Kyuss Humphrey-Harroldton Mice : 0
+4. Jack Hannington-Harroldton Mice : 0
+5. Julian Fuller-Harroldton Mice : 0
+6. Aaron Fletcher-Harroldton Mice : 0
+7. Farrah Kat-Westellio Southpaw : 0
+8. Callum Costa-Harroldton Mice : 0
+9. Karl Arrow-Saltio City Astros : 0
+10. Earl Morrison-Off Contract Players : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Andres Port-Toplefia Jellyfish : 2
+2. Kimberly Dean-Westellio Southpaw : 2
+3. Neo Mariner-Manilla Milkers : 1
+4. Junior Drayersun-Toplefia Jellyfish : 1
+5. Lizzy Jacklin-Bonesville Clowns : 1
+6. Ashton Thurston-Wy Rabbits : 1
+7. Cooper Britt-Bonesville Clowns : 1
+8. Joshua Paul-Tomatown Honey Magnets : 1
+9. Earl Uate-Westellio Diamonds : 1
+10. Alexander Treamery-Manilla Milkers : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Edward Kimley-Yass Pigs : 78
+2. Diana Woods-Dam City Executors : 72
+3. Carl Humm-Manilla Milkers : 68
+4. Kyuss Romney-SW Rocks Sea Eagles : 67
+5. Thomas Sandra-Dam City Executors : 64
+6. Cameron Zillman-Westellio Diamonds : 54
+7. Junior Warrant-Tomatown Honey Magnets : 54
+8. Dapper Barrett-Dam City Executors : 52
+9. Albert Shannel-Tomatown Honey Magnets : 48
+10. Mark Roberts-Wy Rabbits : 47
+11. Kyuss Humphrey-Harroldton Mice : 46
+12. Dylan Uate-Taumatawhaka Workers : 46
+13. Gordon Dean-Dam City Executors : 41
+14. Scott Robinson-Dam City Executors : 41
+15. Jameson Tramion-SW Rocks Sea Eagles : 40
+16. Lois Etten-Saltio City Astros : 40
+17. Alexander Treamery-Manilla Milkers : 40
+18. Jane Farmer-New Xylsdia Dancers : 38
+19. Gerry Ese'ese-Wy Rabbits : 36
+20. Xander Flower-Westellio Diamonds : 36
+21. Bart Million-Manilla Milkers : 36
+22. Neo Ratey-Bonesville Clowns : 32
+23. Billy Chadwick-Tomatown Honey Magnets : 32
+24. Mike Fox-Tomatown Honey Magnets : 32
+25. Ashley Chappell-New Xylsdia Dancers : 32
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Gordon Dean-Dam City Executors : 196
+2. Carl Humm-Manilla Milkers : 176
+3. Andy Stone-Harroldton Mice : 171
+4. Kyuss Romney-SW Rocks Sea Eagles : 146
+5. Jameson Tramion-SW Rocks Sea Eagles : 145
+6. Mike Fox-Tomatown Honey Magnets : 142
+7. Bill Flanagan-Toplefia Jellyfish : 138
+8. Samuel Tedesco-New Xylsdia Dancers : 135
+9. Scott Robinson-Dam City Executors : 134
+10. Dapper Barrett-Dam City Executors : 133
+11. Alexander Sitea-Yass Pigs : 132
+12. Jimmy Atoni-Westellio Diamonds : 127
+13. Cameron Zillman-Westellio Diamonds : 127
+14. Georgio Earl-Wy Rabbits : 125
+15. Kristian Fuller-Lane Cove Explorers : 121
+16. Earl Uate-Westellio Diamonds : 121
+17. Karl Harnett-SW Rocks Sea Eagles : 119
+18. Declan Lewis-Yass Pigs : 117
+19. Cameron Loomer-Bonesville Clowns : 117
+20. Kurt Burt-Yass Pigs : 116
+21. Catherine Armstrong-Harroldton Mice : 115
+22. Anthony Locke-Westellio Diamonds : 113
+23. Albert Emerson-Westellio Diamonds : 113
+24. Bart Million-Manilla Milkers : 113
+25. Nicki Robinson-Taumatawhaka Workers : 112
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Thomas de Flatio's Tough Training Session
+Taumatawhaka Workers Sign Ryan Tamber
+Taumatawhaka Workers Sign Dylan Uate
+Toplefia Jellyfish Sign Junior Drayersun
+Isabel Arcana's Eligibility Crisis!
+Will Whare Offered Pay Cut To Re-sign
+Opinion: Cameron Zillman Should Swap Teams
+Kyuss Farrell Assaults RSL Bouncer
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Janerio Kriis's Tough Training Session
+Taumatawhaka Workers Sign Nick Etten
+Harroldton Mice Sign Catherine Armstrong
+Rival Players Raise Awareness!
+Catherine Armstrong Involved In Sexting Scandal
+Players Fight At Local RSL!
+Samuel Tedesco's Retirment Rumours!
+Jared Sandra Passes Away After Illness
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Neo Mariner's Tough Training Session
+North Xyler Bulldogs Sign Karl Normandy
+Westellio Diamonds Sign Jimmy Atoni
+Ashton Thurston Involved In Sexting Scandal
+Herman Flower Offered Pay Cut To Re-sign
+Players Fight At Local RSL!
+Opinion: Lorenzo Weas Should Swap Teams
+Jeremy Singh Involved In Sexting Scandal
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Brayden Claypool's Tough Training Session
+SW Rocks Sea Eagles Sign Isaac Curr
+Bonesville Clowns Sign Zach Questa
+Westellio Diamonds Sign Opus Kelly
+Dreka Kylze's Eligibility Crisis!
+Player Unrest At Lane Cove Explorers
+Samuel Tedesco's Retirment Rumours!
+Taumatawhaka Workers Drop Barry Drayersun
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Jeremy Singh's Tough Training Session
+Taumatawhaka Workers Sign Bort Besti
+Bonesville Clowns Sign Jr. Stanley
+Players Fight At Local RSL!
+Player Unrest At Harroldton Mice
+Lizzy Wrabel Offered Pay Cut To Re-sign
+Brett Flanagan Involved In Sexting Scandal
+Opinion: Sully Cotric Should Captain Fiji
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Abraham Domino's Tough Training Session
+Dam City Executors Sign Janerio Locke
+Harroldton Mice Sign Jenny Tamber
+Saltio City Astros Sign Karl Arrow
+Christopher Crane Walks Out On Tomatown Honey Magnets
+Player Unrest At Taumatawhaka Workers
+Jill Holland Saves Local Man From Drowning
+Player Unrest At Westellio Southpaw
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Kevin Hill's Tough Training Session
+Saltio City Astros Sign Will John
+Fan Poll: SW Rocks Sea Eagles's Best Player
+Player Unrest At Harroldton Mice
+Coach Proposes New Finals System!
+Players Fight At Local RSL!
+Damien Zorsta Involved In Sexting Scandal
+Cam Sins's Retirment Rumours!
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Felix Gillard's Tough Training Session
+Dam City Executors Sign Gordon Dean
+Taumatawhaka Workers Sign Cam Sins
+Herman Flower Saves Local Man From Drowning
+Players Fight At Local RSL!
+Carl Humm Donates To Controverisal Charity
+Norman Reynolds Assaults RSL Bouncer
+Opinion: Isaak de Marit Should Captain Italy
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Gerry Ese'ese's Tough Training Session
+New Xylsdia Dancers Sign Frank Reio
+Tomatown Honey Magnets Sign Albert Mitt
+Westellio Diamonds Sign Xander Flower
+Phil Taylor Assaults RSL Bouncer
+Frankie Tajtu's Eligibility Crisis!
+Player Unrest At Lane Cove Explorers
+Carter Fletcher Involved In Sexting Scandal
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Jill Walker's Tough Training Session
+Toplefia Jellyfish Sign Billie Bade
+Westellio Southpaw Sign Zach Dace
+Dam City Executors Wins Minor Premiership!
+Tom Way To Have Contract Extended!
+Julian Harrigan Offered Pay Cut To Re-sign
+Rival Players Raise Awareness!
+Matthew Indigo At Risk Of An Early Release!
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Felix Gillard's Tough Training Session
+Yass Pigs Sign Adrien Curta
+Bonesville Clowns Sign Bert Fletcher
+Bonesville Clowns Sign Cam Treamery
+Sully Cotric Donates To Controverisal Charity
+Players Fight At Local RSL!
+Michael Woods Assaults RSL Bouncer
+Phil Bamert At Risk Of An Early Release!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Flynn Tajtu's Tough Training Session
+Manilla Milkers Sign Brendan Treamery
+Players Fight At Local RSL!
+Players Fight At Local RSL!
+Alan Zillman To Have Contract Extended!
+Nicki Robinson's Large-Scale Gambling Problem
+Kyuss Beltio Saves Local Man From Drowning
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Ann Elroii's Tough Training Session
+Westellio Southpaw Sign Alan Boeaste
+Phillip Johnson's Large-Scale Gambling Problem
+Phoebe Mariner's Large-Scale Gambling Problem
+Nicki Robinson Assaults RSL Bouncer
+Opinion: Burt Indigo Should Captain Suoonnia
+Samuel Way Offered Pay Cut To Re-sign
+Opinion: Opus Curr Should Captain Fiji
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Kate Warrant's Tough Training Session
+Dam City Executors Wins Premiership!
+Isaak de Marit Offered Pay Cut To Re-sign
+Mike Northson's Large-Scale Gambling Problem
+Ezra Jace Passes Away After Illness
+Players Fight At Local RSL!
+Opinion: Jimmy Winger Should Swap Teams
+Players Fight At Local RSL!
+--------------------------------
+

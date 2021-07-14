@@ -59,6 +59,7 @@ public:
 
 #pragma region General Stories
 	static deque<string> generateGeneralArticle_PassedAway(string Player);
+	static deque<string> generateGeneralArticle_TalksRetirement(string Player);
 
 #pragma region Opinion
 	static deque<string> generateOpinionArticlePlayerShouldSwap(string Team1, string Player1);
@@ -74,6 +75,10 @@ public:
 	static deque<string> generatePremiershipArticle(string teamName);
 	static deque<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);
 	static deque<string> generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2);
+#pragma endregion
+
+#pragma region Training
 	static deque<string> generateTrainingArticle(string teamName1, string Player1);
+	static deque<string> generateTrainingArticle_Unleashed(string teamName1, string Player1);
 #pragma endregion
 };

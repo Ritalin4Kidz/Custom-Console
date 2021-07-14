@@ -180,6 +180,10 @@ int main(int argc, char* argv[])
 		{
 			api_init = false;
 		}
+		if (arg == "--JsonExporting")
+		{
+			SRLGame::allowJsonExportingSeason = true;
+		}
 	}
 	if (!customOffset)
 	{

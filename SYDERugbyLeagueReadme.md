@@ -6,8 +6,6 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## GOALS FOR GOLD
 
--- TODO: Make custom team's logos fixed to specific logos (possibly custom)
-
 ## Release Notes
 
 ###  0.14.0.0 beta 13-07-2021

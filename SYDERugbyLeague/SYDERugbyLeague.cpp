@@ -237,6 +237,8 @@ int main(int argc, char* argv[])
 	{
 		SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_OFF);
+		SYDEGamePlay::showFPS(true);
+		SYDEGamePlay::set_FPS_Position(Vector2(54, 1));
 	}
 	else
 	{
@@ -251,7 +253,6 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_DOWN));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_LEFT));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_RIGHT));
-	//SYDEGamePlay::showFPS(true);
 	window.setStartingLine(1);
 	SRLGame m_SRL;
 	while (!SRLGame::exitConfirmedCall)

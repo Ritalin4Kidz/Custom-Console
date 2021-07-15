@@ -113,6 +113,13 @@ public:
 	/// <returns></returns>
 	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 
+	/// <summary>
+	/// Set the position of the FPS display
+	/// </summary>
+	/// <param name="position"></param>
+	static void set_FPS_Position(Vector2 position) {
+		SYDEFPS::setPos(position);
+	}
 
 	/// <summary>
 	/// Core game loop for running SYDEWindow games

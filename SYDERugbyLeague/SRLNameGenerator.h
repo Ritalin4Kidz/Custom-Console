@@ -21,12 +21,14 @@ public:
 
 private:
 	static string generateRandomFirstName();
+	static string generateRandomMiddleName();
 	static string generateRandomLastName();
 
 	static string generateRandomCity();
 	static string generateRandomTeam();
 
 	static deque<string> FirstNames;
+	static deque<string> MiddleNames;
 	static deque<string> LastNames;
 	static deque<string> CityNames;
 	static deque<string> TeamNames;

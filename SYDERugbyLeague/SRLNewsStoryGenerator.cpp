@@ -79,6 +79,19 @@ deque<string> SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(string te
 	return temp;
 }
 
+deque<string> SRLNewsStoryGenerator::generateTrainingArticle_AimsToProve(string teamName1, string Player1)
+{
+	deque<string> temp;
+	temp.push_back(Player1 + " is determined to prove the critics");
+	temp.push_back("wrong, after an inspired training session");
+	temp.push_back("has allegedly impressed the coach.");
+	temp.push_back("'Yeah they really knew how'd to rugby in");
+	temp.push_back("that session' said ");
+	temp.push_back(teamName1 + "'s coach");
+	temp.push_back("'yeah should be a good game'");
+	return temp;
+}
+
 SRLNewsArticle SRLNewsStoryGenerator::getRandomStory(SRLTeam MainTeam, SRLPlayer MainPlayer, SRLTeam OtherTeam, SRLPlayer OtherPlayer, AssetsClass astVars)
 {
 	SRLNewsArticle m_Article;
@@ -199,12 +212,17 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomTraining(SRLTeam MainTeam, SRLPla
 	case 0:
 		m_Article.headline = MainPlayer.getName() + "'s Tough Training Session";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateTrainingArticle(MainTeam.getName(), MainPlayer.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
 	case 1:
 		m_Article.headline = MainPlayer.getName() + " To Be Unleashed!";
 		m_Article.newsStory = SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(MainTeam.getName(), MainPlayer.getName());
-		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Health.bmp", 7, 7));
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+		break;
+	case 2:
+		m_Article.headline = MainPlayer.getName() + " Aims To Prove Critics Wrong";
+		m_Article.newsStory = SRLNewsStoryGenerator::generateTrainingArticle_AimsToProve(MainTeam.getName(), MainPlayer.getName());
+		m_Article.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
 		break;
 	}
 	m_Article.type = SRLAT_Training;

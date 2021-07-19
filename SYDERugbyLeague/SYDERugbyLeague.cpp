@@ -171,6 +171,7 @@ int main(int argc, char* argv[])
 		if (arg == "--NoOffset")
 		{
 			config.setOffset(0, 0);
+			customOffset = true;
 		}
 		if (arg == "--CustomOffset")
 		{

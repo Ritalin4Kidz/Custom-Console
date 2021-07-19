@@ -33,6 +33,8 @@ public:
 	/// <param name="hOut"></param>
 	/// <param name="window"></param>
 	static void initialize_window(const HANDLE hOut, ConsoleWindow& window);
+
+	static void initialize_window(const HANDLE hOut, ConsoleWindow& window,	string& outputs);
 	/// <summary>
 	/// Add FPS counter to main play function call
 	/// </summary>

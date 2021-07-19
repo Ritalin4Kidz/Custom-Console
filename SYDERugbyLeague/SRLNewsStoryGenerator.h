@@ -80,5 +80,6 @@ public:
 #pragma region Training
 	static deque<string> generateTrainingArticle(string teamName1, string Player1);
 	static deque<string> generateTrainingArticle_Unleashed(string teamName1, string Player1);
+	static deque<string> generateTrainingArticle_AimsToProve(string teamName1, string Player1);
 #pragma endregion
 };

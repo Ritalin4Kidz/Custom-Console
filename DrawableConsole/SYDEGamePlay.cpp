@@ -22,7 +22,7 @@ vector<string> SYDEGamePlay::cheatCodes = vector<string>();
 ULONG_PTR SYDEGamePlay::gdiplusToken;
 GdiplusStartupInput SYDEGamePlay::startupInput;
 
-void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
+void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window, string& outputs)
 {
 	if (resize_window_on_init)
 	{
@@ -36,8 +36,14 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 		_COORD coord;
 		coord.X = config.getConsoleWidth() + 50;
 		coord.Y = config.getConsoleHeight() + 50;
-		SetConsoleScreenBufferSize(hOut, coord);
-		SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+		if (!SetConsoleScreenBufferSize(hOut, coord));
+		{
+			outputs += "Buffer Resizing Failure;";
+		}
+		if(!SetConsoleWindowInfo(hOut, TRUE, &windowSize));
+		{
+			outputs += "Window Resizing Failure;";
+		}
 	}
 	if (remove_scrollbar)
 	{
@@ -68,6 +74,12 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 }
 
 Settings SYDEGamePlay::config = Settings("EngineFiles\\Settings\\configSettings.sc");
+
+void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
+{
+	string output = "No Output";
+	initialize_window(hOut, window, output);
+}
 
 void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars)
 {

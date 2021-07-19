@@ -977,7 +977,7 @@ deque<string> SRLNameGenerator::TeamNames = deque<string>
 	"Cats",
 	"Chargers",
 	"Chops",
-	"Choppers"
+	"Choppers",
 	"Citizens",
 	"Clowns",
 	"Clubs",

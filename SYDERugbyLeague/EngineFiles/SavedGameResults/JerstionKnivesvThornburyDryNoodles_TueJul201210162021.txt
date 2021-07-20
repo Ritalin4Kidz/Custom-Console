@@ -1,0 +1,203 @@
+----------LINE-UPS----------
+Home Team: Jerstion Knives
+1: Kris o. Umi
+2: Callum C.D. Bottia
+3: Dani G. le Gruim
+4: Isaak en Masre
+5: Kate Flakka
+6: Burt Stewart
+7: Bam Kay az Unionia
+8: Simon Ngu
+9: Jim Purplouis
+10: Jayden J. Ingodio
+11: Ron C.D. ze Aert
+12: Evan le Sui
+13: Jayden S. Harrigan
+14: Burt Kerr
+15: Blade Lindsell
+16: Finley Deon
+17: Aaron Bamert
+Away Team: Thornbury Dry Noodles
+1: Kev Dunn
+2: Erin Besti
+3: Kam I. le Qwe
+4: Bort Quonerta
+5: Abegail Thrismo
+6: Maddie McDonalson
+7: Jarrod I. le Sasson
+8: Gabe o. Zas
+9: Jeremy H. de Flatio
+10: Diana Jay Cleary
+11: Oliver Silwedel
+12: Yumi Zeeka
+13: Paul en Freatur
+14: Klacesa Atlas
+15: Leon Clarke
+16: Neo P. Stone
+17: Dominic Tyrell
+----------GAME-STAT---------
+Weather: Sunny
+----------------------------
+00:00 - KICK OFF - Jerstion Knives: 0 v Thornbury Dry Noodles: 0
+00:29 - Burt Stewart - Forward Pass
+01:35 - Jeremy H. de Flatio - TRY - Jerstion Knives: 0 v Thornbury Dry Noodles: 4
+02:35 - Abegail Thrismo - GOAL - Jerstion Knives: 0 v Thornbury Dry Noodles: 6
+03:48 - Maddie McDonalson - Over The Sideline
+04:19 - Simon Ngu - TRY - Jerstion Knives: 4 v Thornbury Dry Noodles: 6
+05:19 - Kris o. Umi - CONVERSION MISSED
+06:58 - Kris o. Umi - Knock On
+07:09 - Jayden S. Harrigan - Ruck Infringement
+07:34 - Maddie McDonalson - Over The Sideline
+08:10 - Jeremy H. de Flatio - Intercepted Off A Kris o. Umi Pass
+08:37 - Bort Quonerta - Forward Pass
+11:29 - Abegail Thrismo - Injury - Broken Arm
+11:29 - Ron C.D. ze Aert - SIN BIN
+11:29 - Ron C.D. ze Aert - Penalty
+11:29 - Yumi Zeeka - PENALTY GOAL - Jerstion Knives: 4 v Thornbury Dry Noodles: 8
+12:29 - Thornbury Dry Noodles Interchanged Players Abegail Thrismo & Klacesa Atlas
+14:37 - Simon Ngu - Knock On
+16:18 - Maddie McDonalson - 6th Tackle Changeover
+16:30 - Paul en Freatur - Intercepted Off A Bam Kay az Unionia Pass
+16:44 - Evan le Sui - Ruck Infringement
+17:56 - Klacesa Atlas - TRY - Jerstion Knives: 4 v Thornbury Dry Noodles: 12
+18:56 - Yumi Zeeka - GOAL - Jerstion Knives: 4 v Thornbury Dry Noodles: 14
+20:24 - Thornbury Dry Noodles Interchanged Players Erin Besti & Neo P. Stone
+21:20 - Jerstion Knives Interchanged Players Jim Purplouis & Aaron Bamert
+21:33 - SIN BIN RETURN - Ron C.D. ze Aert
+21:44 - Jerstion Knives Interchanged Players Bam Kay az Unionia & Burt Kerr
+21:58 - Dani G. le Gruim - Incorrect Play The Ball
+21:58 - Dani G. le Gruim - Penalty
+23:04 - Neo P. Stone - TRY - Jerstion Knives: 4 v Thornbury Dry Noodles: 18
+24:04 - Neo P. Stone - CONVERSION MISSED
+28:58 - Kam I. le Qwe - 6th Tackle Changeover
+29:14 - Bort Quonerta - Intercepted Off A Dani G. le Gruim Pass
+29:29 - Aaron Bamert - Penalty
+29:29 - Neo P. Stone - PENALTY GOAL - Jerstion Knives: 4 v Thornbury Dry Noodles: 20
+32:43 - Oliver Silwedel - Penalty
+33:24 - Kris o. Umi - TRY - Jerstion Knives: 8 v Thornbury Dry Noodles: 20
+34:24 - Kris o. Umi - CONVERSION MISSED
+36:33 - Jayden J. Ingodio - Knock On
+36:47 - Klacesa Atlas - Forward Pass
+37:30 - ------VIDEO REFEREE------
+37:30 - Evan le Sui - TRY - Jerstion Knives: 12 v Thornbury Dry Noodles: 20
+38:30 - Kris o. Umi - GOAL - Jerstion Knives: 14 v Thornbury Dry Noodles: 20
+40:00 - HALF TIME - Jerstion Knives: 14 v Thornbury Dry Noodles: 20
+40:00 - Jerstion Knives Interchanged Players Ron C.D. ze Aert & Bam Kay az Unionia
+40:00 - Thornbury Dry Noodles Interchanged Players Kev Dunn & Abegail Thrismo
+40:40 - Thornbury Dry Noodles Interchanged Players Neo P. Stone & Erin Besti
+41:42 - Jerstion Knives Interchanged Players Bam Kay az Unionia & Ron C.D. ze Aert
+42:48 - Kris o. Umi - 6th Tackle Changeover
+44:42 - Jeremy H. de Flatio - Penalty
+46:03 - Thornbury Dry Noodles Interchanged Players Jeremy H. de Flatio & Neo P. Stone
+46:15 - Jayden J. Ingodio - 6th Tackle Changeover
+47:16 - Gabe o. Zas - Over The Sideline
+47:27 - Callum C.D. Bottia - TRY - Jerstion Knives: 18 v Thornbury Dry Noodles: 20
+48:27 - Kris o. Umi - CONVERSION MISSED
+51:02 - Thornbury Dry Noodles Interchanged Players Gabe o. Zas & Kev Dunn
+52:05 - Callum C.D. Bottia - Ruck Infringement
+53:29 - Kate Flakka - Intercepted Off A Bort Quonerta Pass
+56:00 - Jerstion Knives Interchanged Players Jayden S. Harrigan & Finley Deon
+57:16 - Jayden J. Ingodio - Penalty
+57:29 - Klacesa Atlas - Forward Pass
+57:56 - Burt Stewart - Forward Pass
+59:16 - Diana Jay Cleary - 6th Tackle Changeover
+59:34 - Isaak en Masre - Over The Sideline
+60:04 - Jerstion Knives Interchanged Players Callum C.D. Bottia & Jim Purplouis
+60:04 - Thornbury Dry Noodles Interchanged Players Yumi Zeeka & Leon Clarke
+61:05 - Jayden J. Ingodio - Penalty
+61:05 - Neo P. Stone - PENALTY GOAL - Jerstion Knives: 18 v Thornbury Dry Noodles: 22
+64:45 - Isaak en Masre - 6th Tackle Changeover
+65:03 - Jerstion Knives Interchanged Players Isaak en Masre & Bam Kay az Unionia
+65:41 - Thornbury Dry Noodles Interchanged Players Maddie McDonalson & Gabe o. Zas
+65:52 - Gabe o. Zas - Over The Sideline
+67:11 - Erin Besti - Intercepted Off A Dani G. le Gruim Pass
+67:46 - Dani G. le Gruim - Ruck Infringement
+68:47 - Finley Deon - Ruck Infringement
+69:16 - Leon Clarke - Forward Pass
+70:47 - Simon Ngu - 6th Tackle Changeover
+71:02 - Aaron Bamert - Intercepted Off A Kev Dunn Pass
+71:02 - Jerstion Knives Interchanged Players Ron C.D. ze Aert & Jayden S. Harrigan
+71:15 - Jim Purplouis - Forward Pass
+72:29 - Paul en Freatur - Ruck Infringement
+73:38 - Burt Kerr - TRY - Jerstion Knives: 22 v Thornbury Dry Noodles: 22
+74:38 - Kris o. Umi - CONVERSION MISSED
+77:57 - Burt Stewart - Penalty
+78:10 - Aaron Bamert - Intercepted Off A Gabe o. Zas Pass
+78:49 - Evan le Sui - FIELD GOAL - Jerstion Knives: 23 v Thornbury Dry Noodles: 22
+80:00 - FULL TIME - Jerstion Knives: 23 v Thornbury Dry Noodles: 22
+                             
+--------PLAYER STATS--------
+Home Team: Jerstion Knives
+1: Kris o. Umi |Time Played: 80:01 |Metres: 43 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 1 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 23
+2: Jim Purplouis |Time Played: 41:17 |Metres: 14 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+3: Dani G. le Gruim |Time Played: 80:01 |Metres: 10 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+4: Bam Kay az Unionia |Time Played: 38:24 |Metres: 6 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+5: Kate Flakka |Time Played: 80:01 |Metres: 35 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+6: Burt Stewart |Time Played: 80:01 |Metres: 31 |Tackles: 13 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+7: Burt Kerr |Time Played: 58:17 |Metres: 76 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 48
+8: Simon Ngu |Time Played: 80:01 |Metres: 125 |Tackles: 10 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+9: Aaron Bamert |Time Played: 58:41 |Metres: 46 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+10: Jayden J. Ingodio |Time Played: 80:01 |Metres: 106 |Tackles: 9 |Kicks: 1 |Kick Metres: 53 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+11: Jayden S. Harrigan |Time Played: 64:59 |Metres: 40 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+12: Evan le Sui |Time Played: 80:01 |Metres: 99 |Tackles: 12 |Kicks: 2 |Kick Metres: 29 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 1 |Total Points: 5 |Fantasy Points: 38
+13: Finley Deon |Time Played: 24:01 |Metres: 21 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+14: Isaak en Masre |Time Played: 65:03 |Metres: 22 |Tackles: 11 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+15: Blade Lindsell |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Ron C.D. ze Aert |Time Played: 59:16 |Metres: 72 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+17: Callum C.D. Bottia |Time Played: 60:04 |Metres: 20 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 17
+Highlights:                 
+Most Tackles: Kris o. Umi: 13
+Most Points: Kris o. Umi: 6
+Most Metres: Simon Ngu: 125
+Most Errors: Burt Stewart: 2
+                             
+Away Team: Thornbury Dry Noodles
+1: Abegail Thrismo |Time Played: 51:30 |Metres: 7 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 16
+2: Erin Besti |Time Played: 59:45 |Metres: 27 |Tackles: 6 |Kicks: 1 |Kick Metres: 50 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+3: Kam I. le Qwe |Time Played: 80:01 |Metres: 54 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+4: Bort Quonerta |Time Played: 80:01 |Metres: 18 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+5: Klacesa Atlas |Time Played: 68:32 |Metres: 55 |Tackles: 4 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 15
+6: Gabe o. Zas |Time Played: 65:22 |Metres: 35 |Tackles: 9 |Kicks: 1 |Kick Metres: 24 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+7: Jarrod I. le Sasson |Time Played: 80:01 |Metres: 38 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+8: Kev Dunn |Time Played: 68:59 |Metres: 58 |Tackles: 5 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+9: Neo P. Stone |Time Played: 54:14 |Metres: 15 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 2 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 29
+10: Diana Jay Cleary |Time Played: 80:01 |Metres: 11 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Oliver Silwedel |Time Played: 80:01 |Metres: 64 |Tackles: 14 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+12: Leon Clarke |Time Played: 19:57 |Metres: 13 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+13: Paul en Freatur |Time Played: 80:01 |Metres: 26 |Tackles: 10 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+14: Maddie McDonalson |Time Played: 65:41 |Metres: 23 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+15: Yumi Zeeka |Time Played: 60:04 |Metres: 68 |Tackles: 5 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 47
+16: Jeremy H. de Flatio |Time Played: 46:03 |Metres: 20 |Tackles: 5 |Kicks: 2 |Kick Metres: 116 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 28
+17: Dominic Tyrell |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Oliver Silwedel: 14
+Most Points: Neo P. Stone: 8
+Most Metres: Yumi Zeeka: 68
+Most Errors: Klacesa Atlas: 2
+                             
+---------TEAM STATS---------
+Home Team: Jerstion Knives
+Total Metres: 766
+Total Kick Metres: 126
+Total Errors: 7
+Total Tackles: 138
+Total Tries: 5
+Total Goals: 1
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Thornbury Dry Noodles
+Total Metres: 532
+Total Kick Metres: 359
+Total Errors: 8
+Total Tackles: 112
+Total Tries: 3
+Total Goals: 5
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Burt Kerr
+2nd (2 Points) -- Neo P. Stone
+3rd (1 Point) -- Kev Dunn
+----------------------------

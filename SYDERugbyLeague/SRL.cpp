@@ -3277,8 +3277,8 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 
 	window.setTextAtPoint(Vector2(2, 9), "Team Rating: " + to_string(m_InDepthTeamView.TeamRating()), BRIGHTWHITE);
 
-	window.setTextAtPoint(Vector2(2, 11), "Goal Kicker: " + m_InDepthTeamView.getGoalKickerNoLimit().getName(), BRIGHTWHITE);
-
+	window.setTextAtPoint(Vector2(2, 11), "Goal Kicker:", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 12), m_InDepthTeamView.getGoalKickerNoLimit().getName(), BRIGHTWHITE);
 	if (TeamInDepthViewingJerseyAsset)
 	{
 		window = m_JerseyView.draw_asset(window, Vector2(30, 3));

@@ -934,7 +934,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 				int chance1 = attacker.getGoalKicking();
 				if (m_Stamina)
 				{
-					chance1 *= attacker.getGoalKicking();
+					chance1 *= attacker.getStamina();
 				}
 				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
 				if (chance1 > chance2)
@@ -963,7 +963,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 				int chance1 = attacker.getGoalKicking();
 				if (m_Stamina)
 				{
-					chance1 *= attacker.getGoalKicking();
+					chance1 *= attacker.getStamina();
 				}
 				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
 				if (chance1 > chance2)

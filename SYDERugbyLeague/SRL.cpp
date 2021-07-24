@@ -1399,6 +1399,11 @@ void SRLGame::init()
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
 	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\05Depression.mp3", "Depression", "Handsprime", "", 140);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\06Icebreaker.mp3", "Icebreaker", "Handsprime", "", 181);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\07MichaelsoftBinbows.mp3", "Michaelsoft Binbows", "Handsprime", "", 137);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\08Trapstar.mp3", "Trapstar", "Handsprime", "", 183);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\09Xnopyt.mp3", "Xnopyt", "Handsprime", "", 140);
 	m_GamePlaySoundtrack.setYPos(14);
 	m_GamePlaySoundtrack.setOn(soundTrackOn);
 	if (soundTrackOn)

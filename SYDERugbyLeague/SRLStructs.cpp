@@ -410,7 +410,7 @@ void SRLProfile::completeChallenge(string name, deque<string>& vec)
 	bool casinoChallenges = true;
 	for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
 	{
-		casinoChallenges = Sponsor_Clarity_Casino.challenges[i].Completed;
+		casinoChallenges =  casinoChallenges && Sponsor_Clarity_Casino.challenges[i].Completed;
 	}
 
 	if (casinoChallenges)
@@ -429,7 +429,7 @@ void SRLProfile::completeChallenge(string name, deque<string>& vec)
 	bool shoeChallenges = true;
 	for (int i = 0; i < Sponsor_Northkellion_Shoes.challenges.size(); i++)
 	{
-		shoeChallenges = Sponsor_Northkellion_Shoes.challenges[i].Completed;
+		shoeChallenges = shoeChallenges && Sponsor_Northkellion_Shoes.challenges[i].Completed;
 	}
 	if (shoeChallenges)
 	{
@@ -446,7 +446,7 @@ void SRLProfile::completeChallenge(string name, deque<string>& vec)
 	bool cafeChallenges = true;
 	for (int i = 0; i < Sponsor_Zeckfast.challenges.size(); i++)
 	{
-		cafeChallenges = Sponsor_Zeckfast.challenges[i].Completed;
+		cafeChallenges = cafeChallenges && Sponsor_Zeckfast.challenges[i].Completed;
 	}
 	if (cafeChallenges)
 	{

@@ -25,3 +25,4 @@
 *.filters
 *.pch
 *.json
+.vs/DrawableConsole/DesignTimeBuild/.dtbcache.v2

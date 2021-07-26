@@ -3369,13 +3369,17 @@ void SRLGame::LeaderboardOutputStrings(deque<string>& mainVec, deque<SRLLeaderbo
 		}
 		if (allowJsonExportingSeason)
 		{
-			save_file["leaderboards"][ldrboardName]["arraySize"] = ldrboard.size();
+			save_file["name"] = ldrboardName;
+			vector<json> positions;
 			for (int i = 0; i < ldrboard.size(); i++)
 			{
-				save_file["leaderboards"][ldrboardName][to_string(i)]["playerName"] = ldrboard[i].Player;
-				save_file["leaderboards"][ldrboardName][to_string(i)]["teamName"] = ldrboard[i].TeamName;
-				save_file["leaderboards"][ldrboardName][to_string(i)]["points"] = ldrboard[i].points;
+				json position;
+				position["playerName"] = ldrboard[i].Player;
+				position["teamName"] = ldrboard[i].TeamName;
+				position["points"] = ldrboard[i].points;
+				positions.push_back(position);
 			}
+			save_file["positions"] = positions;
 		}
 	}
 }
@@ -3390,13 +3394,17 @@ void SRLGame::LeaderboardOutputStringsTopScorer(deque<string>& mainVec, deque<SR
 		}
 		if (allowJsonExportingSeason)
 		{
-			save_file["leaderboards"][ldrboardName]["arraySize"] = ldrboard.size();
+			save_file["name"] = ldrboardName;
+			vector<json> positions;
 			for (int i = 0; i < ldrboard.size(); i++)
 			{
-				save_file["leaderboards"][ldrboardName][to_string(i)]["playerName"] = ldrboard[i].Player;
-				save_file["leaderboards"][ldrboardName][to_string(i)]["teamName"] = ldrboard[i].TeamName;
-				save_file["leaderboards"][ldrboardName][to_string(i)]["points"] = ldrboard[i].points;
+				json position;
+				position["playerName"] = ldrboard[i].Player;
+				position["teamName"] = ldrboard[i].TeamName;
+				position["points"] = ldrboard[i].points;
+				positions.push_back(position);
 			}
+			save_file["positions"] = positions;
 		}
 	}
 }
@@ -3411,13 +3419,17 @@ void SRLGame::LeaderboardOutputStringsTopPlayer(deque<string>& mainVec, deque<SR
 		}
 		if (allowJsonExportingSeason)
 		{
-			save_file["leaderboards"][ldrboardName]["arraySize"] = ldrboard.size();
+			save_file["name"] = ldrboardName;
+			vector<json> positions;
 			for (int i = 0; i < ldrboard.size(); i++)
 			{
-				save_file["leaderboards"][ldrboardName][to_string(i)]["playerName"] = ldrboard[i].Player;
-				save_file["leaderboards"][ldrboardName][to_string(i)]["teamName"] = ldrboard[i].TeamName;
-				save_file["leaderboards"][ldrboardName][to_string(i)]["points"] = ldrboard[i].points;
+				json position;
+				position["playerName"] = ldrboard[i].Player;
+				position["teamName"] = ldrboard[i].TeamName;
+				position["points"] = ldrboard[i].points;
+				positions.push_back(position);
 			}
+			save_file["positions"] = positions;
 		}
 	}
 }
@@ -4013,135 +4025,165 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 				deque<string> temp;
 				temp.push_back("LADDER RESULTS");
 				temp.push_back("--------------------------------");
-				season_save_file["ladder"]["arraySize"] = m_Season.m_Ladder.m_Ladder.size();
+				//season_save_file["ladder"]["arraySize"] = m_Season.m_Ladder.m_Ladder.size();
+				vector<json> ladderPositions;
 				for (int i = 0; i < m_Season.m_Ladder.m_Ladder.size(); i++)
 				{
 					temp.push_back(to_string(i + 1) + ". " + m_Season.m_Ladder.m_Ladder[i].teamName + " Wins: " + to_string(m_Season.m_Ladder.m_Ladder[i].won) + "| Lost: " + to_string(m_Season.m_Ladder.m_Ladder[i].lost) + "| PD: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsDifference) + "| Points: " + to_string(m_Season.m_Ladder.m_Ladder[i].points));
 					if (allowJsonExportingSeason)
 					{
-						season_save_file["ladder"][to_string(i)]["points"] = m_Season.m_Ladder.m_Ladder[i].points;
-						season_save_file["ladder"][to_string(i)]["wins"] = m_Season.m_Ladder.m_Ladder[i].won;
-						season_save_file["ladder"][to_string(i)]["lost"] = m_Season.m_Ladder.m_Ladder[i].lost;
-						season_save_file["ladder"][to_string(i)]["name"] = m_Season.m_Ladder.m_Ladder[i].teamName;
-						season_save_file["ladder"][to_string(i)]["pointsfor"] = m_Season.m_Ladder.m_Ladder[i].pointsFor;
-						season_save_file["ladder"][to_string(i)]["pointsagainst"] = m_Season.m_Ladder.m_Ladder[i].pointsAgainst;
+						json ladderPOS;
+						ladderPOS["id"] = i;
+						ladderPOS["points"] = m_Season.m_Ladder.m_Ladder[i].points;
+						ladderPOS["wins"] = m_Season.m_Ladder.m_Ladder[i].won;
+						ladderPOS["lost"] = m_Season.m_Ladder.m_Ladder[i].lost;
+						ladderPOS["name"] = m_Season.m_Ladder.m_Ladder[i].teamName;
+						ladderPOS["pointsfor"] = m_Season.m_Ladder.m_Ladder[i].pointsFor;
+						ladderPOS["pointsagainst"] = m_Season.m_Ladder.m_Ladder[i].pointsAgainst;
+						ladderPositions.push_back(ladderPOS);
 					}
 				}
+				season_save_file["ladder"] = ladderPositions;
+				ladderPositions.clear();
 				temp.push_back("--------------------------------");
 				temp.push_back("");
+				vector<json> seasonRounds;
 				for (int i = 0; i < m_Season.m_Draw.m_Rounds.size(); i++)
 				{
+					json roundJson;
 					temp.push_back("Round " + to_string(i + 1) + " Results");
 					temp.push_back("--------------------------------");
-					season_save_file["rounds"]["arraySize"] = m_Season.m_Draw.m_Rounds.size();
+					//season_save_file["rounds"]["arraySize"] = m_Season.m_Draw.m_Rounds.size();
+					vector<json> roundGames;
 					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_Games.size(); ii++)
 					{
-						season_save_file["rounds"][to_string(i)]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games.size();
+						//season_save_file["rounds"][to_string(i)]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games.size();
 						temp.push_back(m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam + " " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore) + " v " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore) + " " + m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam);
 						if (allowJsonExportingSeason)
 						{
-							season_save_file["rounds"][to_string(i)][to_string(ii)]["homeTeam"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam;
-							season_save_file["rounds"][to_string(i)][to_string(ii)]["awayTeam"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam;
-							season_save_file["rounds"][to_string(i)][to_string(ii)]["homeTeamScore"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore;
-							season_save_file["rounds"][to_string(i)][to_string(ii)]["awayTeamScore"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore;
-							season_save_file["rounds"][to_string(i)][to_string(ii)]["plays"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay.size();
-							season_save_file["rounds"][to_string(i)][to_string(ii)]["summaries"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay.size();
-							for (int j = 0; j < m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay.size(); j++)
-							{
-								season_save_file["rounds"][to_string(i)][to_string(ii)]["plays"][to_string(j)] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay[j];
-							}
-							for (int j = 0; j < m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay.size(); j++)
-							{
-								season_save_file["rounds"][to_string(i)][to_string(ii)]["summaries"][to_string(j)] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay[j];
-							}
+							json gameJson;
+							gameJson["homeTeam"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam;
+							gameJson["awayTeam"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam;
+							gameJson["homeTeamScore"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore;
+							gameJson["awayTeamScore"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore;
+							//gameJson["plays"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay.size();
+							gameJson["summaries"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay.size();
+							//gameJson["plays"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay;
+							gameJson["summaries"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay;
+							roundGames.push_back(gameJson);
 						}
 					}
+					roundJson["games"] = roundGames;
+					//roundJson["newstories"] = m_Season.m_Draw.m_Rounds[i].newsStories.;
+					seasonRounds.push_back(roundJson);
 					temp.push_back("--------------------------------");
 					temp.push_back("");
 				}
+				season_save_file["rounds"] = seasonRounds;
+				seasonRounds.clear();
+				vector<json> Leaderboards;
+				json tempLdr;
 				temp.push_back("Top Try Scorers");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopTries.shortlist, season_save_file, "tryscorers");
+				LeaderboardOutputStrings(temp, m_Season.m_TopTries.shortlist, tempLdr, "tryscorers");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Top Goal Scorers");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopGoals.shortlist, season_save_file, "topgoals");
+				LeaderboardOutputStrings(temp, m_Season.m_TopGoals.shortlist, tempLdr, "topgoals");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Top Field Goal Scorers");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopFieldGoals.shortlist, season_save_file, "topfieldgoals");
+				LeaderboardOutputStrings(temp, m_Season.m_TopFieldGoals.shortlist, tempLdr, "topfieldgoals");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Metres Ran");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopMetres.shortlist, season_save_file, "topmetres");
+				LeaderboardOutputStrings(temp, m_Season.m_TopMetres.shortlist, tempLdr, "topmetres");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Tackles Made");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopTackles.shortlist, season_save_file, "toptackles");
+				LeaderboardOutputStrings(temp, m_Season.m_TopTackles.shortlist, tempLdr, "toptackles");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most 40/20's Kicked");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_Top4020.shortlist, season_save_file, "top4020");
+				LeaderboardOutputStrings(temp, m_Season.m_Top4020.shortlist, tempLdr, "top4020");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Kicking Metres");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopKickMetres.shortlist, season_save_file, "topkickmetres");
+				LeaderboardOutputStrings(temp, m_Season.m_TopKickMetres.shortlist, tempLdr, "topkickmetres");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Steals");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopSteals.shortlist, season_save_file, "topsteals");
+				LeaderboardOutputStrings(temp, m_Season.m_TopSteals.shortlist, tempLdr, "topsteals");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most No Tries");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopNoTries.shortlist, season_save_file, "topnotries");
+				LeaderboardOutputStrings(temp, m_Season.m_TopNoTries.shortlist, tempLdr, "topnotries");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Errors");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopErrors.shortlist, season_save_file, "toperrors");
+				LeaderboardOutputStrings(temp, m_Season.m_TopErrors.shortlist, tempLdr, "toperrors");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Penalties");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopPenalty.shortlist, season_save_file, "toppenalties");
+				LeaderboardOutputStrings(temp, m_Season.m_TopPenalty.shortlist, tempLdr, "toppenalties");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Ruck Infringements");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopRuckErrors.shortlist, season_save_file, "topruckerrors");
+				LeaderboardOutputStrings(temp, m_Season.m_TopRuckErrors.shortlist, tempLdr, "topruckerrors");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Sin Bins");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopSinBin.shortlist, season_save_file, "topsinbins");
+				LeaderboardOutputStrings(temp, m_Season.m_TopSinBin.shortlist, tempLdr, "topsinbins");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Send Offs");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopSendOff.shortlist, season_save_file, "topsendoffs");
+				LeaderboardOutputStrings(temp, m_Season.m_TopSendOff.shortlist, tempLdr, "topsendoffs");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Most Injuries");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStrings(temp, m_Season.m_TopInjuries.shortlist, season_save_file, "topinjuries");
+				LeaderboardOutputStrings(temp, m_Season.m_TopInjuries.shortlist, tempLdr, "topinjuries");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Top Point Scores");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStringsTopScorer(temp, m_Season.m_TopPoints.shortlist, season_save_file, "topscorers");
+				LeaderboardOutputStringsTopScorer(temp, m_Season.m_TopPoints.shortlist, tempLdr, "topscorers");
+				Leaderboards.push_back(tempLdr);
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("Top Players Of The Season");
 				temp.push_back("--------------------------------");
-				LeaderboardOutputStringsTopPlayer(temp, m_Season.m_TopPlayers.shortlist, season_save_file, "topplayers");
+				LeaderboardOutputStringsTopPlayer(temp, m_Season.m_TopPlayers.shortlist, tempLdr, "topplayers");
+				Leaderboards.push_back(tempLdr);
+				//season_save_file["leaderboards"] = Leaderboards;
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("News Stories");
@@ -4151,11 +4193,11 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 					temp.push_back("");
 					temp.push_back("Round " + to_string(i+1) + " News Stories");
 					temp.push_back("--------------------------------");
-					season_save_file["rounds"][to_string(i)]["newstories"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].newsStories.size();
+					//season_save_file["rounds"][to_string(i)]["newstories"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].newsStories.size();
 					for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].newsStories.size(); ii++)
 					{
 						temp.push_back(m_Season.m_Draw.m_Rounds[i].newsStories[ii].headline);
-						season_save_file["rounds"][to_string(i)]["newstories"][to_string(ii)] = m_Season.m_Draw.m_Rounds[i].newsStories[ii].headline;
+						//season_save_file["rounds"][to_string(i)]["newstories"][to_string(ii)] = m_Season.m_Draw.m_Rounds[i].newsStories[ii].headline;
 					}
 					temp.push_back("--------------------------------");
 					temp.push_back("");

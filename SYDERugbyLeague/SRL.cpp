@@ -4065,7 +4065,11 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 							gameJson["homeTeam"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam;
 							gameJson["awayTeam"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam;
 							gameJson["homeTeamScore"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore;
+							gameJson["homeTeamTopLead"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamBiggestLead;
 							gameJson["awayTeamScore"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore;
+							gameJson["awayTeamTopLead"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamBiggestLead;
+							gameJson["homeTeamOdds"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamOdds.ReturnPrice();
+							gameJson["awayTeamOdds"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamOdds.ReturnPrice();
 							//gameJson["plays"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay.size();
 							gameJson["summaries"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay.size();
 							//gameJson["plays"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay;
@@ -4183,7 +4187,7 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 				temp.push_back("--------------------------------");
 				LeaderboardOutputStringsTopPlayer(temp, m_Season.m_TopPlayers.shortlist, tempLdr, "topplayers");
 				Leaderboards.push_back(tempLdr);
-				//season_save_file["leaderboards"] = Leaderboards;
+				season_save_file["leaderboards"] = Leaderboards;
 				temp.push_back("--------------------------------");
 				temp.push_back("");
 				temp.push_back("News Stories");

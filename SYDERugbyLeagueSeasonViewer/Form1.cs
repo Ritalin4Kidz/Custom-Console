@@ -67,15 +67,40 @@ namespace SYDERugbyLeagueSeasonViewer
         }
 
         Season _MainSeason;
-
+        int maxRounds = 0;
+        int currentRound = 0;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void LoadRoundMatchups(int round)
+        {
+            try
+            {
+                mainBackPanel.Controls.Clear();
+                for (int i = _MainSeason.rounds[round].games.Count - 1; i >= 0; i--)
+                {
+                    Panel p = new Panel();
+                    p.Name = $"{_MainSeason.rounds[round].games[i].homeTeam} {_MainSeason.rounds[round].games[i].homeTeamScore} v {_MainSeason.rounds[round].games[i].awayTeamScore} {_MainSeason.rounds    [round].games[i].awayTeam}";
+                    p.BackColor = Color.FromArgb(95, 105, 109, 246);
+                    p.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                    mainBackPanel.Controls.Add(p);
+                    mainBackPanel.Controls.SetChildIndex(p, 0);  // this moves the new one to the top!
+                                                                 // this is just for fun:
+                    p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.White, 22, 11); };
+                    mainBackPanel.Invalidate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            RoundLabel.Text = (currentRound + 1).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,10 +113,32 @@ namespace SYDERugbyLeagueSeasonViewer
                 sr.Close();
             }
             _MainSeason = JsonSerializer.Deserialize<Season>(jsonText);
+            maxRounds = _MainSeason.rounds.Count;
+            currentRound = 0;
+            RoundLabel.Text = (currentRound + 1).ToString();
+            LoadRoundMatchups(currentRound);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
+            currentRound--;
+            if (currentRound < 0)
+            {
+                currentRound = maxRounds - 1;
+            }
+            RoundLabel.Text = (currentRound + 1).ToString();
+            LoadRoundMatchups(currentRound);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            currentRound++;
+            if (currentRound >= maxRounds)
+            {
+                currentRound = 0;
+            }
+            RoundLabel.Text = (currentRound + 1).ToString();
+            LoadRoundMatchups(currentRound);
         }
     }
 }

@@ -35,6 +35,9 @@ namespace SYDERugbyLeagueSeasonViewer
             this.RoundLabel = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.hmePage = new System.Windows.Forms.Button();
+            this.LadderBtn = new System.Windows.Forms.Button();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -90,10 +93,32 @@ namespace SYDERugbyLeagueSeasonViewer
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MainPanel.Controls.Add(this.LadderBtn);
+            this.MainPanel.Controls.Add(this.hmePage);
             this.MainPanel.Location = new System.Drawing.Point(13, 561);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1020, 35);
             this.MainPanel.TabIndex = 5;
+            // 
+            // hmePage
+            // 
+            this.hmePage.Location = new System.Drawing.Point(-1, 0);
+            this.hmePage.Name = "hmePage";
+            this.hmePage.Size = new System.Drawing.Size(133, 34);
+            this.hmePage.TabIndex = 0;
+            this.hmePage.Text = "Home Page";
+            this.hmePage.UseVisualStyleBackColor = true;
+            this.hmePage.Click += new System.EventHandler(this.hmePage_Click);
+            // 
+            // LadderBtn
+            // 
+            this.LadderBtn.Location = new System.Drawing.Point(138, 0);
+            this.LadderBtn.Name = "LadderBtn";
+            this.LadderBtn.Size = new System.Drawing.Size(133, 34);
+            this.LadderBtn.TabIndex = 1;
+            this.LadderBtn.Text = "Ladder";
+            this.LadderBtn.UseVisualStyleBackColor = true;
+            this.LadderBtn.Click += new System.EventHandler(this.LadderBtn_Click);
             // 
             // Form1
             // 
@@ -109,6 +134,7 @@ namespace SYDERugbyLeagueSeasonViewer
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -121,6 +147,8 @@ namespace SYDERugbyLeagueSeasonViewer
         private System.Windows.Forms.Label RoundLabel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button hmePage;
+        private System.Windows.Forms.Button LadderBtn;
     }
 }
 

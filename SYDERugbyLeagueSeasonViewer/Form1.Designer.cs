@@ -35,8 +35,13 @@ namespace SYDERugbyLeagueSeasonViewer
             this.RoundLabel = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.hmePage = new System.Windows.Forms.Button();
+            this.NailBiters = new System.Windows.Forms.Button();
+            this.ThrashingsButton = new System.Windows.Forms.Button();
+            this.ComebackSrch = new System.Windows.Forms.Button();
+            this.LdrBoardBtn = new System.Windows.Forms.Button();
             this.LadderBtn = new System.Windows.Forms.Button();
+            this.hmePage = new System.Windows.Forms.Button();
+            this.plyerSentGme = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +61,7 @@ namespace SYDERugbyLeagueSeasonViewer
             this.mainBackPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.mainBackPanel.Location = new System.Drawing.Point(13, 42);
             this.mainBackPanel.Name = "mainBackPanel";
-            this.mainBackPanel.Size = new System.Drawing.Size(1020, 513);
+            this.mainBackPanel.Size = new System.Drawing.Size(1020, 474);
             this.mainBackPanel.TabIndex = 1;
             // 
             // button2
@@ -93,12 +98,67 @@ namespace SYDERugbyLeagueSeasonViewer
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MainPanel.Controls.Add(this.plyerSentGme);
+            this.MainPanel.Controls.Add(this.NailBiters);
+            this.MainPanel.Controls.Add(this.ThrashingsButton);
+            this.MainPanel.Controls.Add(this.ComebackSrch);
+            this.MainPanel.Controls.Add(this.LdrBoardBtn);
             this.MainPanel.Controls.Add(this.LadderBtn);
             this.MainPanel.Controls.Add(this.hmePage);
-            this.MainPanel.Location = new System.Drawing.Point(13, 561);
+            this.MainPanel.Location = new System.Drawing.Point(13, 522);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1020, 35);
+            this.MainPanel.Size = new System.Drawing.Size(1020, 74);
             this.MainPanel.TabIndex = 5;
+            // 
+            // NailBiters
+            // 
+            this.NailBiters.Location = new System.Drawing.Point(694, 0);
+            this.NailBiters.Name = "NailBiters";
+            this.NailBiters.Size = new System.Drawing.Size(133, 34);
+            this.NailBiters.TabIndex = 5;
+            this.NailBiters.Text = "Nail-Biters";
+            this.NailBiters.UseVisualStyleBackColor = true;
+            this.NailBiters.Click += new System.EventHandler(this.NailBiters_Click);
+            // 
+            // ThrashingsButton
+            // 
+            this.ThrashingsButton.Location = new System.Drawing.Point(555, 0);
+            this.ThrashingsButton.Name = "ThrashingsButton";
+            this.ThrashingsButton.Size = new System.Drawing.Size(133, 34);
+            this.ThrashingsButton.TabIndex = 4;
+            this.ThrashingsButton.Text = "Thrashings";
+            this.ThrashingsButton.UseVisualStyleBackColor = true;
+            this.ThrashingsButton.Click += new System.EventHandler(this.ThrashingsButton_Click);
+            // 
+            // ComebackSrch
+            // 
+            this.ComebackSrch.Location = new System.Drawing.Point(416, 0);
+            this.ComebackSrch.Name = "ComebackSrch";
+            this.ComebackSrch.Size = new System.Drawing.Size(133, 34);
+            this.ComebackSrch.TabIndex = 3;
+            this.ComebackSrch.Text = "Comebacks";
+            this.ComebackSrch.UseVisualStyleBackColor = true;
+            this.ComebackSrch.Click += new System.EventHandler(this.ComebackSrch_Click);
+            // 
+            // LdrBoardBtn
+            // 
+            this.LdrBoardBtn.Location = new System.Drawing.Point(277, 0);
+            this.LdrBoardBtn.Name = "LdrBoardBtn";
+            this.LdrBoardBtn.Size = new System.Drawing.Size(133, 34);
+            this.LdrBoardBtn.TabIndex = 2;
+            this.LdrBoardBtn.Text = "Leaderboards";
+            this.LdrBoardBtn.UseVisualStyleBackColor = true;
+            this.LdrBoardBtn.Click += new System.EventHandler(this.LdrBoardBtn_Click);
+            // 
+            // LadderBtn
+            // 
+            this.LadderBtn.Location = new System.Drawing.Point(138, 0);
+            this.LadderBtn.Name = "LadderBtn";
+            this.LadderBtn.Size = new System.Drawing.Size(133, 34);
+            this.LadderBtn.TabIndex = 1;
+            this.LadderBtn.Text = "Ladder";
+            this.LadderBtn.UseVisualStyleBackColor = true;
+            this.LadderBtn.Click += new System.EventHandler(this.LadderBtn_Click);
             // 
             // hmePage
             // 
@@ -110,15 +170,15 @@ namespace SYDERugbyLeagueSeasonViewer
             this.hmePage.UseVisualStyleBackColor = true;
             this.hmePage.Click += new System.EventHandler(this.hmePage_Click);
             // 
-            // LadderBtn
+            // plyerSentGme
             // 
-            this.LadderBtn.Location = new System.Drawing.Point(138, 0);
-            this.LadderBtn.Name = "LadderBtn";
-            this.LadderBtn.Size = new System.Drawing.Size(133, 34);
-            this.LadderBtn.TabIndex = 1;
-            this.LadderBtn.Text = "Ladder";
-            this.LadderBtn.UseVisualStyleBackColor = true;
-            this.LadderBtn.Click += new System.EventHandler(this.LadderBtn_Click);
+            this.plyerSentGme.Location = new System.Drawing.Point(-1, 35);
+            this.plyerSentGme.Name = "plyerSentGme";
+            this.plyerSentGme.Size = new System.Drawing.Size(133, 34);
+            this.plyerSentGme.TabIndex = 6;
+            this.plyerSentGme.Text = "Player Sent In Game";
+            this.plyerSentGme.UseVisualStyleBackColor = true;
+            this.plyerSentGme.Click += new System.EventHandler(this.plyerSentGme_Click);
             // 
             // Form1
             // 
@@ -132,7 +192,7 @@ namespace SYDERugbyLeagueSeasonViewer
             this.Controls.Add(this.mainBackPanel);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SYDE Rugby League Season Viewer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -149,6 +209,11 @@ namespace SYDERugbyLeagueSeasonViewer
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button hmePage;
         private System.Windows.Forms.Button LadderBtn;
+        private System.Windows.Forms.Button LdrBoardBtn;
+        private System.Windows.Forms.Button ComebackSrch;
+        private System.Windows.Forms.Button ThrashingsButton;
+        private System.Windows.Forms.Button NailBiters;
+        private System.Windows.Forms.Button plyerSentGme;
     }
 }
 

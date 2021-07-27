@@ -453,11 +453,13 @@ void SRLGameManager::play()
 		while (defender.getPlayerSent())
 		{
 			defender = m_HomeTeam.getRandomPlayer();
+			defender.setAllStats(20);
 		}
 		attacker = m_AwayTeam.getRandomPlayer();
 		while (attacker.getPlayerSent())
 		{
 			attacker = m_HomeTeam.getRandomPlayer();
+			attacker.setAllStats(20);
 		}
 	}
 	else
@@ -465,10 +467,12 @@ void SRLGameManager::play()
 		while (defender.getPlayerSent())
 		{
 			defender = m_AwayTeam.getRandomPlayer();
+			defender.setAllStats(20);
 		}
 		while (attacker.getPlayerSent())
 		{
 			attacker = m_HomeTeam.getRandomPlayer();
+			attacker.setAllStats(20);
 		}
 	}
 
@@ -1366,11 +1370,13 @@ bool SRLGameManager::doSendOff(SRLPlayer defender, SRLPlayer attacker, bool home
 		{
 			addPlay("SEND OFF", defender);
 			addSummary("SEND OFF#!", defender);
+			m_PlayerHasBeenSent = true;
 		}
 		else
 		{
 			addPlay("SIN BIN", defender);
 			addSummary("SIN BIN#!", defender);
+			m_PlayerHasBeenSent = true;
 		}
 	}
 	return true;

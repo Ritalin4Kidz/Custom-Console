@@ -136,6 +136,8 @@ struct SRLGameMatchup
 
 	bool tiedGame = false;
 
+	bool playerSentInGame = false;
+
 	string WinningTeam;
 	string LosingTeam;
 };

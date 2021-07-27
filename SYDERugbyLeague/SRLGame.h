@@ -79,7 +79,7 @@ public:
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
 
 	bool doInjury(SRLPlayer defender, SRLPlayer attacker, bool homeTeam);
-
+	bool getPlayerWasSentInGame() { return m_PlayerHasBeenSent; }
 	bool doSendOff(SRLPlayer defender, SRLPlayer attacker, bool homeTeam, bool sendOff);
 
 	void addAttackerErrorStats(string PlayerName, int StaminaLoss);
@@ -138,6 +138,8 @@ private:
 	bool m_sendOffs = true;
 
 	bool m_ExtraTime = false;
+
+	bool m_PlayerHasBeenSent = false;
 
 	//WEATHER BONUSES
 	SRLGameWeather weather = Weather_Clear;

@@ -4070,9 +4070,8 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 							gameJson["awayTeamTopLead"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamBiggestLead;
 							gameJson["homeTeamOdds"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamOdds.ReturnPrice();
 							gameJson["awayTeamOdds"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamOdds.ReturnPrice();
-							//gameJson["plays"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay.size();
-							gameJson["summaries"]["arraySize"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay.size();
-							//gameJson["plays"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay;
+							gameJson["playersent"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].playerSentInGame;
+							gameJson["plays"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].ResultPlayByPlay;
 							gameJson["summaries"] = m_Season.m_Draw.m_Rounds[i].m_Games[ii].SummaryPlayByPlay;
 							roundGames.push_back(gameJson);
 						}
@@ -4554,6 +4553,7 @@ void SRLGame::SimulateGames()
 			m_srlmanager.endStats();
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamScore = m_srlmanager.getHomeScore();
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamScore = m_srlmanager.getAwayScore();
+			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].playerSentInGame = m_srlmanager.getPlayerWasSentInGame();
 			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.gameNumber == i)
 			{
 				m_Season.m_Draw.m_Rounds[m_roundToSimulate].gameToFeature.fg_homeTeamScore = m_srlmanager.getHomeScore();

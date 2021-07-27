@@ -38,6 +38,7 @@ public:
 	int getRating() { int rating = m_BaseAttack + m_BaseDefence + m_BaseSpeed + m_BaseKicking + m_BaseHandling; return rating / 5; }
 
 	void setAllStats(int stat) { m_BaseAttack = stat; m_BaseDefence = stat; m_BaseHandling = stat; m_BaseSpeed = stat; m_BaseKicking = stat; }
+	void affectAllStats(float mul);
 
 	int getHandling() { return m_BaseHandling; }
 	void addHandling(int def) { m_BaseHandling += def; if (m_BaseHandling > 99) { m_BaseHandling = 99; } }

@@ -11,6 +11,8 @@ SRL Simulation game made inside the SYDE Framework.
 ### 1.0.0.0 
 
 - First Release Of SYDE RUGBY LEAGUE!!!!
+- Sin Bin Balancing
+- JSON Exporting
 
 ###  0.14.0.0 beta 13-07-2021
 - Profile View Start

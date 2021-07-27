@@ -113,6 +113,7 @@ private:
 	const int outOnFullErrorChance = 35;
 	const int injuryChance = 1000;
 	const int professionalFoulChance = 3;
+	const float playerSentDivision = 0.8f;
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;

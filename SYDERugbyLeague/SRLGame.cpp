@@ -453,13 +453,21 @@ void SRLGameManager::play()
 		while (defender.getPlayerSent())
 		{
 			defender = m_HomeTeam.getRandomPlayer();
-			defender.setAllStats(20);
+			defender.setAllStats(5);
+		}
+		for (int i = 0; i < m_HomeTeam.getPlayerOffCount(); i++)
+		{
+			defender.affectAllStats(playerSentDivision);
 		}
 		attacker = m_AwayTeam.getRandomPlayer();
 		while (attacker.getPlayerSent())
 		{
 			attacker = m_HomeTeam.getRandomPlayer();
-			attacker.setAllStats(20);
+			attacker.setAllStats(5);
+		}
+		for (int i = 0; i < m_AwayTeam.getPlayerOffCount(); i++)
+		{
+			attacker.affectAllStats(playerSentDivision);
 		}
 	}
 	else
@@ -467,12 +475,20 @@ void SRLGameManager::play()
 		while (defender.getPlayerSent())
 		{
 			defender = m_AwayTeam.getRandomPlayer();
-			defender.setAllStats(20);
+			defender.setAllStats(5);
+		}
+		for (int i = 0; i < m_AwayTeam.getPlayerOffCount(); i++)
+		{
+			defender.affectAllStats(playerSentDivision);
 		}
 		while (attacker.getPlayerSent())
 		{
 			attacker = m_HomeTeam.getRandomPlayer();
-			attacker.setAllStats(20);
+			attacker.setAllStats(5);
+		}
+		for (int i = 0; i < m_HomeTeam.getPlayerOffCount(); i++)
+		{
+			attacker.affectAllStats(playerSentDivision);
 		}
 	}
 

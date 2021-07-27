@@ -46,6 +46,25 @@ void SRLPlayer::addAttack(int atk)
 	}
 }
 
+void SRLPlayer::affectAllStats(float mul)
+{
+	float mf_BaseAttack = (float)m_BaseAttack; 
+	float mf_BaseDefence = (float)m_BaseDefence;
+	float mf_BaseHandling = (float)m_BaseHandling;
+	float mf_BaseSpeed = (float)m_BaseSpeed;
+	float mf_BaseKicking = (float)m_BaseKicking;
+	mf_BaseAttack *= mul;
+	mf_BaseDefence *= mul;
+	mf_BaseHandling *= mul;
+	mf_BaseSpeed *= mul;
+	mf_BaseKicking *= mul;
+	m_BaseAttack = mf_BaseAttack;
+	m_BaseDefence = mf_BaseDefence;
+	m_BaseHandling = mf_BaseHandling;
+	m_BaseSpeed = mf_BaseSpeed;
+	m_BaseKicking = mf_BaseKicking;
+}
+
 void SRLPlayer::loadPlayer(string path)
 {
 	std::ifstream ifs{ path };

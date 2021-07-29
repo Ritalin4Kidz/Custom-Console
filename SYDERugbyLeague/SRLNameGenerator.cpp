@@ -892,7 +892,7 @@ deque<string> SRLNameGenerator::LastNames = deque<string>
 	"le Vrerwa",
 	"le Wertya",
 	"le Xuina",
-	"le Yasrewa"
+	"le Yasrewa",
 	"le Zasdertya",
 	"mu Iniina",
 	"mu Tryta",

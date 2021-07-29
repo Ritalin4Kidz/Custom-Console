@@ -5659,7 +5659,7 @@ void SRLGame::checkSpecificBetAchievements(SRLGameBet _bet)
 	}
 	if (_bet.betAmount.dollars >= 1000)
 	{
-		if (_bet.betOdds.dollars > 3 && _bet.betState == Bet_Won)
+		if (_bet.betOdds.dollars >= 3 && _bet.betState == Bet_Won)
 		{
 			AchievementStrings.push_back("SRL_NO_DOUBT");
 		}

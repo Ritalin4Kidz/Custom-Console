@@ -82,6 +82,7 @@ int SRLGame::playerOtherTeamTrade = 0;
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
+SRLTeamListViewState SRLGame::tlViewState = TLV_GeneralStats;
 
 deque<string> SRLGame::AchievementStrings = deque<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
@@ -438,6 +439,17 @@ void ToggleEventsClick()
 void ArticleBackClick()
 {
 	SRLGame::articleState = HeadlinesState;
+}
+
+void TeamListViewStateChange()
+{
+	int statePos = static_cast<int>(SRLGame::tlViewState);
+	statePos++;
+	if (statePos > 5)
+	{
+		statePos = 0;
+	}
+	SRLGame::tlViewState = static_cast<SRLTeamListViewState>(statePos);
 }
 
 void MusicVolumeClick()
@@ -980,6 +992,10 @@ void SRLGame::init()
 	m_CoachTeamStateBtn = SYDEClickableButton(" View Team List", Vector2(45, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_CoachTeamStateBtn.setHighLight(RED);
 	m_CoachTeamStateBtn.SetFunc(CoachTeamViewClick);
+
+	m_CoachTeamCycleStatsViewBtn = SYDEClickableButton("Cycle Stat View", Vector2(0, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTeamCycleStatsViewBtn.setHighLight(RED);
+	m_CoachTeamCycleStatsViewBtn.SetFunc(TeamListViewStateChange);
 
 	m_CoachTeamSwapPositionsBtn = SYDEClickableButton(" Swap Positions ", Vector2(44, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_CoachTeamSwapPositionsBtn.setHighLight(RED);
@@ -2956,17 +2972,97 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 	}
 	else if (coachDrawState == CoachingTeamList_STATE)
 	{
-		for (int i = 0; i < m_CoachedTeam.getPlayers().size();i++)
+		if (tlViewState == TLV_GeneralStats)
 		{
-			if (i < 10)
+			window.setTextAtPoint(Vector2(0, 3), "GENERAL RATINGS:", BRIGHTWHITE);
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
 			{
-				window.setTextAtPoint(Vector2(0, i + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
-			}
-			else
-			{
-				window.setTextAtPoint(Vector2(30, (i - 10) + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
+				if (i < 10)
+				{
+					window.setTextAtPoint(Vector2(0, i + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
+				}
+				else
+				{
+					window.setTextAtPoint(Vector2(30, (i - 10) + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
+				}
 			}
 		}
+		else if (tlViewState == TLV_Attack)
+		{
+			window.setTextAtPoint(Vector2(0, 3), "ATTACK RATINGS:", BRIGHTWHITE);
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
+			{
+				if (i < 10)
+				{
+					window.setTextAtPoint(Vector2(0, i + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getAttack()) + ")", BRIGHTWHITE);
+				}
+				else
+				{
+					window.setTextAtPoint(Vector2(30, (i - 10) + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getAttack()) + ")", BRIGHTWHITE);
+				}
+			}
+		}
+		else if (tlViewState == TLV_Defence)
+		{
+			window.setTextAtPoint(Vector2(0, 3), "DEFENCE RATINGS:", BRIGHTWHITE);
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
+			{
+				if (i < 10)
+				{
+					window.setTextAtPoint(Vector2(0, i + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getDefence()) + ")", BRIGHTWHITE);
+				}
+				else
+				{
+					window.setTextAtPoint(Vector2(30, (i - 10) + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getDefence()) + ")", BRIGHTWHITE);
+				}
+			}
+		}
+		else if (tlViewState == TLV_Speed)
+		{
+			window.setTextAtPoint(Vector2(0, 3), "SPEED RATINGS:", BRIGHTWHITE);
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
+			{
+				if (i < 10)
+				{
+					window.setTextAtPoint(Vector2(0, i + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getSpeed()) + ")", BRIGHTWHITE);
+				}
+				else
+				{
+					window.setTextAtPoint(Vector2(30, (i - 10) + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getSpeed()) + ")", BRIGHTWHITE);
+				}
+			}
+		}
+		else if (tlViewState == TLV_Kicking)
+		{
+			window.setTextAtPoint(Vector2(0, 3), "KICKING RATINGS:", BRIGHTWHITE);
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
+			{
+				if (i < 10)
+				{
+					window.setTextAtPoint(Vector2(0, i + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getKicking()) + ")", BRIGHTWHITE);
+				}
+				else
+				{
+					window.setTextAtPoint(Vector2(30, (i - 10) + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getKicking()) + ")", BRIGHTWHITE);
+				}
+			}
+		}
+		else if (tlViewState == TLV_Handling)
+		{
+			window.setTextAtPoint(Vector2(0, 3), "HANDLING RATINGS:", BRIGHTWHITE);
+			for (int i = 0; i < m_CoachedTeam.getPlayers().size(); i++)
+			{
+				if (i < 10)
+				{
+					window.setTextAtPoint(Vector2(0, i + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getHandling()) + ")", BRIGHTWHITE);
+				}
+				else
+				{
+					window.setTextAtPoint(Vector2(30, (i - 10) + 4), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getHandling()) + ")", BRIGHTWHITE);
+				}
+			}
+		}
+		window = m_CoachTeamCycleStatsViewBtn.draw_ui(window);
 		window = m_CoachTeamSwapPositionsBtn.draw_ui(window);
 	}
 	else if (coachDrawState == CoachingSwapPos_STATE)

@@ -147,6 +147,16 @@ enum SRLPositionShowcaseState
 	SRLPS_Interchange
 };
 
+enum SRLTeamListViewState
+{
+	TLV_GeneralStats = 0,
+	TLV_Attack,
+	TLV_Defence,
+	TLV_Speed,
+	TLV_Kicking,
+	TLV_Handling
+};
+
 #pragma endregion
 
 class SRLGame : public SYDEWindowGame {
@@ -367,6 +377,7 @@ public:
 	static SRLTeam otherTeamTrade;
 	static SRLTrainingType trainType;
 	static SRLPositionShowcaseState posSwapState;
+	static SRLTeamListViewState tlViewState;
 	static string posToSwap;
 	static bool posSwapCall;
 #pragma endregion
@@ -623,6 +634,7 @@ private:
 	SYDEClickableButton m_CoachTradeStateBtn;
 	SYDEClickableButton m_CoachTrainStateBtn;
 	SYDEClickableButton m_CoachTeamStateBtn;
+	SYDEClickableButton m_CoachTeamCycleStatsViewBtn;
 	SYDEClickableButton m_CoachTeamSwapPositionsBtn;
 
 	SYDEClickableButton m_CoachTradeConfirmOKBtn;

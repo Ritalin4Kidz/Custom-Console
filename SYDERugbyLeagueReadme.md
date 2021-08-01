@@ -12,6 +12,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 - Swap Player Positions In Coaching Mode
 - Players More Likely To Be The Attacker Or Defender Based On Position (For Basic Tackles)
+- Stat Cycling In Team List View In Coaching Mode
 
 ### 1.0.0.0 
 

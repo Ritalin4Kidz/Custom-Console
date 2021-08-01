@@ -22,7 +22,7 @@ vector<string> SYDEGamePlay::cheatCodes = vector<string>();
 ULONG_PTR SYDEGamePlay::gdiplusToken;
 GdiplusStartupInput SYDEGamePlay::startupInput;
 
-void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
+void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window, string& outputs)
 {
 	if (resize_window_on_init)
 	{
@@ -33,7 +33,17 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 		SetWindowLong(WINDOW_HWND, GWL_STYLE, GetWindowLong(WINDOW_HWND, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_MINIMIZEBOX & ~WS_SIZEBOX);
 		SetWindowPos(WINDOW_HWND, NULL, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_FRAMECHANGED);
 		SMALL_RECT windowSize = { 0,0,config.getConsoleWidth() + 1, config.getConsoleHeight() };
-		SetConsoleWindowInfo(hOut, TRUE, &windowSize);
+		_COORD coord;
+		coord.X = config.getConsoleWidth() + 50;
+		coord.Y = config.getConsoleHeight() + 50;
+		if (!SetConsoleScreenBufferSize(hOut, coord));
+		{
+			outputs += "Buffer Resizing Failure;";
+		}
+		if(!SetConsoleWindowInfo(hOut, TRUE, &windowSize));
+		{
+			outputs += "Window Resizing Failure;";
+		}
 	}
 	if (remove_scrollbar)
 	{
@@ -64,6 +74,12 @@ void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
 }
 
 Settings SYDEGamePlay::config = Settings("EngineFiles\\Settings\\configSettings.sc");
+
+void SYDEGamePlay::initialize_window(const HANDLE hOut, ConsoleWindow& window)
+{
+	string output = "No Output";
+	initialize_window(hOut, window, output);
+}
 
 void SYDEGamePlay::opening_splashscreens(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars)
 {
@@ -109,6 +125,20 @@ void SYDEGamePlay::activate_bySplashscreen(LPCWSTR chimePath, COORD start, const
 	PlaySound(chimePath, NULL, SND_FILENAME | SND_ASYNC);
 	Sleep(1000);
 	_activated = true;
+}
+void SYDEGamePlay::customSplashscreen(ConsoleWindow& window, int windowWidth, int windowHeight, CustomAsset splashscreen)
+{
+	for (int l = 0; l < windowWidth; l++)
+	{
+		for (int m = 0; m < windowHeight; m++)
+		{
+			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
+		}
+	}
+	window = splashscreen.draw_asset(window, Vector2(0, 0));
+	window.writeConsole();
+	Sleep(3000);
+	window.ClearWindow(false);
 }
 void SYDEGamePlay::hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow & window, int windowWidth, int windowHeight, AssetsClass astVars)
 {

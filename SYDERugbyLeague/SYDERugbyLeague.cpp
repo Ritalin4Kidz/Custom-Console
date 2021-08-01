@@ -1,7 +1,7 @@
 /*
 BASED OFF D6 Game
 */
-
+#define _ACH_ID( id, name ) { id, #id, name, "", 0, 0 }
 #include "pch.h"
 
 #include "SRL.h"
@@ -11,9 +11,113 @@ BASED OFF D6 Game
 #include "SYDEEngineAssets.h"
 #include "SYDEMainDemos.h"
 #include "SYDESounds.h"
+#include "SRLSteamAchievements.h"
+#include "steam_api.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+extern char** environ;
 
 using namespace std;
 using namespace Gdiplus;
+
+// Defining our achievements
+enum EAchievements
+{
+	SRL_FIRST_SEASON = 0,
+	SRL_HIGH_ROLLER = 1,
+	SRL_BANKRUPT = 2,
+	SRL_HANGING_ON = 3,
+	SRL_NO_DOUBT = 4,
+	SRL_PREMIERSHIP_TIP = 5,
+	SRL_ALWAYS_DOUBT = 6,
+	SRL_SHORT_SEASON = 7,
+	SRL_MEDIUM_SEASON = 8,
+	SRL_NORMAL_SEASON = 9,
+	SRL_LONG_SEASON = 10,
+	SRL_EXTREME_SEASON = 11,
+	SRL_ENDURANCE_SEASON = 12,
+	SRL_GAMBLING_ADDICT = 13,
+	SRL_NOT_PROBLEM = 14,
+	SRL_BIG_PROBLEM = 15,
+	SRL_FORMAT_TEAMS = 16,
+	SRL_NEWSPAPER = 17,
+	SRL_CONTROVERSY = 18,
+	SRL_SPOONBET = 19,
+	SRL_BET_CHALLENGE1 = 20,
+	SRL_BET_CHALLENGE2 = 21,
+	SRL_BET_CHALLENGE3 = 22,
+	SRL_BET_CHALLENGE4 = 23,
+	SRL_REGEN = 24,
+	SRL_BET_NICE = 25,
+	SRL_FREEBEE_NETWORK = 26,
+	SRL_AUSMUSIC_TEAM = 27,
+	SRL_ROUND_ROBIN = 28,
+	SRL_MINIMME_COMM = 29,
+	SRL_BEST_COACH = 30,
+	SRL_COACHING_MASTERCLASS = 31,
+	SRL_UNDERDOGS = 32,
+	SRL_MAX_TRAINING = 33,
+	SRL_SACKED = 34,
+	SRL_IMPLOSION = 35,
+	SRL_SALARY_CAP = 36,
+	SRL_CHOKE = 37,
+	SRL_TRYSCORER = 38,
+	SRL_BLACKLIST =  39,
+	SRL_CLARITY_CASINO = 40,
+	SRL_NORTHKELLION = 41,
+	SRL_ZECKFAST = 42
+};
+
+// Achievement array which will hold data about the achievements and their state
+Achievement_t g_Achievements[] =
+{
+	_ACH_ID(SRL_FIRST_SEASON, "Simulator Novice"),
+	_ACH_ID(SRL_HIGH_ROLLER, "Virtual High Roller"),
+	_ACH_ID(SRL_BANKRUPT, "Bankrupt"),
+	_ACH_ID(SRL_HANGING_ON, "Not Completely Gone"),
+	_ACH_ID(SRL_NO_DOUBT, "Never In Doubt"),
+	_ACH_ID(SRL_ALWAYS_DOUBT, "Should Have Been In Doubt"),
+	_ACH_ID(SRL_SHORT_SEASON, "Summer Break"),
+	_ACH_ID(SRL_MEDIUM_SEASON, "Pandemic Affected"),
+	_ACH_ID(SRL_NORMAL_SEASON, "Same Old Same Old"),
+	_ACH_ID(SRL_LONG_SEASON, "Making Up For Lost Time"),
+	_ACH_ID(SRL_EXTREME_SEASON, "24 Hours 7 Days A Week"),
+	_ACH_ID(SRL_ENDURANCE_SEASON, "Cult Of Rugby League"),
+	_ACH_ID(SRL_GAMBLING_ADDICT, "Addicted"),
+	_ACH_ID(SRL_NOT_PROBLEM, "Not A Problem If I'm Winning"),
+	_ACH_ID(SRL_BIG_PROBLEM, "1800-858-858"),
+	_ACH_ID(SRL_FORMAT_TEAMS, "Fresh Start"),
+	_ACH_ID(SRL_NEWSPAPER, "SYDE Daily"),
+	_ACH_ID(SRL_CONTROVERSY, "Bad PR"),
+	_ACH_ID(SRL_SPOONBET, "Disappointment"),
+	_ACH_ID(SRL_BET_CHALLENGE1, "Master Tipper"),
+	_ACH_ID(SRL_BET_CHALLENGE2, "Quit Whilst You're Ahead"),
+	_ACH_ID(SRL_BET_CHALLENGE3, "50/50"),
+	_ACH_ID(SRL_BET_CHALLENGE4, "Close But No Cigar"),
+	_ACH_ID(SRL_REGEN, "Regeneration Powers"),
+	_ACH_ID(SRL_BET_NICE, "Nice"),
+	_ACH_ID(SRL_FREEBEE_NETWORK, "Freebee Network"),
+	_ACH_ID(SRL_AUSMUSIC_TEAM, "AusMusic Community"),
+	_ACH_ID(SRL_ROUND_ROBIN, "Enough To Go Around"),
+	_ACH_ID(SRL_MINIMME_COMM, "Minimme Community"),
+	_ACH_ID(SRL_BEST_COACH, "#1 Coach In The League"),
+	_ACH_ID(SRL_COACHING_MASTERCLASS, "Coaching Masterclass"),
+	_ACH_ID(SRL_UNDERDOGS, "Underdogs"),
+	_ACH_ID(SRL_MAX_TRAINING, "Maximum Power"),
+	_ACH_ID(SRL_SACKED, "Facing The Sack"),
+	_ACH_ID(SRL_IMPLOSION, "You've Lost The Dressing Room"),
+	_ACH_ID(SRL_SALARY_CAP, "Breaking The Salary Cap"),
+	_ACH_ID(SRL_CHOKE, "Bring Back The Bears"),
+	_ACH_ID(SRL_TRYSCORER, "Tryscorer Predictor"),
+	_ACH_ID(SRL_BLACKLIST, "Z's Blacklist"),
+	_ACH_ID(SRL_CLARITY_CASINO, "Clarity Casino Sponsorship"),
+	_ACH_ID(SRL_NORTHKELLION, "Northkellion Shoes Sponsorship"),
+	_ACH_ID(SRL_ZECKFAST, "Zeckfast Cafes Sponsorship"),
+};
+
+// Global access to Achievements object
+CSteamAchievements* g_SteamAchievements = NULL;
 //INITIALIZING VARIABLES
 int windowWidth = 60;
 const int windowHeight = 20;
@@ -26,7 +130,7 @@ Artwork artVars;
 //OTHER ASSETS
 AssetsClass astVars;
 //CHEATS
-vector<string> cheatCodes;
+deque<string> cheatCodes;
 //GDI VALUES
 ULONG_PTR gdiplusToken;
 GdiplusStartupInput startupInput;
@@ -38,17 +142,25 @@ static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 using namespace std;
 
+
+void DoAchievements(deque<string> temp)
+{
+	for (int i = 0; i < temp.size(); i++)
+	{
+		if (g_SteamAchievements)
+			g_SteamAchievements->SetAchievement(temp[i].c_str());
+	}
+}
+
 // MAIN FUNCTION
 int main(int argc, char* argv[])
 {
-	bool debug = false;
-	GdiplusStartup(&gdiplusToken, &startupInput, 0);
-	srand(time(NULL));
-	LPCWSTR title = L"SYDE Rugby League Simulator";
-	SYDECredits::_GAMETITLE = "SYDE Rugby League Simulator";
-	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
-	SetConsoleTitleW(title);
-	//ARGUMENT SETTINGS
+	//override the config
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+	//BASE WINDOWS 10
+	bool customOffset = false;;
+	bool debug = false;	//ARGUMENT SETTINGS
+	bool api_init = true;
 	for (int i = 0; i < argc; i++)
 	{
 		std::string arg = argv[i];
@@ -56,9 +168,67 @@ int main(int argc, char* argv[])
 		{
 			debug = true;
 		}
+		if (arg == "--NoOffset")
+		{
+			config.setOffset(0, 0);
+			customOffset = true;
+		}
+		if (arg == "--CustomOffset")
+		{
+			customOffset = true;
+		}
+		if (arg == "--NoInit")
+		{
+			api_init = false;
+		}
+		if (arg == "--JsonExporting")
+		{
+			SRLGame::allowJsonExportingSeason = true;
+		}
 	}
+	if (!customOffset)
+	{
+		config.setOffset(2, 0);
+	}
+
+	for (char** current = environ; *current; current++) {
+		puts(*current);
+		cout << *current << endl;
+	}
+	SYDEGamePlay::setConfig(config);
+	SYDEGamePlay::getConfig().ColourPalette(hOut);
+	HWND hwnd = GetConsoleWindow();
+	HMENU hmenu = GetSystemMenu(hwnd, FALSE);
+	EnableMenuItem(hmenu, SC_CLOSE, MF_GRAYED);
+	bool fmodInit = SRLGame::m_GamePlaySoundtrack.init();
+	if (!fmodInit)
+	{
+		return 0;
+	}
+	// Initialize Steam
+	if (api_init)
+	{
+		bool bRet = SteamAPI_Init();
+		// Create the SteamAchievements object if Steam was successfully initialized
+		if (bRet)
+		{
+			cout << "Steam API Initialization Successful" << endl;
+			g_SteamAchievements = new CSteamAchievements(g_Achievements, 43);
+		}
+		else
+		{
+			cout << "Steam API Initialization Was Not Successful" << endl;
+		}
+	}
+	system("pause");
+	GdiplusStartup(&gdiplusToken, &startupInput, 0);
+	srand(time(NULL));
+	LPCWSTR title = L"SYDE Rugby League Simulator";
+	SYDECredits::_GAMETITLE = "SYDE Rugby League Simulator";
+	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
+	SYDECredits::_OTHERCREDITS = "Made with FMOD Studio by Firelight Technologies Pty Ltd.";
+	SetConsoleTitleW(title);
 	BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_NML);
-	config.ColourPalette(hOut);
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
 	SYDETIME deltaTime;
@@ -68,31 +238,86 @@ int main(int argc, char* argv[])
 	{
 		SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 		BaseSYDESoundSettings::changeDefaultVolume(SYDE_VOLUME_OFF);
+		SYDEGamePlay::showFPS(true);
+		SYDEGamePlay::set_FPS_Position(Vector2(54, 1));
 	}
 	else
 	{
+		//CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
 		SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+		//SYDEGamePlay::customSplashscreen(window,windowWidth, windowHeight, m_FmodSplash);
 	}
 	SYDEGamePlay::EnableClicking(hOut);
 
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
+	//SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_UP));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_DOWN));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
-	//SYDEGamePlay::showFPS(true);
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_LEFT));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_RIGHT));
 	window.setStartingLine(1);
 	SRLGame m_SRL;
-	while (true)
+	while (!SRLGame::exitConfirmedCall)
 	{
-		window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		window = SRLGame::m_GamePlaySoundtrack.playWindow(window);
-		window.writeConsoleOptimized();
+		try 
+		{
+			SRLGame::m_GamePlaySoundtrack.setOn(SRLGame::soundTrackOn);
+			window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
+			SteamAPI_RunCallbacks();
+			window = SRLGame::m_GamePlaySoundtrack.playWindow(window);
+			window.writeConsoleOptimized();
+			DoAchievements(SRLGame::AchievementStrings);
+			SRLGame::AchievementStrings.clear();
+		}
+		catch (std::bad_alloc& message)
+		{
+			SRLGame::exitConfirmedCall = true;
+			std::chrono::system_clock currentTime;
+			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+			std::string time = std::ctime(&t);
+			time.resize(time.size() - 1);
+			string fileName = "EngineFiles\\SYDERLCrashDump_BA" + time + ".txt";
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+			std::ofstream output_file(fileName.c_str());
+			output_file << message.what() << "\n";
+		}
+		catch (std::exception& message)
+		{
+			SRLGame::exitConfirmedCall = true;
+			std::chrono::system_clock currentTime;
+			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+			std::string time = std::ctime(&t);
+			time.resize(time.size() - 1);
+			string fileName = "EngineFiles\\SYDERLCrashDump_EX" + time + ".txt";
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+			std::ofstream output_file(fileName.c_str());
+			output_file << message.what() << "\n";
+		}
+		catch (const char* message)
+		{
+			SRLGame::exitConfirmedCall = true;
+			std::chrono::system_clock currentTime;
+			std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+			std::string time = std::ctime(&t);
+			time.resize(time.size() - 1);
+			string fileName = "EngineFiles\\SYDERLCrashDump_UK" + time + ".txt";
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
+			fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
+			std::ofstream output_file(fileName.c_str());
+			output_file << message << "\n";
+		}
 	}
+	EnableMenuItem(hmenu, SC_CLOSE, MF_ENABLED);
+	SRLGame::m_GamePlaySoundtrack.shutdown();
 	CONSOLE_CURSOR_INFO cInfo;
 	GetConsoleCursorInfo(hOut, &cInfo);
 	cInfo.bVisible = false;
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
+	// Shutdown Steam
+	SteamAPI_Shutdown();
+	// Delete the SteamAchievements object
+	if (g_SteamAchievements)
+		delete g_SteamAchievements;
 }

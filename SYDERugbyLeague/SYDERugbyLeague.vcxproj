@@ -86,15 +86,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;$(ProjectDir)\steam;$(ProjectDir)\fmod\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SYDEEngine_Debug.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Debug;%(AdditionalLibraryDirectories);$(ProjectDir)\lib;$(ProjectDir)\fmod\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SYDEEngine_Debug.lib;Winmm.lib;%(AdditionalDependencies);steam_api.lib;fmodL_vc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -103,17 +103,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;$(ProjectDir)\steam;$(ProjectDir)\fmod\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SYDEEngine.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Release;%(AdditionalLibraryDirectories);$(ProjectDir)\lib;$(ProjectDir)\fmod\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SYDEEngine.lib;Winmm.lib;%(AdditionalDependencies);steam_api.lib;fmodL_vc.lib</AdditionalDependencies>
+      <StackReserveSize>4194304</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -146,9 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SRL.cpp" />
+    <ClCompile Include="SRLCustomTeams.cpp" />
     <ClCompile Include="SRLGame.cpp" />
     <ClCompile Include="SRLNameGenerator.cpp" />
+    <ClCompile Include="SRLNewsStoryGenerator.cpp" />
     <ClCompile Include="SRLPlayer.cpp" />
+    <ClCompile Include="SRLSoundtrack.cpp" />
+    <ClCompile Include="SRLSteamAchievements.cpp" />
+    <ClCompile Include="SRLStructs.cpp" />
     <ClCompile Include="SRLTeam.cpp" />
     <ClCompile Include="SYDERugbyLeague.cpp" />
   </ItemGroup>
@@ -156,9 +162,14 @@
     <ClInclude Include="json.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SRL.h" />
+    <ClInclude Include="SRLCustomTeams.h" />
     <ClInclude Include="SRLGame.h" />
     <ClInclude Include="SRLNameGenerator.h" />
+    <ClInclude Include="SRLNewsStoryGenerator.h" />
     <ClInclude Include="SRLPlayer.h" />
+    <ClInclude Include="SRLSoundtrack.h" />
+    <ClInclude Include="SRLSteamAchievements.h" />
+    <ClInclude Include="SRLStructs.h" />
     <ClInclude Include="SRLTeam.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Gameplay Loop.txt" />
+    <Text Include="steam_appid.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

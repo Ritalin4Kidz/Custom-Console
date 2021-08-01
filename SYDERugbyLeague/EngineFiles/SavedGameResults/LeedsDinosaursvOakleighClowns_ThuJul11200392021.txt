@@ -1,0 +1,189 @@
+----------LINE-UPS----------
+Home Team: Leeds Dinosaurs
+1: Gwen Lase
+2: Tom Sitea
+3: Tom Manfredi
+4: Dapper Wrabel
+5: Charles Harris
+6: Nicki Chricton
+7: Homer Yemm
+8: Raymond Berry
+9: Junior Hull
+10: Jack Manfredi
+11: Diana Arrust
+12: Billie Gagai
+13: Jack Martin
+14: Christian Costa
+15: Junior McMahon
+16: Zack Ballsut
+17: Jane Jackington
+Away Team: Oakleigh Clowns
+1: Andres Stewart
+2: Pete Yahtzel
+3: Jr. Hall
+4: David Way
+5: Alan Wott
+6: Diana O' Donovan
+7: Bob Singh
+8: Kam Martin
+9: Lindsay Domino
+10: Christopher Burt
+11: Anthony Bridgers
+12: Matt Meaney
+13: Billie Watne
+14: Josh Hull
+15: Dave Thompson
+16: Paul Weas
+17: Huretio Atoni
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Leeds Dinosaurs: 0 v Oakleigh Clowns: 0
+02:01 - Raymond Berry - Ruck Infringement
+03:25 - Billie Watne - 6th Tackle Changeover
+04:33 - Christopher Burt - Stripped Ball Off Jack Martin
+05:12 - Matt Meaney - TRY - Leeds Dinosaurs: 0 v Oakleigh Clowns: 4
+06:12 - Bob Singh - GOAL - Leeds Dinosaurs: 0 v Oakleigh Clowns: 6
+07:42 - Jack Martin - Ruck Infringement
+08:30 - Oakleigh Clowns Interchanged Players David Way & Dave Thompson
+10:07 - Leeds Dinosaurs Interchanged Players Raymond Berry & Junior McMahon
+10:07 - Oakleigh Clowns Interchanged Players Andres Stewart & David Way
+10:19 - Leeds Dinosaurs Interchanged Players Homer Yemm & Jane Jackington
+11:22 - Leeds Dinosaurs Interchanged Players Tom Sitea & Christian Costa
+11:56 - Oakleigh Clowns Interchanged Players Christopher Burt & Huretio Atoni
+14:11 - Dave Thompson - 6th Tackle Changeover
+16:47 - Kam Martin - 6th Tackle Changeover
+17:30 - Oakleigh Clowns Interchanged Players Diana O' Donovan & Christopher Burt
+19:20 - Lindsay Domino - Intercepted Off A Jack Martin Pass
+19:20 - Lindsay Domino - TRY - Leeds Dinosaurs: 0 v Oakleigh Clowns: 10
+20:20 - Huretio Atoni - GOAL - Leeds Dinosaurs: 0 v Oakleigh Clowns: 12
+23:57 - Nicki Chricton - 6th Tackle Changeover
+25:01 - Tom Manfredi - Intercepted Off A David Way Pass
+25:18 - Matt Meaney - Penalty
+26:37 - Nicki Chricton - TRY - Leeds Dinosaurs: 4 v Oakleigh Clowns: 12
+27:37 - Nicki Chricton - CONVERSION MISSED
+29:20 - Leeds Dinosaurs Interchanged Players Diana Arrust & Tom Sitea
+30:25 - Leeds Dinosaurs Interchanged Players Jane Jackington & Homer Yemm
+30:57 - Pete Yahtzel - Kick Out On The Full
+31:09 - Leeds Dinosaurs Interchanged Players Junior Hull & Zack Ballsut
+32:29 - Charles Harris - 6th Tackle Changeover
+32:45 - Homer Yemm - Intercepted Off A Bob Singh Pass
+32:45 - Homer Yemm - TRY - Leeds Dinosaurs: 8 v Oakleigh Clowns: 12
+33:45 - Nicki Chricton - GOAL - Leeds Dinosaurs: 10 v Oakleigh Clowns: 12
+36:36 - David Way - Over The Sideline
+37:21 - Junior McMahon - Knock On
+39:13 - Lindsay Domino - 6th Tackle Changeover
+39:45 - Jr. Hall - Intercepted Off A Dapper Wrabel Pass
+40:00 - HALF TIME - Leeds Dinosaurs: 10 v Oakleigh Clowns: 12
+40:44 - Bob Singh - Over The Sideline
+41:02 - Leeds Dinosaurs Interchanged Players Nicki Chricton & Diana Arrust
+41:17 - Jack Martin - TRY - Leeds Dinosaurs: 14 v Oakleigh Clowns: 12
+42:17 - Jack Martin - CONVERSION MISSED
+45:28 - Pete Yahtzel - TRY - Leeds Dinosaurs: 14 v Oakleigh Clowns: 16
+46:28 - Huretio Atoni - GOAL - Leeds Dinosaurs: 14 v Oakleigh Clowns: 18
+49:10 - Leeds Dinosaurs Interchanged Players Christian Costa & Junior Hull
+49:45 - Alan Wott - Intercepted Off A Junior McMahon Pass
+50:58 - David Way - 6th Tackle Changeover
+52:16 - Charles Harris - 6th Tackle Changeover
+54:26 - Zack Ballsut - Knock On
+55:04 - Homer Yemm - Intercepted Off A David Way Pass
+56:05 - 20m Restart - Oakleigh Clowns
+57:11 - Dave Thompson - Forward Pass
+58:29 - Anthony Bridgers - Penalty
+58:40 - ------VIDEO REFEREE------
+58:40 - Gwen Lase - TRY - Leeds Dinosaurs: 18 v Oakleigh Clowns: 18
+59:40 - Jack Martin - GOAL - Leeds Dinosaurs: 20 v Oakleigh Clowns: 18
+60:56 - Bob Singh - Intercepted Off A Zack Ballsut Pass
+60:56 - Oakleigh Clowns Interchanged Players Billie Watne & Josh Hull
+61:21 - Matt Meaney - TRY - Leeds Dinosaurs: 20 v Oakleigh Clowns: 22
+62:21 - Huretio Atoni - GOAL - Leeds Dinosaurs: 20 v Oakleigh Clowns: 24
+63:52 - Diana Arrust - Ruck Infringement
+63:52 - Diana Arrust - Penalty
+65:21 - Alan Wott - 6th Tackle Changeover
+67:19 - Jack Martin - Ruck Infringement
+68:48 - Lindsay Domino - 6th Tackle Changeover
+69:17 - Tom Manfredi - Knock On
+70:23 - Billie Gagai - Penalty
+70:52 - Homer Yemm - Intercepted Off A Josh Hull Pass
+73:27 - Huretio Atoni - 6th Tackle Changeover
+76:18 - Matt Meaney - 6th Tackle Changeover
+77:51 - Junior Hull - Intercepted Off A David Way Pass
+79:03 - Diana Arrust - 6th Tackle Changeover
+79:18 - Homer Yemm - Penalty
+80:00 - FULL TIME - Leeds Dinosaurs: 20 v Oakleigh Clowns: 24
+                             
+--------PLAYER STATS--------
+Home Team: Leeds Dinosaurs
+1: Gwen Lase |Time Played: 80:04 |Metres: 92 |Tackles: 14 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 78
+2: Junior Hull |Time Played: 62:03 |Metres: 8 |Tackles: 16 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+3: Tom Manfredi |Time Played: 80:04 |Metres: 39 |Tackles: 10 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+4: Dapper Wrabel |Time Played: 80:04 |Metres: 16 |Tackles: 10 |Kicks: 2 |Kick Metres: 43 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+5: Charles Harris |Time Played: 80:04 |Metres: 168 |Tackles: 10 |Kicks: 3 |Kick Metres: 182 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 136
+6: Diana Arrust |Time Played: 68:22 |Metres: 52 |Tackles: 10 |Kicks: 1 |Kick Metres: 49 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+7: Homer Yemm |Time Played: 59:58 |Metres: 20 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+8: Junior McMahon |Time Played: 69:57 |Metres: 30 |Tackles: 10 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+9: Zack Ballsut |Time Played: 48:55 |Metres: 16 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+10: Jack Manfredi |Time Played: 80:04 |Metres: 87 |Tackles: 7 |Kicks: 2 |Kick Metres: 50 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 60
+11: Tom Sitea |Time Played: 62:06 |Metres: 6 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+12: Billie Gagai |Time Played: 80:04 |Metres: 66 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+13: Jack Martin |Time Played: 80:04 |Metres: 22 |Tackles: 10 |Kicks: 1 |Kick Metres: 37 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 1 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 14
+14: Nicki Chricton |Time Played: 41:02 |Metres: 11 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 1 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 16
+15: Raymond Berry |Time Played: 10:07 |Metres: 0 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+16: Christian Costa |Time Played: 37:48 |Metres: 2 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+17: Jane Jackington |Time Played: 20:06 |Metres: 22 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+Highlights:                 
+Most Tackles: Junior Hull: 16
+Most Points: Jack Martin: 6
+Most Metres: Charles Harris: 168
+Most Errors: Tom Manfredi: 1
+                             
+Away Team: Oakleigh Clowns
+1: David Way |Time Played: 78:27 |Metres: 43 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+2: Pete Yahtzel |Time Played: 80:04 |Metres: 89 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 28
+3: Jr. Hall |Time Played: 80:04 |Metres: 54 |Tackles: 8 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+4: Dave Thompson |Time Played: 71:34 |Metres: 60 |Tackles: 7 |Kicks: 1 |Kick Metres: 62 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+5: Alan Wott |Time Played: 80:04 |Metres: 68 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+6: Christopher Burt |Time Played: 74:30 |Metres: 59 |Tackles: 12 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 55
+7: Bob Singh |Time Played: 80:04 |Metres: 41 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 17
+8: Kam Martin |Time Played: 80:04 |Metres: 176 |Tackles: 10 |Kicks: 2 |Kick Metres: 76 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 110
+9: Lindsay Domino |Time Played: 80:04 |Metres: 45 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 47
+10: Huretio Atoni |Time Played: 68:08 |Metres: 31 |Tackles: 9 |Kicks: 1 |Kick Metres: 32 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 38
+11: Anthony Bridgers |Time Played: 80:04 |Metres: 37 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+12: Matt Meaney |Time Played: 80:04 |Metres: 61 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 25
+13: Josh Hull |Time Played: 19:08 |Metres: 18 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+14: Billie Watne |Time Played: 60:56 |Metres: 9 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+15: Andres Stewart |Time Played: 10:07 |Metres: 0 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+16: Paul Weas |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Diana O' Donovan |Time Played: 17:30 |Metres: 44 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+Highlights:                 
+Most Tackles: David Way: 12
+Most Points: Matt Meaney: 8
+Most Metres: Kam Martin: 176
+Most Errors: David Way: 1
+                             
+---------TEAM STATS---------
+Home Team: Leeds Dinosaurs
+Total Metres: 657
+Total Kick Metres: 445
+Total Errors: 3
+Total Tackles: 140
+Total Tries: 4
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Oakleigh Clowns
+Total Metres: 835
+Total Kick Metres: 214
+Total Errors: 4
+Total Tackles: 121
+Total Tries: 4
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 5/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Charles Harris
+2nd (2 Points) -- Kam Martin
+3rd (1 Point) -- Gwen Lase
+----------------------------

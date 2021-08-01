@@ -1,0 +1,547 @@
+LADDER RESULTS
+--------------------------------
+1. Repaired Coast Rabbitohs Wins: 10| Lost: 0| PD: 139| Points: 20
+2. Thornleigh Takeout Wins: 9| Lost: 1| PD: 118| Points: 18
+3. Dubbo Rose Gardens Wins: 7| Lost: 3| PD: 146| Points: 14
+4. Anywheston Jellyfish Wins: 7| Lost: 3| PD: 84| Points: 14
+5. Cyprux Campfires Wins: 7| Lost: 3| PD: 68| Points: 14
+6. Blue Mountains Gizzards Wins: 7| Lost: 3| PD: 42| Points: 14
+7. North Head Astros Wins: 6| Lost: 4| PD: 86| Points: 12
+8. Aliran Messiahs Wins: 6| Lost: 4| PD: 29| Points: 12
+9. Bonesville Gizzards Wins: 5| Lost: 5| PD: -7| Points: 10
+10. Blue Mountains Pearls Wins: 4| Lost: 6| PD: -29| Points: 8
+11. Eastern Suburbs Potatoes Wins: 4| Lost: 6| PD: -31| Points: 8
+12. Eastern Suburbs Mildews Wins: 3| Lost: 7| PD: -76| Points: 6
+13. Caulbury Rose Gardens Wins: 2| Lost: 8| PD: -18| Points: 4
+14. East Havertown Grapefruit Wins: 1| Lost: 9| PD: -132| Points: 2
+15. Arcoomer Heat Wins: 1| Lost: 9| PD: -197| Points: 2
+16. Cyprux Pariahs Wins: 1| Lost: 9| PD: -222| Points: 2
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Repaired Coast Rabbitohs 17 v 10 Arcoomer Heat
+North Head Astros 32 v 20 Bonesville Gizzards
+Caulbury Rose Gardens 25 v 6 Eastern Suburbs Potatoes
+Cyprux Pariahs 18 v 31 Blue Mountains Gizzards
+Aliran Messiahs 6 v 2 Anywheston Jellyfish
+Blue Mountains Pearls 25 v 20 Cyprux Campfires
+Eastern Suburbs Mildews 16 v 46 Thornleigh Takeout
+Dubbo Rose Gardens 7 v 4 East Havertown Grapefruit
+--------------------------------
+
+Round 2 Results
+--------------------------------
+East Havertown Grapefruit 24 v 33 Cyprux Campfires
+Cyprux Pariahs 38 v 45 Eastern Suburbs Mildews
+Aliran Messiahs 12 v 16 Blue Mountains Gizzards
+Bonesville Gizzards 22 v 20 Blue Mountains Pearls
+Eastern Suburbs Potatoes 18 v 14 Anywheston Jellyfish
+Caulbury Rose Gardens 32 v 2 Arcoomer Heat
+North Head Astros 16 v 21 Thornleigh Takeout
+Dubbo Rose Gardens 10 v 14 Repaired Coast Rabbitohs
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Cyprux Campfires 11 v 10 Eastern Suburbs Potatoes
+Anywheston Jellyfish 21 v 18 Aliran Messiahs
+Cyprux Pariahs 6 v 38 Repaired Coast Rabbitohs
+Eastern Suburbs Mildews 16 v 23 Thornleigh Takeout
+Blue Mountains Pearls 14 v 26 Bonesville Gizzards
+Caulbury Rose Gardens 4 v 19 Blue Mountains Gizzards
+Arcoomer Heat 0 v 46 Dubbo Rose Gardens
+North Head Astros 18 v 4 East Havertown Grapefruit
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Thornleigh Takeout 12 v 10 Bonesville Gizzards
+Cyprux Pariahs 12 v 46 Cyprux Campfires
+North Head Astros 32 v 0 Arcoomer Heat
+Repaired Coast Rabbitohs 19 v 18 Eastern Suburbs Potatoes
+Anywheston Jellyfish 38 v 6 East Havertown Grapefruit
+Blue Mountains Pearls 19 v 12 Blue Mountains Gizzards
+Dubbo Rose Gardens 29 v 6 Eastern Suburbs Mildews
+Caulbury Rose Gardens 22 v 25 Aliran Messiahs
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Cyprux Campfires 10 v 9 Blue Mountains Gizzards
+Caulbury Rose Gardens 22 v 23 Cyprux Pariahs
+Eastern Suburbs Potatoes 6 v 20 Thornleigh Takeout
+Bonesville Gizzards 26 v 24 North Head Astros
+East Havertown Grapefruit 8 v 21 Repaired Coast Rabbitohs
+Dubbo Rose Gardens 36 v 6 Eastern Suburbs Mildews
+Anywheston Jellyfish 41 v 16 Arcoomer Heat
+Aliran Messiahs 6 v 16 Blue Mountains Pearls
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Cyprux Pariahs 4 v 24 Blue Mountains Gizzards
+Blue Mountains Pearls 14 v 28 Dubbo Rose Gardens
+Eastern Suburbs Potatoes 6 v 26 Aliran Messiahs
+Cyprux Campfires 38 v 32 Bonesville Gizzards
+Caulbury Rose Gardens 4 v 11 Thornleigh Takeout
+East Havertown Grapefruit 14 v 24 Anywheston Jellyfish
+North Head Astros 32 v 0 Arcoomer Heat
+Eastern Suburbs Mildews 0 v 14 Repaired Coast Rabbitohs
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Blue Mountains Pearls 10 v 17 Blue Mountains Gizzards
+Eastern Suburbs Potatoes 18 v 28 Thornleigh Takeout
+Dubbo Rose Gardens 31 v 0 East Havertown Grapefruit
+Bonesville Gizzards 24 v 31 Cyprux Campfires
+Caulbury Rose Gardens 4 v 17 Aliran Messiahs
+Repaired Coast Rabbitohs 36 v 24 Anywheston Jellyfish
+Arcoomer Heat 24 v 18 Eastern Suburbs Mildews
+Cyprux Pariahs 10 v 28 North Head Astros
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Eastern Suburbs Mildews 42 v 10 East Havertown Grapefruit
+Bonesville Gizzards 18 v 34 Repaired Coast Rabbitohs
+Cyprux Campfires 28 v 29 Anywheston Jellyfish
+Thornleigh Takeout 21 v 18 North Head Astros
+Aliran Messiahs 20 v 0 Cyprux Pariahs
+Blue Mountains Pearls 10 v 8 Arcoomer Heat
+Eastern Suburbs Potatoes 29 v 22 Dubbo Rose Gardens
+Blue Mountains Gizzards 22 v 17 Caulbury Rose Gardens
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Repaired Coast Rabbitohs 29 v 10 North Head Astros
+Blue Mountains Gizzards 6 v 22 Anywheston Jellyfish
+Eastern Suburbs Potatoes 31 v 12 Caulbury Rose Gardens
+Bonesville Gizzards 25 v 24 Blue Mountains Pearls
+Arcoomer Heat 16 v 30 East Havertown Grapefruit
+Cyprux Campfires 37 v 0 Cyprux Pariahs
+Eastern Suburbs Mildews 26 v 24 Thornleigh Takeout
+Dubbo Rose Gardens 13 v 18 Aliran Messiahs
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Thornleigh Takeout 52 v 10 Cyprux Pariahs
+Bonesville Gizzards 29 v 10 Aliran Messiahs
+Dubbo Rose Gardens 33 v 18 Arcoomer Heat
+East Havertown Grapefruit 14 v 16 Blue Mountains Gizzards
+Eastern Suburbs Mildews 13 v 20 North Head Astros
+Repaired Coast Rabbitohs 41 v 20 Cyprux Campfires
+Eastern Suburbs Potatoes 16 v 12 Caulbury Rose Gardens
+Blue Mountains Pearls 4 v 21 Anywheston Jellyfish
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Repaired Coast Rabbitohs 36 v 20 Anywheston Jellyfish
+Thornleigh Takeout 31 v 20 Dubbo Rose Gardens
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Repaired Coast Rabbitohs 10 v 20 Thornleigh Takeout
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Dom Morris-Eastern Suburbs Mildews : 11
+2. Sammy Meaney-Repaired Coast Rabbitohs : 10
+3. Cameron Thurston-Cyprux Campfires : 9
+4. Alister Chappell-Blue Mountains Gizzards : 9
+5. Lois Rice-Repaired Coast Rabbitohs : 9
+6. Christian O' Thomas-Dubbo Rose Gardens : 9
+7. Brendan Fox-Bonesville Gizzards : 8
+8. Kyrsta Mallett-Eastern Suburbs Potatoes : 8
+9. Clint Thompson-Blue Mountains Gizzards : 7
+10. Brett Doomer-Caulbury Rose Gardens : 7
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Thomas Jackson-Thornleigh Takeout : 36
+2. Sam North-Repaired Coast Rabbitohs : 33
+3. Mitchell Mitt-Anywheston Jellyfish : 32
+4. Nita Domino-North Head Astros : 30
+5. Kyuss Som-Cyprux Campfires : 27
+6. Xander Port-Dubbo Rose Gardens : 18
+7. Alister Chappell-Blue Mountains Gizzards : 16
+8. Anthony Lewis-Bonesville Gizzards : 15
+9. Aaron Cotric-Aliran Messiahs : 14
+10. Ryan Rice-Bonesville Gizzards : 14
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Sam North-Repaired Coast Rabbitohs : 2
+2. Imm Fox-Blue Mountains Gizzards : 2
+3. Adole James-Thornleigh Takeout : 2
+4. Junior Hunt-Cyprux Campfires : 2
+5. Kyle Jackston-Blue Mountains Gizzards : 2
+6. Lindsay Britt-Cyprux Campfires : 2
+7. Christian O' Thomas-Dubbo Rose Gardens : 2
+8. Jack Normandy-Dubbo Rose Gardens : 1
+9. Thomas Holland-Blue Mountains Pearls : 1
+10. Ann Tramion-Anywheston Jellyfish : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Lois Rice-Repaired Coast Rabbitohs : 1155
+2. Sammy Meaney-Repaired Coast Rabbitohs : 1107
+3. Ann Hunt-Thornleigh Takeout : 1046
+4. Christian O' Thomas-Dubbo Rose Gardens : 1014
+5. Bob Xander-Anywheston Jellyfish : 1012
+6. Arnole McDonalson-Off Contract Players : 975
+7. Brendan Hann-East Havertown Grapefruit : 952
+8. Christian Dharo-Thornleigh Takeout : 934
+9. Sammy Fallon-Repaired Coast Rabbitohs : 928
+10. Brendan Morris-Anywheston Jellyfish : 915
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Brendan Hann-East Havertown Grapefruit : 185
+2. Arnole McDonalson-Off Contract Players : 172
+3. Sammy Meaney-Repaired Coast Rabbitohs : 124
+4. Hubert Shannel-Aliran Messiahs : 121
+5. James Doomer-Blue Mountains Pearls : 116
+6. Bart O' Donnell-Thornleigh Takeout : 115
+7. Mitchell Perry-Dubbo Rose Gardens : 115
+8. Dylan Potter-Aliran Messiahs : 114
+9. Samantha Dellio-Caulbury Rose Gardens : 114
+10. Dreka Tedesco-Caulbury Rose Gardens : 114
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Sammy Tuo-Off Contract Players : 1
+2. Tommy Hands-Repaired Coast Rabbitohs : 1
+3. Lois Rice-Repaired Coast Rabbitohs : 1
+4. Sam North-Repaired Coast Rabbitohs : 0
+5. Greta Greenberg-Repaired Coast Rabbitohs : 0
+6. Sr. East-Repaired Coast Rabbitohs : 0
+7. Nico Horter-Bonesville Gizzards : 0
+8. Sammy Meaney-Repaired Coast Rabbitohs : 0
+9. Lois Walker-Repaired Coast Rabbitohs : 0
+10. Luca Johnson-Repaired Coast Rabbitohs : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Lois Rice-Repaired Coast Rabbitohs : 455
+2. Arnole McDonalson-Off Contract Players : 436
+3. Chris Paul-Aliran Messiahs : 401
+4. Ryan Winger-Eastern Suburbs Mildews : 381
+5. Sammy Fallon-Repaired Coast Rabbitohs : 365
+6. Ann Harrigan-North Head Astros : 363
+7. Cameron Thurston-Cyprux Campfires : 363
+8. Greta Greenberg-Repaired Coast Rabbitohs : 359
+9. Imm Gagai-Blue Mountains Gizzards : 357
+10. Jeremy McDonalson-Cyprux Pariahs : 348
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Bob Xander-Anywheston Jellyfish : 24
+2. Brendan Fox-Bonesville Gizzards : 20
+3. Lois Rice-Repaired Coast Rabbitohs : 18
+4. Alister Chappell-Blue Mountains Gizzards : 16
+5. Kyrsta Mallett-Eastern Suburbs Potatoes : 15
+6. Jeni Ese'ese-Blue Mountains Pearls : 15
+7. Lindsay Britt-Cyprux Campfires : 14
+8. Imm Gagai-Blue Mountains Gizzards : 14
+9. Kevin Costa-Eastern Suburbs Mildews : 14
+10. Ann Hunt-Thornleigh Takeout : 14
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Brendan North-Aliran Messiahs : 3
+2. Josh Ujhazzy-Repaired Coast Rabbitohs : 2
+3. Ann Harrigan-North Head Astros : 2
+4. Calum Hughes-Aliran Messiahs : 2
+5. Mitchell Mitt-Anywheston Jellyfish : 1
+6. Neo Davis-East Havertown Grapefruit : 1
+7. Neo Sunnerson-Cyprux Pariahs : 1
+8. Dom Morris-Eastern Suburbs Mildews : 1
+9. Bob Xander-Anywheston Jellyfish : 1
+10. Amy Vlandys-Aliran Messiahs : 1
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Arnole McDonalson-Off Contract Players : 18
+2. Jeremy Sandra-Aliran Messiahs : 17
+3. Jack Meikle-Arcoomer Heat : 17
+4. Brendan Hann-East Havertown Grapefruit : 16
+5. Cooper Reynolds-Thornleigh Takeout : 15
+6. Jeni Sunnerson-Off Contract Players : 14
+7. Dylan Potter-Aliran Messiahs : 13
+8. Lindsay Britt-Cyprux Campfires : 13
+9. James Doomer-Blue Mountains Pearls : 13
+10. Chase Hing-North Head Astros : 13
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Cooper Reynolds-Thornleigh Takeout : 7
+2. Velento Farmer-Bonesville Gizzards : 6
+3. Jeremy Sandra-Aliran Messiahs : 6
+4. Kevin Costa-Eastern Suburbs Mildews : 6
+5. Lois Brasi-Eastern Suburbs Mildews : 6
+6. Arnole James-Cyprux Pariahs : 6
+7. Jeremy McDonalson-Cyprux Pariahs : 6
+8. Luca East-Dubbo Rose Gardens : 6
+9. Ryan Hannington-Eastern Suburbs Mildews : 5
+10. Josh John-Aliran Messiahs : 5
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Dreka Tedesco-Caulbury Rose Gardens : 7
+2. Cooper Brasi-Blue Mountains Pearls : 6
+3. Jr. Shannel-Blue Mountains Pearls : 4
+4. Brendan Xander-Bonesville Gizzards : 4
+5. Andy John-Eastern Suburbs Potatoes : 4
+6. James Stanley-Eastern Suburbs Potatoes : 4
+7. Jack Meikle-Arcoomer Heat : 4
+8. Ash Winger-Off Contract Players : 3
+9. Josh Fallon-Cyprux Campfires : 3
+10. Miles Potter-North Head Astros : 3
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Lois Brasi-Eastern Suburbs Mildews : 2
+2. Neo Sunnerson-Cyprux Pariahs : 1
+3. Carl Cooper-Eastern Suburbs Mildews : 1
+4. Brendan Dempsey-Cyprux Campfires : 1
+5. Damien Cleary-Bonesville Gizzards : 1
+6. Karli Price-Cyprux Campfires : 1
+7. Janerio Johns-Eastern Suburbs Potatoes : 1
+8. Cooper Brasi-Blue Mountains Pearls : 1
+9. Greta Silwedel-Arcoomer Heat : 1
+10. Luca Johnson-Repaired Coast Rabbitohs : 0
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Miles Sunnerson-Cyprux Campfires : 1
+2. Arnole James-Cyprux Pariahs : 1
+3. Jimmy Horter-Arcoomer Heat : 1
+4. Mitchell Hughes-Bonesville Gizzards : 1
+5. Brett Doomer-Caulbury Rose Gardens : 1
+6. Sr. East-Repaired Coast Rabbitohs : 0
+7. Nico Horter-Bonesville Gizzards : 0
+8. Lois Rice-Repaired Coast Rabbitohs : 0
+9. Lois Walker-Repaired Coast Rabbitohs : 0
+10. Luca Johnson-Repaired Coast Rabbitohs : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Jr. Shannel-Blue Mountains Pearls : 2
+2. Allie Hannington-Anywheston Jellyfish : 2
+3. Julie Allsopp-Off Contract Players : 1
+4. Ryan Indigo-East Havertown Grapefruit : 1
+5. Kyle Jackston-Blue Mountains Gizzards : 1
+6. Paul Alexander-Dubbo Rose Gardens : 1
+7. Amy Vlandys-Aliran Messiahs : 1
+8. Luke West-Blue Mountains Pearls : 1
+9. Tommy Cummins-Arcoomer Heat : 1
+10. Bill Perry-North Head Astros : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Thomas Jackson-Thornleigh Takeout : 80
+2. Sam North-Repaired Coast Rabbitohs : 80
+3. Nita Domino-North Head Astros : 76
+4. Kyuss Som-Cyprux Campfires : 74
+5. Alister Chappell-Blue Mountains Gizzards : 69
+6. Mitchell Mitt-Anywheston Jellyfish : 68
+7. Dom Morris-Eastern Suburbs Mildews : 44
+8. Cameron Thurston-Cyprux Campfires : 44
+9. Sammy Meaney-Repaired Coast Rabbitohs : 40
+10. Xander Port-Dubbo Rose Gardens : 40
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Lois Rice-Repaired Coast Rabbitohs : 170
+2. Cameron Thurston-Cyprux Campfires : 133
+3. Sammy Fallon-Repaired Coast Rabbitohs : 129
+4. Brendan Fox-Bonesville Gizzards : 128
+5. Dom Morris-Eastern Suburbs Mildews : 127
+6. Homer Winger-Blue Mountains Pearls : 121
+7. Ann Harrigan-North Head Astros : 119
+8. Sam North-Repaired Coast Rabbitohs : 119
+9. Kyuss Som-Cyprux Campfires : 118
+10. Jack Normandy-Dubbo Rose Gardens : 116
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Blue Mountains Pearls Sign Karl Harrigan
+Rival Players Raise Awareness!
+Player Unrest At Cyprux Pariahs
+Eastern Suburbs Mildews Drop Billy Port
+Opinion: Ryan Indigo Should Swap Teams
+Bart Cummins Helps Sick Kids In Hospital
+Eastern Suburbs Potatoes Drop Connor Barrett
+Avery Croker Donates To Controverisal Charity
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Caulbury Rose Gardens Sign Pete Warrant
+Rival Players Raise Awareness!
+Christian O' Thomas Offered Pay Cut To Re-sign
+Fan Poll: Anywheston Jellyfish's Best Player
+Eastern Suburbs Potatoes Drop Homer Barrett
+Rival Players Raise Awareness!
+Don Silwedel Donates To Controverisal Charity
+Nick Stanley's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Blue Mountains Pearls Sign Julie Indigo
+North Head Astros Sign Julie South
+Arnold Jackington Offered Pay Cut To Re-sign
+Hubert Belta Saves Local Man From Drowning
+Fan Poll: Arcoomer Heat's Best Player
+Tommy Hands Donates To Controverisal Charity
+Lois Walker To Have Contract Extended!
+Jordan Boyd's Retirment Rumours!
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Caulbury Rose Gardens Sign Pete John
+Eastern Suburbs Mildews Sign Castro Tedesco
+Arcoomer Heat Sign Sam de Bactio
+Caulbury Rose Gardens Sign Norman Develo
+Jordan Boyd Saves Local Man From Drowning
+Jeni Sunnerson Involved In Sexting Scandal
+Opinion: Arnole Port Should Swap Teams
+Arnole McDonalson Donates To Controverisal Charity
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Anywheston Jellyfish Sign Matt Russell
+Caulbury Rose Gardens Sign Damien Hunt
+Player Unrest At Aliran Messiahs
+Joshua Cotric Donates To Controverisal Charity
+Ali Waterhouse Offered Pay Cut To Re-sign
+Don Ujhazzy Involved In Sexting Scandal
+Fan Poll: Aliran Messiahs's Best Player
+Amy Vlandys's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Luca Johnson Helps Sick Kids In Hospital
+Pete Warrant's Retirment Rumours!
+Fan Poll: North Head Astros's Best Player
+Frank Barrett Donates To Controverisal Charity
+Rival Players Raise Awareness!
+Damien John Helps Sick Kids In Hospital
+Ryan Dean Involved In Sexting Scandal
+Opinion: Thomas Loomer Should Swap Teams
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Anywheston Jellyfish Sign Jameson Martin
+Eastern Suburbs Potatoes Sign Jim Xander
+Rival Players Raise Awareness!
+Don Ujhazzy's Retirment Rumours!
+Amy O' Donnell To Have Contract Extended!
+Julie Soa Assaults RSL Bouncer
+Dubbo Rose Gardens Drop Sr. James
+Pete O' Thomas's Retirment Rumours!
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Blue Mountains Pearls Sign Billie Emerson
+East Havertown Grapefruit Sign Brendan Britt
+Bonesville Gizzards Sign Nico Horter
+Jameson Martin Offered Pay Cut To Re-sign
+Fan Poll: Dubbo Rose Gardens's Best Player
+Fan Poll: Caulbury Rose Gardens's Best Player
+Kyle Alexander At Risk Of An Early Release!
+Christian Dharo Involved In Sexting Scandal
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+North Head Astros Sign Jonathon Worsent
+North Head Astros Sign Ann Harrigan
+Thomas Holland At Risk Of An Early Release!
+Brendan Hann To Have Contract Extended!
+Kristian de Bactio's Large-Scale Gambling Problem
+Opinion: Andy John Should Swap Teams
+Fan Poll: Thornleigh Takeout's Best Player
+Don Silwedel Walks Out On Dubbo Rose Gardens
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Brett Hunt
+Repaired Coast Rabbitohs Wins Minor Premiership!
+Neo Davis Assaults RSL Bouncer
+Norman Smith's Retirment Rumours!
+Opinion: Anthony Lewis Should Swap Teams
+Fan Poll: Aliran Messiahs's Best Player
+Kevin Costa Offered Pay Cut To Re-sign
+Dreka Tedesco Walks Out On Cyprux Pariahs
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+North Head Astros Sign Cameron Allsopp
+Caulbury Rose Gardens Sign Joshua James
+Robert Dean's Large-Scale Gambling Problem
+Rival Players Raise Awareness!
+Eastern Suburbs Potatoes Drop Julie Potter
+Herman Tuo To Have Contract Extended!
+Andy Reynolds Offered Pay Cut To Re-sign
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Caulbury Rose Gardens Sign Dreka Tedesco
+Aliran Messiahs Sign Xander Potter
+Caulbury Rose Gardens Sign Robert Montoya
+Thornleigh Takeout Wins Premiership!
+Opinion: Jonathon Worsent Should Swap Teams
+Eastern Suburbs Mildews Drop Ryan Dean
+Rival Players Raise Awareness!
+Opinion: Jr. Shannel Should Swap Teams
+--------------------------------
+

@@ -1,26 +1,38 @@
 #pragma once
 
 #include <string>
-
-#include <vector>
+#include "SYDEFileDefaults.h"
+#include <deque>
 
 using namespace std;
+
 
 
 class SRLNameGenerator
 {
 public:
+	static string generateRandomOriginCountry();
 	static string generateRandomName();
 	static string generateRandomTeamName();
+
+	static string generateRandomTeamNameSafe();
+
+	static void generateAndAddToVector(deque<string>& vec);
+
 private:
 	static string generateRandomFirstName();
+	static string generateRandomMiddleName();
 	static string generateRandomLastName();
 
 	static string generateRandomCity();
 	static string generateRandomTeam();
 
-	static vector<string> FirstNames;
-	static vector<string> LastNames;
-	static vector<string> CityNames;
-	static vector<string> TeamNames;
+	static deque<string> FirstNames;
+	static deque<string> MiddleNames;
+	static deque<string> LastNames;
+	static deque<string> CityNames;
+	static deque<string> TeamNames;
+	static deque<string> countriesOfOrigin;
+
+	static deque<deque<string>> BetSentence;
 };

@@ -1,4 +1,13 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (DrawableConsole.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Activation.cpp
+g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\customasset.h(47): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+g:\github repos\custom-console\drawableconsole\customanimationasset.h(145): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\activation.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Concerto.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -11,22 +20,60 @@ g:\github repos\custom-console\drawableconsole\concerto.h(86): warning C4129: 'B
 g:\github repos\custom-console\drawableconsole\concerto.h(91): warning C4129: 'B': unrecognized character escape sequence
 g:\github repos\custom-console\drawableconsole\concerto.cpp(116): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\github repos\custom-console\drawableconsole\concerto.cpp(161): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SYDEClickableButton.cpp
+  ReiventTheWheel.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\customasset.h(47): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(48): warning C4018: '>': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(67): warning C4018: '<=': signed/unsigned mismatch
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\github repos\custom-console\drawableconsole\sydeclickablebutton.cpp(74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\customanimationasset.h(145): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(23): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(34): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(55): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(100): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(103): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(122): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(131): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(221): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(224): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(227): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(230): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(291): warning C4018: '>=': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(300): warning C4018: '>=': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(321): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(337): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(352): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(361): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(374): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\reiventthewheel.cpp(376): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SYDEGamePlay.cpp
+g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\consolewindow.h(326): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\customasset.h(47): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\defaults.h(32): warning C4091: 'static ': ignored on left of 'SYDEDefaults' when no variable is declared
+g:\github repos\custom-console\drawableconsole\customanimationasset.h(145): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(35): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(52): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(42): warning C4101: 'NewSBSize': unreferenced local variable
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(119): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(166): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(196): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(222): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(252): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(675): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\sydegameplay.cpp(709): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SYDEMainDemos.cpp
 g:\github repos\custom-console\drawableconsole\consolewindow.h(305): warning C4018: '<': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\consolewindow.h(321): warning C4018: '<': signed/unsigned mismatch
@@ -223,5 +270,9 @@ g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(2959): warning 
 g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(2978): warning C4018: '>=': signed/unsigned mismatch
 g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(3016): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\github repos\custom-console\drawableconsole\sydemaindemos.cpp(3038): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Settings.cpp
+g:\github repos\custom-console\drawableconsole\settings.h(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\github repos\custom-console\drawableconsole\settings.cpp(11): warning C4018: '<': signed/unsigned mismatch
+g:\github repos\custom-console\drawableconsole\settings.cpp(22): warning C4018: '<': signed/unsigned mismatch
 LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
   DrawableConsole.vcxproj -> G:\Github Repos\Custom-Console\Debug\SYDEEngine_Debug.lib

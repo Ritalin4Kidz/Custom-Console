@@ -1,0 +1,1010 @@
+LADDER RESULTS
+--------------------------------
+1. Dubbo Rose Gardens Wins: 26| Lost: 0| PD: 1451| Points: 52
+2. Oakleigh Bullants Wins: 19| Lost: 7| PD: 133| Points: 38
+3. Woy Woy Eternals Wins: 18| Lost: 8| PD: 44| Points: 36
+4. Blacktown Jokers Wins: 17| Lost: 9| PD: 33| Points: 34
+5. Broken Coast Apples Wins: 16| Lost: 10| PD: 2| Points: 32
+6. Northkellion Spacemen Wins: 15| Lost: 11| PD: 1| Points: 30
+7. Beecroft Chargers Wins: 15| Lost: 11| PD: -49| Points: 30
+8. Ademonia Bin Chooks Wins: 14| Lost: 12| PD: -125| Points: 28
+9. West Valley Buffalo Wins: 12| Lost: 14| PD: 24| Points: 24
+10. Aartioz Jungles Wins: 12| Lost: 14| PD: -132| Points: 24
+11. Umbota Blues Wins: 10| Lost: 16| PD: -146| Points: 20
+12. Glenbrook Greens Wins: 9| Lost: 17| PD: -173| Points: 18
+13. Anomali Storm Wins: 8| Lost: 18| PD: -178| Points: 16
+14. Gera Comets Wins: 8| Lost: 18| PD: -184| Points: 16
+15. Couragia Clowns Wins: 7| Lost: 19| PD: -285| Points: 14
+16. East Havertown Pixies Wins: 2| Lost: 24| PD: -416| Points: 4
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Broken Coast Apples 40 v 32 Aartioz Jungles
+Gera Comets 21 v 16 West Valley Buffalo
+Beecroft Chargers 28 v 12 Glenbrook Greens
+Blacktown Jokers 0 v 58 Dubbo Rose Gardens
+Couragia Clowns 18 v 21 Oakleigh Bullants
+Anomali Storm 8 v 27 Umbota Blues
+East Havertown Pixies 14 v 16 Northkellion Spacemen
+Woy Woy Eternals 31 v 32 Ademonia Bin Chooks
+--------------------------------
+
+Round 2 Results
+--------------------------------
+East Havertown Pixies 0 v 26 Broken Coast Apples
+Beecroft Chargers 36 v 16 Couragia Clowns
+Glenbrook Greens 18 v 36 Aartioz Jungles
+Umbota Blues 22 v 23 Oakleigh Bullants
+Dubbo Rose Gardens 60 v 0 Northkellion Spacemen
+Anomali Storm 16 v 36 Gera Comets
+Ademonia Bin Chooks 12 v 18 Woy Woy Eternals
+Blacktown Jokers 24 v 34 West Valley Buffalo
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Dubbo Rose Gardens 67 v 0 Glenbrook Greens
+Oakleigh Bullants 40 v 14 Umbota Blues
+Gera Comets 15 v 4 Couragia Clowns
+West Valley Buffalo 10 v 28 Woy Woy Eternals
+Ademonia Bin Chooks 14 v 22 Northkellion Spacemen
+East Havertown Pixies 12 v 20 Beecroft Chargers
+Anomali Storm 18 v 21 Blacktown Jokers
+Broken Coast Apples 30 v 33 Aartioz Jungles
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Dubbo Rose Gardens 83 v 4 Ademonia Bin Chooks
+Northkellion Spacemen 16 v 17 Broken Coast Apples
+Glenbrook Greens 27 v 20 Oakleigh Bullants
+Beecroft Chargers 10 v 30 Aartioz Jungles
+Anomali Storm 4 v 14 Woy Woy Eternals
+Umbota Blues 12 v 21 Couragia Clowns
+East Havertown Pixies 8 v 28 Gera Comets
+Blacktown Jokers 32 v 20 West Valley Buffalo
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Woy Woy Eternals 0 v 36 Dubbo Rose Gardens
+East Havertown Pixies 31 v 22 Umbota Blues
+Aartioz Jungles 22 v 26 Couragia Clowns
+Ademonia Bin Chooks 18 v 16 Gera Comets
+Northkellion Spacemen 0 v 13 Broken Coast Apples
+Glenbrook Greens 25 v 24 Anomali Storm
+Blacktown Jokers 28 v 42 Beecroft Chargers
+Oakleigh Bullants 24 v 20 West Valley Buffalo
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Beecroft Chargers 7 v 6 Northkellion Spacemen
+Woy Woy Eternals 20 v 15 West Valley Buffalo
+Broken Coast Apples 22 v 2 Ademonia Bin Chooks
+Gera Comets 6 v 20 Anomali Storm
+Couragia Clowns 6 v 5 Glenbrook Greens
+Blacktown Jokers 20 v 10 Umbota Blues
+Dubbo Rose Gardens 56 v 0 East Havertown Pixies
+Oakleigh Bullants 10 v 16 Aartioz Jungles
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Ademonia Bin Chooks 19 v 18 Couragia Clowns
+Umbota Blues 19 v 18 Aartioz Jungles
+Beecroft Chargers 22 v 18 Glenbrook Greens
+West Valley Buffalo 14 v 4 Anomali Storm
+Woy Woy Eternals 34 v 24 East Havertown Pixies
+Dubbo Rose Gardens 62 v 10 Broken Coast Apples
+Gera Comets 14 v 20 Oakleigh Bullants
+Northkellion Spacemen 19 v 18 Blacktown Jokers
+--------------------------------
+
+Round 8 Results
+--------------------------------
+West Valley Buffalo 25 v 12 Gera Comets
+Aartioz Jungles 15 v 14 Couragia Clowns
+Northkellion Spacemen 20 v 8 Woy Woy Eternals
+Beecroft Chargers 0 v 50 Dubbo Rose Gardens
+Blacktown Jokers 28 v 12 Umbota Blues
+Ademonia Bin Chooks 25 v 36 Oakleigh Bullants
+Anomali Storm 30 v 10 East Havertown Pixies
+Glenbrook Greens 10 v 14 Broken Coast Apples
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Glenbrook Greens 16 v 24 Woy Woy Eternals
+Blacktown Jokers 29 v 16 Northkellion Spacemen
+Umbota Blues 0 v 43 Dubbo Rose Gardens
+Oakleigh Bullants 26 v 24 East Havertown Pixies
+West Valley Buffalo 16 v 22 Broken Coast Apples
+Aartioz Jungles 25 v 24 Gera Comets
+Anomali Storm 22 v 20 Beecroft Chargers
+Ademonia Bin Chooks 30 v 10 Couragia Clowns
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Glenbrook Greens 28 v 18 Anomali Storm
+West Valley Buffalo 25 v 28 Broken Coast Apples
+East Havertown Pixies 6 v 8 Woy Woy Eternals
+Oakleigh Bullants 18 v 14 Beecroft Chargers
+Northkellion Spacemen 8 v 16 Umbota Blues
+Aartioz Jungles 23 v 26 Ademonia Bin Chooks
+Couragia Clowns 6 v 19 Blacktown Jokers
+Gera Comets 0 v 68 Dubbo Rose Gardens
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Anomali Storm 6 v 14 Northkellion Spacemen
+West Valley Buffalo 32 v 20 East Havertown Pixies
+Oakleigh Bullants 6 v 13 Ademonia Bin Chooks
+Gera Comets 6 v 65 Dubbo Rose Gardens
+Blacktown Jokers 24 v 14 Aartioz Jungles
+Glenbrook Greens 22 v 24 Couragia Clowns
+Woy Woy Eternals 22 v 38 Umbota Blues
+Beecroft Chargers 20 v 24 Broken Coast Apples
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Blacktown Jokers 6 v 65 Dubbo Rose Gardens
+Couragia Clowns 10 v 28 Woy Woy Eternals
+Ademonia Bin Chooks 6 v 10 Northkellion Spacemen
+Aartioz Jungles 12 v 10 Glenbrook Greens
+West Valley Buffalo 34 v 31 Anomali Storm
+Gera Comets 30 v 32 Oakleigh Bullants
+Broken Coast Apples 22 v 24 Beecroft Chargers
+Umbota Blues 4 v 17 East Havertown Pixies
+--------------------------------
+
+Round 13 Results
+--------------------------------
+Aartioz Jungles 25 v 24 Anomali Storm
+Glenbrook Greens 24 v 16 West Valley Buffalo
+Ademonia Bin Chooks 6 v 20 Beecroft Chargers
+Blacktown Jokers 16 v 15 Oakleigh Bullants
+East Havertown Pixies 4 v 29 Broken Coast Apples
+Woy Woy Eternals 38 v 12 Gera Comets
+Umbota Blues 4 v 59 Dubbo Rose Gardens
+Northkellion Spacemen 18 v 12 Couragia Clowns
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Umbota Blues 8 v 7 Beecroft Chargers
+Aartioz Jungles 14 v 34 Woy Woy Eternals
+Northkellion Spacemen 29 v 12 Oakleigh Bullants
+West Valley Buffalo 38 v 18 Couragia Clowns
+Blacktown Jokers 26 v 25 Glenbrook Greens
+Dubbo Rose Gardens 61 v 0 Anomali Storm
+Ademonia Bin Chooks 28 v 22 Broken Coast Apples
+Gera Comets 37 v 16 East Havertown Pixies
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Woy Woy Eternals 32 v 30 Oakleigh Bullants
+Anomali Storm 9 v 12 Beecroft Chargers
+Aartioz Jungles 16 v 27 Ademonia Bin Chooks
+West Valley Buffalo 4 v 12 Northkellion Spacemen
+Blacktown Jokers 32 v 6 East Havertown Pixies
+Couragia Clowns 0 v 59 Dubbo Rose Gardens
+Glenbrook Greens 18 v 14 Gera Comets
+Umbota Blues 18 v 35 Broken Coast Apples
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Northkellion Spacemen 17 v 20 Anomali Storm
+Dubbo Rose Gardens 55 v 6 Ademonia Bin Chooks
+Oakleigh Bullants 23 v 4 East Havertown Pixies
+Broken Coast Apples 18 v 24 Umbota Blues
+Beecroft Chargers 20 v 12 Aartioz Jungles
+Gera Comets 20 v 40 Blacktown Jokers
+Glenbrook Greens 29 v 22 Woy Woy Eternals
+Couragia Clowns 12 v 32 West Valley Buffalo
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Broken Coast Apples 14 v 18 Woy Woy Eternals
+Aartioz Jungles 22 v 28 Oakleigh Bullants
+West Valley Buffalo 30 v 20 Beecroft Chargers
+Couragia Clowns 9 v 12 Gera Comets
+Glenbrook Greens 22 v 28 Blacktown Jokers
+Northkellion Spacemen 12 v 29 Dubbo Rose Gardens
+Umbota Blues 24 v 23 Ademonia Bin Chooks
+East Havertown Pixies 4 v 20 Anomali Storm
+--------------------------------
+
+Round 18 Results
+--------------------------------
+Aartioz Jungles 27 v 22 Blacktown Jokers
+Broken Coast Apples 10 v 24 Oakleigh Bullants
+Beecroft Chargers 30 v 24 West Valley Buffalo
+Ademonia Bin Chooks 19 v 12 Umbota Blues
+Anomali Storm 0 v 55 Dubbo Rose Gardens
+Gera Comets 18 v 25 Woy Woy Eternals
+Northkellion Spacemen 26 v 18 Glenbrook Greens
+East Havertown Pixies 18 v 20 Couragia Clowns
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Broken Coast Apples 10 v 28 Woy Woy Eternals
+Dubbo Rose Gardens 60 v 0 Couragia Clowns
+Umbota Blues 21 v 24 Aartioz Jungles
+Beecroft Chargers 24 v 33 Blacktown Jokers
+East Havertown Pixies 20 v 30 West Valley Buffalo
+Gera Comets 14 v 17 Glenbrook Greens
+Ademonia Bin Chooks 26 v 28 Anomali Storm
+Northkellion Spacemen 20 v 24 Oakleigh Bullants
+--------------------------------
+
+Round 20 Results
+--------------------------------
+West Valley Buffalo 24 v 31 Oakleigh Bullants
+Ademonia Bin Chooks 19 v 18 Anomali Storm
+Umbota Blues 12 v 20 Woy Woy Eternals
+Northkellion Spacemen 30 v 10 Glenbrook Greens
+Blacktown Jokers 28 v 10 Gera Comets
+Dubbo Rose Gardens 55 v 0 Beecroft Chargers
+Broken Coast Apples 26 v 10 Couragia Clowns
+Aartioz Jungles 37 v 16 East Havertown Pixies
+--------------------------------
+
+Round 21 Results
+--------------------------------
+Woy Woy Eternals 28 v 27 Blacktown Jokers
+Gera Comets 8 v 20 Northkellion Spacemen
+Oakleigh Bullants 22 v 8 Broken Coast Apples
+Dubbo Rose Gardens 65 v 0 East Havertown Pixies
+West Valley Buffalo 32 v 24 Aartioz Jungles
+Couragia Clowns 14 v 22 Anomali Storm
+Umbota Blues 16 v 4 Glenbrook Greens
+Ademonia Bin Chooks 0 v 8 Beecroft Chargers
+--------------------------------
+
+Round 22 Results
+--------------------------------
+Glenbrook Greens 30 v 10 East Havertown Pixies
+West Valley Buffalo 8 v 21 Ademonia Bin Chooks
+Anomali Storm 14 v 17 Broken Coast Apples
+Woy Woy Eternals 4 v 52 Dubbo Rose Gardens
+Blacktown Jokers 12 v 25 Oakleigh Bullants
+Aartioz Jungles 25 v 24 Northkellion Spacemen
+Beecroft Chargers 24 v 12 Gera Comets
+Couragia Clowns 19 v 17 Umbota Blues
+--------------------------------
+
+Round 23 Results
+--------------------------------
+Anomali Storm 23 v 22 Aartioz Jungles
+Ademonia Bin Chooks 20 v 22 Blacktown Jokers
+Northkellion Spacemen 19 v 20 Beecroft Chargers
+Broken Coast Apples 25 v 24 Gera Comets
+Woy Woy Eternals 20 v 38 Oakleigh Bullants
+Dubbo Rose Gardens 58 v 4 Glenbrook Greens
+Umbota Blues 18 v 16 West Valley Buffalo
+East Havertown Pixies 4 v 12 Couragia Clowns
+--------------------------------
+
+Round 24 Results
+--------------------------------
+Northkellion Spacemen 24 v 12 Gera Comets
+Aartioz Jungles 0 v 55 Dubbo Rose Gardens
+Glenbrook Greens 18 v 34 Umbota Blues
+Broken Coast Apples 26 v 12 Anomali Storm
+Couragia Clowns 18 v 26 Oakleigh Bullants
+West Valley Buffalo 22 v 26 Ademonia Bin Chooks
+Blacktown Jokers 40 v 8 East Havertown Pixies
+Beecroft Chargers 4 v 14 Woy Woy Eternals
+--------------------------------
+
+Round 25 Results
+--------------------------------
+Couragia Clowns 12 v 22 Woy Woy Eternals
+Umbota Blues 24 v 31 West Valley Buffalo
+Gera Comets 24 v 10 Beecroft Chargers
+Oakleigh Bullants 16 v 24 Glenbrook Greens
+Anomali Storm 11 v 14 Blacktown Jokers
+Northkellion Spacemen 34 v 30 Aartioz Jungles
+Broken Coast Apples 12 v 68 Dubbo Rose Gardens
+East Havertown Pixies 14 v 16 Ademonia Bin Chooks
+--------------------------------
+
+Round 26 Results
+--------------------------------
+Glenbrook Greens 28 v 30 West Valley Buffalo
+Woy Woy Eternals 11 v 12 Northkellion Spacemen
+Gera Comets 16 v 14 Umbota Blues
+Dubbo Rose Gardens 75 v 0 Aartioz Jungles
+Couragia Clowns 12 v 28 Broken Coast Apples
+Anomali Storm 10 v 29 Oakleigh Bullants
+Ademonia Bin Chooks 23 v 22 Blacktown Jokers
+East Havertown Pixies 10 v 23 Beecroft Chargers
+--------------------------------
+
+Round 27 Results
+--------------------------------
+Dubbo Rose Gardens 56 v 4 Blacktown Jokers
+Oakleigh Bullants 25 v 18 Woy Woy Eternals
+Broken Coast Apples 19 v 6 Ademonia Bin Chooks
+Northkellion Spacemen 14 v 6 Beecroft Chargers
+--------------------------------
+
+Round 28 Results
+--------------------------------
+Blacktown Jokers 18 v 50 Broken Coast Apples
+Woy Woy Eternals 19 v 24 Northkellion Spacemen
+--------------------------------
+
+Round 29 Results
+--------------------------------
+Dubbo Rose Gardens 71 v 0 Northkellion Spacemen
+Oakleigh Bullants 18 v 31 Broken Coast Apples
+--------------------------------
+
+Round 30 Results
+--------------------------------
+Dubbo Rose Gardens 47 v 0 Broken Coast Apples
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Sully Port-Dubbo Rose Gardens : 32
+2. Catherine Taki-Dubbo Rose Gardens : 32
+3. Xander Quak-Northkellion Spacemen : 29
+4. Huretio South-Dubbo Rose Gardens : 27
+5. Gwen Wrabel-Broken Coast Apples : 27
+6. Samantha Humphrey-Dubbo Rose Gardens : 26
+7. Trixie Allen-Dubbo Rose Gardens : 25
+8. William Lynn-Oakleigh Bullants : 23
+9. Ezra Hing-Dubbo Rose Gardens : 23
+10. Phillip Spice-Dubbo Rose Gardens : 22
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Jr. Tamber-Dubbo Rose Gardens : 165
+2. Ann Warrant-West Valley Buffalo : 60
+3. Paul Kriis-Aartioz Jungles : 56
+4. Eduardo Wood-Blacktown Jokers : 52
+5. Nathan Pout-Gera Comets : 45
+6. Cam Martin-Glenbrook Greens : 43
+7. Myles Burt-Northkellion Spacemen : 42
+8. George Jackston-Anomali Storm : 41
+9. Zack Jacklin-Woy Woy Eternals : 39
+10. Kev Rice-Broken Coast Apples : 37
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Ben Farrell-Aartioz Jungles : 4
+2. Huretio South-Dubbo Rose Gardens : 3
+3. Jane Banks-Umbota Blues : 3
+4. Opus Valenta-Ademonia Bin Chooks : 3
+5. Kate Crane-Dubbo Rose Gardens : 3
+6. Edward Watne-West Valley Buffalo : 2
+7. Lindsey Brock-Aartioz Jungles : 2
+8. Lindsay de Zerta-Blacktown Jokers : 2
+9. Mitch Wrabel-Blacktown Jokers : 2
+10. Julie Kerr-Umbota Blues : 2
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Sully Port-Dubbo Rose Gardens : 3594
+2. Catherine Taki-Dubbo Rose Gardens : 3322
+3. Ezra Hing-Dubbo Rose Gardens : 3313
+4. Huretio South-Dubbo Rose Gardens : 3272
+5. Samantha Humphrey-Dubbo Rose Gardens : 3005
+6. Waylon Pimmers-Broken Coast Apples : 2952
+7. Myles Burt-Northkellion Spacemen : 2917
+8. Asher Reio-Dubbo Rose Gardens : 2911
+9. Xander Quak-Northkellion Spacemen : 2896
+10. Adam Worker-Broken Coast Apples : 2834
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Earl Farrell-Northkellion Spacemen : 324
+2. Kev Rice-Broken Coast Apples : 295
+3. Pauly Brasi-Northkellion Spacemen : 292
+4. Xander Quak-Northkellion Spacemen : 290
+5. Kamros Lindsell-Broken Coast Apples : 287
+6. Connor Montoya-Broken Coast Apples : 287
+7. Simon Freit-Blacktown Jokers : 285
+8. Charles North-Anomali Storm : 284
+9. Nico Kelly-Northkellion Spacemen : 281
+10. Tariq Klomono-Northkellion Spacemen : 281
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Nicholas Way-Gera Comets : 1
+2. Tom McMahon-East Havertown Pixies : 1
+3. Xavier Elroii-Couragia Clowns : 1
+4. Keith Viana-Gera Comets : 1
+5. Sully Kimberly-Ademonia Bin Chooks : 1
+6. Gwen Wrabel-Broken Coast Apples : 1
+7. Jarrod Sins-Anomali Storm : 1
+8. Benji Tyrell-Northkellion Spacemen : 1
+9. Isaak Boeaste-Beecroft Chargers : 1
+10. Cooper Yacoub-East Havertown Pixies : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Albert Som-Broken Coast Apples : 1187
+2. Bort McDonalson-West Valley Buffalo : 969
+3. Dave Bad-Beecroft Chargers : 950
+4. Sully Port-Dubbo Rose Gardens : 943
+5. Jack Morier-Couragia Clowns : 881
+6. Gwen Wrabel-Broken Coast Apples : 873
+7. Jr. Tamber-Dubbo Rose Gardens : 872
+8. Kevin Wrabel-Blacktown Jokers : 845
+9. Monty Harrigan-Dubbo Rose Gardens : 830
+10. Kurt Kimberly-Off Contract Players : 793
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Xander Tan-Oakleigh Bullants : 51
+2. Gwen Wrabel-Broken Coast Apples : 48
+3. William Lynn-Oakleigh Bullants : 46
+4. Catherine Taki-Dubbo Rose Gardens : 43
+5. Trixie Allen-Dubbo Rose Gardens : 42
+6. Lindsay de Zerta-Blacktown Jokers : 38
+7. Huretio South-Dubbo Rose Gardens : 36
+8. Isaak Yahtzel-Blacktown Jokers : 35
+9. Keith Viana-Gera Comets : 35
+10. Sully Port-Dubbo Rose Gardens : 35
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Huretio South-Dubbo Rose Gardens : 5
+2. Nico Kelly-Northkellion Spacemen : 4
+3. Trent Ingodio-Off Contract Players : 4
+4. Aaron Manfredi-Dubbo Rose Gardens : 4
+5. Kyle Holland-Blacktown Jokers : 4
+6. Xander Quak-Northkellion Spacemen : 4
+7. Billie Iyzzer-Aartioz Jungles : 4
+8. Jr. Tamber-Dubbo Rose Gardens : 4
+9. Asher Reio-Dubbo Rose Gardens : 3
+10. Jane Banks-Umbota Blues : 3
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Davey Reynolds-Beecroft Chargers : 34
+2. Jr. Gagai-Glenbrook Greens : 33
+3. Jonathon East-Woy Woy Eternals : 33
+4. Jeremy Lynn-Oakleigh Bullants : 33
+5. Opus Maxx-East Havertown Pixies : 31
+6. Eduardo Wood-Blacktown Jokers : 31
+7. Joseph Pearce-Oakleigh Bullants : 31
+8. Mike Rice-Broken Coast Apples : 31
+9. Alexis Ingodio-Woy Woy Eternals : 30
+10. Earl Farrell-Northkellion Spacemen : 30
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Kristian Dace-Woy Woy Eternals : 13
+2. Jack Caldato-Woy Woy Eternals : 12
+3. Jonathon East-Woy Woy Eternals : 12
+4. Dave Bad-Beecroft Chargers : 11
+5. Julian de Zerta-Umbota Blues : 11
+6. Ashton Besti-Glenbrook Greens : 11
+7. Karl Jay-Off Contract Players : 11
+8. Jordan Brekston-Aartioz Jungles : 11
+9. Andres Britt-Off Contract Players : 10
+10. Albert Som-Broken Coast Apples : 10
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Declan Claypool-West Valley Buffalo : 9
+2. Kamros Lindsell-Broken Coast Apples : 9
+3. Lindsey Brock-Aartioz Jungles : 8
+4. Bert John-Aartioz Jungles : 8
+5. Herman Curr-Aartioz Jungles : 8
+6. Gordon Lase-Beecroft Chargers : 8
+7. Jeremy Lynn-Oakleigh Bullants : 8
+8. Zach Bad-Ademonia Bin Chooks : 8
+9. Xander Quak-Northkellion Spacemen : 8
+10. Phoebe Soa-West Valley Buffalo : 7
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Sr. Fox-West Valley Buffalo : 2
+2. Mitch Wrabel-Blacktown Jokers : 1
+3. Norman Indigo-Couragia Clowns : 1
+4. Farrah Harnett-West Valley Buffalo : 1
+5. Miles Kriis-Umbota Blues : 1
+6. Jack Caldato-Woy Woy Eternals : 1
+7. Albert MacDonald-Ademonia Bin Chooks : 1
+8. Finn Holland-Ademonia Bin Chooks : 1
+9. Karl Jay-Off Contract Players : 1
+10. Al Sins-Off Contract Players : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Dreka John-Couragia Clowns : 1
+2. Alister Port-Oakleigh Bullants : 1
+3. Neo Zari-Anomali Storm : 1
+4. Gwen Wrabel-Broken Coast Apples : 1
+5. Velento Thurston-Couragia Clowns : 1
+6. Scott Roberts-Gera Comets : 1
+7. Mike Rice-Broken Coast Apples : 0
+8. Adole Thurston-Broken Coast Apples : 0
+9. Mark Lindsell-Broken Coast Apples : 0
+10. Cooper Yacoub-East Havertown Pixies : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Ezra Romney-Off Contract Players : 3
+2. David Mallett-Aartioz Jungles : 3
+3. Reimis Emerson-Blacktown Jokers : 2
+4. Brenton de Marit-Umbota Blues : 2
+5. Charles Martin-Gera Comets : 2
+6. Mark Glass-Umbota Blues : 2
+7. Sully Kimberly-Ademonia Bin Chooks : 2
+8. Calum Nguyen-Woy Woy Eternals : 2
+9. Pauly Tajtu-Glenbrook Greens : 2
+10. Chase Mitchell-Dubbo Rose Gardens : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Jr. Tamber-Dubbo Rose Gardens : 403
+2. Ann Warrant-West Valley Buffalo : 169
+3. Trixie Allen-Dubbo Rose Gardens : 158
+4. Paul Kriis-Aartioz Jungles : 148
+5. Myles Burt-Northkellion Spacemen : 145
+6. Kurt Kimberly-Off Contract Players : 143
+7. Sully Port-Dubbo Rose Gardens : 130
+8. Catherine Taki-Dubbo Rose Gardens : 128
+9. Eduardo Wood-Blacktown Jokers : 124
+10. Cam Martin-Glenbrook Greens : 122
+11. Zack Jacklin-Woy Woy Eternals : 118
+12. Xander Quak-Northkellion Spacemen : 117
+13. Huretio South-Dubbo Rose Gardens : 111
+14. Gwen Wrabel-Broken Coast Apples : 110
+15. Samantha Humphrey-Dubbo Rose Gardens : 106
+16. George Jackston-Anomali Storm : 98
+17. Calum Nguyen-Woy Woy Eternals : 98
+18. Jeremy Lynn-Oakleigh Bullants : 96
+19. Ezra Hing-Dubbo Rose Gardens : 94
+20. William Lynn-Oakleigh Bullants : 92
+21. Isaak Yahtzel-Blacktown Jokers : 91
+22. Nathan Pout-Gera Comets : 90
+23. Phillip Spice-Dubbo Rose Gardens : 88
+24. Kev Rice-Broken Coast Apples : 87
+25. Adam Worker-Broken Coast Apples : 84
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Jr. Tamber-Dubbo Rose Gardens : 602
+2. Sully Port-Dubbo Rose Gardens : 438
+3. Myles Burt-Northkellion Spacemen : 425
+4. Gwen Wrabel-Broken Coast Apples : 373
+5. Paul Kriis-Aartioz Jungles : 362
+6. Isaak Yahtzel-Blacktown Jokers : 345
+7. William Lynn-Oakleigh Bullants : 336
+8. Huretio South-Dubbo Rose Gardens : 333
+9. Kurt Kimberly-Off Contract Players : 324
+10. Asher Reio-Dubbo Rose Gardens : 322
+11. Catherine Taki-Dubbo Rose Gardens : 319
+12. Ezra Hing-Dubbo Rose Gardens : 309
+13. Tom Elroii-Ademonia Bin Chooks : 306
+14. Waylon Pimmers-Broken Coast Apples : 306
+15. Trixie Allen-Dubbo Rose Gardens : 304
+16. Callum Hann-Couragia Clowns : 284
+17. Diana Wye-Dubbo Rose Gardens : 282
+18. Xander Quak-Northkellion Spacemen : 278
+19. Adam Worker-Broken Coast Apples : 267
+20. Phillip Spice-Dubbo Rose Gardens : 263
+21. Andre Lase-Beecroft Chargers : 259
+22. Samantha Humphrey-Dubbo Rose Gardens : 257
+23. Julian de Zerta-Umbota Blues : 247
+24. Xavier Feltch-Dubbo Rose Gardens : 244
+25. Monty Harrigan-Dubbo Rose Gardens : 244
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Beecroft Chargers Sign Dreka Thompson
+East Havertown Pixies Sign Raymond Morrison
+Ronald Montoya Offered Pay Cut To Re-sign
+Coach Proposes New Finals System!
+Rival Players Raise Awareness!
+Earl Kerr's Retirment Rumours!
+Players Fight At Local RSL!
+Myles Burt's Retirment Rumours!
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Broken Coast Apples Sign Declan de Zerta
+Glenbrook Greens Sign Ann Best
+Coach Proposes New Finals System!
+John Burt's Large-Scale Gambling Problem
+Rival Players Raise Awareness!
+Fan Poll: Anomali Storm's Best Player
+Benji Chricton's Large-Scale Gambling Problem
+Zack Woods Helps Sick Kids In Hospital
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Gera Comets Sign Carter Yemm
+Valian Iomino Donates To Controverisal Charity
+Neo Zari's Eligibility Crisis!
+Opus Valenta Donates To Controverisal Charity
+Arnole Dellio To Have Contract Extended!
+Karl Jay Donates To Controverisal Charity
+Junior Thompson To Have Contract Extended!
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Gera Comets Sign Kyle Holland
+Blacktown Jokers Sign Kyle Holland
+Opinion: Kam Lapper Should Swap Teams
+Earl Farrell Assaults RSL Bouncer
+Frank Ujhazzy's Large-Scale Gambling Problem
+Phillip Spice Donates To Controverisal Charity
+Keith Xander's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Beecroft Chargers Sign Emily Drayersun
+Glenbrook Greens Sign Dave Rice
+Coach Proposes New Finals System!
+Fan Poll: Ademonia Bin Chooks's Best Player
+Opinion: Alan Weas Should Swap Teams
+Jackson Gillard Assaults RSL Bouncer
+Earl Farrell's Retirment Rumours!
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Glenbrook Greens Sign Lois Penatoras
+Ademonia Bin Chooks Sign Sully Kimberly
+Lois Penatoras At Risk Of An Early Release!
+Carter Terrio Offered Pay Cut To Re-sign
+Player Unrest At Gera Comets
+Fan Poll: Blacktown Jokers's Best Player
+Isaak Sua's Retirment Rumours!
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Tom Elroii's Eligibility Crisis!
+Players Fight At Local RSL!
+Player Unrest At Beecroft Chargers
+Players Fight At Local RSL!
+Players Fight At Local RSL!
+Arnole King Assaults RSL Bouncer
+Brayden James Saves Local Man From Drowning
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Woy Woy Eternals Sign Andrew Tramion
+Jeremy Lynn's Large-Scale Gambling Problem
+Coach Proposes New Finals System!
+Opinion: Emily Drayersun Should Captain New Zealand
+Adole Thurston Assaults RSL Bouncer
+Zack Jacklin Saves Local Man From Drowning
+Amy Yahtzel Assaults RSL Bouncer
+Opus Chappell's Retirment Rumours!
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Gera Comets Sign Charles Martin
+Broken Coast Apples Sign Allie Jackington
+Valian Chricton Donates To Controverisal Charity
+Fan Poll: Dubbo Rose Gardens's Best Player
+Valian Chricton Assaults RSL Bouncer
+Coach Proposes New Finals System!
+Rival Players Raise Awareness!
+Zack Woods To Have Contract Extended!
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Ademonia Bin Chooks Sign Finn Holland
+Oakleigh Bullants Sign Joseph Pearce
+Ezra Romney To Have Contract Extended!
+Coach Proposes New Finals System!
+Jared O' Thomas's Retirment Rumours!
+Player Unrest At Gera Comets
+Opinion: Waylon Pimmers Should Swap Teams
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Broken Coast Apples Sign Cameron Elroii
+Umbota Blues Sign Jackson Greenberg
+Rival Players Raise Awareness!
+Opinion: Velento Montoya Should Swap Teams
+Samantha Potter Donates To Controverisal Charity
+Coach Proposes New Finals System!
+Junior Laki Offered Pay Cut To Re-sign
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Couragia Clowns Sign Velento Thurston
+Woy Woy Eternals Sign Vanessa Martin
+East Havertown Pixies Sign Jared O' Thomas
+Gera Comets Sign Monty O' Donnell
+Oliver Worker's Large-Scale Gambling Problem
+Opinion: Kamros Lindsell Should Captain England
+Ash Hull's Retirment Rumours!
+Player Unrest At Ademonia Bin Chooks
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Glenbrook Greens Sign Pauly Tajtu
+Gera Comets Sign Josh Barter
+Umbota Blues Sign Huretio Pimmers
+Glenbrook Greens Sign Ray Fitler
+Rival Players Raise Awareness!
+Mitch Dace Offered Pay Cut To Re-sign
+Player Unrest At Ademonia Bin Chooks
+Ali MacDonald Donates To Controverisal Charity
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Blacktown Jokers Sign Robert Ramm
+Oakleigh Bullants Sign Nicki Curr
+Lindsey Lynn Offered Pay Cut To Re-sign
+Players Fight At Local RSL!
+Simon Freit's Retirment Rumours!
+Billy Ratey At Risk Of An Early Release!
+Players Fight At Local RSL!
+Imm Chricton's Eligibility Crisis!
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Woy Woy Eternals Sign Anthony Garfield
+Glenbrook Greens Sign Cam Lindsell
+Gera Comets Sign Scott Roberts
+Opinion: Paul Kriis Should Swap Teams
+Xavier Feltch Involved In Sexting Scandal
+Avery Kimberly Involved In Sexting Scandal
+Zack Woods To Have Contract Extended!
+Miles Kriis's Eligibility Crisis!
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+Woy Woy Eternals Sign Samantha Sua
+Kris Quess Donates To Controverisal Charity
+Coach Proposes New Finals System!
+Kimberly Viana Donates To Controverisal Charity
+Gordon Lase To Have Contract Extended!
+Huretio Pimmers Helps Sick Kids In Hospital
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+East Havertown Pixies Sign Kate Yahtzel
+Gera Comets Sign Pauly Brasi
+Player Unrest At Glenbrook Greens
+Herman Curr's Large-Scale Gambling Problem
+Coach Proposes New Finals System!
+Nico Kelly's Retirment Rumours!
+Alister Morris Donates To Controverisal Charity
+Farrah Harnett Saves Local Man From Drowning
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+Blacktown Jokers Sign Jack James
+Jackson Gillard's Large-Scale Gambling Problem
+Ezra Hing Assaults RSL Bouncer
+Ronald Tamber Helps Sick Kids In Hospital
+Coach Proposes New Finals System!
+Coach Proposes New Finals System!
+Ali MacDonald's Retirment Rumours!
+Opinion: Jenny Tuo Should Swap Teams
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Aartioz Jungles Sign Andrew Ballsut
+Myles Burt Offered Pay Cut To Re-sign
+Arnole Churchill's Eligibility Crisis!
+Samantha Humphrey's Eligibility Crisis!
+Player Unrest At Glenbrook Greens
+Players Fight At Local RSL!
+Ashleigh Vianna's Large-Scale Gambling Problem
+Player Unrest At Glenbrook Greens
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+West Valley Buffalo Sign Josh Watne
+Northkellion Spacemen Sign Burt Berry
+Umbota Blues Sign Dominic Indigo
+Ashleigh Vianna To Have Contract Extended!
+Coach Proposes New Finals System!
+Coach Proposes New Finals System!
+Fan Poll: Northkellion Spacemen's Best Player
+Diana Wye At Risk Of An Early Release!
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+Ademonia Bin Chooks Sign Jeffrey Priest
+Gera Comets Sign Kamros Crane
+East Havertown Pixies Sign Dylan Wott
+Player Unrest At Couragia Clowns
+Kimberly Pout At Risk Of An Early Release!
+Billy Ratey Helps Sick Kids In Hospital
+Player Unrest At Couragia Clowns
+Fan Poll: Ademonia Bin Chooks's Best Player
+--------------------------------
+
+
+Round 22 News Stories
+--------------------------------
+Northkellion Spacemen Sign Burt Johns
+Couragia Clowns Sign Gary Caldato
+Player Unrest At Beecroft Chargers
+Kamros Lindsell Saves Local Man From Drowning
+Fan Poll: Glenbrook Greens's Best Player
+Opinion: Xavier Dace Should Captain Samoa
+Opinion: Arnole King Should Captain United States
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 23 News Stories
+--------------------------------
+Dylan Hall At Risk Of An Early Release!
+Pauly Brasi Offered Pay Cut To Re-sign
+Players Fight At Local RSL!
+Coach Proposes New Finals System!
+Billie Iyzzer Saves Local Man From Drowning
+Bort McDonalson's Retirment Rumours!
+Opinion: Ezra Hing Should Swap Teams
+Ashleigh Vianna Assaults RSL Bouncer
+--------------------------------
+
+
+Round 24 News Stories
+--------------------------------
+Gera Comets Sign Jenny McMahon
+Ademonia Bin Chooks Sign Brendan King
+Raymond Morrison Donates To Controverisal Charity
+Waylon Pimmers Saves Local Man From Drowning
+Joseph Pearce's Large-Scale Gambling Problem
+Zach Bad Offered Pay Cut To Re-sign
+Billy Cotric Saves Local Man From Drowning
+Ed Alexander Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 25 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Xander Tan
+Blacktown Jokers Sign Damien Questa
+Aartioz Jungles Sign Kevin Ngu
+Fan Poll: Beecroft Chargers's Best Player
+Players Fight At Local RSL!
+Junior Elroii Offered Pay Cut To Re-sign
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 26 News Stories
+--------------------------------
+Broken Coast Apples Sign Tom Pimmers
+Dubbo Rose Gardens Wins Minor Premiership!
+Zack Woods Saves Local Man From Drowning
+Norman Indigo Saves Local Man From Drowning
+Fan Poll: Aartioz Jungles's Best Player
+William Lynn Offered Pay Cut To Re-sign
+Raymond Morrison Involved In Sexting Scandal
+Ed Alexander's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 27 News Stories
+--------------------------------
+Gera Comets Sign Al Valenta
+Broken Coast Apples Sign Adam Worker
+Player Unrest At Ademonia Bin Chooks
+Players Fight At Local RSL!
+Charles Loomer To Have Contract Extended!
+Fan Poll: Beecroft Chargers's Best Player
+Isaak Sua Donates To Controverisal Charity
+Sully Kimberly Involved In Sexting Scandal
+--------------------------------
+
+
+Round 28 News Stories
+--------------------------------
+Gera Comets Sign Matt Fallon
+Julian de Zerta's Retirment Rumours!
+Opinion: Pauly Brasi Should Captain Turniostan
+Opinion: Trixie Allen Should Swap Teams
+Trent Pardi To Have Contract Extended!
+Dreka Thompson's Eligibility Crisis!
+Oliver Worker Assaults RSL Bouncer
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 29 News Stories
+--------------------------------
+Woy Woy Eternals Sign Jeni Feltch
+West Valley Buffalo Sign Connor Thompson
+East Havertown Pixies Sign Junior Laki
+Opinion: Jack Caldato Should Captain Australia
+Opus Valenta Helps Sick Kids In Hospital
+Player Unrest At Ademonia Bin Chooks
+Albert MacDonald At Risk Of An Early Release!
+Xander Warrant's Eligibility Crisis!
+--------------------------------
+
+
+Round 30 News Stories
+--------------------------------
+Glenbrook Greens Sign Daniel Tramion
+Beecroft Chargers Sign Cooper Klomono
+Woy Woy Eternals Sign Emily Drayersun
+Dubbo Rose Gardens Wins Premiership!
+David Pearce's Eligibility Crisis!
+Kate Kylze At Risk Of An Early Release!
+Waylon Pimmers's Large-Scale Gambling Problem
+Oliver Worker Involved In Sexting Scandal
+--------------------------------
+

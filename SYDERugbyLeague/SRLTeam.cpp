@@ -4,7 +4,7 @@ SRLTeam::SRLTeam()
 {
 }
 
-SRLTeam::SRLTeam(vector<SRLPlayer> a_TeamList, string name)
+SRLTeam::SRLTeam(deque<SRLPlayer> a_TeamList, string name)
 {
 	m_TeamList = a_TeamList;
 	m_Name = name;
@@ -15,7 +15,7 @@ SRLTeam::~SRLTeam()
 {
 }
 
-string SRLTeam::Interchange()
+string SRLTeam::Interchange(string& summaryPlay)
 {
 	if (m_Interchanges >= 8)
 	{
@@ -44,12 +44,13 @@ string SRLTeam::Interchange()
 		return "";
 	}
 	string swap = getName() + " Interchanged Players " + m_TeamList[interchange1].getName() + " & " + m_TeamList[interchange2].getName();
+	summaryPlay = m_TeamList[interchange1].getName() + "#INTERCHANGE#" + m_TeamList[interchange2].getName();
 	iter_swap(m_TeamList.begin() + interchange1,m_TeamList.begin() + interchange2);
 	m_Interchanges++;
 	return swap;
 }
 
-string SRLTeam::SafeInterchange(string playerName)
+string SRLTeam::SafeInterchange(string playerName, string& summaryPlay)
 {
 	if (m_Interchanges >= 8)
 	{
@@ -63,11 +64,11 @@ string SRLTeam::SafeInterchange(string playerName)
 			Interchange1 = i;
 		}
 	}
-	if (m_TeamList[Interchange1].getPlayerSent())
+	if (Interchange1 == -1)
 	{
 		return "";
 	}
-	if (Interchange1 == -1)
+	if (m_TeamList[Interchange1].getPlayerSent())
 	{
 		return "";
 	}
@@ -77,6 +78,7 @@ string SRLTeam::SafeInterchange(string playerName)
 		{
 			m_TeamList[i].setInjured();
 			string swap = getName() + " Interchanged Players " + m_TeamList[Interchange1].getName() + " & " + m_TeamList[i].getName();
+			summaryPlay = m_TeamList[Interchange1].getName() + "#INTERCHANGE#" + m_TeamList[i].getName();
 			iter_swap(m_TeamList.begin() + Interchange1, m_TeamList.begin() + i);
 			m_Interchanges++;
 			return swap;
@@ -88,8 +90,9 @@ string SRLTeam::SafeInterchange(string playerName)
 void SRLTeam::generateJerseys()
 {
 	int noJerseys = SYDEFileDefaults::getFileCount("EngineFiles\\JerseyFeatures", ".bmp");
+	int noLogos = SYDEFileDefaults::getFileCount("EngineFiles\\TeamLogos", ".bmp");
 	jerseryTypeInt = rand() % noJerseys;
-
+	logoTypeInt = rand() % noLogos;
 	primaryColour = getRandomColour();
 	secondaryColour = getRandomColour();
 	while (primaryColour == secondaryColour)
@@ -124,7 +127,10 @@ void SRLTeam::loadTeam(string path)
 	secondaryColour = static_cast<ColourClass>(save_file["secondary"]);
 	badgeColour = static_cast<ColourClass>(save_file["badge"]);
 	jerseryTypeInt = save_file["jerseytype"];
-	for (int i = 0; i < 17; i++)
+	logoTypeInt = save_file["logotype"];
+	setLogoCustom(save_file["customlogo"]);
+	int numberOfPlayers = save_file["playeramt"];
+	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		int playerID = save_file["players"][to_string(i)];
 		SRLPlayer newPlayer = SRLPlayer();
@@ -139,7 +145,8 @@ void SRLTeam::loadTeamOffContract(string path)
 	std::ifstream ifs{ path };
 	json save_file = json::parse(ifs);
 	setName(save_file["name"]);
-	for (int i = 0; i < 200; i++)
+	int numberOfPlayers = save_file["playeramt"];
+	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		int playerID = save_file["players"][to_string(i)];
 		SRLPlayer newPlayer = SRLPlayer();
@@ -155,10 +162,13 @@ void SRLTeam::saveTeam()
 	//PlayerStats
 	save_file["name"] = m_Name;
 	save_file["jerseytype"] = jerseryTypeInt;
+	save_file["logotype"] = logoTypeInt;
 	save_file["primary"] = static_cast<int>(primaryColour);
 	save_file["secondary"] = static_cast<int>(secondaryColour);
 	save_file["badge"] = static_cast<int>(badgeColour);
-	for (int i = 0; i < 17; i++)
+	save_file["playeramt"] = m_TeamList.size();
+	save_file["customlogo"] = m_CustomLogo;
+	for (int i = 0; i < m_TeamList.size(); i++)
 	{
 		m_TeamList[i].savePlayer();
 		save_file["players"][to_string(i)] = m_TeamList[i].getID();
@@ -174,6 +184,7 @@ void SRLTeam::saveTeamOffContract()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_Name;
+	save_file["playeramt"] = m_TeamList.size();
 	for (int i = 0; i < m_TeamList.size(); i++)
 	{
 		m_TeamList[i].savePlayer();
@@ -329,6 +340,66 @@ void SRLTeam::addPlayerStamina(string playerName, int Stamina)
 	}
 }
 
+void SRLTeam::addPlayerAtk(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addAttack(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerDef(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addDefence(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerSpd(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addSpeed(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerHdl(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addHandling(val);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerKck(string playerName, int val)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addKicking(val);
+			return;
+		}
+	}
+}
+
 void SRLTeam::setPlayerInjured(string playerName)
 {
 	for (int i = 0; i < m_TeamList.size(); i++)
@@ -402,9 +473,9 @@ void SRLTeam::addPlayerNoTry(string playerName)
 	}
 }
 
-vector<string> SRLTeam::addTimeOnField(int time)
+deque<string> SRLTeam::addTimeOnField(int time)
 {
-	vector<string> temp;
+	deque<string> temp;
 	for (int i = 0; i < 13; i++)
 	{
 		m_TeamList[i].addTimeOnField(time);
@@ -417,13 +488,60 @@ vector<string> SRLTeam::addTimeOnField(int time)
 	return temp;
 }
 
+void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
+{
+	deque<SRLPlayer> temp = getPlayers();
+	for (int i = 0; i < temp.size(); i++)
+	{
+		for (int ii = i + 1; ii < temp.size(); ii++)
+		{
+			if (temp[ii].getRating() > temp[i].getRating())
+			{
+				SRLPlayer temp2 = temp[ii];
+				temp[ii] = temp[i];
+				temp[i] = temp2;
+				i = 0;
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < amount; i++)
+	{
+		vec.push_back(temp[i].getName());
+	}
+}
+
+deque<SRLPlayer> SRLTeam::addBestAttackers(deque<string>& vec, int amount)
+{
+	deque<SRLPlayer> temp = getPlayers();
+	for (int i = 0; i < temp.size(); i++)
+	{
+		for (int ii = i + 1; ii < temp.size(); ii++)
+		{
+			if (temp[ii].getAttack() > temp[i].getAttack())
+			{
+				SRLPlayer temp2 = temp[ii];
+				temp[ii] = temp[i];
+				temp[i] = temp2;
+				i = 0;
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < amount; i++)
+	{
+		vec.push_back(temp[i].getName());
+	}
+	return temp;
+}
+
 SRLPlayer SRLTeam::getGoalKicker()
 {
 	int temp = 0;
 	int temp1 = 0;
 	for (int i = 0; i < 13; i++)
 	{
-		if (m_TeamList[i].getGoalKicking() > temp)
+		if (m_TeamList[i].getGoalKicking() > temp && m_TeamList[i].getPlayerSent() == false)
 		{
 			temp = m_TeamList[i].getGoalKicking();
 			temp1 = i;

@@ -1,0 +1,200 @@
+----------LINE-UPS----------
+Home Team: Wellington Spiders
+1: Jr. Som
+2: Gwen Walker
+3: Keith Holland
+4: Amy Farrell
+5: Kelin Meaney
+6: George Chappell
+7: Brenton Mariner
+8: Ali Woods
+9: Declan North
+10: Alexander Manfredi
+11: Sam Wood
+12: Brett Waterhouse
+13: Kev Hannington
+14: Dominic Daley
+15: Joshua Soa
+16: Monty Fitler
+17: Trixie Johns
+Away Team: Endsia Scorpions
+1: Zach Wrabel
+2: Anthony Johnson
+3: Jack Boyd
+4: Mitch Sunnerson
+5: Norman Tuo
+6: Lindsay Atlas
+7: Isaak Dempsey
+8: Sammy Hu
+9: Xander Xander
+10: Jr. O' Thomas
+11: Kevin Kelly
+12: Lindsey Davis
+13: Gwen East
+14: Charles West
+15: Homer Lewis
+16: Brendan Stimson
+17: Isaak Lewis
+----------GAME-STAT---------
+Weather: Cloudy
+----------------------------
+00:00 - KICK OFF - Wellington Spiders: 0 v Endsia Scorpions: 0
+00:16 - Kev Hannington - Forward Pass
+00:55 - Brett Waterhouse - Intercepted Off A Sammy Hu Pass
+02:01 - Kelin Meaney - Intercepted Off A Sammy Hu Pass
+02:14 - Kev Hannington - Forward Pass
+03:17 - Sammy Hu - Forward Pass
+04:27 - Brenton Mariner - Over The Sideline
+06:57 - 20m Restart - Endsia Scorpions
+07:50 - Wellington Spiders Interchanged Players Sam Wood & Monty Fitler
+08:48 - Zach Wrabel - Penalty
+09:59 - Ali Woods - 6th Tackle Changeover
+10:51 - Wellington Spiders Interchanged Players Monty Fitler & Dominic Daley
+12:09 - Zach Wrabel - Intercepted Off A Amy Farrell Pass
+12:26 - Declan North - Penalty
+12:26 - Jack Boyd - PENALTY GOAL MISSED
+14:30 - Endsia Scorpions Interchanged Players Isaak Dempsey & Homer Lewis
+15:03 - Norman Tuo - 6th Tackle Changeover
+18:37 - Jack Boyd - Ruck Infringement
+20:05 - Kelin Meaney - 6th Tackle Changeover
+20:05 - Wellington Spiders Interchanged Players Ali Woods & Joshua Soa
+20:55 - Amy Farrell - Ruck Infringement
+21:18 - Wellington Spiders Interchanged Players Joshua Soa & Trixie Johns
+21:44 - Wellington Spiders Interchanged Players Brett Waterhouse & Monty Fitler
+21:44 - Endsia Scorpions Interchanged Players Zach Wrabel & Charles West
+23:00 - Wellington Spiders Interchanged Players Declan North & Ali Woods
+23:15 - Gwen Walker - Forward Pass
+24:14 - Sammy Hu - Over The Sideline
+25:13 - Monty Fitler - Over The Sideline
+26:36 - ------VIDEO REFEREE------
+26:36 - Mitch Sunnerson - NO TRY - Goal Line Dropout
+28:09 - Jack Boyd - 6th Tackle Changeover
+28:51 - Kev Hannington - Over The Sideline
+30:21 - Wellington Spiders Interchanged Players Gwen Walker & Joshua Soa
+31:53 - Endsia Scorpions Interchanged Players Mitch Sunnerson & Isaak Dempsey
+33:59 - Alexander Manfredi - 6th Tackle Changeover
+34:51 - Gwen East - Over The Sideline
+36:30 - Kelin Meaney - Intercepted Off A Sammy Hu Pass
+36:30 - Endsia Scorpions Interchanged Players Jr. O' Thomas & Mitch Sunnerson
+36:56 - Isaak Dempsey - Intercepted Off A Amy Farrell Pass
+37:30 - Endsia Scorpions Interchanged Players Homer Lewis & Zach Wrabel
+38:30 - Isaak Dempsey - Intercepted Off A Brenton Mariner Pass
+38:30 - Wellington Spiders Interchanged Players Kelin Meaney & Sam Wood
+39:47 - Kevin Kelly - 6th Tackle Changeover
+40:00 - HALF TIME - Wellington Spiders: 0 v Endsia Scorpions: 0
+41:43 - Keith Holland - Forward Pass
+43:08 - Charles West - 6th Tackle Changeover
+43:58 - Brenton Mariner - Knock On
+44:16 - Monty Fitler - Penalty
+44:40 - Endsia Scorpions Interchanged Players Norman Tuo & Isaak Lewis
+45:12 - Dominic Daley - Intercepted Off A Isaak Lewis Pass
+45:52 - Sammy Hu - Stripped Ball Off Joshua Soa
+47:21 - Xander Xander - 6th Tackle Changeover
+48:10 - Brenton Mariner - Forward Pass
+49:36 - Charles West - 6th Tackle Changeover
+49:52 - Kevin Kelly - Penalty
+50:31 - Ali Woods - Knock On
+51:17 - Gwen East - Over The Sideline
+51:44 - Isaak Lewis - Intercepted Off A Keith Holland Pass
+52:51 - Jack Boyd - 6th Tackle Changeover
+54:00 - Zach Wrabel - Intercepted Off A Amy Farrell Pass
+55:08 - Lindsay Atlas - 6th Tackle Changeover
+57:46 - Xander Xander - Stripped Ball Off Amy Farrell
+59:07 - Isaak Lewis - Over The Sideline
+60:22 - Endsia Scorpions Interchanged Players Lindsey Davis & Homer Lewis
+61:02 - Endsia Scorpions Interchanged Players Jack Boyd & Norman Tuo
+61:18 - Ali Woods - Penalty
+62:05 - ------VIDEO REFEREE------
+62:05 - Mitch Sunnerson - NO TRY - Obstruction
+62:05 - Mitch Sunnerson - Penalty
+63:16 - Charles West - Penalty
+63:32 - Sam Wood - FIELD GOAL - Wellington Spiders: 1 v Endsia Scorpions: 0
+64:53 - Xander Xander - Stripped Ball Off Keith Holland
+65:26 - Mitch Sunnerson - TRY - Wellington Spiders: 1 v Endsia Scorpions: 4
+66:26 - Sammy Hu - GOAL - Wellington Spiders: 1 v Endsia Scorpions: 6
+71:07 - Isaak Lewis - Intercepted Off A Trixie Johns Pass
+72:30 - Keith Holland - Forward Pass
+73:59 - Kevin Kelly - 6th Tackle Changeover
+74:45 - Joshua Soa - Forward Pass
+76:11 - Charles West - 6th Tackle Changeover
+76:22 - Amy Farrell - Forward Pass
+77:07 - Homer Lewis - Over The Sideline
+77:50 - Mitch Sunnerson - Intercepted Off A Trixie Johns Pass
+78:05 - Xander Xander - Over The Sideline
+80:00 - FULL TIME - Wellington Spiders: 1 v Endsia Scorpions: 6
+                             
+--------PLAYER STATS--------
+Home Team: Wellington Spiders
+1: Jr. Som |Time Played: 80:10 |Metres: 24 |Tackles: 15 |Kicks: 3 |Kick Metres: 158 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 78
+2: Joshua Soa |Time Played: 51:02 |Metres: 7 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+3: Keith Holland |Time Played: 80:10 |Metres: 24 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+4: Amy Farrell |Time Played: 80:10 |Metres: 26 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+5: Sam Wood |Time Played: 49:30 |Metres: 26 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 28
+6: George Chappell |Time Played: 80:10 |Metres: 49 |Tackles: 18 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+7: Brenton Mariner |Time Played: 80:10 |Metres: 43 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+8: Trixie Johns |Time Played: 58:52 |Metres: 15 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+9: Ali Woods |Time Played: 77:15 |Metres: 5 |Tackles: 16 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+10: Alexander Manfredi |Time Played: 80:10 |Metres: 21 |Tackles: 15 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 41
+11: Dominic Daley |Time Played: 69:19 |Metres: 25 |Tackles: 7 |Kicks: 1 |Kick Metres: 58 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+12: Monty Fitler |Time Played: 61:27 |Metres: 38 |Tackles: 11 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+13: Kev Hannington |Time Played: 80:10 |Metres: 58 |Tackles: 13 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+14: Brett Waterhouse |Time Played: 21:44 |Metres: 39 |Tackles: 2 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+15: Declan North |Time Played: 23:00 |Metres: 12 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+16: Kelin Meaney |Time Played: 38:30 |Metres: 8 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+17: Gwen Walker |Time Played: 30:21 |Metres: 11 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+Highlights:                 
+Most Tackles: George Chappell: 18
+Most Points: Sam Wood: 1
+Most Metres: Kev Hannington: 58
+Most Errors: Brenton Mariner: 3
+                             
+Away Team: Endsia Scorpions
+1: Charles West |Time Played: 58:26 |Metres: 115 |Tackles: 6 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+2: Anthony Johnson |Time Played: 80:10 |Metres: 19 |Tackles: 12 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+3: Norman Tuo |Time Played: 63:48 |Metres: 37 |Tackles: 12 |Kicks: 2 |Kick Metres: 50 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 48
+4: Isaak Dempsey |Time Played: 62:47 |Metres: 85 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 63
+5: Isaak Lewis |Time Played: 35:30 |Metres: 10 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+6: Lindsay Atlas |Time Played: 80:10 |Metres: 18 |Tackles: 4 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+7: Zach Wrabel |Time Played: 64:24 |Metres: 63 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+8: Sammy Hu |Time Played: 80:10 |Metres: 26 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 10
+9: Xander Xander |Time Played: 80:10 |Metres: 13 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+10: Mitch Sunnerson |Time Played: 75:33 |Metres: 67 |Tackles: 10 |Kicks: 2 |Kick Metres: 35 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 31
+11: Kevin Kelly |Time Played: 80:10 |Metres: 15 |Tackles: 16 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+12: Homer Lewis |Time Played: 42:48 |Metres: 21 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+13: Gwen East |Time Played: 80:10 |Metres: 13 |Tackles: 8 |Kicks: 2 |Kick Metres: 76 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Lindsey Davis |Time Played: 60:22 |Metres: 17 |Tackles: 10 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+15: Jr. O' Thomas |Time Played: 36:30 |Metres: 50 |Tackles: 5 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+16: Brendan Stimson |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Jack Boyd |Time Played: 61:02 |Metres: 115 |Tackles: 7 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 34
+Highlights:                 
+Most Tackles: Kevin Kelly: 16
+Most Points: Mitch Sunnerson: 4
+Most Metres: Charles West: 115
+Most Errors: Sammy Hu: 2
+                             
+---------TEAM STATS---------
+Home Team: Wellington Spiders
+Total Metres: 431
+Total Kick Metres: 377
+Total Errors: 13
+Total Tackles: 178
+Total Tries: 0
+Total Goals: 0
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+Away Team: Endsia Scorpions
+Total Metres: 684
+Total Kick Metres: 347
+Total Errors: 7
+Total Tackles: 141
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Jr. Som
+2nd (2 Points) -- Isaak Dempsey
+3rd (1 Point) -- Norman Tuo
+----------------------------

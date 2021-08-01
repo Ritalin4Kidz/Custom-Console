@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <vector>
+#include <deque>
 #include "SRLTeam.h"
 
 #include "Vector2.h"
@@ -33,6 +33,9 @@ public:
 	void addSumary(string a_Play);
 	void addSumaryNoMinutes(string a_Play);
 	void addSummary(string a_Play, SRLPlayer player);
+	void addSummaryDirect(string a_Play);
+
+	void addMinute();
 
 	void generateWeather();
 
@@ -69,14 +72,14 @@ public:
 	bool checkError(SRLPlayer defender, SRLPlayer attacker);
 	int checkKick(SRLPlayer defender, SRLPlayer attacker);
 	int doKick(SRLPlayer defender, SRLPlayer attacker);
-	void doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
+	bool doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
 	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
 
 	bool doInjury(SRLPlayer defender, SRLPlayer attacker, bool homeTeam);
-
+	bool getPlayerWasSentInGame() { return m_PlayerHasBeenSent; }
 	bool doSendOff(SRLPlayer defender, SRLPlayer attacker, bool homeTeam, bool sendOff);
 
 	void addAttackerErrorStats(string PlayerName, int StaminaLoss);
@@ -87,8 +90,8 @@ public:
 
 	int getMinutesPassed() { return m_MinutesPassed; }
 
-	vector<string> getPlayByPlay() { return m_PlayByPlay; }
-	vector<string> getSummary() { return m_Summary; }
+	deque<string> getPlayByPlay() { return m_PlayByPlay; }
+	deque<string> getSummary() { return m_Summary; }
 
 private:
 	//CONSTANTS
@@ -110,6 +113,7 @@ private:
 	const int outOnFullErrorChance = 35;
 	const int injuryChance = 1000;
 	const int professionalFoulChance = 3;
+	const float playerSentDivision = 0.8f;
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;
@@ -119,8 +123,8 @@ private:
 	int m_SecondsPassed;
 	int m_MinutesPassed;
 	//PLAYS
-	vector<string> m_PlayByPlay;
-	vector<string> m_Summary;
+	deque<string> m_PlayByPlay;
+	deque<string> m_Summary;
 	//GAMEPLAY
 	int m_BallPosition = 100;
 	int m_Tackle = 0;
@@ -135,6 +139,8 @@ private:
 	bool m_sendOffs = true;
 
 	bool m_ExtraTime = false;
+
+	bool m_PlayerHasBeenSent = false;
 
 	//WEATHER BONUSES
 	SRLGameWeather weather = Weather_Clear;

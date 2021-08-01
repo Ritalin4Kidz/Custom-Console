@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9aQ9bn0POM5na9R36JnKwKpcw2lZ7Y0XdINlLFV63qy7NY4jENK95RLd/cUPZmeIA/gHklAhlvCUcOlY0QBQmg==",
+  "success": true,
+  "projectFilePath": "G:\\Github Repos\\Custom-Console\\SYDERugbyLeagueSeasonViewer\\SYDERugbyLeagueSeasonViewer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ELSOM\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -4,9 +4,10 @@ SRLPlayer::SRLPlayer()
 {
 }
 
-SRLPlayer::SRLPlayer(string name, int speed, int attack, int defence,int kicking, int goalKicking, int handling)
+SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling)
 {
 	m_PlayerName = name;
+	m_CountryOfOrigin = country;
 	m_BaseSpeed = speed;
 	m_BaseAttack = attack;
 	m_BaseDefence = defence;
@@ -16,8 +17,52 @@ SRLPlayer::SRLPlayer(string name, int speed, int attack, int defence,int kicking
 	generateFeatures();
 }
 
+SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle)
+{
+	m_PlayerName = name;
+	m_CountryOfOrigin = country;
+	m_BaseSpeed = speed;
+	m_BaseAttack = attack;
+	m_BaseDefence = defence;
+	m_BaseKicking = kicking;
+	m_GoalKicking = goalKicking;
+	m_BaseHandling = handling;
+	primaryColour = prim;
+	secondaryColour = seco;
+	tertiaryColour = tert;
+	playerTypeInt = playerStyle;
+}
+
 SRLPlayer::~SRLPlayer()
 {
+}
+
+void SRLPlayer::addAttack(int atk)
+{
+	m_BaseAttack += atk; 
+	if (m_BaseAttack > 99) 
+	{
+		m_BaseAttack = 99; 
+	}
+}
+
+void SRLPlayer::affectAllStats(float mul)
+{
+	float mf_BaseAttack = (float)m_BaseAttack; 
+	float mf_BaseDefence = (float)m_BaseDefence;
+	float mf_BaseHandling = (float)m_BaseHandling;
+	float mf_BaseSpeed = (float)m_BaseSpeed;
+	float mf_BaseKicking = (float)m_BaseKicking;
+	mf_BaseAttack *= mul;
+	mf_BaseDefence *= mul;
+	mf_BaseHandling *= mul;
+	mf_BaseSpeed *= mul;
+	mf_BaseKicking *= mul;
+	m_BaseAttack = mf_BaseAttack;
+	m_BaseDefence = mf_BaseDefence;
+	m_BaseHandling = mf_BaseHandling;
+	m_BaseSpeed = mf_BaseSpeed;
+	m_BaseKicking = mf_BaseKicking;
 }
 
 void SRLPlayer::loadPlayer(string path)
@@ -26,6 +71,7 @@ void SRLPlayer::loadPlayer(string path)
 	json save_file = json::parse(ifs);
 	this->m_BaseAttack = (save_file["atk"]);
 	setName(save_file["name"]);
+	setOrigin(save_file["origin"]);
 	this->m_BaseDefence = (save_file["def"]);
 	this->m_BaseSpeed = (save_file["spd"]);
 	this->id = (save_file["id"]);
@@ -43,9 +89,10 @@ void SRLPlayer::savePlayer()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_PlayerName;
-	save_file["spd"] = m_BaseAttack;
+	save_file["origin"] = m_CountryOfOrigin;
+	save_file["atk"] = m_BaseAttack;
 	save_file["def"] = m_BaseDefence;
-	save_file["atk"] = m_BaseSpeed;
+	save_file["spd"] = m_BaseSpeed;
 	save_file["kick"] = m_BaseKicking;
 	save_file["goalkick"] = m_GoalKicking;
 	save_file["hand"] = m_BaseHandling;

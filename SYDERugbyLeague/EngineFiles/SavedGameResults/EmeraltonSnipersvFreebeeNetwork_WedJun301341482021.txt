@@ -1,0 +1,200 @@
+----------LINE-UPS----------
+Home Team: Emeralton Snipers
+1: Isaac John
+2: Jimmy Tamber
+3: Georgio Deon
+4: Julian Paul
+5: Cam Tuo
+6: Ray Worsent
+7: Kam Harrigan
+8: Dapper Miniota
+9: Gerry Etten
+10: Tommy Johnson
+11: Xander Potter
+12: Ronald Papiai
+13: Benjamin Potter
+14: Imm Reynolds
+15: Alister Loomer
+16: Peter Stimson
+17: Kam South
+Away Team: Freebee Network
+1: Callum Hands
+2: Luke Alexander
+3: Peter Waterhouse
+4: Ali Vianna
+5: Ashleigh Allsopp
+6: Ryan Mallett
+7: Simon Armstrong
+8: Lindsay Hands
+9: Kelin Miao
+10: Kyle Phillips
+11: Andrew Russell
+12: Cameron Rose
+13: Dominic Chicocki
+14: Trixie Emerson
+15: Addison Stewart
+16: Alex Armstrong
+17: Mitchell Lynn
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Emeralton Snipers: 0 v Freebee Network: 0
+01:30 - Cameron Rose - Knock On
+01:43 - Kelin Miao - Intercepted Off A Cam Tuo Pass
+02:57 - Ashleigh Allsopp - 6th Tackle Changeover
+03:27 - Julian Paul - Over The Sideline
+03:43 - Simon Armstrong - TRY - Emeralton Snipers: 0 v Freebee Network: 4
+04:43 - Callum Hands - CONVERSION MISSED
+07:03 - Ali Vianna - Intercepted Off A Benjamin Potter Pass
+08:17 - Ray Worsent - Intercepted Off A Kyle Phillips Pass
+10:12 - Emeralton Snipers Interchanged Players Dapper Miniota & Peter Stimson
+10:27 - Julian Paul - Ruck Infringement
+11:05 - Freebee Network Interchanged Players Ali Vianna & Mitchell Lynn
+11:48 - Kyle Phillips - 6th Tackle Changeover
+11:48 - Freebee Network Interchanged Players Ryan Mallett & Alex Armstrong
+12:48 - Isaac John - Knock On
+14:32 - Peter Waterhouse - 6th Tackle Changeover
+15:53 - Xander Potter - 6th Tackle Changeover
+16:25 - Kyle Phillips - Over The Sideline
+17:13 - Kyle Phillips - Penalty
+17:29 - Kam Harrigan - TRY - Emeralton Snipers: 4 v Freebee Network: 4
+18:29 - Jimmy Tamber - CONVERSION MISSED
+20:28 - Emeralton Snipers Interchanged Players Benjamin Potter & Alister Loomer
+21:34 - Jimmy Tamber - Ruck Infringement
+21:34 - Jimmy Tamber - Penalty
+21:48 - Ray Worsent - Stripped Ball Off Cameron Rose
+21:48 - Emeralton Snipers Interchanged Players Julian Paul & Imm Reynolds
+23:18 - Tommy Johnson - Stripped Ball Off Peter Waterhouse
+24:20 - Freebee Network Interchanged Players Cameron Rose & Ali Vianna
+24:38 - Ali Vianna - Intercepted Off A Tommy Johnson Pass
+25:18 - Ray Worsent - Intercepted Off A Lindsay Hands Pass
+26:32 - Kam Harrigan - 6th Tackle Changeover
+27:00 - Emeralton Snipers Interchanged Players Kam Harrigan & Julian Paul
+27:43 - Ray Worsent - Intercepted Off A Callum Hands Pass
+27:59 - Ashleigh Allsopp - Intercepted Off A Isaac John Pass
+28:30 - Freebee Network Interchanged Players Lindsay Hands & Ryan Mallett
+29:00 - Ronald Papiai - Intercepted Off A Dominic Chicocki Pass
+30:07 - Ronald Papiai - Intercepted Off A Ryan Mallett Pass
+30:07 - Freebee Network Interchanged Players Peter Waterhouse & Trixie Emerson
+31:08 - Kelin Miao - Intercepted Off A Cam Tuo Pass
+33:27 - Gerry Etten - 6th Tackle Changeover
+33:43 - Dominic Chicocki - Knock On
+34:00 - Freebee Network Interchanged Players Mitchell Lynn & Cameron Rose
+34:28 - Julian Paul - TRY - Emeralton Snipers: 8 v Freebee Network: 4
+35:28 - Jimmy Tamber - GOAL - Emeralton Snipers: 10 v Freebee Network: 4
+36:43 - Ashleigh Allsopp - Penalty
+37:20 - Freebee Network Interchanged Players Ali Vianna & Peter Waterhouse
+40:00 - HALF TIME - Emeralton Snipers: 10 v Freebee Network: 4
+40:26 - Xander Potter - Stripped Ball Off Ryan Mallett
+40:55 - Georgio Deon - TRY - Emeralton Snipers: 14 v Freebee Network: 4
+41:55 - Jimmy Tamber - CONVERSION MISSED
+45:26 - Gerry Etten - Intercepted Off A Callum Hands Pass
+46:12 - 20m Restart - Freebee Network
+49:34 - Georgio Deon - Intercepted Off A Peter Waterhouse Pass
+50:01 - Peter Waterhouse - Intercepted Off A Jimmy Tamber Pass
+51:22 - Freebee Network Interchanged Players Dominic Chicocki & Lindsay Hands
+52:42 - Peter Waterhouse - Incorrect Play The Ball
+52:42 - Peter Waterhouse - Penalty
+54:10 - Xander Potter - 6th Tackle Changeover
+56:54 - Ray Worsent - 6th Tackle Changeover
+59:32 - Jimmy Tamber - 6th Tackle Changeover
+60:33 - Emeralton Snipers Interchanged Players Isaac John & Benjamin Potter
+61:06 - Emeralton Snipers Interchanged Players Georgio Deon & Kam South
+61:33 - Emeralton Snipers Interchanged Players Kam South & Georgio Deon
+61:58 - Gerry Etten - 6th Tackle Changeover
+61:58 - Emeralton Snipers Interchanged Players Cam Tuo & Kam Harrigan
+62:47 - Simon Armstrong - Knock On
+63:11 - Tommy Johnson - TRY - Emeralton Snipers: 18 v Freebee Network: 4
+64:11 - Jimmy Tamber - GOAL - Emeralton Snipers: 20 v Freebee Network: 4
+67:48 - Simon Armstrong - 6th Tackle Changeover
+68:22 - Tommy Johnson - Over The Sideline
+69:46 - Andrew Russell - 6th Tackle Changeover
+71:25 - Ray Worsent - Intercepted Off A Peter Waterhouse Pass
+72:37 - Benjamin Potter - 6th Tackle Changeover
+74:33 - Peter Stimson - Knock On
+74:58 - Lindsay Hands - Knock On
+75:28 - Benjamin Potter - Over The Sideline
+76:25 - Benjamin Potter - Intercepted Off A Alex Armstrong Pass
+76:51 - Kyle Phillips - Stripped Ball Off Xander Potter
+77:04 - Cameron Rose - Over The Sideline
+78:33 - Ray Worsent - 6th Tackle Changeover
+78:50 - Simon Armstrong - Knock On
+79:26 - Kelin Miao - Intercepted Off A Xander Potter Pass
+79:39 - Ray Worsent - Intercepted Off A Kyle Phillips Pass
+80:00 - FULL TIME - Emeralton Snipers: 20 v Freebee Network: 4
+                             
+--------PLAYER STATS--------
+Home Team: Emeralton Snipers
+1: Benjamin Potter |Time Played: 40:04 |Metres: 10 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+2: Jimmy Tamber |Time Played: 80:09 |Metres: 15 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 7
+3: Georgio Deon |Time Played: 79:42 |Metres: 36 |Tackles: 11 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 52
+4: Imm Reynolds |Time Played: 58:21 |Metres: 26 |Tackles: 5 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+5: Kam Harrigan |Time Played: 45:11 |Metres: 108 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 56
+6: Ray Worsent |Time Played: 80:09 |Metres: 69 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 66
+7: Julian Paul |Time Played: 74:57 |Metres: 39 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 11
+8: Peter Stimson |Time Played: 69:57 |Metres: 59 |Tackles: 3 |Kicks: 1 |Kick Metres: 36 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+9: Gerry Etten |Time Played: 80:09 |Metres: 37 |Tackles: 19 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 53
+10: Tommy Johnson |Time Played: 80:09 |Metres: 39 |Tackles: 10 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 24
+11: Xander Potter |Time Played: 80:09 |Metres: 11 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+12: Ronald Papiai |Time Played: 80:09 |Metres: 101 |Tackles: 15 |Kicks: 2 |Kick Metres: 84 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 95
+13: Alister Loomer |Time Played: 59:41 |Metres: 105 |Tackles: 6 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 58
+14: Cam Tuo |Time Played: 61:58 |Metres: 47 |Tackles: 4 |Kicks: 2 |Kick Metres: 70 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+15: Isaac John |Time Played: 60:33 |Metres: 28 |Tackles: 8 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+16: Dapper Miniota |Time Played: 10:12 |Metres: 1 |Tackles: 2 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+17: Kam South |Time Played: 00:27 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Gerry Etten: 19
+Most Points: Jimmy Tamber: 4
+Most Metres: Kam Harrigan: 108
+Most Errors: Benjamin Potter: 1
+                             
+Away Team: Freebee Network
+1: Callum Hands |Time Played: 80:09 |Metres: 26 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 39
+2: Luke Alexander |Time Played: 80:09 |Metres: 44 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+3: Trixie Emerson |Time Played: 50:02 |Metres: 4 |Tackles: 9 |Kicks: 1 |Kick Metres: 37 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+4: Cameron Rose |Time Played: 70:29 |Metres: 26 |Tackles: 8 |Kicks: 1 |Kick Metres: 19 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+5: Ashleigh Allsopp |Time Played: 80:09 |Metres: 41 |Tackles: 11 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+6: Alex Armstrong |Time Played: 68:21 |Metres: 20 |Tackles: 10 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+7: Simon Armstrong |Time Played: 80:09 |Metres: 91 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 18
+8: Ryan Mallett |Time Played: 63:27 |Metres: 10 |Tackles: 7 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+9: Kelin Miao |Time Played: 80:09 |Metres: 124 |Tackles: 10 |Kicks: 3 |Kick Metres: 87 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 100
+10: Kyle Phillips |Time Played: 80:09 |Metres: 71 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Andrew Russell |Time Played: 80:09 |Metres: 12 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+12: Peter Waterhouse |Time Played: 72:56 |Metres: 21 |Tackles: 16 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+13: Lindsay Hands |Time Played: 57:17 |Metres: 5 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+14: Ali Vianna |Time Played: 24:05 |Metres: 7 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+15: Addison Stewart |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Dominic Chicocki |Time Played: 51:22 |Metres: 6 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+17: Mitchell Lynn |Time Played: 22:55 |Metres: 1 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+Highlights:                 
+Most Tackles: Callum Hands: 17
+Most Points: Simon Armstrong: 4
+Most Metres: Kelin Miao: 124
+Most Errors: Cameron Rose: 2
+                             
+---------TEAM STATS---------
+Home Team: Emeralton Snipers
+Total Metres: 731
+Total Kick Metres: 333
+Total Errors: 5
+Total Tackles: 129
+Total Tries: 4
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Freebee Network
+Total Metres: 509
+Total Kick Metres: 215
+Total Errors: 7
+Total Tackles: 156
+Total Tries: 1
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Kelin Miao
+2nd (2 Points) -- Ronald Papiai
+3rd (1 Point) -- Kam Harrigan
+----------------------------

@@ -97,6 +97,12 @@ void Settings::volumeControl(int volume)
 
 void Settings::ColourPalette(HANDLE hOut)
 {
+	_COORD coord;
+	coord.X = getConsoleWidth() + 50;
+	coord.Y = getConsoleHeight() + 50;
+	SetConsoleScreenBufferSize(hOut, coord);
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	CONSOLE_SCREEN_BUFFER_INFOEX pInfo;
 	pInfo.cbSize = sizeof(pInfo);
 	GetConsoleScreenBufferInfoEx(hOut, &pInfo);
@@ -116,6 +122,10 @@ void Settings::ColourPalette(HANDLE hOut)
 	pInfo.ColorTable[13] = COLORREF(_LIGHTPURPLE.toRGB());
 	pInfo.ColorTable[14] = COLORREF(_BRIGHTYELLOW.toRGB());
 	pInfo.ColorTable[15] = COLORREF(_BRIGHTWHITE.toRGB());
+	pInfo.dwSize.X = getConsoleWidth() + 50;
+	pInfo.dwSize.Y = getConsoleHeight() + 50;
+	pInfo.dwMaximumWindowSize.X = getConsoleWidth() + 50;
+	pInfo.dwMaximumWindowSize.Y = getConsoleHeight() + 50;
 	SetConsoleScreenBufferInfoEx(hOut, &pInfo);
 }
 

@@ -1,0 +1,206 @@
+----------LINE-UPS----------
+Home Team: Tomatown Honey Magnets
+1: Peter Brekston
+2: Albert Shannel
+3: Pete Pimmers
+4: Brayden Develo
+5: Clinton McDonald
+6: Earl Uate
+7: Emily Britt
+8: Frank Cook
+9: Kevin Berry
+10: Mike Fox
+11: Janerio Locke
+12: Albert Mitt
+13: Nathan Drayersun
+14: Joshua Paul
+15: Reimis Pardi
+16: Suelen South
+17: Brendan Treamery
+Away Team: Manilla Milkers
+1: Aaron Brasi
+2: Jane Allen
+3: Herman Cook
+4: Velento Stone
+5: Julian Reynolds
+6: William Berninger
+7: Bart Million
+8: Neo North
+9: Bill Northson
+10: Carl Humm
+11: Nita Pearce
+12: Burt Yzzer
+13: Alan Fuller
+14: Alistair Britt
+15: Phil Bamert
+16: Jarrod Yacoub
+17: Thomas de Flatio
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - Tomatown Honey Magnets: 0 v Manilla Milkers: 0
+00:44 - Velento Stone - Stripped Ball Off Pete Pimmers
+01:26 - Neo North - Over The Sideline
+02:56 - Earl Uate - Intercepted Off A Herman Cook Pass
+03:24 - Kevin Berry - Forward Pass
+04:50 - Herman Cook - 6th Tackle Changeover
+05:50 - Peter Brekston - Forward Pass
+07:51 - Frank Cook - Knock On
+08:39 - Julian Reynolds - Forward Pass
+09:29 - Frank Cook - Forward Pass
+12:21 - Peter Brekston - 6th Tackle Changeover
+15:57 - Aaron Brasi - Over The Sideline
+16:15 - Kevin Berry - Forward Pass
+18:23 - Mike Fox - Over The Sideline
+18:35 - Alan Fuller - Knock On
+19:22 - Janerio Locke - Forward Pass
+19:37 - Aaron Brasi - Knock On
+20:42 - Manilla Milkers Interchanged Players Bill Northson & Alistair Britt
+20:56 - Nathan Drayersun - TRY - Tomatown Honey Magnets: 4 v Manilla Milkers: 0
+21:56 - Albert Shannel - CONVERSION MISSED
+23:31 - Earl Uate - Forward Pass
+24:17 - Herman Cook - Over The Sideline
+25:00 - Manilla Milkers Interchanged Players Aaron Brasi & Phil Bamert
+25:51 - Nita Pearce - Over The Sideline
+27:03 - ------VIDEO REFEREE------
+27:03 - Nathan Drayersun - TRY - Tomatown Honey Magnets: 8 v Manilla Milkers: 0
+28:03 - Albert Shannel - GOAL - Tomatown Honey Magnets: 10 v Manilla Milkers: 0
+29:16 - Janerio Locke - Over The Sideline
+30:14 - Bart Million - TRY - Tomatown Honey Magnets: 10 v Manilla Milkers: 4
+31:14 - Carl Humm - CONVERSION MISSED
+34:26 - Velento Stone - Stripped Ball Off Brayden Develo
+35:54 - Nathan Drayersun - Intercepted Off A Alan Fuller Pass
+36:58 - Nathan Drayersun - 6th Tackle Changeover
+37:25 - Nita Pearce - Knock On
+38:28 - Nathan Drayersun - TRY - Tomatown Honey Magnets: 14 v Manilla Milkers: 4
+39:28 - Albert Shannel - CONVERSION MISSED
+40:00 - HALF TIME - Tomatown Honey Magnets: 14 v Manilla Milkers: 4
+40:12 - Velento Stone - Knock On
+40:27 - Earl Uate - TRY - Tomatown Honey Magnets: 18 v Manilla Milkers: 4
+41:27 - Albert Shannel - CONVERSION MISSED
+42:59 - Nathan Drayersun - Knock On
+43:17 - ------VIDEO REFEREE------
+43:17 - Alan Fuller - TRY - Tomatown Honey Magnets: 18 v Manilla Milkers: 8
+44:17 - Carl Humm - CONVERSION MISSED
+46:26 - William Berninger - Forward Pass
+46:44 - Tomatown Honey Magnets Interchanged Players Pete Pimmers & Reimis Pardi
+48:00 - Emily Britt - 6th Tackle Changeover
+48:41 - Alistair Britt - Over The Sideline
+49:09 - Mike Fox - Over The Sideline
+50:37 - Neo North - Forward Pass
+51:05 - Peter Brekston - Knock On
+51:22 - Brayden Develo - Intercepted Off A Neo North Pass
+51:37 - Nita Pearce - Intercepted Off A Emily Britt Pass
+52:48 - Julian Reynolds - 6th Tackle Changeover
+53:56 - Albert Mitt - Kick Out On The Full
+54:30 - Neo North - Knock On
+54:45 - Albert Shannel - Knock On
+54:57 - Brayden Develo - Intercepted Off A Neo North Pass
+55:22 - Manilla Milkers Interchanged Players Nita Pearce & Thomas de Flatio
+56:00 - Albert Mitt - 6th Tackle Changeover
+56:00 - Manilla Milkers Interchanged Players Herman Cook & Jarrod Yacoub
+56:59 - Burt Yzzer - Over The Sideline
+58:26 - Reimis Pardi - 6th Tackle Changeover
+60:24 - Tomatown Honey Magnets Interchanged Players Janerio Locke & Suelen South
+60:39 - Emily Britt - Over The Sideline
+61:29 - William Berninger - Forward Pass
+61:41 - Manilla Milkers Interchanged Players Carl Humm & Aaron Brasi
+62:52 - Albert Mitt - Incorrect Play The Ball
+62:52 - Albert Mitt - Penalty
+63:42 - Bart Million - TRY - Tomatown Honey Magnets: 18 v Manilla Milkers: 12
+64:42 - Jane Allen - CONVERSION MISSED
+66:49 - Alistair Britt - Kick Out On The Full
+67:40 - Reimis Pardi - Knock On
+70:03 - Earl Uate - Forward Pass
+70:03 - Tomatown Honey Magnets Interchanged Players Frank Cook & Brendan Treamery
+71:35 - Brayden Develo - Over The Sideline
+72:20 - Jarrod Yacoub - Knock On
+73:16 - Nathan Drayersun - Knock On
+74:58 - Phil Bamert - 6th Tackle Changeover
+75:14 - Emily Britt - Forward Pass
+75:32 - Phil Bamert - Knock On
+75:47 - Reimis Pardi - Knock On
+76:01 - Burt Yzzer - Knock On
+76:49 - Jarrod Yacoub - Stripped Ball Off Reimis Pardi
+78:16 - Aaron Brasi - 6th Tackle Changeover
+78:39 - Brendan Treamery - Knock On
+79:13 - ------VIDEO REFEREE------
+79:13 - Alistair Britt - TRY - Tomatown Honey Magnets: 18 v Manilla Milkers: 16
+80:00 - Jane Allen - GOAL - Tomatown Honey Magnets: 18 v Manilla Milkers: 18
+80:00 - FULL TIME - Tomatown Honey Magnets: 18 v Manilla Milkers: 18
+                             
+--------PLAYER STATS--------
+Home Team: Tomatown Honey Magnets
+1: Peter Brekston |Time Played: 81:00 |Metres: 33 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+2: Albert Shannel |Time Played: 81:00 |Metres: 32 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 18
+3: Reimis Pardi |Time Played: 34:16 |Metres: 37 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+4: Brayden Develo |Time Played: 81:00 |Metres: 9 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+5: Clinton McDonald |Time Played: 81:00 |Metres: 54 |Tackles: 6 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 42
+6: Earl Uate |Time Played: 81:00 |Metres: 95 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 23
+7: Emily Britt |Time Played: 81:00 |Metres: 18 |Tackles: 12 |Kicks: 1 |Kick Metres: 51 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+8: Brendan Treamery |Time Played: 10:57 |Metres: 2 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+9: Kevin Berry |Time Played: 81:00 |Metres: 31 |Tackles: 10 |Kicks: 1 |Kick Metres: 56 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+10: Mike Fox |Time Played: 81:00 |Metres: 118 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+11: Suelen South |Time Played: 20:36 |Metres: 2 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+12: Albert Mitt |Time Played: 81:00 |Metres: 98 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+13: Nathan Drayersun |Time Played: 81:00 |Metres: 113 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 3 |Goals: 0 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 28
+14: Joshua Paul |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Pete Pimmers |Time Played: 46:44 |Metres: 67 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+16: Janerio Locke |Time Played: 60:24 |Metres: 39 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+17: Frank Cook |Time Played: 70:03 |Metres: 145 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+Highlights:                 
+Most Tackles: Albert Shannel: 14
+Most Points: Nathan Drayersun: 12
+Most Metres: Frank Cook: 145
+Most Errors: Peter Brekston: 2
+                             
+Away Team: Manilla Milkers
+1: Phil Bamert |Time Played: 56:00 |Metres: 7 |Tackles: 5 |Kicks: 1 |Kick Metres: 19 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+2: Jane Allen |Time Played: 81:00 |Metres: 59 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 53
+3: Jarrod Yacoub |Time Played: 25:00 |Metres: 21 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+4: Velento Stone |Time Played: 81:00 |Metres: 24 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+5: Julian Reynolds |Time Played: 81:00 |Metres: 47 |Tackles: 8 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+6: William Berninger |Time Played: 81:00 |Metres: 73 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+7: Bart Million |Time Played: 81:00 |Metres: 122 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 80
+8: Neo North |Time Played: 81:00 |Metres: 17 |Tackles: 6 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+9: Alistair Britt |Time Played: 60:18 |Metres: 82 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 18
+10: Aaron Brasi |Time Played: 44:19 |Metres: 43 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+11: Thomas de Flatio |Time Played: 25:38 |Metres: 19 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+12: Burt Yzzer |Time Played: 81:00 |Metres: 28 |Tackles: 10 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+13: Alan Fuller |Time Played: 81:00 |Metres: 56 |Tackles: 10 |Kicks: 2 |Kick Metres: 70 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 32
+14: Bill Northson |Time Played: 20:42 |Metres: 59 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+15: Carl Humm |Time Played: 61:41 |Metres: 64 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+16: Herman Cook |Time Played: 56:00 |Metres: 15 |Tackles: 6 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+17: Nita Pearce |Time Played: 55:22 |Metres: 77 |Tackles: 5 |Kicks: 1 |Kick Metres: 41 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+Highlights:                 
+Most Tackles: Jane Allen: 17
+Most Points: Bart Million: 8
+Most Metres: Bart Million: 122
+Most Errors: Neo North: 3
+                             
+---------TEAM STATS---------
+Home Team: Tomatown Honey Magnets
+Total Metres: 893
+Total Kick Metres: 145
+Total Errors: 22
+Total Tackles: 137
+Total Tries: 4
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 3/8
+                             
+Away Team: Manilla Milkers
+Total Metres: 813
+Total Kick Metres: 196
+Total Errors: 19
+Total Tackles: 132
+Total Tries: 4
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 5/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Bart Million
+2nd (2 Points) -- Jane Allen
+3rd (1 Point) -- Clinton McDonald
+----------------------------

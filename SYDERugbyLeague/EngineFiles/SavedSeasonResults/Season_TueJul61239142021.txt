@@ -1,0 +1,1006 @@
+LADDER RESULTS
+--------------------------------
+1. Dubbo Rose Gardens Wins: 26| Lost: 0| PD: 697| Points: 52
+2. Gera Comets Wins: 20| Lost: 6| PD: 182| Points: 40
+3. Glebe Citizens Wins: 20| Lost: 6| PD: 147| Points: 40
+4. Ademonia Bin Chooks Wins: 18| Lost: 8| PD: 211| Points: 36
+5. Eastern City Freebee Wins: 16| Lost: 10| PD: 158| Points: 32
+6. Broken Coast Apples Wins: 16| Lost: 10| PD: 107| Points: 32
+7. Christville Emus Wins: 16| Lost: 10| PD: 21| Points: 32
+8. Westkellion Predators Wins: 14| Lost: 12| PD: 108| Points: 28
+9. Bonesville Seagulls Wins: 14| Lost: 12| PD: 23| Points: 28
+10. Central Platypi Wins: 11| Lost: 15| PD: -41| Points: 22
+11. North Melbourne Oranges Wins: 10| Lost: 16| PD: -199| Points: 20
+12. Blankis Origami Wins: 8| Lost: 18| PD: -251| Points: 16
+13. Saltio City Berries Wins: 7| Lost: 19| PD: -195| Points: 14
+14. Jerstion City Chargers Wins: 5| Lost: 21| PD: -311| Points: 10
+15. West Suburbs Bottlenecks Wins: 4| Lost: 22| PD: -273| Points: 8
+16. Craziomonia Town Aces Wins: 3| Lost: 23| PD: -384| Points: 6
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Saltio City Berries 32 v 39 Glebe Citizens
+North Melbourne Oranges 10 v 4 Broken Coast Apples
+Jerstion City Chargers 10 v 8 Central Platypi
+Dubbo Rose Gardens 30 v 0 West Suburbs Bottlenecks
+Blankis Origami 8 v 19 Christville Emus
+Eastern City Freebee 20 v 29 Westkellion Predators
+Gera Comets 8 v 6 Bonesville Seagulls
+Ademonia Bin Chooks 31 v 30 Craziomonia Town Aces
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Gera Comets 28 v 16 Jerstion City Chargers
+Glebe Citizens 32 v 14 Craziomonia Town Aces
+Central Platypi 19 v 12 West Suburbs Bottlenecks
+Blankis Origami 13 v 0 Broken Coast Apples
+Westkellion Predators 12 v 16 Bonesville Seagulls
+North Melbourne Oranges 21 v 32 Christville Emus
+Saltio City Berries 8 v 34 Dubbo Rose Gardens
+Ademonia Bin Chooks 14 v 20 Eastern City Freebee
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Christville Emus 10 v 24 Central Platypi
+Craziomonia Town Aces 12 v 43 Gera Comets
+Eastern City Freebee 18 v 10 Broken Coast Apples
+Jerstion City Chargers 16 v 29 Bonesville Seagulls
+Dubbo Rose Gardens 19 v 12 Ademonia Bin Chooks
+North Melbourne Oranges 36 v 18 West Suburbs Bottlenecks
+Blankis Origami 4 v 14 Westkellion Predators
+Glebe Citizens 32 v 10 Saltio City Berries
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Westkellion Predators 16 v 20 Glebe Citizens
+Saltio City Berries 4 v 37 Gera Comets
+Bonesville Seagulls 35 v 28 Craziomonia Town Aces
+Blankis Origami 24 v 20 Ademonia Bin Chooks
+North Melbourne Oranges 4 v 29 Dubbo Rose Gardens
+Broken Coast Apples 24 v 23 Central Platypi
+Eastern City Freebee 23 v 22 West Suburbs Bottlenecks
+Jerstion City Chargers 16 v 15 Christville Emus
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Saltio City Berries 38 v 42 North Melbourne Oranges
+West Suburbs Bottlenecks 6 v 28 Ademonia Bin Chooks
+Bonesville Seagulls 8 v 27 Christville Emus
+Glebe Citizens 36 v 28 Eastern City Freebee
+Dubbo Rose Gardens 33 v 26 Westkellion Predators
+Craziomonia Town Aces 28 v 26 Jerstion City Chargers
+Central Platypi 22 v 29 Blankis Origami
+Broken Coast Apples 8 v 4 Gera Comets
+--------------------------------
+
+Round 6 Results
+--------------------------------
+West Suburbs Bottlenecks 14 v 16 Westkellion Predators
+North Melbourne Oranges 6 v 4 Broken Coast Apples
+Blankis Origami 14 v 8 Craziomonia Town Aces
+Bonesville Seagulls 25 v 14 Christville Emus
+Jerstion City Chargers 18 v 22 Saltio City Berries
+Gera Comets 10 v 26 Dubbo Rose Gardens
+Central Platypi 18 v 30 Eastern City Freebee
+Glebe Citizens 20 v 38 Ademonia Bin Chooks
+--------------------------------
+
+Round 7 Results
+--------------------------------
+North Melbourne Oranges 28 v 34 Saltio City Berries
+Dubbo Rose Gardens 30 v 14 Gera Comets
+Ademonia Bin Chooks 6 v 32 Glebe Citizens
+Westkellion Predators 16 v 6 Craziomonia Town Aces
+Blankis Origami 20 v 14 Jerstion City Chargers
+West Suburbs Bottlenecks 14 v 38 Eastern City Freebee
+Christville Emus 28 v 16 Broken Coast Apples
+Bonesville Seagulls 28 v 14 Central Platypi
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Central Platypi 26 v 16 Bonesville Seagulls
+Broken Coast Apples 11 v 16 Ademonia Bin Chooks
+Jerstion City Chargers 4 v 32 Dubbo Rose Gardens
+Blankis Origami 13 v 15 Saltio City Berries
+Westkellion Predators 20 v 33 Glebe Citizens
+Craziomonia Town Aces 25 v 22 West Suburbs Bottlenecks
+Gera Comets 18 v 4 Christville Emus
+North Melbourne Oranges 12 v 20 Eastern City Freebee
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Gera Comets 20 v 30 Glebe Citizens
+Ademonia Bin Chooks 46 v 0 Craziomonia Town Aces
+Jerstion City Chargers 0 v 50 Dubbo Rose Gardens
+North Melbourne Oranges 11 v 10 Bonesville Seagulls
+West Suburbs Bottlenecks 12 v 10 Saltio City Berries
+Blankis Origami 4 v 35 Eastern City Freebee
+Westkellion Predators 12 v 15 Christville Emus
+Central Platypi 8 v 24 Broken Coast Apples
+--------------------------------
+
+Round 10 Results
+--------------------------------
+North Melbourne Oranges 18 v 35 Gera Comets
+Westkellion Predators 24 v 34 Christville Emus
+Central Platypi 12 v 14 Ademonia Bin Chooks
+Eastern City Freebee 18 v 4 Bonesville Seagulls
+Jerstion City Chargers 17 v 14 Craziomonia Town Aces
+Saltio City Berries 13 v 14 West Suburbs Bottlenecks
+Dubbo Rose Gardens 29 v 10 Glebe Citizens
+Blankis Origami 6 v 21 Broken Coast Apples
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Saltio City Berries 14 v 8 Blankis Origami
+Ademonia Bin Chooks 22 v 6 Broken Coast Apples
+North Melbourne Oranges 30 v 28 Eastern City Freebee
+Craziomonia Town Aces 16 v 22 Christville Emus
+West Suburbs Bottlenecks 15 v 11 Jerstion City Chargers
+Dubbo Rose Gardens 23 v 10 Westkellion Predators
+Glebe Citizens 32 v 28 Bonesville Seagulls
+Gera Comets 13 v 0 Central Platypi
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Broken Coast Apples 28 v 6 Jerstion City Chargers
+Westkellion Predators 27 v 22 Saltio City Berries
+Christville Emus 29 v 10 North Melbourne Oranges
+Eastern City Freebee 33 v 16 Gera Comets
+Ademonia Bin Chooks 12 v 23 Bonesville Seagulls
+Craziomonia Town Aces 20 v 19 Central Platypi
+Dubbo Rose Gardens 38 v 10 Glebe Citizens
+Blankis Origami 21 v 12 West Suburbs Bottlenecks
+--------------------------------
+
+Round 13 Results
+--------------------------------
+West Suburbs Bottlenecks 8 v 20 Glebe Citizens
+Saltio City Berries 16 v 30 Broken Coast Apples
+Central Platypi 19 v 16 Gera Comets
+Bonesville Seagulls 23 v 16 Craziomonia Town Aces
+North Melbourne Oranges 0 v 38 Dubbo Rose Gardens
+Jerstion City Chargers 6 v 20 Westkellion Predators
+Eastern City Freebee 49 v 6 Blankis Origami
+Christville Emus 4 v 2 Ademonia Bin Chooks
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Gera Comets 21 v 14 Bonesville Seagulls
+Eastern City Freebee 14 v 2 Craziomonia Town Aces
+Christville Emus 13 v 12 West Suburbs Bottlenecks
+Dubbo Rose Gardens 53 v 6 Broken Coast Apples
+Blankis Origami 8 v 12 North Melbourne Oranges
+Jerstion City Chargers 21 v 18 Saltio City Berries
+Central Platypi 14 v 30 Glebe Citizens
+Westkellion Predators 20 v 24 Ademonia Bin Chooks
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Jerstion City Chargers 16 v 23 Eastern City Freebee
+Dubbo Rose Gardens 44 v 4 Craziomonia Town Aces
+Christville Emus 8 v 4 West Suburbs Bottlenecks
+Saltio City Berries 27 v 20 Central Platypi
+Gera Comets 31 v 16 Blankis Origami
+North Melbourne Oranges 8 v 27 Bonesville Seagulls
+Ademonia Bin Chooks 22 v 14 Westkellion Predators
+Broken Coast Apples 30 v 33 Glebe Citizens
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Ademonia Bin Chooks 31 v 8 West Suburbs Bottlenecks
+Saltio City Berries 8 v 38 Eastern City Freebee
+Craziomonia Town Aces 22 v 28 Broken Coast Apples
+Christville Emus 24 v 31 Glebe Citizens
+Gera Comets 18 v 10 Jerstion City Chargers
+Blankis Origami 6 v 16 Bonesville Seagulls
+North Melbourne Oranges 6 v 32 Westkellion Predators
+Dubbo Rose Gardens 24 v 6 Central Platypi
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Christville Emus 40 v 12 Blankis Origami
+Gera Comets 28 v 8 Craziomonia Town Aces
+Bonesville Seagulls 14 v 16 Westkellion Predators
+West Suburbs Bottlenecks 6 v 10 Jerstion City Chargers
+Ademonia Bin Chooks 10 v 8 Central Platypi
+Glebe Citizens 18 v 10 North Melbourne Oranges
+Dubbo Rose Gardens 28 v 6 Saltio City Berries
+Eastern City Freebee 30 v 34 Broken Coast Apples
+--------------------------------
+
+Round 18 Results
+--------------------------------
+Broken Coast Apples 42 v 14 Craziomonia Town Aces
+Ademonia Bin Chooks 10 v 30 Dubbo Rose Gardens
+Jerstion City Chargers 24 v 37 Christville Emus
+Blankis Origami 18 v 31 Gera Comets
+Saltio City Berries 29 v 20 Central Platypi
+Westkellion Predators 6 v 24 Eastern City Freebee
+Bonesville Seagulls 4 v 17 Glebe Citizens
+North Melbourne Oranges 14 v 4 West Suburbs Bottlenecks
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Gera Comets 26 v 24 Eastern City Freebee
+Craziomonia Town Aces 12 v 20 Blankis Origami
+Jerstion City Chargers 0 v 22 Broken Coast Apples
+West Suburbs Bottlenecks 4 v 41 Dubbo Rose Gardens
+North Melbourne Oranges 10 v 27 Ademonia Bin Chooks
+Westkellion Predators 19 v 12 Central Platypi
+Christville Emus 21 v 18 Glebe Citizens
+Bonesville Seagulls 24 v 18 Saltio City Berries
+--------------------------------
+
+Round 20 Results
+--------------------------------
+Central Platypi 21 v 14 Jerstion City Chargers
+West Suburbs Bottlenecks 23 v 20 Craziomonia Town Aces
+Broken Coast Apples 23 v 20 Saltio City Berries
+Christville Emus 16 v 35 Gera Comets
+North Melbourne Oranges 12 v 28 Westkellion Predators
+Eastern City Freebee 24 v 16 Ademonia Bin Chooks
+Glebe Citizens 14 v 6 Blankis Origami
+Bonesville Seagulls 18 v 28 Dubbo Rose Gardens
+--------------------------------
+
+Round 21 Results
+--------------------------------
+Westkellion Predators 34 v 4 Saltio City Berries
+Christville Emus 8 v 18 Central Platypi
+Broken Coast Apples 28 v 10 West Suburbs Bottlenecks
+Jerstion City Chargers 18 v 32 Ademonia Bin Chooks
+Bonesville Seagulls 12 v 38 Dubbo Rose Gardens
+North Melbourne Oranges 0 v 14 Gera Comets
+Blankis Origami 16 v 18 Glebe Citizens
+Eastern City Freebee 26 v 6 Craziomonia Town Aces
+--------------------------------
+
+Round 22 Results
+--------------------------------
+North Melbourne Oranges 12 v 43 Ademonia Bin Chooks
+Central Platypi 26 v 22 Eastern City Freebee
+West Suburbs Bottlenecks 6 v 13 Gera Comets
+Bonesville Seagulls 20 v 12 Jerstion City Chargers
+Dubbo Rose Gardens 52 v 6 Craziomonia Town Aces
+Westkellion Predators 27 v 12 Blankis Origami
+Saltio City Berries 10 v 30 Christville Emus
+Broken Coast Apples 26 v 12 Glebe Citizens
+--------------------------------
+
+Round 23 Results
+--------------------------------
+Saltio City Berries 14 v 21 Gera Comets
+Jerstion City Chargers 6 v 32 Ademonia Bin Chooks
+Bonesville Seagulls 48 v 16 Blankis Origami
+Central Platypi 10 v 9 West Suburbs Bottlenecks
+Dubbo Rose Gardens 48 v 8 Eastern City Freebee
+Christville Emus 0 v 20 Broken Coast Apples
+Glebe Citizens 18 v 8 North Melbourne Oranges
+Craziomonia Town Aces 4 v 29 Westkellion Predators
+--------------------------------
+
+Round 24 Results
+--------------------------------
+Glebe Citizens 12 v 14 Central Platypi
+Eastern City Freebee 23 v 26 Bonesville Seagulls
+West Suburbs Bottlenecks 18 v 25 Blankis Origami
+Gera Comets 14 v 13 Broken Coast Apples
+Saltio City Berries 18 v 36 Ademonia Bin Chooks
+Craziomonia Town Aces 24 v 29 North Melbourne Oranges
+Westkellion Predators 36 v 12 Jerstion City Chargers
+Christville Emus 0 v 25 Dubbo Rose Gardens
+--------------------------------
+
+Round 25 Results
+--------------------------------
+Christville Emus 0 v 26 Ademonia Bin Chooks
+Central Platypi 34 v 8 Blankis Origami
+Jerstion City Chargers 26 v 46 Glebe Citizens
+West Suburbs Bottlenecks 12 v 23 Gera Comets
+Craziomonia Town Aces 8 v 24 North Melbourne Oranges
+Saltio City Berries 20 v 22 Bonesville Seagulls
+Broken Coast Apples 25 v 24 Westkellion Predators
+Dubbo Rose Gardens 29 v 6 Eastern City Freebee
+--------------------------------
+
+Round 26 Results
+--------------------------------
+Eastern City Freebee 24 v 30 Christville Emus
+Ademonia Bin Chooks 20 v 4 Bonesville Seagulls
+Jerstion City Chargers 10 v 30 Glebe Citizens
+Westkellion Predators 22 v 24 Gera Comets
+Craziomonia Town Aces 12 v 38 Saltio City Berries
+West Suburbs Bottlenecks 0 v 32 Broken Coast Apples
+Dubbo Rose Gardens 40 v 0 Blankis Origami
+North Melbourne Oranges 6 v 8 Central Platypi
+--------------------------------
+
+Round 27 Results
+--------------------------------
+Dubbo Rose Gardens 55 v 6 Ademonia Bin Chooks
+Gera Comets 22 v 28 Glebe Citizens
+Eastern City Freebee 16 v 20 Westkellion Predators
+Broken Coast Apples 28 v 12 Christville Emus
+--------------------------------
+
+Round 28 Results
+--------------------------------
+Ademonia Bin Chooks 19 v 20 Westkellion Predators
+Gera Comets 12 v 19 Broken Coast Apples
+--------------------------------
+
+Round 29 Results
+--------------------------------
+Dubbo Rose Gardens 34 v 4 Broken Coast Apples
+Glebe Citizens 10 v 19 Westkellion Predators
+--------------------------------
+
+Round 30 Results
+--------------------------------
+Dubbo Rose Gardens 29 v 12 Westkellion Predators
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Trixie Allen-Dubbo Rose Gardens : 28
+2. Huretio South-Ademonia Bin Chooks : 27
+3. Jameson Hu-Westkellion Predators : 20
+4. Georgio Jace-Craziomonia Town Aces : 19
+5. Dreka East-Eastern City Freebee : 18
+6. Damien O' Thomas-Blankis Origami : 18
+7. Mike Harnett-Dubbo Rose Gardens : 17
+8. Jameson Fallon-Saltio City Berries : 17
+9. Ali Questa-Glebe Citizens : 17
+10. Keith Viana-Gera Comets : 17
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Mitchell Fitler-Glebe Citizens : 92
+2. Cooper Hall-Westkellion Predators : 75
+3. Nathan Pout-Gera Comets : 68
+4. Kimberly Hall-West Suburbs Bottlenecks : 64
+5. Jr. Tamber-Dubbo Rose Gardens : 61
+6. Kev O' Sullivan-Ademonia Bin Chooks : 56
+7. Dylan Hall-Eastern City Freebee : 51
+8. Catherine Etten-Christville Emus : 51
+9. Andrew Ballsut-Central Platypi : 49
+10. Jr. Latui-Bonesville Seagulls : 48
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Ed West-Westkellion Predators : 3
+2. Arnole Dellio-Off Contract Players : 3
+3. Trixie Allen-Dubbo Rose Gardens : 3
+4. Samuel South-North Melbourne Oranges : 3
+5. Daniel Tramion-Off Contract Players : 2
+6. Jr. Latui-Bonesville Seagulls : 2
+7. Keith Viana-Gera Comets : 2
+8. Frank Hann-Blankis Origami : 2
+9. Reimis Johnson-Blankis Origami : 2
+10. Robert Hu-Ademonia Bin Chooks : 2
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Huretio South-Ademonia Bin Chooks : 3150
+2. Keith Viana-Gera Comets : 3002
+3. Jameson Hu-Westkellion Predators : 2977
+4. Trixie Allen-Dubbo Rose Gardens : 2847
+5. Mike Harnett-Dubbo Rose Gardens : 2604
+6. Oliver Sunnerson-Dubbo Rose Gardens : 2512
+7. Adole Thurston-Broken Coast Apples : 2401
+8. Tom Elroii-Ademonia Bin Chooks : 2384
+9. Gwen Wrabel-Broken Coast Apples : 2375
+10. Samantha Humphrey-Dubbo Rose Gardens : 2306
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Alister Fresh-West Suburbs Bottlenecks : 296
+2. Freya Waterhouse-Blankis Origami : 291
+3. Dreka Robinson-Off Contract Players : 290
+4. Kris Fletch-Broken Coast Apples : 289
+5. Anthony Holland-Central Platypi : 287
+6. Ben Chappell-Gera Comets : 286
+7. Adrien Arcana-Westkellion Predators : 286
+8. Jackson Locke-Westkellion Predators : 286
+9. Phil Xylxed-West Suburbs Bottlenecks : 283
+10. Jimmy Worker-Broken Coast Apples : 282
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Kris Fletch-Broken Coast Apples : 2
+2. Connor Sullivan-Eastern City Freebee : 1
+3. Cameron Churchill-Off Contract Players : 1
+4. Earl Kerr-Craziomonia Town Aces : 1
+5. Bill Dean-Central Platypi : 1
+6. Isaak Warrant-Bonesville Seagulls : 1
+7. Catherine Taki-Dubbo Rose Gardens : 1
+8. Lizzy Claypool-Eastern City Freebee : 1
+9. Vanessa Viana-Craziomonia Town Aces : 1
+10. Luna Barter-Dubbo Rose Gardens : 1
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Carl Arcana-Central Platypi : 1323
+2. Al Johns-Blankis Origami : 1266
+3. Jr. Tamber-Dubbo Rose Gardens : 1167
+4. Zach Chricton-Westkellion Predators : 1037
+5. Gerald Suatoma-Ademonia Bin Chooks : 1012
+6. Alexander Valenta-Christville Emus : 997
+7. Will Fletcher-Christville Emus : 980
+8. Kamros Lindsell-Broken Coast Apples : 974
+9. Kris Fletch-Broken Coast Apples : 950
+10. Luna Barter-Dubbo Rose Gardens : 942
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Huretio South-Ademonia Bin Chooks : 53
+2. Niko Arnolds-Central Platypi : 52
+3. Jimmy Sullivan-Jerstion City Chargers : 51
+4. Trixie Allen-Dubbo Rose Gardens : 45
+5. Catherine Taki-Dubbo Rose Gardens : 43
+6. Phoebe Pearce-Blankis Origami : 42
+7. Jameson Fallon-Saltio City Berries : 42
+8. Dreka Robinson-Off Contract Players : 39
+9. Gwen Wrabel-Broken Coast Apples : 39
+10. Thomas Deon-Westkellion Predators : 36
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Gwen Wrabel-Broken Coast Apples : 8
+2. Catherine Taki-Dubbo Rose Gardens : 5
+3. Alexis Resfa-Saltio City Berries : 4
+4. Huretio South-Ademonia Bin Chooks : 4
+5. Adole Thurston-Broken Coast Apples : 4
+6. Trixie Allen-Dubbo Rose Gardens : 3
+7. Georgio Jace-Craziomonia Town Aces : 3
+8. Mitchell Fitler-Glebe Citizens : 3
+9. Mitch Belta-Saltio City Berries : 3
+10. Farrah Paul-Jerstion City Chargers : 3
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Bort Holland-Ademonia Bin Chooks : 35
+2. Jonathon Mariner-Gera Comets : 34
+3. Arnole Churchill-Gera Comets : 34
+4. Anthony Holland-Central Platypi : 33
+5. Kelin Beltio-Glebe Citizens : 32
+6. Mike Rice-Broken Coast Apples : 32
+7. Joshua Thompson-Jerstion City Chargers : 32
+8. Daniel Whare-Christville Emus : 31
+9. Nathan Pout-Gera Comets : 31
+10. Phil Johnson-Glebe Citizens : 30
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Georgio Jace-Craziomonia Town Aces : 14
+2. Arnole Churchill-Gera Comets : 14
+3. Raymond Morrison-Gera Comets : 13
+4. Adole Thurston-Broken Coast Apples : 13
+5. Mike Rice-Broken Coast Apples : 13
+6. Reimis Johnson-Blankis Origami : 12
+7. Anthony Holland-Central Platypi : 12
+8. Kurt Tajtu-Craziomonia Town Aces : 12
+9. Kate Crane-Dubbo Rose Gardens : 12
+10. Ben Chappell-Gera Comets : 11
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Frank Ujhazzy-Christville Emus : 10
+2. Mitchell Fitler-Glebe Citizens : 9
+3. Isabel Perry-Craziomonia Town Aces : 9
+4. Kyle Reio-Bonesville Seagulls : 8
+5. Alister Fresh-West Suburbs Bottlenecks : 8
+6. Al Johns-Blankis Origami : 8
+7. Addison Boyd-Jerstion City Chargers : 8
+8. Samuel South-North Melbourne Oranges : 8
+9. Adrien Arcana-Westkellion Predators : 8
+10. Ashleigh Morris-Christville Emus : 7
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Catherine Wood-West Suburbs Bottlenecks : 2
+2. Xavier Feltch-West Suburbs Bottlenecks : 1
+3. Jayden Vlandys-Bonesville Seagulls : 1
+4. Bort Holland-Ademonia Bin Chooks : 1
+5. Connor Montoya-Broken Coast Apples : 1
+6. Sammy de Faco-Blankis Origami : 1
+7. Ali Doomer-Eastern City Freebee : 1
+8. Frank Hann-Blankis Origami : 1
+9. Andrew Tramion-Ademonia Bin Chooks : 1
+10. Karl Jay-Gera Comets : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Will Fletcher-Christville Emus : 1
+2. Emily Drayersun-Westkellion Predators : 1
+3. Thomas Barry-West Suburbs Bottlenecks : 1
+4. Waylon Wott-Glebe Citizens : 1
+5. Mike Harnett-Dubbo Rose Gardens : 1
+6. Nico Potter-North Melbourne Oranges : 1
+7. Carl Arcana-Central Platypi : 1
+8. Junior Thompson-Dubbo Rose Gardens : 1
+9. Arnole Dellio-Off Contract Players : 1
+10. Benjamin Harris-Off Contract Players : 1
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Catherine Kriis-Broken Coast Apples : 3
+2. Keith McCallum-Glebe Citizens : 2
+3. Kyuss Miniota-Eastern City Freebee : 2
+4. Aaron Fletcher-Glebe Citizens : 2
+5. Andrew Ballsut-Central Platypi : 2
+6. Dylan Bade-Off Contract Players : 2
+7. Tom Sins-Craziomonia Town Aces : 2
+8. Kyrsta Hu-Jerstion City Chargers : 2
+9. Benjamin Kimberly-Blankis Origami : 2
+10. Jayden Jackington-Bonesville Seagulls : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Mitchell Fitler-Glebe Citizens : 240
+2. Jr. Tamber-Dubbo Rose Gardens : 186
+3. Cooper Hall-Westkellion Predators : 158
+4. Kimberly Hall-West Suburbs Bottlenecks : 141
+5. Nathan Pout-Gera Comets : 140
+6. Trixie Allen-Dubbo Rose Gardens : 133
+7. Kev O' Sullivan-Ademonia Bin Chooks : 132
+8. Jr. Latui-Bonesville Seagulls : 122
+9. Calum Manfredi-Broken Coast Apples : 121
+10. Farrah Paul-Jerstion City Chargers : 117
+11. Catherine Etten-Christville Emus : 115
+12. Andrew Ballsut-Central Platypi : 110
+13. Huretio South-Ademonia Bin Chooks : 108
+14. Dylan Hall-Eastern City Freebee : 106
+15. Gordon Tramion-North Melbourne Oranges : 94
+16. Andy Jackston-Blankis Origami : 82
+17. Jameson Hu-Westkellion Predators : 80
+18. Jackson Locke-Westkellion Predators : 78
+19. Dom Soa-Christville Emus : 78
+20. Georgio Jace-Craziomonia Town Aces : 76
+21. Damien O' Thomas-Blankis Origami : 73
+22. Dreka East-Eastern City Freebee : 72
+23. Kyuss Miniota-Eastern City Freebee : 71
+24. Keith Viana-Gera Comets : 70
+25. Samantha Humphrey-Dubbo Rose Gardens : 69
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Jr. Tamber-Dubbo Rose Gardens : 405
+2. Mitchell Fitler-Glebe Citizens : 327
+3. Jameson Hu-Westkellion Predators : 326
+4. Trixie Allen-Dubbo Rose Gardens : 323
+5. Georgio Hannington-Central Platypi : 312
+6. Tom Elroii-Ademonia Bin Chooks : 311
+7. Huretio South-Ademonia Bin Chooks : 295
+8. Dom Soa-Christville Emus : 290
+9. Lizzy Claypool-Eastern City Freebee : 285
+10. Jackson Locke-Westkellion Predators : 268
+11. Junior Fowler-Christville Emus : 265
+12. Jr. Latui-Bonesville Seagulls : 260
+13. Julian de Zerta-Gera Comets : 258
+14. Gwen Wrabel-Broken Coast Apples : 251
+15. Connor Sullivan-Eastern City Freebee : 246
+16. Samantha Humphrey-Dubbo Rose Gardens : 246
+17. Niko Arnolds-Central Platypi : 245
+18. Nicki Barter-Ademonia Bin Chooks : 241
+19. Sully Port-Westkellion Predators : 240
+20. Al Sins-Gera Comets : 237
+21. Adrien Arcana-Westkellion Predators : 236
+22. Al Johns-Blankis Origami : 234
+23. Cooper Hall-Westkellion Predators : 229
+24. Keith Viana-Gera Comets : 226
+25. Kate Crane-Dubbo Rose Gardens : 225
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Mike Harnett
+Craziomonia Town Aces Sign Will Fletcher
+Eastern City Freebee Sign Andre Indigo
+Monty Harrigan Donates To Controverisal Charity
+Zach Bad Saves Local Man From Drowning
+Opinion: Lindsay Armstrong Should Swap Teams
+Fan Poll: Gera Comets's Best Player
+Opinion: Kelin Beltio Should Swap Teams
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Janerio Soa
+Benjamin Kimberly At Risk Of An Early Release!
+Dreka Robinson Involved In Sexting Scandal
+Opinion: Anthony Holland Should Swap Teams
+Vanessa Jacklin Donates To Controverisal Charity
+John Stone Helps Sick Kids In Hospital
+Fan Poll: Eastern City Freebee's Best Player
+Opinion: Alistair Sunnerson Should Captain Wales
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Samantha Humphrey
+Ademonia Bin Chooks Sign Michael Jacklin
+North Melbourne Oranges Sign Kurt Folick
+Saltio City Berries Sign Frank MacDonald
+Castro Dempsey Donates To Controverisal Charity
+Coach Proposes New Finals System!
+Samantha de Marit's Retirment Rumours!
+Kurt Wye To Have Contract Extended!
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Players Fight At Local RSL!
+Nita Davis Involved In Sexting Scandal
+Kyle Tan Offered Pay Cut To Re-sign
+Rival Players Raise Awareness!
+Ash Fox's Eligibility Crisis!
+Sully Port Saves Local Man From Drowning
+Players Fight At Local RSL!
+Ashleigh Morris Helps Sick Kids In Hospital
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Cameron Churchill
+Glebe Citizens Sign Declan Sunnerson
+North Melbourne Oranges Sign Dreka Robinson
+Saltio City Berries Sign Cooper Manfredi
+Fan Poll: Eastern City Freebee's Best Player
+Fan Poll: Blankis Origami's Best Player
+Dylan Bade At Risk Of An Early Release!
+Adrien Rose's Retirment Rumours!
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Aaron Manfredi
+John Mitchell Donates To Controverisal Charity
+Nico Potter Offered Pay Cut To Re-sign
+Fan Poll: Bonesville Seagulls's Best Player
+Opinion: Jackson Locke Should Swap Teams
+Adole Thurston Involved In Sexting Scandal
+Huretio King's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Catherine Kriis Helps Sick Kids In Hospital
+Opinion: Catherine Allen Should Swap Teams
+Charles Davis Donates To Controverisal Charity
+Samuel South Saves Local Man From Drowning
+Player Unrest At Christville Emus
+Opinion: Walter Paul Should Swap Teams
+Phillip Spice Offered Pay Cut To Re-sign
+Dreka Wolf Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Adrien Doomer To Have Contract Extended!
+Players Fight At Local RSL!
+Calum Manfredi Offered Pay Cut To Re-sign
+Jarrod Lase's Eligibility Crisis!
+Fan Poll: West Suburbs Bottlenecks's Best Player
+Players Fight At Local RSL!
+Waylon Wott At Risk Of An Early Release!
+Dreka East's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Catherine Taki
+Blankis Origami Sign Dasi Claypool
+North Melbourne Oranges Sign Arnole Bade
+Broken Coast Apples Sign Calum Manfredi
+Opinion: Phil Xylxed Should Swap Teams
+Arnole Churchill Offered Pay Cut To Re-sign
+Coach Proposes New Finals System!
+Opinion: Simon Mitchell Should Swap Teams
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Jerstion City Chargers Sign Castro Dempsey
+Jack James Assaults RSL Bouncer
+Opinion: Kyuss Miniota Should Captain Turniostan
+Sr. Wood To Have Contract Extended!
+Connor Sullivan Assaults RSL Bouncer
+Opinion: Benjamin Harris Should Swap Teams
+Phil Vianna Helps Sick Kids In Hospital
+Joshua Thompson Donates To Controverisal Charity
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+West Suburbs Bottlenecks Sign Callum Tajtu
+Bonesville Seagulls Sign Jr. Latui
+Fan Poll: Saltio City Berries's Best Player
+Callum Romney Donates To Controverisal Charity
+Thomas Barry's Retirment Rumours!
+Karl Jay Helps Sick Kids In Hospital
+Amy Stewart's Retirment Rumours!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Monty Harrigan
+Player Unrest At Broken Coast Apples
+Phoebe Winger To Have Contract Extended!
+Coach Proposes New Finals System!
+Kamros Lindsell Involved In Sexting Scandal
+Dreka John Assaults RSL Bouncer
+Andre Indigo's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Glebe Citizens Sign Bill Lammi
+Craziomonia Town Aces Sign Michael Burt
+Opinion: Al Johns Should Captain Turniostan
+Opinion: Benjamin Bamert Should Swap Teams
+Zach Bad At Risk Of An Early Release!
+Coach Proposes New Finals System!
+Opinion: Bort Best Should Swap Teams
+Mike Tan's Eligibility Crisis!
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Phil Morris's Retirment Rumours!
+Gerald Suatoma's Eligibility Crisis!
+Coach Proposes New Finals System!
+Rival Players Raise Awareness!
+Chris Druckk Assaults RSL Bouncer
+Alexander Valenta Assaults RSL Bouncer
+Opinion: Julie Harnett Should Captain Turniostan
+Alexander Valenta's Retirment Rumours!
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Craziomonia Town Aces Sign Dom McKenzie
+West Suburbs Bottlenecks Sign Castro Pout
+Blankis Origami Sign Andrew Tramion
+Lizzy Claypool At Risk Of An Early Release!
+Zach Bad At Risk Of An Early Release!
+Barry Bergman Donates To Controverisal Charity
+Coach Proposes New Finals System!
+Opinion: Valian Chricton Should Swap Teams
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+Blankis Origami Sign Jeni Barter
+Bonesville Seagulls Sign Samantha Sua
+Phoebe Pearce's Retirment Rumours!
+Player Unrest At Central Platypi
+Coach Proposes New Finals System!
+Kev O' Sullivan Assaults RSL Bouncer
+Players Fight At Local RSL!
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Xavier Feltch
+Central Platypi Sign Bill Dean
+Players Fight At Local RSL!
+Kimberly Yahtzel Assaults RSL Bouncer
+Lindsey Lynn's Retirment Rumours!
+Pete Million Donates To Controverisal Charity
+Opinion: Andre Indigo Should Swap Teams
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+West Suburbs Bottlenecks Sign Niko Winger
+Glebe Citizens Sign Keith McCallum
+Player Unrest At Central Platypi
+Players Fight At Local RSL!
+Connor Sullivan Offered Pay Cut To Re-sign
+Opinion: Kris Fletch Should Swap Teams
+Opinion: Imm Domino Should Swap Teams
+Waylon Pimmers Donates To Controverisal Charity
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Blankis Origami Sign Alexander Parkson
+Eastern City Freebee Sign Alexander Parkson
+Junior Thompson Assaults RSL Bouncer
+Opinion: Kristian Elroii Should Swap Teams
+Amy Stewart Helps Sick Kids In Hospital
+Fan Poll: Westkellion Predators's Best Player
+Freya Waterhouse Donates To Controverisal Charity
+Nathan Pout Assaults RSL Bouncer
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+Central Platypi Sign Will O' Thomas
+Opinion: Ali Questa Should Swap Teams
+Sammy de Faco At Risk Of An Early Release!
+Opinion: Arnole Bade Should Captain United States
+Bill Dean Offered Pay Cut To Re-sign
+Kimberly Hall At Risk Of An Early Release!
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+Gera Comets Sign Frankie Boyd
+Christville Emus Sign Kristian Zari
+Rival Players Raise Awareness!
+Sammy de Faco At Risk Of An Early Release!
+Barry Claypool Helps Sick Kids In Hospital
+Zach Emerson To Have Contract Extended!
+Catherine Wood Donates To Controverisal Charity
+--------------------------------
+
+
+Round 22 News Stories
+--------------------------------
+Bonesville Seagulls Sign Mike Folick
+Blankis Origami Sign Phoebe Pearce
+Zach Bad's Retirment Rumours!
+Sammy de Faco's Large-Scale Gambling Problem
+Coach Proposes New Finals System!
+Tariq Wye's Large-Scale Gambling Problem
+Fan Poll: Christville Emus's Best Player
+--------------------------------
+
+
+Round 23 News Stories
+--------------------------------
+Dubbo Rose Gardens Sign Sully Port
+Eastern City Freebee Sign Nita Davis
+Bonesville Seagulls Sign Adam Hu
+Adrien Doomer Saves Local Man From Drowning
+Junior Fowler Saves Local Man From Drowning
+Mike Tan Donates To Controverisal Charity
+Coach Proposes New Finals System!
+Jr. Latui's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 24 News Stories
+--------------------------------
+Christville Emus Sign Sammy Sins
+Jerstion City Chargers Sign Nicholas Croker
+Coach Proposes New Finals System!
+Phoebe Winger Saves Local Man From Drowning
+Gary Ngu To Have Contract Extended!
+Ashleigh Morris Donates To Controverisal Charity
+Trixie Allen's Retirment Rumours!
+Opinion: Junior Thompson Should Captain Canada
+--------------------------------
+
+
+Round 25 News Stories
+--------------------------------
+Saltio City Berries Sign Scott Potter
+North Melbourne Oranges Sign Dominic Vianna
+Broken Coast Apples Sign Ben Hands
+Craziomonia Town Aces Sign Sammy Sins
+Keith Xylxed's Eligibility Crisis!
+Benjamin Bamert Helps Sick Kids In Hospital
+Opinion: Arnole Bade Should Captain United States
+Lizzy Reio's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 26 News Stories
+--------------------------------
+Bonesville Seagulls Sign Jayden Jackington
+Dubbo Rose Gardens Wins Minor Premiership!
+Rival Players Raise Awareness!
+Reimis Johnson At Risk Of An Early Release!
+Xavier Elroii Helps Sick Kids In Hospital
+Vanessa Viana's Retirment Rumours!
+Josh Winger Assaults RSL Bouncer
+Frank MacDonald Saves Local Man From Drowning
+--------------------------------
+
+
+Round 27 News Stories
+--------------------------------
+Broken Coast Apples Sign Jeremy Hughes
+Opinion: Frankie Boyd Should Captain United States
+Alexis Drayersun's Retirment Rumours!
+Players Fight At Local RSL!
+Emily Drayersun's Retirment Rumours!
+Valian Chricton Involved In Sexting Scandal
+Jeremy Kerr Saves Local Man From Drowning
+Lorenzo Kat's Eligibility Crisis!
+--------------------------------
+
+
+Round 28 News Stories
+--------------------------------
+Broken Coast Apples Sign Cooper Yacoub
+North Melbourne Oranges Sign Samuel South
+Glebe Citizens Sign Kelin Beltio
+Opinion: Peter de Flatio Should Swap Teams
+Pete Million's Large-Scale Gambling Problem
+Opinion: Keith McCallum Should Swap Teams
+John Stone's Retirment Rumours!
+Phil Vianna At Risk Of An Early Release!
+--------------------------------
+
+
+Round 29 News Stories
+--------------------------------
+Westkellion Predators Sign Monty Meaney
+Gera Comets Sign Brenton de Marit
+Glebe Citizens Sign Mike Xylxed
+Asher Belta At Risk Of An Early Release!
+Michael Jacklin Offered Pay Cut To Re-sign
+Andy Jackston To Have Contract Extended!
+Nicholas Croker Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 30 News Stories
+--------------------------------
+Jerstion City Chargers Sign Joshua Thompson
+Dubbo Rose Gardens Wins Premiership!
+Opinion: Vanessa Viana Should Captain Samoa
+Fan Poll: Central Platypi's Best Player
+Phoebe Pearce Helps Sick Kids In Hospital
+Opinion: Mike Folick Should Swap Teams
+Players Fight At Local RSL!
+--------------------------------
+

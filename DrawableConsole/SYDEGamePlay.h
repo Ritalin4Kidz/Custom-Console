@@ -24,12 +24,17 @@ using namespace std;
 using namespace Gdiplus;
 class SYDEGamePlay {
 public:
+
+	static void setConfig(Settings _Config) { config = _Config; }
+	static Settings getConfig() { return config; }
 	/// <summary>
 	/// Initialize window to the size windows class created with
 	/// </summary>
 	/// <param name="hOut"></param>
 	/// <param name="window"></param>
 	static void initialize_window(const HANDLE hOut, ConsoleWindow& window);
+
+	static void initialize_window(const HANDLE hOut, ConsoleWindow& window,	string& outputs);
 	/// <summary>
 	/// Add FPS counter to main play function call
 	/// </summary>
@@ -71,6 +76,9 @@ public:
 	/// <param name="artVars"></param>
 	static void activate_bySplashscreen(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, Artwork artVars);
 
+
+	static void customSplashscreen(ConsoleWindow& window, int windowWidth, int windowHeight, CustomAsset splashscreen);
+
 	static void hidden_splashsceen_001(LPCWSTR chimePath, COORD start, const HANDLE hOut, ConsoleWindow& window, int windowWidth, int windowHeight, AssetsClass astVars);
 	/// <summary>
 	/// reset the window to initialize settings, useful if window starts to mess up
@@ -107,6 +115,13 @@ public:
 	/// <returns></returns>
 	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 
+	/// <summary>
+	/// Set the position of the FPS display
+	/// </summary>
+	/// <param name="position"></param>
+	static void set_FPS_Position(Vector2 position) {
+		SYDEFPS::setPos(position);
+	}
 
 	/// <summary>
 	/// Core game loop for running SYDEWindow games

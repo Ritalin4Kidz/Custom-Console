@@ -1,0 +1,199 @@
+----------LINE-UPS----------
+Home Team: Anywheston Jellyfish
+1: Mitchell Mitt
+2: Velento Mallett
+3: Tom Hannington
+4: Sr. Mitt
+5: Jared Stimson
+6: Luke Hughes
+7: Ryan Winger
+8: Mitchell Hughes
+9: Chase Hing
+10: Lindsay Potter
+11: Pete Britt
+12: Lois Cotric
+13: Ash Winger
+14: Carl Cooper
+15: Jay Vianna
+16: Amy Silwedel
+17: Jim Xander
+Away Team: North Head Astros
+1: Arnole Port
+2: Jordan Stanley
+3: Jordan Vianna
+4: Tom O' Donnell
+5: Bart Kylze
+6: Kevin South
+7: Dreka Croker
+8: Kyle Harnett
+9: Thomas Holland
+10: Amy Vlandys
+11: Dominic Armstrong
+12: Brendan Hann
+13: Dreka Tedesco
+14: Diana Kerr
+15: Alister Chappell
+16: Karl Tuo
+17: Lois Walker
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - Anywheston Jellyfish: 0 v North Head Astros: 0
+03:31 - Sr. Mitt - Knock On
+05:20 - Jordan Stanley - 6th Tackle Changeover
+05:33 - Kevin South - Penalty
+07:04 - Chase Hing - 6th Tackle Changeover
+07:16 - Kevin South - Forward Pass
+08:56 - Ryan Winger - 6th Tackle Changeover
+10:03 - Anywheston Jellyfish Interchanged Players Lois Cotric & Jim Xander
+11:32 - Tom O' Donnell - Over The Sideline
+11:54 - Chase Hing - Over The Sideline
+11:54 - North Head Astros Interchanged Players Dreka Croker & Diana Kerr
+12:05 - Kevin South - Knock On
+13:48 - Velento Mallett - 6th Tackle Changeover
+16:24 - Chase Hing - 6th Tackle Changeover
+17:31 - Kevin South - Over The Sideline
+18:09 - Velento Mallett - Incorrect Play The Ball
+18:09 - Velento Mallett - Penalty
+19:29 - Kyle Harnett - 6th Tackle Changeover
+20:43 - North Head Astros Interchanged Players Tom O' Donnell & Alister Chappell
+21:23 - North Head Astros Interchanged Players Kyle Harnett & Dreka Croker
+21:53 - Diana Kerr - 6th Tackle Changeover
+24:15 - Brendan Hann - Over The Sideline
+25:43 - Mitchell Mitt - Intercepted Off A Arnole Port Pass
+26:25 - Jim Xander - TRY - Anywheston Jellyfish: 4 v North Head Astros: 0
+27:25 - Mitchell Mitt - GOAL - Anywheston Jellyfish: 6 v North Head Astros: 0
+28:55 - Jim Xander - Over The Sideline
+29:12 - Amy Vlandys - Knock On
+30:03 - Thomas Holland - Penalty
+30:15 - Anywheston Jellyfish Interchanged Players Ryan Winger & Carl Cooper
+30:42 - Anywheston Jellyfish Interchanged Players Lindsay Potter & Amy Silwedel
+30:59 - Dreka Croker - Intercepted Off A Chase Hing Pass
+31:11 - Thomas Holland - Over The Sideline
+31:46 - Velento Mallett - Knock On
+32:14 - Kevin South - Forward Pass
+33:06 - Alister Chappell - Intercepted Off A Mitchell Hughes Pass
+33:38 - Dreka Tedesco - Knock On
+34:07 - Luke Hughes - Knock On
+34:20 - North Head Astros Interchanged Players Amy Vlandys & Tom O' Donnell
+34:33 - Jordan Stanley - Over The Sideline
+35:02 - Velento Mallett - Knock On
+36:45 - Diana Kerr - 6th Tackle Changeover
+38:16 - Velento Mallett - Intercepted Off A Dreka Tedesco Pass
+39:40 - Anywheston Jellyfish Interchanged Players Velento Mallett & Jay Vianna
+39:55 - Mitchell Mitt - Intercepted Off A Arnole Port Pass
+40:00 - HALF TIME - Anywheston Jellyfish: 6 v North Head Astros: 0
+41:29 - North Head Astros Interchanged Players Brendan Hann & Karl Tuo
+41:42 - North Head Astros Interchanged Players Diana Kerr & Lois Walker
+42:37 - Amy Silwedel - Knock On
+42:52 - Jared Stimson - Penalty
+44:17 - Dominic Armstrong - 6th Tackle Changeover
+46:39 - Dominic Armstrong - Over The Sideline
+47:19 - Mitchell Mitt - Knock On
+49:33 - Thomas Holland - Penalty
+50:15 - Alister Chappell - Intercepted Off A Sr. Mitt Pass
+50:15 - Anywheston Jellyfish Interchanged Players Amy Silwedel & Ryan Winger
+50:30 - Anywheston Jellyfish Interchanged Players Luke Hughes & Lindsay Potter
+50:30 - North Head Astros Interchanged Players Kevin South & Amy Vlandys
+51:20 - Dominic Armstrong - TRY - Anywheston Jellyfish: 6 v North Head Astros: 4
+52:20 - Amy Vlandys - GOAL - Anywheston Jellyfish: 6 v North Head Astros: 6
+53:44 - Dominic Armstrong - Knock On
+54:01 - Pete Britt - FIELD GOAL - Anywheston Jellyfish: 7 v North Head Astros: 6
+55:20 - Tom Hannington - Stripped Ball Off Tom O' Donnell
+56:01 - Mitchell Hughes - Forward Pass
+56:30 - Tom Hannington - Stripped Ball Off Jordan Stanley
+56:41 - Ash Winger - Knock On
+58:45 - Jay Vianna - Over The Sideline
+60:04 - Alister Chappell - FIELD GOAL - Anywheston Jellyfish: 7 v North Head Astros: 7
+61:34 - Anywheston Jellyfish Interchanged Players Jay Vianna & Amy Silwedel
+62:52 - Alister Chappell - Penalty
+63:10 - Tom Hannington - Knock On
+63:56 - Alister Chappell - Injury - HIA
+63:56 - Jared Stimson - SEND OFF
+63:56 - Jared Stimson - Penalty
+63:56 - North Head Astros Interchanged Players Alister Chappell & Kyle Harnett
+65:31 - Karl Tuo - Forward Pass
+66:19 - Jordan Vianna - Ruck Infringement
+70:28 - Ash Winger - Intercepted Off A Karl Tuo Pass
+71:01 - Tom Hannington - FIELD GOAL - Anywheston Jellyfish: 8 v North Head Astros: 7
+71:48 - Karl Tuo - Ruck Infringement
+72:33 - Dreka Tedesco - Ruck Infringement
+76:14 - Pete Britt - Knock On
+78:07 - Lois Walker - 6th Tackle Changeover
+80:00 - FULL TIME - Anywheston Jellyfish: 8 v North Head Astros: 7
+                             
+--------PLAYER STATS--------
+Home Team: Anywheston Jellyfish
+1: Mitchell Mitt |Time Played: 80:08 |Metres: 48 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 20
+2: Amy Silwedel |Time Played: 38:07 |Metres: 24 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+3: Tom Hannington |Time Played: 80:08 |Metres: 96 |Tackles: 12 |Kicks: 1 |Kick Metres: 24 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 37
+4: Sr. Mitt |Time Played: 80:08 |Metres: 36 |Tackles: 10 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+5: Jared Stimson |Time Played: 63:56 |Metres: 68 |Tackles: 11 |Kicks: 2 |Kick Metres: 45 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+6: Lindsay Potter |Time Played: 60:20 |Metres: 14 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+7: Carl Cooper |Time Played: 49:53 |Metres: 44 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+8: Mitchell Hughes |Time Played: 80:08 |Metres: 18 |Tackles: 10 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+9: Chase Hing |Time Played: 80:08 |Metres: 18 |Tackles: 10 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+10: Ryan Winger |Time Played: 60:08 |Metres: 18 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Pete Britt |Time Played: 80:08 |Metres: 43 |Tackles: 9 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 21
+12: Jim Xander |Time Played: 70:05 |Metres: 47 |Tackles: 14 |Kicks: 2 |Kick Metres: 48 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 31
+13: Ash Winger |Time Played: 80:08 |Metres: 17 |Tackles: 9 |Kicks: 2 |Kick Metres: 29 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+14: Jay Vianna |Time Played: 21:54 |Metres: 9 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+15: Velento Mallett |Time Played: 39:40 |Metres: 28 |Tackles: 6 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+16: Luke Hughes |Time Played: 50:30 |Metres: 30 |Tackles: 10 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+17: Lois Cotric |Time Played: 10:03 |Metres: 2 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+Highlights:                 
+Most Tackles: Jim Xander: 14
+Most Points: Jim Xander: 4
+Most Metres: Tom Hannington: 96
+Most Errors: Velento Mallett: 2
+                             
+Away Team: North Head Astros
+1: Arnole Port |Time Played: 80:08 |Metres: 9 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+2: Jordan Stanley |Time Played: 80:08 |Metres: 17 |Tackles: 11 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+3: Jordan Vianna |Time Played: 80:08 |Metres: 12 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+4: Kyle Harnett |Time Played: 37:35 |Metres: 29 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+5: Bart Kylze |Time Played: 80:08 |Metres: 17 |Tackles: 10 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+6: Amy Vlandys |Time Played: 63:58 |Metres: 8 |Tackles: 9 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 13
+7: Lois Walker |Time Played: 38:26 |Metres: 43 |Tackles: 12 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 46
+8: Dreka Croker |Time Played: 70:39 |Metres: 68 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 47
+9: Thomas Holland |Time Played: 80:08 |Metres: 12 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+10: Tom O' Donnell |Time Played: 66:31 |Metres: 89 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+11: Dominic Armstrong |Time Played: 80:08 |Metres: 116 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 26
+12: Karl Tuo |Time Played: 38:39 |Metres: 5 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+13: Dreka Tedesco |Time Played: 80:08 |Metres: 15 |Tackles: 17 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+14: Alister Chappell |Time Played: 43:13 |Metres: 75 |Tackles: 7 |Kicks: 1 |Kick Metres: 36 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 30
+15: Kevin South |Time Played: 50:30 |Metres: 15 |Tackles: 13 |Kicks: 2 |Kick Metres: 82 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+16: Brendan Hann |Time Played: 41:29 |Metres: 10 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+17: Diana Kerr |Time Played: 29:48 |Metres: 7 |Tackles: 1 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+Highlights:                 
+Most Tackles: Dreka Tedesco: 17
+Most Points: Dominic Armstrong: 4
+Most Metres: Dominic Armstrong: 116
+Most Errors: Kevin South: 4
+                             
+---------TEAM STATS---------
+Home Team: Anywheston Jellyfish
+Total Metres: 560
+Total Kick Metres: 329
+Total Errors: 13
+Total Tackles: 146
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 2
+Interchanges Used: 7/8
+                             
+Away Team: North Head Astros
+Total Metres: 547
+Total Kick Metres: 257
+Total Errors: 13
+Total Tackles: 165
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 1
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Lois Walker
+2nd (2 Points) -- Dreka Croker
+3rd (1 Point) -- Jim Xander
+----------------------------

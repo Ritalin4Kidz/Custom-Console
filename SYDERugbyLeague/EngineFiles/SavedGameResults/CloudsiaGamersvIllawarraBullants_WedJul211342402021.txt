@@ -1,0 +1,198 @@
+----------LINE-UPS----------
+Home Team: Cloudsia Gamers
+1: Bam Questa
+2: Finley Fresh
+3: Lucy Stimson
+4: Terry ti Qeras
+5: Blaine az Grew
+6: Simon Jay az Freastiy
+7: Gerald Armstrong
+8: Alan Poamento
+9: Evan az Lemoa
+10: Tariq Allsopp
+11: Bert o. Kla
+12: Bam Bot
+13: Barry Caddington
+14: Louis od Unina
+15: Ashton az Lemoa
+16: Kris Oboitays
+17: Cliffe Toa
+Away Team: Illawarra Bullants
+1: Jim Davis
+2: Ben Vondera
+3: Kevin en Vreas
+4: Ezra Pout
+5: Terrance N. Roberts
+6: Phillip o. Vio
+7: Isaac de Flatio
+8: Jarrod Jacklin
+9: Gordon U. Valenta
+10: Amy Jay
+11: Yuni vo Jarta
+12: Ourti Cook
+13: Alexis Armstrong
+14: Quade F. Prism
+15: Sr. Curta
+16: James Johnson
+17: Yumi Nasert
+----------GAME-STAT---------
+Weather: Sunny
+----------------------------
+00:00 - KICK OFF - Cloudsia Gamers: 0 v Illawarra Bullants: 0
+03:33 - Ben Vondera - Ruck Infringement
+04:06 - Kevin en Vreas - Intercepted Off A Gerald Armstrong Pass
+07:15 - Jarrod Jacklin - Knock On
+08:42 - Isaac de Flatio - Stripped Ball Off Lucy Stimson
+10:10 - Simon Jay az Freastiy - Penalty
+10:10 - Jarrod Jacklin - PENALTY GOAL MISSED
+12:42 - Yuni vo Jarta - 6th Tackle Changeover
+13:00 - Terrance N. Roberts - Intercepted Off A Gerald Armstrong Pass
+13:45 - Bert o. Kla - Penalty
+13:45 - Jarrod Jacklin - PENALTY GOAL MISSED
+16:10 - Yuni vo Jarta - 6th Tackle Changeover
+16:24 - Cloudsia Gamers Interchanged Players Finley Fresh & Ashton az Lemoa
+16:24 - Illawarra Bullants Interchanged Players Ben Vondera & Yumi Nasert
+16:37 - Isaac de Flatio - Intercepted Off A Blaine az Grew Pass
+17:18 - Jim Davis - Over The Sideline
+17:31 - Terrance N. Roberts - Intercepted Off A Gerald Armstrong Pass
+18:27 - Jim Davis - Over The Sideline
+20:33 - Gerald Armstrong - Stripped Ball Off Jim Davis
+20:47 - Phillip o. Vio - Ruck Infringement
+21:02 - Cloudsia Gamers Interchanged Players Ashton az Lemoa & Louis od Unina
+21:02 - Illawarra Bullants Interchanged Players Ourti Cook & Ben Vondera
+21:43 - Cloudsia Gamers Interchanged Players Alan Poamento & Kris Oboitays
+21:57 - 20m Restart - Illawarra Bullants
+25:08 - Kris Oboitays - 6th Tackle Changeover
+25:24 - Illawarra Bullants Interchanged Players Terrance N. Roberts & Quade F. Prism
+26:28 - Amy Jay - Penalty
+27:02 - Alexis Armstrong - Ruck Infringement
+28:30 - Tariq Allsopp - 6th Tackle Changeover
+29:47 - Louis od Unina - Ruck Infringement
+30:04 - Cloudsia Gamers Interchanged Players Barry Caddington & Cliffe Toa
+30:04 - Illawarra Bullants Interchanged Players Yuni vo Jarta & Sr. Curta
+31:43 - Cloudsia Gamers Interchanged Players Bam Bot & Ashton az Lemoa
+34:39 - Lucy Stimson - 6th Tackle Changeover
+34:52 - Ezra Pout - Over The Sideline
+35:21 - Illawarra Bullants Interchanged Players Ben Vondera & Terrance N. Roberts
+36:27 - Bam Questa - 6th Tackle Changeover
+36:58 - Gordon U. Valenta - Knock On
+38:39 - ------VIDEO REFEREE------
+38:39 - Bert o. Kla - TRY - Cloudsia Gamers: 4 v Illawarra Bullants: 0
+39:39 - Lucy Stimson - GOAL - Cloudsia Gamers: 6 v Illawarra Bullants: 0
+40:00 - HALF TIME - Cloudsia Gamers: 6 v Illawarra Bullants: 0
+40:43 - Illawarra Bullants Interchanged Players Terrance N. Roberts & Ben Vondera
+42:51 - Simon Jay az Freastiy - 6th Tackle Changeover
+43:39 - Evan az Lemoa - Ruck Infringement
+45:05 - Ben Vondera - 6th Tackle Changeover
+45:21 - Illawarra Bullants Interchanged Players Isaac de Flatio & James Johnson
+45:35 - Gordon U. Valenta - Penalty
+46:32 - Ben Vondera - Intercepted Off A Bam Questa Pass
+47:48 - Blaine az Grew - Knock On
+49:33 - Phillip o. Vio - 6th Tackle Changeover
+50:01 - Cloudsia Gamers Interchanged Players Blaine az Grew & Bam Bot
+50:01 - Illawarra Bullants Interchanged Players Jim Davis & Isaac de Flatio
+52:10 - Yumi Nasert - 6th Tackle Changeover
+52:34 - Ashton az Lemoa - Knock On
+54:03 - Jarrod Jacklin - TRY - Cloudsia Gamers: 6 v Illawarra Bullants: 4
+55:03 - Jarrod Jacklin - GOAL - Cloudsia Gamers: 6 v Illawarra Bullants: 6
+56:51 - Kevin en Vreas - Forward Pass
+57:05 - Terry ti Qeras - FIELD GOAL - Cloudsia Gamers: 7 v Illawarra Bullants: 6
+57:53 - Jarrod Jacklin - Penalty
+61:23 - Ben Vondera - Intercepted Off A Terry ti Qeras Pass
+61:23 - Cloudsia Gamers Interchanged Players Simon Jay az Freastiy & Blaine az Grew
+61:38 - ------VIDEO REFEREE------
+61:38 - Alexis Armstrong - NO TRY - Goal Line Dropout
+62:47 - Quade F. Prism - FIELD GOAL MISSED
+62:47 - 20m Restart - Cloudsia Gamers
+65:07 - Gordon U. Valenta - FIELD GOAL MISSED
+65:07 - 20m Restart - Cloudsia Gamers
+69:41 - Blaine az Grew - Over The Sideline
+69:54 - Evan az Lemoa - Penalty
+69:54 - Jarrod Jacklin - PENALTY GOAL - Cloudsia Gamers: 7 v Illawarra Bullants: 8
+72:17 - Isaac de Flatio - Intercepted Off A Ashton az Lemoa Pass
+73:36 - Isaac de Flatio - 6th Tackle Changeover
+74:20 - Ashton az Lemoa - Over The Sideline
+74:33 - Blaine az Grew - Penalty
+74:33 - Jarrod Jacklin - PENALTY GOAL MISSED
+77:04 - Alexis Armstrong - 6th Tackle Changeover
+77:21 - Yumi Nasert - Intercepted Off A Bam Questa Pass
+78:09 - ------VIDEO REFEREE------
+78:09 - Ben Vondera - NO TRY - Held Up
+78:38 - Gordon U. Valenta - 6th Tackle Changeover
+80:00 - FULL TIME - Cloudsia Gamers: 7 v Illawarra Bullants: 8
+                             
+--------PLAYER STATS--------
+Home Team: Cloudsia Gamers
+1: Bam Questa |Time Played: 80:13 |Metres: 41 |Tackles: 12 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 49
+2: Louis od Unina |Time Played: 59:11 |Metres: 14 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+3: Lucy Stimson |Time Played: 80:13 |Metres: 17 |Tackles: 12 |Kicks: 3 |Kick Metres: 87 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 51
+4: Terry ti Qeras |Time Played: 80:13 |Metres: 25 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 35
+5: Bam Bot |Time Played: 61:55 |Metres: 4 |Tackles: 9 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+6: Blaine az Grew |Time Played: 68:51 |Metres: 20 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+7: Gerald Armstrong |Time Played: 80:13 |Metres: 31 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 38
+8: Kris Oboitays |Time Played: 58:30 |Metres: 24 |Tackles: 11 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 34
+9: Evan az Lemoa |Time Played: 80:13 |Metres: 16 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+10: Tariq Allsopp |Time Played: 80:13 |Metres: 83 |Tackles: 8 |Kicks: 2 |Kick Metres: 43 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 59
+11: Bert o. Kla |Time Played: 80:13 |Metres: 57 |Tackles: 12 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 26
+12: Ashton az Lemoa |Time Played: 53:08 |Metres: 20 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+13: Cliffe Toa |Time Played: 50:09 |Metres: 53 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+14: Simon Jay az Freastiy |Time Played: 61:23 |Metres: 57 |Tackles: 7 |Kicks: 1 |Kick Metres: 56 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+15: Finley Fresh |Time Played: 16:24 |Metres: 2 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+16: Alan Poamento |Time Played: 21:43 |Metres: 11 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+17: Barry Caddington |Time Played: 30:04 |Metres: 53 |Tackles: 7 |Kicks: 1 |Kick Metres: 55 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 48
+Highlights:                 
+Most Tackles: Terry ti Qeras: 14
+Most Points: Bert o. Kla: 4
+Most Metres: Tariq Allsopp: 83
+Most Errors: Blaine az Grew: 2
+                             
+Away Team: Illawarra Bullants
+1: Isaac de Flatio |Time Played: 75:33 |Metres: 72 |Tackles: 14 |Kicks: 4 |Kick Metres: 156 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 104
+2: Yumi Nasert |Time Played: 63:49 |Metres: 81 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+3: Kevin en Vreas |Time Played: 80:13 |Metres: 67 |Tackles: 13 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+4: Ezra Pout |Time Played: 80:13 |Metres: 54 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+5: Quade F. Prism |Time Played: 54:49 |Metres: 19 |Tackles: 4 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+6: Phillip o. Vio |Time Played: 80:13 |Metres: 33 |Tackles: 9 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+7: James Johnson |Time Played: 34:52 |Metres: 30 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+8: Jarrod Jacklin |Time Played: 80:13 |Metres: 85 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 2 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 22
+9: Gordon U. Valenta |Time Played: 80:13 |Metres: 27 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+10: Amy Jay |Time Played: 80:13 |Metres: 141 |Tackles: 13 |Kicks: 2 |Kick Metres: 56 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 47
+11: Sr. Curta |Time Played: 50:09 |Metres: 10 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+12: Ben Vondera |Time Played: 70:13 |Metres: 43 |Tackles: 6 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+13: Alexis Armstrong |Time Played: 80:13 |Metres: 29 |Tackles: 8 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+14: Terrance N. Roberts |Time Played: 30:46 |Metres: 8 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+15: Yuni vo Jarta |Time Played: 30:04 |Metres: 14 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+16: Jim Davis |Time Played: 50:01 |Metres: 22 |Tackles: 9 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+17: Ourti Cook |Time Played: 21:02 |Metres: 8 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+Highlights:                 
+Most Tackles: Isaac de Flatio: 14
+Most Points: Jarrod Jacklin: 8
+Most Metres: Amy Jay: 141
+Most Errors: Jim Davis: 2
+                             
+---------TEAM STATS---------
+Home Team: Cloudsia Gamers
+Total Metres: 528
+Total Kick Metres: 357
+Total Errors: 4
+Total Tackles: 159
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 1
+Interchanges Used: 7/8
+                             
+Away Team: Illawarra Bullants
+Total Metres: 743
+Total Kick Metres: 393
+Total Errors: 6
+Total Tackles: 135
+Total Tries: 1
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Isaac de Flatio
+2nd (2 Points) -- Tariq Allsopp
+3rd (1 Point) -- Lucy Stimson
+----------------------------

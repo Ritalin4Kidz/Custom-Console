@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <vector>
+#include <deque>
 #include "ConsoleWindow.h"
 #include "SRLPlayer.h"
 
@@ -11,20 +11,22 @@ class SRLTeam {
 public:
 	SRLTeam();
 	SRLTeam(string name) {m_Name= name;}
-	SRLTeam(vector<SRLPlayer> a_TeamList, string name);
+	SRLTeam(deque<SRLPlayer> a_TeamList, string name);
 	virtual ~SRLTeam();
 
-	string Interchange();
+	string Interchange(string& summaryPlay);
 	/// <summary>
 	/// Don't use for regular interchange as it injures the player
 	/// </summary>
 	/// <param name="playerName"></param>
 	/// <returns></returns>
-	string SafeInterchange(string playerName);
+	string SafeInterchange(string playerName, string& summaryPlay);
 
 	void generateJerseys();
 	
 	int getJerseryType() { return jerseryTypeInt; }
+
+	int getLogoType() { return logoTypeInt; }
 
 	ColourClass getPrimary() { return primaryColour; }
 	ColourClass getSecondary() { return secondaryColour; }
@@ -34,7 +36,9 @@ public:
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
 
 	void clearTeam();
-
+	void setJersey(ColourClass p, ColourClass s, ColourClass b, int JerseyType) { primaryColour = p; secondaryColour = s; badgeColour = b; jerseryTypeInt = JerseyType; }
+	void setLogoCustom(string _Logo) { m_CustomLogo = _Logo; }
+	string getLogoCustom() { return m_CustomLogo; }
 	string getName() { return m_Name; }
 	void setName(string name) { m_Name = name; }
 	void loadTeam(string path);
@@ -56,6 +60,13 @@ public:
 	void addPlayerStrip(string playerName);
 	void addPlayerStamina(string playerName, int Stamina);
 
+
+	void addPlayerAtk(string playerName,int val);
+	void addPlayerDef(string playerName,int val);
+	void addPlayerSpd(string playerName,int val);
+	void addPlayerHdl(string playerName,int val);
+	void addPlayerKck(string playerName,int val);
+
 	void setPlayerInjured(string playerName);
 	void setPlayerSent(string playerName, bool sendOff);
 
@@ -65,13 +76,17 @@ public:
 	void addPlayerRuckInfringment(string playerName);
 	void addPlayerNoTry(string playerName);
 
-	vector<string> addTimeOnField(int time);
+	deque<string> addTimeOnField(int time);
+
+	void addBestPlayers(deque<string> &vec, int amount);
+
+	deque<SRLPlayer> addBestAttackers(deque<string>& vec, int amount);
 
 	SRLPlayer getGoalKicker();
 	SRLPlayer getGoalKickerNoLimit();
 	int getInterchanges() { return m_Interchanges; }
 
-	vector<SRLPlayer> getPlayers() { return m_TeamList; }
+	deque<SRLPlayer> getPlayers() { return m_TeamList; }
 
 	void setPlayer(int index, SRLPlayer p) { m_TeamList[index] = p; }
 
@@ -116,12 +131,15 @@ private:
 	string m_Name;
 
 	int jerseryTypeInt;
+	int logoTypeInt;
 
 	ColourClass primaryColour = WHITE;
 	ColourClass secondaryColour = WHITE;
 	ColourClass badgeColour = WHITE;
 
-	vector<SRLPlayer> m_TeamList = vector<SRLPlayer>();
+	string m_CustomLogo = "";
+
+	deque<SRLPlayer> m_TeamList = deque<SRLPlayer>();
 	int m_Interchanges = 0;
 
 	int averageAttack = 0;

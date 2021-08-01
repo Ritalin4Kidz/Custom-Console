@@ -1,0 +1,191 @@
+----------LINE-UPS----------
+Home Team: Bendigo Sharks
+1: Mitch Whare
+2: Turni Deon
+3: Kurt Lewis
+4: Amy Barry
+5: Jayden Watne
+6: Jenny Indigo
+7: Julian Lynn
+8: Georgio Harnett
+9: Will Papiai
+10: Gerry Atlas
+11: Robert Kerr
+12: Jr. Penatoras
+13: Jackson Chricton
+14: Robert Imposia
+15: Kimberly Harris
+16: Nico Locke
+17: Lindsay Vlandys
+Away Team: Westen Suburbs Lions
+1: Norman Dean
+2: Raymond Kylze
+3: Ali Brekston
+4: Andy Sunnerson
+5: Isaak Claypool
+6: Paul Flanagan
+7: Mark Flower
+8: Hubert Kerr
+9: Trixie de Bactio
+10: Nicki Caldato
+11: Castro Pimmers
+12: Pete Wolf
+13: Kyle James
+14: Trent Fallon
+15: Gerry Stanley
+16: Ezra Kimberly
+17: Avery Viana
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Bendigo Sharks: 0 v Westen Suburbs Lions: 0
+01:01 - Isaak Claypool - Intercepted Off A Jenny Indigo Pass
+02:16 - Norman Dean - 6th Tackle Changeover
+03:15 - Mitch Whare - Over The Sideline
+03:32 - Gerry Atlas - Penalty
+03:32 - Pete Wolf - PENALTY GOAL - Bendigo Sharks: 0 v Westen Suburbs Lions: 2
+06:46 - Gerry Atlas - Knock On
+07:15 - Robert Kerr - Intercepted Off A Castro Pimmers Pass
+08:28 - Jackson Chricton - 6th Tackle Changeover
+08:58 - Amy Barry - Intercepted Off A Raymond Kylze Pass
+09:27 - Amy Barry - Knock On
+10:08 - Bendigo Sharks Interchanged Players Jenny Indigo & Nico Locke
+10:08 - Westen Suburbs Lions Interchanged Players Norman Dean & Gerry Stanley
+10:37 - Bendigo Sharks Interchanged Players Robert Kerr & Jenny Indigo
+10:37 - Westen Suburbs Lions Interchanged Players Paul Flanagan & Ezra Kimberly
+11:02 - Westen Suburbs Lions Interchanged Players Pete Wolf & Norman Dean
+11:33 - Westen Suburbs Lions Interchanged Players Trixie de Bactio & Paul Flanagan
+13:37 - Castro Pimmers - Intercepted Off A Jr. Penatoras Pass
+13:50 - Westen Suburbs Lions Interchanged Players Norman Dean & Trixie de Bactio
+16:04 - Mitch Whare - 6th Tackle Changeover
+18:44 - Raymond Kylze - Over The Sideline
+20:14 - Julian Lynn - 6th Tackle Changeover
+21:15 - Julian Lynn - Intercepted Off A Trixie de Bactio Pass
+21:26 - Bendigo Sharks Interchanged Players Jackson Chricton & Robert Kerr
+21:41 - Bendigo Sharks Interchanged Players Kurt Lewis & Kimberly Harris
+22:24 - Amy Barry - 6th Tackle Changeover
+23:37 - Hubert Kerr - Forward Pass
+24:30 - Bendigo Sharks Interchanged Players Will Papiai & Robert Imposia
+24:58 - Jayden Watne - 6th Tackle Changeover
+26:21 - Ezra Kimberly - 6th Tackle Changeover
+27:09 - Jenny Indigo - Over The Sideline
+28:25 - Paul Flanagan - 6th Tackle Changeover
+29:56 - Mitch Whare - Intercepted Off A Raymond Kylze Pass
+30:35 - Robert Imposia - Forward Pass
+30:35 - Bendigo Sharks Interchanged Players Kimberly Harris & Lindsay Vlandys
+31:16 - Kyle James - Forward Pass
+31:16 - Bendigo Sharks Interchanged Players Mitch Whare & Jackson Chricton
+32:49 - Jayden Watne - 6th Tackle Changeover
+33:30 - Westen Suburbs Lions Interchanged Players Trixie de Bactio & Trent Fallon
+37:50 - Jr. Penatoras - 6th Tackle Changeover
+37:50 - Westen Suburbs Lions Interchanged Players Gerry Stanley & Norman Dean
+38:58 - Kyle James - Forward Pass
+40:00 - HALF TIME - Bendigo Sharks: 0 v Westen Suburbs Lions: 2
+40:22 - Westen Suburbs Lions Interchanged Players Norman Dean & Trixie de Bactio
+41:47 - Bendigo Sharks Interchanged Players Nico Locke & Kurt Lewis
+43:00 - Jackson Chricton - Intercepted Off A Paul Flanagan Pass
+44:28 - Ezra Kimberly - Stripped Ball Off Jr. Penatoras
+46:53 - Julian Lynn - 6th Tackle Changeover
+48:17 - Trent Fallon - 6th Tackle Changeover
+48:56 - Isaak Claypool - Intercepted Off A Jayden Watne Pass
+50:07 - Raymond Kylze - 6th Tackle Changeover
+50:21 - Jenny Indigo - Knock On
+51:18 - ------VIDEO REFEREE------
+51:18 - Paul Flanagan - NO TRY - Double Movement
+51:18 - Paul Flanagan - Penalty
+52:45 - Turni Deon - 6th Tackle Changeover
+55:05 - 20m Restart - Westen Suburbs Lions
+57:10 - Ezra Kimberly - Stripped Ball Off Jayden Watne
+57:48 - Hubert Kerr - Knock On
+58:14 - Mark Flower - Penalty
+58:28 - Raymond Kylze - Ruck Infringement
+59:21 - Castro Pimmers - Intercepted Off A Jr. Penatoras Pass
+60:31 - Kyle James - 6th Tackle Changeover
+60:59 - Jr. Penatoras - Forward Pass
+62:25 - Paul Flanagan - 6th Tackle Changeover
+63:50 - Trixie de Bactio - Forward Pass
+64:05 - Jr. Penatoras - Forward Pass
+67:19 - Jenny Indigo - Penalty
+67:49 - Lindsay Vlandys - Intercepted Off A Raymond Kylze Pass
+68:00 - Trixie de Bactio - Intercepted Off A Jr. Penatoras Pass
+68:44 - ------VIDEO REFEREE------
+68:44 - Mark Flower - NO TRY - Knock On
+71:43 - Robert Imposia - Intercepted Off A Paul Flanagan Pass
+79:03 - Kurt Lewis - Forward Pass
+80:00 - FULL TIME - Bendigo Sharks: 0 v Westen Suburbs Lions: 2
+                             
+--------PLAYER STATS--------
+Home Team: Bendigo Sharks
+1: Jackson Chricton |Time Played: 70:15 |Metres: 90 |Tackles: 10 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 60
+2: Turni Deon |Time Played: 80:05 |Metres: 119 |Tackles: 8 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 70
+3: Lindsay Vlandys |Time Played: 49:30 |Metres: 15 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+4: Amy Barry |Time Played: 80:05 |Metres: 28 |Tackles: 10 |Kicks: 2 |Kick Metres: 96 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+5: Jayden Watne |Time Played: 80:05 |Metres: 28 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+6: Kurt Lewis |Time Played: 59:59 |Metres: 69 |Tackles: 19 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+7: Julian Lynn |Time Played: 80:05 |Metres: 22 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+8: Georgio Harnett |Time Played: 80:05 |Metres: 30 |Tackles: 7 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+9: Robert Imposia |Time Played: 55:35 |Metres: 86 |Tackles: 9 |Kicks: 3 |Kick Metres: 132 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+10: Gerry Atlas |Time Played: 80:05 |Metres: 7 |Tackles: 14 |Kicks: 3 |Kick Metres: 55 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+11: Jenny Indigo |Time Played: 79:36 |Metres: 12 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+12: Jr. Penatoras |Time Played: 80:05 |Metres: 42 |Tackles: 14 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+13: Robert Kerr |Time Played: 69:16 |Metres: 37 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 37
+14: Will Papiai |Time Played: 24:30 |Metres: 8 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+15: Nico Locke |Time Played: 31:39 |Metres: 5 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+16: Mitch Whare |Time Played: 31:16 |Metres: 7 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+17: Kimberly Harris |Time Played: 08:54 |Metres: 20 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+Highlights:                 
+Most Tackles: Kurt Lewis: 19
+Most Points: : 0
+Most Metres: Turni Deon: 119
+Most Errors: Jenny Indigo: 2
+                             
+Away Team: Westen Suburbs Lions
+1: Trixie de Bactio |Time Played: 70:56 |Metres: 20 |Tackles: 12 |Kicks: 2 |Kick Metres: 50 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+2: Raymond Kylze |Time Played: 80:05 |Metres: 14 |Tackles: 15 |Kicks: 2 |Kick Metres: 24 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+3: Ali Brekston |Time Played: 80:05 |Metres: 181 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 98
+4: Andy Sunnerson |Time Played: 80:05 |Metres: 8 |Tackles: 6 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+5: Isaak Claypool |Time Played: 80:05 |Metres: 109 |Tackles: 14 |Kicks: 2 |Kick Metres: 79 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 95
+6: Ezra Kimberly |Time Played: 69:28 |Metres: 21 |Tackles: 8 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+7: Mark Flower |Time Played: 80:05 |Metres: 176 |Tackles: 14 |Kicks: 2 |Kick Metres: 48 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+8: Hubert Kerr |Time Played: 80:05 |Metres: 41 |Tackles: 13 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+9: Paul Flanagan |Time Played: 79:09 |Metres: 11 |Tackles: 14 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+10: Nicki Caldato |Time Played: 80:05 |Metres: 58 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+11: Castro Pimmers |Time Played: 80:05 |Metres: 29 |Tackles: 16 |Kicks: 2 |Kick Metres: 71 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 62
+12: Trent Fallon |Time Played: 46:35 |Metres: 15 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+13: Kyle James |Time Played: 80:05 |Metres: 31 |Tackles: 6 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+14: Norman Dean |Time Played: 15:28 |Metres: 4 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+15: Pete Wolf |Time Played: 11:02 |Metres: 0 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 4
+16: Gerry Stanley |Time Played: 27:42 |Metres: 1 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+17: Avery Viana |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Castro Pimmers: 16
+Most Points: Pete Wolf: 2
+Most Metres: Ali Brekston: 181
+Most Errors: Hubert Kerr: 2
+                             
+---------TEAM STATS---------
+Home Team: Bendigo Sharks
+Total Metres: 625
+Total Kick Metres: 374
+Total Errors: 9
+Total Tackles: 166
+Total Tries: 0
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Westen Suburbs Lions
+Total Metres: 719
+Total Kick Metres: 398
+Total Errors: 7
+Total Tackles: 163
+Total Tries: 0
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Isaak Claypool
+2nd (2 Points) -- Ali Brekston
+3rd (1 Point) -- Turni Deon
+----------------------------

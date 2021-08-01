@@ -1,0 +1,205 @@
+----------LINE-UPS----------
+Home Team: Cyprux Pariahs
+1: Jimmy Horter
+2: Tommy Yacoub
+3: Niko Jackson
+4: Pete Warrant
+5: Julian Tyrell
+6: Jameson Martin
+7: Niko Rice
+8: Karl Harrigan
+9: Clint Croker
+10: Tom Winger
+11: Luke Johns
+12: Avery Smith
+13: Karl Meikle
+14: Julie South
+15: Herman Cummins
+16: Kev Kerr
+17: Tommy Hands
+Away Team: Thornleigh Takeout
+1: Samantha Dellio
+2: Homer Boyd
+3: Jill Allsopp
+4: Jordan Tramion
+5: Pete Humphrey
+6: Janerio Chappell
+7: Dom Morris
+8: Paul Alexander
+9: Ali Silwedel
+10: Norman Develo
+11: Carl Cummins
+12: Kyle Jackston
+13: Arnole McDonalson
+14: Kev Hunt
+15: Xander Montoya
+16: Joshua Kylze
+17: Alexander Xylxed
+----------GAME-STAT---------
+Weather: Windy
+----------------------------
+00:00 - KICK OFF - Cyprux Pariahs: 0 v Thornleigh Takeout: 0
+00:14 - Kyle Jackston - Penalty
+03:11 - Jimmy Horter - Knock On
+04:10 - Dom Morris - TRY - Cyprux Pariahs: 0 v Thornleigh Takeout: 4
+05:10 - Homer Boyd - CONVERSION MISSED
+06:27 - Jameson Martin - Penalty
+07:09 - Avery Smith - Ruck Infringement
+07:09 - Avery Smith - Penalty
+07:09 - Avery Smith - SIN BIN
+08:37 - Norman Develo - 6th Tackle Changeover
+08:54 - Clint Croker - Knock On
+09:25 - Luke Johns - Penalty
+09:25 - Homer Boyd - PENALTY GOAL - Cyprux Pariahs: 0 v Thornleigh Takeout: 6
+10:55 - Cyprux Pariahs Interchanged Players Tommy Yacoub & Kev Kerr
+11:28 - Cyprux Pariahs Interchanged Players Tom Winger & Herman Cummins
+11:58 - Cyprux Pariahs Interchanged Players Clint Croker & Tommy Yacoub
+11:58 - Thornleigh Takeout Interchanged Players Kyle Jackston & Kev Hunt
+12:22 - Jimmy Horter - Forward Pass
+13:03 - Jimmy Horter - Intercepted Off A Paul Alexander Pass
+13:17 - Niko Jackson - Over The Sideline
+15:23 - Ali Silwedel - Penalty
+16:08 - Jameson Martin - Over The Sideline
+16:76 - SIN BIN RETURN - Avery Smith
+18:08 - Karl Meikle - Forward Pass
+19:23 - Dom Morris - 6th Tackle Changeover
+19:50 - Thornleigh Takeout Interchanged Players Jill Allsopp & Kyle Jackston
+21:07 - Luke Johns - Ruck Infringement
+21:34 - Cyprux Pariahs Interchanged Players Julian Tyrell & Tommy Hands
+22:30 - Homer Boyd - 6th Tackle Changeover
+22:43 - Kyle Jackston - Intercepted Off A Karl Harrigan Pass
+23:41 - ------VIDEO REFEREE------
+23:41 - Kyle Jackston - NO TRY - Knock On
+25:39 - Tommy Yacoub - Stripped Ball Off Norman Develo
+28:35 - Jameson Martin - Forward Pass
+28:51 - Tommy Hands - Stripped Ball Off Kyle Jackston
+30:03 - Cyprux Pariahs Interchanged Players Jimmy Horter & Julian Tyrell
+30:32 - Cyprux Pariahs Interchanged Players Tommy Hands & Tom Winger
+30:32 - Thornleigh Takeout Interchanged Players Kyle Jackston & Joshua Kylze
+31:45 - Cyprux Pariahs Interchanged Players Pete Warrant & Clint Croker
+32:01 - Paul Alexander - Penalty
+33:14 - Joshua Kylze - Intercepted Off A Karl Harrigan Pass
+33:42 - Janerio Chappell - Knock On
+34:23 - Janerio Chappell - Intercepted Off A Niko Jackson Pass
+34:40 - Cyprux Pariahs Interchanged Players Clint Croker & Jimmy Horter
+35:32 - Homer Boyd - 6th Tackle Changeover
+38:22 - Samantha Dellio - 6th Tackle Changeover
+39:52 - Joshua Kylze - Incorrect Play The Ball
+39:52 - Joshua Kylze - Penalty
+40:00 - HALF TIME - Cyprux Pariahs: 0 v Thornleigh Takeout: 6
+40:32 - Thornleigh Takeout Interchanged Players Carl Cummins & Jill Allsopp
+40:58 - Samantha Dellio - Forward Pass
+41:23 - Thornleigh Takeout Interchanged Players Samantha Dellio & Alexander Xylxed
+42:01 - Kev Kerr - Over The Sideline
+43:13 - 20m Restart - Cyprux Pariahs
+43:42 - Kev Kerr - Forward Pass
+44:17 - Niko Rice - Ruck Infringement
+45:28 - ------VIDEO REFEREE------
+45:28 - Joshua Kylze - NO TRY - Held Up
+45:46 - Paul Alexander - 6th Tackle Changeover
+45:57 - Jordan Tramion - Penalty
+47:23 - Karl Harrigan - 6th Tackle Changeover
+50:00 - Thornleigh Takeout Interchanged Players Norman Develo & Xander Montoya
+50:27 - Thornleigh Takeout Interchanged Players Dom Morris & Carl Cummins
+51:53 - Thornleigh Takeout Interchanged Players Alexander Xylxed & Samantha Dellio
+53:09 - Tom Winger - Intercepted Off A Samantha Dellio Pass
+54:54 - Niko Rice - Intercepted Off A Paul Alexander Pass
+55:46 - Niko Jackson - Over The Sideline
+56:55 - Xander Montoya - TRY - Cyprux Pariahs: 0 v Thornleigh Takeout: 10
+57:55 - Homer Boyd - CONVERSION MISSED
+59:11 - Tom Winger - Intercepted Off A Samantha Dellio Pass
+59:11 - ------VIDEO REFEREE------
+59:11 - Tom Winger - NO TRY - Double Movement
+59:11 - Tom Winger - Penalty
+60:36 - Karl Harrigan - Penalty
+61:09 - Homer Boyd - TRY - Cyprux Pariahs: 0 v Thornleigh Takeout: 14
+62:09 - Homer Boyd - CONVERSION MISSED
+66:46 - Samantha Dellio - Over The Sideline
+69:15 - Tom Winger - Stripped Ball Off Paul Alexander
+70:17 - ------VIDEO REFEREE------
+70:17 - Avery Smith - TRY - Cyprux Pariahs: 4 v Thornleigh Takeout: 14
+71:17 - Jimmy Horter - GOAL - Cyprux Pariahs: 6 v Thornleigh Takeout: 14
+72:30 - Niko Jackson - Forward Pass
+72:57 - Janerio Chappell - TRY - Cyprux Pariahs: 6 v Thornleigh Takeout: 18
+73:57 - Homer Boyd - GOAL - Cyprux Pariahs: 6 v Thornleigh Takeout: 20
+77:14 - Karl Meikle - 6th Tackle Changeover
+77:55 - ------VIDEO REFEREE------
+77:55 - Kev Hunt - TRY - Cyprux Pariahs: 6 v Thornleigh Takeout: 24
+78:55 - Homer Boyd - CONVERSION MISSED
+80:00 - FULL TIME - Cyprux Pariahs: 6 v Thornleigh Takeout: 24
+                             
+--------PLAYER STATS--------
+Home Team: Cyprux Pariahs
+1: Julian Tyrell |Time Played: 71:44 |Metres: 52 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+2: Kev Kerr |Time Played: 69:18 |Metres: 3 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+3: Niko Jackson |Time Played: 80:13 |Metres: 9 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+4: Jimmy Horter |Time Played: 75:36 |Metres: 41 |Tackles: 9 |Kicks: 1 |Kick Metres: 40 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 15
+5: Tom Winger |Time Played: 61:09 |Metres: 36 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+6: Jameson Martin |Time Played: 80:13 |Metres: 14 |Tackles: 11 |Kicks: 2 |Kick Metres: 74 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+7: Niko Rice |Time Played: 80:13 |Metres: 74 |Tackles: 21 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 34
+8: Karl Harrigan |Time Played: 80:13 |Metres: 25 |Tackles: 12 |Kicks: 2 |Kick Metres: 67 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+9: Tommy Yacoub |Time Played: 79:10 |Metres: 40 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 39
+10: Herman Cummins |Time Played: 68:45 |Metres: 9 |Tackles: 7 |Kicks: 2 |Kick Metres: 54 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+11: Luke Johns |Time Played: 80:13 |Metres: 77 |Tackles: 12 |Kicks: 2 |Kick Metres: 61 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+12: Avery Smith |Time Played: 70:06 |Metres: 73 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 11
+13: Karl Meikle |Time Played: 80:13 |Metres: 22 |Tackles: 10 |Kicks: 2 |Kick Metres: 78 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+14: Julie South |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Tommy Hands |Time Played: 08:58 |Metres: 0 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+16: Pete Warrant |Time Played: 31:45 |Metres: 6 |Tackles: 7 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+17: Clint Croker |Time Played: 14:53 |Metres: 3 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+Highlights:                 
+Most Tackles: Niko Rice: 21
+Most Points: Avery Smith: 4
+Most Metres: Luke Johns: 77
+Most Errors: Niko Jackson: 3
+                             
+Away Team: Thornleigh Takeout
+1: Samantha Dellio |Time Played: 69:43 |Metres: 15 |Tackles: 5 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+2: Homer Boyd |Time Played: 80:13 |Metres: 76 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 2 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 61
+3: Joshua Kylze |Time Played: 49:41 |Metres: 64 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+4: Jordan Tramion |Time Played: 80:13 |Metres: 15 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+5: Pete Humphrey |Time Played: 80:13 |Metres: 50 |Tackles: 12 |Kicks: 2 |Kick Metres: 56 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 55
+6: Janerio Chappell |Time Played: 80:13 |Metres: 141 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+7: Carl Cummins |Time Played: 70:18 |Metres: 52 |Tackles: 7 |Kicks: 3 |Kick Metres: 64 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+8: Paul Alexander |Time Played: 80:13 |Metres: 14 |Tackles: 9 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+9: Ali Silwedel |Time Played: 80:13 |Metres: 54 |Tackles: 9 |Kicks: 1 |Kick Metres: 63 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+10: Xander Montoya |Time Played: 30:13 |Metres: 72 |Tackles: 3 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 45
+11: Jill Allsopp |Time Played: 59:31 |Metres: 31 |Tackles: 6 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+12: Kev Hunt |Time Played: 68:15 |Metres: 200 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 106
+13: Arnole McDonalson |Time Played: 80:13 |Metres: 97 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+14: Dom Morris |Time Played: 50:27 |Metres: 109 |Tackles: 2 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 67
+15: Norman Develo |Time Played: 50:00 |Metres: 17 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+16: Kyle Jackston |Time Played: 22:40 |Metres: 38 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+17: Alexander Xylxed |Time Played: 10:30 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Homer Boyd: 13
+Most Points: Homer Boyd: 8
+Most Metres: Kev Hunt: 200
+Most Errors: Samantha Dellio: 2
+                             
+---------TEAM STATS---------
+Home Team: Cyprux Pariahs
+Total Metres: 484
+Total Kick Metres: 401
+Total Errors: 11
+Total Tackles: 154
+Total Tries: 1
+Total Goals: 1
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Thornleigh Takeout
+Total Metres: 1045
+Total Kick Metres: 314
+Total Errors: 4
+Total Tackles: 124
+Total Tries: 5
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Kev Hunt
+2nd (2 Points) -- Homer Boyd
+3rd (1 Point) -- Xander Montoya
+----------------------------

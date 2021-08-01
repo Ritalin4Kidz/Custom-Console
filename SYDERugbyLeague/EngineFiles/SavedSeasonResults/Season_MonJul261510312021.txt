@@ -1,0 +1,558 @@
+LADDER RESULTS
+--------------------------------
+1. Shapesville Roses Wins: 10| Lost: 0| PD: 130| Points: 20
+2. The Entrance Forcers Wins: 10| Lost: 0| PD: 113| Points: 20
+3. Banksia Sting-Rays Wins: 8| Lost: 2| PD: 115| Points: 16
+4. Xonia Dominators Wins: 6| Lost: 4| PD: 82| Points: 12
+5. Zatusimani Platypi Wins: 6| Lost: 4| PD: 73| Points: 12
+6. Perth Dragons Wins: 6| Lost: 4| PD: 47| Points: 12
+7. New Jerstion Earners Wins: 5| Lost: 5| PD: 22| Points: 10
+8. New Jerstion Messiahs Wins: 5| Lost: 5| PD: 4| Points: 10
+9. Craziomonia Oaks Wins: 5| Lost: 5| PD: -5| Points: 10
+10. Normville Reapers Wins: 4| Lost: 6| PD: -39| Points: 8
+11. NW Bilby Blue Bottles Wins: 4| Lost: 6| PD: -68| Points: 8
+12. Uttica Killers Wins: 3| Lost: 7| PD: -67| Points: 6
+13. Dinsey Fires Wins: 3| Lost: 7| PD: -68| Points: 6
+14. Macquarie Venom Wins: 2| Lost: 8| PD: -76| Points: 4
+15. Mooney Mooney Buffalo Wins: 2| Lost: 8| PD: -87| Points: 4
+16. Hillstown Panthers Wins: 1| Lost: 9| PD: -176| Points: 2
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Normville Reapers 10 v 30 Banksia Sting-Rays
+Uttica Killers 4 v 20 New Jerstion Earners
+Mooney Mooney Buffalo 23 v 16 Hillstown Panthers
+NW Bilby Blue Bottles 6 v 32 The Entrance Forcers
+New Jerstion Messiahs 16 v 35 Zatusimani Platypi
+Shapesville Roses 22 v 18 Xonia Dominators
+Dinsey Fires 18 v 12 Macquarie Venom
+Craziomonia Oaks 18 v 16 Perth Dragons
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Banksia Sting-Rays 25 v 24 Zatusimani Platypi
+NW Bilby Blue Bottles 10 v 34 New Jerstion Earners
+Mooney Mooney Buffalo 26 v 36 Dinsey Fires
+Perth Dragons 36 v 10 Hillstown Panthers
+New Jerstion Messiahs 20 v 4 Uttica Killers
+Craziomonia Oaks 8 v 18 The Entrance Forcers
+Xonia Dominators 19 v 6 Macquarie Venom
+Shapesville Roses 18 v 8 Normville Reapers
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Uttica Killers 10 v 18 Xonia Dominators
+New Jerstion Messiahs 26 v 4 Hillstown Panthers
+Perth Dragons 21 v 8 Dinsey Fires
+Macquarie Venom 22 v 24 Craziomonia Oaks
+The Entrance Forcers 31 v 6 Mooney Mooney Buffalo
+New Jerstion Earners 11 v 15 Banksia Sting-Rays
+NW Bilby Blue Bottles 6 v 30 Shapesville Roses
+Zatusimani Platypi 12 v 18 Normville Reapers
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Perth Dragons 40 v 16 Mooney Mooney Buffalo
+Normville Reapers 15 v 20 Xonia Dominators
+Dinsey Fires 18 v 20 Craziomonia Oaks
+New Jerstion Messiahs 22 v 36 Banksia Sting-Rays
+Macquarie Venom 24 v 12 Hillstown Panthers
+Shapesville Roses 26 v 14 New Jerstion Earners
+NW Bilby Blue Bottles 22 v 29 Uttica Killers
+The Entrance Forcers 13 v 10 Zatusimani Platypi
+--------------------------------
+
+Round 5 Results
+--------------------------------
+New Jerstion Earners 4 v 8 The Entrance Forcers
+Mooney Mooney Buffalo 2 v 19 Normville Reapers
+Banksia Sting-Rays 24 v 10 Uttica Killers
+Hillstown Panthers 6 v 18 Zatusimani Platypi
+Xonia Dominators 22 v 24 New Jerstion Messiahs
+Perth Dragons 23 v 16 Macquarie Venom
+NW Bilby Blue Bottles 12 v 28 Craziomonia Oaks
+Shapesville Roses 32 v 6 Dinsey Fires
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Macquarie Venom 14 v 38 Zatusimani Platypi
+Mooney Mooney Buffalo 6 v 19 Shapesville Roses
+Normville Reapers 24 v 34 Craziomonia Oaks
+Hillstown Panthers 6 v 28 NW Bilby Blue Bottles
+Banksia Sting-Rays 26 v 8 Dinsey Fires
+Xonia Dominators 40 v 16 Perth Dragons
+New Jerstion Earners 19 v 12 New Jerstion Messiahs
+The Entrance Forcers 32 v 14 Uttica Killers
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Uttica Killers 8 v 15 Perth Dragons
+Macquarie Venom 8 v 38 Banksia Sting-Rays
+Normville Reapers 8 v 20 The Entrance Forcers
+Craziomonia Oaks 20 v 22 Hillstown Panthers
+Zatusimani Platypi 15 v 14 Xonia Dominators
+Shapesville Roses 27 v 26 New Jerstion Messiahs
+NW Bilby Blue Bottles 9 v 8 Mooney Mooney Buffalo
+Dinsey Fires 38 v 24 New Jerstion Earners
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Zatusimani Platypi 16 v 6 Craziomonia Oaks
+Banksia Sting-Rays 24 v 28 NW Bilby Blue Bottles
+Xonia Dominators 28 v 14 Dinsey Fires
+Mooney Mooney Buffalo 16 v 18 New Jerstion Earners
+Perth Dragons 14 v 21 The Entrance Forcers
+Hillstown Panthers 4 v 30 Shapesville Roses
+Uttica Killers 12 v 14 Macquarie Venom
+Normville Reapers 23 v 22 New Jerstion Messiahs
+--------------------------------
+
+Round 9 Results
+--------------------------------
+New Jerstion Earners 12 v 19 Normville Reapers
+Perth Dragons 18 v 28 Shapesville Roses
+Mooney Mooney Buffalo 4 v 7 Uttica Killers
+The Entrance Forcers 23 v 16 Xonia Dominators
+New Jerstion Messiahs 19 v 18 Craziomonia Oaks
+Macquarie Venom 12 v 19 NW Bilby Blue Bottles
+Dinsey Fires 20 v 41 Zatusimani Platypi
+Hillstown Panthers 10 v 29 Banksia Sting-Rays
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Uttica Killers 22 v 18 Dinsey Fires
+The Entrance Forcers 20 v 19 Banksia Sting-Rays
+Mooney Mooney Buffalo 21 v 20 Macquarie Venom
+Perth Dragons 25 v 12 Normville Reapers
+Xonia Dominators 36 v 4 Hillstown Panthers
+Zatusimani Platypi 10 v 14 Shapesville Roses
+New Jerstion Earners 30 v 16 Craziomonia Oaks
+NW Bilby Blue Bottles 22 v 27 New Jerstion Messiahs
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Shapesville Roses 28 v 16 The Entrance Forcers
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Paul o. Bes-Shapesville Roses : 15
+2. Erin Tuo-Dinsey Fires : 10
+3. Pari Euation-Xonia Dominators : 10
+4. Lucy Costa-Craziomonia Oaks : 9
+5. Huretio Sitea-New Jerstion Messiahs : 9
+6. Jon o. Yte-Zatusimani Platypi : 8
+7. Dasi le Oreas-Mooney Mooney Buffalo : 8
+8. Kirk Pearce-Perth Dragons : 8
+9. Fumio o. Laz-NW Bilby Blue Bottles : 8
+10. Ourti Northson-Macquarie Venom : 7
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Castro ze Aert-The Entrance Forcers : 30
+2. Julian Armstrong-Perth Dragons : 28
+3. Dura o. Ima-Craziomonia Oaks : 27
+4. Yumi A. Emerson-Zatusimani Platypi : 26
+5. Ourti Hu-Banksia Sting-Rays : 25
+6. Carl vo Dureta-New Jerstion Messiahs : 21
+7. Ronald az Iunodea-New Jerstion Earners : 20
+8. Fumio o. Laz-NW Bilby Blue Bottles : 20
+9. Ourti Northson-Macquarie Venom : 14
+10. Fumio o. Vio-Mooney Mooney Buffalo : 14
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Gwen Potter-Mooney Mooney Buffalo : 1
+2. Nicki J. Nadaserty-Zatusimani Platypi : 1
+3. Abraham Jay cu Jokiea-Banksia Sting-Rays : 1
+4. Kamros J. Campbell-Xonia Dominators : 1
+5. Barb Locke-Perth Dragons : 1
+6. Kelin en Basetru-The Entrance Forcers : 1
+7. Hubert Ujhazzy-Banksia Sting-Rays : 1
+8. Ashley Whare-New Jerstion Earners : 1
+9. Connor vo Klrita-Normville Reapers : 1
+10. Terrance Nurtersamo-Uttica Killers : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Huretio Sitea-New Jerstion Messiahs : 1285
+2. Paul o. Bes-Shapesville Roses : 1230
+3. Jay Hands-Shapesville Roses : 1184
+4. Julian Armstrong-Perth Dragons : 1125
+5. Jimmy Oarst-Xonia Dominators : 1122
+6. Alexander o. Jka-Shapesville Roses : 1120
+7. Quade Roberts-New Jerstion Earners : 1098
+8. Ourti Northson-Macquarie Venom : 1095
+9. Erin Tuo-Dinsey Fires : 1075
+10. Adole Ballsut-Shapesville Roses : 1033
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Junior en Castre-The Entrance Forcers : 138
+2. Lindsey Paul-Hillstown Panthers : 123
+3. Tyrone Nathring-Craziomonia Oaks : 119
+4. Dirk Elroii-Normville Reapers : 118
+5. Castro ze Aert-The Entrance Forcers : 117
+6. Brayden Rose-Hillstown Panthers : 114
+7. Fumio o. Laz-NW Bilby Blue Bottles : 114
+8. Ollie Davies-Hillstown Panthers : 114
+9. Will H. Wott-Dinsey Fires : 113
+10. Jordan en Hurea-Uttica Killers : 113
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Bobby Bottia-NW Bilby Blue Bottles : 1
+2. Tariq Sua-Normville Reapers : 1
+3. Maddison Terrio-Mooney Mooney Buffalo : 1
+4. Daniel Harnett-Normville Reapers : 0
+5. Scott ti Minratse-Normville Reapers : 0
+6. Barb B. Taki-Normville Reapers : 0
+7. Allie o. Fzi-Normville Reapers : 0
+8. Juzas az Unionia-Normville Reapers : 0
+9. Nita en Vreas-Normville Reapers : 0
+10. Daniel Hubbard-Normville Reapers : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Lindsay Sockert-The Entrance Forcers : 494
+2. Dave A. Besti-Hillstown Panthers : 481
+3. Dan vo Greay-Macquarie Venom : 429
+4. Jay Meddica-NW Bilby Blue Bottles : 425
+5. Junior en Castre-The Entrance Forcers : 417
+6. Jeremy Saccert-Zatusimani Platypi : 409
+7. Maddison Terrio-Mooney Mooney Buffalo : 404
+8. Carl vo Dureta-New Jerstion Messiahs : 399
+9. Pearl Belta-The Entrance Forcers : 390
+10. Calum L. Fresh-Craziomonia Oaks : 386
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Paul o. Bes-Shapesville Roses : 25
+2. Billie B. Whare-NW Bilby Blue Bottles : 22
+3. Kristian W. vo Cesdrate-New Jerstion Messiahs : 20
+4. Pearl Belta-The Entrance Forcers : 18
+5. Ourti Northson-Macquarie Venom : 17
+6. Janerio Nathring-Normville Reapers : 17
+7. Jordan en Hurea-Uttica Killers : 17
+8. Kyuss o. Eya-Dinsey Fires : 16
+9. Tariq Sua-Normville Reapers : 16
+10. Samantha Purte-New Jerstion Earners : 16
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Paul o. Bes-Shapesville Roses : 4
+2. Jimmy Oarst-Xonia Dominators : 3
+3. Kirk Pearce-Perth Dragons : 3
+4. Leonard az Easa-Xonia Dominators : 2
+5. Kristian W. vo Cesdrate-New Jerstion Messiahs : 2
+6. Valian ti Yaset-Xonia Dominators : 2
+7. Cliffe McMahon-Banksia Sting-Rays : 2
+8. Asher Etten-Perth Dragons : 2
+9. Matt ti Unaskis-Banksia Sting-Rays : 1
+10. Lindsay Sockert-The Entrance Forcers : 1
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Kevin Harrigan-New Jerstion Earners : 18
+2. Dirk Elroii-Normville Reapers : 17
+3. Abraham Jay cu Jokiea-Banksia Sting-Rays : 15
+4. Lindsey Paul-Hillstown Panthers : 15
+5. Danni N. Yacoub-New Jerstion Messiahs : 15
+6. Jarrod C.D. Meaney-The Entrance Forcers : 14
+7. Gabrielle Sitea-Perth Dragons : 13
+8. Ashley Whare-New Jerstion Earners : 12
+9. Em de Flatio-Dinsey Fires : 12
+10. Earl Quoon-Mooney Mooney Buffalo : 11
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Pearl Belta-The Entrance Forcers : 9
+2. Ollie Davies-Hillstown Panthers : 8
+3. Ray Atoni-Dinsey Fires : 7
+4. Dan vo Greay-Macquarie Venom : 6
+5. Brayden Rose-Hillstown Panthers : 6
+6. Jon o. Yte-Zatusimani Platypi : 6
+7. Walt Lyons-Dinsey Fires : 6
+8. Nicki J. Nadaserty-Zatusimani Platypi : 5
+9. Lindsay J. o. Hyi-Normville Reapers : 5
+10. John Freit-The Entrance Forcers : 5
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Dirk Clark-New Jerstion Messiahs : 6
+2. Walt Lyons-Dinsey Fires : 5
+3. Ronald az Iunodea-New Jerstion Earners : 5
+4. Kristian Brekston-Macquarie Venom : 4
+5. Janey G. Berninger-Perth Dragons : 4
+6. Ollie Davies-Hillstown Panthers : 4
+7. Jay Meddica-NW Bilby Blue Bottles : 4
+8. Billie B. Whare-NW Bilby Blue Bottles : 4
+9. Jon o. Yte-Zatusimani Platypi : 4
+10. Gabrielle Kelly-New Jerstion Messiahs : 3
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Davey F. az Unionia-Normville Reapers : 1
+2. Lindsey Paul-Hillstown Panthers : 1
+3. Dasi le Oreas-Mooney Mooney Buffalo : 1
+4. Ray Atoni-Dinsey Fires : 1
+5. Turni Van Dempsey-Xonia Dominators : 1
+6. Daniel Harnett-Normville Reapers : 1
+7. Jenny G. Pimmers-Craziomonia Oaks : 1
+8. Jon o. Yte-Zatusimani Platypi : 1
+9. Yuni az Treaster-Dinsey Fires : 1
+10. Lindsay Sockert-The Entrance Forcers : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Daniel Harnett-Normville Reapers : 1
+2. Tariq Sua-Normville Reapers : 0
+3. Connor az Yutrea-Normville Reapers : 0
+4. Barb B. Taki-Normville Reapers : 0
+5. Scott ti Minratse-Normville Reapers : 0
+6. Bobby Bottia-NW Bilby Blue Bottles : 0
+7. Allie o. Fzi-Normville Reapers : 0
+8. Juzas az Unionia-Normville Reapers : 0
+9. Nita en Vreas-Normville Reapers : 0
+10. Daniel Hubbard-Normville Reapers : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Bobby Bottia-NW Bilby Blue Bottles : 2
+2. Aaron Meikle-Craziomonia Oaks : 2
+3. Andy le Jasde-Off Contract Players : 1
+4. Velento Alexander-Mooney Mooney Buffalo : 1
+5. Phil ti Indig-Dinsey Fires : 1
+6. Janey Mitchell-Banksia Sting-Rays : 1
+7. Gabe Quecea-Zatusimani Platypi : 1
+8. Gwen Potter-Mooney Mooney Buffalo : 1
+9. Brayden Rose-Hillstown Panthers : 1
+10. Lorenzo en Lemirea-Zatusimani Platypi : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Julian Armstrong-Perth Dragons : 85
+2. Fumio o. Laz-NW Bilby Blue Bottles : 72
+3. Ourti Hu-Banksia Sting-Rays : 70
+4. Paul o. Bes-Shapesville Roses : 61
+5. Castro ze Aert-The Entrance Forcers : 61
+6. Yumi A. Emerson-Zatusimani Platypi : 60
+7. Dura o. Ima-Craziomonia Oaks : 58
+8. Ourti Northson-Macquarie Venom : 56
+9. Jay Hands-Shapesville Roses : 51
+10. Carl vo Dureta-New Jerstion Messiahs : 42
+11. Ronald az Iunodea-New Jerstion Earners : 41
+12. Fumio o. Vio-Mooney Mooney Buffalo : 40
+13. Pari Euation-Xonia Dominators : 40
+14. Mark Brasi-Dinsey Fires : 40
+15. Erin Tuo-Dinsey Fires : 40
+16. Huretio Sitea-New Jerstion Messiahs : 37
+17. Lucy Costa-Craziomonia Oaks : 36
+18. Kamros J. Campbell-Xonia Dominators : 35
+19. Kirk Pearce-Perth Dragons : 34
+20. Jon o. Yte-Zatusimani Platypi : 33
+21. Dasi le Oreas-Mooney Mooney Buffalo : 32
+22. Patrise Allsopp-Uttica Killers : 30
+23. David L. Sadder-Shapesville Roses : 28
+24. Kristian W. vo Cesdrate-New Jerstion Messiahs : 28
+25. Jane X. Walker-Normville Reapers : 28
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Julian Armstrong-Perth Dragons : 177
+2. Jay Hands-Shapesville Roses : 160
+3. Huretio Sitea-New Jerstion Messiahs : 148
+4. Quade Roberts-New Jerstion Earners : 144
+5. Paul o. Bes-Shapesville Roses : 142
+6. Ourti Hu-Banksia Sting-Rays : 137
+7. Barb Locke-Perth Dragons : 134
+8. Asher Etten-Perth Dragons : 124
+9. Erin Tuo-Dinsey Fires : 121
+10. Tyrone Nathring-Craziomonia Oaks : 119
+11. Lucy Costa-Craziomonia Oaks : 119
+12. Paul Herbert-Macquarie Venom : 117
+13. Ourti Northson-Macquarie Venom : 115
+14. Kirk Pearce-Perth Dragons : 112
+15. Jimmy Oarst-Xonia Dominators : 112
+16. Gary Smith-Mooney Mooney Buffalo : 110
+17. Fumio o. Laz-NW Bilby Blue Bottles : 109
+18. Samantha Purte-New Jerstion Earners : 105
+19. Janerio Nathring-Normville Reapers : 103
+20. Clinton Y. Hughes-New Jerstion Messiahs : 100
+21. Pari Euation-Xonia Dominators : 100
+22. Adrien Crane-Macquarie Venom : 99
+23. Kyuss o. Eya-Dinsey Fires : 98
+24. Junior en Castre-The Entrance Forcers : 97
+25. Fumio o. Vio-Mooney Mooney Buffalo : 96
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Klacesa Cooper's Tough Training Session
+Craziomonia Oaks Sign Oliver Pimmers
+Opinion: Danni N. Yacoub Should Captain Wales
+Opinion: Julie Beli Should Captain Papau New Guinea
+Daniel Harnett Donates To Controverisal Charity
+Players Fight At Local RSL!
+Walt Lyons To Have Contract Extended!
+Euan Terrio Passes Away After Illness
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Gary Smith's Tough Training Session
+Randy Dunn's Eligibility Crisis!
+Fan Poll: NW Bilby Blue Bottles's Best Player
+Fan Poll: New Jerstion Earners's Best Player
+Waylon le Soin To Have Contract Extended!
+Coach Proposes New Finals System!
+Dirk Iomino Donates To Controverisal Charity
+Nicki Osees Saves Local Man From Drowning
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Harold Fresh's Tough Training Session
+Banksia Sting-Rays Sign Kam Lase
+Maddison Gagai Offered Pay Cut To Re-sign
+Opinion: Kimberly Kelly Should Swap Teams
+Fan Poll: Normville Reapers's Best Player
+Lenny G. Pimmers's Eligibility Crisis!
+Finley Kimberly Passes Away After Illness
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Ash ti Zyea's Tough Training Session
+Dinsey Fires Sign Carl L. vo Bereas
+Uttica Killers Sign Sammy Quake
+Earl Lewis Offered Pay Cut To Re-sign
+Lindsay Sockert's Large-Scale Gambling Problem
+Fan Poll: Hillstown Panthers's Best Player
+Daniel Hubbard Saves Local Man From Drowning
+Trixie Churchill's Eligibility Crisis!
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Josh ti Deraste's Tough Training Session
+Mooney Mooney Buffalo Sign Antonio Ujhazzy
+Craziomonia Oaks Sign Jr. en Iadtea
+Coach Proposes New Finals System!
+Dave Vianna Offered Pay Cut To Re-sign
+Opinion: Carl Qwerty Should Swap Teams
+Players Fight At Local RSL!
+Players Fight At Local RSL!
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Cameron Fresh's Tough Training Session
+Terry Fletch To Have Contract Extended!
+Rival Players Raise Awareness!
+Opinion: Dave A. Besti Should Swap Teams
+Lindsay Sockert's Eligibility Crisis!
+Players Fight At Local RSL!
+Calum L. Fresh To Have Contract Extended!
+Kev Fitler Passes Away After Illness
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Corey o. Ayo's Tough Training Session
+Mooney Mooney Buffalo Sign Velento Hull
+Uttica Killers Sign Trent cu Nonates
+Kaiden az Cati's Eligibility Crisis!
+Player Unrest At Shapesville Roses
+Pari Watt At Risk Of An Early Release!
+Opinion: Pearl Belta Should Captain Fiji
+Fan Poll: Normville Reapers's Best Player
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Gabrielle o. Hyi's Tough Training Session
+Hillstown Panthers Sign Kyrsta le Pore
+Uttica Killers Sign Brenton Romney
+Shapesville Roses Sign Adole Ballsut
+The Entrance Forcers Sign Georgio Brekston
+Leonard az Easa To Have Contract Extended!
+Nicki Tramion Passes Away After Illness
+Em de Flatio At Risk Of An Early Release!
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Pari Watt's Tough Training Session
+Mooney Mooney Buffalo Sign George le Soin
+Zatusimani Platypi Sign Dirk Ngu
+Ray ze Nemu Assaults RSL Bouncer
+Player Unrest At Shapesville Roses
+Player Unrest At Macquarie Venom
+Opinion: Turni Van Dempsey Should Swap Teams
+Maddison P. o. Ces's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Valian ti Yaset's Tough Training Session
+NW Bilby Blue Bottles Sign Bobby Bottia
+Craziomonia Oaks Sign Jenny G. Pimmers
+Shapesville Roses Wins Minor Premiership!
+Players Fight At Local RSL!
+Bam Beltio To Have Contract Extended!
+Opinion: Harold Fresh Should Captain Sweden
+Player Unrest At Mooney Mooney Buffalo
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Harold Fresh's Tough Training Session
+Xonia Dominators Sign Samuel Yacoub
+Uttica Killers Sign Harold Fresh
+Hillstown Panthers Sign Gwen K. Iomino
+Shapesville Roses Wins Premiership!
+Benjamin Wrabel Passes Away After Illness
+Alan Quon Passes Away After Illness
+Dan vo Greay Saves Local Man From Drowning
+--------------------------------
+

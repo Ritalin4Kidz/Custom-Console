@@ -29,4 +29,6 @@ private:
 	string tag = "";
 	bool pointIsInButtonRange(Vector2 Point);
 	bool pointIsInButtonRange(Vector2 Point, Vector2 mousePos);
+
+	bool canClick = true;
 };

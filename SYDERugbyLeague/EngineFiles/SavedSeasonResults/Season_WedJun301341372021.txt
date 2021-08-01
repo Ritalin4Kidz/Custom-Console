@@ -1,0 +1,986 @@
+LADDER RESULTS
+--------------------------------
+1. Emeralton Snipers Wins: 25| Lost: 1| PD: 523| Points: 50
+2. North Head Quicksters Wins: 23| Lost: 3| PD: 425| Points: 46
+3. Blue Mountains Jellyfish Wins: 20| Lost: 6| PD: 237| Points: 40
+4. Hryold Berries Wins: 18| Lost: 8| PD: 157| Points: 36
+5. Freebee Network Wins: 17| Lost: 9| PD: 171| Points: 34
+6. Emeralton Jokers Wins: 14| Lost: 12| PD: 105| Points: 28
+7. Port Hayver Rose Gardens Wins: 14| Lost: 12| PD: 21| Points: 28
+8. Crow's Nest Gamers Wins: 13| Lost: 13| PD: 0| Points: 26
+9. Port Prior Miners Wins: 13| Lost: 13| PD: -4| Points: 26
+10. East Kyzlebrek Whales Wins: 12| Lost: 14| PD: -7| Points: 24
+11. New Jerstion Skeletons Wins: 11| Lost: 15| PD: 2| Points: 22
+12. Eastern City Spacemen Wins: 9| Lost: 17| PD: -122| Points: 18
+13. East Anywheston Avocados Wins: 8| Lost: 18| PD: -175| Points: 16
+14. North Sydney Massacre Wins: 7| Lost: 19| PD: -207| Points: 14
+15. Stankville Bulldogs Wins: 4| Lost: 22| PD: -562| Points: 8
+16. Crow's Nest Dominators Wins: 0| Lost: 26| PD: -564| Points: 0
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Stankville Bulldogs 0 v 38 Emeralton Snipers
+North Sydney Massacre 16 v 6 Crow's Nest Gamers
+Port Hayver Rose Gardens 29 v 12 Crow's Nest Dominators
+Hryold Berries 4 v 10 Eastern City Spacemen
+Port Prior Miners 22 v 16 Freebee Network
+Blue Mountains Jellyfish 13 v 12 East Kyzlebrek Whales
+North Head Quicksters 36 v 22 East Anywheston Avocados
+Emeralton Jokers 20 v 22 New Jerstion Skeletons
+--------------------------------
+
+Round 2 Results
+--------------------------------
+East Kyzlebrek Whales 25 v 30 North Sydney Massacre
+Emeralton Snipers 37 v 6 Eastern City Spacemen
+Emeralton Jokers 14 v 10 East Anywheston Avocados
+Blue Mountains Jellyfish 28 v 20 Port Prior Miners
+Stankville Bulldogs 6 v 42 Hryold Berries
+Crow's Nest Gamers 24 v 10 Port Hayver Rose Gardens
+North Head Quicksters 41 v 10 Crow's Nest Dominators
+Freebee Network 32 v 10 New Jerstion Skeletons
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Crow's Nest Gamers 27 v 14 Blue Mountains Jellyfish
+Port Hayver Rose Gardens 12 v 16 East Kyzlebrek Whales
+North Sydney Massacre 24 v 16 Eastern City Spacemen
+New Jerstion Skeletons 10 v 24 Emeralton Snipers
+North Head Quicksters 31 v 12 Freebee Network
+Hryold Berries 34 v 18 East Anywheston Avocados
+Crow's Nest Dominators 10 v 24 Stankville Bulldogs
+Emeralton Jokers 12 v 20 Port Prior Miners
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Blue Mountains Jellyfish 6 v 19 New Jerstion Skeletons
+North Sydney Massacre 19 v 20 Emeralton Jokers
+Crow's Nest Gamers 15 v 14 Freebee Network
+East Kyzlebrek Whales 11 v 22 Emeralton Snipers
+Crow's Nest Dominators 6 v 37 Port Prior Miners
+Hryold Berries 37 v 22 East Anywheston Avocados
+Stankville Bulldogs 25 v 24 Port Hayver Rose Gardens
+Eastern City Spacemen 10 v 36 North Head Quicksters
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Port Hayver Rose Gardens 22 v 0 East Anywheston Avocados
+East Kyzlebrek Whales 16 v 15 New Jerstion Skeletons
+Hryold Berries 43 v 28 Crow's Nest Dominators
+Stankville Bulldogs 0 v 22 Emeralton Snipers
+North Sydney Massacre 12 v 37 Freebee Network
+Blue Mountains Jellyfish 18 v 30 North Head Quicksters
+Eastern City Spacemen 26 v 12 Emeralton Jokers
+Port Prior Miners 17 v 10 Crow's Nest Gamers
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Emeralton Snipers 38 v 12 North Sydney Massacre
+Eastern City Spacemen 23 v 4 Port Prior Miners
+East Anywheston Avocados 16 v 20 Hryold Berries
+Port Hayver Rose Gardens 11 v 10 Crow's Nest Dominators
+East Kyzlebrek Whales 23 v 16 New Jerstion Skeletons
+Blue Mountains Jellyfish 26 v 6 Crow's Nest Gamers
+Freebee Network 24 v 32 North Head Quicksters
+Stankville Bulldogs 24 v 49 Emeralton Jokers
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Stankville Bulldogs 10 v 36 Crow's Nest Gamers
+North Head Quicksters 12 v 14 Port Prior Miners
+North Sydney Massacre 4 v 8 Port Hayver Rose Gardens
+Blue Mountains Jellyfish 12 v 31 Emeralton Snipers
+East Kyzlebrek Whales 10 v 12 Hryold Berries
+East Anywheston Avocados 16 v 36 New Jerstion Skeletons
+Freebee Network 21 v 4 Eastern City Spacemen
+Crow's Nest Dominators 0 v 43 Emeralton Jokers
+--------------------------------
+
+Round 8 Results
+--------------------------------
+North Sydney Massacre 0 v 16 East Kyzlebrek Whales
+Emeralton Snipers 36 v 16 Hryold Berries
+Freebee Network 36 v 26 Port Prior Miners
+Crow's Nest Gamers 13 v 24 New Jerstion Skeletons
+Emeralton Jokers 25 v 28 Eastern City Spacemen
+Port Hayver Rose Gardens 22 v 6 East Anywheston Avocados
+Crow's Nest Dominators 16 v 46 Blue Mountains Jellyfish
+Stankville Bulldogs 0 v 23 North Head Quicksters
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Hryold Berries 20 v 10 Port Prior Miners
+Eastern City Spacemen 10 v 24 North Head Quicksters
+Port Hayver Rose Gardens 16 v 6 Crow's Nest Dominators
+East Kyzlebrek Whales 11 v 4 Freebee Network
+Emeralton Jokers 26 v 10 East Anywheston Avocados
+Blue Mountains Jellyfish 38 v 28 Stankville Bulldogs
+Emeralton Snipers 34 v 12 New Jerstion Skeletons
+Crow's Nest Gamers 20 v 24 North Sydney Massacre
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Stankville Bulldogs 14 v 32 East Kyzlebrek Whales
+North Sydney Massacre 27 v 22 Port Hayver Rose Gardens
+New Jerstion Skeletons 4 v 14 Hryold Berries
+Freebee Network 26 v 32 Emeralton Snipers
+Crow's Nest Dominators 12 v 20 Eastern City Spacemen
+North Head Quicksters 17 v 0 East Anywheston Avocados
+Emeralton Jokers 16 v 28 Blue Mountains Jellyfish
+Crow's Nest Gamers 10 v 26 Port Prior Miners
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Freebee Network 37 v 12 Stankville Bulldogs
+East Anywheston Avocados 10 v 33 North Head Quicksters
+East Kyzlebrek Whales 10 v 8 Emeralton Jokers
+Emeralton Snipers 10 v 4 Port Prior Miners
+Eastern City Spacemen 28 v 38 Crow's Nest Gamers
+North Sydney Massacre 12 v 32 New Jerstion Skeletons
+Blue Mountains Jellyfish 22 v 18 Hryold Berries
+Crow's Nest Dominators 10 v 30 Port Hayver Rose Gardens
+--------------------------------
+
+Round 12 Results
+--------------------------------
+New Jerstion Skeletons 16 v 24 Hryold Berries
+Stankville Bulldogs 0 v 48 North Head Quicksters
+East Anywheston Avocados 18 v 26 Port Hayver Rose Gardens
+Eastern City Spacemen 6 v 14 Freebee Network
+Crow's Nest Dominators 0 v 38 Emeralton Snipers
+Crow's Nest Gamers 13 v 6 East Kyzlebrek Whales
+North Sydney Massacre 10 v 30 Emeralton Jokers
+Blue Mountains Jellyfish 26 v 10 Port Prior Miners
+--------------------------------
+
+Round 13 Results
+--------------------------------
+East Anywheston Avocados 11 v 10 New Jerstion Skeletons
+Crow's Nest Gamers 16 v 22 Freebee Network
+North Sydney Massacre 41 v 6 Crow's Nest Dominators
+Blue Mountains Jellyfish 26 v 24 Hryold Berries
+East Kyzlebrek Whales 23 v 28 North Head Quicksters
+Port Prior Miners 35 v 10 Stankville Bulldogs
+Emeralton Snipers 22 v 26 Emeralton Jokers
+Port Hayver Rose Gardens 16 v 8 Eastern City Spacemen
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Crow's Nest Dominators 22 v 42 New Jerstion Skeletons
+Freebee Network 36 v 10 Eastern City Spacemen
+Port Hayver Rose Gardens 0 v 20 East Kyzlebrek Whales
+North Head Quicksters 26 v 6 Hryold Berries
+East Anywheston Avocados 23 v 22 North Sydney Massacre
+Crow's Nest Gamers 24 v 20 Emeralton Jokers
+Port Prior Miners 12 v 38 Emeralton Snipers
+Stankville Bulldogs 0 v 43 Blue Mountains Jellyfish
+--------------------------------
+
+Round 15 Results
+--------------------------------
+East Kyzlebrek Whales 20 v 24 Freebee Network
+Blue Mountains Jellyfish 31 v 6 Crow's Nest Dominators
+Crow's Nest Gamers 27 v 22 Emeralton Jokers
+Hryold Berries 26 v 12 Port Hayver Rose Gardens
+Eastern City Spacemen 8 v 10 Port Prior Miners
+New Jerstion Skeletons 22 v 30 Stankville Bulldogs
+East Anywheston Avocados 6 v 24 North Head Quicksters
+Emeralton Snipers 29 v 10 North Sydney Massacre
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Emeralton Jokers 22 v 23 Hryold Berries
+Freebee Network 31 v 18 Crow's Nest Gamers
+New Jerstion Skeletons 34 v 4 Crow's Nest Dominators
+Blue Mountains Jellyfish 20 v 19 Port Prior Miners
+North Head Quicksters 41 v 20 North Sydney Massacre
+Port Hayver Rose Gardens 0 v 18 East Kyzlebrek Whales
+Stankville Bulldogs 4 v 34 Eastern City Spacemen
+Emeralton Snipers 22 v 18 East Anywheston Avocados
+--------------------------------
+
+Round 17 Results
+--------------------------------
+East Kyzlebrek Whales 10 v 17 Emeralton Snipers
+Stankville Bulldogs 18 v 42 Port Prior Miners
+Freebee Network 12 v 4 Blue Mountains Jellyfish
+Eastern City Spacemen 39 v 38 North Sydney Massacre
+New Jerstion Skeletons 8 v 28 Hryold Berries
+North Head Quicksters 35 v 10 East Anywheston Avocados
+Crow's Nest Gamers 28 v 36 Port Hayver Rose Gardens
+Emeralton Jokers 28 v 8 Crow's Nest Dominators
+--------------------------------
+
+Round 18 Results
+--------------------------------
+Emeralton Jokers 12 v 4 North Head Quicksters
+Hryold Berries 24 v 10 Eastern City Spacemen
+East Kyzlebrek Whales 4 v 18 Crow's Nest Gamers
+Blue Mountains Jellyfish 22 v 8 New Jerstion Skeletons
+Port Prior Miners 18 v 32 Emeralton Snipers
+North Sydney Massacre 24 v 32 Freebee Network
+Crow's Nest Dominators 26 v 27 Port Hayver Rose Gardens
+East Anywheston Avocados 22 v 6 Stankville Bulldogs
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Port Hayver Rose Gardens 23 v 8 Stankville Bulldogs
+Port Prior Miners 26 v 0 Eastern City Spacemen
+East Kyzlebrek Whales 4 v 32 Emeralton Snipers
+Blue Mountains Jellyfish 6 v 16 Emeralton Jokers
+Crow's Nest Gamers 10 v 20 North Head Quicksters
+Hryold Berries 18 v 20 Freebee Network
+East Anywheston Avocados 0 v 14 North Sydney Massacre
+New Jerstion Skeletons 38 v 22 Crow's Nest Dominators
+--------------------------------
+
+Round 20 Results
+--------------------------------
+Crow's Nest Gamers 4 v 23 Blue Mountains Jellyfish
+Freebee Network 12 v 16 New Jerstion Skeletons
+Emeralton Snipers 31 v 12 Port Hayver Rose Gardens
+North Sydney Massacre 24 v 42 East Anywheston Avocados
+Eastern City Spacemen 23 v 26 Stankville Bulldogs
+Emeralton Jokers 17 v 16 Port Prior Miners
+Hryold Berries 16 v 28 North Head Quicksters
+East Kyzlebrek Whales 33 v 8 Crow's Nest Dominators
+--------------------------------
+
+Round 21 Results
+--------------------------------
+Emeralton Jokers 12 v 14 North Head Quicksters
+Hryold Berries 16 v 18 Port Prior Miners
+East Kyzlebrek Whales 14 v 12 New Jerstion Skeletons
+Emeralton Snipers 28 v 14 Port Hayver Rose Gardens
+Stankville Bulldogs 6 v 25 East Anywheston Avocados
+Freebee Network 20 v 6 Eastern City Spacemen
+Blue Mountains Jellyfish 40 v 12 North Sydney Massacre
+Crow's Nest Dominators 20 v 38 Crow's Nest Gamers
+--------------------------------
+
+Round 22 Results
+--------------------------------
+North Sydney Massacre 24 v 36 North Head Quicksters
+Port Hayver Rose Gardens 6 v 22 Freebee Network
+Crow's Nest Gamers 15 v 17 Emeralton Jokers
+Blue Mountains Jellyfish 22 v 0 Crow's Nest Dominators
+Stankville Bulldogs 0 v 16 Eastern City Spacemen
+East Kyzlebrek Whales 16 v 19 Port Prior Miners
+Hryold Berries 16 v 12 East Anywheston Avocados
+New Jerstion Skeletons 14 v 30 Emeralton Snipers
+--------------------------------
+
+Round 23 Results
+--------------------------------
+Crow's Nest Dominators 10 v 30 North Head Quicksters
+Stankville Bulldogs 0 v 56 Emeralton Snipers
+North Sydney Massacre 4 v 21 Freebee Network
+Crow's Nest Gamers 18 v 12 Port Hayver Rose Gardens
+New Jerstion Skeletons 30 v 10 East Kyzlebrek Whales
+Eastern City Spacemen 20 v 30 Hryold Berries
+Port Prior Miners 12 v 28 Blue Mountains Jellyfish
+Emeralton Jokers 16 v 20 East Anywheston Avocados
+--------------------------------
+
+Round 24 Results
+--------------------------------
+Port Hayver Rose Gardens 10 v 0 Eastern City Spacemen
+Stankville Bulldogs 4 v 25 Emeralton Snipers
+Hryold Berries 24 v 4 East Anywheston Avocados
+Freebee Network 30 v 6 Crow's Nest Dominators
+Emeralton Jokers 17 v 4 North Head Quicksters
+New Jerstion Skeletons 35 v 34 North Sydney Massacre
+East Kyzlebrek Whales 16 v 8 Port Prior Miners
+Blue Mountains Jellyfish 19 v 6 Crow's Nest Gamers
+--------------------------------
+
+Round 25 Results
+--------------------------------
+Eastern City Spacemen 30 v 20 Crow's Nest Dominators
+East Kyzlebrek Whales 4 v 16 Blue Mountains Jellyfish
+Emeralton Snipers 48 v 14 North Sydney Massacre
+North Head Quicksters 48 v 20 Stankville Bulldogs
+Emeralton Jokers 20 v 33 Port Hayver Rose Gardens
+Freebee Network 10 v 29 Crow's Nest Gamers
+East Anywheston Avocados 26 v 24 New Jerstion Skeletons
+Hryold Berries 25 v 0 Port Prior Miners
+--------------------------------
+
+Round 26 Results
+--------------------------------
+East Anywheston Avocados 24 v 0 Stankville Bulldogs
+Hryold Berries 5 v 4 Port Hayver Rose Gardens
+North Head Quicksters 40 v 0 Crow's Nest Dominators
+New Jerstion Skeletons 16 v 24 Emeralton Jokers
+North Sydney Massacre 12 v 28 Blue Mountains Jellyfish
+Emeralton Snipers 30 v 14 East Kyzlebrek Whales
+Port Prior Miners 20 v 16 Freebee Network
+Eastern City Spacemen 12 v 14 Crow's Nest Gamers
+--------------------------------
+
+Round 27 Results
+--------------------------------
+Emeralton Snipers 28 v 24 Hryold Berries
+North Head Quicksters 27 v 14 Blue Mountains Jellyfish
+Freebee Network 35 v 16 Crow's Nest Gamers
+Emeralton Jokers 20 v 16 Port Hayver Rose Gardens
+--------------------------------
+
+Round 28 Results
+--------------------------------
+Hryold Berries 9 v 13 Freebee Network
+Blue Mountains Jellyfish 16 v 24 Emeralton Jokers
+--------------------------------
+
+Round 29 Results
+--------------------------------
+Emeralton Snipers 21 v 14 Emeralton Jokers
+North Head Quicksters 16 v 26 Freebee Network
+--------------------------------
+
+Round 30 Results
+--------------------------------
+Emeralton Snipers 20 v 4 Freebee Network
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Kelin Miao-Freebee Network : 25
+2. Ronald Papiai-Emeralton Snipers : 23
+3. Pauly O' Donnell-Crow's Nest Gamers : 23
+4. Ali Vianna-Freebee Network : 23
+5. Kam Harrigan-Emeralton Snipers : 22
+6. Pete Lindsell-North Sydney Massacre : 21
+7. Bob Davis-North Head Quicksters : 21
+8. George Parkson-Blue Mountains Jellyfish : 20
+9. Robert Winger-Emeralton Jokers : 20
+10. Kyle Yzzer-New Jerstion Skeletons : 20
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Brett Quess-North Head Quicksters : 89
+2. Dapper Miniota-Emeralton Snipers : 87
+3. George Parkson-Blue Mountains Jellyfish : 79
+4. Luke Yemm-Hryold Berries : 66
+5. Callum Hands-Freebee Network : 66
+6. Jim Daley-North Sydney Massacre : 56
+7. Don Manfredi-New Jerstion Skeletons : 54
+8. Norman Burt-Port Prior Miners : 51
+9. Jim Romney-East Kyzlebrek Whales : 43
+10. Corey Crane-East Anywheston Avocados : 43
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Josh Ballsut-Crow's Nest Gamers : 4
+2. Billie Ese'ese-Emeralton Jokers : 3
+3. Jimmy Aaronson-East Kyzlebrek Whales : 2
+4. Kyle Phillips-Freebee Network : 2
+5. Daniel Mallett-Crow's Nest Gamers : 2
+6. Callum Harrigan-Blue Mountains Jellyfish : 2
+7. Pete Domino-Port Hayver Rose Gardens : 2
+8. Kyle Yzzer-New Jerstion Skeletons : 2
+9. Alister Loomer-Emeralton Snipers : 2
+10. Alister Dellio-Hryold Berries : 2
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Kelin Miao-Freebee Network : 3765
+2. Bob Davis-North Head Quicksters : 3070
+3. Mark Junior-North Head Quicksters : 3070
+4. Robert Winger-Emeralton Jokers : 2916
+5. Benji McDonald-Port Hayver Rose Gardens : 2855
+6. Ronald Papiai-Emeralton Snipers : 2728
+7. Ali Vianna-Freebee Network : 2609
+8. Nicholas Atlas-Blue Mountains Jellyfish : 2528
+9. Kam Harrigan-Emeralton Snipers : 2519
+10. Xander Dempsey-Emeralton Jokers : 2468
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Paul Romney-Stankville Bulldogs : 310
+2. Ryan Mallett-Freebee Network : 297
+3. Mitchell Tan-Port Hayver Rose Gardens : 292
+4. Kevin Sandra-Emeralton Jokers : 287
+5. Kamros Hull-Port Prior Miners : 284
+6. Bill McMahon-Eastern City Spacemen : 278
+7. Isaac Johnson-Emeralton Jokers : 278
+8. Gerald Spice-East Anywheston Avocados : 277
+9. Jenny Flanagan-East Kyzlebrek Whales : 276
+10. Ali Vianna-Freebee Network : 276
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Andrew Russell-Freebee Network : 2
+2. Jenny Flanagan-East Kyzlebrek Whales : 1
+3. Kamros MacDonald-Crow's Nest Dominators : 1
+4. Bob Taylor-Crow's Nest Dominators : 1
+5. Jameson Loomer-Blue Mountains Jellyfish : 1
+6. Adole Fitler-North Sydney Massacre : 1
+7. Kelin Miao-Freebee Network : 1
+8. Kam Harrigan-Emeralton Snipers : 1
+9. Sam Paul-East Anywheston Avocados : 1
+10. Allie O' Thomas-Emeralton Jokers : 1
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Kam Harrigan-Emeralton Snipers : 1189
+2. Chase Zillman-Emeralton Jokers : 1112
+3. Andy McDonalson-Crow's Nest Gamers : 980
+4. Ronald Papiai-Emeralton Snipers : 930
+5. Jarrod Sunnerson-Port Hayver Rose Gardens : 913
+6. Jenny Flanagan-East Kyzlebrek Whales : 871
+7. Robert Winger-Emeralton Jokers : 867
+8. Connor Morris-North Sydney Massacre : 848
+9. Calum Hann-East Anywheston Avocados : 831
+10. Kevin Sandra-Emeralton Jokers : 823
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Ali Vianna-Freebee Network : 56
+2. Nicki Gagai-North Head Quicksters : 51
+3. Pauly Hull-Crow's Nest Gamers : 51
+4. Pete Lindsell-North Sydney Massacre : 49
+5. Kelin Miao-Freebee Network : 49
+6. Gerald Spice-East Anywheston Avocados : 44
+7. Nicholas Atlas-Blue Mountains Jellyfish : 44
+8. Kam Harrigan-Emeralton Snipers : 44
+9. Ray Worsent-Emeralton Snipers : 43
+10. Castro Daley-Emeralton Jokers : 39
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Bob Davis-North Head Quicksters : 4
+2. Monty Elroii-Emeralton Jokers : 4
+3. Mark Junior-North Head Quicksters : 4
+4. Kam Harrigan-Emeralton Snipers : 3
+5. Simon Armstrong-Freebee Network : 3
+6. Jill Farrell-New Jerstion Skeletons : 3
+7. Kyrsta Davis-Port Prior Miners : 3
+8. Dreka Miniota-Hryold Berries : 3
+9. Nicki Gagai-North Head Quicksters : 3
+10. Ray Worsent-Emeralton Snipers : 3
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Ashley Kelly-Emeralton Jokers : 37
+2. Dreka Meikle-North Head Quicksters : 36
+3. Peter Sua-Port Hayver Rose Gardens : 35
+4. Frank Wye-Crow's Nest Gamers : 32
+5. Connor Morris-North Sydney Massacre : 30
+6. Kyle Unres-Hryold Berries : 30
+7. Jonathon James-East Kyzlebrek Whales : 29
+8. Brett Fowler-North Head Quicksters : 29
+9. Charles North-Port Prior Miners : 28
+10. Lois Best-Blue Mountains Jellyfish : 28
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Jimmy Aaronson-East Kyzlebrek Whales : 13
+2. Lois Best-Blue Mountains Jellyfish : 12
+3. Mitchell Tan-Port Hayver Rose Gardens : 11
+4. Cameron Rose-Freebee Network : 11
+5. Jeremy Worsent-Stankville Bulldogs : 10
+6. Luke Yemm-Hryold Berries : 10
+7. Tommy Johnson-Emeralton Snipers : 10
+8. Burt Indigo-East Kyzlebrek Whales : 10
+9. Benji Stimson-New Jerstion Skeletons : 10
+10. Peter Sua-Port Hayver Rose Gardens : 10
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Hubert Jackington-East Anywheston Avocados : 10
+2. Ben Berry-Emeralton Jokers : 9
+3. Peter de Marit-Stankville Bulldogs : 8
+4. Bob Caldato-Crow's Nest Dominators : 8
+5. Samantha Emerson-Crow's Nest Dominators : 7
+6. Jarrod Zillman-North Sydney Massacre : 7
+7. Robert Berninger-Crow's Nest Dominators : 7
+8. Opus Ballsut-Crow's Nest Dominators : 7
+9. Jarrod Farrell-East Kyzlebrek Whales : 7
+10. Jared South-Port Hayver Rose Gardens : 7
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Amy MacDonald-Crow's Nest Dominators : 1
+2. Cooper Perry-East Anywheston Avocados : 1
+3. Ashleigh Allsopp-Freebee Network : 1
+4. Kam Harrigan-Emeralton Snipers : 1
+5. Chris McKenzie-Stankville Bulldogs : 1
+6. Pete Domino-Port Hayver Rose Gardens : 1
+7. Lindsay Crane-Crow's Nest Dominators : 1
+8. Cam Tuo-Emeralton Snipers : 1
+9. James Worsent-Stankville Bulldogs : 1
+10. Kamros Hull-Port Prior Miners : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Diana Tedesco-Blue Mountains Jellyfish : 1
+2. Benjamin Horter-East Anywheston Avocados : 1
+3. James Holland-Emeralton Jokers : 1
+4. Peter Brock-North Head Quicksters : 1
+5. Sam Paul-East Anywheston Avocados : 1
+6. Jr. McMahon-Stankville Bulldogs : 0
+7. Kevin O' Donovan-Stankville Bulldogs : 0
+8. Peter de Marit-Stankville Bulldogs : 0
+9. Ann Laki-Stankville Bulldogs : 0
+10. Chris McKenzie-Stankville Bulldogs : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Jenny Cummins-East Anywheston Avocados : 4
+2. Cameron Freit-Hryold Berries : 3
+3. Dylan Best-Eastern City Spacemen : 2
+4. Velento Tramion-Port Hayver Rose Gardens : 2
+5. Walter Tan-Port Prior Miners : 2
+6. James Holland-Emeralton Jokers : 2
+7. Ashley Farrell-East Kyzlebrek Whales : 1
+8. Luca Allen-North Sydney Massacre : 1
+9. Michael Doomer-New Jerstion Skeletons : 1
+10. Paul de Marit-Blue Mountains Jellyfish : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. George Parkson-Blue Mountains Jellyfish : 238
+2. Brett Quess-North Head Quicksters : 222
+3. Dapper Miniota-Emeralton Snipers : 214
+4. Callum Hands-Freebee Network : 156
+5. Luke Yemm-Hryold Berries : 141
+6. Jim Daley-North Sydney Massacre : 132
+7. Josh Ballsut-Crow's Nest Gamers : 130
+8. Don Manfredi-New Jerstion Skeletons : 112
+9. Jim Romney-East Kyzlebrek Whales : 103
+10. Norman Burt-Port Prior Miners : 102
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Kam Harrigan-Emeralton Snipers : 384
+2. Kelin Miao-Freebee Network : 364
+3. Dapper Miniota-Emeralton Snipers : 359
+4. Bob Davis-North Head Quicksters : 348
+5. Ronald Papiai-Emeralton Snipers : 334
+6. Robert Winger-Emeralton Jokers : 331
+7. Kam South-Emeralton Snipers : 325
+8. Pauly O' Donnell-Crow's Nest Gamers : 320
+9. Georgio Deon-Emeralton Snipers : 317
+10. Mark Junior-North Head Quicksters : 313
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Rival Players Raise Awareness!
+Fan Poll: Hryold Berries's Best Player
+Jimmy Britt Donates To Controverisal Charity
+Bob Hughes's Retirment Rumours!
+Benjamin Potter Involved In Sexting Scandal
+Earl Papiai Assaults RSL Bouncer
+Catherine Bridgers Assaults RSL Bouncer
+Jameson Resfa Assaults RSL Bouncer
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Benjamin Watne's Retirment Rumours!
+James Worsent Assaults RSL Bouncer
+Trent Spice At Risk Of An Early Release!
+Dreka Miniota's Retirment Rumours!
+Jameson Resfa Offered Pay Cut To Re-sign
+Velento Tramion Involved In Sexting Scandal
+Andrew Robinson To Have Contract Extended!
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Velento Tramion Helps Sick Kids In Hospital
+Ryan Lindsell Offered Pay Cut To Re-sign
+Neo Taki Donates To Controverisal Charity
+Matt de Faco Assaults RSL Bouncer
+Coach Proposes New Finals System!
+Coach Proposes New Finals System!
+Billie Ese'ese To Have Contract Extended!
+Fan Poll: New Jerstion Skeletons's Best Player
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Burt Holland's Retirment Rumours!
+Rival Players Raise Awareness!
+Ashleigh Whare's Large-Scale Gambling Problem
+Opinion: Allie Farrell Should Swap Teams
+Coach Proposes New Finals System!
+Opus Burt Saves Local Man From Drowning
+Lindsay Warrant Saves Local Man From Drowning
+James Holland Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Kev Warrant Involved In Sexting Scandal
+Dominic Doomer's Eligibility Crisis!
+Ann Laki Involved In Sexting Scandal
+Jill Pearce Saves Local Man From Drowning
+Herman Penatoras Saves Local Man From Drowning
+Catherine Sua Involved In Sexting Scandal
+Christian Allsopp's Eligibility Crisis!
+Bob Taylor At Risk Of An Early Release!
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Arnole Hann Donates To Controverisal Charity
+Isaac Costa Involved In Sexting Scandal
+Coach Proposes New Finals System!
+Rival Players Raise Awareness!
+Ray Worsent To Have Contract Extended!
+Billie Ese'ese To Have Contract Extended!
+Kyrsta Soa Assaults RSL Bouncer
+Bob Davis's Retirment Rumours!
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Opinion: Lindsay Warrant Should Captain England
+Will Yahtzel's Eligibility Crisis!
+Ryan Mallett's Retirment Rumours!
+Opinion: Imm Reynolds Should Captain Turniostan
+Opus Burt's Retirment Rumours!
+Rival Players Raise Awareness!
+Opinion: Allie O' Thomas Should Swap Teams
+Xavier Zari Assaults RSL Bouncer
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Jimmy Aaronson's Eligibility Crisis!
+Coach Proposes New Finals System!
+Jeremy Hughes To Have Contract Extended!
+Opinion: Ashley Farrell Should Captain France
+Fan Poll: Freebee Network's Best Player
+Robert Winger To Have Contract Extended!
+Peter Waterhouse's Eligibility Crisis!
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Jared South At Risk Of An Early Release!
+Arnole Hann's Eligibility Crisis!
+Reimis Kriis Helps Sick Kids In Hospital
+Allie O' Thomas's Retirment Rumours!
+Benjamin Watne At Risk Of An Early Release!
+Monty Elroii's Eligibility Crisis!
+Jr. McMahon Saves Local Man From Drowning
+Andrew Robinson Assaults RSL Bouncer
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Isaak Glass Assaults RSL Bouncer
+Luca Allen's Retirment Rumours!
+Simon Armstrong's Eligibility Crisis!
+Luke Yemm's Large-Scale Gambling Problem
+Opinion: Jeffrey John Should Swap Teams
+Ronald Papiai At Risk Of An Early Release!
+Bill McMahon Saves Local Man From Drowning
+Player Unrest At North Sydney Massacre
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Pauly O' Donnell Donates To Controverisal Charity
+Chris Hands Offered Pay Cut To Re-sign
+Matt McDonalson To Have Contract Extended!
+Catherine Greenberg Saves Local Man From Drowning
+Coach Proposes New Finals System!
+Player Unrest At North Head Quicksters
+Trent Dempsey To Have Contract Extended!
+Isaac Johnson To Have Contract Extended!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Don Manfredi Saves Local Man From Drowning
+Castro Brekston Assaults RSL Bouncer
+Bob Kriis Saves Local Man From Drowning
+Fan Poll: Emeralton Snipers's Best Player
+Kev Kylze Involved In Sexting Scandal
+Player Unrest At Port Prior Miners
+Rival Players Raise Awareness!
+Andrew Jackington Helps Sick Kids In Hospital
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Fan Poll: Port Prior Miners's Best Player
+Phoebe Berninger Saves Local Man From Drowning
+Player Unrest At Port Prior Miners
+Peter Stimson To Have Contract Extended!
+Player Unrest At Port Prior Miners
+Neo Jay At Risk Of An Early Release!
+Opinion: Charles North Should Captain Suoonnia
+Michael Churchill Helps Sick Kids In Hospital
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Fan Poll: Blue Mountains Jellyfish's Best Player
+Fan Poll: Emeralton Snipers's Best Player
+Brendan Rice's Eligibility Crisis!
+Em McMahon's Large-Scale Gambling Problem
+Jenny Flanagan Offered Pay Cut To Re-sign
+Allie O' Thomas To Have Contract Extended!
+Nicholas Martin's Retirment Rumours!
+Corey Crane To Have Contract Extended!
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Xander Dempsey Helps Sick Kids In Hospital
+Ronald O' Thomas Saves Local Man From Drowning
+Coach Proposes New Finals System!
+Coach Proposes New Finals System!
+Dominic Doomer Assaults RSL Bouncer
+Opinion: Jarrod King Should Swap Teams
+Jeffrey John Involved In Sexting Scandal
+Bob Kriis's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+Opinion: Norman Burt Should Captain England
+Pauly Hull To Have Contract Extended!
+Allie Farrell To Have Contract Extended!
+Peter Stimson To Have Contract Extended!
+Jarrod Loomer At Risk Of An Early Release!
+Dreka Miniota Offered Pay Cut To Re-sign
+Opinion: Frank Wye Should Swap Teams
+Ann Laki Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+Arnold Hughes's Eligibility Crisis!
+Jr. Rice To Have Contract Extended!
+Nicholas Atlas Donates To Controverisal Charity
+Jill John Donates To Controverisal Charity
+Kev Kylze Assaults RSL Bouncer
+Opinion: Dreka Meikle Should Swap Teams
+Jr. Rice's Eligibility Crisis!
+Trixie Emerson Involved In Sexting Scandal
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+Bill Kelly Saves Local Man From Drowning
+Nita Walker's Large-Scale Gambling Problem
+Player Unrest At Emeralton Jokers
+Dylan Best's Eligibility Crisis!
+Opinion: Pauly Hull Should Captain United States
+Jeffrey John Assaults RSL Bouncer
+Ashleigh Perry Involved In Sexting Scandal
+Hubert Watne Helps Sick Kids In Hospital
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Phoebe Jackson Helps Sick Kids In Hospital
+Lois Best's Retirment Rumours!
+Amy MacDonald's Eligibility Crisis!
+Kamros Hull's Retirment Rumours!
+Player Unrest At Stankville Bulldogs
+Benjamin Watne's Eligibility Crisis!
+Ali Vianna Offered Pay Cut To Re-sign
+Earl Harris Saves Local Man From Drowning
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+Simon Armstrong Assaults RSL Bouncer
+Isaac Johnson Saves Local Man From Drowning
+Jenny Flanagan's Large-Scale Gambling Problem
+Jimmy Valenta's Retirment Rumours!
+Clint Pearce Assaults RSL Bouncer
+Rival Players Raise Awareness!
+Jeremy Worsent To Have Contract Extended!
+Tommy Johnson Involved In Sexting Scandal
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+Jarrod Zillman Helps Sick Kids In Hospital
+Jarrod King's Retirment Rumours!
+Opinion: Joseph Smith Should Swap Teams
+Ashley Farrell To Have Contract Extended!
+Player Unrest At Port Hayver Rose Gardens
+Jarrod Farrell Helps Sick Kids In Hospital
+Callum Beltio To Have Contract Extended!
+Ann Xander's Eligibility Crisis!
+--------------------------------
+
+
+Round 22 News Stories
+--------------------------------
+Callum Hands Assaults RSL Bouncer
+Coach Proposes New Finals System!
+Ashleigh Allsopp's Large-Scale Gambling Problem
+Kam Harnett Assaults RSL Bouncer
+Coach Proposes New Finals System!
+Mark Potter Involved In Sexting Scandal
+Player Unrest At New Jerstion Skeletons
+Reimis Kriis At Risk Of An Early Release!
+--------------------------------
+
+
+Round 23 News Stories
+--------------------------------
+Mark Potter's Retirment Rumours!
+Peter de Marit Helps Sick Kids In Hospital
+Player Unrest At Port Hayver Rose Gardens
+Ezra Miniota's Retirment Rumours!
+Player Unrest At North Head Quicksters
+Fan Poll: East Kyzlebrek Whales's Best Player
+Ali Kylze At Risk Of An Early Release!
+Chase Zillman At Risk Of An Early Release!
+--------------------------------
+
+
+Round 24 News Stories
+--------------------------------
+Simon McKenzie Saves Local Man From Drowning
+Jordan West At Risk Of An Early Release!
+Jimmy Aaronson Offered Pay Cut To Re-sign
+Kevin O' Donovan Donates To Controverisal Charity
+Xavier Zari To Have Contract Extended!
+Arnole Hann At Risk Of An Early Release!
+Georgio Deon Saves Local Man From Drowning
+Callum Beltio Assaults RSL Bouncer
+--------------------------------
+
+
+Round 25 News Stories
+--------------------------------
+Fan Poll: East Anywheston Avocados's Best Player
+Hubert Wood Helps Sick Kids In Hospital
+Opinion: Ashleigh Perry Should Swap Teams
+Coach Proposes New Finals System!
+Ali Xylxed Saves Local Man From Drowning
+Opinion: Walter Tan Should Captain Italy
+Jimmy Valenta Saves Local Man From Drowning
+Andrew Robinson's Eligibility Crisis!
+--------------------------------
+
+
+Round 26 News Stories
+--------------------------------
+Emeralton Snipers Wins Minor Premiership!
+Simon McKenzie Saves Local Man From Drowning
+Player Unrest At Blue Mountains Jellyfish
+Opinion: Will Yahtzel Should Captain Canada
+Castro Daley Assaults RSL Bouncer
+Ezra Miniota Donates To Controverisal Charity
+Paul Kriis Helps Sick Kids In Hospital
+Opinion: Luke Yemm Should Swap Teams
+--------------------------------
+
+
+Round 27 News Stories
+--------------------------------
+Em McMahon's Large-Scale Gambling Problem
+Opinion: Ezra Miniota Should Captain Papau New Guinea
+Fan Poll: Blue Mountains Jellyfish's Best Player
+Damien Fowler At Risk Of An Early Release!
+Ashleigh Perry At Risk Of An Early Release!
+Jeffrey Emerson Offered Pay Cut To Re-sign
+James Worsent's Eligibility Crisis!
+Earl Harris Donates To Controverisal Charity
+--------------------------------
+
+
+Round 28 News Stories
+--------------------------------
+Coach Proposes New Finals System!
+Frank Wye's Eligibility Crisis!
+Jarrod Zillman's Retirment Rumours!
+Jeffrey Emerson Saves Local Man From Drowning
+Opinion: Luke Folick Should Captain France
+Coach Proposes New Finals System!
+Benji Stimson's Eligibility Crisis!
+Earl Papiai Assaults RSL Bouncer
+--------------------------------
+
+
+Round 29 News Stories
+--------------------------------
+Adole Fitler Donates To Controverisal Charity
+Reimis Kriis To Have Contract Extended!
+Gerry Etten Helps Sick Kids In Hospital
+Jenny Cummins Helps Sick Kids In Hospital
+Opinion: Simon McKenzie Should Captain Scotland
+Opinion: Andrew Soa Should Captain Australia
+Nicholas Atlas At Risk Of An Early Release!
+Player Unrest At Hryold Berries
+--------------------------------
+
+
+Round 30 News Stories
+--------------------------------
+Emeralton Snipers Wins Premiership!
+Jimmy Tamber Helps Sick Kids In Hospital
+Opinion: Jeffrey Emerson Should Captain Canada
+Corey Sandra Helps Sick Kids In Hospital
+Fan Poll: Emeralton Jokers's Best Player
+Monty Elroii's Large-Scale Gambling Problem
+Allie O' Thomas Donates To Controverisal Charity
+Brett Fowler Assaults RSL Bouncer
+--------------------------------
+

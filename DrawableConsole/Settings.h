@@ -91,6 +91,8 @@ public:
 	void ColourPalette(HANDLE hOut);
 	void volumeControl(int volume);
 
+	void setOffset(int x, int y) { xOffset = x; yOffset = y; }
+
 protected:
 	SYDE_ColourValues _BLACK = SYDE_ColourValues(12, 12, 12);
 	SYDE_ColourValues _BLUE = SYDE_ColourValues(0, 55, 218);

@@ -2055,7 +2055,7 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			SRLRound repRound(repGames);
 			repRound.isRepRound = true;
 			int repPeriod = BaseSeasonGames / 4;
-			if (BaseSeasonGames > 9)
+			if (BaseSeasonGames > 9 && repGames.size() > 0)
 			{
 				repRound.RoundName = "Representive Round 1";
 				rounds.insert(rounds.begin() + repPeriod, repRound);

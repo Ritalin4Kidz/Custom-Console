@@ -8,6 +8,11 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.0.1.0 01/08/2021
+
+- Swap Player Positions In Coaching Mode
+- Players More Likely To Be The Attacker Or Defender Based On Position (For Basic Tackles)
+
 ### 1.0.0.0 
 
 - First Release Of SYDE RUGBY LEAGUE!!!!

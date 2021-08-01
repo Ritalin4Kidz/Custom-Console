@@ -33,6 +33,10 @@ public:
 	ColourClass getBadge() { return badgeColour; }
 
 	SRLPlayer getRandomPlayer();
+
+	SRLPlayer getRandomPlayerAttacker();
+	SRLPlayer getRandomPlayerDefender();
+
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
 
 	void clearTeam();
@@ -45,6 +49,8 @@ public:
 	void loadTeamOffContract(string path);
 	void saveTeam();
 	void saveTeamOffContract();
+	
+	void swapStartPositionsAndSave(int pos1, int pos2);
 
 	void addPlayerMetres(string playerName, int metres);
 	void addPlayerKickMetres(string playerName, int metres);

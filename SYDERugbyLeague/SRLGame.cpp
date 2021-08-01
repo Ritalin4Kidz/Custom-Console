@@ -445,24 +445,24 @@ void SRLGameManager::play()
 			return;
 		}
 	}
-	SRLPlayer defender = m_AwayTeam.getRandomPlayer();
-	SRLPlayer attacker = m_HomeTeam.getRandomPlayer();
+	SRLPlayer defender = m_AwayTeam.getRandomPlayerDefender();
+	SRLPlayer attacker = m_HomeTeam.getRandomPlayerAttacker();
 	if (!m_HomeTeamHasBall)
 	{
-		defender = m_HomeTeam.getRandomPlayer();
+		defender = m_HomeTeam.getRandomPlayerDefender();
 		while (defender.getPlayerSent())
 		{
-			defender = m_HomeTeam.getRandomPlayer();
+			defender = m_HomeTeam.getRandomPlayerDefender();
 			defender.setAllStats(5);
 		}
 		for (int i = 0; i < m_HomeTeam.getPlayerOffCount(); i++)
 		{
 			defender.affectAllStats(playerSentDivision);
 		}
-		attacker = m_AwayTeam.getRandomPlayer();
+		attacker = m_AwayTeam.getRandomPlayerAttacker();
 		while (attacker.getPlayerSent())
 		{
-			attacker = m_HomeTeam.getRandomPlayer();
+			attacker = m_HomeTeam.getRandomPlayerAttacker();
 			attacker.setAllStats(5);
 		}
 		for (int i = 0; i < m_AwayTeam.getPlayerOffCount(); i++)
@@ -474,7 +474,7 @@ void SRLGameManager::play()
 	{
 		while (defender.getPlayerSent())
 		{
-			defender = m_AwayTeam.getRandomPlayer();
+			defender = m_AwayTeam.getRandomPlayerDefender();
 			defender.setAllStats(5);
 		}
 		for (int i = 0; i < m_AwayTeam.getPlayerOffCount(); i++)
@@ -483,7 +483,7 @@ void SRLGameManager::play()
 		}
 		while (attacker.getPlayerSent())
 		{
-			attacker = m_HomeTeam.getRandomPlayer();
+			attacker = m_HomeTeam.getRandomPlayerAttacker();
 			attacker.setAllStats(5);
 		}
 		for (int i = 0; i < m_HomeTeam.getPlayerOffCount(); i++)

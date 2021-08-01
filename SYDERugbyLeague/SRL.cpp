@@ -48,6 +48,7 @@ bool SRLGame::performTradeCall = false;
 bool SRLGame::performTradeConfirmedCall = false;
 bool SRLGame::performTrainCall = false;
 bool SRLGame::performTrainConfirmedCall = false;
+bool SRLGame::setUpPosShowcaseCall = false;
 bool SRLGame::TeamInDepthViewingJerseyAsset = true;
 int SRLGame::playerClicked = 0;
 float SRLGame::m_ScrollingSpeed = 1.0f;
@@ -73,10 +74,13 @@ bool SRLGame::coachingMode = false;
 bool SRLGame::selectedTeamCall = false;
 bool SRLGame::performRefreshOptionsCall = false;
 bool SRLGame::allowJsonExportingSeason = false;
+string SRLGame::posToSwap = "";
+bool SRLGame::posSwapCall = false;
 SRLTrainingType SRLGame::trainType = Training_Attack;
 int SRLGame::playerMainTeamTrade = 0;
 int SRLGame::playerOtherTeamTrade = 0;
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
+SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
 
 deque<string> SRLGame::AchievementStrings = deque<string>();
@@ -589,6 +593,10 @@ void BettingViewClick()
 void CoachingViewClick()
 {
 	SRLGame::newState = CoachingViewState;
+	if (SRLGame::coachDrawState == CoachingSwapPos_STATE)
+	{
+		SRLGame::coachDrawState = CoachingTeamList_STATE;
+	}
 }
 void CurrentRoundViewClick()
 {
@@ -602,6 +610,38 @@ void CoachMainViewClick()
 void CoachTeamViewClick()
 {
 	SRLGame::coachDrawState = CoachingTeamList_STATE;
+}
+void CoachSwapPositionsViewClick()
+{
+	SRLGame::coachDrawState = CoachingSwapPos_STATE;
+	SRLGame::posToSwap = "";
+	SRLGame::setUpPosShowcaseCall = true;
+	SRLGame::posSwapState = SRLPS_Backline;
+}
+
+void DoNextPosSwapStateView()
+{
+	SRLGame::setUpPosShowcaseCall = true;
+	int statePos = static_cast<int>(SRLGame::posSwapState);
+	statePos++;
+	if (statePos > 2)
+	{
+		statePos = 0;
+	}
+	SRLGame::posSwapState = static_cast<SRLPositionShowcaseState>(statePos);
+	
+}
+
+void DoPrevPosSwapStateView()
+{
+	SRLGame::setUpPosShowcaseCall = true;
+	int statePos = static_cast<int>(SRLGame::posSwapState);
+	statePos--;
+	if (statePos < 0)
+	{
+		statePos = 2;
+	}
+	SRLGame::posSwapState = static_cast<SRLPositionShowcaseState>(statePos);
 }
 
 void CoachTradeViewClick()
@@ -882,6 +922,20 @@ void FeaturedMatchSwitchViewClick()
 	}
 }
 
+void SwapPositionsJerseyClick()
+{
+	if (SRLGame::posToSwap == "")
+	{
+		SRLGame::posToSwap = CustomAsset_Clickable::getLastButtonTag();
+		SRLGame::posToSwap += ";";
+	}
+	else
+	{
+		SRLGame::posToSwap += CustomAsset_Clickable::getLastButtonTag();
+		SRLGame::posSwapCall = true;
+	}
+}
+
 #pragma endregion
 
 void SRLGame::init()
@@ -927,6 +981,10 @@ void SRLGame::init()
 	m_CoachTeamStateBtn.setHighLight(RED);
 	m_CoachTeamStateBtn.SetFunc(CoachTeamViewClick);
 
+	m_CoachTeamSwapPositionsBtn = SYDEClickableButton(" Swap Positions ", Vector2(44, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTeamSwapPositionsBtn.setHighLight(RED);
+	m_CoachTeamSwapPositionsBtn.SetFunc(CoachSwapPositionsViewClick);
+
 	m_CoachTrainRefreshBtn = SYDEClickableButton("Refresh Options", Vector2(43, 17), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_CoachTrainRefreshBtn.setHighLight(RED);
 	m_CoachTrainRefreshBtn.SetFunc(DoPerformRefreshClick);
@@ -945,6 +1003,13 @@ void SRLGame::init()
 	m_CoachTrainConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_CoachTrainConfirmCNCLBtn.setHighLight(RED);
 	m_CoachTrainConfirmCNCLBtn.SetFunc(DoTrainCallCNCLClick);
+
+	m_CoachPosSwapPrev = SYDEClickableButton("<<", Vector2(0, 10), Vector2(2, 1), BLACK_RED_BG, false);
+	m_CoachPosSwapPrev.setHighLight(RED);
+	m_CoachPosSwapPrev.SetFunc(DoPrevPosSwapStateView);
+	m_CoachPosSwapNext = SYDEClickableButton(">>", Vector2(58, 10), Vector2(2, 1), BLACK_RED_BG, false);
+	m_CoachPosSwapNext.setHighLight(RED);
+	m_CoachPosSwapNext.SetFunc(DoNextPosSwapStateView);
 #pragma endregion
 
 #pragma region SeasonOptions
@@ -2654,8 +2719,6 @@ ConsoleWindow SRLGame::SelectTeamCoachingView(ConsoleWindow window, int windowWi
 
 ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	window = drawTabs(window);
-	window = drawCoachingTabs(window);
 	if (coachDrawState == CoachingMain_STATE)
 	{
 		window.setTextAtPoint(Vector2(0, 3), teamCoached, BRIGHTWHITE);
@@ -2904,7 +2967,81 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 				window.setTextAtPoint(Vector2(30, (i - 10) + 3), to_string(i + 1) + ". " + m_CoachedTeam.getPlayers()[i].getName() + " (" + to_string(m_CoachedTeam.getPlayers()[i].getRating()) + ")", BRIGHTWHITE);
 			}
 		}
+		window = m_CoachTeamSwapPositionsBtn.draw_ui(window);
 	}
+	else if (coachDrawState == CoachingSwapPos_STATE)
+	{
+		if (posSwapCall)
+		{
+			posSwapCall = false;
+			setUpPosShowcaseCall = true;
+			deque<string> PositionsToSwap = Split(posToSwap, ';');
+			m_CoachedTeam.swapStartPositionsAndSave(stoi(PositionsToSwap[0]) - 1, stoi(PositionsToSwap[1]) - 1);
+
+			//IF WE SWAPPED A POSITION THAT EXISTS HERE
+			for (int i = 0; i < m_TrainingButtons.size(); i++)
+			{
+				deque<string> tags = Split(m_TrainingButtons[i].getTag(), ';');
+				int playerID = stoi(tags[1]);
+				if (playerID == stoi(PositionsToSwap[0]) - 1)
+				{
+					tags[1] = to_string(stoi(PositionsToSwap[1]) - 1);
+					m_TrainingButtons[i].setTag(tags[0] + ";" + tags[1] + ";" + tags[2] + ";" + tags[3] + ";" + tags[4]);
+				}
+				if (playerID == stoi(PositionsToSwap[1]) - 1)
+				{
+					tags[1] = to_string(stoi(PositionsToSwap[0]) - 1);
+					m_TrainingButtons[i].setTag(tags[0] + ";" + tags[1] + ";" + tags[2] + ";" + tags[3] + ";" + tags[4]);
+				}
+			}
+			//OR IF WE SWAPPED A POSITION THAT EXISTS HERE
+			for (int i = 0; i < m_TradingButtons.size(); i++)
+			{
+				deque<string> tags = Split(m_TradingButtons[i].getTag(), ';');
+				int playerID = stoi(tags[1]);
+				if (playerID == stoi(PositionsToSwap[0]) - 1)
+				{
+					tags[1] = to_string(stoi(PositionsToSwap[1]) - 1);
+					m_TradingButtons[i].setTag(tags[0] + ";" + tags[1] + ";" + tags[2] + ";" + tags[3]);
+				}
+				if (playerID == stoi(PositionsToSwap[1]) - 1)
+				{
+					tags[1] = to_string(stoi(PositionsToSwap[0]) - 1);
+					m_TradingButtons[i].setTag(tags[0] + ";" + tags[1] + ";" + tags[2] + ";" + tags[3]);
+				}
+			}
+			posToSwap = "";
+			for (int i = 0; i < _PositionsShowcase.size(); i++)
+			{
+				_PositionsShowcase[i].m_MiniJersery.clearHighlight();
+			}
+		}		
+		if (setUpPosShowcaseCall)
+		{
+			setUpPositionShowcase(posSwapState);
+		}
+		window = m_FieldBg.draw_asset(window, Vector2(0));
+		for (int i = 0; i < _PositionsShowcase.size(); i++)
+		{
+			window = _PositionsShowcase[i].draw_showcase(window);
+		}
+		if (posSwapState == SRLPS_Backline)
+		{
+			window.setTextAtPoint(Vector2(2, 3), "Backline:", BLACK_BRIGHTGREEN_BG);
+		}
+		else if (posSwapState == SRLPS_Frontline)
+		{
+			window.setTextAtPoint(Vector2(2, 3), "Frontline:", BLACK_BRIGHTGREEN_BG);
+		}
+		else if (posSwapState == SRLPS_Interchange)
+		{
+			window.setTextAtPoint(Vector2(2, 3), "Interchange:", BLACK_BRIGHTGREEN_BG);
+		}
+		window = m_CoachPosSwapPrev.draw_ui(window);
+		window = m_CoachPosSwapNext.draw_ui(window);
+	}
+	window = drawTabs(window);
+	window = drawCoachingTabs(window);
 	return window;
 }
 
@@ -3637,7 +3774,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.0.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.1.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -6182,6 +6319,51 @@ void SRLGame::setUpSelectedTeamView()
 	teamSelectedRating = a_selectedTeamView.TeamRating();
 	m_CoachedTeam = a_selectedTeamView;
 	teamCoached = m_SeasonTeams[teamSelected];
+}
+
+void SRLGame::setUpPositionShowcase(SRLPositionShowcaseState _state)
+{
+	setUpPosShowcaseCall = false;
+	CustomAsset_Clickable newJersey = m_MiniJersery;
+	newJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, m_CoachedTeam.getPrimary());
+	newJersey.changeAllInstancesOfColour(BRIGHTGREEN_BRIGHTGREEN_BG, GREEN_GREEN_BG);
+	newJersey.changeAllInstancesOfColour(BLUE_BLUE_BG,LIGHTBLUE_LIGHTBLUE_BG);
+	_PositionsShowcase.clear();
+	if (_state == SRLPS_Backline)
+	{
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[0].getName(), 1,Vector2(4, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[1].getName(), 2, Vector2(18, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[2].getName(), 3, Vector2(32, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[3].getName(), 4, Vector2(46, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[4].getName(), 5, Vector2(10, 12)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[5].getName(), 6, Vector2(24, 12)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[6].getName(), 7, Vector2(38, 12)));
+	}
+	else if (_state == SRLPS_Frontline)
+	{
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[7].getName(), 8, Vector2(10, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[8].getName(), 9, Vector2(24, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[9].getName(), 10, Vector2(38, 5)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[10].getName(), 11, Vector2(10, 12)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[11].getName(), 12, Vector2(24, 12)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[12].getName(), 13, Vector2(38, 12)));
+	}
+	else if (_state == SRLPS_Interchange)
+	{
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[13].getName(), 14, Vector2(4, 8)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[14].getName(), 15, Vector2(18, 8)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[15].getName(), 16, Vector2(32, 8)));
+		_PositionsShowcase.push_back(SRLPositionShowcase(newJersey, m_CoachedTeam.getPlayers()[16].getName(), 17, Vector2(46, 8)));
+	}
+	for (int i = 0; i < _PositionsShowcase.size(); i++)
+	{
+		_PositionsShowcase[i].m_MiniJersery.SetFunc(SwapPositionsJerseyClick);
+		_PositionsShowcase[i].m_MiniJersery.setTag(_PositionsShowcase[i].positionNumber.m_Text.substr(0, _PositionsShowcase[i].positionNumber.m_Text.size() - 1));
+		if (CustomAsset_Clickable::getLastButtonTag() == _PositionsShowcase[i].m_MiniJersery.getTag() && posToSwap != "")
+		{
+			_PositionsShowcase[i].m_MiniJersery.ForceHighlight();
+		}
+	}
 }
 
 void SRLGame::setUpPlayer()

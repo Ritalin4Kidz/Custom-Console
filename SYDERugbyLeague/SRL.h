@@ -47,7 +47,8 @@ enum CoachingViewDrawState
 	CoachingMain_STATE,
 	CoachingTeamList_STATE,
 	CoachingTrades_STATE,
-	CoachingTraining_STATE
+	CoachingTraining_STATE,
+	CoachingSwapPos_STATE
 };
 
 enum SeasonDrawViewState
@@ -137,6 +138,13 @@ enum SRLSponsorTypeState
 	SponsorState_Casino,
 	SponsorState_Shoes,
 	SponsorState_Zeckfast
+};
+
+enum SRLPositionShowcaseState
+{
+	SRLPS_Backline = 0,
+	SRLPS_Frontline,
+	SRLPS_Interchange
 };
 
 #pragma endregion
@@ -235,6 +243,8 @@ public:
 	void setUpTeamInDepthView(int teamViewing);
 	void setUpSelectedTeamView();
 
+	void setUpPositionShowcase(SRLPositionShowcaseState _state);
+
 	void setUpPlayer();
 
 	void otherArticles();
@@ -317,6 +327,9 @@ public:
 	static bool premiershipBet;
 	static bool homeTeamTryBet;
 	static bool keyPadCall;
+
+	static bool setUpPosShowcaseCall;
+
 	static int gameNumberBet;
 
 	static bool generateStartCall;
@@ -353,6 +366,9 @@ public:
 	static int playerOtherTeamTrade;
 	static SRLTeam otherTeamTrade;
 	static SRLTrainingType trainType;
+	static SRLPositionShowcaseState posSwapState;
+	static string posToSwap;
+	static bool posSwapCall;
 #pragma endregion
 private:
 	const int customTeamGenerateChance = 9999;
@@ -580,7 +596,10 @@ private:
 
 	CustomAnimationAsset m_MainMenuBG = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\mainmenuAnim.bmp", astVars, 180, 280, 30, 20, 0, 81));
 	CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
+	CustomAsset m_FieldBg = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fieldShowcase.bmp", 30, 20));
 	CustomAsset m_ProfileLogo = CustomAsset(20, 10, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\DefaultLogo.bmp", 10, 10));
+	CustomAsset_Clickable m_MiniJersery = CustomAsset_Clickable(10, 4, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\MiniJersey.bmp", 5, 4));
+	deque<SRLPositionShowcase> _PositionsShowcase = deque<SRLPositionShowcase>({});
 	float splashScreenTime = 0;
 	bool splashScreenInit = true;
 	SRLTeam m_InDepthTeamView;
@@ -604,12 +623,16 @@ private:
 	SYDEClickableButton m_CoachTradeStateBtn;
 	SYDEClickableButton m_CoachTrainStateBtn;
 	SYDEClickableButton m_CoachTeamStateBtn;
+	SYDEClickableButton m_CoachTeamSwapPositionsBtn;
 
 	SYDEClickableButton m_CoachTradeConfirmOKBtn;
 	SYDEClickableButton m_CoachTradeConfirmCNCLBtn;
 
 	SYDEClickableButton m_CoachTrainConfirmOKBtn;
 	SYDEClickableButton m_CoachTrainConfirmCNCLBtn;
+
+	SYDEClickableButton m_CoachPosSwapPrev;
+	SYDEClickableButton m_CoachPosSwapNext;
 
 	SYDEClickableButton m_CoachTrainRefreshBtn;
 	const int maxRefreshes = 3;

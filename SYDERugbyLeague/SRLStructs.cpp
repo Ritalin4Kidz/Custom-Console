@@ -552,3 +552,40 @@ void SRLProfile::SaveSettings()
 	std::ofstream ofs("EngineFiles\\Settings\\playerProfile.json");
 	ofs << save_file;
 }
+
+ConsoleWindow SRLPositionShowcase::draw_showcase(ConsoleWindow window)
+{
+	window = m_MiniJersery.draw_asset(window, pos);
+	window = positionNumber.draw_ui(window);
+	window = playerName.draw_ui(window);
+	return window;
+}
+
+string SRLPositionShowcase::getShorterName(string _s)
+{
+	int arraySize = 1;
+	for (int i = 0; i < _s.length(); i++)
+	{
+		if (_s[i] == ' ')
+		{
+			arraySize++;
+		}
+	}
+	std::deque<std::string> splitString(arraySize);
+	int arrayNo = 0;
+	while (arrayNo < arraySize - 1)
+	{
+		for (int i = 0; i < _s.length(); i++)
+		{
+			if (_s[i] == ' ')
+			{
+				splitString[arrayNo] = _s.substr(0, i);
+				_s = _s.substr(i + 1, _s.length() - i);
+				arrayNo++;
+				break;
+			}
+		}
+	}
+
+	return splitString[0].substr(0, 1) + ". " + _s;
+}

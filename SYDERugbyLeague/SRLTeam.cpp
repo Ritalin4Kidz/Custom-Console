@@ -112,6 +112,36 @@ SRLPlayer SRLTeam::getRandomPlayer()
 	return m_TeamList[player];
 }
 
+SRLPlayer SRLTeam::getRandomPlayerAttacker()
+{
+	int chanceOfFrontLine = rand() % 100;
+	if (chanceOfFrontLine > 75)
+	{
+		int player = rand() % 6 + 7;
+		return m_TeamList[player];
+	}
+	else
+	{
+		int player = rand() % 7;
+		return m_TeamList[player];
+	}
+}
+
+SRLPlayer SRLTeam::getRandomPlayerDefender()
+{
+	int chanceOfFrontLine = rand() % 100;
+	if (chanceOfFrontLine > 35)
+	{
+		int player = rand() % 6 + 7;
+		return m_TeamList[player];
+	}
+	else
+	{
+		int player = rand() % 7;
+		return m_TeamList[player];
+	}
+}
+
 void SRLTeam::clearTeam()
 {
 	m_TeamList.clear();
@@ -194,6 +224,14 @@ void SRLTeam::saveTeamOffContract()
 	std::ofstream ofs(filePath);
 	ofs << save_file;
 	//return save_file;
+}
+
+void SRLTeam::swapStartPositionsAndSave(int pos1, int pos2)
+{
+	SRLPlayer temp = m_TeamList[pos1];
+	m_TeamList[pos1] = m_TeamList[pos2];
+	m_TeamList[pos2] = temp;
+	saveTeam();
 }
 
 void SRLTeam::addPlayerMetres(string playerName, int metres)

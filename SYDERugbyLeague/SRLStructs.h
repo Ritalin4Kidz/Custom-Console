@@ -320,3 +320,22 @@ public:
 	void LoadSettings();
 	void SaveSettings();
 };
+
+struct SRLPositionShowcase
+{
+	SRLPositionShowcase() {}
+	SRLPositionShowcase(CustomAsset_Clickable _a, string _s, int _i, Vector2 _v) {
+		pos = _v; m_MiniJersery = _a; m_MiniJersery.setHilightColour(BLUE_BLUE_BG);
+		positionNumber.setText(to_string(_i) + "."); positionNumber.setPos(Vector2(pos.getX()+4, pos.getY() + 3)); positionNumber.setSize(Vector2(3, 1));
+		playerName.setText(getShorterName(_s)); playerName.setPos(Vector2(pos.getX(), pos.getY() + 4)); playerName.setSize(Vector2(_s.length(), 1)); 
+	}
+	CustomAsset_Clickable m_MiniJersery;
+	SYDELabel positionNumber = SYDELabel("", Vector2(0), Vector2(0), BLACK, true);
+	SYDELabel playerName = SYDELabel("", Vector2(0), Vector2(0), BLACK, true);
+
+	string getShorterName(string _s);
+
+	Vector2 pos;
+
+	ConsoleWindow draw_showcase(ConsoleWindow window);
+};

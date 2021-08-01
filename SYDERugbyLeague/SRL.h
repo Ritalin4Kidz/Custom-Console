@@ -356,6 +356,7 @@ public:
 	static int playerClicked;
 	static bool playerCall;
 	static bool finalsSystemCall;
+	static bool RepRoundsOn;
 
 	static bool allowJsonExportingSeason;
 
@@ -491,7 +492,7 @@ private:
 	SYDEClickableButton m_SettingsEventsBtn = SYDEClickableButton();
 	SYDEClickableButton m_SettingsCoachBtn = SYDEClickableButton();
 	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
-
+	SYDEClickableButton m_SettingsRepRoundsBtn = SYDEClickableButton();
 
 	//KEYPAD
 	SYDEClickableButton m_KeypadBtn_1 = SYDEClickableButton();
@@ -562,6 +563,8 @@ private:
 	deque<SRLGameBetsWriting> m_TryScorerBetsWriteUp;
 	deque<string> AttackersHome = deque<string>({});
 	deque<string> AttackersAway = deque<string>({});
+
+	deque<SRLTeam> repTeams = deque<SRLTeam>({});
 
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;

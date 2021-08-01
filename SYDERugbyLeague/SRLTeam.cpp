@@ -823,6 +823,11 @@ int SRLTeam::TeamRating()
 	return rating/5;
 }
 
+void SRLTeam::cutToSeventeen()
+{
+	m_TeamList.erase(m_TeamList.begin() + 17, m_TeamList.end());
+}
+
 ColourClass SRLTeam::getRandomColour()
 {
 	int colour = rand() % 15;

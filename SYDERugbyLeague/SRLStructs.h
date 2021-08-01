@@ -177,6 +177,8 @@ struct SRLRound
 	deque<SRLGameBet> m_Bets;
 	deque<SRLGameBet> m_TryScorerBets;
 	deque<SRLNewsArticle> newsStories;
+	string RoundName;
+	bool isRepRound = false;
 	FeaturedGame gameToFeature;
 };
 

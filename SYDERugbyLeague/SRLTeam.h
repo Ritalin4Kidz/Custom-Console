@@ -132,6 +132,13 @@ public:
 
 	int TeamRating();
 
+
+	void AddPlayer(SRLPlayer player) {
+		m_TeamList.push_back(player);
+	}
+
+	void cutToSeventeen();
+
 private:
 	ColourClass getRandomColour();
 	string m_Name;

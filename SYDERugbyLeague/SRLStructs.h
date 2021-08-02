@@ -152,6 +152,7 @@ struct FeaturedGame
 {
 	FeaturedGame() {}
 	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds);
+	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, deque<SRLTeam> repTeams);
 	bool featuredGameAvail = false;
 	int fg_homeTeamScore = 0;
 	int fg_awayTeamScore = 0;

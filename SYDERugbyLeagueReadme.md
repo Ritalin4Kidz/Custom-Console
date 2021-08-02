@@ -8,11 +8,18 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.0.2.0 02/08/2021
+- Extended Team List To 20 Players, However Game's Still Use 17
+- - This Means Each Season Has 48 More Players, Which Can Be Traded To Other Teams
+- Coaches Can Rotate These Players In & Out Of The Starting Line-Up
+- Rep Rounds Have Featured Games
+
 ### 1.0.1.0 01/08/2021
 
 - Swap Player Positions In Coaching Mode
 - Players More Likely To Be The Attacker Or Defender Based On Position (For Basic Tackles)
 - Stat Cycling In Team List View In Coaching Mode
+- Mid Season Rep Rounds
 
 ### 1.0.0.0 
 

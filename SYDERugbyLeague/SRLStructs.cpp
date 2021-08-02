@@ -239,6 +239,56 @@ FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int ga
 
 }
 
+/*
+For Rep Rounds
+*/
+FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars,int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, deque<SRLTeam> repTeams)
+{
+	gameNumber = gameNo;
+	for (int j = 0; j < repTeams.size(); j++)
+	{
+		if (repTeams[j].getName() == home)
+		{
+			fg_homeTeam = repTeams[j];
+		}
+		else if (repTeams[j].getName() == away)
+		{
+			fg_awayTeam = repTeams[j];
+		}
+	}
+
+	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_homeTeam.getJerseryType()) + ".bmp";
+	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	fg_homeTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	fg_homeTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	fg_homeTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	fg_homeTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_homeTeam.getPrimary());
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_homeTeam.getSecondary());
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_homeTeam.getBadge());
+	JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_awayTeam.getJerseryType()) + ".bmp";
+	wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	fg_awayTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	fg_awayTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	fg_awayTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	fg_awayTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_awayTeam.getPrimary());
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_awayTeam.getSecondary());
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_awayTeam.getBadge());
+
+	featuredGameAvail = true;
+
+	fg_homeOdds = homeOdds;
+	fg_awayOdds = awayOdds;
+
+	homeTeamKeyPlayers.clear();
+	fg_homeTeam.addBestPlayers(homeTeamKeyPlayers, 5);
+	awayTeamKeyPlayers.clear();
+	fg_awayTeam.addBestPlayers(awayTeamKeyPlayers, 5);
+}
+
 GameSummaryText::GameSummaryText(string t, string p, string player, string s)
 {
 	Time = t; Play = p; Player = player; ScoreText = s;

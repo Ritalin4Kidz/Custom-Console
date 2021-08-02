@@ -529,9 +529,9 @@ deque<string> SRLTeam::addTimeOnField(int time)
 void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
 {
 	deque<SRLPlayer> temp = getPlayers();
-	for (int i = 0; i < temp.size(); i++)
+	for (int i = 0; i < temp.size() && i < 17; i++)
 	{
-		for (int ii = i + 1; ii < temp.size(); ii++)
+		for (int ii = i + 1; ii < temp.size() && ii < 17; ii++)
 		{
 			if (temp[ii].getRating() > temp[i].getRating())
 			{
@@ -552,9 +552,9 @@ void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
 deque<SRLPlayer> SRLTeam::addBestAttackers(deque<string>& vec, int amount)
 {
 	deque<SRLPlayer> temp = getPlayers();
-	for (int i = 0; i < temp.size(); i++)
+	for (int i = 0; i < temp.size() && i < 17; i++)
 	{
-		for (int ii = i + 1; ii < temp.size(); ii++)
+		for (int ii = i + 1; ii < temp.size() && ii < 17; ii++)
 		{
 			if (temp[ii].getAttack() > temp[i].getAttack())
 			{
@@ -736,7 +736,7 @@ int SRLTeam::totalKickMetres()
 int SRLTeam::totalAttackStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getAttack();
 	}
@@ -746,7 +746,7 @@ int SRLTeam::totalAttackStat()
 int SRLTeam::totalDefenceStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getDefence();
 	}
@@ -756,7 +756,7 @@ int SRLTeam::totalDefenceStat()
 int SRLTeam::totalSpeedStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getSpeed();
 	}
@@ -766,7 +766,7 @@ int SRLTeam::totalSpeedStat()
 int SRLTeam::totalKickStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getKicking();
 	}
@@ -776,7 +776,7 @@ int SRLTeam::totalKickStat()
 int SRLTeam::totalHandlingStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getHandling();
 	}

@@ -681,6 +681,12 @@ private:
 	SYDEClickableButton m_WorldCupCfgBtn;
 	SYDEClickableButton m_ExhibitionCfgBtn;
 	FeaturedGame m_ExhibitionGameFeature;
+
+	SYDEClickableButton m_ExhibitionSwap1Prev;
+	SYDEClickableButton m_ExhibitionSwap1Next;
+	SYDEClickableButton m_ExhibitionSwap2Prev;
+	SYDEClickableButton m_ExhibitionSwap2Next;
+
 #pragma region Challenges
 
 	SYDEClickableButton m_Sponsor_Clarity_CasinoBtn = SYDEClickableButton();

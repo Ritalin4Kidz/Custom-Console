@@ -657,6 +657,27 @@ void DoExhibitionCfg()
 	SRLGame::setUpExhibitionDisplayCall = true;
 }
 
+void DoExhibitionSwap1Prev()
+{
+	SRLGame::exhibitionTeam1Num--;
+	SRLGame::setUpExhibitionDisplayCall = true;
+}
+void DoExhibitionSwap1Next()
+{
+	SRLGame::exhibitionTeam1Num++;
+	SRLGame::setUpExhibitionDisplayCall = true;
+}
+void DoExhibitionSwap2Prev()
+{
+	SRLGame::exhibitionTeam2Num--;
+	SRLGame::setUpExhibitionDisplayCall = true;
+}
+void DoExhibitionSwap2Next()
+{
+	SRLGame::exhibitionTeam2Num++;
+	SRLGame::setUpExhibitionDisplayCall = true;
+}
+
 void DoNextPosSwapStateView()
 {
 	SRLGame::setUpPosShowcaseCall = true;
@@ -1065,6 +1086,19 @@ void SRLGame::init()
 	m_ExhibitionCfgBtn = SYDEClickableButton("Exhibition Match", Vector2(5, 14), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
 	m_ExhibitionCfgBtn.setHighLight(RED);
 	m_ExhibitionCfgBtn.SetFunc(DoExhibitionCfg);
+
+	m_ExhibitionSwap1Prev = SYDEClickableButton("<<", Vector2(2, 14), Vector2(2, 1),BLACK_RED_BG, false);
+	m_ExhibitionSwap1Prev.setHighLight(RED);
+	m_ExhibitionSwap1Prev.SetFunc(DoExhibitionSwap1Prev);
+	m_ExhibitionSwap1Next = SYDEClickableButton(">>", Vector2(26, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap1Next.setHighLight(RED);
+	m_ExhibitionSwap1Next.SetFunc(DoExhibitionSwap1Next);
+	m_ExhibitionSwap2Prev = SYDEClickableButton("<<", Vector2(32, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap2Prev.setHighLight(RED);
+	m_ExhibitionSwap2Prev.SetFunc(DoExhibitionSwap2Prev);
+	m_ExhibitionSwap2Next = SYDEClickableButton(">>", Vector2(56, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap2Next.setHighLight(RED);
+	m_ExhibitionSwap2Next.SetFunc(DoExhibitionSwap2Next);
 
 	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SeasonViewBtn.setHighLight(RED);
@@ -1914,7 +1948,25 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 	{
 		if (setUpExhibitionDisplayCall)
 		{
+			if (exhibitionTeam1Num < 0)
+			{
+				exhibitionTeam1Num = m_SavedTeams.size() - 1;
+			}
+			if (exhibitionTeam1Num > m_SavedTeams.size() - 1)
+			{
+				exhibitionTeam1Num = 0;
+			}
+			if (exhibitionTeam2Num < 0)
+			{
+				exhibitionTeam2Num = m_SavedTeams.size() - 1;
+			}
+			if (exhibitionTeam2Num > m_SavedTeams.size() - 1)
+			{
+				exhibitionTeam2Num = 0;
+			}
 			m_ExhibitionGameFeature = FeaturedGame(m_SavedTeams[exhibitionTeam1Num], m_SavedTeams[exhibitionTeam2Num], astVars, 0, SRLBetPrice(0, 0), SRLBetPrice(0, 0));
+			m_ExhibitionGameFeature.fg_homeTeam.CalculateAverages();
+			m_ExhibitionGameFeature.fg_awayTeam.CalculateAverages();
 			setUpExhibitionDisplayCall = false;
 		}
 		string awayTeamText = m_ExhibitionGameFeature.fg_awayTeam.getName();
@@ -1924,6 +1976,15 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 
 			window = m_ExhibitionGameFeature.fg_homeTeamJersey.draw_asset(window, Vector2(0, 3));
 			window = m_ExhibitionGameFeature.fg_awayTeamJersey.draw_asset(window, Vector2(30, 3));
+
+			window = m_ExhibitionSwap1Prev.draw_ui(window);
+			window = m_ExhibitionSwap1Next.draw_ui(window);
+			window = m_ExhibitionSwap2Prev.draw_ui(window);
+			window = m_ExhibitionSwap2Next.draw_ui(window);
+
+			window.setTextAtPoint(Vector2(14, 18), to_string(m_ExhibitionGameFeature.fg_homeTeam.TeamRating()), WHITE);
+			window.setTextAtPoint(Vector2(46, 18), to_string(m_ExhibitionGameFeature.fg_awayTeam.TeamRating()), WHITE);
+
 			window.setTextAtPoint(Vector2(0, 3), m_ExhibitionGameFeature.fg_homeTeam.getName(), WHITE);
 			window.setTextAtPoint(Vector2(60 - sizeText, 3), awayTeamText, WHITE);
 		}

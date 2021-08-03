@@ -81,6 +81,9 @@ bool SRLGame::posSwapCall = false;
 SRLTrainingType SRLGame::trainType = Training_Attack;
 int SRLGame::playerMainTeamTrade = 0;
 int SRLGame::playerOtherTeamTrade = 0;
+int SRLGame::exhibitionTeam1Num = 0;
+int SRLGame::exhibitionTeam2Num = 1;
+bool SRLGame::setUpExhibitionDisplayCall = false;
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
@@ -645,8 +648,13 @@ void DoRegularSeasonCfg()
 }
 void DoWorldCupSeasonCfg()
 {
-	////NOT IMPLEMENTED
 	SRLGame::SeasonStartCall = true;
+}
+
+void DoExhibitionCfg()
+{
+	SRLGame::seasCfgState = SelectExhibitionTeamsState;
+	SRLGame::setUpExhibitionDisplayCall = true;
 }
 
 void DoNextPosSwapStateView()
@@ -1054,7 +1062,9 @@ void SRLGame::init()
 	m_WorldCupCfgBtn = SYDEClickableButton("World Cup Tournament", Vector2(5, 9), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
 	m_WorldCupCfgBtn.setHighLight(RED);
 	m_WorldCupCfgBtn.SetFunc(DoWorldCupSeasonCfg);
-
+	m_ExhibitionCfgBtn = SYDEClickableButton("Exhibition Match", Vector2(5, 14), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_ExhibitionCfgBtn.setHighLight(RED);
+	m_ExhibitionCfgBtn.SetFunc(DoExhibitionCfg);
 
 	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SeasonViewBtn.setHighLight(RED);
@@ -1893,11 +1903,29 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 	{
 		window = m_RegularSeasonCfgBtn.draw_ui(window);
 		window = m_WorldCupCfgBtn.draw_ui(window);
-
+		window = m_ExhibitionCfgBtn.draw_ui(window);
 		if (SeasonStart)
 		{
 			//return CreateSeason(window);
 			return CreateSeason(window, true);
+		}
+	}
+	else if (seasCfgState == SelectExhibitionTeamsState)
+	{
+		if (setUpExhibitionDisplayCall)
+		{
+			m_ExhibitionGameFeature = FeaturedGame(m_SavedTeams[exhibitionTeam1Num], m_SavedTeams[exhibitionTeam2Num], astVars, 0, SRLBetPrice(0, 0), SRLBetPrice(0, 0));
+			setUpExhibitionDisplayCall = false;
+		}
+		string awayTeamText = m_ExhibitionGameFeature.fg_awayTeam.getName();
+		if (m_ExhibitionGameFeature.featuredGameAvail)
+		{
+			int sizeText = awayTeamText.length();
+
+			window = m_ExhibitionGameFeature.fg_homeTeamJersey.draw_asset(window, Vector2(0, 3));
+			window = m_ExhibitionGameFeature.fg_awayTeamJersey.draw_asset(window, Vector2(30, 3));
+			window.setTextAtPoint(Vector2(0, 3), m_ExhibitionGameFeature.fg_homeTeam.getName(), WHITE);
+			window.setTextAtPoint(Vector2(60 - sizeText, 3), awayTeamText, WHITE);
 		}
 	}
 	else if (seasCfgState == SelectSeasonTeamsState)

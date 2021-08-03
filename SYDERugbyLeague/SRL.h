@@ -76,7 +76,8 @@ enum ArticleViewingState
 enum SeasonConfigState
 {
 	SelectSeasonTypeState,
-	SelectSeasonTeamsState
+	SelectSeasonTeamsState,
+	SelectExhibitionTeamsState
 };
 
 enum GameStateBettingSYDE
@@ -391,6 +392,10 @@ public:
 	static string posToSwap;
 	static bool posSwapCall;
 #pragma endregion
+
+	static int exhibitionTeam1Num;
+	static int exhibitionTeam2Num;
+	static bool setUpExhibitionDisplayCall;
 private:
 	const int customTeamGenerateChance = 9999;
 
@@ -674,7 +679,8 @@ private:
 
 	SYDEClickableButton m_RegularSeasonCfgBtn;
 	SYDEClickableButton m_WorldCupCfgBtn;
-
+	SYDEClickableButton m_ExhibitionCfgBtn;
+	FeaturedGame m_ExhibitionGameFeature;
 #pragma region Challenges
 
 	SYDEClickableButton m_Sponsor_Clarity_CasinoBtn = SYDEClickableButton();

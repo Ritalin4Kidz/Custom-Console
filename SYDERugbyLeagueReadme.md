@@ -9,6 +9,9 @@ SRL Simulation game made inside the SYDE Framework.
 - World Cup Tournament
 - More Management Features
 - News Stories For World Cup
+- World Cup Settings Don't Override Game Settings
+- Exhibiton Matches
+ - - No Season Attached (And Therefore No Coaching)
 
 ## Release Notes
 
@@ -18,6 +21,7 @@ SRL Simulation game made inside the SYDE Framework.
 - - Ratings Are Based On Top 17
 - Coaches Can Rotate These Players In & Out Of The Starting Line-Up
 - Rep Rounds Have Featured Games
+- World Cup Tournament
 
 ### 1.0.1.0 01/08/2021
 

@@ -639,3 +639,20 @@ string SRLPositionShowcase::getShorterName(string _s)
 
 	return splitString[0].substr(0, 1) + ". " + _s;
 }
+
+void SRLRound::randomizeOrders()
+{
+	for (int i = 0; i < m_Games.size(); i++)
+	{
+		int randNumber = rand() % m_Games.size();
+		SRLGameMatchup tempMatchUp = m_Games[i];
+		m_Games[i] = m_Games[randNumber];
+		m_Games[randNumber] = tempMatchUp;
+		if ((rand() % 10) > 5)
+		{
+			string TempStr = m_Games[i].HomeTeam;
+			m_Games[i].HomeTeam = m_Games[i].AwayTeam;
+			m_Games[i].AwayTeam = TempStr;
+		}
+	}
+}

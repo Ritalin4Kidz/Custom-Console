@@ -67,6 +67,7 @@ struct SRLLadderPosition
 	int played = 0;
 	int won = 0;
 	int lost = 0;
+	int tied = 0;
 	int points = 0;
 	int pointsFor = 0;
 	int pointsAgainst = 0;
@@ -180,6 +181,9 @@ struct SRLRound
 	deque<SRLNewsArticle> newsStories;
 	string RoundName;
 	bool isRepRound = false;
+
+	void randomizeOrders();
+
 	FeaturedGame gameToFeature;
 };
 

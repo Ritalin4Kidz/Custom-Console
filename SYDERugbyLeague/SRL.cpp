@@ -874,12 +874,12 @@ void SettingsLengthViewClick()
 {
 	if (SRLGame::seasonLength == Length_ShortSeason)
 	{
+		SRLGame::seasonLength = Length_RoundRobin;
+	}
+	else if (SRLGame::seasonLength == Length_RoundRobin)
+	{
 		SRLGame::seasonLength = Length_MediumSeason;
 	}
-	//else if (SRLGame::seasonLength == Length_RoundRobin)
-	//{
-	//	SRLGame::seasonLength = Length_MediumSeason;
-	//}
 	else if (SRLGame::seasonLength == Length_MediumSeason)
 	{
 		SRLGame::seasonLength = Length_NormalSeason;
@@ -4589,9 +4589,10 @@ void SRLGame::CalculatePremiershipOdds()
 		int currentThreshold = m_Season.m_Ladder.m_Ladder[finalsThreshold - 1].points;
 		int winDiff = m_Season.m_Ladder.m_Ladder[i].won - m_Season.m_Ladder.m_Ladder[i].lost;
 		int maxPointsSeason = seasonLength * 2;
-		int maxPointsCurrent = m_roundToSimulate * 2;
-		int maxPointsPotential = m_Season.m_Ladder.m_Ladder[i].points + ((seasonLength - m_roundToSimulate) * 2);
-		if (m_roundToSimulate >= seasonLength)
+		int gamesPlayed = m_Season.m_Ladder.m_Ladder[i].won + m_Season.m_Ladder.m_Ladder[i].lost + m_Season.m_Ladder.m_Ladder[i].tied;
+		int maxPointsCurrent = gamesPlayed * 2;
+		int maxPointsPotential = m_Season.m_Ladder.m_Ladder[i].points + ((seasonLength - gamesPlayed) * 2);
+		if (m_roundToSimulate >= BaseSeasonGames)
 		{
 			maxPointsCurrent = maxPointsSeason;
 		}
@@ -4915,7 +4916,7 @@ void SRLGame::SimulateGames()
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].ResultPlayByPlay = m_srlmanager.getPlayByPlay();
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].SummaryPlayByPlay = m_srlmanager.getSummary();
 
-			if (!m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
+			if (!m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
 			{
 				for (int i = 0; i < m_srlmanager.getHomeTeam().getPlayers().size(); i++)
 				{
@@ -5092,7 +5093,7 @@ void SRLGame::SimulateGames()
 				checkSpecificBetAchievements(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets[ii]);
 			}
 
-			if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
+			if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
 			{
 				for (int ii = 0; ii < m_Season.m_Ladder.m_Ladder.size(); ii++)
 				{
@@ -5110,6 +5111,7 @@ void SRLGame::SimulateGames()
 						}
 						else
 						{
+							m_Season.m_Ladder.m_Ladder[ii].tied++;
 							m_Season.m_Ladder.m_Ladder[ii].points++;
 						}
 						m_Season.m_Ladder.m_Ladder[ii].pointsFor += m_srlmanager.getHomeScore();
@@ -5140,7 +5142,7 @@ void SRLGame::SimulateGames()
 			}
 
 		}
-		if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
+		if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
 		{
 			m_Season.m_Ladder.sortLadder();
 		}
@@ -6775,8 +6777,12 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		coachingMode = false;
 		RepRoundsOn = false;
 		m_SeasonEvents = false;
+		seasonLength = Length_RoundRobin;
 		BaseSeasonGames = 15;
 		fsType = Top8DoubleElim;
+		finalsSettingStr = "Top 8 Double-Elim";
+		finalsThreshold = 8;
+		finalsRounds = 6;
 #pragma region createTeams
 
 		m_SeasonTeams.clear();
@@ -7031,39 +7037,78 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 	}
 	for (int i = 0; i < BaseSeasonGames; i++)
 	{
-		bool pushBack = true;
-		deque<SRLGameMatchup> games;
-		deque<string> AvailableTeams = m_SeasonTeams;
-		deque<string> AttemptedTeams = deque<string>();
-		for (int ii = 0; ii < 8; ii++)
+		//ROUND ROBIN
+		if (BaseSeasonGames == 15 && VersusLimit == 1)
 		{
-			if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
+			deque<SRLGameMatchup> games;
+			deque<string> AvailableTeams = m_SeasonTeams;
+
+			for (int k = 0; k < i; k++)
 			{
-				if (AvailableTeams.size() > 2)
+				string tempAvailTeam = AvailableTeams[0];
+				for (int a = 0; a < AvailableTeams.size() -1; a++)
 				{
-					ii--;
+					int nextPos = a + 1;
+					if (nextPos == 15)
+					{
+						AvailableTeams[a] = tempAvailTeam;
+					}
+					else
+					{
+						AvailableTeams[a] = AvailableTeams[nextPos];
+					}
+				}
+			}
+
+			games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
+			games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
+			games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
+			games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
+			games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
+			games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
+			games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
+			games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
+
+			rounds.push_back(SRLRound(games));
+			rounds[i].RoundName = "Round " + to_string(i + 1);
+			rounds[i].randomizeOrders();
+		}
+		else
+		{
+			bool pushBack = true;
+			deque<SRLGameMatchup> games;
+			deque<string> AvailableTeams = m_SeasonTeams;
+			deque<string> AttemptedTeams = deque<string>();
+			for (int ii = 0; ii < 8; ii++)
+			{
+				if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
+				{
+					if (AvailableTeams.size() > 2)
+					{
+						ii--;
+					}
+					else
+					{
+						i--;
+						pushBack = false;
+						games.clear();
+						break;
+					}
 				}
 				else
 				{
-					i--;
-					pushBack = false;
-					games.clear();
-					break;
+					for (int j = 0; j < AttemptedTeams.size(); j++)
+					{
+						AvailableTeams.push_back(AttemptedTeams[j]);
+					}
+					AttemptedTeams.clear();
 				}
 			}
-			else
+			if (pushBack)
 			{
-				for (int j = 0; j < AttemptedTeams.size(); j++)
-				{
-					AvailableTeams.push_back(AttemptedTeams[j]);
-				}
-				AttemptedTeams.clear();
+				rounds.push_back(SRLRound(games));
+				rounds[i].RoundName = "Round " + to_string(i + 1);
 			}
-		}
-		if (pushBack)
-		{
-			rounds.push_back(SRLRound(games));
-			rounds[i].RoundName = "Round " + to_string(i + 1);
 		}
 	}
 	if (RepRoundsOn)

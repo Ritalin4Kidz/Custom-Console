@@ -232,6 +232,8 @@ struct SRLSeason
 	SRLLeaderboard m_TopSinBin;
 	SRLLeaderboard m_TopSendOff;
 	SRLLeaderboard m_TopInjuries;
+
+	bool isWorldCup = false;
 };
 
 enum GameSummaryTextType

@@ -4,13 +4,18 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR GOLD
+## GOALS FOR 1.1.0.0
+- AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
+- World Cup Tournament
+- More Management Features
+- News Stories For World Cup
 
 ## Release Notes
 
 ### 1.0.2.0 02/08/2021
 - Extended Team List To 20 Players, However Game's Still Use 17
 - - This Means Each Season Has 48 More Players, Which Can Be Traded To Other Teams
+- - Ratings Are Based On Top 17
 - Coaches Can Rotate These Players In & Out Of The Starting Line-Up
 - Rep Rounds Have Featured Games
 

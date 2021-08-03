@@ -14,6 +14,7 @@ SeasonDrawViewState SRLGame::drawViewState = SeasonDrawMainView;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 CoachingViewDrawState SRLGame::coachDrawState = CoachingMain_STATE;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
+SeasonConfigState SRLGame::seasCfgState = SelectSeasonTypeState;
 bool SRLGame::SeasonStart = false;
 bool SRLGame::SeasonStartCall = false;
 bool SRLGame::NextRoundCall = false;
@@ -580,6 +581,7 @@ void newsViewClick()
 void SeasonModeClick()
 {
 	SRLGame::newState = SeasonConfig_State;
+	SRLGame::seasCfgState = SelectSeasonTypeState;
 }
 
 void SeasonModeStartClick()
@@ -635,6 +637,16 @@ void CoachSwapPositionsViewClick()
 	SRLGame::posToSwap = "";
 	SRLGame::setUpPosShowcaseCall = true;
 	SRLGame::posSwapState = SRLPS_Backline;
+}
+
+void DoRegularSeasonCfg()
+{
+	SRLGame::seasCfgState = SelectSeasonTeamsState;
+}
+void DoWorldCupSeasonCfg()
+{
+	////NOT IMPLEMENTED
+	SRLGame::SeasonStartCall = true;
 }
 
 void DoNextPosSwapStateView()
@@ -1035,6 +1047,15 @@ void SRLGame::init()
 #pragma endregion
 
 #pragma region SeasonOptions
+
+	m_RegularSeasonCfgBtn = SYDEClickableButton("Regular Season", Vector2(5, 4), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_RegularSeasonCfgBtn.setHighLight(RED);
+	m_RegularSeasonCfgBtn.SetFunc(DoRegularSeasonCfg);
+	m_WorldCupCfgBtn = SYDEClickableButton("World Cup Tournament", Vector2(5, 9), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_WorldCupCfgBtn.setHighLight(RED);
+	m_WorldCupCfgBtn.SetFunc(DoWorldCupSeasonCfg);
+
+
 	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SeasonViewBtn.setHighLight(RED);
 	m_SeasonViewBtn.SetFunc(SeasonViewClick);
@@ -1868,447 +1889,143 @@ ConsoleWindow SRLGame::exhibition_match_settings(ConsoleWindow window, int windo
 ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawMainMenuTabs(window);
-	window = configTabs(window);
-	if (SeasonStart)
+	if (seasCfgState == SelectSeasonTypeState)
 	{
-		m_Season.clear();
-		//THE AMOUNT OF TIMES THE SAME MATCH-UP CAN HAPPEN IN A SEASON (WHERE HOME TEAM & AWAY TEAM ARE THE SAME)
-		int VersusLimit = 1;
-		if (seasonLength == Length_MediumSeason || seasonLength == Length_NormalSeason)
-		{
-			VersusLimit = 2;
-		}
-		if (seasonLength == Length_LongSeason)
-		{
-			//ACTUAL LIMIT SHOULD BE 3 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
-			VersusLimit = 4;
-		}
-		if (seasonLength == Length_ExtremeSeason)
-		{
-			//ACTUAL LIMIT SHOULD BE 5 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
-			VersusLimit = 6;
-		}
-		if (seasonLength == Length_EnduranceSeason)
-		{
-			//ACTUAL LIMIT SHOULD BE 7 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
-			VersusLimit = 8;
-		}
-		currentWonBetsSeason = 0;
-		currentLostBetsSeason = 0;
-		currentBetsTotalSeason = 0;
-		currentWonBetsSeasonMatchOnly = 0;
-		currentLostBetsSeasonMatchOnly = 0;
-		currentBetsTotalSeasonMatchOnly = 0;
+		window = m_RegularSeasonCfgBtn.draw_ui(window);
+		window = m_WorldCupCfgBtn.draw_ui(window);
 
-		refreshAvailable = maxRefreshes;
+		if (SeasonStart)
+		{
+			//return CreateSeason(window);
+			return CreateSeason(window, true);
+		}
+	}
+	else if (seasCfgState == SelectSeasonTeamsState)
+	{
+		window = configTabs(window);
+		if (SeasonStart)
+		{
+			return CreateSeason(window, false);
+		}
 
-		BaseSeasonGames = static_cast<int>(seasonLength);
-		SeasonStart = false;
-		if (m_SeasonTeams.size() != 16)
-		{
-			errorCall = true;
-			errorMessage = "Not Enough Teams To Start Season (16 Required)";
-			return window;
-		}
-		//DO CONFIG IN HERE
-		finals = false;
-		if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
-		{
-			BaseSeasonGames = 0;
-			finals = true;
-		}
-		deque<SRLLadderPosition> ladders;
+
+		window.setTextAtPoint(Vector2(0, 2), "SEASON CONFIG: ", WHITE);
+		window.setTextAtPoint(Vector2(16, 2), m_SavedTeams[m_SelectedTeam], WHITE);
+		window.setTextAtPoint(Vector2(0, 3), "TEAMS:", WHITE);
 		for (int i = 0; i < m_SeasonTeams.size(); i++)
 		{
-			SRLLadderPosition newPosition;
-			newPosition.teamName = m_SeasonTeams[i];
-			ladders.push_back(newPosition);
+			window.setTextAtPoint(Vector2(7, i + 3), m_SeasonTeams[i], WHITE);
 		}
-#pragma region Add Rounds
-		SRLLadder Ladder = SRLLadder(ladders);
-		deque<SRLRound> rounds = deque<SRLRound>();
-		if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
+
+		if (NextRoundCall)
 		{
-			deque<SRLGameMatchup> games;
-			deque<string> AvailableTeams = m_SeasonTeams;
-			games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
-			games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
-			games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
-			games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
-			games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
-			games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
-			games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
-			games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
-			rounds.push_back(SRLRound(games));
-			rounds[0].RoundName = "Knockout Round 1";
-		}
-		for (int i = 0; i < BaseSeasonGames; i++)
-		{
-			bool pushBack = true;
-			deque<SRLGameMatchup> games;
-			deque<string> AvailableTeams = m_SeasonTeams;
-			deque<string> AttemptedTeams = deque<string>();
-			for (int ii = 0; ii < 8; ii++)
+			NextRoundCall = false;
+			m_SelectedTeam++;
+			if (m_SelectedTeam > m_SavedTeams.size() - 1)
 			{
-				if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
+				m_SelectedTeam = 0;
+			}
+		}
+		if (PrevRoundCall)
+		{
+			PrevRoundCall = false;
+			m_SelectedTeam--;
+			if (m_SelectedTeam < 0)
+			{
+				m_SelectedTeam = m_SavedTeams.size() - 1;
+			}
+		}
+		if (generateCall)
+		{
+			generateCall = false;
+			if (m_SeasonTeams.size() < 16)
+			{
+				SRLTeam HomeTeam;
+				int chance = rand() % customTeamGenerateChance;
+				if (chance == 0)
 				{
-					if (AvailableTeams.size() > 2)
+					string CustomTeamStr;
+					HomeTeam = SRLCustomTeamGenerator::generateRandomCustomTeam(CustomTeamStr);
+					AchievementStrings.push_back(CustomTeamStr);
+				}
+				else
+				{
+					HomeTeam = generateRandomTeam();
+				}
+				if (HomeTeam.getName() != "Could Not Generate Error")
+				{
+					HomeTeam.saveTeam();
+					m_SeasonTeams.push_back(HomeTeam.getName());
+					if (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") > 50)
 					{
-						ii--;
-					}
-					else
-					{
-					i--;
-					pushBack = false;
-					games.clear();
-					break;
+						m_GameProfile.completeChallenge("Have Over 50 Teams Existing", AchievementStrings);
 					}
 				}
 				else
 				{
-				for (int j = 0; j < AttemptedTeams.size(); j++)
-				{
-					AvailableTeams.push_back(AttemptedTeams[j]);
-				}
-				AttemptedTeams.clear();
-				}
-			}
-			if (pushBack)
-			{
-				rounds.push_back(SRLRound(games));
-				rounds[i].RoundName = "Round " + to_string(i + 1);
-			}
-		}
-		if (RepRoundsOn)
-		{
-#pragma region RepRounds
-			int teamsGenerated = 0;
-			//CLEAR THE TEAMS
-			repTeams.clear();
-			deque<SRLTeam> tempTeams = deque<SRLTeam>({});
-			//GET THE PLAYERS FROM EACH TEAM
-			for (int i = 0; i < m_SeasonTeams.size(); i++)
-			{
-				SRLTeam a_selectedTeam;
-				a_selectedTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_SeasonTeams[i] + ".json");
-				for (int ii = 0; ii < a_selectedTeam.getPlayers().size(); ii++)
-				{
-					bool addedToTeam = false;
-					for (int j = 0; j < tempTeams.size(); j++)
-					{
-						if (a_selectedTeam.getPlayers()[ii].getOrigin() == tempTeams[j].getName())
-						{
-							addedToTeam = true;
-							tempTeams[j].AddPlayer(a_selectedTeam.getPlayers()[ii]);
-						}
-					}
-					if (!addedToTeam)
-					{
-						SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin());
-						newTeam.AddPlayer(a_selectedTeam.getPlayers()[ii]);
-						tempTeams.push_back(newTeam);
-					}
-				}
-			}
-
-			//REMOVE ALL TEAMS THAT DON'T HAVE 17 PLAYERS
-			for (int j = 0; j < tempTeams.size(); j++)
-			{
-				if (tempTeams[j].getPlayers().size() >= 17)
-				{
-					repTeams.push_back(tempTeams[j]);
-				}
-			}
-
-			//EVEN IT TO BE FACTOR OF 2
-			if (repTeams.size() % 2 == 1)
-			{
-				repTeams.erase(repTeams.begin() + (repTeams.size() - 1));
-			}
-
-			//SORT OUT THE TEAMS
-			for (int j = 0; j < repTeams.size(); j++)
-			{
-				for (int jj= 0 ; jj < repTeams[j].getPlayers().size(); jj++)
-				{
-					for (int k = 0; k < jj; k++)
-					{
-						if (repTeams[j].getPlayers()[jj].getRating() > repTeams[j].getPlayers()[k].getRating())
-						{
-							SRLPlayer tempPlayer = repTeams[j].getPlayers()[k];
-							repTeams[j].getPlayers()[k] = repTeams[j].getPlayers()[jj];
-							repTeams[j].getPlayers()[jj] = tempPlayer;
-						}
-					}
-				}
-				//STRIP BACK TO 17 PLAYERS PER TEAM
-				if (repTeams[j].getPlayers().size() > 17)
-				{
-					repTeams[j].cutToSeventeen();
-				}
-			}
-#pragma region JerseyDetails
-			//ADD JERSEY DETAILS TO THEM
-			for (int j = 0; j < repTeams.size(); j++)
-			{
-				if (repTeams[j].getName() == "France")
-				{
-					repTeams[j].setJersey(RED_RED_BG, BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 100);
-				}
-				else if (repTeams[j].getName() == "Australia")
-				{
-					repTeams[j].setJersey(GREEN_GREEN_BG, YELLOW_YELLOW_BG, BLACK, 5);
-				}
-				else if (repTeams[j].getName() == "New Zealand")
-				{
-					repTeams[j].setJersey(LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 1);
-				}
-				else if (repTeams[j].getName() == "England")
-				{
-					repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 2);
-				}
-				else if (repTeams[j].getName() == "Wales")
-				{
-					repTeams[j].setJersey(RED_RED_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 2);
-				}
-				else if (repTeams[j].getName() == "Scotland")
-				{
-					repTeams[j].setJersey(BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 101);
-				}
-				else if (repTeams[j].getName() == "Canada")
-				{
-					repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, BLACK, 101);
-				}
-				else if (repTeams[j].getName() == "United States")
-				{
-					repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, 10);
-				}
-				else if (repTeams[j].getName() == "Papau New Guinea")
-				{
-					repTeams[j].setJersey(LIGHTGREY_LIGHTGREY_BG, YELLOW_YELLOW_BG, RED_RED_BG, 15);
-				}
-				else if (repTeams[j].getName() == "Fiji")
-				{
-					repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 101);
-				}
-				else if (repTeams[j].getName() == "Samoa")
-				{
-					repTeams[j].setJersey(BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 1);
-				}
-				else if (repTeams[j].getName() == "Italy")
-				{
-					repTeams[j].setJersey(BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 100);
-				}
-				else if (repTeams[j].getName() == "Lebanon")
-				{
-					repTeams[j].setJersey(GREEN_GREEN_BG, RED_RED_BG, BLACK, 23);
-				}
-				else if (repTeams[j].getName() == "Sweden")
-				{
-					repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, YELLOW_YELLOW_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 59);
-				}
-				else if (repTeams[j].getName() == "Suoonnia")
-				{
-					repTeams[j].setJersey(RED_RED_BG, YELLOW_YELLOW_BG, AQUA_AQUA_BG, 82);
-				}
-				else if (repTeams[j].getName() == "Kylzer Isles")
-				{
-					repTeams[j].setJersey(WHITE_WHITE_BG, BLUE_BLUE_BG, YELLOW_YELLOW_BG, 68);
-				}
-				else if (repTeams[j].getName() == "SYDE Island")
-				{
-					repTeams[j].setJersey(BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 65);
-				}
-				else if (repTeams[j].getName() == "Turniostan")
-				{
-					repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, WHITE_WHITE_BG, LIGHTGREY_LIGHTGREY_BG, 29);
-				}
-				else if (repTeams[j].getName() == "Tyezyer")
-				{
-					repTeams[j].setJersey(BRIGHTYELLOW_BRIGHTYELLOW_BG, YELLOW_YELLOW_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 19);
-				}
-				else if (repTeams[j].getName() == "Xyler Union")
-				{
-					repTeams[j].setJersey(PURPLE_PURPLE_BG, LIGHTPURPLE_LIGHTPURPLE_BG, BLUE_BLUE_BG, 42);
-				}
-			}
-
-#pragma endregion
-			deque<SRLGameMatchup> repGames;
-			deque<string> AvailableTeams = m_SeasonTeams;
-			for (int j = 0; j < repTeams.size(); j += 2)
-			{
-				repGames.push_back(SRLGameMatchup(repTeams[j].getName(), repTeams[j + 1].getName()));
-			}
-			SRLRound repRound(repGames);
-			repRound.isRepRound = true;
-			int repPeriod = BaseSeasonGames / 4;
-			if (BaseSeasonGames > 9 && repGames.size() > 0)
-			{
-				repRound.RoundName = "Representive Round 1";
-				rounds.insert(rounds.begin() + repPeriod, repRound);
-				BaseSeasonGames++;
-
-				repPeriod += BaseSeasonGames / 4;
-
-				repRound.RoundName = "Representive Round 2";
-				rounds.insert(rounds.begin() + repPeriod, repRound);
-				BaseSeasonGames++;
-
-				repPeriod += BaseSeasonGames / 4;
-
-				repRound.RoundName = "Representive Round 3";
-				rounds.insert(rounds.begin() + repPeriod, repRound);
-				BaseSeasonGames++;
-			}
-#pragma endregion
-		}
-#pragma endregion
-		//FEATURE A GAME
-		int _HighlightedFirstGame = rand() % 8;
-		rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, SRLBetPrice(0, 0), SRLBetPrice(0, 0));
-		SRLDraw Draw(rounds);
-		m_Season = SRLSeason(Draw, Ladder);
-		m_Season.m_PremiershipBets.clear();
-		m_GameBetsWriteUp.clear();
-		m_PremiershipBetsWriteUp.clear();
-		m_BetMoney = SRLBetPrice(500, 0);
-		if (coachingMode)
-		{
-			newState = SelectTeamCoachingState;
-		}
-		else
-		{
-			newState = SeasonModeState;
-		}
-		m_round = 0;
-		m_roundToSimulate = 0;
-		drawViewState = SeasonDrawMainView;
-		CalculateOdds();
-		m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_homeOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].homeTeamOdds;
-		m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_awayOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].awayTeamOdds;
-		CalculatePremiershipOdds();
-		return window;
-	}
-
-
-	window.setTextAtPoint(Vector2(0, 2), "SEASON CONFIG: ", WHITE);
-	window.setTextAtPoint(Vector2(16, 2), m_SavedTeams[m_SelectedTeam], WHITE);
-	window.setTextAtPoint(Vector2(0, 3), "TEAMS:", WHITE);
-	for (int i = 0; i < m_SeasonTeams.size(); i++)
-	{
-		window.setTextAtPoint(Vector2(7, i + 3), m_SeasonTeams[i], WHITE);
-	}
-
-	if (NextRoundCall)
-	{
-		NextRoundCall = false;
-		m_SelectedTeam++;
-		if (m_SelectedTeam > m_SavedTeams.size() - 1)
-		{
-			m_SelectedTeam = 0;
-		}
-	}
-	if (PrevRoundCall)
-	{
-		PrevRoundCall = false;
-		m_SelectedTeam--;
-		if (m_SelectedTeam < 0)
-		{
-			m_SelectedTeam = m_SavedTeams.size() - 1;
-		}
-	}
-	if (generateCall)
-	{
-		generateCall = false;
-		if (m_SeasonTeams.size() < 16)
-		{
-			SRLTeam HomeTeam;
-			int chance = rand() % customTeamGenerateChance;
-			if (chance == 0)
-			{
-				string CustomTeamStr;
-				HomeTeam = SRLCustomTeamGenerator::generateRandomCustomTeam(CustomTeamStr);
-				AchievementStrings.push_back(CustomTeamStr);
-			}
-			else
-			{
-				HomeTeam = generateRandomTeam();
-			}
-			if (HomeTeam.getName() != "Could Not Generate Error")
-			{
-				HomeTeam.saveTeam();
-				m_SeasonTeams.push_back(HomeTeam.getName());
-				if (SYDEFileDefaults::getFileCount("EngineFiles\\GameResults\\Teams", ".json") > 50)
-				{
-					m_GameProfile.completeChallenge("Have Over 50 Teams Existing", AchievementStrings);
+					errorCall = true;
+					errorMessage = "Error creating new team: Try Again";
 				}
 			}
 			else
 			{
 				errorCall = true;
-				errorMessage = "Error creating new team: Try Again";
+				errorMessage = "Already 16 Teams In Season";
 			}
 		}
-		else
+		if (addCall)
 		{
-			errorCall = true;
-			errorMessage = "Already 16 Teams In Season";
-		}
-	}
-	if (addCall)
-	{
-		addCall = false;
-		if (m_SeasonTeams.size() < 16)
-		{
-			m_SeasonTeams.push_back(m_SavedTeams[m_SelectedTeam]);
-			m_SavedTeams.erase(m_SavedTeams.begin() + m_SelectedTeam);
-			if (m_SelectedTeam > m_SavedTeams.size() - 1)
+			addCall = false;
+			if (m_SeasonTeams.size() < 16)
 			{
-				m_SelectedTeam = 0;
+				m_SeasonTeams.push_back(m_SavedTeams[m_SelectedTeam]);
+				m_SavedTeams.erase(m_SavedTeams.begin() + m_SelectedTeam);
+				if (m_SelectedTeam > m_SavedTeams.size() - 1)
+				{
+					m_SelectedTeam = 0;
+				}
 			}
-		}
-		else
-		{
-			errorCall = true;
-			errorMessage = "Already 16 Teams In Season";
-		}
-	}
-	if (removeCall)
-	{
-		removeCall = false;
-		if (m_SeasonTeams.size() > 0)
-		{
-			m_SavedTeams.push_back(m_SeasonTeams[m_SeasonTeams.size()-1]);
-			m_SeasonTeams.erase(m_SeasonTeams.begin() + m_SeasonTeams.size() - 1);
-		}
-		else
-		{
-			errorCall = true;
-			errorMessage = "No Teams To Remove";
-		}
-	}
-
-	if (randomFillCall)
-	{
-		randomFillCall = false;
-		if (m_SeasonTeams.size() == 16)
-		{
-			errorCall = true;
-			errorMessage = "Already 16 Teams In Season";
-		}
-		while (m_SeasonTeams.size() < 16)
-		{
-			m_SelectedTeam = rand() % m_SavedTeams.size();
-			m_SeasonTeams.push_back(m_SavedTeams[m_SelectedTeam]);
-			m_SavedTeams.erase(m_SavedTeams.begin() + m_SelectedTeam);
-			if (m_SelectedTeam > m_SavedTeams.size() - 1)
+			else
 			{
-				m_SelectedTeam = 0;
+				errorCall = true;
+				errorMessage = "Already 16 Teams In Season";
+			}
+		}
+		if (removeCall)
+		{
+			removeCall = false;
+			if (m_SeasonTeams.size() > 0)
+			{
+				m_SavedTeams.push_back(m_SeasonTeams[m_SeasonTeams.size() - 1]);
+				m_SeasonTeams.erase(m_SeasonTeams.begin() + m_SeasonTeams.size() - 1);
+			}
+			else
+			{
+				errorCall = true;
+				errorMessage = "No Teams To Remove";
+			}
+		}
+
+		if (randomFillCall)
+		{
+			randomFillCall = false;
+			if (m_SeasonTeams.size() == 16)
+			{
+				errorCall = true;
+				errorMessage = "Already 16 Teams In Season";
+			}
+			while (m_SeasonTeams.size() < 16)
+			{
+				m_SelectedTeam = rand() % m_SavedTeams.size();
+				m_SeasonTeams.push_back(m_SavedTeams[m_SelectedTeam]);
+				m_SavedTeams.erase(m_SavedTeams.begin() + m_SelectedTeam);
+				if (m_SelectedTeam > m_SavedTeams.size() - 1)
+				{
+					m_SelectedTeam = 0;
+				}
 			}
 		}
 	}
-
 	return window;
 }
 
@@ -4766,7 +4483,7 @@ void SRLGame::CalculateOdds()
 
 		SRLTeam oddsHomeTeam;
 		SRLTeam oddsAwayTeam;
-		if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+		if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 		{
 			for (int j = 0; j < repTeams.size(); j++)
 			{
@@ -4914,7 +4631,7 @@ void SRLGame::CalculateTryScorerOdds()
 
 	SRLTeam oddsHomeTeam;
 	SRLTeam oddsAwayTeam;
-	if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+	if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 	{
 		for (int j = 0; j < repTeams.size(); j++)
 		{
@@ -4988,6 +4705,11 @@ void SRLGame::SimulateGames()
 			articleReduction = m_Season.m_Draw.m_Rounds[m_roundToSimulate].newsStories.size();
 		}
 		int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
+		if (m_Season.isWorldCup)
+		{
+			//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
+			m_ArticlesRemaining = 0;
+		}
 		if (m_round < m_roundToSimulate)
 		{
 			Simulate = false;
@@ -5005,7 +4727,7 @@ void SRLGame::SimulateGames()
 
 			SRLTeam HomeTeam;
 			SRLTeam AwayTeam;
-			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 			{
 				for (int j = 0; j < repTeams.size(); j++)
 				{
@@ -5193,7 +4915,7 @@ void SRLGame::SimulateGames()
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].ResultPlayByPlay = m_srlmanager.getPlayByPlay();
 			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].SummaryPlayByPlay = m_srlmanager.getSummary();
 
-			if (!m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+			if (!m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 			{
 				for (int i = 0; i < m_srlmanager.getHomeTeam().getPlayers().size(); i++)
 				{
@@ -5370,7 +5092,7 @@ void SRLGame::SimulateGames()
 				checkSpecificBetAchievements(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Bets[ii]);
 			}
 
-			if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+			if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 			{
 				for (int ii = 0; ii < m_Season.m_Ladder.m_Ladder.size(); ii++)
 				{
@@ -5418,7 +5140,7 @@ void SRLGame::SimulateGames()
 			}
 
 		}
-		if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+		if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 		{
 			m_Season.m_Ladder.sortLadder();
 		}
@@ -5966,7 +5688,7 @@ void SRLGame::SimulateGames()
 void SRLGame::CalculateFeaturedGame()
 {
 	int featureGameNumber = 0;
-	if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+	if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound || m_Season.isWorldCup)
 	{
 		featureGameNumber = rand() % m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size();
 		//PROBS NEED TO CREATE PROPER FEATURE GAMES FOR THIS
@@ -7006,6 +6728,563 @@ void SRLGame::sortOutTradingOptions()
 		}
 	}
 	tradingAvailable = true;
+}
+
+ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
+{
+	m_Season.clear();
+	//THE AMOUNT OF TIMES THE SAME MATCH-UP CAN HAPPEN IN A SEASON (WHERE HOME TEAM & AWAY TEAM ARE THE SAME)
+	int VersusLimit = 1;
+	if (seasonLength == Length_MediumSeason || seasonLength == Length_NormalSeason)
+	{
+		VersusLimit = 2;
+	}
+	if (seasonLength == Length_LongSeason)
+	{
+		//ACTUAL LIMIT SHOULD BE 3 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
+		VersusLimit = 4;
+	}
+	if (seasonLength == Length_ExtremeSeason)
+	{
+		//ACTUAL LIMIT SHOULD BE 5 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
+		VersusLimit = 6;
+	}
+	if (seasonLength == Length_EnduranceSeason)
+	{
+		//ACTUAL LIMIT SHOULD BE 7 BUT FOR THE SAKE OF LOADING GIVE SOME LEEWAY
+		VersusLimit = 8;
+	}
+
+	currentWonBetsSeason = 0;
+	currentLostBetsSeason = 0;
+	currentBetsTotalSeason = 0;
+	currentWonBetsSeasonMatchOnly = 0;
+	currentLostBetsSeasonMatchOnly = 0;
+	currentBetsTotalSeasonMatchOnly = 0;
+
+	refreshAvailable = maxRefreshes;
+
+	BaseSeasonGames = static_cast<int>(seasonLength);
+	SeasonStart = false;
+
+	//WORLD CUP HAS AN OVERRIDE
+	if (isWorldCup)
+	{
+		VersusLimit = 1;
+		//DO NOT ALLOW COACHING IN WORLD CUP, THERE'S NO REASON TO BE ABLE TO DO SO ANYWAYS
+		coachingMode = false;
+		RepRoundsOn = false;
+		m_SeasonEvents = false;
+		BaseSeasonGames = 15;
+		fsType = Top8DoubleElim;
+#pragma region createTeams
+
+		m_SeasonTeams.clear();
+		//CLEAR THE TEAMS
+		repTeams.clear();
+		deque<SRLTeam> tempTeams = deque<SRLTeam>({});
+		//GET THE PLAYERS FROM EACH TEAM
+		for (int i = 0; i < m_SeasonTeams.size(); i++)
+		{
+			SRLTeam a_selectedTeam;
+			a_selectedTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_SeasonTeams[i] + ".json");
+			for (int ii = 0; ii < a_selectedTeam.getPlayers().size(); ii++)
+			{
+				bool addedToTeam = false;
+				for (int j = 0; j < tempTeams.size(); j++)
+				{
+					if (a_selectedTeam.getPlayers()[ii].getOrigin() == tempTeams[j].getName())
+					{
+						addedToTeam = true;
+						tempTeams[j].AddPlayer(a_selectedTeam.getPlayers()[ii]);
+					}
+				}
+				if (!addedToTeam)
+				{
+					SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin());
+					newTeam.AddPlayer(a_selectedTeam.getPlayers()[ii]);
+					tempTeams.push_back(newTeam);
+				}
+			}
+		}
+
+		//GET ALL OFFSEASON PLAYERS
+		SRLTeam offContract;
+		offContract.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");
+		for (int ii = 0; ii < offContract.getPlayers().size(); ii++)
+		{
+			bool addedToTeam = false;
+			for (int j = 0; j < tempTeams.size(); j++)
+			{
+				if (offContract.getPlayers()[ii].getOrigin() == tempTeams[j].getName())
+				{
+					addedToTeam = true;
+					tempTeams[j].AddPlayer(offContract.getPlayers()[ii]);
+				}
+			}
+			if (!addedToTeam)
+			{
+				SRLTeam newTeam = SRLTeam(offContract.getPlayers()[ii].getOrigin());
+				newTeam.AddPlayer(offContract.getPlayers()[ii]);
+				tempTeams.push_back(newTeam);
+			}
+		}
+
+		//ADD PLAYER IF TEAM LESS THAN 17 PLAYERS
+		for (int j = 0; j < tempTeams.size(); j++)
+		{
+			while (tempTeams[j].getPlayers().size() < 17)
+			{
+				SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), tempTeams[j].getName(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+				offContract.AddPlayer(newPlayer);
+				offContract.saveTeamOffContract();
+				tempTeams[j].AddPlayer(newPlayer);
+			}
+		}
+
+		//ADD SOME TEAMS IF WE DON'T HAVE ENOUGH
+		while (tempTeams.size() < 16)
+		{
+			bool TeamExists = false;
+			string __TeamName = SRLNameGenerator::generateRandomOriginCountry();
+			for (int j = 0; j < tempTeams.size(); j++)
+			{
+				if (__TeamName == tempTeams[j].getName())
+				{
+					TeamExists = true;
+				}
+			}
+			if (!TeamExists)
+			{
+				SRLTeam newTeam = SRLTeam(__TeamName);
+				for (int p = 0; p < 17; p++)
+				{
+					SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), __TeamName, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+					offContract.AddPlayer(newPlayer);
+					offContract.saveTeamOffContract();
+				}
+				tempTeams.push_back(newTeam);
+			}
+		}
+		repTeams = tempTeams;
+		//EVEN IT TO BE FACTOR OF 2
+		if (repTeams.size() > 16)
+		{
+			repTeams.erase(repTeams.begin() + 16, repTeams.end());
+		}
+
+		//SORT OUT THE TEAMS
+		for (int j = 0; j < repTeams.size(); j++)
+		{
+			for (int jj = 0; jj < repTeams[j].getPlayers().size(); jj++)
+			{
+				for (int k = 0; k < jj; k++)
+				{
+					if (repTeams[j].getPlayers()[jj].getRating() > repTeams[j].getPlayers()[k].getRating())
+					{
+						SRLPlayer tempPlayer = repTeams[j].getPlayers()[k];
+						repTeams[j].getPlayers()[k] = repTeams[j].getPlayers()[jj];
+						repTeams[j].getPlayers()[jj] = tempPlayer;
+					}
+				}
+			}
+			//STRIP BACK TO 17 PLAYERS PER TEAM
+			if (repTeams[j].getPlayers().size() > 17)
+			{
+				repTeams[j].cutToSeventeen();
+			}
+		}
+#pragma region JerseyDetails
+		//ADD JERSEY DETAILS TO THEM
+		for (int j = 0; j < repTeams.size(); j++)
+		{
+			if (repTeams[j].getName() == "France")
+			{
+				repTeams[j].setJersey(RED_RED_BG, BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 100);
+			}
+			else if (repTeams[j].getName() == "Australia")
+			{
+				repTeams[j].setJersey(GREEN_GREEN_BG, YELLOW_YELLOW_BG, BLACK, 5);
+			}
+			else if (repTeams[j].getName() == "New Zealand")
+			{
+				repTeams[j].setJersey(LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 1);
+			}
+			else if (repTeams[j].getName() == "England")
+			{
+				repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 2);
+			}
+			else if (repTeams[j].getName() == "Wales")
+			{
+				repTeams[j].setJersey(RED_RED_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 2);
+			}
+			else if (repTeams[j].getName() == "Scotland")
+			{
+				repTeams[j].setJersey(BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 101);
+			}
+			else if (repTeams[j].getName() == "Canada")
+			{
+				repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, BLACK, 101);
+			}
+			else if (repTeams[j].getName() == "United States")
+			{
+				repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, 10);
+			}
+			else if (repTeams[j].getName() == "Papau New Guinea")
+			{
+				repTeams[j].setJersey(LIGHTGREY_LIGHTGREY_BG, YELLOW_YELLOW_BG, RED_RED_BG, 15);
+			}
+			else if (repTeams[j].getName() == "Fiji")
+			{
+				repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 101);
+			}
+			else if (repTeams[j].getName() == "Samoa")
+			{
+				repTeams[j].setJersey(BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 1);
+			}
+			else if (repTeams[j].getName() == "Italy")
+			{
+				repTeams[j].setJersey(BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 100);
+			}
+			else if (repTeams[j].getName() == "Lebanon")
+			{
+				repTeams[j].setJersey(GREEN_GREEN_BG, RED_RED_BG, BLACK, 23);
+			}
+			else if (repTeams[j].getName() == "Sweden")
+			{
+				repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, YELLOW_YELLOW_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 59);
+			}
+			else if (repTeams[j].getName() == "Suoonnia")
+			{
+				repTeams[j].setJersey(RED_RED_BG, YELLOW_YELLOW_BG, AQUA_AQUA_BG, 82);
+			}
+			else if (repTeams[j].getName() == "Kylzer Isles")
+			{
+				repTeams[j].setJersey(WHITE_WHITE_BG, BLUE_BLUE_BG, YELLOW_YELLOW_BG, 68);
+			}
+			else if (repTeams[j].getName() == "SYDE Island")
+			{
+				repTeams[j].setJersey(BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 65);
+			}
+			else if (repTeams[j].getName() == "Turniostan")
+			{
+				repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, WHITE_WHITE_BG, LIGHTGREY_LIGHTGREY_BG, 29);
+			}
+			else if (repTeams[j].getName() == "Tyezyer")
+			{
+				repTeams[j].setJersey(BRIGHTYELLOW_BRIGHTYELLOW_BG, YELLOW_YELLOW_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 19);
+			}
+			else if (repTeams[j].getName() == "Xyler Union")
+			{
+				repTeams[j].setJersey(PURPLE_PURPLE_BG, LIGHTPURPLE_LIGHTPURPLE_BG, BLUE_BLUE_BG, 42);
+			}
+		}
+
+#pragma endregion
+
+#pragma endregion
+
+		for (int n = 0; n < repTeams.size(); n++)
+		{
+			m_SeasonTeams.push_back(repTeams[n].getName());
+		}
+
+	}
+
+	if (m_SeasonTeams.size() != 16)
+	{
+		errorCall = true;
+		errorMessage = "Not Enough Teams To Start Season (16 Required)";
+		return window;
+	}
+	//DO CONFIG IN HERE
+	finals = false;
+	if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
+	{
+		BaseSeasonGames = 0;
+		finals = true;
+	}
+	deque<SRLLadderPosition> ladders;
+	for (int i = 0; i < m_SeasonTeams.size(); i++)
+	{
+		SRLLadderPosition newPosition;
+		newPosition.teamName = m_SeasonTeams[i];
+		ladders.push_back(newPosition);
+	}
+#pragma region Add Rounds
+	SRLLadder Ladder = SRLLadder(ladders);
+	deque<SRLRound> rounds = deque<SRLRound>();
+	if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
+	{
+		deque<SRLGameMatchup> games;
+		deque<string> AvailableTeams = m_SeasonTeams;
+		games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
+		games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
+		games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
+		games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
+		games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
+		games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
+		games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
+		games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
+		rounds.push_back(SRLRound(games));
+		rounds[0].RoundName = "Knockout Round 1";
+	}
+	for (int i = 0; i < BaseSeasonGames; i++)
+	{
+		bool pushBack = true;
+		deque<SRLGameMatchup> games;
+		deque<string> AvailableTeams = m_SeasonTeams;
+		deque<string> AttemptedTeams = deque<string>();
+		for (int ii = 0; ii < 8; ii++)
+		{
+			if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
+			{
+				if (AvailableTeams.size() > 2)
+				{
+					ii--;
+				}
+				else
+				{
+					i--;
+					pushBack = false;
+					games.clear();
+					break;
+				}
+			}
+			else
+			{
+				for (int j = 0; j < AttemptedTeams.size(); j++)
+				{
+					AvailableTeams.push_back(AttemptedTeams[j]);
+				}
+				AttemptedTeams.clear();
+			}
+		}
+		if (pushBack)
+		{
+			rounds.push_back(SRLRound(games));
+			rounds[i].RoundName = "Round " + to_string(i + 1);
+		}
+	}
+	if (RepRoundsOn)
+	{
+#pragma region RepRounds
+		int teamsGenerated = 0;
+		//CLEAR THE TEAMS
+		repTeams.clear();
+		deque<SRLTeam> tempTeams = deque<SRLTeam>({});
+		//GET THE PLAYERS FROM EACH TEAM
+		for (int i = 0; i < m_SeasonTeams.size(); i++)
+		{
+			SRLTeam a_selectedTeam;
+			a_selectedTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_SeasonTeams[i] + ".json");
+			for (int ii = 0; ii < a_selectedTeam.getPlayers().size(); ii++)
+			{
+				bool addedToTeam = false;
+				for (int j = 0; j < tempTeams.size(); j++)
+				{
+					if (a_selectedTeam.getPlayers()[ii].getOrigin() == tempTeams[j].getName())
+					{
+						addedToTeam = true;
+						tempTeams[j].AddPlayer(a_selectedTeam.getPlayers()[ii]);
+					}
+				}
+				if (!addedToTeam)
+				{
+					SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin());
+					newTeam.AddPlayer(a_selectedTeam.getPlayers()[ii]);
+					tempTeams.push_back(newTeam);
+				}
+			}
+		}
+
+		//REMOVE ALL TEAMS THAT DON'T HAVE 17 PLAYERS
+		for (int j = 0; j < tempTeams.size(); j++)
+		{
+			if (tempTeams[j].getPlayers().size() >= 17)
+			{
+				repTeams.push_back(tempTeams[j]);
+			}
+		}
+
+		//EVEN IT TO BE FACTOR OF 2
+		if (repTeams.size() % 2 == 1)
+		{
+			repTeams.erase(repTeams.begin() + (repTeams.size() - 1));
+		}
+
+		//SORT OUT THE TEAMS
+		for (int j = 0; j < repTeams.size(); j++)
+		{
+			for (int jj = 0; jj < repTeams[j].getPlayers().size(); jj++)
+			{
+				for (int k = 0; k < jj; k++)
+				{
+					if (repTeams[j].getPlayers()[jj].getRating() > repTeams[j].getPlayers()[k].getRating())
+					{
+						SRLPlayer tempPlayer = repTeams[j].getPlayers()[k];
+						repTeams[j].getPlayers()[k] = repTeams[j].getPlayers()[jj];
+						repTeams[j].getPlayers()[jj] = tempPlayer;
+					}
+				}
+			}
+			//STRIP BACK TO 17 PLAYERS PER TEAM
+			if (repTeams[j].getPlayers().size() > 17)
+			{
+				repTeams[j].cutToSeventeen();
+			}
+		}
+#pragma region JerseyDetails
+		//ADD JERSEY DETAILS TO THEM
+		for (int j = 0; j < repTeams.size(); j++)
+		{
+			if (repTeams[j].getName() == "France")
+			{
+				repTeams[j].setJersey(RED_RED_BG, BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 100);
+			}
+			else if (repTeams[j].getName() == "Australia")
+			{
+				repTeams[j].setJersey(GREEN_GREEN_BG, YELLOW_YELLOW_BG, BLACK, 5);
+			}
+			else if (repTeams[j].getName() == "New Zealand")
+			{
+				repTeams[j].setJersey(LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 1);
+			}
+			else if (repTeams[j].getName() == "England")
+			{
+				repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 2);
+			}
+			else if (repTeams[j].getName() == "Wales")
+			{
+				repTeams[j].setJersey(RED_RED_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 2);
+			}
+			else if (repTeams[j].getName() == "Scotland")
+			{
+				repTeams[j].setJersey(BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 101);
+			}
+			else if (repTeams[j].getName() == "Canada")
+			{
+				repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, BLACK, 101);
+			}
+			else if (repTeams[j].getName() == "United States")
+			{
+				repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, RED_RED_BG, 10);
+			}
+			else if (repTeams[j].getName() == "Papau New Guinea")
+			{
+				repTeams[j].setJersey(LIGHTGREY_LIGHTGREY_BG, YELLOW_YELLOW_BG, RED_RED_BG, 15);
+			}
+			else if (repTeams[j].getName() == "Fiji")
+			{
+				repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 101);
+			}
+			else if (repTeams[j].getName() == "Samoa")
+			{
+				repTeams[j].setJersey(BLUE_BLUE_BG, BRIGHTWHITE_BRIGHTWHITE_BG, BLACK, 1);
+			}
+			else if (repTeams[j].getName() == "Italy")
+			{
+				repTeams[j].setJersey(BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 100);
+			}
+			else if (repTeams[j].getName() == "Lebanon")
+			{
+				repTeams[j].setJersey(GREEN_GREEN_BG, RED_RED_BG, BLACK, 23);
+			}
+			else if (repTeams[j].getName() == "Sweden")
+			{
+				repTeams[j].setJersey(LIGHTBLUE_LIGHTBLUE_BG, YELLOW_YELLOW_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 59);
+			}
+			else if (repTeams[j].getName() == "Suoonnia")
+			{
+				repTeams[j].setJersey(RED_RED_BG, YELLOW_YELLOW_BG, AQUA_AQUA_BG, 82);
+			}
+			else if (repTeams[j].getName() == "Kylzer Isles")
+			{
+				repTeams[j].setJersey(WHITE_WHITE_BG, BLUE_BLUE_BG, YELLOW_YELLOW_BG, 68);
+			}
+			else if (repTeams[j].getName() == "SYDE Island")
+			{
+				repTeams[j].setJersey(BRIGHTGREEN_BRIGHTGREEN_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 65);
+			}
+			else if (repTeams[j].getName() == "Turniostan")
+			{
+				repTeams[j].setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, WHITE_WHITE_BG, LIGHTGREY_LIGHTGREY_BG, 29);
+			}
+			else if (repTeams[j].getName() == "Tyezyer")
+			{
+				repTeams[j].setJersey(BRIGHTYELLOW_BRIGHTYELLOW_BG, YELLOW_YELLOW_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 19);
+			}
+			else if (repTeams[j].getName() == "Xyler Union")
+			{
+				repTeams[j].setJersey(PURPLE_PURPLE_BG, LIGHTPURPLE_LIGHTPURPLE_BG, BLUE_BLUE_BG, 42);
+			}
+		}
+
+#pragma endregion
+		deque<SRLGameMatchup> repGames;
+		deque<string> AvailableTeams = m_SeasonTeams;
+		for (int j = 0; j < repTeams.size(); j += 2)
+		{
+			repGames.push_back(SRLGameMatchup(repTeams[j].getName(), repTeams[j + 1].getName()));
+		}
+		SRLRound repRound(repGames);
+		repRound.isRepRound = true;
+		int repPeriod = BaseSeasonGames / 4;
+		if (BaseSeasonGames > 9 && repGames.size() > 0)
+		{
+			repRound.RoundName = "Representive Round 1";
+			rounds.insert(rounds.begin() + repPeriod, repRound);
+			BaseSeasonGames++;
+
+			repPeriod += BaseSeasonGames / 4;
+
+			repRound.RoundName = "Representive Round 2";
+			rounds.insert(rounds.begin() + repPeriod, repRound);
+			BaseSeasonGames++;
+
+			repPeriod += BaseSeasonGames / 4;
+
+			repRound.RoundName = "Representive Round 3";
+			rounds.insert(rounds.begin() + repPeriod, repRound);
+			BaseSeasonGames++;
+		}
+#pragma endregion
+	}
+#pragma endregion
+	//FEATURE A GAME
+	int _HighlightedFirstGame = rand() % 8;
+	if (isWorldCup)
+	{
+		//PROBS NEED TO CREATE PROPER FEATURE GAMES FOR THIS
+		rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, rounds[0].m_Games[_HighlightedFirstGame].homeTeamOdds, rounds[0].m_Games[_HighlightedFirstGame].awayTeamOdds, repTeams);
+	}
+	else
+	{
+		rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, SRLBetPrice(0, 0), SRLBetPrice(0, 0));
+	}
+	SRLDraw Draw(rounds);
+	m_Season = SRLSeason(Draw, Ladder);
+	m_Season.m_PremiershipBets.clear();
+	m_Season.isWorldCup = isWorldCup;
+	m_GameBetsWriteUp.clear();
+	m_PremiershipBetsWriteUp.clear();
+	m_BetMoney = SRLBetPrice(500, 0);
+	if (coachingMode)
+	{
+		newState = SelectTeamCoachingState;
+	}
+	else
+	{
+		newState = SeasonModeState;
+	}
+	m_round = 0;
+	m_roundToSimulate = 0;
+	drawViewState = SeasonDrawMainView;
+	CalculateOdds();
+	m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_homeOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].homeTeamOdds;
+	m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_awayOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].awayTeamOdds;
+	CalculatePremiershipOdds();
+	return window;
 }
 
 void SRLGame::initSponsors()

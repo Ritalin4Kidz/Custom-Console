@@ -73,6 +73,12 @@ enum ArticleViewingState
 	ArticleFullViewState
 };
 
+enum SeasonConfigState
+{
+	SelectSeasonTypeState,
+	SelectSeasonTeamsState
+};
+
 enum GameStateBettingSYDE
 {
 	CurrentRound_STATE,
@@ -278,6 +284,7 @@ public:
 	static ArticleViewingState articleState;
 	static SeasonDrawViewState drawViewState;
 	static CoachingViewDrawState coachDrawState;
+	static SeasonConfigState seasCfgState;
 
 	static SRLSeasonLength seasonLength;
 
@@ -350,6 +357,8 @@ public:
 	void sortOutResultsScreen();
 	void sortOutTrainingOptions();
 	void sortOutTradingOptions();
+
+	ConsoleWindow CreateSeason(ConsoleWindow window, bool isWorldCup);
 
 	static deque<string> AchievementStrings;
 
@@ -663,6 +672,8 @@ private:
 	bool tradingAvailable = false;
 #pragma endregion
 
+	SYDEClickableButton m_RegularSeasonCfgBtn;
+	SYDEClickableButton m_WorldCupCfgBtn;
 
 #pragma region Challenges
 

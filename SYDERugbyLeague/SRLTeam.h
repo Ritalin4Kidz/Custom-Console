@@ -132,6 +132,7 @@ public:
 
 	int TeamRating();
 
+	void sortForRepresentativeTeam();
 
 	void AddPlayer(SRLPlayer player) {
 		m_TeamList.push_back(player);

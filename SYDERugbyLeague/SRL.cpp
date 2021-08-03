@@ -6882,23 +6882,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		//SORT OUT THE TEAMS
 		for (int j = 0; j < repTeams.size(); j++)
 		{
-			for (int jj = 0; jj < repTeams[j].getPlayers().size(); jj++)
-			{
-				for (int k = 0; k < jj; k++)
-				{
-					if (repTeams[j].getPlayers()[jj].getRating() > repTeams[j].getPlayers()[k].getRating())
-					{
-						SRLPlayer tempPlayer = repTeams[j].getPlayers()[k];
-						repTeams[j].getPlayers()[k] = repTeams[j].getPlayers()[jj];
-						repTeams[j].getPlayers()[jj] = tempPlayer;
-					}
-				}
-			}
-			//STRIP BACK TO 17 PLAYERS PER TEAM
-			if (repTeams[j].getPlayers().size() > 17)
-			{
-				repTeams[j].cutToSeventeen();
-			}
+			repTeams[j].sortForRepresentativeTeam();
 		}
 #pragma region JerseyDetails
 		//ADD JERSEY DETAILS TO THEM

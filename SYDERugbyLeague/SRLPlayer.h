@@ -37,6 +37,8 @@ public:
 
 	int getRating() { int rating = m_BaseAttack + m_BaseDefence + m_BaseSpeed + m_BaseKicking + m_BaseHandling; return rating / 5; }
 
+	int getAttackRatingSpecial() { int rating = m_BaseAttack + m_BaseSpeed + m_BaseKicking; return rating / 3; }
+
 	void setAllStats(int stat) { m_BaseAttack = stat; m_BaseDefence = stat; m_BaseHandling = stat; m_BaseSpeed = stat; m_BaseKicking = stat; }
 	void affectAllStats(float mul);
 

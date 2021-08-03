@@ -823,6 +823,49 @@ int SRLTeam::TeamRating()
 	return rating/5;
 }
 
+void SRLTeam::sortForRepresentativeTeam()
+{
+	for (int jj = 0; jj < m_TeamList.size(); jj++)
+	{
+		//FIRST SORT BY ATTACK
+		for (int k = 0; k < jj; k++)
+		{
+			if (m_TeamList[jj].getAttackRatingSpecial() > m_TeamList[k].getAttackRatingSpecial())
+			{
+				SRLPlayer tempPlayer = m_TeamList[k];
+				m_TeamList[k] = m_TeamList[jj];
+				m_TeamList[jj] = tempPlayer;
+			}
+		}
+		//THEN LET"S SORT BY DEFENCE
+		for (int k = 7; k < jj; k++)
+		{
+			if (m_TeamList[jj].getDefence() > m_TeamList[k].getDefence())
+			{
+				SRLPlayer tempPlayer = m_TeamList[k];
+				m_TeamList[k] = m_TeamList[jj];
+				m_TeamList[jj] = tempPlayer;
+			}
+		}
+		//NOW FILL UP INTERCHANGE WITH REMAINING ALL ROUNDERS
+		for (int k = 13; k < jj; k++)
+		{
+			if (m_TeamList[jj].getRating() > m_TeamList[k].getRating())
+			{
+				SRLPlayer tempPlayer = m_TeamList[k];
+				m_TeamList[k] = m_TeamList[jj];
+				m_TeamList[jj] = tempPlayer;
+			}
+		}
+	}
+	//STRIP BACK TO 17 PLAYERS PER TEAM
+	if (m_TeamList.size() > 17)
+	{
+		cutToSeventeen();
+	}
+	//VOILA, WE SHOULD HAVE THE COUNTRY'S BEST 17
+}
+
 void SRLTeam::cutToSeventeen()
 {
 	m_TeamList.erase(m_TeamList.begin() + 17, m_TeamList.end());

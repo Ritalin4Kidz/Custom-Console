@@ -15,6 +15,8 @@ public:
 	static string generateRandomName();
 	static string generateRandomTeamName();
 
+	static string generateRandomHomeGround();
+
 	static string generateRandomTeamNameSafe();
 
 	static void generateAndAddToVector(deque<string>& vec);
@@ -31,6 +33,8 @@ private:
 	static deque<string> MiddleNames;
 	static deque<string> LastNames;
 	static deque<string> CityNames;
+	static deque<string> HomeGroundStart;
+	static deque<string> HomeGroundEnd;
 	static deque<string> TeamNames;
 	static deque<string> countriesOfOrigin;
 

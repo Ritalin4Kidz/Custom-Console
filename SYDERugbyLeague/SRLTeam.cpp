@@ -4,10 +4,11 @@ SRLTeam::SRLTeam()
 {
 }
 
-SRLTeam::SRLTeam(deque<SRLPlayer> a_TeamList, string name)
+SRLTeam::SRLTeam(deque<SRLPlayer> a_TeamList, string name,string homeground)
 {
 	m_TeamList = a_TeamList;
 	m_Name = name;
+	m_HomeGround = homeground;
 	generateJerseys();
 }
 
@@ -158,6 +159,7 @@ void SRLTeam::loadTeam(string path)
 	badgeColour = static_cast<ColourClass>(save_file["badge"]);
 	jerseryTypeInt = save_file["jerseytype"];
 	logoTypeInt = save_file["logotype"];
+	setHomeGround(save_file["homeground"]);
 	setLogoCustom(save_file["customlogo"]);
 	int numberOfPlayers = save_file["playeramt"];
 	for (int i = 0; i < numberOfPlayers; i++)
@@ -191,6 +193,7 @@ void SRLTeam::saveTeam()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_Name;
+	save_file["homeground"] = m_HomeGround;
 	save_file["jerseytype"] = jerseryTypeInt;
 	save_file["logotype"] = logoTypeInt;
 	save_file["primary"] = static_cast<int>(primaryColour);

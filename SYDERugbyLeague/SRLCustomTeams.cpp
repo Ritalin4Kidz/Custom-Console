@@ -20,7 +20,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamFreebeeNetwork(string& team)
 	TeamList.push_back(SRLPlayer("Addison Stewart", "Australia", 90, 90, 90, 21, 22, 50, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
 	TeamList.push_back(SRLPlayer("Alex Armstrong", "Australia", 22, 78, 22, 78, 22, 78, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 2));
 	TeamList.push_back(SRLPlayer("Mitchell Lynn", "Australia", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 20));
-	SRLTeam FreebeeNetwork = SRLTeam(TeamList, "Freebee Network");
+	SRLTeam FreebeeNetwork = SRLTeam(TeamList, "Freebee Network", "Suoonnia Park");
 	FreebeeNetwork.setJersey(BRIGHTWHITE_BRIGHTWHITE_BG, BRIGHTRED_BRIGHTRED_BG, YELLOW_YELLOW_BG, 4);
 	FreebeeNetwork.setLogoCustom("TeamFreebee");
 	team = "SRL_FREEBEE_NETWORK";
@@ -47,7 +47,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamAusmusicCommunity(string& team
 	TeamList.push_back(SRLPlayer("Rit@lin", "Australia", 90, 90, 90, 21, 22, 50, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 20));
 	TeamList.push_back(SRLPlayer("Zombino", "Australia", 79, 78, 72, 78, 72, 78, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 2));
 	TeamList.push_back(SRLPlayer("Hingers", "Australia", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
-	SRLTeam AusMusic = SRLTeam(TeamList, "AusMusic Community");
+	SRLTeam AusMusic = SRLTeam(TeamList, "AusMusic Community", "AusMusic Super Stadium");
 	AusMusic.setJersey(LIGHTGREY_LIGHTGREY_BG, RED_RED_BG, BRIGHTRED_BRIGHTRED_BG, 70);
 	AusMusic.setLogoCustom("Ausmusic");
 	team = "SRL_AUSMUSIC_TEAM";
@@ -75,7 +75,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamMinimmeCommunity(string& team)
 	TeamList.push_back(SRLPlayer("Rit@lin", "Australia", 90, 90, 90, 21, 22, 50, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 20));
 	TeamList.push_back(SRLPlayer("Mrs. Minimme", "Australia", 79, 78, 72, 78, 72, 78, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 2));
 	TeamList.push_back(SRLPlayer("Deleted User", "?????", 35, 50, 80, 80, 33, 67, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 3));
-	SRLTeam MinimmeCommunity = SRLTeam(TeamList, "Minimme Community");
+	SRLTeam MinimmeCommunity = SRLTeam(TeamList, "Minimme Community", "West Dinsey Oval");
 	MinimmeCommunity.setJersey(BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, BRIGHTWHITE_BRIGHTWHITE_BG, 11);
 	MinimmeCommunity.setLogoCustom("Minimme");
 	team = "SRL_MINIMME_COMM";

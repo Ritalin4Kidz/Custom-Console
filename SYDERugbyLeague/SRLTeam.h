@@ -10,8 +10,8 @@ using namespace std;
 class SRLTeam {
 public:
 	SRLTeam();
-	SRLTeam(string name) {m_Name= name;}
-	SRLTeam(deque<SRLPlayer> a_TeamList, string name);
+	SRLTeam(string name, string homeground) { m_Name = name; m_HomeGround = homeground; }
+	SRLTeam(deque<SRLPlayer> a_TeamList, string name, string homeground);
 	virtual ~SRLTeam();
 
 	string Interchange(string& summaryPlay);
@@ -44,6 +44,8 @@ public:
 	void setLogoCustom(string _Logo) { m_CustomLogo = _Logo; }
 	string getLogoCustom() { return m_CustomLogo; }
 	string getName() { return m_Name; }
+	void setHomeGround(string hg) { m_HomeGround = hg; }
+	string getHomeGround() { return m_HomeGround; }
 	void setName(string name) { m_Name = name; }
 	void loadTeam(string path);
 	void loadTeamOffContract(string path);
@@ -143,7 +145,7 @@ public:
 private:
 	ColourClass getRandomColour();
 	string m_Name;
-
+	string m_HomeGround;
 	int jerseryTypeInt;
 	int logoTypeInt;
 

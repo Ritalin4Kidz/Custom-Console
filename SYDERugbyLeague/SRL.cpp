@@ -1714,17 +1714,17 @@ void SRLGame::test()
 
 SRLTeam SRLGame::generateRandomTeam()
 {
-	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe());
+	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe(), SRLNameGenerator::generateRandomHomeGround());
 }
 
 SRLTeam SRLGame::generateOffSeasonTeam()
 {
-	return SRLTeam(createOffSeasonTeam(""), "Off Contract Players");
+	return SRLTeam(createOffSeasonTeam(""), "Off Contract Players", "None");
 }
 
 SRLTeam SRLGame::generateRandomTeam(float multiplier)
 {
-	return SRLTeam(createRandomTeam("", multiplier), SRLNameGenerator::generateRandomTeamNameSafe());
+	return SRLTeam(createRandomTeam("", multiplier), SRLNameGenerator::generateRandomTeamNameSafe(),SRLNameGenerator::generateRandomHomeGround());
 }
 
 ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -6934,7 +6934,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 				}
 				if (!addedToTeam)
 				{
-					SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin());
+					SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin(), "Worlds Stadium");
 					newTeam.AddPlayer(a_selectedTeam.getPlayers()[ii]);
 					tempTeams.push_back(newTeam);
 				}
@@ -6957,7 +6957,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 			}
 			if (!addedToTeam)
 			{
-				SRLTeam newTeam = SRLTeam(offContract.getPlayers()[ii].getOrigin());
+				SRLTeam newTeam = SRLTeam(offContract.getPlayers()[ii].getOrigin(), "Worlds Stadium");
 				newTeam.AddPlayer(offContract.getPlayers()[ii]);
 				tempTeams.push_back(newTeam);
 			}
@@ -6989,7 +6989,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 			}
 			if (!TeamExists)
 			{
-				SRLTeam newTeam = SRLTeam(__TeamName);
+				SRLTeam newTeam = SRLTeam(__TeamName, "Worlds Stadium");
 				for (int p = 0; p < 17; p++)
 				{
 					SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), __TeamName, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
@@ -7247,7 +7247,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 				}
 				if (!addedToTeam)
 				{
-					SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin());
+					SRLTeam newTeam = SRLTeam(a_selectedTeam.getPlayers()[ii].getOrigin(), "Worlds Stadium");
 					newTeam.AddPlayer(a_selectedTeam.getPlayers()[ii]);
 					tempTeams.push_back(newTeam);
 				}

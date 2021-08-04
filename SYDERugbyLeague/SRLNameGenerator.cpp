@@ -32,6 +32,53 @@ deque<string> SRLNameGenerator::countriesOfOrigin = deque<string>
 	"Tyezyer",
 };
 
+deque<string> SRLNameGenerator::HomeGroundStart = deque<string>
+{
+	"Artise",
+	"Brooklan",
+	"Creasti",
+	"Derr",
+	"Enrea",
+	"Friia",
+	"Gresra",
+	"Hellai",
+	"Indigo",
+	"Jerea",
+	"Kamrio",
+	"Kellia",
+	"Limnto",
+	"Maonsa",
+	"Norie",
+	"Ouri",
+	"Presi",
+	"Quimona",
+	"Razar",
+	"Serotina",
+	"Turbo",
+	"Uni",
+	"Ventrio",
+	"Wellinga",
+	"Xyzera",
+	"Yamon",
+};
+
+deque<string> SRLNameGenerator::HomeGroundEnd = deque<string>
+{
+	"Arena",
+	"Bowl",
+	"Central",
+	"Centre",
+	"Field",
+	"Football Stadium",
+	"Grandstand",
+	"Ground",
+	"Park",
+	"Ring",
+	"Sports Arena",
+	"Sports Centre",
+	"Stadium",
+};
+
 deque<string> SRLNameGenerator::FirstNames = deque<string>
 {
 	"Aaron",
@@ -1516,6 +1563,13 @@ string SRLNameGenerator::generateRandomTeamName()
 		}
 	}
 	return TeamName;
+}
+
+string SRLNameGenerator::generateRandomHomeGround()
+{
+	int number1 = rand() % HomeGroundStart.size();
+	int number2 = rand() % HomeGroundEnd.size();
+	return HomeGroundStart[number1] + " " + HomeGroundEnd[number2];
 }
 
 string SRLNameGenerator::generateRandomTeamNameSafe()

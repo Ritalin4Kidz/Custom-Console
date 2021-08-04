@@ -20,6 +20,14 @@ SRL Simulation game made inside the SYDE Framework.
 
 - Look Into Ladder Predictor Possibly
 
+- Each Game Can Be Viewed In Depth, This Will Include Being Able To View
+	- Team Lists (All Positions As Well For Top 17)
+	- Date & Time Of Game Played
+	- Weather Conditions
+	- Crowd Number
+	- Stadium Played At
+- In Addition, Teams Will Now Have Home Grounds
+
 ## Release Notes
 
 ### 1.0.2.0 02/08/2021

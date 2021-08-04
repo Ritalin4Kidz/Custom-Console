@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "SRLStructs.h"
 
+/// <summary>
+/// Sort the ladder by points & points difference
+/// </summary>
 void SRLLadder::sortLadder()
 {
 	for (int i = 0; i < m_Ladder.size(); i++)

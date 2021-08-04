@@ -96,6 +96,12 @@ SRLSoundtrack SRLGame::m_GamePlaySoundtrack = SRLSoundtrack();
 
 #pragma endregion
 
+/// <summary>
+/// Split a string into a list of strings using a char as a splitter
+/// </summary>
+/// <param name="a_String"></param>
+/// <param name="splitter"></param>
+/// <returns></returns>
 deque<string> Split(string a_String, char splitter)
 {
 	int arraySize = 1;
@@ -127,10 +133,16 @@ deque<string> Split(string a_String, char splitter)
 
 #pragma region ButtonVoids
 
+/// <summary>
+/// Convert the tag on the training button click into the static training values
+/// </summary>
 void DoTrainCallClick()
 {
+	//Acknowledge In SRLGame That Training Is Happening
 	SRLGame::performTrainCall = true;
+	//Get The Last Tag Of Buttons Clicked
 	deque<string> training = Split(SYDEClickableButton::getLastButtonTag(), ';');
+	//Convert The Tag
 	if (training.size() > 4)
 	{
 		SRLGame::playerMainTeamTrade = stoi(training[1]);
@@ -138,29 +150,43 @@ void DoTrainCallClick()
 		SRLGame::m_BetAmount.cents = stoi(training[3]);
 		SRLGame::trainType = static_cast<SRLTrainingType>(stoi(training[4]));
 	}
+	//ERROR, FALL BACK AND SHOW ERROR
 	else
 	{
+		SRLGame::performTrainCall = false;
 		SRLGame::errorCall = true;
 		SRLGame::errorMessage = "Error whilst performing training";
 	}
 }
 
+/// <summary>
+/// Confirmation Click For Training
+/// </summary>
 void DoTrainCallOKClick()
 {
 	SRLGame::performTrainCall = false;
 	SRLGame::performTrainConfirmedCall = true;
 }
 
+/// <summary>
+/// Tell SRLGame to perform a refresh
+/// </summary>
 void DoPerformRefreshClick()
 {
 	SRLGame::performRefreshOptionsCall = true;
 }
 
+/// <summary>
+/// Tell SRLGame that training was cancelled
+/// </summary>
 void DoTrainCallCNCLClick()
 {
 	SRLGame::performTrainCall = false;
 }
 
+/// <summary>
+/// Convert the tag on the button to trading values
+/// </summary>
 void DoTradeCallClick()
 {
 	SRLGame::performTradeCall = true;
@@ -187,6 +213,7 @@ void DoTradeCallClick()
 	else
 	{
 		SRLGame::errorCall = true;
+		SRLGame::performTradeCall = false;
 		SRLGame::errorMessage = "Error occured whilst trading";
 	}
 }
@@ -997,6 +1024,9 @@ void SwapPositionsJerseyClick()
 
 #pragma endregion
 
+/// <summary>
+/// Initialize all the values for the game
+/// </summary>
 void SRLGame::init()
 {
 	CustomAnimationAsset::SetDeltatimeBasedAnimation(true);
@@ -1573,7 +1603,11 @@ void SRLGame::init()
 }
 
 #pragma region Misc
-
+/// <summary>
+/// Create a random team fill with 20 random players
+/// </summary>
+/// <param name="prefix">Name prefix, leave as "" if none</param>
+/// <returns></returns>
 deque<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 {
 	deque<SRLPlayer> m_Team = deque<SRLPlayer>();
@@ -1597,7 +1631,11 @@ deque<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	}
 	return m_Team;
 }
-
+/// <summary>
+/// Create off contract players
+/// </summary>
+/// <param name="prefix"></param>
+/// <returns></returns>
 deque<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
 {
 	deque<SRLPlayer> m_Team = deque<SRLPlayer>();

@@ -13,6 +13,13 @@ SRL Simulation game made inside the SYDE Framework.
 - Exhibiton Matches
  - - No Season Attached (And Therefore No Coaching)
 
+ - Player Management Seasons
+ - - Coaching Is Moved From An Option Inside Game Settings, instead there will be an option underneath exhibition matches titled "Management Seasons". When clicked you'll be
+		give the option between coaching a team for the season, or managing a single player.
+   - Player Manager Game Mode
+
+- Look Into Ladder Predictor Possibly
+
 ## Release Notes
 
 ### 1.0.2.0 02/08/2021

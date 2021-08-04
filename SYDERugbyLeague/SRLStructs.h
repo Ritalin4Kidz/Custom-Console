@@ -123,6 +123,9 @@ struct SRLGameMatchup
 	deque<string> ResultPlayByPlay;
 	deque<string> SummaryPlayByPlay;
 
+	void setMatchInfo(string v, string t) { Venue = v; Time_Date = t; }
+	string Venue;
+	string Time_Date;
 
 	void calculateBiggestLeads(int homeScore, int awayScore);
 

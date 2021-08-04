@@ -20,7 +20,7 @@ public:
 	static string generateRandomTeamNameSafe();
 
 	static void generateAndAddToVector(deque<string>& vec);
-
+	static string getTimeBasedOffRoundSizeAndGame(int roundSize, int game);
 private:
 	static string generateRandomFirstName();
 	static string generateRandomMiddleName();

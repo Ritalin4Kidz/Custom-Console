@@ -83,6 +83,8 @@ int SRLGame::playerMainTeamTrade = 0;
 int SRLGame::playerOtherTeamTrade = 0;
 int SRLGame::exhibitionTeam1Num = 0;
 int SRLGame::exhibitionTeam2Num = 1;
+int SRLGame::matchInformationRound = 0;
+int SRLGame::matchInformationGame = 0;
 bool SRLGame::setUpExhibitionDisplayCall = false;
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
@@ -874,6 +876,15 @@ void ToggleStaminaClick()
 void BlankViewClick()
 {
 	
+}
+
+void MatchUpButtonScoreClick()
+{
+	string tempTag = SYDEClickableButton::getLastButtonTag();
+	deque<string> temp = Split(tempTag, ';');
+	SRLGame::matchInformationRound = stoi(temp[1]);
+	SRLGame::matchInformationGame = stoi(temp[0]);
+	SRLGame::newState = MatchUpInDepthView;
 }
 
 void SummaryRsltViewClick()
@@ -1836,6 +1847,10 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		{
 			AssignState(std::bind(&SRLGame::CoachingView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
+		else if (currentState == MatchUpInDepthView)
+		{
+			AssignState(std::bind(&SRLGame::MatchUpDepthView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+		}
 		else if (currentState == BettingViewState)
 		{
 			m_SelectedGame = 0;
@@ -2252,6 +2267,7 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 		{
 			m_round =0;
 		}
+		sortOutMatchButtons();
 	}
 	if (PrevRoundCall)
 	{
@@ -2261,6 +2277,7 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 		{
 			m_round = m_Season.m_Draw.m_Rounds.size() - 1;
 		}
+		sortOutMatchButtons();
 	}
 	if (drawViewState == SeasonDrawMainView)
 	{
@@ -2268,7 +2285,7 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 		for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_round].m_Games.size(); i++)
 		{
 			window.setTextAtPoint(Vector2(0, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].HomeTeam, WHITE);
-			window.setTextAtPoint(Vector2(26, 3 + i), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), WHITE);
+			window = m_MatchResultButtons[i].draw_ui(window);
 			window.setTextAtPoint(Vector2(34, 3 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[i].AwayTeam, WHITE);
 		}
 		try
@@ -3499,6 +3516,25 @@ ConsoleWindow SRLGame::ChallengesView(ConsoleWindow window, int windowWidth, int
 		}
 	}
 	window = m_ProfileViewBtn.draw_ui(window, Vector2(0,19));
+	return window;
+}
+
+/// <summary>
+/// Match Up In-Depth View
+/// </summary>
+/// <param name="window"></param>
+/// <param name="windowWidth"></param>
+/// <param name="windowHeight"></param>
+/// <returns></returns>
+ConsoleWindow SRLGame::MatchUpDepthView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window = drawTabs(window);
+	string awayTeamText = to_string(m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].awayTeamScore) + " " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam;
+	int sizeText = awayTeamText.length();
+	window.setTextAtPoint(Vector2(0, 2), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + " " + to_string(m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].homeTeamScore), WHITE);
+	window.setTextAtPoint(Vector2(60 - sizeText, 2), awayTeamText, WHITE);
+	window.setTextAtPoint(Vector2(4, 4), "Date: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Time_Date, WHITE);
+	window.setTextAtPoint(Vector2(4, 5), "Venue: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Venue, WHITE);
 	return window;
 }
 
@@ -5429,6 +5465,7 @@ void SRLGame::SimulateGames()
 				}
 				checkBetAchievements();
 				checkCoachingAchievements();
+				sortOutMatchButtons();
 			}
 			else
 			{
@@ -5810,6 +5847,7 @@ void SRLGame::SimulateGames()
 				sortOutTrainingOptions();
 				sortOutTradingOptions();
 			}
+			sortOutMatchButtons();
 		}
 	}
 }
@@ -6027,6 +6065,34 @@ void SRLGame::sortOutNews()
 		a_Headline.SetFunc(ArticleClick);
 		a_Headline.setTag(to_string(i));
 		m_NewsHeadlines.push_back(a_Headline);
+	}
+}
+
+void SRLGame::sortOutMatchButtons()
+{
+	m_MatchResultButtons.clear();
+	for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_round].m_Games.size(); i++)
+	{
+		if (m_Season.isWorldCup)
+		{
+			m_Season.m_Draw.m_Rounds[m_round].m_Games[i].setMatchInfo("Worlds Stadium", SRLNameGenerator::getTimeBasedOffRoundSizeAndGame(m_Season.m_Draw.m_Rounds[m_round].m_Games.size(), i));
+		}
+		else
+		{
+			SRLTeam HomeTeamValue;
+			HomeTeamValue.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_round].m_Games[i].HomeTeam + ".json");
+			m_Season.m_Draw.m_Rounds[m_round].m_Games[i].setMatchInfo(HomeTeamValue.getHomeGround(),SRLNameGenerator::getTimeBasedOffRoundSizeAndGame(m_Season.m_Draw.m_Rounds[m_round].m_Games.size(),i));
+		}
+		string padding = "";
+		//window.setTextAtPoint(Vector2(26, 3 + i), std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), WHITE);
+		if (m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore < 10)
+		{
+			padding = " ";
+		}
+		SYDEClickableButton a_Score = SYDEClickableButton(padding + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].homeTeamScore) + " v " + std::to_string(m_Season.m_Draw.m_Rounds[m_round].m_Games[i].awayTeamScore), Vector2(25, 3 + i), Vector2(7, 1), WHITE, false);
+		a_Score.SetFunc(MatchUpButtonScoreClick);
+		a_Score.setTag(to_string(i) + ";" + to_string(m_round));
+		m_MatchResultButtons.push_back(a_Score);
 	}
 }
 
@@ -7440,6 +7506,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 	m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_homeOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].homeTeamOdds;
 	m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_awayOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].awayTeamOdds;
 	CalculatePremiershipOdds();
+	sortOutMatchButtons();
 	return window;
 }
 

@@ -39,7 +39,8 @@ enum GameStateSYDE
 	NewsViewState,
 	TeamInDepthViewState,
 	ProfileViewState,
-	SponsorChallengeViewState
+	SponsorChallengeViewState,
+	MatchUpInDepthView
 };
 
 enum CoachingViewDrawState
@@ -195,6 +196,8 @@ public:
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ProfileView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ChallengesView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow MatchUpDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
+
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -249,6 +252,7 @@ public:
 	static void loadGameSettings();
 
 	void sortOutNews();
+	void sortOutMatchButtons();
 	void checkSpecificBetAchievements(SRLGameBet _bet);
 	void checkBetAchievements();
 	void checkCoachingAchievements();
@@ -396,6 +400,10 @@ public:
 	static int exhibitionTeam1Num;
 	static int exhibitionTeam2Num;
 	static bool setUpExhibitionDisplayCall;
+
+	static int matchInformationRound;
+	static int matchInformationGame;
+
 private:
 	const int customTeamGenerateChance = 9999;
 
@@ -635,6 +643,9 @@ private:
 	CustomAsset m_LogoView;
 	int m_TeamViewing = 0;
 	deque<SYDEClickableButton> m_PlayerButtons;
+
+	deque<SYDEClickableButton> m_MatchResultButtons;
+
 	SRLPlayer m_PlayerView;
 	CustomAsset m_PlayerAsset;
 

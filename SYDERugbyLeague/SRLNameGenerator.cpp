@@ -1587,6 +1587,176 @@ void SRLNameGenerator::generateAndAddToVector(deque<string>& vec)
 	}
 }
 
+string SRLNameGenerator::getTimeBasedOffRoundSizeAndGame(int roundSize, int game)
+{
+	if (roundSize == 8)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 6:00pm";
+		}
+		else if (game == 2)
+		{
+			return "Friday 8:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 3:05pm";
+		}
+		else if (game == 4)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 5)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 6)
+		{
+			return "Sunday 3:00pm";
+		}
+		else if (game == 7)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 7)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 6:00pm";
+		}
+		else if (game == 2)
+		{
+			return "Friday 8:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 4)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 5)
+		{
+			return "Sunday 3:00pm";
+		}
+		else if (game == 6)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 6)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 2)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 4)
+		{
+			return "Sunday 3:00pm";
+		}
+		else if (game == 5)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 5)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 2)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 4)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 4)
+	{
+		if (game == 0)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 1)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 2)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 3)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 3)
+	{
+		if (game == 0)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 1)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 2)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 2)
+	{
+		if (game == 0)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 1)
+		{
+			return "Saturday 7:45pm";
+		}
+	}
+	else if (roundSize == 1)
+	{
+		return "Sunday 4:00pm";
+	}
+	return string();
+}
+
 string SRLNameGenerator::generateRandomFirstName()
 {
 	int number = rand() % FirstNames.size();

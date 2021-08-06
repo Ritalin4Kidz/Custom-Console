@@ -28,6 +28,9 @@ SRL Simulation game made inside the SYDE Framework.
 	- Stadium Played At
 - In Addition, Teams Will Now Have Home Grounds
 
+- Player Retirement
+	- See Player Retirement Design Text
+
 ## Release Notes
 
 ### 1.0.2.0 02/08/2021

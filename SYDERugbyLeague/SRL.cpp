@@ -464,7 +464,7 @@ void KeypadClickCNCL()
 
 void ExhibitionMatchClick()
 {
-	if (SRLGame::currentState = MainMenu_STATE)
+	if (SRLGame::currentState == MainMenu_STATE)
 	{
 		SRLGame::newState = Exhibition_LoadState;
 	}

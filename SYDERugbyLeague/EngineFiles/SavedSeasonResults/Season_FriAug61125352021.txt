@@ -1,0 +1,1016 @@
+LADDER RESULTS
+--------------------------------
+1. Frankston Explosion Wins: 23| Lost: 1| PD: 330| Points: 48
+2. Quintsville Titans Wins: 21| Lost: 5| PD: 281| Points: 42
+3. Transistia Icebergs Wins: 19| Lost: 5| PD: 251| Points: 40
+4. Darwin Oaks Wins: 19| Lost: 6| PD: 249| Points: 39
+5. Endsia Doggos Wins: 17| Lost: 8| PD: 144| Points: 35
+6. Anywheston Tobacco Wins: 17| Lost: 9| PD: 204| Points: 34
+7. New Jerstion Stars Wins: 15| Lost: 11| PD: 70| Points: 30
+8. Bilby Rabbitohs Wins: 14| Lost: 12| PD: 98| Points: 28
+9. West Valley Tigers Wins: 12| Lost: 14| PD: 41| Points: 24
+10. GWS Whales Wins: 12| Lost: 14| PD: -39| Points: 24
+11. Northen City Broncos Wins: 11| Lost: 15| PD: -123| Points: 22
+12. Westler Tigers Wins: 10| Lost: 15| PD: -68| Points: 21
+13. Curosa Potatoes Wins: 8| Lost: 18| PD: -268| Points: 16
+14. Eweweron Miners Wins: 4| Lost: 21| PD: -263| Points: 9
+15. Albury Reapers Wins: 2| Lost: 24| PD: -287| Points: 4
+16. Aliran Fireballs Wins: 0| Lost: 26| PD: -620| Points: 0
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Albury Reapers 8 v 34 Anywheston Tobacco
+Aliran Fireballs 16 v 24 Endsia Doggos
+GWS Whales 38 v 26 West Valley Tigers
+Frankston Explosion 9 v 8 Transistia Icebergs
+Darwin Oaks 24 v 8 Westler Tigers
+Northen City Broncos 12 v 31 Quintsville Titans
+Bilby Rabbitohs 28 v 6 Eweweron Miners
+Curosa Potatoes 32 v 26 New Jerstion Stars
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Quintsville Titans 31 v 16 Albury Reapers
+Frankston Explosion 31 v 12 GWS Whales
+Eweweron Miners 12 v 28 Westler Tigers
+Northen City Broncos 14 v 20 New Jerstion Stars
+Bilby Rabbitohs 26 v 28 Anywheston Tobacco
+Transistia Icebergs 22 v 4 Aliran Fireballs
+Endsia Doggos 17 v 16 Curosa Potatoes
+West Valley Tigers 8 v 26 Darwin Oaks
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Transistia Icebergs 12 v 23 Darwin Oaks
+Endsia Doggos 32 v 22 Westler Tigers
+West Valley Tigers 36 v 8 Aliran Fireballs
+Anywheston Tobacco 12 v 18 Northen City Broncos
+Bilby Rabbitohs 11 v 4 Eweweron Miners
+New Jerstion Stars 6 v 20 Frankston Explosion
+Albury Reapers 0 v 24 GWS Whales
+Curosa Potatoes 20 v 36 Quintsville Titans
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Bilby Rabbitohs 32 v 0 Aliran Fireballs
+New Jerstion Stars 25 v 18 Curosa Potatoes
+Albury Reapers 20 v 24 Endsia Doggos
+Frankston Explosion 10 v 8 Quintsville Titans
+West Valley Tigers 20 v 18 Westler Tigers
+Anywheston Tobacco 26 v 34 Northen City Broncos
+Transistia Icebergs 12 v 12 Eweweron Miners
+Darwin Oaks 14 v 12 GWS Whales
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Bilby Rabbitohs 26 v 18 GWS Whales
+Curosa Potatoes 2 v 30 Frankston Explosion
+Transistia Icebergs 30 v 4 Aliran Fireballs
+Anywheston Tobacco 18 v 14 West Valley Tigers
+Quintsville Titans 20 v 16 Darwin Oaks
+Northen City Broncos 10 v 8 Albury Reapers
+New Jerstion Stars 10 v 30 Endsia Doggos
+Westler Tigers 29 v 26 Eweweron Miners
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Aliran Fireballs 14 v 38 GWS Whales
+Endsia Doggos 23 v 23 Darwin Oaks
+Transistia Icebergs 14 v 20 Anywheston Tobacco
+Quintsville Titans 44 v 24 Northen City Broncos
+Eweweron Miners 0 v 34 New Jerstion Stars
+West Valley Tigers 10 v 12 Bilby Rabbitohs
+Frankston Explosion 42 v 24 Curosa Potatoes
+Albury Reapers 8 v 26 Westler Tigers
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Quintsville Titans 24 v 10 Eweweron Miners
+Darwin Oaks 34 v 32 Frankston Explosion
+Northen City Broncos 30 v 14 Curosa Potatoes
+GWS Whales 43 v 12 Aliran Fireballs
+Transistia Icebergs 17 v 4 Albury Reapers
+West Valley Tigers 20 v 24 Endsia Doggos
+Bilby Rabbitohs 20 v 23 New Jerstion Stars
+Anywheston Tobacco 19 v 6 Westler Tigers
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Bilby Rabbitohs 12 v 22 Frankston Explosion
+Quintsville Titans 12 v 4 Eweweron Miners
+Anywheston Tobacco 45 v 10 Curosa Potatoes
+Endsia Doggos 28 v 0 Aliran Fireballs
+New Jerstion Stars 18 v 22 Transistia Icebergs
+Westler Tigers 12 v 36 Darwin Oaks
+Albury Reapers 14 v 20 Northen City Broncos
+West Valley Tigers 10 v 14 GWS Whales
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Albury Reapers 12 v 14 Eweweron Miners
+GWS Whales 18 v 25 New Jerstion Stars
+Frankston Explosion 24 v 4 Endsia Doggos
+Northen City Broncos 22 v 44 Darwin Oaks
+Anywheston Tobacco 26 v 4 Westler Tigers
+Aliran Fireballs 8 v 28 West Valley Tigers
+Transistia Icebergs 4 v 8 Quintsville Titans
+Curosa Potatoes 16 v 43 Bilby Rabbitohs
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Eweweron Miners 0 v 42 New Jerstion Stars
+Albury Reapers 10 v 18 Endsia Doggos
+Bilby Rabbitohs 36 v 18 Curosa Potatoes
+Quintsville Titans 12 v 16 Darwin Oaks
+Aliran Fireballs 8 v 32 Westler Tigers
+West Valley Tigers 4 v 14 Transistia Icebergs
+GWS Whales 18 v 6 Anywheston Tobacco
+Northen City Broncos 0 v 36 Frankston Explosion
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Aliran Fireballs 24 v 28 Westler Tigers
+Frankston Explosion 26 v 12 Northen City Broncos
+West Valley Tigers 14 v 6 Albury Reapers
+Curosa Potatoes 18 v 0 Transistia Icebergs
+Eweweron Miners 6 v 14 Anywheston Tobacco
+Bilby Rabbitohs 20 v 32 Darwin Oaks
+Quintsville Titans 5 v 10 Endsia Doggos
+New Jerstion Stars 20 v 16 GWS Whales
+--------------------------------
+
+Round 12 Results
+--------------------------------
+GWS Whales 24 v 34 Anywheston Tobacco
+Curosa Potatoes 4 v 28 West Valley Tigers
+Darwin Oaks 47 v 10 Aliran Fireballs
+Eweweron Miners 16 v 26 Frankston Explosion
+Albury Reapers 6 v 30 Transistia Icebergs
+Northen City Broncos 12 v 20 Westler Tigers
+New Jerstion Stars 32 v 22 Bilby Rabbitohs
+Quintsville Titans 16 v 12 Endsia Doggos
+--------------------------------
+
+Round 13 Results
+--------------------------------
+GWS Whales 12 v 29 Quintsville Titans
+Endsia Doggos 32 v 18 Westler Tigers
+Anywheston Tobacco 18 v 4 Bilby Rabbitohs
+Darwin Oaks 22 v 8 Eweweron Miners
+Frankston Explosion 41 v 4 Aliran Fireballs
+Albury Reapers 10 v 14 West Valley Tigers
+Northen City Broncos 16 v 8 Curosa Potatoes
+Transistia Icebergs 25 v 12 New Jerstion Stars
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Darwin Oaks 28 v 0 GWS Whales
+Westler Tigers 16 v 23 New Jerstion Stars
+Anywheston Tobacco 16 v 6 West Valley Tigers
+Albury Reapers 32 v 22 Curosa Potatoes
+Northen City Broncos 0 v 22 Endsia Doggos
+Frankston Explosion 24 v 4 Quintsville Titans
+Transistia Icebergs 34 v 6 Eweweron Miners
+Bilby Rabbitohs 34 v 14 Aliran Fireballs
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Bilby Rabbitohs 22 v 28 West Valley Tigers
+Aliran Fireballs 10 v 17 Northen City Broncos
+Quintsville Titans 7 v 0 New Jerstion Stars
+Anywheston Tobacco 44 v 18 Albury Reapers
+Transistia Icebergs 12 v 12 Frankston Explosion
+Curosa Potatoes 19 v 18 Eweweron Miners
+GWS Whales 16 v 28 Westler Tigers
+Darwin Oaks 6 v 36 Endsia Doggos
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Endsia Doggos 4 v 20 Transistia Icebergs
+Anywheston Tobacco 16 v 18 New Jerstion Stars
+West Valley Tigers 14 v 20 Eweweron Miners
+Quintsville Titans 42 v 20 Curosa Potatoes
+GWS Whales 19 v 16 Albury Reapers
+Northen City Broncos 4 v 16 Westler Tigers
+Aliran Fireballs 4 v 34 Darwin Oaks
+Frankston Explosion 28 v 8 Bilby Rabbitohs
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Darwin Oaks 18 v 22 West Valley Tigers
+Westler Tigers 16 v 16 Frankston Explosion
+Aliran Fireballs 12 v 28 Northen City Broncos
+Transistia Icebergs 24 v 10 GWS Whales
+Bilby Rabbitohs 26 v 16 Quintsville Titans
+Anywheston Tobacco 46 v 34 Eweweron Miners
+Curosa Potatoes 4 v 35 Endsia Doggos
+Albury Reapers 14 v 23 New Jerstion Stars
+--------------------------------
+
+Round 18 Results
+--------------------------------
+Anywheston Tobacco 12 v 10 Darwin Oaks
+Transistia Icebergs 28 v 10 Westler Tigers
+Eweweron Miners 4 v 17 Northen City Broncos
+West Valley Tigers 35 v 4 Curosa Potatoes
+Albury Reapers 0 v 16 Frankston Explosion
+Quintsville Titans 34 v 0 Aliran Fireballs
+Endsia Doggos 18 v 26 New Jerstion Stars
+GWS Whales 16 v 10 Bilby Rabbitohs
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Quintsville Titans 37 v 6 GWS Whales
+Albury Reapers 12 v 16 Curosa Potatoes
+New Jerstion Stars 23 v 20 Anywheston Tobacco
+Transistia Icebergs 20 v 12 Northen City Broncos
+Eweweron Miners 30 v 18 Aliran Fireballs
+Darwin Oaks 10 v 29 Frankston Explosion
+Bilby Rabbitohs 24 v 12 Westler Tigers
+Endsia Doggos 21 v 20 West Valley Tigers
+--------------------------------
+
+Round 20 Results
+--------------------------------
+Quintsville Titans 44 v 14 New Jerstion Stars
+Transistia Icebergs 15 v 12 Bilby Rabbitohs
+Curosa Potatoes 24 v 36 Anywheston Tobacco
+West Valley Tigers 8 v 4 Westler Tigers
+Eweweron Miners 10 v 6 Northen City Broncos
+Endsia Doggos 21 v 14 GWS Whales
+Aliran Fireballs 6 v 34 Frankston Explosion
+Darwin Oaks 44 v 4 Albury Reapers
+--------------------------------
+
+Round 21 Results
+--------------------------------
+West Valley Tigers 15 v 16 Northen City Broncos
+Curosa Potatoes 29 v 28 Eweweron Miners
+Albury Reapers 36 v 16 Aliran Fireballs
+GWS Whales 12 v 26 Transistia Icebergs
+Quintsville Titans 26 v 6 Westler Tigers
+Endsia Doggos 20 v 22 Bilby Rabbitohs
+Anywheston Tobacco 4 v 8 Frankston Explosion
+Darwin Oaks 38 v 20 New Jerstion Stars
+--------------------------------
+
+Round 22 Results
+--------------------------------
+Northen City Broncos 18 v 26 Bilby Rabbitohs
+Quintsville Titans 8 v 5 Westler Tigers
+Eweweron Miners 16 v 32 Darwin Oaks
+Frankston Explosion 17 v 16 Endsia Doggos
+Aliran Fireballs 6 v 38 Anywheston Tobacco
+New Jerstion Stars 40 v 30 Albury Reapers
+Transistia Icebergs 28 v 12 West Valley Tigers
+Curosa Potatoes 34 v 36 GWS Whales
+--------------------------------
+
+Round 23 Results
+--------------------------------
+Frankston Explosion 19 v 12 New Jerstion Stars
+Albury Reapers 4 v 20 Quintsville Titans
+Bilby Rabbitohs 14 v 34 Endsia Doggos
+Anywheston Tobacco 38 v 6 Aliran Fireballs
+GWS Whales 14 v 26 Westler Tigers
+Darwin Oaks 34 v 8 Curosa Potatoes
+Transistia Icebergs 30 v 10 Northen City Broncos
+Eweweron Miners 18 v 26 West Valley Tigers
+--------------------------------
+
+Round 24 Results
+--------------------------------
+Endsia Doggos 4 v 24 Transistia Icebergs
+Westler Tigers 4 v 12 Curosa Potatoes
+Bilby Rabbitohs 32 v 12 Darwin Oaks
+Anywheston Tobacco 10 v 14 Quintsville Titans
+Frankston Explosion 17 v 16 Albury Reapers
+Northen City Broncos 18 v 16 West Valley Tigers
+Aliran Fireballs 6 v 52 New Jerstion Stars
+Eweweron Miners 10 v 20 GWS Whales
+--------------------------------
+
+Round 25 Results
+--------------------------------
+Eweweron Miners 6 v 10 Frankston Explosion
+Aliran Fireballs 10 v 26 Curosa Potatoes
+Albury Reapers 10 v 22 Westler Tigers
+Endsia Doggos 16 v 18 GWS Whales
+Quintsville Titans 26 v 6 Anywheston Tobacco
+New Jerstion Stars 18 v 24 West Valley Tigers
+Northen City Broncos 19 v 24 Darwin Oaks
+Transistia Icebergs 32 v 22 Bilby Rabbitohs
+--------------------------------
+
+Round 26 Results
+--------------------------------
+Aliran Fireballs 18 v 28 Curosa Potatoes
+New Jerstion Stars 23 v 26 Darwin Oaks
+West Valley Tigers 6 v 20 Quintsville Titans
+Bilby Rabbitohs 36 v 10 Albury Reapers
+Northen City Broncos 14 v 18 Endsia Doggos
+Anywheston Tobacco 15 v 18 Frankston Explosion
+GWS Whales 18 v 2 Eweweron Miners
+Transistia Icebergs 16 v 0 Westler Tigers
+--------------------------------
+
+Round 27 Results
+--------------------------------
+Frankston Explosion 20 v 16 Darwin Oaks
+Quintsville Titans 18 v 26 Transistia Icebergs
+Endsia Doggos 16 v 18 Bilby Rabbitohs
+Anywheston Tobacco 30 v 12 New Jerstion Stars
+--------------------------------
+
+Round 28 Results
+--------------------------------
+Darwin Oaks 16 v 36 Bilby Rabbitohs
+Quintsville Titans 20 v 12 Anywheston Tobacco
+--------------------------------
+
+Round 29 Results
+--------------------------------
+Frankston Explosion 18 v 26 Quintsville Titans
+Transistia Icebergs 19 v 20 Bilby Rabbitohs
+--------------------------------
+
+Round 30 Results
+--------------------------------
+Quintsville Titans 28 v 26 Bilby Rabbitohs
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Isabel Nu-Bilby Rabbitohs : 31
+2. Niko Ramm-Bilby Rabbitohs : 30
+3. Kim az Cati-New Jerstion Stars : 28
+4. Albert Locke-Endsia Doggos : 27
+5. Erin Atlas-Transistia Icebergs : 27
+6. Jared le Xuina-Frankston Explosion : 26
+7. Flynn McKenzie-New Jerstion Stars : 21
+8. Ometage Atlas-Quintsville Titans : 18
+9. Uniko od Treasan-Bilby Rabbitohs : 18
+10. Nathan V. Develo-GWS Whales : 17
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Patrise o. Vio-Darwin Oaks : 77
+2. Alexander Junior-Bilby Rabbitohs : 70
+3. Imm cu Zyeta-New Jerstion Stars : 67
+4. Uniko de Flatio-Anywheston Tobacco : 62
+5. Laci de Faco-Endsia Doggos : 60
+6. Lindsey Eastra-Quintsville Titans : 59
+7. Eduardo de Flatio-West Valley Tigers : 57
+8. Nick O' Thomas-Endsia Doggos : 55
+9. Abria Besti-GWS Whales : 52
+10. Paul Osees-Frankston Explosion : 46
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Gabriel Yase-Anywheston Tobacco : 2
+2. Thom Kat-Quintsville Titans : 2
+3. Kim az Cati-New Jerstion Stars : 2
+4. James U. ti Klokmona-Endsia Doggos : 2
+5. Erin Atlas-Transistia Icebergs : 2
+6. Kelin MacDonald-Quintsville Titans : 2
+7. Zasye le Monare-Frankston Explosion : 2
+8. Eric o. Hyi-Northen City Broncos : 2
+9. Raymond T. az Betaset-Off Contract Players : 1
+10. Myles K. vo Autruys-Westler Tigers : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Kim az Cati-New Jerstion Stars : 4421
+2. Isabel Nu-Bilby Rabbitohs : 4398
+3. Niko Ramm-Bilby Rabbitohs : 4373
+4. Erin Atlas-Transistia Icebergs : 3906
+5. Albert Locke-Endsia Doggos : 3832
+6. Jared le Xuina-Frankston Explosion : 3521
+7. Phil Walker-Albury Reapers : 3114
+8. Flynn McKenzie-New Jerstion Stars : 3056
+9. Simon Lapper-Westler Tigers : 2986
+10. Ray ti Besdara-Anywheston Tobacco : 2859
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Don Socket-Eweweron Miners : 410
+2. Christian le Treasdefa-Albury Reapers : 402
+3. Kelin MacDonald-Quintsville Titans : 390
+4. Eric S. ti Geriia-Transistia Icebergs : 384
+5. Versa Brekston-Albury Reapers : 374
+6. Dani Northson-Eweweron Miners : 374
+7. Ometage Atlas-Quintsville Titans : 372
+8. Alexander Junior-Bilby Rabbitohs : 371
+9. Uniko od Treasan-Bilby Rabbitohs : 370
+10. Michel I. en Defrea-Aliran Fireballs : 369
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Nathan V. Develo-GWS Whales : 1
+2. Roant J. Meddica-Anywheston Tobacco : 1
+3. Louise Vuderty-GWS Whales : 1
+4. Kev Britt-Northen City Broncos : 1
+5. Phoebe vo Casun-Frankston Explosion : 1
+6. Kelin Ese'ese-West Valley Tigers : 1
+7. Frank York-Aliran Fireballs : 1
+8. Phil E. de Arnolio-Darwin Oaks : 1
+9. Christian le Treasdefa-Albury Reapers : 0
+10. Jakk vo Ita-Albury Reapers : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Jared le Xuina-Frankston Explosion : 1302
+2. Kim az Cati-New Jerstion Stars : 1221
+3. Bob Viana-Bilby Rabbitohs : 1214
+4. Yuinamo Osees-Darwin Oaks : 1209
+5. Adole vo Autruys-Quintsville Titans : 1179
+6. Niko Ramm-Bilby Rabbitohs : 1164
+7. Abegail W. Nadaserty-Bilby Rabbitohs : 1155
+8. Paul Osees-Frankston Explosion : 1144
+9. Ed Z. Cotric-Curosa Potatoes : 1084
+10. Patrise o. Vio-Darwin Oaks : 1040
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Ron Kat-Curosa Potatoes : 54
+2. Jimmy Vlandys-Curosa Potatoes : 48
+3. Laci de Faco-Endsia Doggos : 42
+4. Dapper Drayersun-Darwin Oaks : 40
+5. Declan o. Ima-Curosa Potatoes : 39
+6. Sam Montoya-Anywheston Tobacco : 38
+7. Nita Bottia-New Jerstion Stars : 37
+8. Gabriel Hughes-Off Contract Players : 36
+9. George Brekston-Frankston Explosion : 36
+10. Isabel Nu-Bilby Rabbitohs : 36
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Nathan V. Develo-GWS Whales : 6
+2. Flynn McKenzie-New Jerstion Stars : 5
+3. Jared le Xuina-Frankston Explosion : 5
+4. Sersitio Smith-GWS Whales : 4
+5. Versa J. Sua-West Valley Tigers : 4
+6. Erin Atlas-Transistia Icebergs : 4
+7. Jackson Thrillho-Darwin Oaks : 3
+8. Anthony J. Yemm-Northen City Broncos : 3
+9. Gabriel Northson-Transistia Icebergs : 3
+10. Jan vo Dureta-West Valley Tigers : 3
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Matt le Qwe-Anywheston Tobacco : 49
+2. Antonio Jace-Northen City Broncos : 46
+3. Mark Feltch-Curosa Potatoes : 46
+4. Cula Habib-Darwin Oaks : 46
+5. Josh Shannel-Transistia Icebergs : 46
+6. Adole vo Autruys-Quintsville Titans : 42
+7. Dasi vo Cesdrate-New Jerstion Stars : 41
+8. Gerald Yaddeff-Endsia Doggos : 40
+9. Tariq Shannel-Aliran Fireballs : 39
+10. Lindsey Lewis-Anywheston Tobacco : 39
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Abria Z. le Oreas-Westler Tigers : 15
+2. Kelin en Zasde-Frankston Explosion : 13
+3. Uniko od Treasan-Bilby Rabbitohs : 13
+4. Davey Prism-Northen City Broncos : 12
+5. Alexander O' Thomas-New Jerstion Stars : 12
+6. Dani Northson-Eweweron Miners : 11
+7. Gabriel Hughes-Off Contract Players : 11
+8. Michel I. en Defrea-Aliran Fireballs : 11
+9. Jimmy Vlandys-Curosa Potatoes : 10
+10. Simon en Vreas-Frankston Explosion : 10
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Jill Jay Farrell-Eweweron Miners : 10
+2. Alexander Junior-Bilby Rabbitohs : 10
+3. David ze Oiira-Curosa Potatoes : 9
+4. Sammy Q. Johnson-West Valley Tigers : 8
+5. Jackson Thrillho-Darwin Oaks : 8
+6. Yuni Questa-Aliran Fireballs : 8
+7. Julie Y. de Zerta-GWS Whales : 7
+8. Christian le Treasdefa-Albury Reapers : 7
+9. Davey Prism-Northen City Broncos : 7
+10. Bert le Dreasin-Transistia Icebergs : 7
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Dapper Drayersun-Darwin Oaks : 2
+2. Junior Harrigan-Transistia Icebergs : 1
+3. Gabriel Northson-Transistia Icebergs : 1
+4. Luke o. Eya-Albury Reapers : 1
+5. Adrien Gealo-New Jerstion Stars : 1
+6. Calum Q. Tajtu-Frankston Explosion : 1
+7. Jeni Mariner-Darwin Oaks : 1
+8. Bam Denoa-GWS Whales : 1
+9. Julie Y. de Zerta-GWS Whales : 1
+10. Niko Sockert-New Jerstion Stars : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Connor Pearce-Eweweron Miners : 1
+2. Clint Oak-Transistia Icebergs : 1
+3. Jarrod o. Dea-Northen City Broncos : 1
+4. Kyrsta le Sasson-Darwin Oaks : 1
+5. Kelin MacDonald-Quintsville Titans : 1
+6. Declan o. Ima-Curosa Potatoes : 1
+7. Louise az Grew-New Jerstion Stars : 1
+8. Jill Vurp-Darwin Oaks : 1
+9. Yuni az Hurtan-Anywheston Tobacco : 1
+10. Jakk vo Ita-Albury Reapers : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Luca Y. Sullivan-Albury Reapers : 4
+2. Lindsay H. Roberts-Bilby Rabbitohs : 4
+3. Harry Quess-Northen City Broncos : 4
+4. Felix Bade-Endsia Doggos : 3
+5. Reimis Fowler-Westler Tigers : 2
+6. Opus Mortimer-Frankston Explosion : 2
+7. Bobby E. ti Tiras-GWS Whales : 2
+8. Jeni Mariner-Darwin Oaks : 1
+9. Isaac I. Oboitays-Aliran Fireballs : 1
+10. Ryan Belta-Curosa Potatoes : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Patrise o. Vio-Darwin Oaks : 183
+2. Imm cu Zyeta-New Jerstion Stars : 174
+3. Abria Besti-GWS Whales : 152
+4. Nick O' Thomas-Endsia Doggos : 150
+5. Alexander Junior-Bilby Rabbitohs : 144
+6. Eduardo de Flatio-West Valley Tigers : 135
+7. Uniko de Flatio-Anywheston Tobacco : 132
+8. Paul Osees-Frankston Explosion : 129
+9. Jimmy Vlandys-Curosa Potatoes : 127
+10. Isabel Nu-Bilby Rabbitohs : 124
+11. Lindsey Eastra-Quintsville Titans : 122
+12. Laci de Faco-Endsia Doggos : 120
+13. Niko Ramm-Bilby Rabbitohs : 120
+14. Kim az Cati-New Jerstion Stars : 114
+15. Erin Atlas-Transistia Icebergs : 112
+16. Albert Locke-Endsia Doggos : 108
+17. Jared le Xuina-Frankston Explosion : 106
+18. Dani Northson-Eweweron Miners : 100
+19. Barb B. Chricton-Westler Tigers : 87
+20. Flynn McKenzie-New Jerstion Stars : 84
+21. George Brekston-Frankston Explosion : 78
+22. Gabriel Northson-Transistia Icebergs : 77
+23. Uniko od Treasan-Bilby Rabbitohs : 72
+24. Ometage Atlas-Quintsville Titans : 72
+25. Adole vo Autruys-Quintsville Titans : 70
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Niko Ramm-Bilby Rabbitohs : 471
+2. Isabel Nu-Bilby Rabbitohs : 427
+3. Kim az Cati-New Jerstion Stars : 421
+4. Jared le Xuina-Frankston Explosion : 416
+5. Erin Atlas-Transistia Icebergs : 406
+6. Imm cu Zyeta-New Jerstion Stars : 367
+7. Phil Walker-Albury Reapers : 309
+8. Sersitio Smith-GWS Whales : 298
+9. Phoebe vo Casun-Frankston Explosion : 286
+10. Albert Locke-Endsia Doggos : 278
+11. Ray ti Besdara-Anywheston Tobacco : 275
+12. Abegail W. Nadaserty-Bilby Rabbitohs : 273
+13. Flynn McKenzie-New Jerstion Stars : 258
+14. Freya Jay-Transistia Icebergs : 247
+15. Burmo ze Oiira-Darwin Oaks : 245
+16. Gabriel Northson-Transistia Icebergs : 243
+17. Roant J. Meddica-Anywheston Tobacco : 237
+18. Nathan V. Develo-GWS Whales : 232
+19. Nick O' Thomas-Endsia Doggos : 231
+20. Simon Lapper-Westler Tigers : 229
+21. Farrah G. Glass-Northen City Broncos : 228
+22. Dani Northson-Eweweron Miners : 227
+23. Kyrsta le Sasson-Darwin Oaks : 226
+24. Eduardo de Flatio-West Valley Tigers : 225
+25. Carter od Fereas-Bilby Rabbitohs : 223
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Frank Cabbie's Tough Training Session
+Transistia Icebergs Sign Laci de Faco
+Endsia Doggos Sign Phoebe L. Prisma
+Rival Players Raise Awareness!
+Ashleigh I. Brock Involved In Sexting Scandal
+Phil Walker To Have Contract Extended!
+Jimmy Vlandys's Retirment Rumours!
+Player Unrest At Northen City Broncos
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Kate az Unionia's Tough Training Session
+Albury Reapers Sign Nick Quecea
+Fan Poll: Darwin Oaks's Best Player
+Walt Loomer's Large-Scale Gambling Problem
+Phil E. de Arnolio To Have Contract Extended!
+Kimberly vo Burrea Donates To Controverisal Charity
+Fan Poll: Quintsville Titans's Best Player
+Kyuss Unres To Have Contract Extended!
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Gerald Yaddeff's Tough Training Session
+New Jerstion Stars Sign George Brekston
+Quintsville Titans Sign Simon Arrow
+GWS Whales Sign Ron Zillman
+Danni Terrio's Retirment Rumours!
+Felacko o. Ges Passes Away After Illness
+Rival Players Raise Awareness!
+Opus Penisini Passes Away After Illness
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Erin C.D. Lindsell's Tough Training Session
+Fan Poll: Eweweron Miners's Best Player
+Fan Poll: Westler Tigers's Best Player
+Coach Proposes New Finals System!
+Opinion: Michelle Drayersun Should Swap Teams
+Players Fight At Local RSL!
+Opinion: Suelen Lindsell Should Captain Italy
+Opinion: Abraham Thrillho Should Swap Teams
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Anthony J. Yemm's Tough Training Session
+Curosa Potatoes Sign Jeffrey az Mondi
+New Jerstion Stars Sign Abraham Zouma
+Oliver ze Nemu Offered Pay Cut To Re-sign
+Coach Proposes New Finals System!
+Opinion: Karli Penatoras Should Swap Teams
+Opinion: Quinn Ratey Should Swap Teams
+Players Fight At Local RSL!
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Andrew le Sui's Tough Training Session
+Quintsville Titans Sign Calum le Atrason
+Westler Tigers Sign Frankie Caldato
+Albury Reapers Sign Yuinamo Zye
+Darwin Oaks Sign Gabriel Zillman
+Luke o. Eya's Eligibility Crisis!
+Players Fight At Local RSL!
+Fan Poll: Albury Reapers's Best Player
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Kate az Unionia's Tough Training Session
+West Valley Tigers Sign Eric Waterhouse
+Drodan Jay cu Nonates Saves Local Man From Drowning
+Gerald o. Ges Passes Away After Illness
+Michel I. en Defrea Assaults RSL Bouncer
+Player Unrest At Westler Tigers
+Anthony Jay Bottia Passes Away After Illness
+Clinton Weas Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Simon de Grutin's Tough Training Session
+Frankston Explosion Sign Paul Osees
+West Valley Tigers Sign Ezra Kerr
+Quintsville Titans Sign Quoatio J. Mariner
+Eweweron Miners Sign Clinton Weas
+Player Unrest At Albury Reapers
+Josh Shannel's Retirment Rumours!
+Karli o. Doa Passes Away After Illness
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Felix Bade's Tough Training Session
+Northen City Broncos Sign Eric o. Hyi
+Endsia Doggos Sign Brenton C.D. Busa
+Sam Montoya Donates To Controverisal Charity
+Players Fight At Local RSL!
+Fan Poll: Endsia Doggos's Best Player
+Rival Players Raise Awareness!
+Jimmy Vlandys's Eligibility Crisis!
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Julian Sake's Tough Training Session
+Neo Toa Passes Away After Illness
+Christian o. Mos Passes Away After Illness
+Opinion: Barb en Onasre Should Swap Teams
+Rival Players Raise Awareness!
+Fan Poll: Westler Tigers's Best Player
+Player Unrest At Eweweron Miners
+Michelle Drayersun Assaults RSL Bouncer
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Yuinamo Zye's Tough Training Session
+Endsia Doggos Sign Pearl Jackston
+Transistia Icebergs Sign Quade az Oiuty
+Northen City Broncos Sign Antonio Jace
+Billy vo Burrea Passes Away After Illness
+Kate az Unionia At Risk Of An Early Release!
+Mundi Farmer's Eligibility Crisis!
+Raymond o. Bes To Have Contract Extended!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Paul O. Montoya's Tough Training Session
+New Jerstion Stars Sign Kimberly vo Burrea
+Tariq Shannel At Risk Of An Early Release!
+Players Fight At Local RSL!
+Paul Osees To Have Contract Extended!
+Barb en Onasre's Retirment Rumours!
+Al Berry Offered Pay Cut To Re-sign
+Player Unrest At Eweweron Miners
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Jan Dadrio's Tough Training Session
+Endsia Doggos Sign Frankie Caldato
+Fan Poll: Bilby Rabbitohs's Best Player
+Player Unrest At Frankston Explosion
+Sam Montoya At Risk Of An Early Release!
+Opinion: Arnold V. Aaciro Should Swap Teams
+Adole Elroii To Have Contract Extended!
+Nathan de Grutin Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Arnold V. Aaciro's Tough Training Session
+GWS Whales Sign Gabriel Hughes
+Kris O' Thomas's Large-Scale Gambling Problem
+Coach Proposes New Finals System!
+Maddison Euation's Retirment Rumours!
+Opinion: Lindsay H. Roberts Should Swap Teams
+Fan Poll: Anywheston Tobacco's Best Player
+Hormanio Harris Assaults RSL Bouncer
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Jakk vo Ita's Tough Training Session
+GWS Whales Sign Emily cu Ininas
+Anywheston Tobacco Sign Clint Hull
+Curosa Potatoes Sign Ryan Smith
+Anywheston Tobacco Sign Gabriel Yase
+Bam Jacklin Passes Away After Illness
+Vanessa Lapper's Retirment Rumours!
+Players Fight At Local RSL!
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+Burmo ze Oiira's Tough Training Session
+GWS Whales Sign Castro Whare
+Opinion: Albert Locke Should Captain Fiji
+Player Unrest At New Jerstion Stars
+Gordon en Zasde's Large-Scale Gambling Problem
+Gabriel Northson Offered Pay Cut To Re-sign
+Opus Mortimer Assaults RSL Bouncer
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+Lenny Caliber's Tough Training Session
+Yuni az Hurtan Assaults RSL Bouncer
+Player Unrest At Frankston Explosion
+Opinion: Sully Romney Should Captain Sweden
+Tariq Shannel's Eligibility Crisis!
+Opinion: Paul en Grerat Should Captain Samoa
+Opinion: Mitch Pearce Should Captain Australia
+Gerald Lapper Passes Away After Illness
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+Lindsey Lewis's Tough Training Session
+Darwin Oaks Sign Jill Vurp
+Matthew M. vo Greay To Have Contract Extended!
+Jameson B. Zeeka Passes Away After Illness
+Barry Zeal To Have Contract Extended!
+Fan Poll: Darwin Oaks's Best Player
+Player Unrest At Anywheston Tobacco
+Abria Z. le Oreas Involved In Sexting Scandal
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Georgio Druckk's Tough Training Session
+Eweweron Miners Sign Thomas Herbert
+GWS Whales Sign Danny C.D. Rumming
+Sam Montoya To Have Contract Extended!
+Versa E. Hull At Risk Of An Early Release!
+Opinion: Finley az Freastiy Should Captain Canada
+Abria Besti's Retirment Rumours!
+Vitaliy vo Hreats's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+Lindsey Lewis's Tough Training Session
+Transistia Icebergs Sign Gordon ti Huaste
+Northen City Broncos Sign Jarrod o. Dea
+Players Fight At Local RSL!
+Opinion: Pearl Jackston Should Captain Papau New Guinea
+Arnole vo Ita Assaults RSL Bouncer
+Connor Pearce's Eligibility Crisis!
+Joshua Cabbie Passes Away After Illness
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+Erin C.D. Lindsell's Tough Training Session
+Curosa Potatoes Sign Samantha Ujhazzy
+Opinion: Lenny le Atrason Should Swap Teams
+Adole Watt Donates To Controverisal Charity
+Player Unrest At Transistia Icebergs
+Kirk Worker Offered Pay Cut To Re-sign
+Fan Poll: Albury Reapers's Best Player
+Emily Tramion Assaults RSL Bouncer
+--------------------------------
+
+
+Round 22 News Stories
+--------------------------------
+Jackson Armstrong's Tough Training Session
+Quintsville Titans Sign Ewan Barry
+Bilby Rabbitohs Sign Clinton Bridgers
+Felacko Cotric To Have Contract Extended!
+Coach Proposes New Finals System!
+Rival Players Raise Awareness!
+Corey Gummins's Large-Scale Gambling Problem
+Nick O' Thomas Saves Local Man From Drowning
+--------------------------------
+
+
+Round 23 News Stories
+--------------------------------
+Kate az Unionia's Tough Training Session
+Curosa Potatoes Sign Herbert Waterhouse
+Fan Poll: Darwin Oaks's Best Player
+Lizzy en Serea's Retirment Rumours!
+Thomas Questa's Eligibility Crisis!
+Nita Bottia's Eligibility Crisis!
+Rival Players Raise Awareness!
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 24 News Stories
+--------------------------------
+Thomas Questa's Tough Training Session
+Eweweron Miners Sign Michael Million
+West Valley Tigers Sign Drodan W. Bergman
+Anywheston Tobacco Sign Yuni az Hurtan
+Adole Watt's Large-Scale Gambling Problem
+Rival Players Raise Awareness!
+Gary Vlandys Assaults RSL Bouncer
+Mike Thrismo At Risk Of An Early Release!
+--------------------------------
+
+
+Round 25 News Stories
+--------------------------------
+Ashleigh I. Brock's Tough Training Session
+Darwin Oaks Sign Gabrielle Stone
+Transistia Icebergs Sign Freya Jay
+Players Fight At Local RSL!
+Dominic L. le Jasde Saves Local Man From Drowning
+Billie Smith Involved In Sexting Scandal
+Gabriel Northson's Retirment Rumours!
+Sully Romney's Eligibility Crisis!
+--------------------------------
+
+
+Round 26 News Stories
+--------------------------------
+Frankie Qwerty's Tough Training Session
+Westler Tigers Sign Jake Oboitays
+Frankston Explosion Wins Minor Premiership!
+Kelin en Zasde Saves Local Man From Drowning
+Opinion: Jackson Thrillho Should Swap Teams
+Jim Pout Involved In Sexting Scandal
+Arnold V. Aaciro To Have Contract Extended!
+Burmo Hull Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 27 News Stories
+--------------------------------
+Lindsay Hu's Tough Training Session
+Curosa Potatoes Sign Jeffrey az Mondi
+Curosa Potatoes Sign Zucshio Drayersun
+Player Unrest At Transistia Icebergs
+Eduardo de Flatio's Large-Scale Gambling Problem
+Kyrsta James Passes Away After Illness
+Fan Poll: Endsia Doggos's Best Player
+Raymond o. Bes's Eligibility Crisis!
+--------------------------------
+
+
+Round 28 News Stories
+--------------------------------
+Jonathon Martin's Tough Training Session
+GWS Whales Sign Saige S. Obea
+Kimberly vo Burrea Assaults RSL Bouncer
+Rival Players Raise Awareness!
+Player Unrest At Darwin Oaks
+Gabriel Yase's Large-Scale Gambling Problem
+Players Fight At Local RSL!
+Bobby E. ti Tiras's Eligibility Crisis!
+--------------------------------
+
+
+Round 29 News Stories
+--------------------------------
+Alister Ingodio's Tough Training Session
+Westler Tigers Sign Earl C.D. en Porea
+Jackson Armstrong Saves Local Man From Drowning
+Herbert H. Cleary Donates To Controverisal Charity
+Saige de Faco To Have Contract Extended!
+Gabriel Northson Involved In Sexting Scandal
+Fan Poll: New Jerstion Stars's Best Player
+--------------------------------
+
+
+Round 30 News Stories
+--------------------------------
+Ron Kat's Tough Training Session
+Bilby Rabbitohs Sign Evan Oberst
+Endsia Doggos Sign Reed A. Reed
+Anywheston Tobacco Sign Gabriel o. Yte
+New Jerstion Stars Sign Kim az Cati
+Quintsville Titans Wins Premiership!
+Coach Proposes New Finals System!
+Ometage Atlas At Risk Of An Early Release!
+--------------------------------
+

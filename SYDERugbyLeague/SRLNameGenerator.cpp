@@ -35,12 +35,23 @@ deque<string> SRLNameGenerator::countriesOfOrigin = deque<string>
 deque<string> SRLNameGenerator::HomeGroundStart = deque<string>
 {
 	"Artise",
+	"Azae Super",
+	"Bankstar",
+	"Bell Star",
+	"Boma",
 	"Brooklan",
+	"Carioan",
 	"Creasti",
+	"Crown",
+	"Currie",
+	"Da Selecio",
 	"Derr",
+	"Dumansa",
 	"Enrea",
 	"Friia",
+	"Fuctira",
 	"Gresra",
+	"Hatsfield",
 	"Hellai",
 	"Indigo",
 	"Jerea",
@@ -50,22 +61,31 @@ deque<string> SRLNameGenerator::HomeGroundStart = deque<string>
 	"Maonsa",
 	"Norie",
 	"Ouri",
+	"Partiue",
 	"Presi",
 	"Quimona",
 	"Razar",
+	"Rumi Basa"
 	"Serotina",
+	"Star",
+	"Stargraze",
 	"Turbo",
 	"Uni",
 	"Ventrio",
 	"Wellinga",
+	"Xaveda",
 	"Xyzera",
 	"Yamon",
+	"Yunna",
+	"Zaetyr",
+	"Zuttria"
 };
 
 deque<string> SRLNameGenerator::HomeGroundEnd = deque<string>
 {
 	"Arena",
 	"Bowl",
+	"Bridge",
 	"Central",
 	"Centre",
 	"Field",
@@ -76,7 +96,7 @@ deque<string> SRLNameGenerator::HomeGroundEnd = deque<string>
 	"Ring",
 	"Sports Arena",
 	"Sports Centre",
-	"Stadium",
+	"Stadium"
 };
 
 deque<string> SRLNameGenerator::FirstNames = deque<string>

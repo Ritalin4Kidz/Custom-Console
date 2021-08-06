@@ -1,0 +1,16 @@
+SRLPlayer Additions
+	- Players Will Now Have An Age Stat
+	- PlayerStatus Enum
+		- Active - Fully Active Player
+		- Retiring - Will Retire At End Of Season
+		- Retired
+	- For Each Season With Season Events Enabled, Players Will Have Their Age Incremented
+	- If A Player Is Under The Age of 35 & Retired, they have a chance to come out of retirement
+		- After This, A New Young Player Is Added To The Off Contract Pool
+	- Max Age A Player Can Play Till is 40
+	- After The Age Of 45, Players Can Die, With The Chance Getting Higher As They Age
+	- New Off Contract Pool, Retired Players
+
+NewsStory Additions
+	- Story When death edited to be a season event
+	- Story of retirement edited to be a season event

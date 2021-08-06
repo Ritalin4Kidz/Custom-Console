@@ -178,6 +178,7 @@
   <ItemGroup>
     <Text Include="Gameplay Loop.txt" />
     <Text Include="steam_appid.txt" />
+    <Text Include="RetirementDesignDoc.txt" />
     <Text Include="The Grand Calculations File.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

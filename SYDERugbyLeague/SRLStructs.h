@@ -144,6 +144,8 @@ struct SRLGameMatchup
 
 	string WinningTeam;
 	string LosingTeam;
+
+	bool GameHasBeenSimulated = false;
 };
 
 struct SRLGameBetsWriting

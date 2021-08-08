@@ -40,7 +40,8 @@ enum GameStateSYDE
 	TeamInDepthViewState,
 	ProfileViewState,
 	SponsorChallengeViewState,
-	MatchUpInDepthView
+	MatchUpInDepthView,
+	SimulateSingleMatchViewState
 };
 
 enum CoachingViewDrawState
@@ -197,7 +198,7 @@ public:
 	ConsoleWindow ProfileView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ChallengesView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow MatchUpDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
-
+	ConsoleWindow SingleMatchSimulateView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -245,6 +246,7 @@ public:
 	void CalculatePremiershipOdds();
 	void CalculateTryScorerOdds();
 	void SimulateGames();
+	void SimulateGameLadderAdjustment(int a_Round, int a_Game, SRLGameManager m_srlmanager);
 	void CalculateFeaturedGame();
 	void CalculateTipMaster();
 
@@ -403,6 +405,8 @@ public:
 
 	static int matchInformationRound;
 	static int matchInformationGame;
+
+	static bool SimulateSingleMatchCall;
 
 private:
 	const int customTeamGenerateChance = 9999;
@@ -697,6 +701,7 @@ private:
 	SYDEClickableButton m_ExhibitionSwap1Next;
 	SYDEClickableButton m_ExhibitionSwap2Prev;
 	SYDEClickableButton m_ExhibitionSwap2Next;
+	SYDEClickableButton m_SimulateSingleGameBtn;
 
 #pragma region Challenges
 
@@ -707,4 +712,9 @@ private:
 	void initSponsors();
 #pragma endregion
 
+
+#pragma region SingleSimulation
+	SRLGameManager m_SingleGameManager;
+	int countSummaries = 0;
+#pragma endregion
 };

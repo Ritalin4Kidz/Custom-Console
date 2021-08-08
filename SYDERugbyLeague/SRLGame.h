@@ -27,6 +27,29 @@ public:
 
 	virtual ~SRLGameManager();
 
+	void ClearCache() { m_Summary.clear(); m_PlayByPlay.clear(); 
+		homeTeamScore = 0; 
+		awayTeamScore = 0; 
+		m_MinutesPassed = 0; 
+		m_SecondsPassed = 0; 
+		m_BallPosition = 100;
+		m_Tackle = 0;
+		m_HomeTeamHasBall = true;
+		halfTimeHasPassed = false;
+		fullTimeHasPassed = false;
+		m_MainGoalKickers = true;
+		m_Weather = true;
+		m_Stamina = true;
+		m_Injuries = false;
+		m_sendOffs = true;
+		m_ExtraTime = false;
+		m_PlayerHasBeenSent = false;
+		weather = Weather_Clear;
+		weatherAtkErrorBonus = 1;
+		weatherDefErrorBonus = 1;
+		weatherGoalErrorBonus = 1;
+	}
+
 	void addPlay(string a_Play);
 	void addPlayNoMinutes(string a_Play);
 	void addPlay(string a_Play, SRLPlayer player);

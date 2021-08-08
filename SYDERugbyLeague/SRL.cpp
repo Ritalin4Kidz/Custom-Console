@@ -614,6 +614,7 @@ void newsViewClick()
 void SingleMatchSimulateClick()
 {
 	SRLGame::newState = SimulateSingleMatchViewState;
+	SRLGame::SimulateCall = true;
 	SRLGame::SimulateSingleMatchCall = true;
 }
 
@@ -2435,13 +2436,17 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			int line = 3;
 			for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games.size(); i++)
 			{
-				window.setTextAtPoint(Vector2(0, line ), "(H) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds.ReturnPrice(), window._intToColour(i + 2));
-				window.setTextAtPoint(Vector2(0, line + 1),"(A) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds.ReturnPrice(), window._intToColour(i + 2));
+				window.setTextAtPoint(Vector2(0, line), "(H) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].HomeTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].homeTeamOdds.ReturnPrice(), window._intToColour(i + 2));
+				window.setTextAtPoint(Vector2(0, line + 1), "(A) " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].AwayTeam + " - " + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].awayTeamOdds.ReturnPrice(), window._intToColour(i + 2));
 				line += 2;
 			}
 			for (int i = 0; i < m_BetButtons.size(); i++)
 			{
-				window = m_BetButtons[i].draw_ui(window);
+				int gameBet = stoi(Split(m_BetButtons[i].getTag(), ';')[0]);
+				if (!m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[gameBet].GameHasBeenSimulated)
+				{
+					window = m_BetButtons[i].draw_ui(window);
+				}
 			}
 		}
 		else
@@ -2560,10 +2565,12 @@ ConsoleWindow SRLGame::BettingView(ConsoleWindow window, int windowWidth, int wi
 			{
 				window.setTextAtPoint(Vector2(0, 12 + i), AttackersAway[i] + " (" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].awayTeamTryOdds[i].ReturnPrice() + ")", BRIGHTWHITE);
 			}
-
-			for (int i = 0; i < m_TryScorerBetButtons.size(); i++)
+			if (!m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].GameHasBeenSimulated)
 			{
-				window = m_TryScorerBetButtons[i].draw_ui(window);
+				for (int i = 0; i < m_TryScorerBetButtons.size(); i++)
+				{
+					window = m_TryScorerBetButtons[i].draw_ui(window);
+				}
 			}
 		}
 	}
@@ -3558,12 +3565,96 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 {
 	if (SimulateSingleMatchCall)
 	{
+		singleMatchDisplayInfoCall = false;
+		m_LiveGameVector.clear();
+		m_LineResults = 0;
+		Simulate = false;
 		if (m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].GameHasBeenSimulated)
 		{
 			errorCall = true;
 			errorMessage = "Game Already Simulated";
 			newState = MatchUpInDepthView;
 		}
+#pragma region SimulateAllPriorGames
+		for (int m = m_roundToSimulate; m <= matchInformationRound; m++)
+		{
+			int gamesInRoundToSimulate = m_Season.m_Draw.m_Rounds[m].m_Games.size();
+			if (m == matchInformationRound)
+			{
+				gamesInRoundToSimulate = matchInformationGame;
+			}
+			for (int g = 0; g < gamesInRoundToSimulate; g++)
+			{
+				if (!m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[g].GameHasBeenSimulated)
+				{
+					m_SingleGameManager.ClearCache();
+					SRLTeam HomeTeam;
+					SRLTeam AwayTeam;
+					if (m_Season.m_Draw.m_Rounds[matchInformationRound].isRepRound || m_Season.isWorldCup)
+					{
+						for (int j = 0; j < repTeams.size(); j++)
+						{
+							if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[m].m_Games[g].HomeTeam)
+							{
+								HomeTeam = repTeams[j];
+							}
+							else if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[m].m_Games[g].AwayTeam)
+							{
+								AwayTeam = repTeams[j];
+							}
+						}
+					}
+					else
+					{
+						HomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m].m_Games[g].HomeTeam + ".json");
+						AwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m].m_Games[g].AwayTeam + ".json");
+					}
+					HomeTeam.cutToSeventeen();
+					AwayTeam.cutToSeventeen();
+					m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
+					m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
+					m_SingleGameManager.weatherEffects(m_Weather);
+					m_SingleGameManager.staminaEffect(m_Stamina);
+					m_SingleGameManager.injuriesEffect(m_Injuries);
+					m_SingleGameManager.sinBinsEffect(m_SinBins);
+					m_SingleGameManager.extraTimeEffect(m_ExtraTime);
+					m_SingleGameManager.addTeamLineupsPlayByPlay();
+					m_SingleGameManager.addStartTimePlay();
+					bool continuePlay = finals || m_ExtraTime;
+					while (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
+					{
+						try
+						{
+							m_SingleGameManager.play();
+							m_Season.m_Draw.m_Rounds[m].m_Games[g].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
+						}
+						catch (exception ex)
+						{
+
+						}
+					}				
+					m_SingleGameManager.addFullTimePlay();
+					m_SingleGameManager.endStats();
+					SimulateGameLadderAdjustment(m, g, m_SingleGameManager);
+					if (m_Season.m_Draw.m_Rounds[m].m_Games.size() - 1 == g)
+					{
+						int articleReduction = 0;
+						if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+						{
+							articleReduction = m_Season.m_Draw.m_Rounds[m].newsStories.size();
+						}
+						int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
+						if (m_Season.isWorldCup)
+						{
+							//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
+							m_ArticlesRemaining = 0;
+						}
+						SimulationEndOfRound(m_ArticlesRemaining);
+					}				
+				}
+			}
+		}
+#pragma endregion
 		m_SingleGameManager.ClearCache();
 		SRLTeam HomeTeam;
 		SRLTeam AwayTeam;
@@ -3603,6 +3694,54 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 	}
 	try
 	{
+		for (int i = 0; i < (m_LiveGameVector.size()); i++)
+		{
+			window = m_LiveGameVector[i].draw(window, Vector2(5, (((i * 5) + 3)) - m_LineResults));
+		}
+
+		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+		{
+			if (m_LineResults > 0)
+			{
+				m_LineResults--;
+			}
+		}
+		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+		{
+			if (m_LineResults < (m_LiveGameVector.size() * 5))
+			{
+				m_LineResults++;
+			}
+		}
+		else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+		{
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
+			{
+				if (m_LineResults > 0)
+				{
+					m_LineResults--;
+				}
+				ScrollTickTime = 0;
+			}
+		}
+		else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+		{
+			ScrollTickTime += SYDEDefaults::getDeltaTime();
+			if (ScrollTickTime >= maxScrollTickTime)
+			{
+				if (m_LineResults < (m_LiveGameVector.size() * 5))
+				{
+					m_LineResults++;
+				}
+				ScrollTickTime = 0;
+			}
+		}
+		else
+		{
+			ScrollTickTime = 0;
+		}
+
 		bool continuePlay = finals || m_ExtraTime;
 		if (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
 		{
@@ -3613,9 +3752,22 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 				if (m_SingleGameManager.getSummary().size() > countSummaries)
 				{
 					//HERE WE WANT TO START SHOWING THE SUMMARIES AS THEY COME IN
-
+					deque<string> temp2 = m_SingleGameManager.getSummary();
+					for (int i = countSummaries; i < temp2.size(); i++)
+					{
+						deque<string> temp3 = Split(temp2[i], '#');
+						if (temp3.size() < 4)
+						{
+							m_LiveGameVector.push_back(GameSummaryText("Error In Summary", temp2[i], " ", " "));
+						}
+						else
+						{
+							m_LiveGameVector.push_back(GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]));
+						}
+					}
 					//THEN SET THE COUNT AGAIN
 					countSummaries = m_SingleGameManager.getSummary().size();
+					//TODO, ADD A DELAY EVERYTIME WE GET AS NEW SUMMARY PERHAPS
 				}
 			}
 			catch (exception ex)
@@ -3623,17 +3775,46 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 
 			}
 		}
-		else
+		else if(!singleMatchDisplayInfoCall)
 		{
 			m_SingleGameManager.addFullTimePlay();
 			m_SingleGameManager.endStats();
 			SimulateGameLadderAdjustment(matchInformationRound, matchInformationGame, m_SingleGameManager);
-			newState = MatchUpInDepthView;
+
+			if (m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games.size() - 1 == matchInformationGame)
+			{
+				int articleReduction = 0;
+				if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+				{
+					articleReduction = m_Season.m_Draw.m_Rounds[matchInformationRound].newsStories.size();
+				}
+				int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
+				if (m_Season.isWorldCup)
+				{
+					//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
+					m_ArticlesRemaining = 0;
+				}
+				SimulationEndOfRound(m_ArticlesRemaining);
+			}
+			else
+			{
+				if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+				{
+					m_Season.m_Ladder.sortLadder();
+				}
+				sortOutMatchButtons();
+			}
+			singleMatchDisplayInfoCall = true;
+			//newState = MatchUpInDepthView;
 		}
 	}
 	catch (exception ex)
 	{
 		//TODO
+	}
+	if (singleMatchDisplayInfoCall)
+	{
+		window = drawTabs(window);
 	}
 	return window;
 }
@@ -4055,7 +4236,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.1.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.3.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -5048,550 +5229,7 @@ void SRLGame::SimulateGames()
 				SimulateGameLadderAdjustment(m_roundToSimulate, i, m_srlmanager);
 			}
 		}
-		if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
-		{
-			m_Season.m_Ladder.sortLadder();
-		}
-		bool blacklistAchievement = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size() >= 6;
-		for (int j = 0; j < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); j++)
-		{
-			if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[j].betState == Bet_Won)
-			{
-				blacklistAchievement = false;
-			}
-		}
-		if (blacklistAchievement)
-		{
-			AchievementStrings.push_back("SRL_BLACKLIST");
-		}
-		m_roundToSimulate++;
-
-		//NEWS STORIES
-		if (m_SeasonEvents)
-		{
-			//TRAINING ARTICLE
-			int team = rand() % 16;
-			SRLTeam MainTeam;
-			MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
-			int player = MainTeam.getRandomPlayerInt();
-			m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(SRLNewsStoryGenerator::getRandomTraining(MainTeam, MainTeam.getPlayers()[player],astVars));
-			m_ArticlesRemaining--;
-			int statBoost = rand() % 9 + 1;
-			int trainingBoost = rand() % 5;
-			switch (trainingBoost)
-			{
-			case 0:
-				MainTeam.addPlayerAtk(MainTeam.getPlayers()[player].getName(), statBoost);
-				break;
-			case 1:
-				MainTeam.addPlayerDef(MainTeam.getPlayers()[player].getName(), statBoost);
-				break;
-			case 2:
-				MainTeam.addPlayerSpd(MainTeam.getPlayers()[player].getName(), statBoost);
-				break;
-			case 3:
-				MainTeam.addPlayerHdl(MainTeam.getPlayers()[player].getName(), statBoost);
-				break;
-			case 4:
-				MainTeam.addPlayerKck(MainTeam.getPlayers()[player].getName(), statBoost);
-				break;
-			}
-			MainTeam.saveTeam();
-			int noTrades1 = rand() % 3;
-			for (int i = 0; i < noTrades1; i++)
-			{
-				offContractTrade();
-				m_ArticlesRemaining--;
-			}
-			int noTrades2 = rand() % 3;
-			for (int i = 0; i < noTrades2; i++)
-			{
-				TeamTrade();
-				m_ArticlesRemaining--;
-			}
-		}
-
-		if (m_roundToSimulate >= m_Season.m_Draw.m_Rounds.size())
-		{
-			finals = true;
-			//THAT WAS GRAND FINAL, FINISH SEASON
-			if (m_roundToSimulate >= BaseSeasonGames + finalsRounds)
-			{
-				m_GameProfile.addSeasonSimulated(AchievementStrings);
-				if (coachingMode)
-				{
-					if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
-					{
-						AchievementStrings.push_back("SRL_BEST_COACH");
-						m_GameProfile.completeChallenge("Coach A Team To A Premiership", AchievementStrings);
-						for (int j = 0; j < m_Season.m_Ladder.m_Ladder.size(); j++)
-						{
-							if (teamCoached == m_Season.m_Ladder.m_Ladder[j].teamName)
-							{
-								if (j >= 6)
-								{
-									m_GameProfile.completeChallenge("Win The Premiership From Lower Than 6th", AchievementStrings);
-								}
-							}
-						}
-					}
-				}
-				for (int ii = 0; ii < m_Season.m_PremiershipBets.size(); ii++)
-				{
-					if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate -1].m_Games[0].WinningTeam)
-					{
-						m_BetMoney.addBetPrice(m_Season.m_PremiershipBets[ii].ReturnBetWinnings());
-						m_Season.m_PremiershipBets[ii].betState = Bet_Won;
-						AchievementStrings.push_back("SRL_PREMIERSHIP_TIP");
-					}
-					else
-					{
-						m_Season.m_PremiershipBets[ii].betState = Bet_Lost;
-						if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].LosingTeam)
-						{
-							AchievementStrings.push_back("SRL_BET_CHALLENGE4");
-						}
-						else if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Ladder.m_Ladder[m_Season.m_Ladder.m_Ladder.size() - 1].teamName)
-						{
-							AchievementStrings.push_back("SRL_SPOONBET");
-						}
-					}
-				}
-				SRLNewsArticle m_PremiershipArticle;
-				m_PremiershipArticle.headline = m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam + " Wins Premiership!";
-				m_PremiershipArticle.newsStory = SRLNewsStoryGenerator::generatePremiershipArticle(m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam);
-				m_PremiershipArticle.type = SRLAT_Premiership;
-				m_PremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Premiership.bmp", 7, 7));
-				m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_PremiershipArticle);
-				m_ArticlesRemaining--;
-				UpdateBets();
-				if (currentBetsTotalSeasonMatchOnly >= 36 && currentWonBetsSeasonMatchOnly == currentBetsTotalSeasonMatchOnly)
-				{
-					AchievementStrings.push_back("SRL_BET_CHALLENGE1");
-				}
-				else if (currentBetsTotalSeasonMatchOnly == 1 && currentWonBetsSeasonMatchOnly == 0)
-				{
-					AchievementStrings.push_back("SRL_BET_CHALLENGE2");
-				}
-				else if (currentBetsTotalSeasonMatchOnly == 100 && currentWonBetsSeasonMatchOnly == 50)
-				{
-					AchievementStrings.push_back("SRL_BET_CHALLENGE3");
-				}
-				AchievementStrings.push_back("SRL_FIRST_SEASON");
-				if (seasonLength == Length_ShortSeason && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_SHORT_SEASON");
-				}
-				else if (seasonLength == Length_RoundRobin && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_ROUND_ROBIN");
-				}
-				else if (seasonLength == Length_MediumSeason && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_MEDIUM_SEASON");
-				}
-				else if (seasonLength == Length_NormalSeason && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_NORMAL_SEASON");
-				}
-				else if (seasonLength == Length_LongSeason && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_LONG_SEASON");
-				}
-				else if (seasonLength == Length_ExtremeSeason && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_EXTREME_SEASON");
-				}
-				else if (seasonLength == Length_EnduranceSeason && BaseSeasonGames != 0)
-				{
-					AchievementStrings.push_back("SRL_ENDURANCE_SEASON");
-				}
-				checkBetAchievements();
-				checkCoachingAchievements();
-				sortOutMatchButtons();
-			}
-			else
-			{
-				if (fsType == Top8Normal)
-				{
-#pragma region top 8 normal simulation
-					if (m_roundToSimulate == BaseSeasonGames)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //1v4
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[2].teamName)); //2v3
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[4].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //5v8
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[5].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //6v7
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
-						SRLNewsArticle m_MinorPremiershipArticle;
-						m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-						m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
-						m_MinorPremiershipArticle.type = SRLAT_Premiership;
-						m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
-						m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
-						m_ArticlesRemaining--;
-
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 1)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //4v5
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //3v6
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 2)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v3
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam));//2v4
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Preliminary-Finals";
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 3)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-					}
-#pragma endregion
-				}
-				else if (fsType == Top4Normal)
-				{
-#pragma region top 4 normal simulation
-					if (m_roundToSimulate == BaseSeasonGames)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[1].teamName)); //1v2
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //3v4
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-
-						SRLNewsArticle m_MinorPremiershipArticle;
-						m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-						m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
-						m_MinorPremiershipArticle.type = SRLAT_Premiership;
-						m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
-						m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
-						m_ArticlesRemaining--;
-
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 1)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //2v3
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final";
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 2)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam));//1v2
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-					}
-#pragma endregion
-				}
-				else if (fsType == Top2Normal)
-				{
-#pragma region top 2 normal simulation
-					if (m_roundToSimulate == BaseSeasonGames)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[1].teamName)); //1v2
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-						SRLNewsArticle m_MinorPremiershipArticle;
-						m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-						m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
-						m_MinorPremiershipArticle.type = SRLAT_Premiership;
-						m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
-						m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
-						m_ArticlesRemaining--;
-
-					}
-#pragma endregion
-				}
-				else if (fsType == Top8Knockout)
-				{
-#pragma region top 8 knockout simulation
-					if (m_roundToSimulate == BaseSeasonGames)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
-						games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[3].teamName, m_Season.m_Ladder.m_Ladder[4].teamName)); //4v5
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
-						SRLNewsArticle m_MinorPremiershipArticle;
-						m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-						m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
-						m_MinorPremiershipArticle.type = SRLAT_Premiership;
-						m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
-						m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
-						m_ArticlesRemaining--;
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 1)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-					}
-					else if (m_roundToSimulate == BaseSeasonGames + 2)
-					{
-						deque<SRLGameMatchup> games;
-						games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
-						m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-						m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-					}
-#pragma endregion
-				}
-				else if (fsType == Top4Knockout)
-				{
-#pragma region top 4 knockout simulation
-				if (m_roundToSimulate == BaseSeasonGames)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //1v4
-					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[2].teamName)); //2v3
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-					SRLNewsArticle m_MinorPremiershipArticle;
-					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
-					m_MinorPremiershipArticle.type = SRLAT_Premiership;
-					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
-					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
-					m_ArticlesRemaining--;
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 1)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //1v2
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-				}
-#pragma endregion
-				}
-				else if (fsType == Top8DoubleElim)
-				{
-#pragma region top 8 knockout double elimination simulation
-				if (m_roundToSimulate == BaseSeasonGames)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
-					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
-					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
-					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[3].teamName, m_Season.m_Ladder.m_Ladder[4].teamName)); //4v5
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Qualifying Finals";
-					SRLNewsArticle m_MinorPremiershipArticle;
-					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
-					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
-					m_MinorPremiershipArticle.type = SRLAT_Premiership;
-					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
-					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
-					m_ArticlesRemaining--;
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 1)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
-
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam)); //5v8
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam)); //6v7
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 2)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
-
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam));//3v5
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam));//4v6
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 3)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam));//3v4
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final 1";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 4)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam));//2v3
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final 2";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 5)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam));//1v2
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-				}
-#pragma endregion
-				}
-				else if (fsType == KnockoutTournament)
-				{
-#pragma region 16 Team Knockout
-
-				/*
-					games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
-					games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
-					games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
-					games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
-					games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
-					games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
-					games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
-					games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
-				*/
-
-
-				if (m_roundToSimulate == BaseSeasonGames + 1)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].WinningTeam)); //4v5
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 2)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames+ 1].m_Games[3].WinningTeam)); //1v4
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 3)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand-Finals";
-				}
-#pragma endregion
-				}
-				else if (fsType == KnockoutTournamentDouble)
-				{
-#pragma region 16 Team Knockout Double Elimination
-
-				/*
-					games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15])); 1v16
-					games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14])); 2v15
-					games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13])); 3v14
-					games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12])); 4v13
-					games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11])); 5v12
-					games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10])); 6v11
-					games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9])); 7v10
-					games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8])); 8v9
-				*/
-
-
-				if (m_roundToSimulate == BaseSeasonGames + 1)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].WinningTeam)); //4v5
-
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].LosingTeam)); //9v16
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].LosingTeam)); //10v15
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].LosingTeam)); //11v14
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].LosingTeam)); //12v13
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Knockout Round 2";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 2)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam)); //1v4
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
-
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[7].WinningTeam)); //8v12
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[6].WinningTeam)); //7v11
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[5].WinningTeam)); //6v10
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[4].WinningTeam)); //5v9
-
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Qualifying-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 3)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam)); //1v2
-
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[5].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam)); //5v8
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[4].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[3].WinningTeam)); //6v7
-
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 4)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[2].WinningTeam)); //3v6
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[1].WinningTeam)); //4v5
-
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 5)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[1].WinningTeam)); //3v4
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 6)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 5].m_Games[0].WinningTeam)); //2v3
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Preliminary Final";
-				}
-				else if (m_roundToSimulate == BaseSeasonGames + 7)
-				{
-					deque<SRLGameMatchup> games;
-					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 6].m_Games[0].WinningTeam)); //1v2
-					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
-					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
-				}
-#pragma endregion
-				}
-			}
-		}
-		for (int i = 0; i < m_ArticlesRemaining; i++)
-		{
-			otherArticles();
-		}
-		if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
-		{
-			CalculateOdds();
-			CalculatePremiershipOdds();
-			UpdateBets();
-			CalculateFeaturedGame();
-			if (coachingMode)
-			{
-				sortOutTrainingOptions();
-				sortOutTradingOptions();
-			}
-			sortOutMatchButtons();
-		}
+		SimulationEndOfRound(m_ArticlesRemaining);
 	}
 }
 
@@ -5957,6 +5595,554 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 				m_Season.m_Ladder.m_Ladder[ii].pointsDifference = m_Season.m_Ladder.m_Ladder[ii].pointsFor - m_Season.m_Ladder.m_Ladder[ii].pointsAgainst;
 			}
 		}
+	}
+}
+
+void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
+{
+	if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+	{
+		m_Season.m_Ladder.sortLadder();
+	}
+	bool blacklistAchievement = m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size() >= 6;
+	for (int j = 0; j < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); j++)
+	{
+		if (m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[j].betState == Bet_Won)
+		{
+			blacklistAchievement = false;
+		}
+	}
+	if (blacklistAchievement)
+	{
+		AchievementStrings.push_back("SRL_BLACKLIST");
+	}
+	m_roundToSimulate++;
+
+	//NEWS STORIES
+	if (m_SeasonEvents)
+	{
+		//TRAINING ARTICLE
+		int team = rand() % 16;
+		SRLTeam MainTeam;
+		MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
+		int player = MainTeam.getRandomPlayerInt();
+		m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(SRLNewsStoryGenerator::getRandomTraining(MainTeam, MainTeam.getPlayers()[player], astVars));
+		m_ArticlesRemaining--;
+		int statBoost = rand() % 9 + 1;
+		int trainingBoost = rand() % 5;
+		switch (trainingBoost)
+		{
+		case 0:
+			MainTeam.addPlayerAtk(MainTeam.getPlayers()[player].getName(), statBoost);
+			break;
+		case 1:
+			MainTeam.addPlayerDef(MainTeam.getPlayers()[player].getName(), statBoost);
+			break;
+		case 2:
+			MainTeam.addPlayerSpd(MainTeam.getPlayers()[player].getName(), statBoost);
+			break;
+		case 3:
+			MainTeam.addPlayerHdl(MainTeam.getPlayers()[player].getName(), statBoost);
+			break;
+		case 4:
+			MainTeam.addPlayerKck(MainTeam.getPlayers()[player].getName(), statBoost);
+			break;
+		}
+		MainTeam.saveTeam();
+		int noTrades1 = rand() % 3;
+		for (int i = 0; i < noTrades1; i++)
+		{
+			offContractTrade();
+			m_ArticlesRemaining--;
+		}
+		int noTrades2 = rand() % 3;
+		for (int i = 0; i < noTrades2; i++)
+		{
+			TeamTrade();
+			m_ArticlesRemaining--;
+		}
+	}
+
+	if (m_roundToSimulate >= m_Season.m_Draw.m_Rounds.size())
+	{
+		finals = true;
+		//THAT WAS GRAND FINAL, FINISH SEASON
+		if (m_roundToSimulate >= BaseSeasonGames + finalsRounds)
+		{
+			m_GameProfile.addSeasonSimulated(AchievementStrings);
+			if (coachingMode)
+			{
+				if (teamCoached == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
+				{
+					AchievementStrings.push_back("SRL_BEST_COACH");
+					m_GameProfile.completeChallenge("Coach A Team To A Premiership", AchievementStrings);
+					for (int j = 0; j < m_Season.m_Ladder.m_Ladder.size(); j++)
+					{
+						if (teamCoached == m_Season.m_Ladder.m_Ladder[j].teamName)
+						{
+							if (j >= 6)
+							{
+								m_GameProfile.completeChallenge("Win The Premiership From Lower Than 6th", AchievementStrings);
+							}
+						}
+					}
+				}
+			}
+			for (int ii = 0; ii < m_Season.m_PremiershipBets.size(); ii++)
+			{
+				if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam)
+				{
+					m_BetMoney.addBetPrice(m_Season.m_PremiershipBets[ii].ReturnBetWinnings());
+					m_Season.m_PremiershipBets[ii].betState = Bet_Won;
+					AchievementStrings.push_back("SRL_PREMIERSHIP_TIP");
+				}
+				else
+				{
+					m_Season.m_PremiershipBets[ii].betState = Bet_Lost;
+					if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].LosingTeam)
+					{
+						AchievementStrings.push_back("SRL_BET_CHALLENGE4");
+					}
+					else if (m_Season.m_PremiershipBets[ii].m_teamName == m_Season.m_Ladder.m_Ladder[m_Season.m_Ladder.m_Ladder.size() - 1].teamName)
+					{
+						AchievementStrings.push_back("SRL_SPOONBET");
+					}
+				}
+			}
+			SRLNewsArticle m_PremiershipArticle;
+			m_PremiershipArticle.headline = m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam + " Wins Premiership!";
+			m_PremiershipArticle.newsStory = SRLNewsStoryGenerator::generatePremiershipArticle(m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].m_Games[0].WinningTeam);
+			m_PremiershipArticle.type = SRLAT_Premiership;
+			m_PremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Premiership.bmp", 7, 7));
+			m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_PremiershipArticle);
+			m_ArticlesRemaining--;
+			UpdateBets();
+			if (currentBetsTotalSeasonMatchOnly >= 36 && currentWonBetsSeasonMatchOnly == currentBetsTotalSeasonMatchOnly)
+			{
+				AchievementStrings.push_back("SRL_BET_CHALLENGE1");
+			}
+			else if (currentBetsTotalSeasonMatchOnly == 1 && currentWonBetsSeasonMatchOnly == 0)
+			{
+				AchievementStrings.push_back("SRL_BET_CHALLENGE2");
+			}
+			else if (currentBetsTotalSeasonMatchOnly == 100 && currentWonBetsSeasonMatchOnly == 50)
+			{
+				AchievementStrings.push_back("SRL_BET_CHALLENGE3");
+			}
+			AchievementStrings.push_back("SRL_FIRST_SEASON");
+			if (seasonLength == Length_ShortSeason && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_SHORT_SEASON");
+			}
+			else if (seasonLength == Length_RoundRobin && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_ROUND_ROBIN");
+			}
+			else if (seasonLength == Length_MediumSeason && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_MEDIUM_SEASON");
+			}
+			else if (seasonLength == Length_NormalSeason && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_NORMAL_SEASON");
+			}
+			else if (seasonLength == Length_LongSeason && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_LONG_SEASON");
+			}
+			else if (seasonLength == Length_ExtremeSeason && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_EXTREME_SEASON");
+			}
+			else if (seasonLength == Length_EnduranceSeason && BaseSeasonGames != 0)
+			{
+				AchievementStrings.push_back("SRL_ENDURANCE_SEASON");
+			}
+			checkBetAchievements();
+			checkCoachingAchievements();
+			sortOutMatchButtons();
+		}
+		else
+		{
+			if (fsType == Top8Normal)
+			{
+#pragma region top 8 normal simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[2].teamName)); //2v3
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[4].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //5v8
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[5].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //6v7
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //4v5
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //3v6
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v3
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam));//2v4
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Preliminary-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+				}
+#pragma endregion
+			}
+			else if (fsType == Top4Normal)
+			{
+#pragma region top 4 normal simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[1].teamName)); //1v2
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //3v4
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam));//1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+				}
+#pragma endregion
+			}
+			else if (fsType == Top2Normal)
+			{
+#pragma region top 2 normal simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[1].teamName)); //1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+
+				}
+#pragma endregion
+			}
+			else if (fsType == Top8Knockout)
+			{
+#pragma region top 8 knockout simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[3].teamName, m_Season.m_Ladder.m_Ladder[4].teamName)); //4v5
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+				}
+#pragma endregion
+			}
+			else if (fsType == Top4Knockout)
+			{
+#pragma region top 4 knockout simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[2].teamName)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+				}
+#pragma endregion
+			}
+			else if (fsType == Top8DoubleElim)
+			{
+#pragma region top 8 knockout double elimination simulation
+				if (m_roundToSimulate == BaseSeasonGames)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[3].teamName, m_Season.m_Ladder.m_Ladder[4].teamName)); //4v5
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Qualifying Finals";
+					SRLNewsArticle m_MinorPremiershipArticle;
+					m_MinorPremiershipArticle.headline = m_Season.m_Ladder.m_Ladder[0].teamName + " Wins Minor Premiership!";
+					m_MinorPremiershipArticle.newsStory = SRLNewsStoryGenerator::generateMinorPremiershipArticle(m_Season.m_Ladder.m_Ladder[0].teamName);
+					m_MinorPremiershipArticle.type = SRLAT_Premiership;
+					m_MinorPremiershipArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\MinorPremiership.bmp", 7, 7));
+					m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
+					m_ArticlesRemaining--;
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam)); //5v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam)); //6v7
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam));//3v5
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam));//4v6
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam));//3v4
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final 1";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 4)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam));//2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final 2";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 5)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam));//1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+				}
+#pragma endregion
+			}
+			else if (fsType == KnockoutTournament)
+			{
+#pragma region 16 Team Knockout
+
+				/*
+					games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
+					games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
+					games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
+					games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12]));
+					games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11]));
+					games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10]));
+					games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9]));
+					games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8]));
+				*/
+
+
+				if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].WinningTeam)); //4v5
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand-Finals";
+				}
+#pragma endregion
+			}
+			else if (fsType == KnockoutTournamentDouble)
+			{
+#pragma region 16 Team Knockout Double Elimination
+
+				/*
+					games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15])); 1v16
+					games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14])); 2v15
+					games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13])); 3v14
+					games.push_back(SRLGameMatchup(AvailableTeams[3], AvailableTeams[12])); 4v13
+					games.push_back(SRLGameMatchup(AvailableTeams[4], AvailableTeams[11])); 5v12
+					games.push_back(SRLGameMatchup(AvailableTeams[5], AvailableTeams[10])); 6v11
+					games.push_back(SRLGameMatchup(AvailableTeams[6], AvailableTeams[9])); 7v10
+					games.push_back(SRLGameMatchup(AvailableTeams[7], AvailableTeams[8])); 8v9
+				*/
+
+
+				if (m_roundToSimulate == BaseSeasonGames + 1)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].WinningTeam)); //4v5
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].LosingTeam)); //9v16
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].LosingTeam)); //10v15
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].LosingTeam)); //11v14
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[4].LosingTeam)); //12v13
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Knockout Round 2";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 2)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam)); //1v4
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[7].WinningTeam)); //8v12
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[6].WinningTeam)); //7v11
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[5].WinningTeam)); //6v10
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[4].WinningTeam)); //5v9
+
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Qualifying-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 3)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam)); //1v2
+
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[5].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam)); //5v8
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[4].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[3].WinningTeam)); //6v7
+
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Quarter-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 4)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[2].WinningTeam)); //3v6
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[1].WinningTeam)); //4v5
+
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Semi-Finals";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 5)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[1].WinningTeam)); //3v4
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Consolidation Final";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 6)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 5].m_Games[0].WinningTeam)); //2v3
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Preliminary Final";
+				}
+				else if (m_roundToSimulate == BaseSeasonGames + 7)
+				{
+					deque<SRLGameMatchup> games;
+					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 6].m_Games[0].WinningTeam)); //1v2
+					m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
+					m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = "Grand Final";
+				}
+#pragma endregion
+			}
+		}
+	}
+	for (int i = 0; i < m_ArticlesRemaining; i++)
+	{
+		otherArticles();
+	}
+	if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+	{
+		CalculateOdds();
+		CalculatePremiershipOdds();
+		UpdateBets();
+		CalculateFeaturedGame();
+		if (coachingMode)
+		{
+			sortOutTrainingOptions();
+			sortOutTradingOptions();
+		}
+		sortOutMatchButtons();
 	}
 }
 

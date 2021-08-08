@@ -247,6 +247,7 @@ public:
 	void CalculateTryScorerOdds();
 	void SimulateGames();
 	void SimulateGameLadderAdjustment(int a_Round, int a_Game, SRLGameManager m_srlmanager);
+	void SimulationEndOfRound(int m_ArticlesRemaining);
 	void CalculateFeaturedGame();
 	void CalculateTipMaster();
 
@@ -716,5 +717,7 @@ private:
 #pragma region SingleSimulation
 	SRLGameManager m_SingleGameManager;
 	int countSummaries = 0;
+	bool singleMatchDisplayInfoCall = false;
+	deque<GameSummaryText> m_LiveGameVector;
 #pragma endregion
 };

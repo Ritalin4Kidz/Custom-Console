@@ -33,6 +33,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.0.3.0 08/08/2021
+- Individual Games Can Now Be Simulated
+
 ### 1.0.2.0 02/08/2021
 - Extended Team List To 20 Players, However Game's Still Use 17
 - - This Means Each Season Has 48 More Players, Which Can Be Traded To Other Teams

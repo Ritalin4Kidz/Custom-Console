@@ -57,11 +57,13 @@ void SYDESurvival::test()
 				m_Island.setColourAtPoint(Vector2(j * 2, i), BRIGHTYELLOW_BRIGHTYELLOW_BG);
 				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), BRIGHTYELLOW_BRIGHTYELLOW_BG);
 			}
-			// Land
-			else if (n >= 0.525 && n < 0.575) 
+			// Stone
+			else if ((n >= 0.555 && n < 0.557) || (n >= 0.755 && n < 0.757))
 			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), GREEN_GREEN_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), GREEN_GREEN_BG);
+				m_Island.setColourAtPoint(Vector2(j * 2, i), LIGHTGREY_GREEN_BG);
+				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), LIGHTGREY_GREEN_BG);
+				m_Island.setCharAtPoint(Vector2(j * 2, i), '(');
+				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), ')');
 			}
 			// Grass
 			else if (n >= 0.575 && n < 0.675)
@@ -72,20 +74,18 @@ void SYDESurvival::test()
 				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), 'v');
 			}
 			//TREES
-			else if (n >= 0.675 && n < 0.775)
+			else if (n >= 0.675 && n < 0.695)
 			{
 				m_Island.setColourAtPoint(Vector2(j * 2, i), BLACK_GREEN_BG);
 				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), BLACK_GREEN_BG);
 				m_Island.setCharAtPoint(Vector2(j * 2, i), '*');
 				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), '*');
 			}
-			//STONE
+			//Land
 			else
 			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), LIGHTGREY_GREEN_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), LIGHTGREY_GREEN_BG);
-				m_Island.setCharAtPoint(Vector2(j * 2, i), '(');
-				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), ')');
+				m_Island.setColourAtPoint(Vector2(j * 2, i), GREEN_GREEN_BG);
+				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), GREEN_GREEN_BG);
 			}
 		}
 	}

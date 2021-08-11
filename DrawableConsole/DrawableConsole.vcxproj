@@ -157,6 +157,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h" />
+    <ClInclude Include="SYDECheckbox.h" />
     <ClInclude Include="SYDEEngineOldCode.h" />
     <ClInclude Include="SYDENoiseMap.h" />
     <ClInclude Include="SYDEOldCodeAI.h" />
@@ -218,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Activation.cpp" />
+    <ClCompile Include="SYDECheckbox.cpp" />
     <ClCompile Include="SYDENoiseMap.cpp" />
     <ClCompile Include="SYDEOldCodeAI.cpp" />
     <ClCompile Include="Artwork.cpp" />

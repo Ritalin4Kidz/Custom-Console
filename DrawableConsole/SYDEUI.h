@@ -40,8 +40,27 @@ public:
 	}
 	string m_Text = "";
 	string m_Label = "";
+
+	/// <summary>
+	/// Execute the main button function
+	/// </summary>
+	void DoFunc() {
+		if (m_FunctionSet)
+		{
+			m_Function();
+		}
+	}
+
+	/// <summary>
+	/// Set the main function for the button
+	/// </summary>
+	/// <param name="f"></param>
+	void SetFunc(void(*f)()) { m_FunctionSet = true;  m_Function = f; }
+
 protected:
+	bool m_FunctionSet = false;
 	TextState m_TxtState = TEXTNONE;
 	ButtonState m_BtnState = BUTTONNONE;
 	string m_LastText = "";
+	void(*m_Function)();
 };

@@ -27,7 +27,7 @@ void SYDESurvival::test()
 			gradientStrength
 	);
 	m_Island = noiseMap.getAsset();
-	m_Island.ExportAssetToFile();
+	//m_Island.ExportAssetToFile();
 }
 
 ConsoleWindow SYDESurvival::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -69,5 +69,6 @@ ConsoleWindow SYDESurvival::window_draw_game(ConsoleWindow window, int windowWid
 		}
 	}
 	window.setTextAtPoint(Vector2(0, 19), std::to_string(m_CameraPos.getX()) + "," + std::to_string(m_CameraPos.getY()), BLACK_BRIGHTWHITE_BG);
+	window = testBox.draw_ui(window);
 	return window;
 }

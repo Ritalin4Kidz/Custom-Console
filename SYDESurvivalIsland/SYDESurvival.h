@@ -61,7 +61,7 @@ private:
 		return Ocean;
 	}
 
-
+	SYDECheckbox testBox = SYDECheckbox(string("This Is A Test"), Vector2(0,18), BLACK, BLACK_BRIGHTWHITE_BG, false);
 	Vector2 biomeSize = Vector2(250, 500);
 
 	vector<Biome> _biomes;

@@ -270,6 +270,9 @@
     <ClInclude Include="SYDESpecial.h">
       <Filter>Header Files\Include Headers</Filter>
     </ClInclude>
+    <ClInclude Include="SYDECheckbox.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -412,6 +415,9 @@
     </ClCompile>
     <ClCompile Include="SYDENoiseMap.cpp">
       <Filter>Source Files\SYDESpecial</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDECheckbox.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

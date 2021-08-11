@@ -1,15 +1,12 @@
 #pragma once
-#pragma once
-//https://github.com/sol-prog/roguelike/blob/master/part_4/PerlinNoise.h
+//This class is based off of https://github.com/sol-prog/roguelike/blob/master/part_4/PerlinNoise.h
 #include <vector>
-
 #include "CustomAsset.h"
 
 // THIS CLASS IS A TRANSLATION TO C++11 FROM THE REFERENCE
 // JAVA IMPLEMENTATION OF THE IMPROVED PERLIN FUNCTION (see http://mrl.nyu.edu/~perlin/noise/)
 // THE ORIGINAL JAVA IMPLEMENTATION IS COPYRIGHT 2002 KEN PERLIN
 
-// I ADDED AN EXTRA METHOD THAT GENERATES A NEW PERMUTATION VECTOR (THIS IS NOT PRESENT IN THE ORIGINAL IMPLEMENTATION)
 
 #ifndef PERLINNOISE_H
 #define PERLINNOISE_H

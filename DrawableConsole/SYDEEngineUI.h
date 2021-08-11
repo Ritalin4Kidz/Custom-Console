@@ -9,3 +9,4 @@
 #include "SYDETextBox.h"
 #include "SYDEMenu.h"
 #include "SYDEParticle.h"
+#include "SYDECheckbox.h"

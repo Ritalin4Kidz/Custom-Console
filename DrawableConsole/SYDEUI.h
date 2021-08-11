@@ -58,9 +58,10 @@ public:
 	void SetFunc(void(*f)()) { m_FunctionSet = true;  m_Function = f; }
 
 protected:
-	bool m_FunctionSet = false;
 	TextState m_TxtState = TEXTNONE;
 	ButtonState m_BtnState = BUTTONNONE;
 	string m_LastText = "";
+private:
+	bool m_FunctionSet = false;
 	void(*m_Function)();
 };

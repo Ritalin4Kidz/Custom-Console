@@ -30,7 +30,7 @@ SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a
 	TextColour = txtColour;
 	HiLightColour = a_hiLightColour;
 	_TRANSPARENT = _TRANSPARENTBG;
-	m_Function = f;
+	SetFunc(f);
 }
 
 ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)

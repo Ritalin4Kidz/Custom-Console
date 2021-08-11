@@ -7,7 +7,7 @@ TestResult ConsoleWindowTest::runTests()
 {
 	TestResult mainResult;
 	TestResult result;
-	result = ConsoleWindowPointTest();
+	result = ConsoleWindowPointColourTest();
 	if (!result.isSuccessful)
 	{
 		mainResult.isSuccessful = false;
@@ -16,13 +16,24 @@ TestResult ConsoleWindowTest::runTests()
 	return mainResult;
 }
 
-TestResult ConsoleWindowTest::ConsoleWindowPointTest()
+TestResult ConsoleWindowTest::ConsoleWindowPointColourTest()
 {
 	ConsoleWindow window(20, false);
 	window.initialize(40, 20);
-	if (window.getTextAtPoint(Vector2(25, 13)) != " ")
+	for (int i = 0; i < 20; i++)
 	{
-		return TestResult("ConsoleWindowPointTest: Unexpected Text In Window \n", false);
+		for (int ii = 0; ii < 20; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BLACK);
+		}
+	}
+	if (window.getTextColourAtPoint(Vector2(25, 13)) != WHITE)
+	{
+		return TestResult("ConsoleWindowPointTest: Unexpected Colour In Window\n", false);
+	}
+	if (window.getTextColourAtPoint(Vector2(14, 13)) != BLACK)
+	{
+		return TestResult("ConsoleWindowPointTest: Unexpected Colour In Window\n", false);
 	}
 	return TestResult("ConsoleWindowPointTest Ran Successfully \n", true);
 }

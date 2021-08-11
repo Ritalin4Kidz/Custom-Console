@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "SYDEEngineBaseTest.h"
 
 /*
@@ -39,6 +38,20 @@
 * You can probs just edit that and we'll all be golden
 * 
 */
+class SYDESliderTestWindow : public SYDEWindowGame {
+public:
+	SYDESliderTestWindow() {  }
+	virtual ~SYDESliderTestWindow() {}
+
+	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
+
+	int getSliderValue() { return m_Slider.getValue(); }
+
+private:
+	SYDESlider m_Slider = SYDESlider(Vector2(4,18), 20, WHITE, BRIGHTWHITE_BRIGHTWHITE_BG);
+};
+
+
 class SYDESliderTest : public SYDEEngineBaseTest
 {
 public:
@@ -46,6 +59,7 @@ public:
 
 	TestResult runTests() override;
 
+	TestResult BasicClickTest();
 
 private:
 };

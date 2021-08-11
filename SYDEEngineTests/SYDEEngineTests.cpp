@@ -11,6 +11,7 @@
 #include "TextItemTest.h"
 #include "ConsoleWindowTest.h"
 #include "SYDESliderTest.h"
+#include "SYDEClickableButtonTest.h"
 
 #pragma endregion
 
@@ -24,6 +25,7 @@ int main()
         new TextItemTest(),
         new ConsoleWindowTest(),
         new SYDESliderTest(),
+        new SYDEClickableButtonTest(),
     };
 
     for (int i = 0; i < listOfTests.size(); i++)

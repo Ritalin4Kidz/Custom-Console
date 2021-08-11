@@ -9,7 +9,7 @@ public:
 
 	TestResult runTests() override;
 
-	TestResult ConsoleWindowPointTest();
+	TestResult ConsoleWindowPointColourTest();
 
 private:
 };

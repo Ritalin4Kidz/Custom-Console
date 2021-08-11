@@ -17,6 +17,17 @@ ConsoleWindow::ConsoleWindow(int size)
 	system("CLS");
 }
 
+ConsoleWindow::ConsoleWindow(int size, bool clearConsole)
+{
+	// INIT CONSOLE SIZE IN LINES TO SIZE VARIABLE
+	m_Lines = vector<Line>(size);
+	// CLEAR THE SCREEN
+	if (clearConsole)
+	{
+		system("CLS");
+	}
+}
+
 void ConsoleWindow::ClearWindow(bool removeText)
 {
 	// CLEAR THE SCREEN
@@ -113,7 +124,7 @@ void ConsoleWindow::initialize(int width, int height)
 	{
 		for (int ii = 0; ii < width; ii++)
 		{
-			addToLine(i, "", WHITE);
+			addToLine(i, " ", WHITE);
 		}
 	}
 }

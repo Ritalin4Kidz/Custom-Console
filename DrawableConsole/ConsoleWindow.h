@@ -293,6 +293,7 @@ class ConsoleWindow {
 public:
 	ConsoleWindow();
 	ConsoleWindow(int size);
+	ConsoleWindow(int size, bool clearConsole);
 	ConsoleWindow(ConsoleWindow* window) { *this = window; }
 	virtual ~ConsoleWindow() {}
 	void ClearWindow(bool removeText);

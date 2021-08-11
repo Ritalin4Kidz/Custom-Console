@@ -61,8 +61,8 @@ private:
 		return Ocean;
 	}
 
-	SYDECheckbox testBox = SYDECheckbox(string("This Is A Test"), Vector2(0,18), BLACK, BLACK_BRIGHTWHITE_BG, false);
-	SYDESlider testSlider = SYDESlider(Vector2(4, 18), 20, WHITE, BRIGHTWHITE_BRIGHTWHITE_BG);
+	//SYDECheckbox testBox = SYDECheckbox(string("This Is A Test"), Vector2(0,18), BLACK, BLACK_BRIGHTWHITE_BG, false);
+	SYDEVerticalSlider testSlider = SYDEVerticalSlider(Vector2(57, 1), 19, WHITE, BRIGHTWHITE_BRIGHTWHITE_BG);
 	Vector2 biomeSize = Vector2(250, 500);
 
 	vector<Biome> _biomes;

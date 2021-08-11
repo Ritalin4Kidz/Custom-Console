@@ -18,6 +18,8 @@ public:
 	/// <returns></returns>
 	ConsoleWindow draw_ui(ConsoleWindow window) override;
 
+	bool isChecked() { return m_Checked; }
+
 private:
 	bool m_Checked = false;
 	bool canClick = true;

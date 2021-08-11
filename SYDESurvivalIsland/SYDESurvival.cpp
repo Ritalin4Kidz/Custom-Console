@@ -17,7 +17,6 @@ void SYDESurvival::test()
 				SYDENoiseMapRule(0.755,0.757, LIGHTGREY_GREEN_BG, '(', ')'),
 				SYDENoiseMapRule(0.575,0.675, BRIGHTGREEN_GREEN_BG, 'v'),
 				SYDENoiseMapRule(0.675,0.695, BLACK_GREEN_BG, '*'),
-				SYDENoiseMapRule(0.675,0.695, BLACK_GREEN_BG, '*'),
 			}),
 			GREEN_GREEN_BG,
 			rand(),
@@ -69,6 +68,5 @@ ConsoleWindow SYDESurvival::window_draw_game(ConsoleWindow window, int windowWid
 		}
 	}
 	window.setTextAtPoint(Vector2(0, 19), std::to_string(m_CameraPos.getX()) + "," + std::to_string(m_CameraPos.getY()), BLACK_BRIGHTWHITE_BG);
-	window = testBox.draw_ui(window);
 	return window;
 }

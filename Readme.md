@@ -125,6 +125,11 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.4.0.0 11/08/2021
+- Noise Maps
+- Button Tags
+- Pretty much everything i added for the sake of SRL
+
 ### 1.3.0.0 23/06.2021
 - Numerous Splashscreen fixes
 - SYDESoundtrack

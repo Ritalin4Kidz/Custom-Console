@@ -7,89 +7,27 @@ void SYDESurvival::init()
 
 void SYDESurvival::test()
 {
-	vector<ColourClass> colour_array = vector<ColourClass>();
-	for (int i = 0; i < (_width*2) * _height; i++)
-	{
-		colour_array.push_back(BLACK);
-	}
-	m_Island = CustomAsset(_width * 2, _height, colour_array);
-	srand(NULL);
-	PerlinNoise pn(rand() % 100);
-	for (int i = 0; i < _height; ++i) 
-	{     // y
-		for (int j = 0; j < _width; ++j) 
-		{  // x
-			double x = (double)j / ((double)_width);
-			double y = (double)i / ((double)_height);
-			
-			double n = pn.noise(10 * x, 10 * y, 0.8);
-
-			//FORCE NOISE
-			if (i < gradientLength || i > _height - gradientLength)
+	srand(time(NULL));
+	SYDENoiseMap noiseMap = SYDENoiseMap(
+		vector<SYDENoiseMapRule>(
 			{
-				int diff = i;
-				if (i > _height - gradientLength)
-				{
-					diff = abs(i - _height);
-				}
-
-				n -= (gradientStrength / (diff + 1));
-			}
-			if (j < gradientLength || j > _width - gradientLength)
-			{
-				int diff = j;
-				if (j > _width - gradientLength)
-				{
-					diff = abs(j - _width);
-				}
-				n -= (gradientStrength / (diff + 1));
-			}
-
-
-			// Water (or a Lakes)
-			if (n < 0.5) {
-				m_Island.setColourAtPoint(Vector2(j * 2, i), BLUE_BLUE_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), BLUE_BLUE_BG);
-			}
-			// Sand
-			else if (n >= 0.5 && n < .525) 
-			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), BRIGHTYELLOW_BRIGHTYELLOW_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), BRIGHTYELLOW_BRIGHTYELLOW_BG);
-			}
-			// Stone
-			else if ((n >= 0.555 && n < 0.557) || (n >= 0.755 && n < 0.757))
-			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), LIGHTGREY_GREEN_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), LIGHTGREY_GREEN_BG);
-				m_Island.setCharAtPoint(Vector2(j * 2, i), '(');
-				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), ')');
-			}
-			// Grass
-			else if (n >= 0.575 && n < 0.675)
-			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), BRIGHTGREEN_GREEN_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), BRIGHTGREEN_GREEN_BG);
-				m_Island.setCharAtPoint(Vector2(j * 2, i), 'v');
-				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), 'v');
-			}
-			//TREES
-			else if (n >= 0.675 && n < 0.695)
-			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), BLACK_GREEN_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), BLACK_GREEN_BG);
-				m_Island.setCharAtPoint(Vector2(j * 2, i), '*');
-				m_Island.setCharAtPoint(Vector2((j * 2) + 1, i), '*');
-			}
-			//Land
-			else
-			{
-				m_Island.setColourAtPoint(Vector2(j * 2, i), GREEN_GREEN_BG);
-				m_Island.setColourAtPoint(Vector2((j * 2) + 1, i), GREEN_GREEN_BG);
-			}
-		}
-	}
-
+				SYDENoiseMapRule(0,0.5, BLUE_BLUE_BG, ' '),
+				SYDENoiseMapRule(0.5,0.525, BRIGHTYELLOW_BRIGHTYELLOW_BG, ' '),
+				SYDENoiseMapRule(0.555,0.557, LIGHTGREY_GREEN_BG, '(', ')'),
+				SYDENoiseMapRule(0.755,0.757, LIGHTGREY_GREEN_BG, '(', ')'),
+				SYDENoiseMapRule(0.575,0.675, BRIGHTGREEN_GREEN_BG, 'v'),
+				SYDENoiseMapRule(0.675,0.695, BLACK_GREEN_BG, '*'),
+				SYDENoiseMapRule(0.675,0.695, BLACK_GREEN_BG, '*'),
+			}),
+			GREEN_GREEN_BG,
+			rand(),
+			_width,
+			_height,
+			gradientLength,
+			gradientStrength
+	);
+	m_Island = noiseMap.getAsset();
+	m_Island.ExportAssetToFile();
 }
 
 ConsoleWindow SYDESurvival::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)

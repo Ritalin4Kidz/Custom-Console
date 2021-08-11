@@ -142,12 +142,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="NoiseMap.cpp" />
     <ClCompile Include="SYDESurvival.cpp" />
     <ClCompile Include="SYDESurvivalIsland.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NoiseMap.h" />
     <ClInclude Include="SYDESurvival.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

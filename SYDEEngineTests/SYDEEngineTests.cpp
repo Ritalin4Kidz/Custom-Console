@@ -11,6 +11,7 @@
 #include "TextItemTest.h"
 #include "ConsoleWindowTest.h"
 #include "SYDESliderTest.h"
+#include "SYDEVerticalSliderTest.h"
 #include "SYDEClickableButtonTest.h"
 #include "SYDEKeyCodeTest.h"
 
@@ -30,6 +31,7 @@ int main()
         new SYDEKeyCodeTest(),
         new ConsoleWindowTest(),
         new SYDESliderTest(),
+        new SYDEVerticalSliderTest(),
         new SYDEClickableButtonTest(),
     };
 

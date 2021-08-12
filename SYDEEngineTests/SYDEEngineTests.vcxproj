@@ -152,6 +152,7 @@
     <ClCompile Include="SYDEKeyCodeTest.cpp" />
     <ClCompile Include="SYDESliderTest.cpp" />
     <ClCompile Include="SYDETestHelper.cpp" />
+    <ClCompile Include="SYDEVerticalSliderTest.cpp" />
     <ClCompile Include="TextItemTest.cpp" />
     <ClCompile Include="Vector2Test.cpp" />
   </ItemGroup>
@@ -162,6 +163,7 @@
     <ClInclude Include="SYDEKeyCodeTest.h" />
     <ClInclude Include="SYDESliderTest.h" />
     <ClInclude Include="SYDETestHelper.h" />
+    <ClInclude Include="SYDEVerticalSliderTest.h" />
     <ClInclude Include="TextItemTest.h" />
     <ClInclude Include="Vector2Test.h" />
   </ItemGroup>

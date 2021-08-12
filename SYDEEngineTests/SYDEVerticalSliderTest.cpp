@@ -1,9 +1,9 @@
 
-#include "SYDESliderTest.h"
+#include "SYDEVerticalSliderTest.h"
 
 #include "pch.h"
 
-TestResult SYDESliderTest::runTests()
+TestResult SYDEVerticalSliderTest::runTests()
 {
 	TestResult mainResult;
 	TestResult result;
@@ -16,14 +16,14 @@ TestResult SYDESliderTest::runTests()
 	return mainResult;
 }
 
-TestResult SYDESliderTest::BasicClickTest()
+TestResult SYDEVerticalSliderTest::BasicClickTest()
 {
 	//INIT TEST
 	SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyUp();
 	int windowWidth = 40;
 	const int windowHeight = 20;
 	ConsoleWindow window(windowHeight, false);
-	SYDESliderTestWindow m_Test;
+	SYDEVerticalSliderTestWindow m_Test;
 	SYDETIME deltaTime;
 	deltaTime.initialise(std::chrono::high_resolution_clock::now());
 	//CALL A FRAME
@@ -32,18 +32,18 @@ TestResult SYDESliderTest::BasicClickTest()
 	{
 		return TestResult("BasicClickTest: Expected 0 But Got " + to_string(m_Test.getSliderValue()), false);
 	}
-	SYDEKeyCode::SetLastClickPosition(Vector2(9,18));
+	SYDEKeyCode::SetLastClickPosition(Vector2(4, 16));
 	SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE.ForceKeyDown();
 	//CALL THE NEXT FRAME
 	window = SYDEGamePlay::play_test_func(&m_Test, window, windowWidth, windowHeight, deltaTime);
-	if (m_Test.getSliderValue() != 5)
+	if (m_Test.getSliderValue() != 15)
 	{
-		return TestResult("BasicClickTest: Expected 5 But Got " + to_string(m_Test.getSliderValue()), false);
+		return TestResult("BasicClickTest: Expected 15 But Got " + to_string(m_Test.getSliderValue()), false);
 	}
 	return TestResult("Basic Click Test Ran Successfully", true);
 }
 
-ConsoleWindow SYDESliderTestWindow::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
+ConsoleWindow SYDEVerticalSliderTestWindow::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 0; i < windowWidth; i++)
 	{

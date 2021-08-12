@@ -276,6 +276,9 @@
     <ClInclude Include="SYDESlider.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEOptionCycler.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -423,6 +426,9 @@
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="SYDESlider.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEOptionCycler.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>

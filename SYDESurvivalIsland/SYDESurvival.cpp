@@ -68,6 +68,6 @@ ConsoleWindow SYDESurvival::window_draw_game(ConsoleWindow window, int windowWid
 		}
 	}
 	window.setTextAtPoint(Vector2(0, 19), std::to_string(m_CameraPos.getX()) + "," + std::to_string(m_CameraPos.getY()), BLACK_BRIGHTWHITE_BG);
-	window = testSlider.draw_ui(window);
+	window = cycler.draw_ui(window);
 	return window;
 }

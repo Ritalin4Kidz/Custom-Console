@@ -8,6 +8,8 @@
 
 #include "SYDESpecial.h"
 
+#include "SYDEOptionCycler.h"
+
 enum BiomeType
 {
 	Grassland =0,
@@ -62,8 +64,15 @@ private:
 	}
 
 	//SYDECheckbox testBox = SYDECheckbox(string("This Is A Test"), Vector2(0,18), BLACK, BLACK_BRIGHTWHITE_BG, false);
-	SYDEVerticalSlider testSlider = SYDEVerticalSlider(Vector2(57, 1), 19, WHITE, BRIGHTWHITE_BRIGHTWHITE_BG);
+	//SYDEVerticalSlider testSlider = SYDEVerticalSlider(Vector2(57, 1), 19, WHITE, BRIGHTWHITE_BRIGHTWHITE_BG);
 	Vector2 biomeSize = Vector2(250, 500);
+
+	SYDEOptionCycler cycler = SYDEOptionCycler(Vector2(0, 18), 20, BLACK_BRIGHTWHITE_BG, false, vector<SYDEOptionCyclerItem>({
+		SYDEOptionCyclerItem(0,"TestItem"),
+		SYDEOptionCyclerItem(1,"CheekyNandos"),
+		SYDEOptionCyclerItem(2,"Hehehhehe"),
+		SYDEOptionCyclerItem(3,"Lovers"),
+		}));
 
 	vector<Biome> _biomes;
 };

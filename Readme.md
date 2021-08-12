@@ -130,6 +130,8 @@ Inside our main function, we can initialize all of our variables and call up SYD
 - Button Tags
 - Pretty much everything i added for the sake of SRL
 - SYDECheckbox
+- SYDEOptionCyclers
+- SYDESliders
 
 ### 1.3.0.0 23/06.2021
 - Numerous Splashscreen fixes

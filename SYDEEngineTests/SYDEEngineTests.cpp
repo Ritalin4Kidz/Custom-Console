@@ -14,6 +14,7 @@
 #include "SYDEVerticalSliderTest.h"
 #include "SYDEClickableButtonTest.h"
 #include "SYDEKeyCodeTest.h"
+#include "SYDEOptionCyclerTest.h"
 
 #pragma endregion
 
@@ -33,6 +34,7 @@ int main()
         new SYDESliderTest(),
         new SYDEVerticalSliderTest(),
         new SYDEClickableButtonTest(),
+        new SYDEOptionCyclerTest(),
     };
 
     for (int i = 0; i < listOfTests.size(); i++)

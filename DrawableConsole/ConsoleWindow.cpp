@@ -92,6 +92,18 @@ string ConsoleWindow::getTextAtPoint(Vector2 point)
 	return std::string("" + getLine(point.getY()).getCharAtIndex(point.getX()));
 }
 
+char ConsoleWindow::getCharAtPoint(Vector2 point)
+{
+	if (point.getY() < m_Lines.size() && point.getY() > 0)
+	{
+		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
+		{
+			m_Lines[point.getY()].getLine()[point.getX()].getChar();
+		}
+	}
+	return 0;
+}
+
 ColourClass ConsoleWindow::_intToColour(int colour_int)
 {
 	return (ColourClass)colour_int;

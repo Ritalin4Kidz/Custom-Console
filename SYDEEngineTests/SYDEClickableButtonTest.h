@@ -1,5 +1,5 @@
 #pragma once
-#include "SYDEEngineBaseTest.h"
+#include "SYDEAbstractUITest.h"
 
 class SYDEClickableButtonTestWindow : public SYDEWindowGame {
 public:
@@ -19,14 +19,12 @@ private:
 };
 
 
-class SYDEClickableButtonTest : public SYDEEngineBaseTest
+class SYDEClickableButtonTest : public SYDEAbstractUITest
 {
 public:
 	SYDEClickableButtonTest() { TestName = "SYDE UI Clickable Button Tests"; }
 
-	TestResult runTests() override;
-
-	TestResult BasicClickTest();
+	TestResult BasicClickTest() override;
 
 private:
 };

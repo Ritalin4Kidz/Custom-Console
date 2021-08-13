@@ -3,19 +3,6 @@
 
 #include "pch.h"
 
-TestResult SYDESliderTest::runTests()
-{
-	TestResult mainResult;
-	TestResult result;
-	result = BasicClickTest();
-	if (!result.isSuccessful)
-	{
-		mainResult.isSuccessful = false;
-		mainResult.ResultMessage += result.ResultMessage;
-	}
-	return mainResult;
-}
-
 TestResult SYDESliderTest::BasicClickTest()
 {
 	//INIT TEST

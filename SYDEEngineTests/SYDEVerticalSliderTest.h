@@ -1,5 +1,7 @@
 #pragma once
-#include "SYDEEngineBaseTest.h"
+#include "SYDEAbstractUITest.h"
+
+
 class SYDEVerticalSliderTestWindow : public SYDEWindowGame {
 public:
 	SYDEVerticalSliderTestWindow() {  }
@@ -14,14 +16,12 @@ private:
 };
 
 
-class SYDEVerticalSliderTest : public SYDEEngineBaseTest
+class SYDEVerticalSliderTest : public SYDEAbstractUITest
 {
 public:
 	SYDEVerticalSliderTest() { TestName = "SYDE UI Vertical Slider Tests"; }
 
-	TestResult runTests() override;
-
-	TestResult BasicClickTest();
+	TestResult BasicClickTest() override;
 
 private:
 };

@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleWindowTest.cpp" />
+    <ClCompile Include="SYDEAbstractUITest.cpp" />
     <ClCompile Include="SYDEClickableButtonTest.cpp" />
     <ClCompile Include="SYDEEngineBaseTest.cpp" />
     <ClCompile Include="SYDEEngineTests.cpp" />
@@ -159,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleWindowTest.h" />
+    <ClInclude Include="SYDEAbstractUITest.h" />
     <ClInclude Include="SYDEClickableButtonTest.h" />
     <ClInclude Include="SYDEEngineBaseTest.h" />
     <ClInclude Include="SYDEKeyCodeTest.h" />

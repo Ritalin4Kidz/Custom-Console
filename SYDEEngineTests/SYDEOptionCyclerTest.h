@@ -1,5 +1,5 @@
 #pragma once
-#include "SYDEEngineBaseTest.h"
+#include "SYDEAbstractUITest.h"
 class SYDEOptionCyclerTestWindow : public SYDEWindowGame {
 public:
 	SYDEOptionCyclerTestWindow() {  }
@@ -13,14 +13,10 @@ private:
 };
 
 
-class SYDEOptionCyclerTest : public SYDEEngineBaseTest
+class SYDEOptionCyclerTest : public SYDEAbstractUITest
 {
 public:
 	SYDEOptionCyclerTest() { TestName = "SYDE UI Option Cycler Tests"; }
-
-	TestResult runTests() override;
-
-	TestResult BasicClickTest();
 
 private:
 };

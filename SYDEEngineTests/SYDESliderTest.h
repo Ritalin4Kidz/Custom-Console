@@ -1,5 +1,5 @@
 #pragma once
-#include "SYDEEngineBaseTest.h"
+#include "SYDEAbstractUITest.h"
 
 /*
 * Here's the logic to getting a GUI test to run without actually having GUI on the screen
@@ -52,14 +52,12 @@ private:
 };
 
 
-class SYDESliderTest : public SYDEEngineBaseTest
+class SYDESliderTest : public SYDEAbstractUITest
 {
 public:
 	SYDESliderTest() { TestName = "SYDE UI Slider Tests"; }
 
-	TestResult runTests() override;
-
-	TestResult BasicClickTest();
+	TestResult BasicClickTest() override;
 
 private:
 };

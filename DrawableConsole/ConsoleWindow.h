@@ -344,6 +344,8 @@ public:
 
 	string getTextAtPoint(Vector2 point);
 
+	char getCharAtPoint(Vector2 point);
+
 	/// <summary>
 	/// Get a colour from an int
 	/// </summary>

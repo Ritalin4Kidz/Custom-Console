@@ -9,6 +9,7 @@
 #include "SYDESpecial.h"
 
 #include "SYDEOptionCycler.h"
+#include "SYDEScrollViewer.h"
 
 enum BiomeType
 {
@@ -67,12 +68,20 @@ private:
 	//SYDEVerticalSlider testSlider = SYDEVerticalSlider(Vector2(57, 1), 19, WHITE, BRIGHTWHITE_BRIGHTWHITE_BG);
 	Vector2 biomeSize = Vector2(250, 500);
 
-	SYDEOptionCycler cycler = SYDEOptionCycler(Vector2(0, 18), 20, BLACK_BRIGHTWHITE_BG, false, vector<SYDEOptionCyclerItem>({
-		SYDEOptionCyclerItem(0,"TestItem"),
-		SYDEOptionCyclerItem(1,"CheekyNandos"),
-		SYDEOptionCyclerItem(2,"Hehehhehe"),
-		SYDEOptionCyclerItem(3,"Lovers"),
-		}));
+	//SYDEOptionCycler cycler = SYDEOptionCycler(Vector2(0, 18), 20, BLACK_BRIGHTWHITE_BG, false, vector<SYDEOptionCyclerItem>({
+	//	SYDEOptionCyclerItem(0,"TestItem"),
+	//	SYDEOptionCyclerItem(1,"CheekyNandos"),
+	//	SYDEOptionCyclerItem(2,"Hehehhehe"),
+	//	SYDEOptionCyclerItem(3,"Lovers"),
+	//	}));
+
+	SYDEScrollViewer m_Viewer = SYDEScrollViewer(Vector2(6,2), Vector2(48,10), vector<SYDEScrollViewerElement>(
+		{
+			SYDEScrollViewerElement(new SYDECheckbox(string("This Is 1 Test"), Vector2(0,1), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
+			SYDEScrollViewerElement(new SYDECheckbox(string("This Is 2 Test"), Vector2(0,3), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
+			SYDEScrollViewerElement(new SYDECheckbox(string("This Is 3 Test"), Vector2(0,7), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
+		}),
+		BLACK);
 
 	vector<Biome> _biomes;
 };

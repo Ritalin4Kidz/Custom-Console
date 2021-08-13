@@ -132,6 +132,7 @@ Inside our main function, we can initialize all of our variables and call up SYD
 - SYDECheckbox
 - SYDEOptionCyclers
 - SYDESliders
+- Removed SYDEUIInterface, integrated with SYDEUI
 
 ### 1.3.0.0 23/06.2021
 - Numerous Splashscreen fixes

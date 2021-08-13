@@ -5,7 +5,7 @@
 #include "SYDEUI.h"
 #include "SYDEWindowGame.h"
 
-class SYDEButton : public SYDEUI, public SYDEUIInterface {
+class SYDEButton : public SYDEUI {
 public:
 	SYDEButton() { m_Label = ""; }
 	SYDEButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
@@ -39,9 +39,6 @@ public:
 	void setActive(bool active) { m_Active = active; }
 	bool getActive() { return m_Active; }
 
-	void setPos(Vector2 a_Pos) { m_Pos = a_Pos; }
-	Vector2 getPos() { return m_Pos; }
-
 protected:
 
 	bool m_Active = false;
@@ -50,7 +47,6 @@ protected:
 	bool _TRANSPARENT = false;
 	bool _HIGHLIGHTED = false;
 	Vector2 m_Size = Vector2(0, 0);
-	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
 	ColourClass HiLightColour = NULLCOLOUR;
 	//void(*m_Function)();

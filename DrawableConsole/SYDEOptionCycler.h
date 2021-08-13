@@ -25,7 +25,7 @@ struct SYDEOptionCyclerItem
 	string m_Tag = "";
 };
 
-class SYDEOptionCycler : public SYDEUI, public SYDEUIInterface {
+class SYDEOptionCycler : public SYDEUI {
 public:
 	SYDEOptionCycler() { m_Label = ""; }
 	SYDEOptionCycler(Vector2 a_Pos, int a_Size, ColourClass txtColour, bool _TRANSPARENTBG, vector<SYDEOptionCyclerItem> items)
@@ -50,7 +50,6 @@ public:
 
 
 private:
-	Vector2 m_Pos;
 	ColourClass m_Colour;
 	int size;
 	bool _TRANSPARENT;

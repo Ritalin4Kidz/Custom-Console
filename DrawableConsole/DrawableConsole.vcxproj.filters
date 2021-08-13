@@ -91,6 +91,12 @@
     <Filter Include="Source Files\SYDESpecial">
       <UniqueIdentifier>{7a9e9d00-a4c3-48a8-9e84-756be8baa99a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SYDESpecial\SYDESpecialUI">
+      <UniqueIdentifier>{c0f780ba-ace3-4ea2-9ebf-1719fb9b8dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SYDESpecial\SYDESpecialUI">
+      <UniqueIdentifier>{a62f2b4f-73aa-4b7b-a355-05379fbf96f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h">
@@ -279,6 +285,9 @@
     <ClInclude Include="SYDEOptionCycler.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="SYDEScrollViewer.h">
+      <Filter>Header Files\SYDESpecial\SYDESpecialUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -430,6 +439,9 @@
     </ClCompile>
     <ClCompile Include="SYDEOptionCycler.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDEScrollViewer.cpp">
+      <Filter>Source Files\SYDESpecial\SYDESpecialUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

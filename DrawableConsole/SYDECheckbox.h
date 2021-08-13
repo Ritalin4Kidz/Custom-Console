@@ -6,7 +6,7 @@
 #include "SYDEWindowGame.h"
 #include "SYDEButton.h"
 #include "SYDEKeyCode.h"
-class SYDECheckbox : public SYDEUI, public SYDEUIInterface {
+class SYDECheckbox : public SYDEUI {
 public:
 	SYDECheckbox() { }
 	SYDECheckbox(string a_text, Vector2 a_Pos, ColourClass txtColour, ColourClass checkBoxClr, bool checked);
@@ -23,7 +23,6 @@ public:
 private:
 	bool m_Checked = false;
 	bool canClick = true;
-	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
 	ColourClass CheckBoxColour = NULLCOLOUR;
 	bool pointIsInButtonRange(Vector2 Point);

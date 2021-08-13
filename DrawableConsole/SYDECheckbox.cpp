@@ -13,7 +13,7 @@ SYDECheckbox::SYDECheckbox(string a_text, Vector2 a_Pos, ColourClass txtColour, 
 ConsoleWindow SYDECheckbox::draw_ui(ConsoleWindow window)
 {
 	ColourClass _TXT = TextColour;
-	for (int i = m_Pos.getX(); i < m_Pos.getX() + m_Text.size(); i++)
+	for (int i = 0; i < m_Text.size(); i++)
 	{
 		_TXT = window.determineColourAtPoint(Vector2(m_Pos.getX() + i, m_Pos.getY()), TextColour, true);
 		window.setTextAtPoint(Vector2(m_Pos.getX() + i, m_Pos.getY()), m_Text.substr(i, 1), _TXT);

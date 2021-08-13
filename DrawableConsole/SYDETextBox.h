@@ -5,7 +5,7 @@
 #include "SYDEUI.h"
 using namespace std;
 
-class SYDETextBox : public SYDEUI, public SYDEUIInterface {
+class SYDETextBox : public SYDEUI {
 public:
 	SYDETextBox() { m_Label = ""; }
 	SYDETextBox(string a_Label) { m_Label = a_Label; }
@@ -33,7 +33,6 @@ private:
 	//string m_Text = "";
 
 	Vector2 m_Size = Vector2(0, 0);
-	Vector2 m_Pos = Vector2(0,0);
 	ColourClass TextColour = NULLCOLOUR;
 
 };

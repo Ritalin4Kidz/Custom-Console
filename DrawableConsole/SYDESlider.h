@@ -6,7 +6,7 @@
 #include "SYDEWindowGame.h"
 #include "SYDEButton.h"
 #include "SYDEKeyCode.h"
-class SYDESlider : public SYDEUI, public SYDEUIInterface {
+class SYDESlider : public SYDEUI {
 public:
 	SYDESlider() { }
 	SYDESlider(Vector2 a_Pos, int size, ColourClass BackClr, ColourClass SliderClr);
@@ -24,12 +24,13 @@ public:
 
 	int getValue() { return sliderValue; }
 
+	void setSize(int s) { m_Size = s; }
+
 protected:
 	bool isInDraggedState = false;
 	void setIsInDraggedState(bool state) { isInDraggedState = state; }
 	bool isHoldClickRequired = true;
 	bool canClick = true;
-	Vector2 m_Pos = Vector2(0, 0);
 
 	int sliderValue = 0;
 

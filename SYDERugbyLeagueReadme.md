@@ -4,14 +4,7 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR 1.1.0.0
-- AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
-- World Cup Tournament
-- More Management Features
-- News Stories For World Cup
-- World Cup Settings Don't Override Game Settings
-- Exhibiton Matches
- - - No Season Attached (And Therefore No Coaching)
+## FUTURE GOALS
 
  - Player Management Seasons
  - - Coaching Is Moved From An Option Inside Game Settings, instead there will be an option underneath exhibition matches titled "Management Seasons". When clicked you'll be
@@ -19,6 +12,20 @@ SRL Simulation game made inside the SYDE Framework.
    - Player Manager Game Mode
 
 - Look Into Ladder Predictor Possibly
+
+- Player Retirement
+	- See Player Retirement Design Text
+
+## ADDED IN 1.1.00
+- World Cup Tournament
+- More Management Features (Position Swapping)
+
+## GOALS FOR 1.1.0.0
+- AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
+- News Stories For World Cup
+- World Cup Settings Don't Override Game Settings
+- Exhibiton Matches
+ - - No Season Attached (And Therefore No Coaching)
 
 - Each Game Can Be Viewed In Depth, This Will Include Being Able To View
 	- Team Lists (All Positions As Well For Top 17)
@@ -28,8 +35,7 @@ SRL Simulation game made inside the SYDE Framework.
 	- Stadium Played At
 - In Addition, Teams Will Now Have Home Grounds
 
-- Player Retirement
-	- See Player Retirement Design Text
+- Manual Editing Of Players & Teams In Game
 
 ## Release Notes
 

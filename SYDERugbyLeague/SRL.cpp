@@ -6258,7 +6258,7 @@ void SRLGame::sortOutMatchButtons()
 	m_MatchResultButtons.clear();
 	for (int i = 0; i < m_Season.m_Draw.m_Rounds[m_round].m_Games.size(); i++)
 	{
-		if (m_Season.isWorldCup)
+		if (m_Season.isWorldCup || m_Season.m_Draw.m_Rounds[m_round].isRepRound)
 		{
 			m_Season.m_Draw.m_Rounds[m_round].m_Games[i].setMatchInfo("Worlds Stadium", SRLNameGenerator::getTimeBasedOffRoundSizeAndGame(m_Season.m_Draw.m_Rounds[m_round].m_Games.size(), i));
 		}
@@ -7156,7 +7156,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 	coachingMode = m_SettingsCoachBtn.isChecked();
 	m_SeasonEvents = m_SettingsEventsBtn.isChecked();
 	m_GoalKicker = m_SettingsGoalKickerBtn.isChecked();
-
+	RepRoundsOn = m_SettingsRepRoundsBtn.isChecked();
 	//WORLD CUP HAS AN OVERRIDE
 	if (isWorldCup)
 	{

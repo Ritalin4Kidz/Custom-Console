@@ -550,6 +550,7 @@ private:
 	SRLNewsArticle m_Article;
 
 	SYDEClickableButton m_TeamInDepthView = SYDEClickableButton();
+	SYDEClickableTextBox m_InDepthTeamNameTextBox = SYDEClickableTextBox(Vector2(0,1),Vector2(60,1), BLACK_BRIGHTWHITE_BG);
 	SYDEClickableButton m_TeamAssetSwitchView = SYDEClickableButton();
 	SYDEClickableButton m_BackTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_NextTeamInDepth = SYDEClickableButton();

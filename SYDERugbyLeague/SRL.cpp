@@ -3822,7 +3822,8 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 	{
 		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 	}
-	window.setTextAtPoint(Vector2(2, 1), m_InDepthTeamView.getName(), BLACK_BRIGHTWHITE_BG);
+	//window.setTextAtPoint(Vector2(2, 1), m_InDepthTeamView.getName(), BLACK_BRIGHTWHITE_BG);
+	window = m_InDepthTeamNameTextBox.draw_ui(window);
 	for (int ii = 0; ii < 60; ii++)
 	{
 		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
@@ -6802,6 +6803,7 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	}
 
 	m_InDepthTeamView.CalculateAverages();
+	m_InDepthTeamNameTextBox.setText(m_InDepthTeamView.getName());
 }
 
 void SRLGame::setUpSelectedTeamView()

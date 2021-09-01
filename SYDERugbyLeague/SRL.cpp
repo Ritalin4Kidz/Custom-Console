@@ -3978,9 +3978,7 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 	{
 		window = m_SettingsGoalKickerBtn.draw_ui(window);
 		window = m_SettingsWeatherBtn.draw_ui(window);
-		if (m_Weather)
 		window = m_SettingsStaminaBtn.draw_ui(window);
-		if (m_Stamina)
 		window = m_SettingsSeasonLengthBtn.draw_ui(window);
 		switch (seasonLength)
 		{

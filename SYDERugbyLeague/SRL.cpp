@@ -237,16 +237,6 @@ void SelectTeamCallBtnClick()
 	SRLGame::selectedTeamCall = true;
 }
 
-void CoachingModeEnableClick()
-{
-	SRLGame::coachingMode = !SRLGame::coachingMode;
-}
-
-void RepRoundModeEnableClick()
-{
-	SRLGame::RepRoundsOn = !SRLGame::RepRoundsOn;
-}
-
 void FinalsSystemClick()
 {
 	SRLGame::finalsSystemCall = true;
@@ -862,24 +852,6 @@ void GenerateTeamViewClick()
 	SRLGame::generateCall = true;
 	SRLGame::generateStartCall = true;
 }
-void ToggleSinBinClick()
-{
-	SRLGame::m_SinBins = !SRLGame::m_SinBins;
-}
-void ToggleKickerClick()
-{
-	SRLGame::m_GoalKicker = !SRLGame::m_GoalKicker;
-}
-
-void ToggleWeatherClick()
-{
-	SRLGame::m_Weather = !SRLGame::m_Weather;
-}
-
-void ToggleStaminaClick()
-{
-	SRLGame::m_Stamina = !SRLGame::m_Stamina;
-}
 
 void BlankViewClick()
 {
@@ -936,14 +908,6 @@ void TryScorersViewBetClick()
 void SettingsViewClick()
 {
 	SRLGame::newState = SettingsState;
-}
-void ExtraTimeViewClick()
-{
-	SRLGame::m_ExtraTime = !SRLGame::m_ExtraTime;
-}
-void InjuriesViewClick()
-{
-	SRLGame::m_Injuries = !SRLGame::m_Injuries;
 }
 void SettingsLengthViewClick()
 {

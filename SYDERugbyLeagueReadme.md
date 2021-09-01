@@ -39,6 +39,11 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.0.4.0 01/09/2021
+- Fixed Ladder Bug
+- Individual Game Simulation Now Shows The Simulation Occuring In Real Time (With Slight Delay Added To Simulation)
+- Settings Changed To Checkboxes
+
 ### 1.0.3.0 08/08/2021
 - Individual Games Can Now Be Simulated
 

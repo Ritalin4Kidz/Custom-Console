@@ -3530,12 +3530,12 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			}
 			for (int g = 0; g < gamesInRoundToSimulate; g++)
 			{
-				if (!m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[g].GameHasBeenSimulated)
+				if (!m_Season.m_Draw.m_Rounds[m].m_Games[g].GameHasBeenSimulated)
 				{
 					m_SingleGameManager.ClearCache();
 					SRLTeam HomeTeam;
 					SRLTeam AwayTeam;
-					if (m_Season.m_Draw.m_Rounds[matchInformationRound].isRepRound || m_Season.isWorldCup)
+					if (m_Season.m_Draw.m_Rounds[m].isRepRound || m_Season.isWorldCup)
 					{
 						for (int j = 0; j < repTeams.size(); j++)
 						{
@@ -3639,11 +3639,20 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 	}
 	try
 	{
+
 		for (int i = 0; i < (m_LiveGameVector.size()); i++)
 		{
-			window = m_LiveGameVector[i].draw(window, Vector2(5, (((i * 5) + 3)) - m_LineResults));
+			window = m_LiveGameVector[i].draw(window, Vector2(5, ((((i * 5) + 3)) - m_LineResults) + 1));
 		}
-
+		for (int i = 0; i < windowWidth; i++)
+		{
+			window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(i, 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+		}
+		window.setTextAtPoint(Vector2(0, 2), m_SingleGameManager.getHomeTeam().getName() + " " + to_string(m_SingleGameManager.getHomeScore()), BLACK_BRIGHTWHITE_BG);
+		string awayTeamText = to_string(m_SingleGameManager.getAwayScore()) + " " + m_SingleGameManager.getAwayTeam().getName();
+		window.setTextAtPoint(Vector2(60-awayTeamText.length(), 2), awayTeamText, BLACK_BRIGHTWHITE_BG);
 		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
 		{
 			if (m_LineResults > 0)
@@ -3688,8 +3697,13 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		}
 
 		bool continuePlay = finals || m_ExtraTime;
-		if (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
+		if (m_TimePassedSimulation < m_GameSimulationDelay)
 		{
+			m_TimePassedSimulation += SYDEDefaults::getDeltaTime();
+		}
+		else if (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
+		{
+			m_TimePassedSimulation = 0;
 			try
 			{
 				m_SingleGameManager.play();
@@ -3708,6 +3722,10 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 						else
 						{
 							m_LiveGameVector.push_back(GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]));
+						}
+						if (m_LiveGameVector.size() > 3)
+						{
+							m_LineResults += 5;
 						}
 					}
 					//THEN SET THE COUNT AGAIN

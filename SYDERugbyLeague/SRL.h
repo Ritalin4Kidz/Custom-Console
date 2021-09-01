@@ -719,5 +719,7 @@ private:
 	int countSummaries = 0;
 	bool singleMatchDisplayInfoCall = false;
 	deque<GameSummaryText> m_LiveGameVector;
+	float m_TimePassedSimulation = 0;
+	const float m_GameSimulationDelay = 0.04f;
 #pragma endregion
 };

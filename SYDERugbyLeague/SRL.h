@@ -508,18 +508,18 @@ private:
 	SYDEClickableButton m_PriorBetsTryScorerBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_SettingsGoalKickerBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsGoalKickerBtn = SYDECheckbox();
 	//View Season
-	SYDEClickableButton m_SettingsWeatherBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsStaminaBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsWeatherBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsStaminaBtn = SYDECheckbox();
 	SYDEClickableButton m_SettingsSeasonLengthBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsExtraTimeBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsInjuryBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsSinBinBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsEventsBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsCoachBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsExtraTimeBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsInjuryBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsSinBinBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsEventsBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsCoachBtn = SYDECheckbox();
 	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsRepRoundsBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsRepRoundsBtn = SYDECheckbox();
 
 	//KEYPAD
 	SYDEClickableButton m_KeypadBtn_1 = SYDEClickableButton();

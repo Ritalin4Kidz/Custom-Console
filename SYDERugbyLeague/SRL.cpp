@@ -1428,45 +1428,26 @@ void SRLGame::init()
 
 #pragma region GameSettingsOptions
 	//SETTINGS
-	m_SettingsGoalKickerBtn = SYDEClickableButton(" Main Goal Kicker:", Vector2(3, 4), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsGoalKickerBtn.setHighLight(RED);
-	m_SettingsGoalKickerBtn.SetFunc(ToggleKickerClick);
-
-	m_SettingsWeatherBtn = SYDEClickableButton(" Weather:", Vector2(12, 6), Vector2(9, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsWeatherBtn.setHighLight(RED);
-	m_SettingsWeatherBtn.SetFunc(ToggleWeatherClick);
-
-	m_SettingsStaminaBtn = SYDEClickableButton(" Stamina:", Vector2(12, 8), Vector2(9, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsStaminaBtn.setHighLight(RED);
-	m_SettingsStaminaBtn.SetFunc(ToggleStaminaClick);
+	m_SettingsGoalKickerBtn = SYDECheckbox(" Main Goal Kicker:", Vector2(3, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_SettingsWeatherBtn = SYDECheckbox(" Weather:", Vector2(12, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_SettingsStaminaBtn = SYDECheckbox(" Stamina:", Vector2(12, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
 	m_SettingsSeasonLengthBtn = SYDEClickableButton(" Season Length:", Vector2(6, 10), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsSeasonLengthBtn.setHighLight(RED);
 	m_SettingsSeasonLengthBtn.SetFunc(SettingsLengthViewClick);
 
-	m_SettingsExtraTimeBtn = SYDEClickableButton(" Extra Time:", Vector2(9, 12), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsExtraTimeBtn.setHighLight(RED);
-	m_SettingsExtraTimeBtn.SetFunc(ExtraTimeViewClick);
+	//string a_text, Vector2 a_Pos, ColourClass txtColour, ColourClass checkBoxClr, bool checked
+	m_SettingsExtraTimeBtn = SYDECheckbox(" Extra Time:", Vector2(9, 12), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-	m_SettingsInjuryBtn = SYDEClickableButton(" Injuries:", Vector2(11, 14), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsInjuryBtn.setHighLight(RED);
-	m_SettingsInjuryBtn.SetFunc(InjuriesViewClick);
+	m_SettingsInjuryBtn = SYDECheckbox(" Injuries:", Vector2(11, 14), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-	m_SettingsSinBinBtn = SYDEClickableButton(" Sin Bins:", Vector2(11, 16), Vector2(10, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsSinBinBtn.setHighLight(RED);
-	m_SettingsSinBinBtn.SetFunc(ToggleSinBinClick);
+	m_SettingsSinBinBtn = SYDECheckbox(" Sin Bins:", Vector2(11, 16), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-	m_SettingsEventsBtn = SYDEClickableButton(" Season Events:", Vector2(36, 4), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsEventsBtn.setHighLight(RED);
-	m_SettingsEventsBtn.SetFunc(ToggleEventsClick);
+	m_SettingsEventsBtn = SYDECheckbox(" Season Events:", Vector2(36, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-	m_SettingsCoachBtn = SYDEClickableButton(" Coaching Mode:", Vector2(36, 6), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsCoachBtn.setHighLight(RED);
-	m_SettingsCoachBtn.SetFunc(CoachingModeEnableClick);
+	m_SettingsCoachBtn = SYDECheckbox(" Coaching Mode:", Vector2(36, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
 
-	m_SettingsRepRoundsBtn = SYDEClickableButton(" Rep Rounds:", Vector2(39, 8), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsRepRoundsBtn.setHighLight(RED);
-	m_SettingsRepRoundsBtn.SetFunc(RepRoundModeEnableClick);
+	m_SettingsRepRoundsBtn = SYDECheckbox(" Rep Rounds:", Vector2(39, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
 
 	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsFinalsBtn.setHighLight(RED);
@@ -4032,32 +4013,10 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 	if (settingsState == SeasonSettings_STATE)
 	{
 		window = m_SettingsGoalKickerBtn.draw_ui(window);
-		if (m_GoalKicker)
-		{
-			window.setTextAtPoint(Vector2(22, 4), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(22, 4), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsWeatherBtn.draw_ui(window);
 		if (m_Weather)
-		{
-			window.setTextAtPoint(Vector2(22, 6), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(22, 6), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsStaminaBtn.draw_ui(window);
 		if (m_Stamina)
-		{
-			window.setTextAtPoint(Vector2(22, 8), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(22, 8), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsSeasonLengthBtn.draw_ui(window);
 		switch (seasonLength)
 		{
@@ -4084,59 +4043,11 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 			break;
 		}
 		window = m_SettingsExtraTimeBtn.draw_ui(window);
-		if (m_ExtraTime)
-		{
-			window.setTextAtPoint(Vector2(22, 12), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(22, 12), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsInjuryBtn.draw_ui(window);
-		if (m_Injuries)
-		{
-			window.setTextAtPoint(Vector2(22, 14), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(22, 14), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsSinBinBtn.draw_ui(window);
-		if (m_SinBins)
-		{
-			window.setTextAtPoint(Vector2(22, 16), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(22, 16), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsEventsBtn.draw_ui(window);
-		if (m_SeasonEvents)
-		{
-			window.setTextAtPoint(Vector2(52, 4), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(52, 4), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsCoachBtn.draw_ui(window);
-		if (coachingMode)
-		{
-			window.setTextAtPoint(Vector2(52, 6), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(52, 6), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsRepRoundsBtn.draw_ui(window);
-		if (RepRoundsOn)
-		{
-			window.setTextAtPoint(Vector2(52, 8), "On", BRIGHTWHITE);
-		}
-		else
-		{
-			window.setTextAtPoint(Vector2(52, 8), "Off", BRIGHTWHITE);
-		}
 		window = m_SettingsFinalsBtn.draw_ui(window);
 		if (finalsSystemCall)
 		{
@@ -7255,6 +7166,16 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 
 	BaseSeasonGames = static_cast<int>(seasonLength);
 	SeasonStart = false;
+
+	//CHECKBOX SETTINGS
+	m_ExtraTime = m_SettingsExtraTimeBtn.isChecked();
+	m_Injuries = m_SettingsInjuryBtn.isChecked();
+	m_SinBins = m_SettingsSinBinBtn.isChecked();
+	m_Stamina = m_SettingsStaminaBtn.isChecked();
+	m_Weather = m_SettingsWeatherBtn.isChecked();
+	coachingMode = m_SettingsCoachBtn.isChecked();
+	m_SeasonEvents = m_SettingsEventsBtn.isChecked();
+	m_GoalKicker = m_SettingsGoalKickerBtn.isChecked();
 
 	//WORLD CUP HAS AN OVERRIDE
 	if (isWorldCup)

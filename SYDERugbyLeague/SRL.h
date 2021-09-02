@@ -323,6 +323,7 @@ public:
 	static bool exitConfirmedCall;
 	static bool randomizeCall;
 	static bool randomizeConfirmedCall;
+	static bool saveDetailsCall;
 
 	static bool m_GoalKicker;
 	static bool m_Weather;
@@ -551,11 +552,13 @@ private:
 
 	SYDEClickableButton m_TeamInDepthView = SYDEClickableButton();
 	SYDEClickableTextBox m_InDepthTeamNameTextBox = SYDEClickableTextBox(Vector2(0,1),Vector2(60,1), BLACK_BRIGHTWHITE_BG);
+	SYDEClickableTextBox m_InDepthPlayerNameTextBox = SYDEClickableTextBox(Vector2(0, 1), Vector2(60, 1), BLACK_BRIGHTWHITE_BG);
 	SYDEClickableButton m_TeamAssetSwitchView = SYDEClickableButton();
 	SYDEClickableButton m_BackTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_NextTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_PrevTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_TeamListInDepth = SYDEClickableButton();
+	SYDEClickableButton m_SaveDetailsInDepth = SYDEClickableButton();
 	SYDEClickableButton m_BackTeamListInDepth = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerBtn = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();

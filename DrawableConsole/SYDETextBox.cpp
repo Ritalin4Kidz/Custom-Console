@@ -65,6 +65,19 @@ ConsoleWindow SYDEClickableTextBox::draw_ui(ConsoleWindow window)
 	_CheckState();
 	if (m_Active)
 	{
+		if (drawFlash)
+		{
+			if (m_Text.size() < m_Size.getX())
+			{
+				window.setTextAtPoint(Vector2(m_Text.size(), m_Pos.getY()), " ", HILIGHTCOLOUR);
+			}
+		}
+		timeSpentFlash += SYDEDefaults::getDeltaTime();
+		if (timeSpentFlash > flashTime)
+		{
+			timeSpentFlash = 0;
+			drawFlash = !drawFlash;
+		}
 		if (SYDEKeyCode::getBackSpaceSafe())
 		{
 			timeSpent += SYDEDefaults::getDeltaTime();

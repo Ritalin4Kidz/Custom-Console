@@ -86,6 +86,7 @@ int SRLGame::exhibitionTeam1Num = 0;
 int SRLGame::exhibitionTeam2Num = 1;
 int SRLGame::matchInformationRound = 0;
 int SRLGame::matchInformationGame = 0;
+bool SRLGame::saveDetailsCall = false;
 bool SRLGame::setUpExhibitionDisplayCall = false;
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
@@ -400,6 +401,11 @@ void KeypadClick9()
 void KeypadClick0()
 {
 	SRLGame::addCustomStrString("0");
+}
+
+void SaveDetailsClick()
+{
+	SRLGame::saveDetailsCall = true;
 }
 
 void KeypadClickDOT()
@@ -1505,6 +1511,10 @@ void SRLGame::init()
 #pragma endregion
 
 #pragma region Team In-Depth View
+	m_SaveDetailsInDepth = SYDEClickableButton(" Save ", Vector2(0, 2), Vector2(6, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SaveDetailsInDepth.setHighLight(RED);
+	m_SaveDetailsInDepth.SetFunc(SaveDetailsClick);
+
 	m_BackTeamInDepth = SYDEClickableButton("  To Main Menu ", Vector2(0, 19), Vector2(15, 1), BLACK_WHITE_BG, false);
 	m_BackTeamInDepth.setHighLight(RED);
 	m_BackTeamInDepth.SetFunc(InDepthBackClick);
@@ -3790,6 +3800,30 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 		setUpPlayer();
 		inDepthState = PlayerViewState;
 	}
+	else if (saveDetailsCall)
+	{
+		saveDetailsCall = false;
+		if (inDepthState == PlayerViewState)
+		{
+			m_PlayerView.setName(m_InDepthPlayerNameTextBox.m_Text);
+			m_PlayerView.savePlayer();
+
+			setUpTeamInDepthView(m_TeamViewing);
+			setUpPlayer();
+		}
+		else
+		{
+			string tempName = m_InDepthTeamView.getName();
+			if (tempName != m_InDepthTeamNameTextBox.m_Text)
+			{
+				m_InDepthTeamView.setName(m_InDepthTeamNameTextBox.m_Text);
+				m_InDepthTeamView.saveTeam();
+				//DELETE OLD TEAM
+				fs::remove("EngineFiles\\GameResults\\Teams\\" + tempName + ".json");
+			}
+		}
+
+	}
 	if (inDepthState == TeamListViewState)
 	{
 		return TeamInDepthListView(window, windowWidth, windowHeight);
@@ -3851,6 +3885,7 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 	window = m_PrevTeamInDepth.draw_ui(window);
 	window = m_NextTeamInDepth.draw_ui(window);
 	window = m_TeamListInDepth.draw_ui(window);
+	window = m_SaveDetailsInDepth.draw_ui(window);
 	return window;
 }
 
@@ -3880,7 +3915,8 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 	{
 		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 	}
-	window.setTextAtPoint(Vector2(2, 1), m_PlayerView.getName(), BLACK_BRIGHTWHITE_BG);
+	window = m_InDepthPlayerNameTextBox.draw_ui(window);
+	//window.setTextAtPoint(Vector2(2, 1), m_PlayerView.getName(), BLACK_BRIGHTWHITE_BG);
 	for (int ii = 0; ii < 60; ii++)
 	{
 		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
@@ -3898,6 +3934,7 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 
 	window.setTextAtPoint(Vector2(2, 18), "Country Of Origin: " + m_PlayerView.getOrigin(), BRIGHTWHITE);
 	window = m_RegeneratePlayerBtn.draw_ui(window);
+	window = m_SaveDetailsInDepth.draw_ui(window);
 	return window;
 }
 
@@ -4128,7 +4165,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.3.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.5.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -6880,7 +6917,7 @@ void SRLGame::setUpPositionShowcase(SRLPositionShowcaseState _state)
 void SRLGame::setUpPlayer()
 {
 	m_PlayerView = m_InDepthTeamView.getPlayers()[playerClicked];
-
+	m_InDepthPlayerNameTextBox.setText(m_PlayerView.getName());
 	string PlayerBmp = "EngineFiles\\PlayerFeatures\\playerstyle" + to_string(m_PlayerView.getStyleType()) + ".bmp";
 	wstring wPlayerBmp = wstring(PlayerBmp.begin(), PlayerBmp.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));

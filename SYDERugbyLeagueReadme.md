@@ -20,6 +20,8 @@ SRL Simulation game made inside the SYDE Framework.
 - World Cup Tournament
 - More Management Features (Position Swapping)
 
+- Manual Editing Of Players & Teams Name In Game 
+
 ## GOALS FOR 1.1.0.0
 - AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
 - News Stories For World Cup
@@ -35,9 +37,12 @@ SRL Simulation game made inside the SYDE Framework.
 	- Stadium Played At
 - In Addition, Teams Will Now Have Home Grounds
 
-- Manual Editing Of Players & Teams In Game
+- Manual Editing Of Players & Teams Stats In Game 
 
 ## Release Notes
+
+### 1.0.5.0 02/09/2021
+- Player & Team Names Can Now Be Edited in the in-depth view
 
 ### 1.0.4.0 01/09/2021
 - Fixed Ladder Bug

@@ -71,7 +71,12 @@ private:
 
 	Vector2 m_Size = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
+	ColourClass HILIGHTCOLOUR = BLUE_BLUE_BG;
 	bool canClick = true;
 	float timeSpent = 0.0f;
 	const float backspaceTime = 0.25f;
+
+	bool drawFlash = false;
+	float timeSpentFlash = 0.0f;
+	const float flashTime = 0.5f;
 };

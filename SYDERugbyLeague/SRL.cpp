@@ -52,8 +52,10 @@ bool SRLGame::performTrainCall = false;
 bool SRLGame::performTrainConfirmedCall = false;
 bool SRLGame::setUpPosShowcaseCall = false;
 bool SRLGame::TeamInDepthViewingJerseyAsset = true;
+bool SRLGame::isExhibitionMatch = false;
 int SRLGame::playerClicked = 0;
 float SRLGame::m_ScrollingSpeed = 1.0f;
+float SRLGame::m_SimulationSpeed = 2.0f;
 string SRLGame::customAmountStr = "";
 SRLBetPrice SRLGame::m_BetAmount = SRLBetPrice(10, 0);
 int SRLGame::gameNumberBet = 0;
@@ -612,6 +614,7 @@ void SingleMatchSimulateClick()
 	SRLGame::newState = SimulateSingleMatchViewState;
 	SRLGame::SimulateCall = true;
 	SRLGame::SimulateSingleMatchCall = true;
+	SRLGame::isExhibitionMatch = false;
 }
 
 void SeasonModeClick()
@@ -654,6 +657,15 @@ void CoachingViewClick()
 		SRLGame::coachDrawState = CoachingTeamList_STATE;
 	}
 }
+
+void ExhibitionMatchSimulateClick()
+{
+	SRLGame::newState = SimulateSingleMatchViewState;
+	SRLGame::SimulateCall = true;
+	SRLGame::SimulateSingleMatchCall = true;
+	SRLGame::isExhibitionMatch = true;
+}
+
 void CurrentRoundViewClick()
 {
 	SRLGame::bettingState = CurrentRound_STATE;
@@ -1024,6 +1036,7 @@ void SRLGame::init()
 	loadGameSettings();
 
 	maxScrollTickTime = maxScrollTickTime / m_ScrollingSpeed;
+	m_GameSimulationDelay = m_GameSimulationDelay / m_SimulationSpeed;
 
 #pragma region SoundTrackSettings
 
@@ -1181,6 +1194,10 @@ void SRLGame::init()
 	m_SimulateBtn.SetFunc(SimulateClick);
 
 #pragma endregion
+
+	m_ExhibitionMatchSimulateBtn = SYDEClickableButton(" Simulate Game ", Vector2(22, 18), Vector2(15, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_ExhibitionMatchSimulateBtn.setHighLight(RED);
+	m_ExhibitionMatchSimulateBtn.SetFunc(ExhibitionMatchSimulateClick);
 
 #pragma region BettingOptions
 	m_BetBtnCurrentRound = SYDEClickableButton(" This Round ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
@@ -1994,6 +2011,8 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 			setUpExhibitionDisplayCall = false;
 		}
 		string awayTeamText = m_ExhibitionGameFeature.fg_awayTeam.getName();
+		/////EXHIBITION
+		window = m_ExhibitionMatchSimulateBtn.draw_ui(window);
 		if (m_ExhibitionGameFeature.featuredGameAvail)
 		{
 			int sizeText = awayTeamText.length();
@@ -3518,134 +3537,168 @@ ConsoleWindow SRLGame::MatchUpDepthView(ConsoleWindow window, int windowWidth, i
 
 ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	if (SimulateSingleMatchCall)
+	if (isExhibitionMatch)
 	{
-		singleMatchDisplayInfoCall = false;
-		m_LiveGameVector.clear();
-		m_LineResults = 0;
-		Simulate = false;
-		if (m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].GameHasBeenSimulated)
+		if (SimulateSingleMatchCall)
 		{
-			errorCall = true;
-			errorMessage = "Game Already Simulated";
-			newState = MatchUpInDepthView;
+			singleMatchDisplayInfoCall = false;
+			SimulateCall = false;
+			finals = false;
+			m_LiveGameVector.clear();
+			m_LineResults = 0;
+			Simulate = false;
+			m_SingleGameManager.ClearCache();
+			SRLTeam HomeTeam;
+			SRLTeam AwayTeam;
+			countSummaries = 0;
+			HomeTeam = m_ExhibitionGameFeature.fg_homeTeam;
+			AwayTeam = m_ExhibitionGameFeature.fg_awayTeam;
+			HomeTeam.cutToSeventeen();
+			AwayTeam.cutToSeventeen();
+			m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
+			m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
+			m_SingleGameManager.weatherEffects(m_Weather);
+			m_SingleGameManager.staminaEffect(m_Stamina);
+			m_SingleGameManager.injuriesEffect(m_Injuries);
+			m_SingleGameManager.sinBinsEffect(m_SinBins);
+			m_SingleGameManager.extraTimeEffect(m_ExtraTime);
+			m_SingleGameManager.addTeamLineupsPlayByPlay();
+			m_SingleGameManager.addStartTimePlay();
+			SimulateSingleMatchCall = false;
+			return window;
 		}
+	}
+	else
+	{
+		if (SimulateSingleMatchCall)
+		{
+			singleMatchDisplayInfoCall = false;
+			m_LiveGameVector.clear();
+			m_LineResults = 0;
+			Simulate = false;
+			if (m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].GameHasBeenSimulated)
+			{
+				errorCall = true;
+				errorMessage = "Game Already Simulated";
+				newState = MatchUpInDepthView;
+			}
 #pragma region SimulateAllPriorGames
-		for (int m = m_roundToSimulate; m <= matchInformationRound; m++)
-		{
-			int gamesInRoundToSimulate = m_Season.m_Draw.m_Rounds[m].m_Games.size();
-			if (m == matchInformationRound)
+			for (int m = m_roundToSimulate; m <= matchInformationRound; m++)
 			{
-				gamesInRoundToSimulate = matchInformationGame;
-			}
-			for (int g = 0; g < gamesInRoundToSimulate; g++)
-			{
-				if (!m_Season.m_Draw.m_Rounds[m].m_Games[g].GameHasBeenSimulated)
+				int gamesInRoundToSimulate = m_Season.m_Draw.m_Rounds[m].m_Games.size();
+				if (m == matchInformationRound)
 				{
-					m_SingleGameManager.ClearCache();
-					SRLTeam HomeTeam;
-					SRLTeam AwayTeam;
-					if (m_Season.m_Draw.m_Rounds[m].isRepRound || m_Season.isWorldCup)
+					gamesInRoundToSimulate = matchInformationGame;
+				}
+				for (int g = 0; g < gamesInRoundToSimulate; g++)
+				{
+					if (!m_Season.m_Draw.m_Rounds[m].m_Games[g].GameHasBeenSimulated)
 					{
-						for (int j = 0; j < repTeams.size(); j++)
+						m_SingleGameManager.ClearCache();
+						SRLTeam HomeTeam;
+						SRLTeam AwayTeam;
+						if (m_Season.m_Draw.m_Rounds[m].isRepRound || m_Season.isWorldCup)
 						{
-							if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[m].m_Games[g].HomeTeam)
+							for (int j = 0; j < repTeams.size(); j++)
 							{
-								HomeTeam = repTeams[j];
-							}
-							else if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[m].m_Games[g].AwayTeam)
-							{
-								AwayTeam = repTeams[j];
+								if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[m].m_Games[g].HomeTeam)
+								{
+									HomeTeam = repTeams[j];
+								}
+								else if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[m].m_Games[g].AwayTeam)
+								{
+									AwayTeam = repTeams[j];
+								}
 							}
 						}
-					}
-					else
-					{
-						HomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m].m_Games[g].HomeTeam + ".json");
-						AwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m].m_Games[g].AwayTeam + ".json");
-					}
-					HomeTeam.cutToSeventeen();
-					AwayTeam.cutToSeventeen();
-					m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
-					m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
-					m_SingleGameManager.weatherEffects(m_Weather);
-					m_SingleGameManager.staminaEffect(m_Stamina);
-					m_SingleGameManager.injuriesEffect(m_Injuries);
-					m_SingleGameManager.sinBinsEffect(m_SinBins);
-					m_SingleGameManager.extraTimeEffect(m_ExtraTime);
-					m_SingleGameManager.addTeamLineupsPlayByPlay();
-					m_SingleGameManager.addStartTimePlay();
-					bool continuePlay = finals || m_ExtraTime;
-					while (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
-					{
-						try
+						else
 						{
-							m_SingleGameManager.play();
-							m_Season.m_Draw.m_Rounds[m].m_Games[g].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
+							HomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m].m_Games[g].HomeTeam + ".json");
+							AwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m].m_Games[g].AwayTeam + ".json");
 						}
-						catch (exception ex)
+						HomeTeam.cutToSeventeen();
+						AwayTeam.cutToSeventeen();
+						m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
+						m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
+						m_SingleGameManager.weatherEffects(m_Weather);
+						m_SingleGameManager.staminaEffect(m_Stamina);
+						m_SingleGameManager.injuriesEffect(m_Injuries);
+						m_SingleGameManager.sinBinsEffect(m_SinBins);
+						m_SingleGameManager.extraTimeEffect(m_ExtraTime);
+						m_SingleGameManager.addTeamLineupsPlayByPlay();
+						m_SingleGameManager.addStartTimePlay();
+						bool continuePlay = finals || m_ExtraTime;
+						while (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
 						{
+							try
+							{
+								m_SingleGameManager.play();
+								m_Season.m_Draw.m_Rounds[m].m_Games[g].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
+							}
+							catch (exception ex)
+							{
 
+							}
 						}
-					}				
-					m_SingleGameManager.addFullTimePlay();
-					m_SingleGameManager.endStats();
-					SimulateGameLadderAdjustment(m, g, m_SingleGameManager);
-					if (m_Season.m_Draw.m_Rounds[m].m_Games.size() - 1 == g)
-					{
-						int articleReduction = 0;
-						if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+						m_SingleGameManager.addFullTimePlay();
+						m_SingleGameManager.endStats();
+						SimulateGameLadderAdjustment(m, g, m_SingleGameManager);
+						if (m_Season.m_Draw.m_Rounds[m].m_Games.size() - 1 == g)
 						{
-							articleReduction = m_Season.m_Draw.m_Rounds[m].newsStories.size();
+							int articleReduction = 0;
+							if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+							{
+								articleReduction = m_Season.m_Draw.m_Rounds[m].newsStories.size();
+							}
+							int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
+							if (m_Season.isWorldCup)
+							{
+								//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
+								m_ArticlesRemaining = 0;
+							}
+							SimulationEndOfRound(m_ArticlesRemaining);
 						}
-						int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
-						if (m_Season.isWorldCup)
-						{
-							//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
-							m_ArticlesRemaining = 0;
-						}
-						SimulationEndOfRound(m_ArticlesRemaining);
-					}				
+					}
 				}
 			}
-		}
 #pragma endregion
-		m_SingleGameManager.ClearCache();
-		SRLTeam HomeTeam;
-		SRLTeam AwayTeam;
-		countSummaries = 0;
-		if (m_Season.m_Draw.m_Rounds[matchInformationRound].isRepRound || m_Season.isWorldCup)
-		{
-			for (int j = 0; j < repTeams.size(); j++)
+			m_SingleGameManager.ClearCache();
+			SRLTeam HomeTeam;
+			SRLTeam AwayTeam;
+			countSummaries = 0;
+			if (m_Season.m_Draw.m_Rounds[matchInformationRound].isRepRound || m_Season.isWorldCup)
 			{
-				if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam)
+				for (int j = 0; j < repTeams.size(); j++)
 				{
-					HomeTeam = repTeams[j];
-				}
-				else if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam)
-				{
-					AwayTeam = repTeams[j];
+					if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam)
+					{
+						HomeTeam = repTeams[j];
+					}
+					else if (repTeams[j].getName() == m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam)
+					{
+						AwayTeam = repTeams[j];
+					}
 				}
 			}
+			else
+			{
+				HomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + ".json");
+				AwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam + ".json");
+			}
+			HomeTeam.cutToSeventeen();
+			AwayTeam.cutToSeventeen();
+			m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
+			m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
+			m_SingleGameManager.weatherEffects(m_Weather);
+			m_SingleGameManager.staminaEffect(m_Stamina);
+			m_SingleGameManager.injuriesEffect(m_Injuries);
+			m_SingleGameManager.sinBinsEffect(m_SinBins);
+			m_SingleGameManager.extraTimeEffect(m_ExtraTime);
+			m_SingleGameManager.addTeamLineupsPlayByPlay();
+			m_SingleGameManager.addStartTimePlay();
+			SimulateSingleMatchCall = false;
+			return window;
 		}
-		else
-		{
-			HomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + ".json");
-			AwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam + ".json");
-		}
-		HomeTeam.cutToSeventeen();
-		AwayTeam.cutToSeventeen();
-		m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
-		m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
-		m_SingleGameManager.weatherEffects(m_Weather);
-		m_SingleGameManager.staminaEffect(m_Stamina);
-		m_SingleGameManager.injuriesEffect(m_Injuries);
-		m_SingleGameManager.sinBinsEffect(m_SinBins);
-		m_SingleGameManager.extraTimeEffect(m_ExtraTime);
-		m_SingleGameManager.addTeamLineupsPlayByPlay();
-		m_SingleGameManager.addStartTimePlay();
-		SimulateSingleMatchCall = false;
-		return window;
 	}
 	try
 	{
@@ -3717,7 +3770,10 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			try
 			{
 				m_SingleGameManager.play();
-				m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
+				if (!isExhibitionMatch)
+				{
+					m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
+				}
 				if (m_SingleGameManager.getSummary().size() > countSummaries)
 				{
 					//HERE WE WANT TO START SHOWING THE SUMMARIES AS THEY COME IN
@@ -3752,30 +3808,32 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		{
 			m_SingleGameManager.addFullTimePlay();
 			m_SingleGameManager.endStats();
-			SimulateGameLadderAdjustment(matchInformationRound, matchInformationGame, m_SingleGameManager);
-
-			if (m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games.size() - 1 == matchInformationGame)
+			if (!isExhibitionMatch)
 			{
-				int articleReduction = 0;
-				if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+				SimulateGameLadderAdjustment(matchInformationRound, matchInformationGame, m_SingleGameManager);
+				if (m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games.size() - 1 == matchInformationGame)
 				{
-					articleReduction = m_Season.m_Draw.m_Rounds[matchInformationRound].newsStories.size();
+					int articleReduction = 0;
+					if (m_roundToSimulate < BaseSeasonGames + finalsRounds)
+					{
+						articleReduction = m_Season.m_Draw.m_Rounds[matchInformationRound].newsStories.size();
+					}
+					int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
+					if (m_Season.isWorldCup)
+					{
+						//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
+						m_ArticlesRemaining = 0;
+					}
+					SimulationEndOfRound(m_ArticlesRemaining);
 				}
-				int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
-				if (m_Season.isWorldCup)
+				else
 				{
-					//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
-					m_ArticlesRemaining = 0;
+					if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
+					{
+						m_Season.m_Ladder.sortLadder();
+					}
+					sortOutMatchButtons();
 				}
-				SimulationEndOfRound(m_ArticlesRemaining);
-			}
-			else
-			{
-				if (!finals && !m_Season.m_Draw.m_Rounds[m_roundToSimulate].isRepRound)
-				{
-					m_Season.m_Ladder.sortLadder();
-				}
-				sortOutMatchButtons();
 			}
 			singleMatchDisplayInfoCall = true;
 			//newState = MatchUpInDepthView;
@@ -3787,7 +3845,14 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 	}
 	if (singleMatchDisplayInfoCall)
 	{
-		window = drawTabs(window);
+		if (!isExhibitionMatch)
+		{
+			window = drawTabs(window);
+		}
+		else
+		{
+			window = drawMainMenuTabs(window);
+		}
 	}
 	return window;
 }
@@ -4165,7 +4230,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.5.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.6.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -6233,6 +6298,7 @@ void SRLGame::saveGameSettings()
 	save_file["soundvolume"] = static_cast<int>(BaseSYDESoundSettings::getDefaultVolumeState());
 	save_file["soundtrackon"] = static_cast<int>(soundTrackOn);
 	save_file["scrollspeed"] = m_ScrollingSpeed;
+	save_file["gamesimspeed"] = m_ScrollingSpeed;
 
 	string filePath = string("EngineFiles\\Settings\\gameSettings.json");
 	std::ofstream ofs(filePath);
@@ -6252,6 +6318,7 @@ void SRLGame::loadGameSettings()
 			volume = save_file["soundtrackon"];
 			soundTrackOn = static_cast<bool>(volume);
 			m_ScrollingSpeed = save_file["scrollspeed"];
+			m_SimulationSpeed = save_file["gamesimspeed"];
 		}
 		catch (exception e)
 		{

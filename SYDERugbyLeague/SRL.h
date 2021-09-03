@@ -377,6 +377,7 @@ public:
 	static bool RepRoundsOn;
 
 	static bool allowJsonExportingSeason;
+	static bool isExhibitionMatch;
 
 #pragma region coaching mode
 	static bool coachingMode;
@@ -564,6 +565,8 @@ private:
 	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();
 
+	SYDEClickableButton m_ExhibitionMatchSimulateBtn = SYDEClickableButton();
+
 	SYDEClickableButton m_ProfileViewBtn = SYDEClickableButton();
 
 	//EXIT GAME BUTTONS
@@ -625,6 +628,7 @@ private:
 	int currentBetsTotalSeasonMatchOnly = 0;
 
 	static float m_ScrollingSpeed;
+	static float m_SimulationSpeed;
 
 	FinalsSeriesType fsType = Top8Normal;
 	string finalsSettingStr = "Top 8 Normal";
@@ -724,6 +728,6 @@ private:
 	bool singleMatchDisplayInfoCall = false;
 	deque<GameSummaryText> m_LiveGameVector;
 	float m_TimePassedSimulation = 0;
-	const float m_GameSimulationDelay = 0.04f;
+	float m_GameSimulationDelay = 0.1f;
 #pragma endregion
 };

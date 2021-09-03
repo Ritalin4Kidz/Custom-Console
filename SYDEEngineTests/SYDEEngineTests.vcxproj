@@ -148,6 +148,7 @@
     <ClCompile Include="ConsoleWindowTest.cpp" />
     <ClCompile Include="SYDEAbstractUITest.cpp" />
     <ClCompile Include="SYDEClickableButtonTest.cpp" />
+    <ClCompile Include="SYDEClickableTextboxTest.cpp" />
     <ClCompile Include="SYDEEngineBaseTest.cpp" />
     <ClCompile Include="SYDEEngineTests.cpp" />
     <ClCompile Include="SYDEKeyCodeTest.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="ConsoleWindowTest.h" />
     <ClInclude Include="SYDEAbstractUITest.h" />
     <ClInclude Include="SYDEClickableButtonTest.h" />
+    <ClInclude Include="SYDEClickableTextboxTest.h" />
     <ClInclude Include="SYDEEngineBaseTest.h" />
     <ClInclude Include="SYDEKeyCodeTest.h" />
     <ClInclude Include="SYDEOptionCyclerTest.h" />

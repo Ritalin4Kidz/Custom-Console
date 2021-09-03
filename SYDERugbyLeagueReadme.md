@@ -22,12 +22,13 @@ SRL Simulation game made inside the SYDE Framework.
 
 - Manual Editing Of Players & Teams Name In Game 
 
+- Exhibiton Matches
+ - - No Season Attached (And Therefore No Coaching)
+
 ## GOALS FOR 1.1.0.0
 - AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
 - News Stories For World Cup
 - World Cup Settings Don't Override Game Settings
-- Exhibiton Matches
- - - No Season Attached (And Therefore No Coaching)
 
 - Each Game Can Be Viewed In Depth, This Will Include Being Able To View
 	- Team Lists (All Positions As Well For Top 17)
@@ -40,6 +41,9 @@ SRL Simulation game made inside the SYDE Framework.
 - Manual Editing Of Players & Teams Stats In Game 
 
 ## Release Notes
+
+### 1.0.6.0 03/09/2021
+- Exhibition Games Can Now Be Simulated
 
 ### 1.0.5.0 02/09/2021
 - Player & Team Names Can Now Be Edited in the in-depth view

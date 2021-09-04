@@ -30,6 +30,8 @@ SRL Simulation game made inside the SYDE Framework.
 - News Stories For World Cup
 - World Cup Settings Don't Override Game Settings
 
+- Publish Season Viewer To Github Releases
+
 - Each Game Can Be Viewed In Depth, This Will Include Being Able To View
 	- Team Lists (All Positions As Well For Top 17)
 	- Date & Time Of Game Played

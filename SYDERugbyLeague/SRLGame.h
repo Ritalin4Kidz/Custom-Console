@@ -84,6 +84,7 @@ public:
 
 	void teamHaveMainGoalKickers(bool isOn) { m_MainGoalKickers = isOn; }
 	void weatherEffects(bool isOn) { m_Weather = isOn; }
+	void setWeather(SRLGameWeather w) { weather = w; }
 	void staminaEffect(bool isOn) { m_Stamina = isOn; }
 	void injuriesEffect(bool isOn) { m_Injuries = isOn; }
 	void sinBinsEffect(bool isOn) { m_sendOffs = isOn; }

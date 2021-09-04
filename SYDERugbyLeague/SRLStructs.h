@@ -115,7 +115,7 @@ struct SRLLadder
 
 struct SRLGameMatchup
 {
-	SRLGameMatchup(string homeTeam, string awayTeam) { HomeTeam = homeTeam; AwayTeam = awayTeam; }
+	SRLGameMatchup(string homeTeam, string awayTeam) { HomeTeam = homeTeam; AwayTeam = awayTeam; generateWeather(WeatherIsOn); }
 	SRLBetPrice homeTeamOdds = SRLBetPrice(1, 90);
 	SRLBetPrice awayTeamOdds = SRLBetPrice(1, 90);
 	string HomeTeam;
@@ -126,6 +126,14 @@ struct SRLGameMatchup
 	void setMatchInfo(string v, string t) { Venue = v; Time_Date = t; }
 	string Venue;
 	string Time_Date;
+	SRLGameWeather m_GameWeather;
+
+	string getWeatherString();
+
+	static bool WeatherIsOn;
+
+	void generateWeather(bool m_weather);
+
 
 	void calculateBiggestLeads(int homeScore, int awayScore);
 

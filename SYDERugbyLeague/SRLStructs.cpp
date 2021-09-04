@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "SRLStructs.h"
 
+bool SRLGameMatchup::WeatherIsOn = true;
+
 /// <summary>
 /// Sort the ladder by points & points difference
 /// </summary>
@@ -428,6 +430,84 @@ void SRLSeason::clear()
 	m_TopSinBin.clear();
 	m_TopSendOff.clear();
 	m_TopInjuries.clear();
+}
+
+string SRLGameMatchup::getWeatherString()
+{
+	switch (m_GameWeather)
+	{
+	case Weather_Clear:
+		return "Clear";
+	case Weather_Cloudy:
+		return "Cloudy";
+	case Weather_Humid:
+		return "Humid";
+	case Weather_Rain:
+		return "Rainy";
+	case Weather_Windy:
+		return "Windy";
+	case Weather_Hail:
+		return "Hail";
+	case Weather_Storm:
+		return "Storm";
+	case Weather_Sunny:
+		return "Sunny";
+	case Weather_Heatwave:
+		return "Heatwave";
+	case Weather_Snow:
+		return "Snow";
+	}
+	return "???";
+}
+
+void SRLGameMatchup::generateWeather(bool m_weather)
+{
+	if (!m_weather)
+	{
+		m_GameWeather = Weather_Clear;
+		return;
+	}
+	int range = rand() % 10000;
+	if (range < 1500)
+	{
+		m_GameWeather = Weather_Clear;
+	}
+	else if (range < 3000)
+	{
+		m_GameWeather = Weather_Cloudy;
+	}
+	else if (range < 4200)
+	{
+		m_GameWeather = Weather_Humid;
+	}
+	else if (range < 5300)
+	{
+		m_GameWeather = Weather_Storm;
+	}
+	else if (range < 6300)
+	{
+		m_GameWeather = Weather_Rain;
+	}
+	else if (range < 7600)
+	{
+		m_GameWeather = Weather_Windy;
+	}
+	else if (range < 8700)
+	{
+		m_GameWeather = Weather_Sunny;
+	}
+	else if (range < 9600)
+	{
+		m_GameWeather = Weather_Heatwave;
+	}
+	else if (range < 9950)
+	{
+		m_GameWeather = Weather_Hail;
+	}
+	else if (range < 10000)
+	{
+		m_GameWeather = Weather_Snow;
+	}
 }
 
 void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)

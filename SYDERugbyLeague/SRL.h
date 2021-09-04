@@ -295,6 +295,7 @@ public:
 	static SeasonConfigState seasCfgState;
 
 	static SRLSeasonLength seasonLength;
+	SRLSeasonLength baseSeasonLength = Length_NormalSeason;
 
 	static SRLSponsorTypeState sponsorState;
 
@@ -583,7 +584,6 @@ private:
 	CustomAsset m_TipMasterImg = CustomAsset(22, 11, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\Tipmaster.bmp", 11, 11));
 	deque<string> TipMasterBets = deque<string>({});
 
-
 	vector<string> m_SavedTeams = vector<string>({});;
 	deque<string> m_SeasonTeams = deque<string>({});;
 	int m_SelectedTeam = 0;
@@ -631,6 +631,7 @@ private:
 	static float m_SimulationSpeed;
 
 	FinalsSeriesType fsType = Top8Normal;
+	int baseFsType = 0;
 	string finalsSettingStr = "Top 8 Normal";
 	deque<FinalsSeries> m_FSTYPES = deque<FinalsSeries>({
 		FinalsSeries("Top 8 Normal", Top8Normal, 4, 8),

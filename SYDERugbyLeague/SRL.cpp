@@ -1796,6 +1796,11 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		if (currentState == MainMenu_STATE)
 		{
 			m_MainMenuBG.setFrame(0);
+			seasonLength = baseSeasonLength;
+			finalsSettingStr = m_FSTYPES[baseFsType].FinalsStr;
+			fsType = m_FSTYPES[baseFsType].fsType;
+			finalsThreshold = m_FSTYPES[baseFsType].noTeams;
+			finalsRounds = m_FSTYPES[baseFsType].rounds;
 			AssignState(std::bind(&SRLGame::main_menu_scene, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == ProfileViewState)
@@ -3531,6 +3536,7 @@ ConsoleWindow SRLGame::MatchUpDepthView(ConsoleWindow window, int windowWidth, i
 	window.setTextAtPoint(Vector2(60 - sizeText, 2), awayTeamText, WHITE);
 	window.setTextAtPoint(Vector2(4, 4), "Date: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Time_Date, WHITE);
 	window.setTextAtPoint(Vector2(4, 5), "Venue: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Venue, WHITE);
+	window.setTextAtPoint(Vector2(4, 6), "Weather: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].getWeatherString(), WHITE);
 	window = m_SimulateSingleGameBtn.draw_ui(window);
 	return window;
 }
@@ -3558,6 +3564,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
 			m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
 			m_SingleGameManager.weatherEffects(m_Weather);
+			m_SingleGameManager.setWeather(Weather_Clear);
 			m_SingleGameManager.staminaEffect(m_Stamina);
 			m_SingleGameManager.injuriesEffect(m_Injuries);
 			m_SingleGameManager.sinBinsEffect(m_SinBins);
@@ -3621,6 +3628,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 						m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
 						m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
 						m_SingleGameManager.weatherEffects(m_Weather);
+						m_SingleGameManager.setWeather(m_Season.m_Draw.m_Rounds[m].m_Games[g].m_GameWeather);
 						m_SingleGameManager.staminaEffect(m_Stamina);
 						m_SingleGameManager.injuriesEffect(m_Injuries);
 						m_SingleGameManager.sinBinsEffect(m_SinBins);
@@ -3690,6 +3698,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.setTeams(HomeTeam, AwayTeam);
 			m_SingleGameManager.teamHaveMainGoalKickers(m_GoalKicker);
 			m_SingleGameManager.weatherEffects(m_Weather);
+			m_SingleGameManager.setWeather(m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].m_GameWeather);
 			m_SingleGameManager.staminaEffect(m_Stamina);
 			m_SingleGameManager.injuriesEffect(m_Injuries);
 			m_SingleGameManager.sinBinsEffect(m_SinBins);
@@ -4230,7 +4239,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.6.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.0.7.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -5192,6 +5201,7 @@ void SRLGame::SimulateGames()
 				m_srlmanager.setTeams(HomeTeam, AwayTeam);
 				m_srlmanager.teamHaveMainGoalKickers(m_GoalKicker);
 				m_srlmanager.weatherEffects(m_Weather);
+				m_srlmanager.setWeather(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[i].m_GameWeather);
 				m_srlmanager.staminaEffect(m_Stamina);
 				m_srlmanager.injuriesEffect(m_Injuries);
 				m_srlmanager.sinBinsEffect(m_SinBins);
@@ -7219,6 +7229,8 @@ void SRLGame::sortOutTradingOptions()
 ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 {
 	m_Season.clear();
+	baseSeasonLength = seasonLength;
+	baseFsType = finalsSystemInt;
 	//THE AMOUNT OF TIMES THE SAME MATCH-UP CAN HAPPEN IN A SEASON (WHERE HOME TEAM & AWAY TEAM ARE THE SAME)
 	int VersusLimit = 1;
 	if (seasonLength == Length_MediumSeason || seasonLength == Length_NormalSeason)
@@ -7259,6 +7271,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 	m_SinBins = m_SettingsSinBinBtn.isChecked();
 	m_Stamina = m_SettingsStaminaBtn.isChecked();
 	m_Weather = m_SettingsWeatherBtn.isChecked();
+	SRLGameMatchup::WeatherIsOn = m_Weather;
 	coachingMode = m_SettingsCoachBtn.isChecked();
 	m_SeasonEvents = m_SettingsEventsBtn.isChecked();
 	m_GoalKicker = m_SettingsGoalKickerBtn.isChecked();

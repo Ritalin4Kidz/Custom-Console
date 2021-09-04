@@ -138,72 +138,64 @@ void SRLGameManager::generateWeather()
 		addPlayNoMinutes("Weather: Clear");
 		return;
 	}
-	int range = rand() % 10000;
-	if (range < 1500)
+	if (weather == Weather_Clear)
 	{
 		weather = Weather_Clear;
 		addPlayNoMinutes("Weather: Clear");
 	}
-	else if (range < 3000)
+	else if (weather == Weather_Cloudy)
 	{
-		weather = Weather_Cloudy;
 		weatherAtkErrorBonus = 1.15f;
 		addPlayNoMinutes("Weather: Cloudy");
 	}
-	else if (range < 4200)
+	else if (weather == Weather_Humid)
 	{
 		weather = Weather_Humid;
 		weatherAtkErrorBonus = 1.15f;
 		weatherDefErrorBonus = 1.25f;
 		addPlayNoMinutes("Weather: Humid");
 	}
-	else if (range < 5300)
+	else if (weather == Weather_Storm)
 	{
-		weather = Weather_Storm;
 		weatherAtkErrorBonus = 2.15f;
 		weatherDefErrorBonus = 1.75f;
 		weatherGoalErrorBonus = 2.75f;
 		addPlayNoMinutes("Weather: Stormy");
 	}
-	else if (range < 6300)
+	else if (weather == Weather_Rain)
 	{
-		weather = Weather_Rain;
 		weatherAtkErrorBonus = 2.25f;
 		weatherGoalErrorBonus = 1.35f;
 		addPlayNoMinutes("Weather: Rain");
 	}
-	else if (range < 7600)
+	else if (weather == Weather_Windy)
 	{
-		weather = Weather_Windy;
 		weatherAtkErrorBonus = 1.05f;
 		weatherGoalErrorBonus = 2.95f;
 		addPlayNoMinutes("Weather: Windy");
 	}
-	else if (range < 8700)
+	else if (weather == Weather_Sunny)
 	{
-		weather = Weather_Sunny;
 		weatherAtkErrorBonus = 1.05f;
 		weatherDefErrorBonus = 1.85f;
 		addPlayNoMinutes("Weather: Sunny");
 	}
-	else if (range < 9600)
+	else if (weather == Weather_Heatwave)
 	{
 		weather = Weather_Heatwave;
 		weatherAtkErrorBonus = 2.05f;
 		weatherDefErrorBonus = 2.85f;
 		addPlayNoMinutes("Weather: Heat Wave");
 	}
-	else if (range < 9950)
+	else if (weather == Weather_Hail)
 	{
-		weather = Weather_Hail;
 		weatherAtkErrorBonus = 3.00f;
 		weatherDefErrorBonus = 3.00f;
 		weatherGoalErrorBonus = 3.00f;
 		addPlayNoMinutes("Weather: Hail");
 	}
-	else if (range < 10000)
+	else if (weather == Weather_Snow)
 	{
-		weather = Weather_Snow;
 		weatherAtkErrorBonus = 5.00f;
 		weatherDefErrorBonus = 5.00f;
 		weatherGoalErrorBonus = 5.00f;

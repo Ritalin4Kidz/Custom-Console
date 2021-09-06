@@ -719,7 +719,7 @@ deque<string> SRLNameGenerator::LastNames = deque<string>
 	"Oarst",
 	"Obea",
 	"Oberst",
-	"Obersta"
+	"Obersta",
 	"Oboe",
 	"Oboitays",
 	"Oertias",

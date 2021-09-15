@@ -101,6 +101,21 @@ void SRLGameManager::addSummaryDirect(string a_Play)
 	m_Summary.push_back(minutesStr + ":" + secondsStr + "#" + a_Play);
 }
 
+string SRLGameManager::getTimeString()
+{
+	string minutesStr = to_string(m_MinutesPassed);
+	if (minutesStr.length() == 1)
+	{
+		minutesStr = "0" + minutesStr;
+	}
+	string secondsStr = to_string(m_SecondsPassed);
+	if (secondsStr.length() == 1)
+	{
+		secondsStr = "0" + secondsStr;
+	}
+	return minutesStr + ":" + secondsStr;
+}
+
 void SRLGameManager::addMinute()
 {
 	m_MinutesPassed++;

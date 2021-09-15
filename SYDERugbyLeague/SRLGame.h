@@ -58,6 +58,8 @@ public:
 	void addSummary(string a_Play, SRLPlayer player);
 	void addSummaryDirect(string a_Play);
 
+	string getTimeString();
+
 	void addMinute();
 
 	void generateWeather();

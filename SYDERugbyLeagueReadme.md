@@ -33,14 +33,12 @@ SRL Simulation game made inside the SYDE Framework.
 	- Stadium Played At
 - In Addition, Teams Will Now Have Home Grounds
 
-## GOALS FOR 1.1.0.0
-- News Stories For World Cup
-
-- Publish Season Viewer To Github Releases
-
-- Manual Editing Of Players & Teams Stats In Game 
-
 ## Release Notes
+
+### 1.1.0.0 15/09/2021
+- 1.1.0.0 Release!
+- Fixed News Stories In World Cup
+- Added Current Time Into Game Viewer
 
 ### 1.0.7.0 03/09/2021
 - Weather In The Matchup View

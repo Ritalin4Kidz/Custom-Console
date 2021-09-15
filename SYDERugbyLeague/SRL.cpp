@@ -3659,11 +3659,6 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 								articleReduction = m_Season.m_Draw.m_Rounds[m].newsStories.size();
 							}
 							int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
-							if (m_Season.isWorldCup)
-							{
-								//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
-								m_ArticlesRemaining = 0;
-							}
 							SimulationEndOfRound(m_ArticlesRemaining);
 						}
 					}
@@ -3725,6 +3720,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		window.setTextAtPoint(Vector2(0, 2), m_SingleGameManager.getHomeTeam().getName() + " " + to_string(m_SingleGameManager.getHomeScore()), BLACK_BRIGHTWHITE_BG);
 		string awayTeamText = to_string(m_SingleGameManager.getAwayScore()) + " " + m_SingleGameManager.getAwayTeam().getName();
 		window.setTextAtPoint(Vector2(60-awayTeamText.length(), 2), awayTeamText, BLACK_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(28, 3), m_SingleGameManager.getTimeString(), BRIGHTWHITE);
 		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
 		{
 			if (m_LineResults > 0)
@@ -3828,11 +3824,6 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 						articleReduction = m_Season.m_Draw.m_Rounds[matchInformationRound].newsStories.size();
 					}
 					int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
-					if (m_Season.isWorldCup)
-					{
-						//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
-						m_ArticlesRemaining = 0;
-					}
 					SimulationEndOfRound(m_ArticlesRemaining);
 				}
 				else
@@ -5153,11 +5144,6 @@ void SRLGame::SimulateGames()
 			articleReduction = m_Season.m_Draw.m_Rounds[m_roundToSimulate].newsStories.size();
 		}
 		int m_ArticlesRemaining = newsArticlesPerRound - articleReduction;
-		if (m_Season.isWorldCup)
-		{
-			//TODO: REPLACE WITH VERY SPECIFIC NEWS TO THE WORLD CUP
-			m_ArticlesRemaining = 0;
-		}
 		if (m_round < m_roundToSimulate)
 		{
 			Simulate = false;
@@ -7017,11 +7003,19 @@ void SRLGame::otherArticles()
 		team2 = rand() % 16;
 	}
 	SRLTeam MainTeam;
-	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
+	SRLTeam OtherTeam;
+	if (m_Season.isWorldCup)
+	{
+		MainTeam = repTeams[team];
+		OtherTeam = repTeams[team2];
+	}
+	else
+	{
+		MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team].teamName + ".json");
+		OtherTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team2].teamName + ".json");
+	}
 	int player = MainTeam.getRandomPlayerInt();
 	SRLPlayer playerStory = MainTeam.getPlayers()[player];
-	SRLTeam OtherTeam;
-	OtherTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team2].teamName + ".json");
 	int player2 = OtherTeam.getRandomPlayerInt();
 	SRLPlayer playerOther = OtherTeam.getPlayers()[player2];
 

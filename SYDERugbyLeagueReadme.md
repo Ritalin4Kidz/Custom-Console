@@ -35,6 +35,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.0.1 19/09/2021
+- Invalid Team Data will show an error message when trying to create the season/view team in depth instead of crashing
+
 ### 1.1.0.0 15/09/2021
 - 1.1.0.0 Release!
 - Fixed News Stories In World Cup

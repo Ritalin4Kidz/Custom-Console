@@ -1986,8 +1986,17 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		window = m_ExhibitionCfgBtn.draw_ui(window);
 		if (SeasonStart)
 		{
-			//return CreateSeason(window);
-			return CreateSeason(window, true);
+			try
+			{
+				return CreateSeason(window, true);
+			}
+			catch (exception ex)
+			{
+				errorCall = true;
+				errorMessage = "Error Creating Season, Format Team Data";
+				newState = MainMenu_STATE;
+				return window;
+			}
 		}
 	}
 	else if (seasCfgState == SelectExhibitionTeamsState)
@@ -2042,7 +2051,17 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		window = configTabs(window);
 		if (SeasonStart)
 		{
-			return CreateSeason(window, false);
+			try
+			{
+				return CreateSeason(window, false);
+			}
+			catch (exception ex)
+			{
+				errorCall = true;
+				errorMessage = "Error Creating Season, Format Team Data";
+				newState = MainMenu_STATE;
+				return window;
+			}
 		}
 
 
@@ -4230,7 +4249,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.0.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.0.1", BRIGHTWHITE);
 	return window;
 }
 
@@ -6871,7 +6890,17 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_TeamViewing = teamViewing;
 	string teamLoad = SYDEFileDefaults::getAllFileNamesInFolder("EngineFiles\\GameResults\\Teams", ".json", true, true)[m_TeamViewing];
 	m_InDepthTeamView.clearTeam();
-	m_InDepthTeamView.loadTeam("EngineFiles\\GameResults\\Teams\\" + teamLoad + ".json");
+	try
+	{
+		m_InDepthTeamView.loadTeam("EngineFiles\\GameResults\\Teams\\" + teamLoad + ".json");
+	}
+	catch (exception ex)
+	{
+		errorCall = true;
+		errorMessage = "Error Viewing Data, Format Team Data";
+		newState = MainMenu_STATE;
+		return;
+	}
 	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(m_InDepthTeamView.getJerseryType()) + ".bmp";
 	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
 	string LogoBmp = "EngineFiles\\TeamLogos\\TeamLogo" + to_string(m_InDepthTeamView.getLogoType()) + ".bmp";

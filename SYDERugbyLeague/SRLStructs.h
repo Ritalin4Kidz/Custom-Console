@@ -260,12 +260,28 @@ enum GameSummaryTextType
 	GSTType_Penalty = 2,
 	GSTType_Sent = 3,
 	GSTType_Interchange_Injury = 4,
+	GSTType_VideoRef = 5,
+	GSTType_MissedKick = 6,
+	GSTType_Misc = 7,
+};
+
+class GameSummaryFilters
+{
+public:
+	static bool m_ErrorFilter;
+	static bool m_PenaltyFilter;
+	static bool m_SendOffFilter;
+	static bool m_InjuryFilter;
+	static bool m_VideoRefFilter;
+	static bool m_MissedKickFilter;
+	static bool m_MiscFilter;
 };
 
 struct GameSummaryText
 {
 	GameSummaryText(string t, string p, string player, string s);
 	ConsoleWindow draw(ConsoleWindow window, Vector2 point);
+	bool isInFilter();
 	string Time;
 	string Play;
 	string Player;

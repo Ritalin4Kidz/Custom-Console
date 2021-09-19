@@ -381,6 +381,18 @@ void SRLTeam::addPlayerStamina(string playerName, int Stamina)
 	}
 }
 
+void SRLTeam::addPlayerLinebreak(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addLinebreak();
+			return;
+		}
+	}
+}
+
 void SRLTeam::addPlayerAtk(string playerName, int val)
 {
 	for (int i = 0; i < m_TeamList.size(); i++)

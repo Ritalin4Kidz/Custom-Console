@@ -524,6 +524,7 @@ void SRLGameManager::play()
 	if (checkIntercept(defender, attacker))
 	{
 		addPlay("Intercepted Off A " + attacker.getName() + " Pass", defender);
+		addSummary("INTERCEPT#!", defender);
 		attacker = defender;
 		if (m_HomeTeamHasBall)
 		{
@@ -542,6 +543,7 @@ void SRLGameManager::play()
 		if (strip == 0)
 		{
 			addPlay("Stripped Ball Off " + attacker.getName(), defender);
+			addSummary("STRIP#!", defender);
 			attacker = defender;
 			if (m_HomeTeamHasBall)
 			{
@@ -760,6 +762,7 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 		else if (originalPos > 60 && m_BallPosition < 20 && m_BallPosition > 0 && chanceKick == 0)
 		{
 			addPlay("40/20", attacker);
+			addSummary("40/20#!", attacker);
 			m_HomeTeam.addPlayer4020(attacker.getName());
 			m_HomeTeam.addPlayerStamina(attacker.getName(), 3);
 			m_BallPosition = 20;
@@ -838,12 +841,22 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 			int metres = ((rand() % (attacker.getAttack() - defender.getDefence())) + ((attacker.getSpeed() / 20) + 1)) / 2;
 			m_HomeTeam.addPlayerMetres(attacker.getName(), metres);
 			m_BallPosition -= metres;
+			if (metres >= 25)
+			{
+				addSummary("LINEBREAK#!", attacker);
+				m_HomeTeam.addPlayerLinebreak(attacker.getName());
+			}
 		}
 		else
 		{
 			int metres = (((attacker.getSpeed() / 20) + 1)) / 2;
 			m_HomeTeam.addPlayerMetres(attacker.getName(), metres);
 			m_BallPosition -= metres;
+			if (metres >= 25)
+			{
+				addSummary("LINEBREAK#!", attacker);
+				m_HomeTeam.addPlayerLinebreak(attacker.getName());
+			}
 		}
 		m_AwayTeam.addPlayerTackle(defender.getName());
 	}
@@ -854,12 +867,22 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 			int metres = ((rand() % (attacker.getAttack() - defender.getDefence())) + ((attacker.getSpeed() / 20) + 1)) / 2;
 			m_AwayTeam.addPlayerMetres(attacker.getName(), metres);
 			m_BallPosition += metres;
+			if (metres >= 25)
+			{
+				addSummary("LINEBREAK#!", attacker);
+				m_AwayTeam.addPlayerLinebreak(attacker.getName());
+			}
 		}
 		else
 		{
 			int metres = (((attacker.getSpeed() / 20) + 1)) / 2;
 			m_AwayTeam.addPlayerMetres(attacker.getName(), metres);
 			m_BallPosition += metres;
+			if (metres >= 25)
+			{
+				addSummary("LINEBREAK#!", attacker);
+				m_AwayTeam.addPlayerLinebreak(attacker.getName());
+			}
 		}
 		m_HomeTeam.addPlayerTackle(defender.getName());
 	}
@@ -976,6 +999,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 				{
 					addPlay("FIELD GOAL MISSED", attacker);
 					addPlay("20m Restart - " + m_AwayTeam.getName());
+					addSummary("FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 					m_BallPosition = 20;
 					changeOver(true);
 				}
@@ -1005,6 +1029,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 				{
 					addPlay("FIELD GOAL MISSED", attacker);
 					addPlay("20m Restart - " + m_HomeTeam.getName());
+					addSummary("FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 					m_BallPosition = 80;
 					changeOver(true);
 				}
@@ -1024,8 +1049,9 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		if (chance1 == 0 || m_MinutesPassed > 77 || (m_MinutesPassed > 70 && homeTeamScore == awayTeamScore))
 		{
 			addPlay("------VIDEO REFEREE------");
+			addSummary("VIDEO REF#!", attacker);
 			int chance2 = rand() % tryErrorChance;
-			if (chance2 < 6)
+			if (chance2 < 6 || chance2 == 8)
 			{
 				m_HomeTeam.addPlayerNoTry(attacker.getName());
 				m_HomeTeam.addPlayerStamina(attacker.getName(), -3);
@@ -1034,6 +1060,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			if (chance2 == 0)
 			{
 				addPlay("NO TRY - Knock On", attacker);
+				addSummary("NO TRY#Knock On", attacker);
 				m_HomeTeam.addPlayerError(attacker.getName());
 				changeOver(true);
 				return true;
@@ -1042,6 +1069,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 1)
 			{
 				addPlay("NO TRY - Held Up", attacker);
+				addSummary("NO TRY#Held Up", attacker);
 				m_BallPosition = 10;
 				return true;
 			}
@@ -1049,6 +1077,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 2)
 			{
 				addPlay("NO TRY - Obstruction", attacker);
+				addSummary("NO TRY#Obstruction", attacker);
 				m_BallPosition = 10;
 				changeOver(false);
 				defender = attacker;
@@ -1059,6 +1088,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 3)
 			{
 				addPlay("NO TRY - Offside", attacker);
+				addSummary("NO TRY#Offside", attacker);
 				m_BallPosition = 10;
 				changeOver(false);
 				defender = attacker;
@@ -1070,6 +1100,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 4)
 			{
 				addPlay("NO TRY - 20m Restart", attacker);
+				addSummary("NO TRY#20m Restart", attacker);
 				m_BallPosition = 20;
 				changeOver(true);
 				return true;
@@ -1078,6 +1109,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 5)
 			{
 				addPlay("NO TRY - Goal Line Dropout", attacker);
+				addSummary("NO TRY#Goal Line Dropout", attacker);
 				m_BallPosition = 50;
 				m_Tackle = 0;
 				return true;
@@ -1089,6 +1121,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				if (chance3 == 0)
 				{
 					addPlay("PENALTY TRY", attacker);
+					addSummary("PENALTY TRY#!", attacker);
 				}
 			}
 			//Professional Foul
@@ -1098,6 +1131,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				if (chance3 == 0)
 				{
 					addPlay("NO TRY - PROFESSIONAL FOUL", attacker);
+					addSummary("NO TRY#Professional Foul", defender);
 					doSendOff(defender, attacker, m_HomeTeamHasBall, false);
 					doPenalty(defender, attacker);
 					m_BallPosition = 10;
@@ -1107,6 +1141,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 8)
 			{
 				addPlay("NO TRY - Double Movement", attacker);
+				addSummary("NO TRY#Double Movement", attacker);
 				m_BallPosition = 10;
 				changeOver(false);
 				defender = attacker;
@@ -1141,11 +1176,13 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else
 			{
 				addPlay("CONVERSION MISSED", attacker);
+				addSummary("GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 			}
 		}
 		else
 		{
 			addPlay("CONVERSION MISSED", attacker);
+			addSummary("GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 		}
 		addMinute();
 		if (m_MinutesPassed >= 40 && halfTimeHasPassed == false)
@@ -1167,8 +1204,9 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		if (chance1 == 0 || m_MinutesPassed > 77 || (m_MinutesPassed > 70 && homeTeamScore == awayTeamScore))
 		{
 			addPlay("------VIDEO REFEREE------");
+			addSummary("VIDEO REF#!", attacker);
 			int chance2 = rand() % tryErrorChance;
-			if (chance2 < 6)
+			if (chance2 < 6 || chance2 == 8)
 			{
 				m_AwayTeam.addPlayerNoTry(attacker.getName());
 				m_AwayTeam.addPlayerStamina(attacker.getName(), -4);
@@ -1177,6 +1215,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			if (chance2 == 0)
 			{
 				addPlay("NO TRY - Knock On", attacker);
+				addSummary("NO TRY#Knock On", attacker);
 				m_AwayTeam.addPlayerError(attacker.getName());
 				changeOver(true);
 				return true;
@@ -1185,6 +1224,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 1)
 			{
 				addPlay("NO TRY - Held Up", attacker);
+				addSummary("NO TRY#Held Up", attacker);
 				m_BallPosition = 90;
 				return true;
 			}
@@ -1192,6 +1232,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 2)
 			{
 				addPlay("NO TRY - Obstruction", attacker);
+				addSummary("NO TRY#Obstruction", attacker);
 				m_BallPosition = 90;
 				changeOver(false);
 				defender = attacker;
@@ -1202,6 +1243,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 3)
 			{
 				addPlay("NO TRY - Offside", attacker);
+				addSummary("NO TRY#Offside", attacker);
 				m_BallPosition = 90;
 				changeOver(false);
 				defender = attacker;
@@ -1213,6 +1255,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 4)
 			{
 				addPlay("NO TRY - 20m Restart", attacker);
+				addSummary("NO TRY#20m Restart", attacker);
 				m_BallPosition = 80;
 				changeOver(true);
 				return true;
@@ -1221,6 +1264,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 5)
 			{
 				addPlay("NO TRY - Goal Line Dropout", attacker);
+				addSummary("NO TRY#Goal Line Dropout", attacker);
 				m_BallPosition = 50;
 				m_Tackle = 0;
 				return true;
@@ -1232,6 +1276,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				if (chance3 == 0)
 				{
 					addPlay("PENALTY TRY", attacker);
+					addSummary("PENALTY TRY#!", attacker);
 				}
 			}
 			//Professional Foul
@@ -1241,6 +1286,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 				if (chance3 == 0)
 				{
 					addPlay("NO TRY - PROFESSIONAL FOUL", attacker);
+					addSummary("NO TRY#Professional Foul", defender);
 					doSendOff(defender, attacker, m_HomeTeamHasBall, false);
 					doPenalty(defender, attacker);
 					m_BallPosition = 90;
@@ -1250,6 +1296,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else if (chance2 == 8)
 			{
 				addPlay("NO TRY - Double Movement", attacker);
+				addSummary("NO TRY#Double Movement", attacker);
 				m_BallPosition = 90;
 				changeOver(false);
 				defender = attacker;
@@ -1284,11 +1331,13 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 			else
 			{
 				addPlay("CONVERSION MISSED", attacker);
+				addSummary("GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 			}
 		}
 		else
 		{
 			addPlay("CONVERSION MISSED", attacker);
+			addSummary("GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 		}
 		addMinute();
 		if (m_MinutesPassed >= 40 && halfTimeHasPassed == false)
@@ -1447,6 +1496,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 			else
 			{
 				addPlay("PENALTY GOAL MISSED", attacker);
+				addSummary("PENALTY GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 				m_BallPosition = 50;
 			}
 			addMinute();
@@ -1485,6 +1535,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 			else
 			{
 				addPlay("PENALTY GOAL MISSED", attacker);
+				addSummary("PENALTY GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 				m_BallPosition = 50;
 			}
 			addMinute();

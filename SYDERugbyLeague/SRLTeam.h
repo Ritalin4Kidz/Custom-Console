@@ -67,7 +67,7 @@ public:
 	void addPlayerIntercept(string playerName);
 	void addPlayerStrip(string playerName);
 	void addPlayerStamina(string playerName, int Stamina);
-
+	void addPlayerLinebreak(string playerName);
 
 	void addPlayerAtk(string playerName,int val);
 	void addPlayerDef(string playerName,int val);

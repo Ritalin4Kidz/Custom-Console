@@ -100,7 +100,8 @@ enum GameStateResultSYDE
 enum GameStateSettingsSYDE
 {
 	SeasonSettings_STATE,
-	NormalSettings_STATE
+	NormalSettings_STATE,
+	SummarySettings_STATE
 };
 
 enum GameStateLeaderboardSYDE
@@ -263,6 +264,8 @@ public:
 	bool offContractTrade(int team1, int player1);
 	void TeamTrade();
 	void UpdateBets();
+
+	void setUpFilters();
 
 	void setUpTeamInDepthView(int teamViewing);
 	void setUpSelectedTeamView();
@@ -523,6 +526,17 @@ private:
 	SYDECheckbox m_SettingsCoachBtn = SYDECheckbox();
 	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
 	SYDECheckbox m_SettingsRepRoundsBtn = SYDECheckbox();
+	SYDEClickableButton m_SummaryFilterBtn = SYDEClickableButton();
+
+	//SUMMARY FILTER
+	SYDECheckbox m_FilterError = SYDECheckbox();
+	SYDECheckbox m_FilterPenalty = SYDECheckbox();
+	SYDECheckbox m_FilterSent = SYDECheckbox();
+	SYDECheckbox m_FilterInterchange = SYDECheckbox();
+	SYDECheckbox m_FilterVideoRef = SYDECheckbox();
+	SYDECheckbox m_FilterMissedKicks = SYDECheckbox();
+	SYDECheckbox m_FilterMisc = SYDECheckbox();
+
 
 	//KEYPAD
 	SYDEClickableButton m_KeypadBtn_1 = SYDEClickableButton();

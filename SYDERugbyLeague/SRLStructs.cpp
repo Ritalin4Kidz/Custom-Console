@@ -3,6 +3,14 @@
 
 bool SRLGameMatchup::WeatherIsOn = true;
 
+bool GameSummaryFilters::m_ErrorFilter = true;
+bool GameSummaryFilters::m_PenaltyFilter = true;
+bool GameSummaryFilters::m_SendOffFilter = true;
+bool GameSummaryFilters::m_InjuryFilter = true;
+bool GameSummaryFilters::m_VideoRefFilter = true;
+bool GameSummaryFilters::m_MissedKickFilter = true;
+bool GameSummaryFilters::m_MiscFilter = true;
+
 /// <summary>
 /// Sort the ladder by points & points difference
 /// </summary>
@@ -317,6 +325,18 @@ GameSummaryText::GameSummaryText(string t, string p, string player, string s)
 	{
 		summaryTextType = GSTType_Penalty;
 	}
+	else if (Play == "VIDEO REF" || Play == "NO TRY")
+	{
+		summaryTextType = GSTType_VideoRef;
+	}
+	else if (Play == "FIELD GOAL MISSED" || Play == "GOAL MISSED" || Play == "PENALTY GOAL MISSED")
+	{
+		summaryTextType = GSTType_MissedKick;
+	}
+	else
+	{
+		summaryTextType = GSTType_Misc;
+	}
 }
 
 ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
@@ -328,16 +348,53 @@ ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
 		colourToUse = BRIGHTWHITE_GREEN_BG;
 		break;
 	case GSTType_Error:
+		if (!GameSummaryFilters::m_ErrorFilter)
+		{
+			return window;
+		}
 		colourToUse = BLACK_BRIGHTWHITE_BG;
 		break;
 	case GSTType_Penalty:
+		if (!GameSummaryFilters::m_PenaltyFilter)
+		{
+			return window;
+		}
 		colourToUse = BRIGHTWHITE_BRIGHTRED_BG;
 		break;
 	case GSTType_Interchange_Injury:
+		if (!GameSummaryFilters::m_InjuryFilter)
+		{
+			return window;
+		}
 		colourToUse = RED_BRIGHTWHITE_BG;
 		break;
 	case GSTType_Sent:
+		if (!GameSummaryFilters::m_SendOffFilter)
+		{
+			return window;
+		}
 		colourToUse = BRIGHTWHITE_RED_BG;
+		break;
+	case GSTType_MissedKick:
+		if (!GameSummaryFilters::m_MissedKickFilter)
+		{
+			return window;
+		}
+		colourToUse = BLACK_BRIGHTRED_BG;
+		break;
+	case GSTType_VideoRef:
+		if (!GameSummaryFilters::m_VideoRefFilter)
+		{
+			return window;
+		}
+		colourToUse = BLACK_BRIGHTGREEN_BG;
+		break;
+	case GSTType_Misc:
+		if (!GameSummaryFilters::m_MiscFilter)
+		{
+			return window;
+		}
+		colourToUse = BLACK_LIGHTBLUE_BG;
 		break;
 	}
 	for (int i = point.getX(); i < point.getX() + 50; i++)
@@ -361,6 +418,29 @@ ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
 		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 3), ScoreText, colourToUse);
 	}
 	return window;
+}
+
+bool GameSummaryText::isInFilter()
+{
+	switch (summaryTextType)
+	{
+	case GSTType_Points:
+		return true;
+	case GSTType_Error:
+		return GameSummaryFilters::m_ErrorFilter;
+	case GSTType_Penalty:
+		return GameSummaryFilters::m_PenaltyFilter;
+	case GSTType_Interchange_Injury:
+		return GameSummaryFilters::m_InjuryFilter;
+	case GSTType_Sent:
+		return GameSummaryFilters::m_SendOffFilter;
+	case GSTType_MissedKick:
+		return GameSummaryFilters::m_MissedKickFilter;
+	case GSTType_VideoRef:
+		return GameSummaryFilters::m_VideoRefFilter;
+	case GSTType_Misc:
+		return GameSummaryFilters::m_MiscFilter;
+	}
 }
 
 ConsoleWindow SRLTrainingOption::draw(ConsoleWindow window, Vector2 point)
@@ -739,3 +819,4 @@ void SRLRound::randomizeOrders()
 		}
 	}
 }
+

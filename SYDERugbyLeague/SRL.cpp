@@ -245,6 +245,11 @@ void FinalsSystemClick()
 	SRLGame::finalsSystemCall = true;
 }
 
+void SummaryFilterClick()
+{
+	SRLGame::settingsState = SummarySettings_STATE;
+}
+
 void MainDrawViewClick()
 {
 	SRLGame::drawViewState = SeasonDrawMainView;
@@ -1436,6 +1441,10 @@ void SRLGame::init()
 
 	m_SettingsRepRoundsBtn = SYDECheckbox(" Rep Rounds:", Vector2(39, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
 
+	m_SummaryFilterBtn = SYDEClickableButton("Summary Filter", Vector2(40, 10), Vector2(14, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SummaryFilterBtn.setHighLight(RED);
+	m_SummaryFilterBtn.SetFunc(SummaryFilterClick);
+
 	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsFinalsBtn.setHighLight(RED);
 	m_SettingsFinalsBtn.SetFunc(FinalsSystemClick);
@@ -1452,6 +1461,16 @@ void SRLGame::init()
 	m_FormatTeamsCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_FormatTeamsCNCLBtn.setHighLight(RED);
 	m_FormatTeamsCNCLBtn.SetFunc(FormatCNCLClick);
+
+	///Summary Filters
+	m_FilterError = SYDECheckbox(" Show Errors:", Vector2(5, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterPenalty = SYDECheckbox(" Show Penalties:", Vector2(5, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterSent = SYDECheckbox(" Show Send Offs/Sin Bins:", Vector2(5, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterInterchange = SYDECheckbox(" Show Injury/Interchange:", Vector2(5, 10), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterVideoRef = SYDECheckbox(" Show Video Ref:", Vector2(5, 12), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterMissedKicks = SYDECheckbox(" Show Missed Kicks:", Vector2(5, 14), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterMisc = SYDECheckbox(" Show Misc:", Vector2(5, 16), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+
 #pragma endregion
 
 #pragma region keypad
@@ -1946,6 +1965,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 			m_SelectedTeam = 0;
 			m_SeasonTeams = deque<string>();
 			m_SavedTeams = SYDEFileDefaults::getAllFileNamesInFolder("EngineFiles\\GameResults\\Teams", ".json", true, true);
+			setUpFilters();
 			AssignState(std::bind(&SRLGame::season_config_settings, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 	}
@@ -3734,6 +3754,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		{
 			window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 			window.setTextAtPoint(Vector2(i, 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(i, 3), " ", BLACK);
 			window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 		}
 		window.setTextAtPoint(Vector2(0, 2), m_SingleGameManager.getHomeTeam().getName() + " " + to_string(m_SingleGameManager.getHomeScore()), BLACK_BRIGHTWHITE_BG);
@@ -3807,15 +3828,27 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 						deque<string> temp3 = Split(temp2[i], '#');
 						if (temp3.size() < 4)
 						{
-							m_LiveGameVector.push_back(GameSummaryText("Error In Summary", temp2[i], " ", " "));
+							GameSummaryText temp = GameSummaryText("Error In Summary", temp2[i], " ", " ");
+							if (temp.isInFilter())
+							{
+								m_LiveGameVector.push_back(temp);
+								if (m_LiveGameVector.size() > 3)
+								{
+									m_LineResults += 5;
+								}
+							}
 						}
 						else
 						{
-							m_LiveGameVector.push_back(GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]));
-						}
-						if (m_LiveGameVector.size() > 3)
-						{
-							m_LineResults += 5;
+							GameSummaryText temp = GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]);
+							if (temp.isInFilter())
+							{
+								m_LiveGameVector.push_back(temp);
+								if (m_LiveGameVector.size() > 3)
+								{
+									m_LineResults += 5;
+								}
+							}
 						}
 					}
 					//THEN SET THE COUNT AGAIN
@@ -4150,6 +4183,7 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window = m_SettingsEventsBtn.draw_ui(window);
 		window = m_SettingsCoachBtn.draw_ui(window);
 		window = m_SettingsRepRoundsBtn.draw_ui(window);
+		window = m_SummaryFilterBtn.draw_ui(window);
 		window = m_SettingsFinalsBtn.draw_ui(window);
 		if (finalsSystemCall)
 		{
@@ -4200,6 +4234,16 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		}
 		window = m_FormatTeamsBtn.draw_ui(window);
 	}
+	else if (SummarySettings_STATE)
+	{
+		window = m_FilterError.draw_ui(window);
+		window =m_FilterPenalty.draw_ui(window);
+		window =m_FilterSent.draw_ui(window);
+		window =m_FilterInterchange.draw_ui(window);
+		window =m_FilterVideoRef.draw_ui(window);
+		window =m_FilterMissedKicks.draw_ui(window);
+		window =m_FilterMisc.draw_ui(window);
+	}
 	return window;
 }
 
@@ -4249,7 +4293,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.0.1", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.1.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -6885,6 +6929,17 @@ void SRLGame::UpdateBets()
 	}
 }
 
+void SRLGame::setUpFilters()
+{
+	GameSummaryFilters::m_ErrorFilter = m_FilterError.isChecked();
+	GameSummaryFilters::m_PenaltyFilter = m_FilterPenalty.isChecked();
+	GameSummaryFilters::m_SendOffFilter = m_FilterSent.isChecked();
+	GameSummaryFilters::m_InjuryFilter = m_FilterInterchange.isChecked();
+	GameSummaryFilters::m_VideoRefFilter = m_FilterVideoRef.isChecked();
+	GameSummaryFilters::m_MissedKickFilter = m_FilterMissedKicks.isChecked();
+	GameSummaryFilters::m_MiscFilter = m_FilterMisc.isChecked();
+}
+
 void SRLGame::setUpTeamInDepthView(int teamViewing)
 {
 	m_TeamViewing = teamViewing;
@@ -7141,11 +7196,19 @@ void SRLGame::sortOutResultsScreen()
 		deque<string> temp3 = Split(temp2[i], '#');
 		if (temp3.size() < 4)
 		{
-			m_SummaryScreenVector.push_back(GameSummaryText("Error In Summary", temp2[i], " ", " "));
+			GameSummaryText temp = GameSummaryText("Error In Summary", temp2[i], " ", " ");
+			if (temp.isInFilter())
+			{
+				m_SummaryScreenVector.push_back(temp);
+			}
 		}
 		else
 		{
-			m_SummaryScreenVector.push_back(GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]));
+			GameSummaryText temp = GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]);
+			if (temp.isInFilter())
+			{
+				m_SummaryScreenVector.push_back(temp);
+			}
 		}
 		temp3.clear();
 	}

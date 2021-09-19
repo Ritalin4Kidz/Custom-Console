@@ -35,6 +35,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.1.0 19/09/2021
+- More Summaries Added
+- Summaries Can Now Be Filtered In The Settings
+
 ### 1.1.0.1 19/09/2021
 - Invalid Team Data will show an error message when trying to create the season/view team in depth instead of crashing
 

@@ -858,7 +858,34 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 				m_HomeTeam.addPlayerLinebreak(attacker.getName());
 			}
 		}
-		m_AwayTeam.addPlayerTackle(defender.getName());
+		int chanceOffload = rand() % offloadChance;
+		int offload = 0;
+		if (chanceOffload == 0)
+		{
+			offload = checkOffload(defender, attacker);
+		}
+		if (offload == 0)
+		{
+			m_AwayTeam.addPlayerTackle(defender.getName());
+		}
+		else if (offload == 1)
+		{
+			//SUCCESS
+			addPlay("Offload", attacker);
+			addSummary("OFFLOAD#", attacker);
+			return false;
+		}
+		else if (offload == 2)
+		{
+			//ERROR
+			addPlay("Offload", attacker);
+			addSummary("OFFLOAD#", attacker);
+			addPlay("Knock On", attacker);
+			addSummary("KNOCK ON#", attacker);
+			addAttackerErrorStats(attacker.getName(), -2);
+			changeOver(true);
+			return false;
+		}
 	}
 	else
 	{
@@ -884,7 +911,34 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 				m_AwayTeam.addPlayerLinebreak(attacker.getName());
 			}
 		}
-		m_HomeTeam.addPlayerTackle(defender.getName());
+		int chanceOffload = rand() % offloadChance;
+		int offload = 0;
+		if (chanceOffload == 0)
+		{
+			offload = checkOffload(defender, attacker);
+		}
+		if (offload == 0)
+		{
+			m_HomeTeam.addPlayerTackle(defender.getName());
+		}
+		else if (offload == 1)
+		{
+			//SUCCESS
+			addPlay("Offload", attacker);
+			addSummary("OFFLOAD#", attacker);
+			return false;
+		}
+		else if (offload == 2)
+		{
+			//ERROR
+			addPlay("Offload", attacker);
+			addSummary("OFFLOAD#", attacker);
+			addPlay("Knock On", attacker);
+			addSummary("KNOCK ON#", attacker);
+			addAttackerErrorStats(attacker.getName(), -2);
+			changeOver(true);
+			return false;
+		}
 	}
 	m_Tackle++;
 	return true;
@@ -971,6 +1025,21 @@ int SRLGameManager::checkStrip(SRLPlayer defender, SRLPlayer attacker)
 		}
 	}
 	return 1;
+}
+
+int SRLGameManager::checkOffload(SRLPlayer defender, SRLPlayer attacker)
+{
+	int data = rand() % attacker.getHandling();
+	if (m_Stamina)
+	{
+		data *= attacker.getStamina();
+	}
+	if (data >= defender.getDefence())
+	{
+		//SUCCESS
+		return 1;
+	}
+	return 2;
 }
 
 bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)

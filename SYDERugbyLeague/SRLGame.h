@@ -101,6 +101,7 @@ public:
 	bool doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
 	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
+	int checkOffload(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
 
@@ -140,6 +141,7 @@ private:
 	const int injuryChance = 1000;
 	const int professionalFoulChance = 3;
 	const float playerSentDivision = 0.8f;
+	const int offloadChance = 30;
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;

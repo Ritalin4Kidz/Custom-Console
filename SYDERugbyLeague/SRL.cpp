@@ -94,6 +94,7 @@ SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
 SRLTeamListViewState SRLGame::tlViewState = TLV_GeneralStats;
+LadderStatsViewState SRLGame::ldsViewState = LSV_DefaultView;
 
 deque<string> SRLGame::AchievementStrings = deque<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
@@ -663,6 +664,18 @@ void CoachingViewClick()
 	}
 }
 
+void LDSSwitchViewClick()
+{
+	if (SRLGame::ldsViewState == LSV_DefaultView)
+	{
+		SRLGame::ldsViewState = LSV_ExtraStatsView;
+	}
+	else
+	{
+		SRLGame::ldsViewState = LSV_DefaultView;
+	}
+}
+
 void ExhibitionMatchSimulateClick()
 {
 	SRLGame::newState = SimulateSingleMatchViewState;
@@ -1204,6 +1217,10 @@ void SRLGame::init()
 	m_ExhibitionMatchSimulateBtn.setHighLight(RED);
 	m_ExhibitionMatchSimulateBtn.SetFunc(ExhibitionMatchSimulateClick);
 
+	m_LadderSwitchView = SYDEClickableButton(" Switch View ", Vector2(45, 2), Vector2(13, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_LadderSwitchView.setHighLight(RED);
+	m_LadderSwitchView.SetFunc(LDSSwitchViewClick);
+
 #pragma region BettingOptions
 	m_BetBtnCurrentRound = SYDEClickableButton(" This Round ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
 	m_BetBtnCurrentRound.setHighLight(RED);
@@ -1441,10 +1458,6 @@ void SRLGame::init()
 
 	m_SettingsRepRoundsBtn = SYDECheckbox(" Rep Rounds:", Vector2(39, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
 
-	m_SummaryFilterBtn = SYDEClickableButton("Summary Filter", Vector2(40, 10), Vector2(14, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_SummaryFilterBtn.setHighLight(RED);
-	m_SummaryFilterBtn.SetFunc(SummaryFilterClick);
-
 	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsFinalsBtn.setHighLight(RED);
 	m_SettingsFinalsBtn.SetFunc(FinalsSystemClick);
@@ -1452,6 +1465,11 @@ void SRLGame::init()
 	m_FormatTeamsBtn = SYDEClickableButton(" Format Teams ", Vector2(7, 10), Vector2(14, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_FormatTeamsBtn.setHighLight(RED);
 	m_FormatTeamsBtn.SetFunc(FormatButtonClick);
+
+
+	m_SummaryFilterBtn = SYDEClickableButton(" Summary Filter ", Vector2(5, 12), Vector2(16, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SummaryFilterBtn.setHighLight(RED);
+	m_SummaryFilterBtn.SetFunc(SummaryFilterClick);
 
 
 	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -1840,6 +1858,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 		}
 		else if (currentState == LadderViewState)
 		{
+			SRLGame::ldsViewState = LSV_DefaultView;
 			AssignState(std::bind(&SRLGame::LadderView, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 		}
 		else if (currentState == LeaderboardViewState)
@@ -2395,6 +2414,7 @@ ConsoleWindow SRLGame::season_mode(ConsoleWindow window, int windowWidth, int wi
 ConsoleWindow SRLGame::LadderView(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	window = drawTabs(window);
+	window = m_LadderSwitchView.draw_ui(window);
 	window.setTextAtPoint(Vector2(0, 2), "SRL LADDER   ", WHITE);
 	for (int i = 0; i < m_Season.m_Ladder.m_Ladder.size(); i++)
 	{
@@ -2405,12 +2425,26 @@ ConsoleWindow SRLGame::LadderView(ConsoleWindow window, int windowWidth, int win
 				window.setTextAtPoint(Vector2(ii, 3 + i), " ", BRIGHTWHITE_BLUE_BG);
 			}
 			window.setTextAtPoint(Vector2(2, 3 + i), to_string(i + 1) + " " + m_Season.m_Ladder.m_Ladder[i].teamName, BRIGHTWHITE_BLUE_BG);
-			window.setTextAtPoint(Vector2(34, 3 + i), "W: " + to_string(m_Season.m_Ladder.m_Ladder[i].won) + " L: " + to_string(m_Season.m_Ladder.m_Ladder[i].lost) + " PD: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsDifference) + " P: " + to_string(m_Season.m_Ladder.m_Ladder[i].points), BRIGHTWHITE_BLUE_BG);
+			if (ldsViewState == LSV_DefaultView)
+			{
+				window.setTextAtPoint(Vector2(34, 3 + i), "W: " + to_string(m_Season.m_Ladder.m_Ladder[i].won) + " L: " + to_string(m_Season.m_Ladder.m_Ladder[i].lost) + " PD: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsDifference) + " P: " + to_string(m_Season.m_Ladder.m_Ladder[i].points), BRIGHTWHITE_BLUE_BG);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(34, 3 + i), "T: " + to_string(m_Season.m_Ladder.m_Ladder[i].tied) + " PF: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsFor) + " PA: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsAgainst), BRIGHTWHITE_BLUE_BG);
+			}
 		}
 		else
 		{
 			window.setTextAtPoint(Vector2(2, 3 + i), to_string(i + 1) + " " + m_Season.m_Ladder.m_Ladder[i].teamName, WHITE);
-			window.setTextAtPoint(Vector2(34, 3 + i), "W: " + to_string(m_Season.m_Ladder.m_Ladder[i].won) + " L: " + to_string(m_Season.m_Ladder.m_Ladder[i].lost) + " PD: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsDifference) + " P: " + to_string(m_Season.m_Ladder.m_Ladder[i].points), WHITE);
+			if (ldsViewState == LSV_DefaultView)
+			{
+				window.setTextAtPoint(Vector2(34, 3 + i), "W: " + to_string(m_Season.m_Ladder.m_Ladder[i].won) + " L: " + to_string(m_Season.m_Ladder.m_Ladder[i].lost) + " PD: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsDifference) + " P: " + to_string(m_Season.m_Ladder.m_Ladder[i].points), WHITE);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(34, 3 + i), "T: " + to_string(m_Season.m_Ladder.m_Ladder[i].tied) + " PF: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsFor) + " PA: " + to_string(m_Season.m_Ladder.m_Ladder[i].pointsAgainst), WHITE);
+			}
 		}
 	}
 	return window;
@@ -3576,6 +3610,10 @@ ConsoleWindow SRLGame::MatchUpDepthView(ConsoleWindow window, int windowWidth, i
 	window.setTextAtPoint(Vector2(4, 4), "Date: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Time_Date, WHITE);
 	window.setTextAtPoint(Vector2(4, 5), "Venue: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Venue, WHITE);
 	window.setTextAtPoint(Vector2(4, 6), "Weather: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].getWeatherString(), WHITE);
+
+	window.setTextAtPoint(Vector2(4, 8), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + ": " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].homeTeamOdds.ReturnPrice(), BRIGHTGREEN);
+	window.setTextAtPoint(Vector2(4, 9), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam + ": " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].awayTeamOdds.ReturnPrice(), BRIGHTRED);
+
 	window = m_SimulateSingleGameBtn.draw_ui(window);
 	return window;
 }
@@ -4183,7 +4221,6 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window = m_SettingsEventsBtn.draw_ui(window);
 		window = m_SettingsCoachBtn.draw_ui(window);
 		window = m_SettingsRepRoundsBtn.draw_ui(window);
-		window = m_SummaryFilterBtn.draw_ui(window);
 		window = m_SettingsFinalsBtn.draw_ui(window);
 		if (finalsSystemCall)
 		{
@@ -4233,6 +4270,7 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 			break;
 		}
 		window = m_FormatTeamsBtn.draw_ui(window);
+		window = m_SummaryFilterBtn.draw_ui(window);
 	}
 	else if (SummarySettings_STATE)
 	{
@@ -5641,6 +5679,7 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 				}
 				else
 				{
+					m_Season.m_Ladder.m_Ladder[ii].tied++;
 					m_Season.m_Ladder.m_Ladder[ii].points++;
 				}
 				m_Season.m_Ladder.m_Ladder[ii].pointsAgainst += m_srlmanager.getHomeScore();

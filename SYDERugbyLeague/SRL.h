@@ -53,6 +53,11 @@ enum CoachingViewDrawState
 	CoachingSwapPos_STATE
 };
 
+enum LadderStatsViewState {
+	LSV_DefaultView,
+	LSV_ExtraStatsView
+};
+
 enum SeasonDrawViewState
 {
 	SeasonDrawMainView,
@@ -296,6 +301,7 @@ public:
 	static SeasonDrawViewState drawViewState;
 	static CoachingViewDrawState coachDrawState;
 	static SeasonConfigState seasCfgState;
+	static LadderStatsViewState ldsViewState;
 
 	static SRLSeasonLength seasonLength;
 	SRLSeasonLength baseSeasonLength = Length_NormalSeason;
@@ -581,6 +587,8 @@ private:
 	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();
 
 	SYDEClickableButton m_ExhibitionMatchSimulateBtn = SYDEClickableButton();
+
+	SYDEClickableButton m_LadderSwitchView = SYDEClickableButton();
 
 	SYDEClickableButton m_ProfileViewBtn = SYDEClickableButton();
 

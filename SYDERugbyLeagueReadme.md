@@ -39,7 +39,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
-### 1.1.2.0 20/09/2021
+### 1.1.2.0 21/09/2021
 - Bet Odds In Match View
 - Ladder Has Swap View Function Now (View Ties, Points For & Against)
 - Fixed Bug where ties where not getting added to away team (points were still being added however)

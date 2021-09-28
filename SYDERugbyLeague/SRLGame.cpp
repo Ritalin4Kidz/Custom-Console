@@ -1030,15 +1030,18 @@ int SRLGameManager::checkStrip(SRLPlayer defender, SRLPlayer attacker)
 int SRLGameManager::checkOffload(SRLPlayer defender, SRLPlayer attacker)
 {
 	int data = rand() % attacker.getHandling();
+	int data2 = rand() % defender.getDefence();
 	if (m_Stamina)
 	{
 		data *= attacker.getStamina();
+		data2 *= defender.getStamina();
 	}
-	if (data >= defender.getDefence())
+	if (data >= data2)
 	{
 		//SUCCESS
 		return 1;
 	}
+	else
 	return 2;
 }
 

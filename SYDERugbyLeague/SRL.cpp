@@ -1646,6 +1646,7 @@ deque<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	for (int i = 0; i < 20; i++)
 	{
 		bool canAddPlayer = true;
+		//SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), 99, 99,99, 99, 99, 99);
 		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
 		for (int ii = 0; ii < i; ii++)
 		{

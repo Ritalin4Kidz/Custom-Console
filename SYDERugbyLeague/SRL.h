@@ -58,6 +58,12 @@ enum LadderStatsViewState {
 	LSV_ExtraStatsView
 };
 
+enum JerseySelectViewOptions
+{
+	JSV_Jersey,
+	JSV_Logo
+};
+
 enum SeasonDrawViewState
 {
 	SeasonDrawMainView,
@@ -71,7 +77,9 @@ enum GameStateInDepthView
 {
 	NormalInDepthView,
 	TeamListViewState,
-	PlayerViewState
+	PlayerViewState,
+	JerseySelectState
+
 };
 
 enum ArticleViewingState
@@ -208,6 +216,7 @@ public:
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow JerseyInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow PlayerInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, deque<SRLLeaderboardPosition> ldrboard);
@@ -241,6 +250,9 @@ public:
 	ConsoleWindow KeypadPop_Up(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	bool addGame(int limit, deque<SRLRound> rounds, deque<SRLGameMatchup>& games, deque<string>& teams, deque<string>& AttemptedTeams);
+
+	int returnJerseyNumberSafe(int jersey);
+	int returnLogoNumberSafe(int logo);
 
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -299,6 +311,7 @@ public:
 	static SRLPriorBets_State priorBetsState;
 	static ArticleViewingState articleState;
 	static SeasonDrawViewState drawViewState;
+	static JerseySelectViewOptions jerseyViewState;
 	static CoachingViewDrawState coachDrawState;
 	static SeasonConfigState seasCfgState;
 	static LadderStatsViewState ldsViewState;
@@ -675,8 +688,8 @@ private:
 	float splashScreenTime = 0;
 	bool splashScreenInit = true;
 	SRLTeam m_InDepthTeamView;
-	CustomAsset m_JerseyView;
-	CustomAsset m_LogoView;
+	CustomAsset_Clickable m_JerseyView;
+	CustomAsset_Clickable m_LogoView;
 	int m_TeamViewing = 0;
 	deque<SYDEClickableButton> m_PlayerButtons;
 

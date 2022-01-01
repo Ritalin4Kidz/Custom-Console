@@ -39,6 +39,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.3.0 01/12/2022
+- Can change logos and jersey types in in depth view by clicking on them
+
 ### 1.1.2.0 21/09/2021
 - Bet Odds In Match View
 - Ladder Has Swap View Function Now (View Ties, Points For & Against)

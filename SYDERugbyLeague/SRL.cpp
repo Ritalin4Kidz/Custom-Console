@@ -11,6 +11,7 @@ GameStateResultSYDE SRLGame::resultState = Summary_STATE;
 GameStateSettingsSYDE SRLGame::settingsState = SeasonSettings_STATE;
 GameStateInDepthView SRLGame::inDepthState = NormalInDepthView;
 SeasonDrawViewState SRLGame::drawViewState = SeasonDrawMainView;
+JerseySelectViewOptions SRLGame::jerseyViewState = JSV_Jersey;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 CoachingViewDrawState SRLGame::coachDrawState = CoachingMain_STATE;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
@@ -340,6 +341,16 @@ void InDepthTeamListViewClick()
 void InDepthTeamListBackClick()
 {
 	SRLGame::inDepthState = NormalInDepthView;
+}
+void InDepthJerseyClick()
+{
+	SRLGame::inDepthState = JerseySelectState;
+	SRLGame::jerseyViewState = JSV_Jersey;
+}
+void InDepthLogoClick()
+{
+	SRLGame::inDepthState = JerseySelectState;
+	SRLGame::jerseyViewState = JSV_Logo;
 }
 
 void PlayerProfileViewClick()
@@ -743,27 +754,42 @@ void DoExhibitionSwap2Next()
 
 void DoNextPosSwapStateView()
 {
-	SRLGame::setUpPosShowcaseCall = true;
-	int statePos = static_cast<int>(SRLGame::posSwapState);
-	statePos++;
-	if (statePos > 2)
+	//CHEEKY JERSEY SWAP
+	if (SRLGame::currentState == TeamInDepthViewState)
 	{
-		statePos = 0;
+		SRLGame::NextRoundCall = true;
 	}
-	SRLGame::posSwapState = static_cast<SRLPositionShowcaseState>(statePos);
+	else
+	{
+		SRLGame::setUpPosShowcaseCall = true;
+		int statePos = static_cast<int>(SRLGame::posSwapState);
+		statePos++;
+		if (statePos > 2)
+		{
+			statePos = 0;
+		}
+		SRLGame::posSwapState = static_cast<SRLPositionShowcaseState>(statePos);
+	}
 	
 }
 
 void DoPrevPosSwapStateView()
 {
-	SRLGame::setUpPosShowcaseCall = true;
-	int statePos = static_cast<int>(SRLGame::posSwapState);
-	statePos--;
-	if (statePos < 0)
+	if (SRLGame::currentState == TeamInDepthViewState)
 	{
-		statePos = 2;
+		SRLGame::PrevRoundCall = true;
 	}
-	SRLGame::posSwapState = static_cast<SRLPositionShowcaseState>(statePos);
+	else
+	{
+		SRLGame::setUpPosShowcaseCall = true;
+		int statePos = static_cast<int>(SRLGame::posSwapState);
+		statePos--;
+		if (statePos < 0)
+		{
+			statePos = 2;
+		}
+		SRLGame::posSwapState = static_cast<SRLPositionShowcaseState>(statePos);
+	}
 }
 
 void CoachTradeViewClick()
@@ -3980,10 +4006,17 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 		}
 
 	}
+	//Team List View
 	if (inDepthState == TeamListViewState)
 	{
 		return TeamInDepthListView(window, windowWidth, windowHeight);
 	}
+	//Jersey Selection View
+	else if (inDepthState == JerseySelectState)
+	{
+		return JerseyInDepthView(window, windowWidth, windowHeight);
+	}
+	//Player Details View
 	else if (inDepthState == PlayerViewState)
 	{
 		return PlayerInDepthView(window, windowWidth, windowHeight);
@@ -4056,6 +4089,59 @@ ConsoleWindow SRLGame::TeamInDepthListView(ConsoleWindow window, int windowWidth
 	{
 		window.setTextAtPoint(Vector2(1, i+ 2), to_string(i+1) + ". " + m_InDepthTeamView.getPlayers()[i].getName(), BRIGHTWHITE);
 		window = m_PlayerButtons[i].draw_ui(window);
+	}
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window = m_BackTeamListInDepth.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::JerseyInDepthView(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int ii = 0; ii < 60; ii++)
+	{
+		window.setTextAtPoint(Vector2(ii, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
+	window.setTextAtPoint(Vector2(2, 1), m_InDepthTeamView.getName(), BLACK_BRIGHTWHITE_BG);
+	if (SRLGame::jerseyViewState == JSV_Jersey)
+	{
+		window = m_JerseyView.draw_asset(window, Vector2(15, 3));
+	}
+	else if (SRLGame::jerseyViewState == JSV_Logo)
+	{
+		window = m_LogoView.draw_asset(window, Vector2(15, 3));
+	}
+	window = m_CoachPosSwapNext.draw_ui(window);
+	window =  m_CoachPosSwapPrev.draw_ui(window);
+	if (SRLGame::PrevRoundCall)
+	{
+		SRLGame::PrevRoundCall = false;
+		if (SRLGame::jerseyViewState == JSV_Jersey)
+		{
+			m_InDepthTeamView.setJerseyInt(returnJerseyNumberSafe(m_InDepthTeamView.getJerseryType() - 1));
+		}
+		else if (SRLGame::jerseyViewState == JSV_Logo)
+		{
+			m_InDepthTeamView.setLogoInt(returnLogoNumberSafe(m_InDepthTeamView.getLogoType() - 1));
+		}
+		m_InDepthTeamView.saveTeam();
+		setUpTeamInDepthView(m_TeamViewing);
+	}
+	if (SRLGame::NextRoundCall)
+	{
+		SRLGame::NextRoundCall = false;
+		if (SRLGame::jerseyViewState == JSV_Jersey)
+		{
+			m_InDepthTeamView.setJerseyInt(returnJerseyNumberSafe(m_InDepthTeamView.getJerseryType() + 1));
+		}
+		else if (SRLGame::jerseyViewState == JSV_Logo)
+		{
+			m_InDepthTeamView.setLogoInt(returnLogoNumberSafe(m_InDepthTeamView.getLogoType() + 1));
+		}
+		m_InDepthTeamView.saveTeam();
+		setUpTeamInDepthView(m_TeamViewing);
 	}
 	for (int ii = 0; ii < 60; ii++)
 	{
@@ -4332,7 +4418,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.1.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.3.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -4665,6 +4751,34 @@ bool SRLGame::addGame(int limit, deque<SRLRound> rounds, deque<SRLGameMatchup>& 
 	}
 	games.push_back(SRLGameMatchup(team1Name, team2Name));
 	return true;
+}
+
+int SRLGame::returnJerseyNumberSafe(int jersey)
+{
+	int noJerseys = SYDEFileDefaults::getFileCount("EngineFiles\\JerseyFeatures", ".bmp");
+	if (jersey >= noJerseys)
+	{
+		return 0;
+	}
+	if (jersey < 0)
+	{
+		return noJerseys - 1;
+	}
+	return jersey;
+}
+
+int SRLGame::returnLogoNumberSafe(int logo)
+{
+	int noLogos = SYDEFileDefaults::getFileCount("EngineFiles\\TeamLogos", ".bmp");
+	if (logo >= noLogos)
+	{
+		return 0;
+	}
+	if (logo < 0)
+	{
+		return noLogos - 1;
+	}
+	return logo;
 }
 
 ConsoleWindow SRLGame::ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -7005,7 +7119,7 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	}
 	wstring wLogoBmp = wstring(LogoBmp.begin(), LogoBmp.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
-	m_JerseyView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	m_JerseyView = CustomAsset_Clickable(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
 	m_JerseyView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
 	m_JerseyView.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
 	m_JerseyView.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
@@ -7013,8 +7127,10 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 	m_JerseyView.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, m_InDepthTeamView.getPrimary());
 	m_JerseyView.changeAllInstancesOfColour(BLACK_WHITE_BG, m_InDepthTeamView.getSecondary());
 	m_JerseyView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
+	m_JerseyView.SetFunc(InDepthJerseyClick);
 
-	m_LogoView = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wLogoBmp.c_str(), 15, 15));
+	m_LogoView = CustomAsset_Clickable(30, 15, astVars.get_bmp_as_array((WCHAR*)wLogoBmp.c_str(), 15, 15));
+	m_LogoView.SetFunc(InDepthLogoClick);
 	if (m_InDepthTeamView.getLogoCustom() == "")
 	{
 		m_LogoView.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);

@@ -25,8 +25,10 @@ public:
 	void generateJerseys();
 	
 	int getJerseryType() { return jerseryTypeInt; }
+	void setJerseyInt(int newJersey) { jerseryTypeInt = newJersey; }
 
 	int getLogoType() { return logoTypeInt; }
+	void setLogoInt(int newLogo) { logoTypeInt = newLogo; }
 
 	ColourClass getPrimary() { return primaryColour; }
 	ColourClass getSecondary() { return secondaryColour; }

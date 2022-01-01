@@ -88,13 +88,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\DrawableConsole;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SYDEEngine.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SYDEEngine_Debug.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -162,49 +162,12 @@
     <ClInclude Include="Buildings.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="FightWindow.h" />
-    <ClInclude Include="include\Activation.h" />
-    <ClInclude Include="include\AI.h" />
-    <ClInclude Include="include\Artwork.h" />
-    <ClInclude Include="include\AssetsClass.h" />
-    <ClInclude Include="include\Background.h" />
-    <ClInclude Include="include\BackgroundObj.h" />
-    <ClInclude Include="include\Board.h" />
-    <ClInclude Include="include\BoardPiece.h" />
-    <ClInclude Include="include\Characters.h" />
-    <ClInclude Include="include\Concerto.h" />
-    <ClInclude Include="include\ConsoleWindow.h" />
-    <ClInclude Include="include\CustomAnimationAsset.h" />
-    <ClInclude Include="include\CustomAsset.h" />
-    <ClInclude Include="include\Defaults.h" />
-    <ClInclude Include="include\DinseyPlanes.h" />
     <ClInclude Include="include\json.hpp" />
-    <ClInclude Include="include\Line.h" />
-    <ClInclude Include="include\pch.h" />
-    <ClInclude Include="include\PhysicsObject.h" />
-    <ClInclude Include="include\ReiventTheWheel.h" />
-    <ClInclude Include="include\RigidBody.h" />
-    <ClInclude Include="include\Settings.h" />
-    <ClInclude Include="include\SYDEButton.h" />
-    <ClInclude Include="include\SYDECredits.h" />
-    <ClInclude Include="include\SYDEGamePlay.h" />
-    <ClInclude Include="include\SYDEKey.h" />
-    <ClInclude Include="include\SYDEKeyCode.h" />
-    <ClInclude Include="include\SYDELabel.h" />
-    <ClInclude Include="include\SYDEMenu.h" />
-    <ClInclude Include="include\SYDEstdafx.h" />
-    <ClInclude Include="include\SYDETextBox.h" />
-    <ClInclude Include="include\SYDETime.h" />
-    <ClInclude Include="include\SYDEUI.h" />
-    <ClInclude Include="include\SYDEWindowGame.h" />
-    <ClInclude Include="include\TextItem.h" />
-    <ClInclude Include="include\Trap.h" />
-    <ClInclude Include="include\Vector2.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SQFunctions.h" />
     <ClInclude Include="StatusAnimations.h" />
-    <ClInclude Include="SYDEQuestGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SYDEQuest_Game.rc" />

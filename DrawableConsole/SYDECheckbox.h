@@ -20,7 +20,7 @@ public:
 
 	bool isChecked() { return m_Checked; }
 
-private:
+protected:
 	bool m_Checked = false;
 	bool canClick = true;
 	ColourClass TextColour = NULLCOLOUR;

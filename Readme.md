@@ -125,6 +125,10 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.4.2.0 05/01/2022
+- Test Fixes
+- Added Radio Buttons to UI
+
 ### 1.4.1.0 04/01/2022
 - Small Fixes To Broken Functions
 - Get Current Text From Line

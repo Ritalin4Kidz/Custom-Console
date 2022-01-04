@@ -83,5 +83,11 @@ private:
 		}),
 		BLACK);
 
+	SYDERadioButtonMenu m_ButtonMenu = SYDERadioButtonMenu(Vector2(0, 1), vector<SYDERadioOption>({
+		SYDERadioOption(string("This Is 1 Test"), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG),
+		SYDERadioOption(string("This Is 2 Test"), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG),
+		SYDERadioOption(string("This Is 3 Test"), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG)
+		}));
+
 	vector<Biome> _biomes;
 };

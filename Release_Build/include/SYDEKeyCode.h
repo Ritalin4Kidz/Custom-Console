@@ -4,6 +4,14 @@
 #include <string>
 #include "Vector2.h"
 #include "Defaults.h"
+
+struct tempKey {
+public:
+	tempKey(char c, bool b) { key = c; pressed = b; }
+	char key;
+	bool pressed;
+};
+
 class SYDEKeyCode {
 public:
 	/// <summary>
@@ -16,6 +24,9 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	static std::string KeysDownSafe();
+
+	static bool getBackSpaceSafe();
+
 	//All Keycodes recognised in SYDEKeyCode
 	static std::vector<SYDEKey> KeyCodes;
 	//Custom Keycode List, must enter all keys manually
@@ -138,4 +149,5 @@ private:
 	static INPUT_RECORD InputRecord;
 	static DWORD Events;
 	static HANDLE hin;
+	static std::vector<tempKey> KeysDownSafeVector;
 };

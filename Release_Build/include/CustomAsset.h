@@ -2,7 +2,22 @@
 #include <vector>
 #include "ConsoleWindow.h"
 
+#include <string>
+#include "Vector2.h"
+#include <objidl.h>
+#include <gdiplus.h>
+#include "AssetsClass.h"
+#include <ctime>
+#include<iostream>
+#include<algorithm>
+
 using namespace std;
+
+enum SYDEExportError
+{
+	CustomAssetExport_SUCCESS,
+	CustomAssetExport_ERROR
+};
 
 class CustomAsset {
 public:
@@ -66,6 +81,13 @@ public:
 	void setColourAtPoint(Vector2 Point, int m_Colour);
 
 	/// <summary>
+	/// change all the instances of a colour
+	/// </summary>
+	/// <param name="oldColour"></param>
+	/// <param name="newColour"></param>
+	void changeAllInstancesOfColour(ColourClass oldColour, ColourClass newColour);
+
+	/// <summary>
 	/// return the character at a certain point in the asset
 	/// </summary>
 	/// <param name="Point"></param>
@@ -78,12 +100,26 @@ public:
 	/// <returns></returns>
 	int getColourAtPoint(Vector2 Point);
 
+
+	void ExportAssetToFile();
+
 	/// <summary>
 	/// return the point where the colour is first displayed on the asset
 	/// </summary>
 	/// <param name="a_Colour">colour to find</param>
 	/// <returns></returns>
 	Vector2 returnPointOfFirstInstance(ColourClass a_Colour);
+
+protected:
+	static int GetCLSID(const WCHAR* format, CLSID* pClsid);
+	static std::wstring s2ws(const std::string& s);
+	static std::string getFilePath() { return filepath; }
+	static LPCWSTR getTemplatePath() { return template_bmp; }
+	static void setFilePath(std::string s) { filepath = s; }
+	static void setTemplatePath(LPCWSTR l) { template_bmp = l; }
+private:
+	static std::string filepath;
+	static LPCWSTR template_bmp;
 protected:
 	vector<vector<TextItem>> AssetVector;
 	string getStringFromChar(char x) { return string(1, x); }

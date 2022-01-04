@@ -293,6 +293,7 @@ class ConsoleWindow {
 public:
 	ConsoleWindow();
 	ConsoleWindow(int size);
+	ConsoleWindow(int size, bool clearConsole);
 	ConsoleWindow(ConsoleWindow* window) { *this = window; }
 	virtual ~ConsoleWindow() {}
 	void ClearWindow(bool removeText);
@@ -342,6 +343,8 @@ public:
 	void setTextAtPoint(Vector3 point, string text, ColourClass colour);
 
 	string getTextAtPoint(Vector2 point);
+
+	char getCharAtPoint(Vector2 point);
 
 	/// <summary>
 	/// Get a colour from an int

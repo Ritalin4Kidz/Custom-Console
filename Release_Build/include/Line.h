@@ -24,6 +24,11 @@ public:
 
 	vector<TextItem> getLine() { return m_Line; }
 
+	/// <summary>
+	/// Return the full string of text in the line
+	/// </summary>
+	/// <returns></returns>
+	string getCurrentText();
 
 	void operator=(Line other);
 

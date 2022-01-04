@@ -98,7 +98,7 @@ char ConsoleWindow::getCharAtPoint(Vector2 point)
 	{
 		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
 		{
-			m_Lines[point.getY()].getLine()[point.getX()].getChar();
+			return m_Lines[point.getY()].getLine()[point.getX()].getChar();
 		}
 	}
 	return 0;

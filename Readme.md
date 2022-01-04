@@ -125,6 +125,11 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.4.1.0 04/01/2022
+- Small Fixes To Broken Functions
+- Get Current Text From Line
+- SYDEQuest included in main solution
+
 ### 1.4.0.0 11/08/2021
 - Noise Maps
 - Button Tags

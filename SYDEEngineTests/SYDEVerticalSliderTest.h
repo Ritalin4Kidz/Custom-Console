@@ -9,6 +9,18 @@ public:
 
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 
+	ConsoleWindow initialize_window(ConsoleWindow window, int windowWidth, int windowHeight)
+	{
+		for (int i = 0; i < windowHeight; i++)
+		{
+			for (int ii = 0; ii < windowWidth; ii++)
+			{
+				window.addToLine(i, " ", BLACK);
+			}
+		}
+		return window;
+	}
+
 	int getSliderValue() { return m_Slider.getValue(); }
 
 private:
@@ -22,6 +34,7 @@ public:
 	SYDEVerticalSliderTest() { TestName = "SYDE UI Vertical Slider Tests"; }
 
 	TestResult BasicClickTest() override;
+	TestResult BasicDrawTest() override;
 
 private:
 };

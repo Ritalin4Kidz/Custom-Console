@@ -13,6 +13,17 @@ void Line::writeLine()
 	cout << endl;
 }
 
+string Line::getCurrentText()
+{
+	string curText = "";
+	for (int i = 0; i < m_Line.size(); i++)
+	{
+		curText += m_Line[i].getChar();
+	}
+	return curText;
+}
+
+
 void Line::writeLine(int offsetX)
 {
 	for (int ii = 0; ii < offsetX; ii++)

@@ -40,10 +40,22 @@
 */
 class SYDESliderTestWindow : public SYDEWindowGame {
 public:
-	SYDESliderTestWindow() {  }
+	SYDESliderTestWindow() { }
 	virtual ~SYDESliderTestWindow() {}
 
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
+
+	ConsoleWindow initialize_window(ConsoleWindow window, int windowWidth, int windowHeight)
+	{
+		for (int i = 0; i < windowHeight; i++)
+		{
+			for (int ii = 0; ii < windowWidth; ii++)
+			{
+				window.addToLine(i, " ", BLACK);
+			}
+		}
+		return window;
+	}
 
 	int getSliderValue() { return m_Slider.getValue(); }
 
@@ -58,6 +70,7 @@ public:
 	SYDESliderTest() { TestName = "SYDE UI Slider Tests"; }
 
 	TestResult BasicClickTest() override;
+	TestResult BasicDrawTest() override;
 
 private:
 };

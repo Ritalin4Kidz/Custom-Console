@@ -1,0 +1,1017 @@
+LADDER RESULTS
+--------------------------------
+1. Port Stevens Gardeners Wins: 25| Lost: 1| PD: 674| Points: 50
+2. Wurstastia Wizards Wins: 20| Lost: 4| PD: 384| Points: 42
+3. Arcoomer Roosters Wins: 18| Lost: 7| PD: 354| Points: 37
+4. West Suburbs Ranchers Wins: 17| Lost: 8| PD: 154| Points: 35
+5. Parramatta Minotaurs Wins: 16| Lost: 9| PD: 59| Points: 33
+6. Yimona Apocalypse Wins: 15| Lost: 11| PD: 22| Points: 30
+7. Tanktown Lightning Wins: 14| Lost: 11| PD: 75| Points: 29
+8. Northkellion Freebee Wins: 14| Lost: 12| PD: -54| Points: 28
+9. Bonesville Panthers Wins: 12| Lost: 13| PD: -52| Points: 25
+10. Jamestown Southpaw Wins: 11| Lost: 14| PD: -150| Points: 23
+11. Banksia Diggers Wins: 9| Lost: 16| PD: -173| Points: 19
+12. Napaton Martyrs Wins: 9| Lost: 16| PD: -192| Points: 19
+13. Minto Hawks Wins: 8| Lost: 16| PD: -104| Points: 18
+14. Queenstown Knives Wins: 8| Lost: 16| PD: -172| Points: 18
+15. Dubbo Hawks Wins: 3| Lost: 23| PD: -421| Points: 6
+16. Townsville Jets Wins: 1| Lost: 23| PD: -404| Points: 4
+--------------------------------
+
+Round 1 Results
+--------------------------------
+Wurstastia Wizards 33 v 22 Minto Hawks
+Dubbo Hawks 14 v 26 Yimona Apocalypse
+Tanktown Lightning 24 v 8 Bonesville Panthers
+Napaton Martyrs 6 v 38 West Suburbs Ranchers
+Townsville Jets 6 v 16 Jamestown Southpaw
+Queenstown Knives 20 v 16 Parramatta Minotaurs
+Arcoomer Roosters 32 v 6 Banksia Diggers
+Port Stevens Gardeners 48 v 0 Northkellion Freebee
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Queenstown Knives 0 v 48 Wurstastia Wizards
+Yimona Apocalypse 26 v 10 Townsville Jets
+Banksia Diggers 14 v 15 Parramatta Minotaurs
+Minto Hawks 28 v 14 Napaton Martyrs
+Northkellion Freebee 36 v 0 Tanktown Lightning
+Jamestown Southpaw 16 v 30 West Suburbs Ranchers
+Arcoomer Roosters 6 v 32 Port Stevens Gardeners
+Dubbo Hawks 14 v 12 Bonesville Panthers
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Queenstown Knives 22 v 25 Napaton Martyrs
+Banksia Diggers 11 v 8 Minto Hawks
+Port Stevens Gardeners 48 v 4 Jamestown Southpaw
+Townsville Jets 10 v 36 Wurstastia Wizards
+Yimona Apocalypse 18 v 6 Parramatta Minotaurs
+Northkellion Freebee 36 v 18 Dubbo Hawks
+Arcoomer Roosters 22 v 26 West Suburbs Ranchers
+Bonesville Panthers 16 v 29 Tanktown Lightning
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Banksia Diggers 31 v 31 Townsville Jets
+Arcoomer Roosters 18 v 18 Wurstastia Wizards
+Minto Hawks 10 v 12 Tanktown Lightning
+West Suburbs Ranchers 12 v 0 Parramatta Minotaurs
+Bonesville Panthers 18 v 37 Yimona Apocalypse
+Queenstown Knives 6 v 38 Port Stevens Gardeners
+Northkellion Freebee 42 v 22 Jamestown Southpaw
+Napaton Martyrs 20 v 12 Dubbo Hawks
+--------------------------------
+
+Round 5 Results
+--------------------------------
+West Suburbs Ranchers 18 v 24 Yimona Apocalypse
+Minto Hawks 21 v 12 Tanktown Lightning
+Parramatta Minotaurs 24 v 14 Banksia Diggers
+Bonesville Panthers 14 v 18 Jamestown Southpaw
+Port Stevens Gardeners 38 v 8 Townsville Jets
+Wurstastia Wizards 38 v 16 Dubbo Hawks
+Northkellion Freebee 8 v 29 Arcoomer Roosters
+Queenstown Knives 28 v 6 Napaton Martyrs
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Banksia Diggers 26 v 18 Minto Hawks
+Jamestown Southpaw 16 v 41 Port Stevens Gardeners
+Yimona Apocalypse 18 v 34 Tanktown Lightning
+Townsville Jets 8 v 22 Wurstastia Wizards
+Queenstown Knives 12 v 26 Parramatta Minotaurs
+Bonesville Panthers 6 v 38 Arcoomer Roosters
+Dubbo Hawks 18 v 51 Napaton Martyrs
+West Suburbs Ranchers 32 v 24 Northkellion Freebee
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Jamestown Southpaw 27 v 26 Napaton Martyrs
+Yimona Apocalypse 26 v 22 West Suburbs Ranchers
+Dubbo Hawks 32 v 14 Banksia Diggers
+Port Stevens Gardeners 34 v 16 Northkellion Freebee
+Tanktown Lightning 30 v 2 Queenstown Knives
+Townsville Jets 4 v 24 Minto Hawks
+Wurstastia Wizards 17 v 10 Arcoomer Roosters
+Bonesville Panthers 14 v 24 Parramatta Minotaurs
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Parramatta Minotaurs 0 v 50 Port Stevens Gardeners
+Queenstown Knives 23 v 22 Jamestown Southpaw
+Dubbo Hawks 4 v 26 Tanktown Lightning
+Northkellion Freebee 12 v 28 Arcoomer Roosters
+Wurstastia Wizards 36 v 10 Bonesville Panthers
+Banksia Diggers 34 v 22 Townsville Jets
+Napaton Martyrs 14 v 30 West Suburbs Ranchers
+Yimona Apocalypse 19 v 0 Minto Hawks
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Minto Hawks 4 v 18 Port Stevens Gardeners
+Arcoomer Roosters 30 v 0 Napaton Martyrs
+Wurstastia Wizards 27 v 18 Bonesville Panthers
+Banksia Diggers 4 v 19 Tanktown Lightning
+Queenstown Knives 16 v 28 Jamestown Southpaw
+Dubbo Hawks 10 v 30 West Suburbs Ranchers
+Yimona Apocalypse 40 v 6 Townsville Jets
+Parramatta Minotaurs 22 v 14 Northkellion Freebee
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Jamestown Southpaw 14 v 50 Wurstastia Wizards
+Tanktown Lightning 22 v 26 West Suburbs Ranchers
+Minto Hawks 0 v 24 Northkellion Freebee
+Townsville Jets 8 v 24 Parramatta Minotaurs
+Dubbo Hawks 13 v 25 Banksia Diggers
+Napaton Martyrs 16 v 47 Port Stevens Gardeners
+Queenstown Knives 10 v 18 Yimona Apocalypse
+Bonesville Panthers 24 v 20 Arcoomer Roosters
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Jamestown Southpaw 32 v 38 Bonesville Panthers
+Wurstastia Wizards 10 v 30 Tanktown Lightning
+West Suburbs Ranchers 8 v 24 Port Stevens Gardeners
+Arcoomer Roosters 56 v 6 Dubbo Hawks
+Yimona Apocalypse 19 v 18 Minto Hawks
+Napaton Martyrs 24 v 22 Banksia Diggers
+Northkellion Freebee 17 v 10 Queenstown Knives
+Townsville Jets 12 v 28 Parramatta Minotaurs
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Bonesville Panthers 34 v 14 Dubbo Hawks
+Yimona Apocalypse 10 v 18 Arcoomer Roosters
+Napaton Martyrs 6 v 31 Jamestown Southpaw
+Port Stevens Gardeners 4 v 22 Tanktown Lightning
+Minto Hawks 18 v 18 Parramatta Minotaurs
+Queenstown Knives 20 v 18 Townsville Jets
+West Suburbs Ranchers 38 v 4 Northkellion Freebee
+Wurstastia Wizards 38 v 22 Banksia Diggers
+--------------------------------
+
+Round 13 Results
+--------------------------------
+Queenstown Knives 2 v 14 West Suburbs Ranchers
+Jamestown Southpaw 19 v 22 Northkellion Freebee
+Dubbo Hawks 12 v 36 Tanktown Lightning
+Banksia Diggers 16 v 26 Bonesville Panthers
+Townsville Jets 18 v 22 Napaton Martyrs
+Parramatta Minotaurs 12 v 38 Port Stevens Gardeners
+Yimona Apocalypse 12 v 43 Arcoomer Roosters
+Minto Hawks 6 v 38 Wurstastia Wizards
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Yimona Apocalypse 21 v 12 Dubbo Hawks
+Wurstastia Wizards 38 v 10 Jamestown Southpaw
+Tanktown Lightning 6 v 10 Northkellion Freebee
+Townsville Jets 14 v 14 Bonesville Panthers
+West Suburbs Ranchers 17 v 22 Minto Hawks
+Queenstown Knives 14 v 22 Banksia Diggers
+Port Stevens Gardeners 26 v 24 Arcoomer Roosters
+Parramatta Minotaurs 6 v 37 Napaton Martyrs
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Bonesville Panthers 16 v 42 Port Stevens Gardeners
+Minto Hawks 4 v 16 West Suburbs Ranchers
+Tanktown Lightning 36 v 16 Townsville Jets
+Parramatta Minotaurs 18 v 14 Arcoomer Roosters
+Northkellion Freebee 14 v 43 Banksia Diggers
+Dubbo Hawks 22 v 24 Jamestown Southpaw
+Yimona Apocalypse 13 v 8 Queenstown Knives
+Napaton Martyrs 24 v 32 Wurstastia Wizards
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Townsville Jets 21 v 20 Dubbo Hawks
+Napaton Martyrs 12 v 32 Northkellion Freebee
+Minto Hawks 14 v 18 Bonesville Panthers
+Queenstown Knives 10 v 41 Port Stevens Gardeners
+West Suburbs Ranchers 14 v 8 Tanktown Lightning
+Yimona Apocalypse 22 v 18 Banksia Diggers
+Jamestown Southpaw 6 v 42 Arcoomer Roosters
+Parramatta Minotaurs 32 v 6 Wurstastia Wizards
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Parramatta Minotaurs 28 v 26 Minto Hawks
+Dubbo Hawks 6 v 31 Jamestown Southpaw
+Queenstown Knives 10 v 28 Wurstastia Wizards
+Tanktown Lightning 0 v 26 Arcoomer Roosters
+Napaton Martyrs 30 v 39 Northkellion Freebee
+Port Stevens Gardeners 40 v 18 West Suburbs Ranchers
+Townsville Jets 8 v 28 Bonesville Panthers
+Yimona Apocalypse 14 v 26 Banksia Diggers
+--------------------------------
+
+Round 18 Results
+--------------------------------
+Parramatta Minotaurs 4 v 10 Wurstastia Wizards
+Port Stevens Gardeners 34 v 18 Dubbo Hawks
+Townsville Jets 6 v 19 Tanktown Lightning
+Minto Hawks 14 v 12 Napaton Martyrs
+Banksia Diggers 22 v 14 Northkellion Freebee
+Queenstown Knives 0 v 22 Arcoomer Roosters
+Yimona Apocalypse 15 v 16 Jamestown Southpaw
+West Suburbs Ranchers 48 v 10 Bonesville Panthers
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Tanktown Lightning 12 v 24 Parramatta Minotaurs
+Banksia Diggers 8 v 14 Napaton Martyrs
+Dubbo Hawks 4 v 48 Port Stevens Gardeners
+Jamestown Southpaw 18 v 18 West Suburbs Ranchers
+Minto Hawks 16 v 38 Bonesville Panthers
+Arcoomer Roosters 26 v 4 Townsville Jets
+Yimona Apocalypse 4 v 30 Wurstastia Wizards
+Queenstown Knives 6 v 14 Northkellion Freebee
+--------------------------------
+
+Round 20 Results
+--------------------------------
+Bonesville Panthers 22 v 16 Napaton Martyrs
+Queenstown Knives 10 v 40 Arcoomer Roosters
+Minto Hawks 21 v 14 Dubbo Hawks
+Jamestown Southpaw 18 v 16 Yimona Apocalypse
+Banksia Diggers 34 v 24 West Suburbs Ranchers
+Wurstastia Wizards 24 v 0 Tanktown Lightning
+Townsville Jets 4 v 42 Port Stevens Gardeners
+Parramatta Minotaurs 8 v 21 Northkellion Freebee
+--------------------------------
+
+Round 21 Results
+--------------------------------
+Arcoomer Roosters 19 v 12 Tanktown Lightning
+Banksia Diggers 6 v 36 Bonesville Panthers
+Northkellion Freebee 18 v 12 Minto Hawks
+Queenstown Knives 30 v 12 Dubbo Hawks
+Jamestown Southpaw 28 v 10 Townsville Jets
+Wurstastia Wizards 12 v 18 Port Stevens Gardeners
+Parramatta Minotaurs 14 v 18 West Suburbs Ranchers
+Yimona Apocalypse 6 v 8 Napaton Martyrs
+--------------------------------
+
+Round 22 Results
+--------------------------------
+Wurstastia Wizards 38 v 20 Yimona Apocalypse
+Minto Hawks 12 v 26 Arcoomer Roosters
+Port Stevens Gardeners 42 v 4 Napaton Martyrs
+Jamestown Southpaw 4 v 24 Parramatta Minotaurs
+West Suburbs Ranchers 21 v 20 Dubbo Hawks
+Tanktown Lightning 30 v 18 Banksia Diggers
+Queenstown Knives 26 v 6 Bonesville Panthers
+Townsville Jets 10 v 22 Northkellion Freebee
+--------------------------------
+
+Round 23 Results
+--------------------------------
+Port Stevens Gardeners 30 v 10 Banksia Diggers
+Parramatta Minotaurs 24 v 10 Arcoomer Roosters
+Minto Hawks 13 v 9 Jamestown Southpaw
+Dubbo Hawks 12 v 42 Northkellion Freebee
+Wurstastia Wizards 18 v 18 Napaton Martyrs
+Tanktown Lightning 16 v 16 Queenstown Knives
+Bonesville Panthers 31 v 24 Yimona Apocalypse
+West Suburbs Ranchers 29 v 4 Townsville Jets
+--------------------------------
+
+Round 24 Results
+--------------------------------
+Townsville Jets 12 v 24 Minto Hawks
+West Suburbs Ranchers 21 v 12 Wurstastia Wizards
+Arcoomer Roosters 25 v 10 Napaton Martyrs
+Port Stevens Gardeners 50 v 12 Bonesville Panthers
+Northkellion Freebee 20 v 22 Yimona Apocalypse
+Queenstown Knives 46 v 22 Banksia Diggers
+Jamestown Southpaw 23 v 32 Tanktown Lightning
+Parramatta Minotaurs 44 v 16 Dubbo Hawks
+--------------------------------
+
+Round 25 Results
+--------------------------------
+West Suburbs Ranchers 8 v 18 Arcoomer Roosters
+Yimona Apocalypse 10 v 26 Port Stevens Gardeners
+Parramatta Minotaurs 14 v 0 Napaton Martyrs
+Bonesville Panthers 44 v 12 Northkellion Freebee
+Tanktown Lightning 10 v 25 Jamestown Southpaw
+Dubbo Hawks 38 v 35 Minto Hawks
+Banksia Diggers 4 v 50 Wurstastia Wizards
+Queenstown Knives 37 v 14 Townsville Jets
+--------------------------------
+
+Round 26 Results
+--------------------------------
+Wurstastia Wizards 24 v 0 West Suburbs Ranchers
+Minto Hawks 16 v 16 Queenstown Knives
+Tanktown Lightning 12 v 22 Yimona Apocalypse
+Bonesville Panthers 48 v 8 Northkellion Freebee
+Napaton Martyrs 6 v 4 Townsville Jets
+Port Stevens Gardeners 51 v 16 Banksia Diggers
+Dubbo Hawks 6 v 28 Parramatta Minotaurs
+Arcoomer Roosters 23 v 4 Jamestown Southpaw
+--------------------------------
+
+Round 27 Results
+--------------------------------
+Port Stevens Gardeners 12 v 11 West Suburbs Ranchers
+Wurstastia Wizards 38 v 28 Arcoomer Roosters
+Parramatta Minotaurs 31 v 30 Northkellion Freebee
+Yimona Apocalypse 36 v 22 Tanktown Lightning
+--------------------------------
+
+Round 28 Results
+--------------------------------
+West Suburbs Ranchers 23 v 4 Parramatta Minotaurs
+Arcoomer Roosters 18 v 6 Yimona Apocalypse
+--------------------------------
+
+Round 29 Results
+--------------------------------
+Port Stevens Gardeners 20 v 31 Arcoomer Roosters
+Wurstastia Wizards 32 v 22 West Suburbs Ranchers
+--------------------------------
+
+Round 30 Results
+--------------------------------
+Arcoomer Roosters 14 v 25 Wurstastia Wizards
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Kam vo Freast-Port Stevens Gardeners : 30
+2. Roant Wio-Off Contract Players : 29
+3. Sersitio le Reastea-Port Stevens Gardeners : 29
+4. Dapper Gulli-Wurstastia Wizards : 25
+5. Kamros Arrow-Tanktown Lightning : 24
+6. Gabe Morier-Arcoomer Roosters : 24
+7. Matthew Chadwick-Port Stevens Gardeners : 23
+8. Luna Belta-Parramatta Minotaurs : 22
+9. Norman Cleary-Wurstastia Wizards : 21
+10. Michel vo Hreats-West Suburbs Ranchers : 21
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Roant le Treasdefa-Port Stevens Gardeners : 113
+2. Walt Boyd-Yimona Apocalypse : 63
+3. Kevin Hands-Wurstastia Wizards : 54
+4. Carl Pimmers-Queenstown Knives : 53
+5. Mundi o. Pas-Banksia Diggers : 50
+6. Lorenzo O' Connor-Parramatta Minotaurs : 49
+7. Quoatio Flower-Napaton Martyrs : 48
+8. Jane McMahon-Minto Hawks : 46
+9. Kaden Miniota-Tanktown Lightning : 45
+10. Felix de Grutin-Jamestown Southpaw : 44
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Addison az Nireas-Jamestown Southpaw : 3
+2. Norman Cleary-Wurstastia Wizards : 3
+3. Castro Jacklin-Yimona Apocalypse : 2
+4. Janey cu Zyeta-Queenstown Knives : 2
+5. Alexander Ngu-Arcoomer Roosters : 2
+6. Mark Soa-Jamestown Southpaw : 2
+7. Sersitio le Reastea-Port Stevens Gardeners : 2
+8. Jill en Astra-West Suburbs Ranchers : 2
+9. Isaac Y. le Qwe-Banksia Diggers : 1
+10. Cameron Drayersun-Napaton Martyrs : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Sersitio le Reastea-Port Stevens Gardeners : 4204
+2. Roant Wio-Off Contract Players : 3990
+3. Kam vo Freast-Port Stevens Gardeners : 3788
+4. Gabriel S. Cummins-Wurstastia Wizards : 3731
+5. Matthew Chadwick-Port Stevens Gardeners : 3719
+6. Kamros Arrow-Tanktown Lightning : 3698
+7. Luna Belta-Parramatta Minotaurs : 3506
+8. Jill en Astra-West Suburbs Ranchers : 3495
+9. Dapper Gulli-Wurstastia Wizards : 3397
+10. Vanessa C.D. en Xazis-Arcoomer Roosters : 3371
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Norman o. Ewe-Parramatta Minotaurs : 384
+2. Finn cu Degrass-Minto Hawks : 377
+3. Danny Manfredi-West Suburbs Ranchers : 377
+4. Joseph Drayersun-Yimona Apocalypse : 373
+5. Carl Pimmers-Queenstown Knives : 372
+6. Raymond Mallett-Napaton Martyrs : 366
+7. Emily Jay Aaronson-Napaton Martyrs : 364
+8. Madison Elroii-Queenstown Knives : 358
+9. Kevin Hands-Wurstastia Wizards : 358
+10. Julian F. o. Zas-Tanktown Lightning : 356
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Kam North-Arcoomer Roosters : 1
+2. Cula Fowler-Jamestown Southpaw : 1
+3. Bort N. Gealo-Banksia Diggers : 1
+4. Zavvi Habib-Bonesville Panthers : 1
+5. Ryan Allen-Tanktown Lightning : 1
+6. Raymond S. Barrett-Bonesville Panthers : 1
+7. Zack od Asdwere-Queenstown Knives : 1
+8. Will Quak-Townsville Jets : 1
+9. Kam vo Freast-Port Stevens Gardeners : 1
+10. Niko Beli-Wurstastia Wizards : 0
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Alexander Ngu-Arcoomer Roosters : 1449
+2. Madison Gulli-Parramatta Minotaurs : 1272
+3. Samantha ba Ferea-West Suburbs Ranchers : 1182
+4. Norman Cleary-Wurstastia Wizards : 1108
+5. Lois Churchill-Banksia Diggers : 1038
+6. Maddie Woolf-Queenstown Knives : 1029
+7. Kam North-Arcoomer Roosters : 995
+8. Castro Jacklin-Yimona Apocalypse : 952
+9. Callum mu Unase-Banksia Diggers : 937
+10. Kam vo Freast-Port Stevens Gardeners : 924
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Alan le Reastea-Banksia Diggers : 64
+2. Quinn o. Qwe-Queenstown Knives : 59
+3. Benji Reio-West Suburbs Ranchers : 55
+4. Walt O. ze Dera-Northkellion Freebee : 48
+5. Benjamin C.D. vo Jarta-Jamestown Southpaw : 47
+6. Phil E. Klomono-Minto Hawks : 40
+7. Euan ze Aert-Arcoomer Roosters : 40
+8. Tom ti Cunrea-Yimona Apocalypse : 39
+9. Bert cu Zyeta-Northkellion Freebee : 37
+10. Jon Nasert-Tanktown Lightning : 36
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Matthew Chadwick-Port Stevens Gardeners : 7
+2. Sersitio le Reastea-Port Stevens Gardeners : 6
+3. Roant Wio-Off Contract Players : 4
+4. Michel vo Hreats-West Suburbs Ranchers : 4
+5. Cabberati Sua-Wurstastia Wizards : 3
+6. George Glass-Napaton Martyrs : 3
+7. Velento le Ijok-Napaton Martyrs : 3
+8. Phil E. Klomono-Minto Hawks : 3
+9. Madison Gulli-Parramatta Minotaurs : 3
+10. Patrise Boeaste-West Suburbs Ranchers : 3
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Phil Bamert-Parramatta Minotaurs : 47
+2. Zach az Treaster-Northkellion Freebee : 46
+3. Ryan Allen-Tanktown Lightning : 41
+4. John N. O' Sullivan-West Suburbs Ranchers : 41
+5. Lorenzo o. Doa-West Suburbs Ranchers : 40
+6. Julie o. Ewe-Bonesville Panthers : 39
+7. Janey cu Zyeta-Queenstown Knives : 39
+8. Walt Boyd-Yimona Apocalypse : 38
+9. Niko Beli-Wurstastia Wizards : 38
+10. Tyrone Tate-Napaton Martyrs : 37
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Cam A. Soa-Dubbo Hawks : 13
+2. Kukki en Lemirea-Yimona Apocalypse : 13
+3. Johnrio U. le Ijok-Tanktown Lightning : 12
+4. Jane McMahon-Minto Hawks : 12
+5. Gerry Romney-Arcoomer Roosters : 12
+6. Leonard Chappell-Bonesville Panthers : 11
+7. James Develo-Townsville Jets : 11
+8. Walt Boyd-Yimona Apocalypse : 11
+9. Benji Reio-West Suburbs Ranchers : 11
+10. Kaden Miniota-Tanktown Lightning : 11
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Danni ti Jaeras-Arcoomer Roosters : 9
+2. Itze Dadrio-Yimona Apocalypse : 9
+3. Kukki en Lemirea-Yimona Apocalypse : 9
+4. Madison Elroii-Queenstown Knives : 8
+5. Vitaliy Mallett-Napaton Martyrs : 8
+6. Tommy Cotric-Napaton Martyrs : 8
+7. James Develo-Townsville Jets : 8
+8. Euan ze Aert-Arcoomer Roosters : 8
+9. Samantha Farrell-Townsville Jets : 7
+10. Sr. Van Jersta-Townsville Jets : 7
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Cliff H. Farrell-Yimona Apocalypse : 2
+2. Bort Miniota-Jamestown Southpaw : 1
+3. Zavvi Habib-Bonesville Panthers : 1
+4. Felix de Grutin-Jamestown Southpaw : 1
+5. Herbert Arnolds-Dubbo Hawks : 1
+6. Carl Vondera-Townsville Jets : 1
+7. Dapper de Auterts-Townsville Jets : 1
+8. Benji Reio-West Suburbs Ranchers : 1
+9. Raymond Mallett-Napaton Martyrs : 1
+10. Karli Kriis-Queenstown Knives : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Roant Wio-Off Contract Players : 2
+2. Kaden Miniota-Tanktown Lightning : 2
+3. Zucshio Bridgers-Queenstown Knives : 1
+4. Alister Cooper-Off Contract Players : 1
+5. Reed May-Tanktown Lightning : 1
+6. Turni T. Curran-Jamestown Southpaw : 1
+7. Kaiden V. vo Furha-Jamestown Southpaw : 1
+8. Kylzea Nu-Parramatta Minotaurs : 1
+9. Abria o. Vio-Wurstastia Wizards : 1
+10. Ashley le Beastea-Queenstown Knives : 1
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Bobby o. Mos-Napaton Martyrs : 5
+2. Albert P. Perry-Wurstastia Wizards : 5
+3. Xyaye O' Thomas-West Suburbs Ranchers : 3
+4. Julian Bottia-Northkellion Freebee : 3
+5. Quintin Jay John-Arcoomer Roosters : 3
+6. George Nurtersamo-Northkellion Freebee : 3
+7. Kimberly Reio-Banksia Diggers : 2
+8. Dirk cu Zeassa-Parramatta Minotaurs : 2
+9. Kimberly Armstrong-Jamestown Southpaw : 2
+10. Sammy I. Nadaserty-Bonesville Panthers : 2
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Roant le Treasdefa-Port Stevens Gardeners : 230
+2. Walt Boyd-Yimona Apocalypse : 174
+3. Quoatio Flower-Napaton Martyrs : 132
+4. Kevin Hands-Wurstastia Wizards : 128
+5. Kam vo Freast-Port Stevens Gardeners : 120
+6. Euan ze Aert-Arcoomer Roosters : 120
+7. Sersitio le Reastea-Port Stevens Gardeners : 118
+8. Roant Wio-Off Contract Players : 116
+9. Felix de Grutin-Jamestown Southpaw : 112
+10. Kukki vo Casun-Wurstastia Wizards : 108
+11. Carl Pimmers-Queenstown Knives : 106
+12. Matthew Chadwick-Port Stevens Gardeners : 105
+13. Mundi o. Pas-Banksia Diggers : 105
+14. Lorenzo O' Connor-Parramatta Minotaurs : 102
+15. Jane McMahon-Minto Hawks : 101
+16. Dapper Gulli-Wurstastia Wizards : 100
+17. Kamros Arrow-Tanktown Lightning : 97
+18. Kyle vo Cesdrate-Bonesville Panthers : 96
+19. Gabe Morier-Arcoomer Roosters : 96
+20. Kaden Miniota-Tanktown Lightning : 95
+21. Luna Belta-Parramatta Minotaurs : 88
+22. Norman Cleary-Wurstastia Wizards : 87
+23. Michel vo Hreats-West Suburbs Ranchers : 85
+24. Versa Fallon-Queenstown Knives : 84
+25. Walt O. ze Dera-Northkellion Freebee : 80
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Sersitio le Reastea-Port Stevens Gardeners : 392
+2. Kamros Arrow-Tanktown Lightning : 374
+3. Kam vo Freast-Port Stevens Gardeners : 373
+4. Vanessa C.D. en Xazis-Arcoomer Roosters : 369
+5. Gabe Morier-Arcoomer Roosters : 344
+6. Matthew Chadwick-Port Stevens Gardeners : 332
+7. Roant Wio-Off Contract Players : 325
+8. Zack en Noire-Bonesville Panthers : 301
+9. Velento le Ijok-Napaton Martyrs : 292
+10. Norman Cleary-Wurstastia Wizards : 288
+11. Luna Belta-Parramatta Minotaurs : 287
+12. Zavvi Habib-Bonesville Panthers : 280
+13. Bill M. cu Jokiea-Bonesville Panthers : 276
+14. Kam North-Arcoomer Roosters : 275
+15. Walt O. ze Dera-Northkellion Freebee : 273
+16. Madison Gulli-Parramatta Minotaurs : 270
+17. Ali W. Beli-West Suburbs Ranchers : 269
+18. Walt Boyd-Yimona Apocalypse : 262
+19. Euan ze Aert-Arcoomer Roosters : 262
+20. Valian Miniota-Parramatta Minotaurs : 257
+21. Cameron Drayersun-Napaton Martyrs : 256
+22. Lois Churchill-Banksia Diggers : 256
+23. Suelen Dempsey-Arcoomer Roosters : 251
+24. Addison az Nireas-Jamestown Southpaw : 250
+25. Christian Song-Minto Hawks : 247
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+Michelle G. Poamento's Tough Training Session
+Townsville Jets Sign Janerio Jay ba Yesda
+Coach Proposes New Finals System!
+Rival Players Raise Awareness!
+Patrise Sua's Large-Scale Gambling Problem
+Opinion: Hormanio Thrillho Should Swap Teams
+Opinion: Christian Song Should Captain Samoa
+Coach Proposes New Finals System!
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+Jeni Freit's Tough Training Session
+Dirk Stimson Assaults RSL Bouncer
+Em vo Jarta At Risk Of An Early Release!
+Freya Morrison Offered Pay Cut To Re-sign
+Imm Arrow Donates To Controverisal Charity
+Player Unrest At Bonesville Panthers
+Bort Miniota Donates To Controverisal Charity
+Jane cu Ininas Passes Away After Illness
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+Felacko Oak's Tough Training Session
+Tanktown Lightning Sign Johnrio U. le Ijok
+Fan Poll: Yimona Apocalypse's Best Player
+Nick Jay en Qweas Passes Away After Illness
+Junior Deon's Retirment Rumours!
+Chase az Mondi Offered Pay Cut To Re-sign
+Blade Burt's Eligibility Crisis!
+Nicki McCallum's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+Scott vo Furha's Tough Training Session
+Port Stevens Gardeners Sign William H. Johnson
+Bonesville Panthers Sign Pat H. Hall
+Rival Players Raise Awareness!
+Kurt az Lemoa To Have Contract Extended!
+Coach Proposes New Finals System!
+Euan ze Aert Involved In Sexting Scandal
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+Johnrio Curr's Tough Training Session
+Parramatta Minotaurs Sign Mike le Yasrewa
+Minto Hawks Sign Ezra o. Zas
+Parramatta Minotaurs Sign Lorman Worsent
+Fan Poll: Townsville Jets's Best Player
+Opinion: Johnrio Curr Should Captain Wales
+Fan Poll: Jamestown Southpaw's Best Player
+Lorenzo o. Doa's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+Kurt az Lemoa's Tough Training Session
+Bonesville Panthers Sign Julie o. Ewe
+Luna Lapper At Risk Of An Early Release!
+Em vo Jarta To Have Contract Extended!
+Players Fight At Local RSL!
+Myles en Tortio Passes Away After Illness
+Kukki en Lemirea's Retirment Rumours!
+Player Unrest At Yimona Apocalypse
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+Joseph Tyrell's Tough Training Session
+Frankie Maxwell Offered Pay Cut To Re-sign
+Mike o. Tyu's Large-Scale Gambling Problem
+Fan Poll: Napaton Martyrs's Best Player
+Dom F. Chricton's Retirment Rumours!
+Player Unrest At Banksia Diggers
+Fan Poll: Parramatta Minotaurs's Best Player
+Christian Song Saves Local Man From Drowning
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+Gregre ba Deffa's Tough Training Session
+Northkellion Freebee Sign Oliver le Jasde
+Queenstown Knives Sign Cam az Freastiy
+Arcoomer Roosters Sign Vanessa Warrant
+Sr. o. Mos To Have Contract Extended!
+Player Unrest At Napaton Martyrs
+Freya Morrison's Retirment Rumours!
+Player Unrest At Minto Hawks
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+Joshua Britt's Tough Training Session
+Banksia Diggers Sign Freya K. le Cureas
+Minto Hawks Sign Finley Rice
+Napaton Martyrs Sign Cabberati P. az Seasont
+Bonesville Panthers Sign Ezra Quake
+Fan Poll: Port Stevens Gardeners's Best Player
+Fan Poll: Queenstown Knives's Best Player
+Player Unrest At Parramatta Minotaurs
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+Danni Morier's Tough Training Session
+Dubbo Hawks Sign Ometage ti Zyea
+Banksia Diggers Sign Freya Morrison
+Yimona Apocalypse Sign Michael Caliber
+Dale Jackson Saves Local Man From Drowning
+Earl Hughes To Have Contract Extended!
+Kylzea Nu Saves Local Man From Drowning
+Player Unrest At Queenstown Knives
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+Burmo Nurtersamo's Tough Training Session
+Bonesville Panthers Sign Sammy I. Nadaserty
+Queenstown Knives Sign Zack od Asdwere
+Bonesville Panthers Sign Freya K. le Cureas
+Dasi le Treasdefa Passes Away After Illness
+Rival Players Raise Awareness!
+Samantha Farrell Saves Local Man From Drowning
+Alan le Reastea To Have Contract Extended!
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+Luna Lapper's Tough Training Session
+Ometage ti Zyea's Retirment Rumours!
+Freya K. le Cureas Involved In Sexting Scandal
+Frankie Nasert's Eligibility Crisis!
+Fan Poll: Dubbo Hawks's Best Player
+Diana Stewart To Have Contract Extended!
+Rival Players Raise Awareness!
+Freya ti Vaerasii Passes Away After Illness
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+Walt O. ze Dera's Tough Training Session
+Wurstastia Wizards Sign Samuel Y. Dace
+Napaton Martyrs Sign Peter od Unina
+Opinion: Alistair od Unina Should Swap Teams
+Coach Proposes New Finals System!
+Coach Proposes New Finals System!
+Samuel Y. Dace's Eligibility Crisis!
+Jay Cooper Offered Pay Cut To Re-sign
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+Kris M. o. Ayo's Tough Training Session
+Northkellion Freebee Sign Al az Yutrea
+Bonesville Panthers Sign Felacko Oak
+Fan Poll: Bonesville Panthers's Best Player
+Julian F. o. Zas Assaults RSL Bouncer
+Player Unrest At Arcoomer Roosters
+Zucshio Jackington's Large-Scale Gambling Problem
+Player Unrest At Arcoomer Roosters
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Thomas Zeeka's Tough Training Session
+Northkellion Freebee Sign Greta Kay Wolf
+Minto Hawks Sign Alexis Manfredi
+Alistair Laki Passes Away After Illness
+Coach Proposes New Finals System!
+Finley Rice At Risk Of An Early Release!
+Opinion: Oaketa od Asdwere Should Swap Teams
+David Caddington Passes Away After Illness
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+Quoatio Flower's Tough Training Session
+Banksia Diggers Sign Simon Eastra
+Tanktown Lightning Sign Dreka Zealot
+Banksia Diggers Sign Nicki McCallum
+Parramatta Minotaurs Sign Frankie Nasert
+Nita Obea Saves Local Man From Drowning
+Christian Zorsta Saves Local Man From Drowning
+Rival Players Raise Awareness!
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+Kukki en Lemirea's Tough Training Session
+Jamestown Southpaw Sign Kimberly Cotric
+Dubbo Hawks Sign Naomi Wott
+Fan Poll: Port Stevens Gardeners's Best Player
+Cliff John's Large-Scale Gambling Problem
+Coach Proposes New Finals System!
+Fan Poll: Minto Hawks's Best Player
+Fan Poll: Queenstown Knives's Best Player
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+Roant Wio's Tough Training Session
+Yimona Apocalypse Sign Cliff H. Farrell
+Dubbo Hawks Sign Addison A. vo Cunstas
+Coach Proposes New Finals System!
+Opinion: Daniel Morris Should Captain England
+Coach Proposes New Finals System!
+John o. Ces At Risk Of An Early Release!
+Mark Soa To Have Contract Extended!
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Zack en Defrea's Tough Training Session
+Bonesville Panthers Sign Nicholas od Asdwere
+Townsville Jets Sign Dapper de Auterts
+Townsville Jets Sign Frankie en Serea
+Opinion: Bart Nu Should Swap Teams
+Opinion: Julie o. Ewe Should Swap Teams
+Vitaliy U. Hoyabembe Offered Pay Cut To Re-sign
+Mike az Iunodea's Retirment Rumours!
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+Jeni Freit's Tough Training Session
+Northkellion Freebee Sign Zucshio Harris
+Opinion: Mike o. Tyu Should Captain Scotland
+Opinion: Peter od Unina Should Swap Teams
+Ed Oak Assaults RSL Bouncer
+Opinion: Gabriel S. Cummins Should Captain Australia
+Opinion: Madison Gulli Should Captain Wales
+Maddie le Cureas Passes Away After Illness
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+Felix Obea's Tough Training Session
+Wurstastia Wizards Sign Ed Oak
+Northkellion Freebee Sign Dirk Stimson
+Lenny le Cureas Passes Away After Illness
+Vitaliy vo Cunstas Assaults RSL Bouncer
+Christian Zorsta Donates To Controverisal Charity
+Tura Sullivan's Large-Scale Gambling Problem
+Samantha ba Ferea Assaults RSL Bouncer
+--------------------------------
+
+
+Round 22 News Stories
+--------------------------------
+Felacko Oak's Tough Training Session
+Parramatta Minotaurs Sign Michelle G. Poamento
+Dapper de Auterts Offered Pay Cut To Re-sign
+Opinion: Christian Hu Should Captain Lebanon
+Opinion: Zasye od Numnase Should Captain Papau New Guinea
+Players Fight At Local RSL!
+Pearl ti Asdra Saves Local Man From Drowning
+Walt Thompson Passes Away After Illness
+--------------------------------
+
+
+Round 23 News Stories
+--------------------------------
+Luna Stanley's Tough Training Session
+Arcoomer Roosters Sign Nicki McCallum
+Danni de Auterts Passes Away After Illness
+Coach Proposes New Finals System!
+Lois B. le Oreas At Risk Of An Early Release!
+Naomi Wott Donates To Controverisal Charity
+Joseph Drayersun's Large-Scale Gambling Problem
+Janerio Jay ba Yesda To Have Contract Extended!
+--------------------------------
+
+
+Round 24 News Stories
+--------------------------------
+Samantha Farrell's Tough Training Session
+Christopher Q. Kat Involved In Sexting Scandal
+Tyrone Tate Saves Local Man From Drowning
+Eric az Mondi Passes Away After Illness
+Brendan ti Jaeras Donates To Controverisal Charity
+Fan Poll: Parramatta Minotaurs's Best Player
+Coach Proposes New Finals System!
+Pat Imposia's Large-Scale Gambling Problem
+--------------------------------
+
+
+Round 25 News Stories
+--------------------------------
+Bart Farrell's Tough Training Session
+Jamestown Southpaw Sign Davey le Ijok
+Wurstastia Wizards Sign Josh Morrison
+Minto Hawks Sign Alistair od Unina
+Rival Players Raise Awareness!
+Addison A. vo Cunstas's Retirment Rumours!
+Fan Poll: Jamestown Southpaw's Best Player
+Gabriel en Zasde Passes Away After Illness
+--------------------------------
+
+
+Round 26 News Stories
+--------------------------------
+Isaac Way's Tough Training Session
+Queenstown Knives Sign Samuel Y. Dace
+Port Stevens Gardeners Wins Minor Premiership!
+Players Fight At Local RSL!
+Rival Players Raise Awareness!
+Xavier Kimberly Involved In Sexting Scandal
+Lorman Worsent's Eligibility Crisis!
+Fan Poll: Tanktown Lightning's Best Player
+--------------------------------
+
+
+Round 27 News Stories
+--------------------------------
+Norman Thurston's Tough Training Session
+Port Stevens Gardeners Sign Allie od Fereas
+Parramatta Minotaurs Sign Peter Cabbie
+Opinion: Madison Hull Should Captain France
+Rival Players Raise Awareness!
+Kyuss East Passes Away After Illness
+Cliff John Assaults RSL Bouncer
+Fan Poll: Queenstown Knives's Best Player
+--------------------------------
+
+
+Round 28 News Stories
+--------------------------------
+Cooper Million's Tough Training Session
+Townsville Jets Sign Phil P. Domino
+Diana Stewart To Have Contract Extended!
+Alexander Ngu Saves Local Man From Drowning
+Coach Proposes New Finals System!
+Christopher cu Jokiea Involved In Sexting Scandal
+Player Unrest At Jamestown Southpaw
+Ronald Purplouis Passes Away After Illness
+--------------------------------
+
+
+Round 29 News Stories
+--------------------------------
+Cliff H. Farrell's Tough Training Session
+Queenstown Knives Sign Eric Euation
+Queenstown Knives Sign John Pout
+Townsville Jets Sign Carl Vondera
+West Suburbs Ranchers Sign Tyrone Gubbersfield
+Coach Proposes New Finals System!
+Player Unrest At Northkellion Freebee
+Tom H. Nurtersamo's Retirment Rumours!
+--------------------------------
+
+
+Round 30 News Stories
+--------------------------------
+Mike az Iunodea's Tough Training Session
+Tanktown Lightning Sign Nita Questa
+Jamestown Southpaw Sign Mark Soa
+Minto Hawks Sign Phil E. Klomono
+Wurstastia Wizards Wins Premiership!
+Players Fight At Local RSL!
+Michelle le Peir Passes Away After Illness
+Alan le Reastea's Large-Scale Gambling Problem
+--------------------------------
+

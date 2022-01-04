@@ -1,0 +1,231 @@
+----------LINE-UPS----------
+Home Team: Napaton Martyrs
+1: Felacko Oak
+2: Isaac Gillard
+3: Brendan ti Jaeras
+4: Vitaliy U. Hoyabembe
+5: Ed Van Fletcher
+6: Brett en Vreas
+7: Bretalano Lyon
+8: Kaiden Yase
+9: Amy le Paer
+10: Mark ze Aert
+11: Walt O. ze Dera
+12: Carl Pimmers
+13: Anthony W. Alexander
+14: Imm Arrow
+15: Vanessa C.D. en Xazis
+16: Josh Morrison
+17: Adole Sua
+Away Team: Banksia Diggers
+1: Terry Imposia
+2: Callum mu Unase
+3: Frankie Maxwell
+4: Maddison John
+5: Madison Vianna
+6: Ash Eastra
+7: John Pout
+8: Don O. Warrant
+9: Gabriel X. Woods
+10: Alan le Reastea
+11: Vitaliy le Sasson
+12: Em Oberst
+13: Xyaye O. Deon
+14: Frankie le Emona
+15: Alister Cooper
+16: Zavvi Habib
+17: Davey le Ijok
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - Napaton Martyrs: 0 v Banksia Diggers: 0
+00:26 - Brett en Vreas - Knock On
+00:58 - Ash Eastra - TRY - Napaton Martyrs: 0 v Banksia Diggers: 4
+01:58 - Gabriel X. Woods - CONVERSION MISSED
+04:04 - Madison Vianna - Kick Out On The Full
+04:33 - Bretalano Lyon - TRY - Napaton Martyrs: 4 v Banksia Diggers: 4
+05:33 - Carl Pimmers - CONVERSION MISSED
+09:21 - Callum mu Unase - 6th Tackle Changeover
+10:39 - Brendan ti Jaeras - 6th Tackle Changeover
+11:21 - Isaac Gillard - Intercepted Off A Em Oberst Pass
+11:36 - Alan le Reastea - Intercepted Off A Carl Pimmers Pass
+12:52 - Felacko Oak - Intercepted Off A Xyaye O. Deon Pass
+13:06 - Brett en Vreas - Forward Pass
+14:32 - Brett en Vreas - Forward Pass
+15:58 - Callum mu Unase - 6th Tackle Changeover
+18:27 - Kaiden Yase - Knock On
+19:06 - Amy le Paer - Intercepted Off A Don O. Warrant Pass
+19:51 - Amy le Paer - Forward Pass
+20:43 - Banksia Diggers Interchanged Players Madison Vianna & Alister Cooper
+20:59 - ------VIDEO REFEREE------
+20:59 - Ash Eastra - NO TRY - Knock On
+21:24 - Napaton Martyrs Interchanged Players Amy le Paer & Vanessa C.D. en Xazis
+21:24 - Banksia Diggers Interchanged Players Maddison John & Zavvi Habib
+23:47 - Alister Cooper - 6th Tackle Changeover
+27:47 - Ed Van Fletcher - 6th Tackle Changeover
+28:02 - Walt O. ze Dera - Intercepted Off A Callum mu Unase Pass
+28:02 - Walt O. ze Dera - TRY - Napaton Martyrs: 8 v Banksia Diggers: 4
+29:02 - Carl Pimmers - CONVERSION MISSED
+30:02 - Banksia Diggers Interchanged Players Frankie Maxwell & Davey le Ijok
+30:20 - Felacko Oak - Forward Pass
+30:20 - Napaton Martyrs Interchanged Players Kaiden Yase & Imm Arrow
+30:42 - Napaton Martyrs Interchanged Players Brett en Vreas & Adole Sua
+30:42 - Banksia Diggers Interchanged Players Alan le Reastea & Madison Vianna
+31:31 - Callum mu Unase - Forward Pass
+32:33 - John Pout - Intercepted Off A Isaac Gillard Pass
+33:16 - Zavvi Habib - TRY - Napaton Martyrs: 8 v Banksia Diggers: 8
+34:16 - Gabriel X. Woods - CONVERSION MISSED
+36:19 - Anthony W. Alexander - Intercepted Off A Xyaye O. Deon Pass
+36:32 - Bretalano Lyon - TRY - Napaton Martyrs: 12 v Banksia Diggers: 8
+37:32 - Carl Pimmers - CONVERSION MISSED
+39:45 - John Pout - Injury - Broken Arm
+39:45 - Vanessa C.D. en Xazis - SIN BIN
+39:45 - Vanessa C.D. en Xazis - Penalty
+39:45 - Banksia Diggers Interchanged Players John Pout & Frankie le Emona
+40:00 - HALF TIME - Napaton Martyrs: 12 v Banksia Diggers: 8
+41:14 - Zavvi Habib - Knock On
+41:49 - Vitaliy U. Hoyabembe - Over The Sideline
+43:12 - Alister Cooper - Injury - Broken Leg
+43:12 - Banksia Diggers Interchanged Players Alister Cooper & John Pout
+44:14 - ------VIDEO REFEREE------
+44:14 - Davey le Ijok - NO TRY - 20m Restart
+45:45 - Xyaye O. Deon - Stripped Ball Off Brendan ti Jaeras
+46:03 - Ash Eastra - Knock On
+46:03 - Napaton Martyrs Interchanged Players Walt O. ze Dera & Kaiden Yase
+46:03 - Banksia Diggers Interchanged Players Em Oberst & Frankie Maxwell
+46:19 - Ed Van Fletcher - Over The Sideline
+46:30 - John Pout - TRY - Napaton Martyrs: 12 v Banksia Diggers: 12
+47:30 - Gabriel X. Woods - CONVERSION MISSED
+49:58 - SIN BIN RETURN - Vanessa C.D. en Xazis
+49:58 - Bretalano Lyon - Knock On
+50:15 - Frankie le Emona - Knock On
+51:41 - Napaton Martyrs Interchanged Players Adole Sua & Josh Morrison
+51:53 - Madison Vianna - Forward Pass
+52:17 - Vanessa C.D. en Xazis - FIELD GOAL MISSED
+52:17 - 20m Restart - Banksia Diggers
+52:57 - John Pout - Knock On
+53:09 - Kaiden Yase - FIELD GOAL - Napaton Martyrs: 13 v Banksia Diggers: 12
+53:48 - Vanessa C.D. en Xazis - Knock On
+55:13 - Davey le Ijok - FIELD GOAL MISSED
+55:13 - 20m Restart - Napaton Martyrs
+56:23 - Ash Eastra - Intercepted Off A Brendan ti Jaeras Pass
+56:57 - Josh Morrison - Intercepted Off A Don O. Warrant Pass
+57:08 - Brendan ti Jaeras - Knock On
+58:25 - Frankie le Emona - FIELD GOAL - Napaton Martyrs: 13 v Banksia Diggers: 13
+58:53 - Mark ze Aert - Ruck Infringement
+62:47 - Ash Eastra - 6th Tackle Changeover
+66:00 - Napaton Martyrs Interchanged Players Josh Morrison & Adole Sua
+66:26 - Felacko Oak - FIELD GOAL MISSED
+66:26 - 20m Restart - Banksia Diggers
+67:40 - Zavvi Habib - Forward Pass
+68:10 - Ed Van Fletcher - FIELD GOAL - Napaton Martyrs: 14 v Banksia Diggers: 13
+68:21 - Adole Sua - Forward Pass
+68:38 - Vanessa C.D. en Xazis - Intercepted Off A Gabriel X. Woods Pass
+69:17 - Terry Imposia - Intercepted Off A Imm Arrow Pass
+69:34 - Kaiden Yase - Intercepted Off A Callum mu Unase Pass
+70:24 - Napaton Martyrs Interchanged Players Imm Arrow & Josh Morrison
+71:24 - Xyaye O. Deon - Knock On
+71:24 - Napaton Martyrs Interchanged Players Carl Pimmers & Brett en Vreas
+72:17 - Adole Sua - Over The Sideline
+72:43 - Vitaliy le Sasson - Knock On
+73:19 - Bretalano Lyon - Over The Sideline
+74:24 - John Pout - FIELD GOAL - Napaton Martyrs: 14 v Banksia Diggers: 14
+74:47 - Zavvi Habib - Forward Pass
+75:03 - ------VIDEO REFEREE------
+75:03 - Felacko Oak - TRY - Napaton Martyrs: 18 v Banksia Diggers: 14
+76:03 - Brendan ti Jaeras - CONVERSION MISSED
+77:15 - Vitaliy U. Hoyabembe - Over The Sideline
+78:07 - ------VIDEO REFEREE------
+78:07 - Ash Eastra - TRY - Napaton Martyrs: 18 v Banksia Diggers: 18
+79:07 - Gabriel X. Woods - CONVERSION MISSED
+80:32 - Frankie le Emona - Forward Pass
+80:47 - Felacko Oak - FIELD GOAL MISSED
+80:47 - 20m Restart - Banksia Diggers
+81:41 - Josh Morrison - Intercepted Off A Frankie le Emona Pass
+81:41 - Josh Morrison - FIELD GOAL MISSED
+81:41 - 20m Restart - Banksia Diggers
+81:41 - Banksia Diggers Interchanged Players Zavvi Habib & Em Oberst
+81:56 - Frankie le Emona - Forward Pass
+82:12 - Ed Van Fletcher - FIELD GOAL MISSED
+82:12 - 20m Restart - Banksia Diggers
+83:32 - Vitaliy le Sasson - Knock On
+83:47 - Kaiden Yase - Knock On
+87:43 - Davey le Ijok - 6th Tackle Changeover
+88:28 - Felacko Oak - FIELD GOAL - Napaton Martyrs: 19 v Banksia Diggers: 18
+88:28 - FULL TIME - Napaton Martyrs: 19 v Banksia Diggers: 18
+                             
+--------PLAYER STATS--------
+Home Team: Napaton Martyrs
+1: Felacko Oak |Time Played: 89:38 |Metres: 242 |Tackles: 8 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 1 |Total Points: 5 |Fantasy Points: 64
+2: Isaac Gillard |Time Played: 89:38 |Metres: 49 |Tackles: 10 |Kicks: 1 |Kick Metres: 17 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 43
+3: Brendan ti Jaeras |Time Played: 89:38 |Metres: 7 |Tackles: 13 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+4: Vitaliy U. Hoyabembe |Time Played: 89:38 |Metres: 76 |Tackles: 7 |Kicks: 1 |Kick Metres: 55 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+5: Ed Van Fletcher |Time Played: 89:38 |Metres: 27 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 18
+6: Adole Sua |Time Played: 44:37 |Metres: 17 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+7: Bretalano Lyon |Time Played: 89:38 |Metres: 117 |Tackles: 12 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 2 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 31
+8: Josh Morrison |Time Played: 33:33 |Metres: 8 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+9: Vanessa C.D. en Xazis |Time Played: 58:01 |Metres: 60 |Tackles: 11 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+10: Mark ze Aert |Time Played: 89:38 |Metres: 13 |Tackles: 20 |Kicks: 1 |Kick Metres: 13 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+11: Kaiden Yase |Time Played: 73:55 |Metres: 67 |Tackles: 18 |Kicks: 2 |Kick Metres: 58 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 26
+12: Brett en Vreas |Time Played: 48:56 |Metres: 103 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+13: Anthony W. Alexander |Time Played: 89:38 |Metres: 28 |Tackles: 21 |Kicks: 1 |Kick Metres: 57 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 65
+14: Walt O. ze Dera |Time Played: 46:03 |Metres: 0 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+15: Amy le Paer |Time Played: 21:24 |Metres: 6 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+16: Imm Arrow |Time Played: 40:04 |Metres: 2 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+17: Carl Pimmers |Time Played: 71:24 |Metres: 1 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+Highlights:                 
+Most Tackles: Anthony W. Alexander: 21
+Most Points: Bretalano Lyon: 8
+Most Metres: Felacko Oak: 242
+Most Errors: Brett en Vreas: 3
+                             
+Away Team: Banksia Diggers
+1: Terry Imposia |Time Played: 89:38 |Metres: 167 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 85
+2: Callum mu Unase |Time Played: 89:38 |Metres: 57 |Tackles: 7 |Kicks: 1 |Kick Metres: 61 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+3: Davey le Ijok |Time Played: 59:36 |Metres: 86 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 47
+4: Em Oberst |Time Played: 52:50 |Metres: 21 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+5: John Pout |Time Played: 86:11 |Metres: 128 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 1 |Total Points: 5 |Fantasy Points: 39
+6: Ash Eastra |Time Played: 89:38 |Metres: 164 |Tackles: 5 |Kicks: 1 |Kick Metres: 46 |40/20: 0 |Errors: 2 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 35
+7: Frankie le Emona |Time Played: 49:53 |Metres: 20 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 3
+8: Don O. Warrant |Time Played: 89:38 |Metres: 10 |Tackles: 14 |Kicks: 2 |Kick Metres: 75 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 48
+9: Gabriel X. Woods |Time Played: 89:38 |Metres: 12 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+10: Madison Vianna |Time Played: 79:39 |Metres: 14 |Tackles: 12 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+11: Vitaliy le Sasson |Time Played: 89:38 |Metres: 63 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+12: Frankie Maxwell |Time Played: 73:37 |Metres: 25 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+13: Xyaye O. Deon |Time Played: 89:38 |Metres: 23 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+14: Alister Cooper |Time Played: 22:29 |Metres: 20 |Tackles: 0 |Kicks: 1 |Kick Metres: 35 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+15: Alan le Reastea |Time Played: 30:42 |Metres: 0 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+16: Maddison John |Time Played: 21:24 |Metres: 11 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+17: Zavvi Habib |Time Played: 61:27 |Metres: 90 |Tackles: 3 |Kicks: 1 |Kick Metres: 33 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+Highlights:                 
+Most Tackles: Xyaye O. Deon: 17
+Most Points: Ash Eastra: 8
+Most Metres: Terry Imposia: 167
+Most Errors: Frankie le Emona: 3
+                             
+---------TEAM STATS---------
+Home Team: Napaton Martyrs
+Total Metres: 823
+Total Kick Metres: 331
+Total Errors: 16
+Total Tackles: 178
+Total Tries: 4
+Total Goals: 0
+Total Field Goals: 3
+Interchanges Used: 8/8
+                             
+Away Team: Banksia Diggers
+Total Metres: 911
+Total Kick Metres: 295
+Total Errors: 15
+Total Tackles: 126
+Total Tries: 4
+Total Goals: 0
+Total Field Goals: 2
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Terry Imposia
+2nd (2 Points) -- Felacko Oak
+3rd (1 Point) -- Anthony W. Alexander
+----------------------------

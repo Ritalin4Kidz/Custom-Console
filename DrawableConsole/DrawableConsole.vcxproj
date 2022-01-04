@@ -157,7 +157,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Activation.h" />
+    <ClInclude Include="SYDECheckbox.h" />
     <ClInclude Include="SYDEEngineOldCode.h" />
+    <ClInclude Include="SYDENoiseMap.h" />
     <ClInclude Include="SYDEOldCodeAI.h" />
     <ClInclude Include="Artwork.h" />
     <ClInclude Include="AssetsClass.h" />
@@ -199,12 +201,16 @@
     <ClInclude Include="SYDELabel_Hoverable.h" />
     <ClInclude Include="SYDEMainDemos.h" />
     <ClInclude Include="SYDEMenu.h" />
+    <ClInclude Include="SYDEOptionCycler.h" />
     <ClInclude Include="SYDEParticle.h" />
     <ClInclude Include="SYDEScreenshot.h" />
+    <ClInclude Include="SYDEScrollViewer.h" />
     <ClInclude Include="SYDEShapes.h" />
+    <ClInclude Include="SYDESlider.h" />
     <ClInclude Include="SYDESound.h" />
     <ClInclude Include="SYDESounds.h" />
     <ClInclude Include="SYDESoundtrack.h" />
+    <ClInclude Include="SYDESpecial.h" />
     <ClInclude Include="SYDEstdafx.h" />
     <ClInclude Include="SYDETextBox.h" />
     <ClInclude Include="SYDETime.h" />
@@ -216,6 +222,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Activation.cpp" />
+    <ClCompile Include="SYDECheckbox.cpp" />
+    <ClCompile Include="SYDENoiseMap.cpp" />
     <ClCompile Include="SYDEOldCodeAI.cpp" />
     <ClCompile Include="Artwork.cpp" />
     <ClCompile Include="AssetsClass.cpp" />
@@ -256,9 +264,12 @@
     <ClCompile Include="SYDELabel_Hoverable.cpp" />
     <ClCompile Include="SYDEMainDemos.cpp" />
     <ClCompile Include="SYDEMenu.cpp" />
+    <ClCompile Include="SYDEOptionCycler.cpp" />
     <ClCompile Include="SYDEParticle.cpp" />
     <ClCompile Include="SYDEScreenshot.cpp" />
+    <ClCompile Include="SYDEScrollViewer.cpp" />
     <ClCompile Include="SYDEShapes.cpp" />
+    <ClCompile Include="SYDESlider.cpp" />
     <ClCompile Include="SYDESound.cpp" />
     <ClCompile Include="SYDESoundtrack.cpp" />
     <ClCompile Include="SYDETextBox.cpp" />

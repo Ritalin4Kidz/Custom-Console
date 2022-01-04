@@ -4,9 +4,94 @@
 
 SRL Simulation game made inside the SYDE Framework.
 
-## GOALS FOR GOLD
+## FUTURE GOALS
+
+ - Player Management Seasons
+ - - Coaching Is Moved From An Option Inside Game Settings, instead there will be an option underneath exhibition matches titled "Management Seasons". When clicked you'll be
+		give the option between coaching a team for the season, or managing a single player.
+   - Player Manager Game Mode
+
+- Look Into Ladder Predictor Possibly
+
+- Player Retirement
+	- See Player Retirement Design Text
+
+- AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
+
+## ADDED IN 1.1.00
+- World Cup Tournament
+- More Management Features (Position Swapping)
+
+- Manual Editing Of Players & Teams Name In Game 
+
+- Exhibiton Matches
+ - - No Season Attached (And Therefore No Coaching)
+
+ - Each Game Can Be Viewed In Depth, This Will Include Being Able To View
+	- Date & Time Of Game Played
+	- Weather Conditions
+	- Stadium Played At
+- In Addition, Teams Will Now Have Home Grounds
+
+### 1.1.2.0 Goals
+- Add Export To Exhibition Matches
+- Show Odds When Clicking On Individual Match
 
 ## Release Notes
+
+### 1.1.3.0 01/12/2022
+- Can change logos and jersey types in in depth view by clicking on them
+
+### 1.1.2.0 21/09/2021
+- Bet Odds In Match View
+- Ladder Has Swap View Function Now (View Ties, Points For & Against)
+- Fixed Bug where ties where not getting added to away team (points were still being added however)
+- Players Can Now Offload
+
+### 1.1.1.0 19/09/2021
+- More Summaries Added
+- Summaries Can Now Be Filtered In The Settings
+
+### 1.1.0.1 19/09/2021
+- Invalid Team Data will show an error message when trying to create the season/view team in depth instead of crashing
+
+### 1.1.0.0 15/09/2021
+- 1.1.0.0 Release!
+- Fixed News Stories In World Cup
+- Added Current Time Into Game Viewer
+
+### 1.0.7.0 03/09/2021
+- Weather In The Matchup View
+- Settings No Longer Override
+
+### 1.0.6.0 03/09/2021
+- Exhibition Games Can Now Be Simulated
+
+### 1.0.5.0 02/09/2021
+- Player & Team Names Can Now Be Edited in the in-depth view
+
+### 1.0.4.0 01/09/2021
+- Fixed Ladder Bug
+- Individual Game Simulation Now Shows The Simulation Occuring In Real Time (With Slight Delay Added To Simulation)
+- Settings Changed To Checkboxes
+
+### 1.0.3.0 08/08/2021
+- Individual Games Can Now Be Simulated
+
+### 1.0.2.0 02/08/2021
+- Extended Team List To 20 Players, However Game's Still Use 17
+- - This Means Each Season Has 48 More Players, Which Can Be Traded To Other Teams
+- - Ratings Are Based On Top 17
+- Coaches Can Rotate These Players In & Out Of The Starting Line-Up
+- Rep Rounds Have Featured Games
+- World Cup Tournament
+
+### 1.0.1.0 01/08/2021
+
+- Swap Player Positions In Coaching Mode
+- Players More Likely To Be The Attacker Or Defender Based On Position (For Basic Tackles)
+- Stat Cycling In Team List View In Coaching Mode
+- Mid Season Rep Rounds
 
 ### 1.0.0.0 
 

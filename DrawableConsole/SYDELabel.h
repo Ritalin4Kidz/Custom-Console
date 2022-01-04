@@ -10,7 +10,7 @@ enum SYDELabelAnchor {
 	SLA_Right
 };
 
-class SYDELabel : public SYDEUI, public SYDEUIInterface {
+class SYDELabel : public SYDEUI {
 public:
 	SYDELabel() { m_Label = ""; }
 	SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
@@ -37,7 +37,6 @@ public:
 	/// <param name="amt"> - Amount Of Text To Remove</param>
 	void removeText(int amt) {m_Text = m_Text.substr(0, m_Text.size() - amt);}
 
-	void setPos(Vector2 v) { m_Pos = v; }
 	void setSize(Vector2 v) { m_Size = v; }
 	void setColour(ColourClass c) { TextColour = c; }
 
@@ -57,7 +56,6 @@ protected:
 	bool _WRAPTEXT = false;
 	bool _TRANSPARENT = false;
 	Vector2 m_Size = Vector2(0, 0);
-	Vector2 m_Pos = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
 
 	ConsoleWindow draw_normal(ConsoleWindow window);

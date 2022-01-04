@@ -35,6 +35,15 @@ public:
 	/// </summary>
 	/// <param name="f"></param>
 	void SetFunc(void(*f)()) { m_Function = f; }
+	void setTag(string newTag) { tag = newTag; }
+	string getTag() { return tag; }
+	void ForceHighlight() { highlighted = true; }
+	void setHilightColour(ColourClass c) { hilightColour = c; canHighlight = true; }
+	void clearHighlight() { highlighted = false; }
+	static string getLastButtonTag() { return lastTag; }
+private:
+	static string lastTag;
+	string tag = "";
 protected:
 	/// <summary>
 	/// Execute the main button function
@@ -43,4 +52,8 @@ protected:
 private:
 	void(*m_Function)();
 	bool pointIsInButtonRange(Vector2 Point, Vector2 m_Pos);
+	bool canClick = true;
+	bool canHighlight = false;
+	bool highlighted = false;
+	ColourClass hilightColour;
 };

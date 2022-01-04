@@ -39,7 +39,7 @@ SYDEHoverableButton::SYDEHoverableButton(string a_text, Vector2 a_Pos, Vector2 a
 	TextColour = txtColour;
 	HiLightColour = a_hiLightColour;
 	_TRANSPARENT = _TRANSPARENTBG;
-	m_Function = f;
+	SetFunc(f);
 }
 
 ConsoleWindow SYDEHoverableButton::draw_ui(ConsoleWindow window)

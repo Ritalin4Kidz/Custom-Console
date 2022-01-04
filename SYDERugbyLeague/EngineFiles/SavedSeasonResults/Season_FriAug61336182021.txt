@@ -1,0 +1,615 @@
+LADDER RESULTS
+--------------------------------
+1. New Zealand Wins: 12| Lost: 2| PD: 165| Points: 25
+2. Fiji Wins: 11| Lost: 3| PD: 98| Points: 23
+3. Canada Wins: 11| Lost: 4| PD: 97| Points: 22
+4. England Wins: 11| Lost: 4| PD: 96| Points: 22
+5. Australia Wins: 10| Lost: 5| PD: 146| Points: 20
+6. United States Wins: 10| Lost: 5| PD: 68| Points: 20
+7. Xyler Union Wins: 10| Lost: 5| PD: 15| Points: 20
+8. Lebanon Wins: 8| Lost: 6| PD: -11| Points: 17
+9. France Wins: 8| Lost: 6| PD: -16| Points: 17
+10. Turniostan Wins: 6| Lost: 8| PD: 48| Points: 13
+11. Scotland Wins: 5| Lost: 10| PD: -16| Points: 10
+12. Samoa Wins: 4| Lost: 10| PD: -68| Points: 9
+13. SYDE Island Wins: 4| Lost: 10| PD: -132| Points: 9
+14. Wales Wins: 4| Lost: 11| PD: -151| Points: 8
+15. Kylzer Isles Wins: 2| Lost: 12| PD: -120| Points: 5
+16. Papau New Guinea Wins: 0| Lost: 15| PD: -219| Points: 0
+--------------------------------
+
+Round 1 Results
+--------------------------------
+United States 28 v 8 Papau New Guinea
+Canada 15 v 6 Lebanon
+Kylzer Isles 12 v 26 England
+Scotland 31 v 0 SYDE Island
+Wales 18 v 32 Fiji
+Samoa 8 v 30 Australia
+Xyler Union 30 v 22 Turniostan
+New Zealand 42 v 6 France
+--------------------------------
+
+Round 2 Results
+--------------------------------
+Wales 32 v 10 Papau New Guinea
+Scotland 10 v 20 Lebanon
+New Zealand 0 v 28 England
+Samoa 4 v 20 Fiji
+Xyler Union 33 v 28 United States
+Turniostan 10 v 10 France
+Australia 30 v 12 SYDE Island
+Canada 22 v 8 Kylzer Isles
+--------------------------------
+
+Round 3 Results
+--------------------------------
+Wales 25 v 12 Xyler Union
+United States 22 v 10 Turniostan
+SYDE Island 10 v 12 Fiji
+Lebanon 18 v 12 Australia
+England 24 v 8 France
+New Zealand 22 v 20 Canada
+Samoa 31 v 6 Papau New Guinea
+Kylzer Isles 32 v 20 Scotland
+--------------------------------
+
+Round 4 Results
+--------------------------------
+Scotland 6 v 22 New Zealand
+France 10 v 12 United States
+Wales 10 v 40 Turniostan
+Samoa 26 v 33 Xyler Union
+Canada 10 v 20 England
+Fiji 32 v 10 Lebanon
+SYDE Island 24 v 16 Papau New Guinea
+Kylzer Isles 18 v 42 Australia
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Australia 14 v 22 New Zealand
+SYDE Island 8 v 20 Xyler Union
+United States 26 v 6 Wales
+Lebanon 16 v 0 Papau New Guinea
+England 14 v 16 Scotland
+France 6 v 10 Canada
+Samoa 18 v 10 Turniostan
+Fiji 26 v 6 Kylzer Isles
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Scotland 8 v 15 Canada
+Fiji 10 v 10 New Zealand
+Lebanon 10 v 27 Xyler Union
+SYDE Island 10 v 32 Turniostan
+Wales 6 v 20 France
+United States 36 v 22 Samoa
+Papau New Guinea 26 v 40 Kylzer Isles
+England 21 v 18 Australia
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Lebanon 12 v 20 Turniostan
+Scotland 6 v 8 France
+Kylzer Isles 18 v 22 Xyler Union
+Fiji 10 v 14 England
+Papau New Guinea 18 v 43 New Zealand
+Australia 24 v 17 Canada
+SYDE Island 6 v 14 United States
+Samoa 16 v 12 Wales
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Xyler Union 14 v 32 New Zealand
+United States 8 v 13 Lebanon
+Kylzer Isles 4 v 32 Turniostan
+Australia 28 v 12 Scotland
+Papau New Guinea 28 v 35 England
+France 14 v 4 Samoa
+Fiji 6 v 14 Canada
+SYDE Island 8 v 6 Wales
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Fiji 13 v 12 Scotland
+Papau New Guinea 14 v 20 Canada
+SYDE Island 4 v 18 Samoa
+Lebanon 33 v 4 Wales
+United States 20 v 16 Kylzer Isles
+New Zealand 20 v 12 Turniostan
+Xyler Union 32 v 30 England
+Australia 2 v 6 France
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Xyler Union 38 v 30 Canada
+Lebanon 15 v 14 Samoa
+Kylzer Isles 10 v 26 Wales
+Turniostan 12 v 22 England
+New Zealand 16 v 12 United States
+Fiji 14 v 8 Australia
+SYDE Island 22 v 12 France
+Papau New Guinea 24 v 30 Scotland
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Lebanon 13 v 13 SYDE Island
+Papau New Guinea 22 v 40 Australia
+Turniostan 20 v 24 Canada
+Xyler Union 22 v 20 Scotland
+United States 35 v 32 England
+Fiji 26 v 10 France
+Kylzer Isles 16 v 16 Samoa
+Wales 12 v 32 New Zealand
+--------------------------------
+
+Round 12 Results
+--------------------------------
+England 28 v 40 Wales
+New Zealand 18 v 6 Samoa
+Turniostan 36 v 32 Scotland
+Fiji 28 v 24 Papau New Guinea
+Australia 21 v 0 Xyler Union
+SYDE Island 28 v 24 Kylzer Isles
+Lebanon 12 v 28 France
+United States 12 v 16 Canada
+--------------------------------
+
+Round 13 Results
+--------------------------------
+United States 19 v 12 Scotland
+Turniostan 18 v 26 Australia
+Canada 48 v 14 Wales
+England 13 v 12 Samoa
+New Zealand 44 v 10 SYDE Island
+Xyler Union 6 v 12 Fiji
+Papau New Guinea 24 v 31 France
+Kylzer Isles 10 v 12 Lebanon
+--------------------------------
+
+Round 14 Results
+--------------------------------
+SYDE Island 22 v 32 England
+Canada 33 v 4 Samoa
+Xyler Union 33 v 12 Papau New Guinea
+Scotland 39 v 24 Wales
+Fiji 14 v 8 Turniostan
+Kylzer Isles 14 v 16 France
+United States 25 v 32 Australia
+Lebanon 24 v 20 New Zealand
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Wales 22 v 54 Australia
+Scotland 13 v 6 Samoa
+Xyler Union 16 v 29 France
+Canada 25 v 20 SYDE Island
+England 22 v 10 Lebanon
+Fiji 16 v 19 United States
+New Zealand 20 v 6 Kylzer Isles
+Turniostan 32 v 12 Papau New Guinea
+--------------------------------
+
+Round 16 Results
+--------------------------------
+New Zealand 6 v 14 Lebanon
+Fiji 36 v 22 Xyler Union
+Canada 6 v 8 United States
+England 18 v 10 Australia
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Lebanon 19 v 24 England
+Fiji 12 v 23 United States
+Australia 38 v 14 New Zealand
+Canada 37 v 12 Xyler Union
+--------------------------------
+
+Round 18 Results
+--------------------------------
+England 18 v 25 United States
+Lebanon 17 v 16 Canada
+Fiji 10 v 28 Australia
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Lebanon 4 v 18 Australia
+--------------------------------
+
+Round 20 Results
+--------------------------------
+England 10 v 26 Australia
+--------------------------------
+
+Round 21 Results
+--------------------------------
+United States 21 v 20 Australia
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Dale de Arnolio-New Zealand : 17
+2. Bort Aaciro-Australia : 17
+3. Billie Flower-England : 16
+4. Clint OberstaOboe-Canada : 16
+5. Quinn Rumming-Papau New Guinea : 16
+6. Drodan le Vrerwa-England : 14
+7. Callum o. Ces-United States : 14
+8. Nita Kay Zeal-Wales : 14
+9. Yze Flanagan-Australia : 14
+10. Zavvi Zillman-New Zealand : 13
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Jill Jackston-Canada : 51
+2. Jordan Mortimer-England : 51
+3. Itze Drayersun-Australia : 48
+4. Euan Prism-Turniostan : 30
+5. Laci mu Unase-Fiji : 29
+6. Miles Quon-Wales : 27
+7. Dale de Arnolio-New Zealand : 27
+8. Ourti Fowler-Lebanon : 27
+9. Anthony H. o. Zas-Scotland : 26
+10. Vitaliy Meddica-Papau New Guinea : 26
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Gabrielle Sullivan-United States : 3
+2. Julie Beli-Lebanon : 3
+3. Barb OberstaOboe-Australia : 2
+4. Jared Brock-France : 2
+5. Trent Junior-United States : 2
+6. Kayden Hubbard-Lebanon : 2
+7. Sammy Saccert-United States : 2
+8. Flynn Berry-Xyler Union : 1
+9. Billie Flower-England : 1
+10. Dale de Arnolio-New Zealand : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Jake Z. Habib-Australia : 2687
+2. Clint OberstaOboe-Canada : 2593
+3. Zavvi Zillman-New Zealand : 2588
+4. Callum o. Ces-United States : 2471
+5. Valian Jacklin-United States : 2444
+6. Jenny Dempsey-Lebanon : 2439
+7. Edward Humphrey-Kylzer Isles : 2301
+8. Bort Aaciro-Australia : 2221
+9. Inotas Doddinawe-New Zealand : 2206
+10. Jordan Mortimer-England : 2202
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Leonard Hughes-Lebanon : 275
+2. Jeremy vo Klrita-Australia : 272
+3. Bob ti Unaskis-Lebanon : 270
+4. Lois Winger-Lebanon : 262
+5. Freya M. le Qwe-United States : 258
+6. Itze Drayersun-Australia : 252
+7. Finn Indigo-Lebanon : 252
+8. Tyrone C.D. Viana-Lebanon : 245
+9. John az Cati-Australia : 243
+10. Asher Meaney-Australia : 240
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Walter Chappell-United States : 2
+2. Jakk Smith-Samoa : 1
+3. Yze Flanagan-Australia : 1
+4. Nuri Freit-SYDE Island : 1
+5. Drodan le Vrerwa-England : 1
+6. Euan Prism-Turniostan : 1
+7. Jarrod Brasi-SYDE Island : 1
+8. John Yacoub-Wales : 1
+9. Lucy Zouma-Samoa : 1
+10. Burmo Hull-Papau New Guinea : 1
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Drodan le Vrerwa-England : 1019
+2. Walter Chappell-United States : 1000
+3. Nathan Nasert-Fiji : 986
+4. Jenny Dempsey-Lebanon : 935
+5. Kaden G. le Klas-Fiji : 850
+6. Dan O. May-Australia : 850
+7. Billie Flower-England : 840
+8. Pearl Meaney-Wales : 812
+9. Quinn Rumming-Papau New Guinea : 812
+10. Luca Atoni-France : 789
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Jenny Dempsey-Lebanon : 23
+2. Valian Jacklin-United States : 22
+3. Clint OberstaOboe-Canada : 21
+4. Edward Humphrey-Kylzer Isles : 20
+5. Finn McKenzie-Fiji : 20
+6. Fumio Taki-France : 17
+7. Ashleigh Flower-Canada : 17
+8. Chris Croker-New Zealand : 16
+9. Walt le Aurea-New Zealand : 16
+10. Nathan Nasert-Fiji : 16
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Julian Jakerta-Scotland : 3
+2. Jeffrey Xylxed-Samoa : 3
+3. Clint OberstaOboe-Canada : 3
+4. Xersivo ti Indig-Xyler Union : 3
+5. Callum o. Ces-United States : 3
+6. Corey P. Nasert-Canada : 3
+7. Em Strong-Papau New Guinea : 2
+8. Phil ze Nemu-SYDE Island : 2
+9. Fumio Taki-France : 2
+10. Drodan le Vrerwa-England : 2
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Luke Hubbard-Lebanon : 32
+2. Ourti Fowler-Lebanon : 30
+3. Lucy Zouma-Samoa : 25
+4. Nuri Freit-SYDE Island : 23
+5. Samantha Habib-France : 23
+6. Ashleigh Som-Xyler Union : 23
+7. Connor Mortimer-New Zealand : 23
+8. Bretalano Fletcher-Fiji : 22
+9. Xavier ti Xonos-Kylzer Isles : 22
+10. Ewan en Astra-New Zealand : 22
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Catherine T. de Arnolio-New Zealand : 12
+2. Luke en Serea-United States : 11
+3. Tyrone C.D. Viana-Lebanon : 10
+4. Anthony az Iunodea-England : 9
+5. Jarrod MacDonald-United States : 9
+6. Norman Yacoub-France : 8
+7. Blaine od Asdwere-France : 8
+8. Nicholas Obea-France : 8
+9. Damien N. az Seasont-Kylzer Isles : 8
+10. Chris Croker-New Zealand : 8
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Ourti Fowler-Lebanon : 7
+2. Nicholas Obea-France : 6
+3. Andres ti Pretyas-England : 6
+4. Luna Zeal-Fiji : 6
+5. Ryan Xylxed-Wales : 6
+6. Yze Purplouis-England : 6
+7. Julian Jakerta-Scotland : 5
+8. Kaiden Kay Arrust-United States : 5
+9. Christopher o. Noa-Papau New Guinea : 5
+10. Albert ti Qeras-Xyler Union : 5
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Connor o. Ewe-France : 2
+2. Versa Latui-Kylzer Isles : 1
+3. Ryan Saccert-Lebanon : 1
+4. Barry Boeaste-New Zealand : 1
+5. Quoatio F. Ouminor-Xyler Union : 1
+6. Vitaliy Meddica-Papau New Guinea : 1
+7. Luna Zeal-Fiji : 1
+8. Benji Yahtzel-Papau New Guinea : 1
+9. Jake Z. Habib-Australia : 1
+10. Kayden Hubbard-Lebanon : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Aaron vo Dereas-SYDE Island : 1
+2. Kyle Song-France : 1
+3. Maddie Kat-Canada : 1
+4. Drodan le Vrerwa-England : 1
+5. Alexander Sitea-France : 1
+6. Dale de Arnolio-New Zealand : 1
+7. Catherine T. de Arnolio-New Zealand : 1
+8. Juzas Zeeka-New Zealand : 1
+9. Luno E. Emerson-Xyler Union : 1
+10. Jarrod MacDonald-United States : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Brendan Garfield-Scotland : 3
+2. Xyaye Maxwell-Papau New Guinea : 2
+3. Kam Jay Prismo-Fiji : 2
+4. Walt le Aurea-New Zealand : 1
+5. Lizzy Gillard-New Zealand : 1
+6. Dom Lewis-England : 1
+7. Thom Boyd-Xyler Union : 1
+8. Jake Z. Habib-Australia : 1
+9. Jarrod Folick-Canada : 1
+10. Bart ze Nemu-Canada : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Jordan Mortimer-England : 143
+2. Dale de Arnolio-New Zealand : 123
+3. Jill Jackston-Canada : 122
+4. Itze Drayersun-Australia : 112
+5. Euan Prism-Turniostan : 104
+6. Billie Flower-England : 75
+7. Monty vo Hreats-Xyler Union : 71
+8. Bort Aaciro-Australia : 68
+9. Roant o. Noa-Australia : 66
+10. Laci mu Unase-Fiji : 66
+11. Quinn Rumming-Papau New Guinea : 64
+12. Clint OberstaOboe-Canada : 64
+13. Ourti Fowler-Lebanon : 62
+14. Bort o. Kla-Fiji : 58
+15. Callum o. Ces-United States : 57
+16. Nita Kay Zeal-Wales : 56
+17. Drodan le Vrerwa-England : 56
+18. Anthony H. o. Zas-Scotland : 56
+19. Yze Flanagan-Australia : 56
+20. Miles Quon-Wales : 54
+21. Zavvi Zillman-New Zealand : 52
+22. Thom Boyd-Xyler Union : 52
+23. Vitaliy Meddica-Papau New Guinea : 52
+24. Kylzea Fowler-France : 50
+25. Corey P. Nasert-Canada : 49
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Jake Z. Habib-Australia : 337
+2. Jordan Mortimer-England : 307
+3. Quinn Rumming-Papau New Guinea : 290
+4. Jenny Dempsey-Lebanon : 249
+5. Zavvi Zillman-New Zealand : 247
+6. Callum o. Ces-United States : 240
+7. Valian Jacklin-United States : 237
+8. Yze Flanagan-Australia : 232
+9. Billie Flower-England : 229
+10. Dale de Arnolio-New Zealand : 228
+11. Jill Jackston-Canada : 223
+12. Bort o. Kla-Fiji : 221
+13. Alan Sakio-Turniostan : 218
+14. Roant o. Noa-Australia : 216
+15. Euan Prism-Turniostan : 213
+16. Nathan Nasert-Fiji : 208
+17. Inotas Doddinawe-New Zealand : 206
+18. Bort Aaciro-Australia : 205
+19. Drodan le Vrerwa-England : 198
+20. Ali F. Chappell-England : 197
+21. Gabrielle Sullivan-United States : 193
+22. Corey P. Nasert-Canada : 191
+23. Luke G. Penatoras-Lebanon : 187
+24. Edward Humphrey-Kylzer Isles : 179
+25. Itze Drayersun-Australia : 177
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+New Zealand Wins Minor Premiership!
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 20 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 21 News Stories
+--------------------------------
+United States Wins Premiership!
+--------------------------------
+

@@ -1,0 +1,595 @@
+LADDER RESULTS
+--------------------------------
+1. Canada Wins: 12| Lost: 2| PD: 208| Points: 25
+2. Samoa Wins: 11| Lost: 2| PD: 180| Points: 24
+3. Australia Wins: 11| Lost: 3| PD: 134| Points: 23
+4. SYDE Island Wins: 11| Lost: 4| PD: 94| Points: 22
+5. Lebanon Wins: 10| Lost: 4| PD: 81| Points: 21
+6. Italy Wins: 10| Lost: 4| PD: 49| Points: 21
+7. Suoonnia Wins: 10| Lost: 5| PD: 148| Points: 20
+8. New Zealand Wins: 8| Lost: 6| PD: 36| Points: 17
+9. Kylzer Isles Wins: 7| Lost: 8| PD: 61| Points: 14
+10. Sweden Wins: 6| Lost: 7| PD: -81| Points: 14
+11. France Wins: 6| Lost: 8| PD: 2| Points: 13
+12. Wales Wins: 4| Lost: 8| PD: -50| Points: 11
+13. Turniostan Wins: 3| Lost: 11| PD: -153| Points: 7
+14. Papau New Guinea Wins: 2| Lost: 13| PD: -137| Points: 4
+15. England Wins: 2| Lost: 13| PD: -315| Points: 4
+16. United States Wins: 0| Lost: 15| PD: -257| Points: 0
+--------------------------------
+
+Round 1 Results
+--------------------------------
+France 20 v 16 New Zealand
+Samoa 29 v 4 England
+United States 16 v 28 Lebanon
+SYDE Island 6 v 34 Australia
+Wales 12 v 14 Italy
+Kylzer Isles 11 v 20 Suoonnia
+Canada 36 v 10 Sweden
+Turniostan 14 v 16 Papau New Guinea
+--------------------------------
+
+Round 2 Results
+--------------------------------
+United States 12 v 18 New Zealand
+Lebanon 7 v 6 Suoonnia
+France 12 v 26 Australia
+Canada 22 v 22 Wales
+Turniostan 24 v 0 England
+Sweden 14 v 32 Samoa
+Italy 28 v 16 Kylzer Isles
+SYDE Island 20 v 12 Papau New Guinea
+--------------------------------
+
+Round 3 Results
+--------------------------------
+France 34 v 26 Papau New Guinea
+Suoonnia 20 v 13 New Zealand
+England 26 v 30 Sweden
+United States 4 v 20 Australia
+Wales 18 v 18 Samoa
+Kylzer Isles 6 v 40 Canada
+Italy 14 v 22 Lebanon
+Turniostan 6 v 20 SYDE Island
+--------------------------------
+
+Round 4 Results
+--------------------------------
+United States 0 v 31 Papau New Guinea
+Lebanon 26 v 40 Canada
+Kylzer Isles 12 v 30 Samoa
+SYDE Island 68 v 6 England
+Sweden 29 v 29 Wales
+Italy 10 v 8 New Zealand
+Australia 12 v 16 Suoonnia
+France 23 v 23 Turniostan
+--------------------------------
+
+Round 5 Results
+--------------------------------
+Kylzer Isles 32 v 14 Sweden
+Suoonnia 34 v 6 Papau New Guinea
+England 6 v 32 Wales
+Lebanon 16 v 40 Samoa
+SYDE Island 26 v 14 France
+Turniostan 28 v 12 United States
+New Zealand 6 v 22 Canada
+Australia 30 v 8 Italy
+--------------------------------
+
+Round 6 Results
+--------------------------------
+Lebanon 26 v 6 Sweden
+Kylzer Isles 26 v 20 Wales
+Suoonnia 34 v 8 Turniostan
+United States 10 v 18 SYDE Island
+Canada 28 v 20 Australia
+New Zealand 22 v 22 Samoa
+France 64 v 6 England
+Papau New Guinea 6 v 12 Italy
+--------------------------------
+
+Round 7 Results
+--------------------------------
+Australia 26 v 22 Samoa
+England 8 v 26 Kylzer Isles
+Papau New Guinea 16 v 41 Canada
+Italy 34 v 6 Turniostan
+Suoonnia 14 v 27 SYDE Island
+New Zealand 24 v 20 Sweden
+United States 18 v 24 France
+Lebanon 46 v 10 Wales
+--------------------------------
+
+Round 8 Results
+--------------------------------
+Turniostan 12 v 26 Canada
+Papau New Guinea 34 v 36 Samoa
+Suoonnia 25 v 12 France
+Australia 8 v 10 Sweden
+United States 22 v 25 England
+Wales 12 v 20 New Zealand
+Lebanon 28 v 22 Kylzer Isles
+SYDE Island 16 v 28 Italy
+--------------------------------
+
+Round 9 Results
+--------------------------------
+Suoonnia 26 v 4 United States
+New Zealand 28 v 24 Kylzer Isles
+Italy 28 v 24 France
+Canada 23 v 14 SYDE Island
+Samoa 31 v 0 Turniostan
+Australia 20 v 8 Wales
+Papau New Guinea 18 v 20 Sweden
+Lebanon 36 v 6 England
+--------------------------------
+
+Round 10 Results
+--------------------------------
+Turniostan 10 v 8 Sweden
+Canada 28 v 35 France
+Papau New Guinea 4 v 32 Wales
+Samoa 28 v 12 SYDE Island
+England 6 v 34 Suoonnia
+Kylzer Isles 16 v 19 Australia
+New Zealand 16 v 0 Lebanon
+United States 0 v 20 Italy
+--------------------------------
+
+Round 11 Results
+--------------------------------
+Canada 47 v 8 United States
+Turniostan 16 v 30 Wales
+Australia 12 v 12 Lebanon
+Papau New Guinea 10 v 29 Kylzer Isles
+New Zealand 21 v 12 England
+Samoa 21 v 16 France
+Italy 6 v 25 Suoonnia
+SYDE Island 30 v 18 Sweden
+--------------------------------
+
+Round 12 Results
+--------------------------------
+Canada 25 v 12 Suoonnia
+Australia 22 v 18 New Zealand
+Italy 14 v 4 England
+Turniostan 10 v 20 Kylzer Isles
+Wales 6 v 22 SYDE Island
+Lebanon 30 v 16 Papau New Guinea
+France 6 v 14 Sweden
+Samoa 25 v 0 United States
+--------------------------------
+
+Round 13 Results
+--------------------------------
+Papau New Guinea 4 v 16 New Zealand
+SYDE Island 24 v 22 Kylzer Isles
+Wales 26 v 31 France
+Australia 21 v 12 England
+Canada 8 v 6 Italy
+Sweden 14 v 12 United States
+Samoa 30 v 16 Suoonnia
+Lebanon 22 v 12 Turniostan
+--------------------------------
+
+Round 14 Results
+--------------------------------
+Sweden 15 v 14 Suoonnia
+France 6 v 34 Kylzer Isles
+Turniostan 0 v 18 New Zealand
+Samoa 12 v 16 Italy
+SYDE Island 22 v 18 Lebanon
+England 12 v 37 Canada
+Australia 12 v 4 Papau New Guinea
+Wales 19 v 18 United States
+--------------------------------
+
+Round 15 Results
+--------------------------------
+Italy 28 v 28 Sweden
+Samoa 20 v 10 Canada
+Wales 4 v 38 Suoonnia
+Papau New Guinea 10 v 20 England
+Kylzer Isles 58 v 8 United States
+France 18 v 20 Lebanon
+Turniostan 12 v 40 Australia
+New Zealand 12 v 20 SYDE Island
+--------------------------------
+
+Round 16 Results
+--------------------------------
+Canada 19 v 4 New Zealand
+Samoa 19 v 18 Suoonnia
+Australia 20 v 22 Italy
+SYDE Island 16 v 6 Lebanon
+--------------------------------
+
+Round 17 Results
+--------------------------------
+Canada 20 v 26 SYDE Island
+Samoa 22 v 14 Italy
+Lebanon 10 v 8 New Zealand
+Australia 22 v 16 Suoonnia
+--------------------------------
+
+Round 18 Results
+--------------------------------
+SYDE Island 20 v 30 Samoa
+Canada 30 v 14 Australia
+Italy 8 v 14 Lebanon
+--------------------------------
+
+Round 19 Results
+--------------------------------
+Canada 23 v 32 Lebanon
+--------------------------------
+
+Top Try Scorers
+--------------------------------
+1. Hormanio ti Klokmona-Canada : 19
+2. William Zye-Samoa : 16
+3. Leonard Vianna-SYDE Island : 16
+4. Nita Loomer-Sweden : 15
+5. Mark W. ti Huaste-Kylzer Isles : 14
+6. Alister Hoyabembe-Lebanon : 14
+7. Kam Wye-Italy : 14
+8. Norea le Cureas-Suoonnia : 13
+9. Robert Stimson-New Zealand : 12
+10. Jarrod Zari-Samoa : 12
+--------------------------------
+
+Top Goal Scorers
+--------------------------------
+1. Trixie A. Farrell-Samoa : 49
+2. Samantha Sullivan-France : 44
+3. Bart Million-SYDE Island : 44
+4. Charles en Xazis-Suoonnia : 38
+5. Turni Freit-Canada : 36
+6. Jakk Meikle-Italy : 35
+7. Dani Wolf-Wales : 34
+8. Lois Vianna-Kylzer Isles : 27
+9. Kayden N. Pout-Australia : 24
+10. Dan Busa-Lebanon : 24
+--------------------------------
+
+Top Field Goal Scorers
+--------------------------------
+1. Turni Freit-Canada : 2
+2. Roant Q. ti Klokmona-Canada : 2
+3. Danni Belli-Lebanon : 1
+4. Andy X. O' Donnell-New Zealand : 1
+5. Don o. Aye-Suoonnia : 1
+6. Monty A. Jackson-Suoonnia : 1
+7. Kaiden Cabbie-Papau New Guinea : 1
+8. Dani Wolf-Wales : 1
+9. Adole ti Qeras-Sweden : 1
+10. Samantha Sullivan-France : 1
+--------------------------------
+
+Most Metres Ran
+--------------------------------
+1. Lorenzo Morrison-Lebanon : 3100
+2. Hormanio ti Klokmona-Canada : 2633
+3. Robert Stimson-New Zealand : 2512
+4. Isabel Flower-Australia : 2326
+5. Alister Hoyabembe-Lebanon : 2261
+6. Monty A. Jackson-Suoonnia : 2231
+7. Yumi Caddington-Samoa : 2167
+8. Nita Loomer-Sweden : 2152
+9. Joseph F. Vlandys-SYDE Island : 2130
+10. Reed Bridge-Canada : 1962
+--------------------------------
+
+Most Tackles Made
+--------------------------------
+1. Lorman R. o. Yte-Lebanon : 265
+2. Matt Quoon-Italy : 261
+3. Dura R. od Asdwere-Lebanon : 255
+4. Gabe Vlandys-Australia : 251
+5. Clint de Arnolio-Italy : 250
+6. Gordon Caddington-Lebanon : 250
+7. Danni Belli-Lebanon : 247
+8. Aayzer Lapper-Italy : 242
+9. Jenny G. Montoya-Italy : 232
+10. Tyrone K. Ratey-Italy : 232
+--------------------------------
+
+Most 40/20's Kicked
+--------------------------------
+1. Chase de Faco-Wales : 1
+2. Janey en Xazis-Samoa : 1
+3. Ashley X. Etten-Italy : 1
+4. Jared od Asdwere-SYDE Island : 1
+5. Ashleigh Prismo-Suoonnia : 1
+6. Ryan Tyrell-England : 1
+7. Norea le Cureas-Suoonnia : 1
+8. Luna Way-Turniostan : 1
+9. Nico A. Brasi-Wales : 1
+10. Xersivo Allen-Kylzer Isles : 1
+--------------------------------
+
+Most Kicking Metres
+--------------------------------
+1. Ashley X. Etten-Italy : 1084
+2. Jakk Meikle-Italy : 930
+3. Jan en Masre-SYDE Island : 858
+4. Phillip Gealo-Canada : 775
+5. Zavvi Hurst-Canada : 764
+6. Roant Nu-Italy : 750
+7. Emily o. Yte-Samoa : 695
+8. Adam Latui-Kylzer Isles : 681
+9. Inotas le Frea-SYDE Island : 669
+10. Davey Daley-Lebanon : 669
+--------------------------------
+
+Most Steals
+--------------------------------
+1. Danni Belli-Lebanon : 50
+2. William Zye-Samoa : 45
+3. Alexander Tuo-Samoa : 33
+4. Davey en Onasre-Wales : 32
+5. Xyaye Taki-Australia : 32
+6. Aayzer Lapper-Italy : 29
+7. Pari J. Roberts-Wales : 27
+8. Brayden Pardi-France : 27
+9. Bill Jersta-Australia : 26
+10. Fumio ba Ferea-Kylzer Isles : 25
+--------------------------------
+
+Most No Tries
+--------------------------------
+1. Gwen R. Chadwick-SYDE Island : 3
+2. Oliver vo Bereas-Suoonnia : 3
+3. Kyle Flower-Canada : 3
+4. Nuri en Basetru-New Zealand : 3
+5. Hormanio ti Klokmona-Canada : 3
+6. Lorenzo Morrison-Lebanon : 3
+7. Norea le Cureas-Suoonnia : 2
+8. Reed Bridge-Canada : 2
+9. Herbert Kimberly-United States : 2
+10. Alexander Tuo-Samoa : 2
+--------------------------------
+
+Most Errors
+--------------------------------
+1. Michelle ti Qeras-Suoonnia : 40
+2. Davey Daley-Lebanon : 34
+3. Thomas Meddica-Samoa : 32
+4. Norman cu Zyeta-New Zealand : 31
+5. Jan en Masre-SYDE Island : 27
+6. Ryan Tyrell-England : 25
+7. Evan en Uinas-Australia : 24
+8. Joshua Romney-Australia : 23
+9. Norea le Cureas-Suoonnia : 22
+10. Kevin Fox-France : 22
+--------------------------------
+
+Most Penalties
+--------------------------------
+1. Isaak Fuller-United States : 9
+2. Xyaye Taki-Australia : 9
+3. Billy A. Rose-Samoa : 9
+4. Hormanio ti Klokmona-Canada : 9
+5. James od Fereas-Australia : 9
+6. Davey en Onasre-Wales : 8
+7. Niko Deon-England : 8
+8. Jay Laki-France : 8
+9. Nicholas Forte-New Zealand : 8
+10. William Zye-Samoa : 8
+--------------------------------
+
+Most Ruck Infringements
+--------------------------------
+1. Kyuss o. Bes-England : 13
+2. Isaak Fuller-United States : 8
+3. Josh Maxx-Kylzer Isles : 7
+4. Lindsay W. Hubbard-Papau New Guinea : 7
+5. Emily Reed-Papau New Guinea : 7
+6. Nicholas Forte-New Zealand : 7
+7. Isaak o. Pas-England : 6
+8. Kaiden Cabbie-Papau New Guinea : 6
+9. Cliff Allsopp-United States : 6
+10. Yuinamo Xyer-Sweden : 6
+--------------------------------
+
+Most Sin Bins
+--------------------------------
+1. Niko Deon-England : 2
+2. Kam Wye-Italy : 1
+3. Xyaye Taki-Australia : 1
+4. Tyrone Sockert-Turniostan : 1
+5. Jim Curran-Sweden : 1
+6. Brayden Pardi-France : 1
+7. Kelin O' Donnell-New Zealand : 1
+8. Norea le Cureas-Suoonnia : 1
+9. Alexander Tuo-Samoa : 1
+10. Billy A. Rose-Samoa : 1
+--------------------------------
+
+Most Send Offs
+--------------------------------
+1. Ruta M. Harrigan-SYDE Island : 1
+2. Billy A. Rose-Samoa : 1
+3. Fumio ba Ferea-Kylzer Isles : 1
+4. Isaak o. Pas-England : 1
+5. Ryan Tyrell-England : 1
+6. Hormanio ti Klokmona-Canada : 1
+7. Ruta Watne-France : 0
+8. Ashton Obea-France : 0
+9. Gabe Lindsell-France : 0
+10. Jay Laki-France : 0
+--------------------------------
+
+Most Injuries
+--------------------------------
+1. Bretalano E. Cliffe-SYDE Island : 4
+2. Jayden le Paer-United States : 4
+3. Ashleigh Caldato-Australia : 3
+4. Roant Q. ti Klokmona-Canada : 2
+5. Lou ti Erastyo-Wales : 2
+6. Lindsay Vuderty-Turniostan : 1
+7. Dirk Potter-Kylzer Isles : 1
+8. Turni Freit-Canada : 1
+9. Patrise le Monare-New Zealand : 1
+10. Kyrsta Gealo-France : 1
+--------------------------------
+
+Top Point Scores
+--------------------------------
+1. Samantha Sullivan-France : 129
+2. Bart Million-SYDE Island : 128
+3. Turni Freit-Canada : 122
+4. Trixie A. Farrell-Samoa : 115
+5. Jakk Meikle-Italy : 98
+6. Lois Vianna-Kylzer Isles : 90
+7. Charles en Xazis-Suoonnia : 80
+8. Hormanio ti Klokmona-Canada : 76
+9. Dani Wolf-Wales : 69
+10. Kayden N. Pout-Australia : 68
+11. Dan Busa-Lebanon : 68
+12. Leonard Vianna-SYDE Island : 64
+13. William Zye-Samoa : 64
+14. Nita Loomer-Sweden : 60
+15. Cliffe Beltio-Canada : 60
+16. Mark W. ti Huaste-Kylzer Isles : 56
+17. Alister Hoyabembe-Lebanon : 56
+18. Kam Wye-Italy : 56
+19. Norea le Cureas-Suoonnia : 53
+20. Jake Price-Sweden : 52
+21. Monty A. Jackson-Suoonnia : 49
+22. Bob Lyons-New Zealand : 48
+23. Robert Stimson-New Zealand : 48
+24. Yumi Caddington-Samoa : 48
+25. Jarrod Zari-Samoa : 48
+--------------------------------
+
+Top Players Of The Season
+--------------------------------
+1. Lorenzo Morrison-Lebanon : 285
+2. Robert Stimson-New Zealand : 236
+3. Kam Wye-Italy : 228
+4. Nita Loomer-Sweden : 222
+5. Joseph F. Vlandys-SYDE Island : 210
+6. Valian Dunn-Suoonnia : 209
+7. Samantha Sullivan-France : 207
+8. Alister Hoyabembe-Lebanon : 204
+9. Reed Bridge-Canada : 203
+10. Mark W. ti Huaste-Kylzer Isles : 201
+11. Emily o. Yte-Samoa : 195
+12. Calum Stimson-Canada : 191
+13. Turni Freit-Canada : 187
+14. Bart Million-SYDE Island : 185
+15. Kayden N. Pout-Australia : 185
+16. Jordan od Asdwere-Italy : 184
+17. Isabel Flower-Australia : 179
+18. Leonard Vianna-SYDE Island : 178
+19. Lois Vianna-Kylzer Isles : 177
+20. Yumi Caddington-Samoa : 177
+21. Phillip Gealo-Canada : 168
+22. Luno Berry-Papau New Guinea : 167
+23. Hormanio ti Klokmona-Canada : 166
+24. Monty A. Jackson-Suoonnia : 163
+25. Roant Q. ti Klokmona-Canada : 162
+--------------------------------
+
+News Stories
+--------------------------------
+
+Round 1 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 2 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 3 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 4 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 5 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 6 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 7 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 8 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 9 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 10 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 11 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 12 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 13 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 14 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 15 News Stories
+--------------------------------
+Canada Wins Minor Premiership!
+--------------------------------
+
+
+Round 16 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 17 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 18 News Stories
+--------------------------------
+--------------------------------
+
+
+Round 19 News Stories
+--------------------------------
+Lebanon Wins Premiership!
+--------------------------------
+

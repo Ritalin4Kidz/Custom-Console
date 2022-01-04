@@ -37,6 +37,8 @@ public:
 
 	int getRating() { int rating = m_BaseAttack + m_BaseDefence + m_BaseSpeed + m_BaseKicking + m_BaseHandling; return rating / 5; }
 
+	int getAttackRatingSpecial() { int rating = m_BaseAttack + m_BaseSpeed + m_BaseKicking; return rating / 3; }
+
 	void setAllStats(int stat) { m_BaseAttack = stat; m_BaseDefence = stat; m_BaseHandling = stat; m_BaseSpeed = stat; m_BaseKicking = stat; }
 	void affectAllStats(float mul);
 
@@ -96,6 +98,9 @@ public:
 	bool comingBack() { return m_ComingBack; }
 	void ComingBackOff() { m_ComingBack = false; }
 
+	void addLinebreak() { m_Linebreaks++; }
+	int getLinebreaks() { return m_Linebreaks; }
+
 	void setInjured() { m_Injured = true; m_Injuries++; }
 	bool getInjured() { return m_Injured; }
 
@@ -154,6 +159,7 @@ private:
 	int m_Errors = 0;
 	int m_4020 = 0;
 	int m_Tackles = 0;
+	int m_Linebreaks = 0;
 	int m_PenaltiesConceded = 0;
 	int m_NoTriesVideoRef = 0;
 	int m_RuckInfringements = 0;

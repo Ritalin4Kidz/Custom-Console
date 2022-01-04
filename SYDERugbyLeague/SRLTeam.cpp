@@ -4,10 +4,11 @@ SRLTeam::SRLTeam()
 {
 }
 
-SRLTeam::SRLTeam(deque<SRLPlayer> a_TeamList, string name)
+SRLTeam::SRLTeam(deque<SRLPlayer> a_TeamList, string name,string homeground)
 {
 	m_TeamList = a_TeamList;
 	m_Name = name;
+	m_HomeGround = homeground;
 	generateJerseys();
 }
 
@@ -112,6 +113,36 @@ SRLPlayer SRLTeam::getRandomPlayer()
 	return m_TeamList[player];
 }
 
+SRLPlayer SRLTeam::getRandomPlayerAttacker()
+{
+	int chanceOfFrontLine = rand() % 100;
+	if (chanceOfFrontLine > 75)
+	{
+		int player = rand() % 6 + 7;
+		return m_TeamList[player];
+	}
+	else
+	{
+		int player = rand() % 7;
+		return m_TeamList[player];
+	}
+}
+
+SRLPlayer SRLTeam::getRandomPlayerDefender()
+{
+	int chanceOfFrontLine = rand() % 100;
+	if (chanceOfFrontLine > 35)
+	{
+		int player = rand() % 6 + 7;
+		return m_TeamList[player];
+	}
+	else
+	{
+		int player = rand() % 7;
+		return m_TeamList[player];
+	}
+}
+
 void SRLTeam::clearTeam()
 {
 	m_TeamList.clear();
@@ -128,6 +159,7 @@ void SRLTeam::loadTeam(string path)
 	badgeColour = static_cast<ColourClass>(save_file["badge"]);
 	jerseryTypeInt = save_file["jerseytype"];
 	logoTypeInt = save_file["logotype"];
+	setHomeGround(save_file["homeground"]);
 	setLogoCustom(save_file["customlogo"]);
 	int numberOfPlayers = save_file["playeramt"];
 	for (int i = 0; i < numberOfPlayers; i++)
@@ -161,6 +193,7 @@ void SRLTeam::saveTeam()
 	json save_file;
 	//PlayerStats
 	save_file["name"] = m_Name;
+	save_file["homeground"] = m_HomeGround;
 	save_file["jerseytype"] = jerseryTypeInt;
 	save_file["logotype"] = logoTypeInt;
 	save_file["primary"] = static_cast<int>(primaryColour);
@@ -194,6 +227,14 @@ void SRLTeam::saveTeamOffContract()
 	std::ofstream ofs(filePath);
 	ofs << save_file;
 	//return save_file;
+}
+
+void SRLTeam::swapStartPositionsAndSave(int pos1, int pos2)
+{
+	SRLPlayer temp = m_TeamList[pos1];
+	m_TeamList[pos1] = m_TeamList[pos2];
+	m_TeamList[pos2] = temp;
+	saveTeam();
 }
 
 void SRLTeam::addPlayerMetres(string playerName, int metres)
@@ -335,6 +376,18 @@ void SRLTeam::addPlayerStamina(string playerName, int Stamina)
 		if (m_TeamList[i].getName() == playerName)
 		{
 			m_TeamList[i].addStamina(Stamina);
+			return;
+		}
+	}
+}
+
+void SRLTeam::addPlayerLinebreak(string playerName)
+{
+	for (int i = 0; i < m_TeamList.size(); i++)
+	{
+		if (m_TeamList[i].getName() == playerName)
+		{
+			m_TeamList[i].addLinebreak();
 			return;
 		}
 	}
@@ -491,9 +544,9 @@ deque<string> SRLTeam::addTimeOnField(int time)
 void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
 {
 	deque<SRLPlayer> temp = getPlayers();
-	for (int i = 0; i < temp.size(); i++)
+	for (int i = 0; i < temp.size() && i < 17; i++)
 	{
-		for (int ii = i + 1; ii < temp.size(); ii++)
+		for (int ii = i + 1; ii < temp.size() && ii < 17; ii++)
 		{
 			if (temp[ii].getRating() > temp[i].getRating())
 			{
@@ -514,9 +567,9 @@ void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
 deque<SRLPlayer> SRLTeam::addBestAttackers(deque<string>& vec, int amount)
 {
 	deque<SRLPlayer> temp = getPlayers();
-	for (int i = 0; i < temp.size(); i++)
+	for (int i = 0; i < temp.size() && i < 17; i++)
 	{
-		for (int ii = i + 1; ii < temp.size(); ii++)
+		for (int ii = i + 1; ii < temp.size() && ii < 17; ii++)
 		{
 			if (temp[ii].getAttack() > temp[i].getAttack())
 			{
@@ -698,7 +751,7 @@ int SRLTeam::totalKickMetres()
 int SRLTeam::totalAttackStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getAttack();
 	}
@@ -708,7 +761,7 @@ int SRLTeam::totalAttackStat()
 int SRLTeam::totalDefenceStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getDefence();
 	}
@@ -718,7 +771,7 @@ int SRLTeam::totalDefenceStat()
 int SRLTeam::totalSpeedStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getSpeed();
 	}
@@ -728,7 +781,7 @@ int SRLTeam::totalSpeedStat()
 int SRLTeam::totalKickStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getKicking();
 	}
@@ -738,7 +791,7 @@ int SRLTeam::totalKickStat()
 int SRLTeam::totalHandlingStat()
 {
 	int total = 0;
-	for (int i = 0; i < m_TeamList.size(); i++)
+	for (int i = 0; i < m_TeamList.size() && i < 17; i++)
 	{
 		total += m_TeamList[i].getHandling();
 	}
@@ -783,6 +836,54 @@ int SRLTeam::TeamRating()
 {
 	int rating = averageAttackStat() + averageDefenceStat() + averageSpeedStat() + averageKickStat() + averageHandlingStat();
 	return rating/5;
+}
+
+void SRLTeam::sortForRepresentativeTeam()
+{
+	for (int jj = 0; jj < m_TeamList.size(); jj++)
+	{
+		//FIRST SORT BY ATTACK
+		for (int k = 0; k < jj; k++)
+		{
+			if (m_TeamList[jj].getAttackRatingSpecial() > m_TeamList[k].getAttackRatingSpecial())
+			{
+				SRLPlayer tempPlayer = m_TeamList[k];
+				m_TeamList[k] = m_TeamList[jj];
+				m_TeamList[jj] = tempPlayer;
+			}
+		}
+		//THEN LET"S SORT BY DEFENCE
+		for (int k = 7; k < jj; k++)
+		{
+			if (m_TeamList[jj].getDefence() > m_TeamList[k].getDefence())
+			{
+				SRLPlayer tempPlayer = m_TeamList[k];
+				m_TeamList[k] = m_TeamList[jj];
+				m_TeamList[jj] = tempPlayer;
+			}
+		}
+		//NOW FILL UP INTERCHANGE WITH REMAINING ALL ROUNDERS
+		for (int k = 13; k < jj; k++)
+		{
+			if (m_TeamList[jj].getRating() > m_TeamList[k].getRating())
+			{
+				SRLPlayer tempPlayer = m_TeamList[k];
+				m_TeamList[k] = m_TeamList[jj];
+				m_TeamList[jj] = tempPlayer;
+			}
+		}
+	}
+	//STRIP BACK TO 17 PLAYERS PER TEAM
+	if (m_TeamList.size() > 17)
+	{
+		cutToSeventeen();
+	}
+	//VOILA, WE SHOULD HAVE THE COUNTRY'S BEST 17
+}
+
+void SRLTeam::cutToSeventeen()
+{
+	m_TeamList.erase(m_TeamList.begin() + 17, m_TeamList.end());
 }
 
 ColourClass SRLTeam::getRandomColour()

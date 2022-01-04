@@ -67,6 +67,7 @@ struct SRLLadderPosition
 	int played = 0;
 	int won = 0;
 	int lost = 0;
+	int tied = 0;
 	int points = 0;
 	int pointsFor = 0;
 	int pointsAgainst = 0;
@@ -114,13 +115,24 @@ struct SRLLadder
 
 struct SRLGameMatchup
 {
-	SRLGameMatchup(string homeTeam, string awayTeam) { HomeTeam = homeTeam; AwayTeam = awayTeam; }
+	SRLGameMatchup(string homeTeam, string awayTeam) { HomeTeam = homeTeam; AwayTeam = awayTeam; generateWeather(WeatherIsOn); }
 	SRLBetPrice homeTeamOdds = SRLBetPrice(1, 90);
 	SRLBetPrice awayTeamOdds = SRLBetPrice(1, 90);
 	string HomeTeam;
 	string AwayTeam;
 	deque<string> ResultPlayByPlay;
 	deque<string> SummaryPlayByPlay;
+
+	void setMatchInfo(string v, string t) { Venue = v; Time_Date = t; }
+	string Venue;
+	string Time_Date;
+	SRLGameWeather m_GameWeather;
+
+	string getWeatherString();
+
+	static bool WeatherIsOn;
+
+	void generateWeather(bool m_weather);
 
 
 	void calculateBiggestLeads(int homeScore, int awayScore);
@@ -140,6 +152,8 @@ struct SRLGameMatchup
 
 	string WinningTeam;
 	string LosingTeam;
+
+	bool GameHasBeenSimulated = false;
 };
 
 struct SRLGameBetsWriting
@@ -152,6 +166,7 @@ struct FeaturedGame
 {
 	FeaturedGame() {}
 	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds);
+	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, deque<SRLTeam> repTeams);
 	bool featuredGameAvail = false;
 	int fg_homeTeamScore = 0;
 	int fg_awayTeamScore = 0;
@@ -177,6 +192,11 @@ struct SRLRound
 	deque<SRLGameBet> m_Bets;
 	deque<SRLGameBet> m_TryScorerBets;
 	deque<SRLNewsArticle> newsStories;
+	string RoundName;
+	bool isRepRound = false;
+
+	void randomizeOrders();
+
 	FeaturedGame gameToFeature;
 };
 
@@ -229,6 +249,8 @@ struct SRLSeason
 	SRLLeaderboard m_TopSinBin;
 	SRLLeaderboard m_TopSendOff;
 	SRLLeaderboard m_TopInjuries;
+
+	bool isWorldCup = false;
 };
 
 enum GameSummaryTextType
@@ -238,12 +260,28 @@ enum GameSummaryTextType
 	GSTType_Penalty = 2,
 	GSTType_Sent = 3,
 	GSTType_Interchange_Injury = 4,
+	GSTType_VideoRef = 5,
+	GSTType_MissedKick = 6,
+	GSTType_Misc = 7,
+};
+
+class GameSummaryFilters
+{
+public:
+	static bool m_ErrorFilter;
+	static bool m_PenaltyFilter;
+	static bool m_SendOffFilter;
+	static bool m_InjuryFilter;
+	static bool m_VideoRefFilter;
+	static bool m_MissedKickFilter;
+	static bool m_MiscFilter;
 };
 
 struct GameSummaryText
 {
 	GameSummaryText(string t, string p, string player, string s);
 	ConsoleWindow draw(ConsoleWindow window, Vector2 point);
+	bool isInFilter();
 	string Time;
 	string Play;
 	string Player;
@@ -319,4 +357,23 @@ public:
 
 	void LoadSettings();
 	void SaveSettings();
+};
+
+struct SRLPositionShowcase
+{
+	SRLPositionShowcase() {}
+	SRLPositionShowcase(CustomAsset_Clickable _a, string _s, int _i, Vector2 _v) {
+		pos = _v; m_MiniJersery = _a; m_MiniJersery.setHilightColour(BLUE_BLUE_BG);
+		positionNumber.setText(to_string(_i) + "."); positionNumber.setPos(Vector2(pos.getX()+4, pos.getY() + 3)); positionNumber.setSize(Vector2(3, 1));
+		playerName.setText(getShorterName(_s)); playerName.setPos(Vector2(pos.getX(), pos.getY() + 4)); playerName.setSize(Vector2(_s.length(), 1)); 
+	}
+	CustomAsset_Clickable m_MiniJersery;
+	SYDELabel positionNumber = SYDELabel("", Vector2(0), Vector2(0), BLACK, true);
+	SYDELabel playerName = SYDELabel("", Vector2(0), Vector2(0), BLACK, true);
+
+	string getShorterName(string _s);
+
+	Vector2 pos;
+
+	ConsoleWindow draw_showcase(ConsoleWindow window);
 };

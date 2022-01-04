@@ -1,6 +1,19 @@
 #include "pch.h"
 #include "SRLStructs.h"
 
+bool SRLGameMatchup::WeatherIsOn = true;
+
+bool GameSummaryFilters::m_ErrorFilter = true;
+bool GameSummaryFilters::m_PenaltyFilter = true;
+bool GameSummaryFilters::m_SendOffFilter = true;
+bool GameSummaryFilters::m_InjuryFilter = true;
+bool GameSummaryFilters::m_VideoRefFilter = true;
+bool GameSummaryFilters::m_MissedKickFilter = true;
+bool GameSummaryFilters::m_MiscFilter = true;
+
+/// <summary>
+/// Sort the ladder by points & points difference
+/// </summary>
 void SRLLadder::sortLadder()
 {
 	for (int i = 0; i < m_Ladder.size(); i++)
@@ -239,6 +252,56 @@ FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int ga
 
 }
 
+/*
+For Rep Rounds
+*/
+FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars,int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, deque<SRLTeam> repTeams)
+{
+	gameNumber = gameNo;
+	for (int j = 0; j < repTeams.size(); j++)
+	{
+		if (repTeams[j].getName() == home)
+		{
+			fg_homeTeam = repTeams[j];
+		}
+		else if (repTeams[j].getName() == away)
+		{
+			fg_awayTeam = repTeams[j];
+		}
+	}
+
+	string JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_homeTeam.getJerseryType()) + ".bmp";
+	wstring wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	fg_homeTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	fg_homeTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	fg_homeTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	fg_homeTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_homeTeam.getPrimary());
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_homeTeam.getSecondary());
+	fg_homeTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_homeTeam.getBadge());
+	JerseyBmp = "EngineFiles\\JerseyFeatures\\jersey" + to_string(fg_awayTeam.getJerseryType()) + ".bmp";
+	wJerseyBmp = wstring(JerseyBmp.begin(), JerseyBmp.end());
+	fg_awayTeamJersey = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wJerseyBmp.c_str(), 15, 15));
+	fg_awayTeamJersey.changeAllInstancesOfColour(BRIGHTWHITE_BRIGHTWHITE_BG, BLACK_BRIGHTWHITE_BG);
+	fg_awayTeamJersey.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	fg_awayTeamJersey.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_BRIGHTWHITE_BG, fg_awayTeam.getPrimary());
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_WHITE_BG, fg_awayTeam.getSecondary());
+	fg_awayTeamJersey.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, fg_awayTeam.getBadge());
+
+	featuredGameAvail = true;
+
+	fg_homeOdds = homeOdds;
+	fg_awayOdds = awayOdds;
+
+	homeTeamKeyPlayers.clear();
+	fg_homeTeam.addBestPlayers(homeTeamKeyPlayers, 5);
+	awayTeamKeyPlayers.clear();
+	fg_awayTeam.addBestPlayers(awayTeamKeyPlayers, 5);
+}
+
 GameSummaryText::GameSummaryText(string t, string p, string player, string s)
 {
 	Time = t; Play = p; Player = player; ScoreText = s;
@@ -262,6 +325,18 @@ GameSummaryText::GameSummaryText(string t, string p, string player, string s)
 	{
 		summaryTextType = GSTType_Penalty;
 	}
+	else if (Play == "VIDEO REF" || Play == "NO TRY")
+	{
+		summaryTextType = GSTType_VideoRef;
+	}
+	else if (Play == "FIELD GOAL MISSED" || Play == "GOAL MISSED" || Play == "PENALTY GOAL MISSED")
+	{
+		summaryTextType = GSTType_MissedKick;
+	}
+	else
+	{
+		summaryTextType = GSTType_Misc;
+	}
 }
 
 ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
@@ -273,16 +348,53 @@ ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
 		colourToUse = BRIGHTWHITE_GREEN_BG;
 		break;
 	case GSTType_Error:
+		if (!GameSummaryFilters::m_ErrorFilter)
+		{
+			return window;
+		}
 		colourToUse = BLACK_BRIGHTWHITE_BG;
 		break;
 	case GSTType_Penalty:
+		if (!GameSummaryFilters::m_PenaltyFilter)
+		{
+			return window;
+		}
 		colourToUse = BRIGHTWHITE_BRIGHTRED_BG;
 		break;
 	case GSTType_Interchange_Injury:
+		if (!GameSummaryFilters::m_InjuryFilter)
+		{
+			return window;
+		}
 		colourToUse = RED_BRIGHTWHITE_BG;
 		break;
 	case GSTType_Sent:
+		if (!GameSummaryFilters::m_SendOffFilter)
+		{
+			return window;
+		}
 		colourToUse = BRIGHTWHITE_RED_BG;
+		break;
+	case GSTType_MissedKick:
+		if (!GameSummaryFilters::m_MissedKickFilter)
+		{
+			return window;
+		}
+		colourToUse = BLACK_BRIGHTRED_BG;
+		break;
+	case GSTType_VideoRef:
+		if (!GameSummaryFilters::m_VideoRefFilter)
+		{
+			return window;
+		}
+		colourToUse = BLACK_BRIGHTGREEN_BG;
+		break;
+	case GSTType_Misc:
+		if (!GameSummaryFilters::m_MiscFilter)
+		{
+			return window;
+		}
+		colourToUse = BLACK_LIGHTBLUE_BG;
 		break;
 	}
 	for (int i = point.getX(); i < point.getX() + 50; i++)
@@ -306,6 +418,29 @@ ConsoleWindow GameSummaryText::draw(ConsoleWindow window, Vector2 point)
 		window.setTextAtPoint(Vector2(point.getX() + 2, point.getY() + 3), ScoreText, colourToUse);
 	}
 	return window;
+}
+
+bool GameSummaryText::isInFilter()
+{
+	switch (summaryTextType)
+	{
+	case GSTType_Points:
+		return true;
+	case GSTType_Error:
+		return GameSummaryFilters::m_ErrorFilter;
+	case GSTType_Penalty:
+		return GameSummaryFilters::m_PenaltyFilter;
+	case GSTType_Interchange_Injury:
+		return GameSummaryFilters::m_InjuryFilter;
+	case GSTType_Sent:
+		return GameSummaryFilters::m_SendOffFilter;
+	case GSTType_MissedKick:
+		return GameSummaryFilters::m_MissedKickFilter;
+	case GSTType_VideoRef:
+		return GameSummaryFilters::m_VideoRefFilter;
+	case GSTType_Misc:
+		return GameSummaryFilters::m_MiscFilter;
+	}
 }
 
 ConsoleWindow SRLTrainingOption::draw(ConsoleWindow window, Vector2 point)
@@ -375,6 +510,84 @@ void SRLSeason::clear()
 	m_TopSinBin.clear();
 	m_TopSendOff.clear();
 	m_TopInjuries.clear();
+}
+
+string SRLGameMatchup::getWeatherString()
+{
+	switch (m_GameWeather)
+	{
+	case Weather_Clear:
+		return "Clear";
+	case Weather_Cloudy:
+		return "Cloudy";
+	case Weather_Humid:
+		return "Humid";
+	case Weather_Rain:
+		return "Rainy";
+	case Weather_Windy:
+		return "Windy";
+	case Weather_Hail:
+		return "Hail";
+	case Weather_Storm:
+		return "Storm";
+	case Weather_Sunny:
+		return "Sunny";
+	case Weather_Heatwave:
+		return "Heatwave";
+	case Weather_Snow:
+		return "Snow";
+	}
+	return "???";
+}
+
+void SRLGameMatchup::generateWeather(bool m_weather)
+{
+	if (!m_weather)
+	{
+		m_GameWeather = Weather_Clear;
+		return;
+	}
+	int range = rand() % 10000;
+	if (range < 1500)
+	{
+		m_GameWeather = Weather_Clear;
+	}
+	else if (range < 3000)
+	{
+		m_GameWeather = Weather_Cloudy;
+	}
+	else if (range < 4200)
+	{
+		m_GameWeather = Weather_Humid;
+	}
+	else if (range < 5300)
+	{
+		m_GameWeather = Weather_Storm;
+	}
+	else if (range < 6300)
+	{
+		m_GameWeather = Weather_Rain;
+	}
+	else if (range < 7600)
+	{
+		m_GameWeather = Weather_Windy;
+	}
+	else if (range < 8700)
+	{
+		m_GameWeather = Weather_Sunny;
+	}
+	else if (range < 9600)
+	{
+		m_GameWeather = Weather_Heatwave;
+	}
+	else if (range < 9950)
+	{
+		m_GameWeather = Weather_Hail;
+	}
+	else if (range < 10000)
+	{
+		m_GameWeather = Weather_Snow;
+	}
 }
 
 void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
@@ -552,3 +765,58 @@ void SRLProfile::SaveSettings()
 	std::ofstream ofs("EngineFiles\\Settings\\playerProfile.json");
 	ofs << save_file;
 }
+
+ConsoleWindow SRLPositionShowcase::draw_showcase(ConsoleWindow window)
+{
+	window = m_MiniJersery.draw_asset(window, pos);
+	window = positionNumber.draw_ui(window);
+	window = playerName.draw_ui(window);
+	return window;
+}
+
+string SRLPositionShowcase::getShorterName(string _s)
+{
+	int arraySize = 1;
+	for (int i = 0; i < _s.length(); i++)
+	{
+		if (_s[i] == ' ')
+		{
+			arraySize++;
+		}
+	}
+	std::deque<std::string> splitString(arraySize);
+	int arrayNo = 0;
+	while (arrayNo < arraySize - 1)
+	{
+		for (int i = 0; i < _s.length(); i++)
+		{
+			if (_s[i] == ' ')
+			{
+				splitString[arrayNo] = _s.substr(0, i);
+				_s = _s.substr(i + 1, _s.length() - i);
+				arrayNo++;
+				break;
+			}
+		}
+	}
+
+	return splitString[0].substr(0, 1) + ". " + _s;
+}
+
+void SRLRound::randomizeOrders()
+{
+	for (int i = 0; i < m_Games.size(); i++)
+	{
+		int randNumber = rand() % m_Games.size();
+		SRLGameMatchup tempMatchUp = m_Games[i];
+		m_Games[i] = m_Games[randNumber];
+		m_Games[randNumber] = tempMatchUp;
+		if ((rand() % 10) > 5)
+		{
+			string TempStr = m_Games[i].HomeTeam;
+			m_Games[i].HomeTeam = m_Games[i].AwayTeam;
+			m_Games[i].AwayTeam = TempStr;
+		}
+	}
+}
+

@@ -1,0 +1,182 @@
+----------LINE-UPS----------
+Home Team: Fiji
+1: Chase ti Pretyas
+2: Jameson Belli
+3: Yze Singh
+4: Finn O' Sullivan
+5: Dapper az Unionia
+6: Eduardo Purplouis
+7: Leon od Yuraste
+8: Nico le Ijok
+9: Ashley Hull
+10: Harold K. vo Klrita
+11: Lois Strong
+12: Vanessa Oartia
+13: Jeffrey Xyer
+14: Gordon M. Woolf
+15: Neo Kimley
+16: Euan Caliber
+17: Frankie Nu
+Away Team: Australia
+1: Arnold Besti
+2: Mattin le Aurea
+3: Jay Campbell
+4: Cooper Dace
+5: Burmo Pardi
+6: Jordan Caliber
+7: Jackson K. McCallum
+8: Ometage Sadder
+9: Zasye o. Ewe
+10: Felix ti Pretyas
+11: Christopher od Unina
+12: Lindsay Dunn
+13: Zoma ze Aert
+14: Tommy cu Nonates
+15: Jane Manfredi
+16: Ezzita o. Aye
+17: Will C.D. od Dertt
+----------GAME-STAT---------
+Weather: Windy
+----------------------------
+00:00 - KICK OFF - Fiji: 0 v Australia: 0
+02:13 - Christopher od Unina - Knock On
+03:14 - ------VIDEO REFEREE------
+03:14 - Jameson Belli - NO TRY - 20m Restart
+06:39 - Ometage Sadder - 40/20
+07:17 - Yze Singh - Ruck Infringement
+11:05 - Mattin le Aurea - 6th Tackle Changeover
+12:03 - Zasye o. Ewe - Stripped Ball Off Jeffrey Xyer
+13:30 - Jordan Caliber - 6th Tackle Changeover
+16:16 - Jackson K. McCallum - 6th Tackle Changeover
+18:35 - Christopher od Unina - Ruck Infringement
+22:27 - Jackson K. McCallum - Forward Pass
+22:40 - Eduardo Purplouis - Over The Sideline
+24:09 - Burmo Pardi - 6th Tackle Changeover
+24:24 - Eduardo Purplouis - Forward Pass
+25:12 - Christopher od Unina - Knock On
+26:24 - Fiji Interchanged Players Chase ti Pretyas & Gordon M. Woolf
+31:01 - Fiji Interchanged Players Finn O' Sullivan & Euan Caliber
+31:01 - Australia Interchanged Players Felix ti Pretyas & Will C.D. od Dertt
+32:30 - Jordan Caliber - 6th Tackle Changeover
+33:38 - Zasye o. Ewe - Intercepted Off A Euan Caliber Pass
+36:43 - Fiji Interchanged Players Ashley Hull & Finn O' Sullivan
+37:14 - Arnold Besti - Intercepted Off A Euan Caliber Pass
+40:00 - HALF TIME - Fiji: 0 v Australia: 0
+42:23 - Arnold Besti - Intercepted Off A Euan Caliber Pass
+45:36 - Ometage Sadder - Kick Out On The Full
+47:02 - Eduardo Purplouis - 6th Tackle Changeover
+50:19 - Harold K. vo Klrita - Intercepted Off A Jay Campbell Pass
+50:42 - Euan Caliber - Over The Sideline
+50:42 - Australia Interchanged Players Jordan Caliber & Ezzita o. Aye
+50:54 - Cooper Dace - Over The Sideline
+51:11 - Dapper az Unionia - FIELD GOAL MISSED
+51:11 - 20m Restart - Australia
+51:43 - Nico le Ijok - Penalty
+52:53 - Yze Singh - Ruck Infringement
+53:36 - Yze Singh - Intercepted Off A Ezzita o. Aye Pass
+54:29 - Lois Strong - FIELD GOAL MISSED
+54:29 - 20m Restart - Australia
+55:01 - Australia Interchanged Players Jackson K. McCallum & Jane Manfredi
+55:40 - Australia Interchanged Players Will C.D. od Dertt & Jackson K. McCallum
+59:29 - Lois Strong - Stripped Ball Off Ezzita o. Aye
+59:57 - Jameson Belli - FIELD GOAL MISSED
+59:57 - 20m Restart - Australia
+60:24 - Fiji Interchanged Players Harold K. vo Klrita & Neo Kimley
+60:24 - Australia Interchanged Players Zasye o. Ewe & Felix ti Pretyas
+60:42 - Australia Interchanged Players Felix ti Pretyas & Will C.D. od Dertt
+62:10 - Gordon M. Woolf - Kick Out On The Full
+63:37 - Burmo Pardi - 6th Tackle Changeover
+65:58 - Arnold Besti - Knock On
+66:15 - Leon od Yuraste - FIELD GOAL MISSED
+66:15 - 20m Restart - Australia
+66:41 - Fiji Interchanged Players Eduardo Purplouis & Ashley Hull
+68:35 - Arnold Besti - Ruck Infringement
+70:06 - Ashley Hull - FIELD GOAL MISSED
+70:06 - 20m Restart - Australia
+71:03 - Fiji Interchanged Players Dapper az Unionia & Harold K. vo Klrita
+71:33 - Gordon M. Woolf - Forward Pass
+72:50 - Arnold Besti - 6th Tackle Changeover
+74:09 - Will C.D. od Dertt - Ruck Infringement
+75:22 - Fiji Interchanged Players Ashley Hull & Frankie Nu
+75:34 - Harold K. vo Klrita - Stripped Ball Off Lindsay Dunn
+75:47 - Euan Caliber - Over The Sideline
+76:00 - Australia Interchanged Players Will C.D. od Dertt & Zasye o. Ewe
+76:44 - Fiji Interchanged Players Finn O' Sullivan & Eduardo Purplouis
+76:44 - Australia Interchanged Players Ezzita o. Aye & Jordan Caliber
+80:00 - FULL TIME - Fiji: 0 v Australia: 0
+                             
+--------PLAYER STATS--------
+Home Team: Fiji
+1: Gordon M. Woolf |Time Played: 53:48 |Metres: 14 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+2: Jameson Belli |Time Played: 80:12 |Metres: 205 |Tackles: 7 |Kicks: 4 |Kick Metres: 155 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 139
+3: Yze Singh |Time Played: 80:12 |Metres: 81 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+4: Euan Caliber |Time Played: 49:11 |Metres: 20 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+5: Harold K. vo Klrita |Time Played: 69:33 |Metres: 48 |Tackles: 14 |Kicks: 3 |Kick Metres: 63 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 65
+6: Frankie Nu |Time Played: 04:50 |Metres: 9 |Tackles: 0 |Kicks: 1 |Kick Metres: 32 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+7: Leon od Yuraste |Time Played: 80:12 |Metres: 95 |Tackles: 5 |Kicks: 2 |Kick Metres: 60 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 64
+8: Nico le Ijok |Time Played: 80:12 |Metres: 12 |Tackles: 21 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+9: Eduardo Purplouis |Time Played: 70:09 |Metres: 14 |Tackles: 9 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+10: Neo Kimley |Time Played: 19:48 |Metres: 8 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+11: Lois Strong |Time Played: 80:12 |Metres: 25 |Tackles: 18 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 42
+12: Vanessa Oartia |Time Played: 80:12 |Metres: 6 |Tackles: 25 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+13: Jeffrey Xyer |Time Played: 80:12 |Metres: 23 |Tackles: 21 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 44
+14: Chase ti Pretyas |Time Played: 26:24 |Metres: 15 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+15: Dapper az Unionia |Time Played: 71:03 |Metres: 24 |Tackles: 9 |Kicks: 1 |Kick Metres: 54 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+16: Finn O' Sullivan |Time Played: 71:02 |Metres: 112 |Tackles: 13 |Kicks: 7 |Kick Metres: 232 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 132
+17: Ashley Hull |Time Played: 45:24 |Metres: 45 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 31
+Highlights:                 
+Most Tackles: Vanessa Oartia: 25
+Most Points: : 0
+Most Metres: Jameson Belli: 205
+Most Errors: Gordon M. Woolf: 2
+                             
+Away Team: Australia
+1: Arnold Besti |Time Played: 80:12 |Metres: 105 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+2: Mattin le Aurea |Time Played: 80:12 |Metres: 68 |Tackles: 6 |Kicks: 3 |Kick Metres: 86 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 61
+3: Jay Campbell |Time Played: 80:12 |Metres: 24 |Tackles: 3 |Kicks: 2 |Kick Metres: 154 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 57
+4: Cooper Dace |Time Played: 80:12 |Metres: 78 |Tackles: 12 |Kicks: 5 |Kick Metres: 268 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 63
+5: Burmo Pardi |Time Played: 80:12 |Metres: 80 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 53
+6: Jordan Caliber |Time Played: 54:10 |Metres: 46 |Tackles: 1 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+7: Jane Manfredi |Time Played: 25:11 |Metres: 20 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+8: Ometage Sadder |Time Played: 80:12 |Metres: 23 |Tackles: 11 |Kicks: 2 |Kick Metres: 91 |40/20: 1 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+9: Zasye o. Ewe |Time Played: 64:36 |Metres: 12 |Tackles: 13 |Kicks: 2 |Kick Metres: 49 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+10: Jackson K. McCallum |Time Played: 79:33 |Metres: 42 |Tackles: 9 |Kicks: 2 |Kick Metres: 82 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+11: Christopher od Unina |Time Played: 80:12 |Metres: 9 |Tackles: 15 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+12: Lindsay Dunn |Time Played: 80:12 |Metres: 6 |Tackles: 22 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 46
+13: Zoma ze Aert |Time Played: 80:12 |Metres: 18 |Tackles: 18 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 37
+14: Tommy cu Nonates |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Felix ti Pretyas |Time Played: 31:19 |Metres: 6 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+16: Ezzita o. Aye |Time Played: 26:02 |Metres: 7 |Tackles: 1 |Kicks: 1 |Kick Metres: 45 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+17: Will C.D. od Dertt |Time Played: 39:57 |Metres: 2 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+Highlights:                 
+Most Tackles: Lindsay Dunn: 22
+Most Points: : 0
+Most Metres: Arnold Besti: 105
+Most Errors: Christopher od Unina: 2
+                             
+---------TEAM STATS---------
+Home Team: Fiji
+Total Metres: 756
+Total Kick Metres: 617
+Total Errors: 6
+Total Tackles: 177
+Total Tries: 0
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Australia
+Total Metres: 546
+Total Kick Metres: 831
+Total Errors: 6
+Total Tackles: 156
+Total Tries: 0
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Jameson Belli
+2nd (2 Points) -- Cooper Dace
+3rd (1 Point) -- Jay Campbell
+----------------------------

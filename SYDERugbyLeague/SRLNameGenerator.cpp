@@ -24,12 +24,85 @@ deque<string> SRLNameGenerator::countriesOfOrigin = deque<string>
 	"Papau New Guinea",
 	"Fiji",
 	"Samoa",
+	"South Africa",
+	"Ireland",
 	"Italy",
 	"Lebanon",
 	"Turniostan",
 	"Xyler Union",
 	"Sweden",
 	"Tyezyer",
+};
+
+deque<string> SRLNameGenerator::HomeGroundStart = deque<string>
+{
+	"Artise",
+	"Azae Super",
+	"Bankstar",
+	"Bell Star",
+	"Belmore",
+	"Boma",
+	"Brooklan",
+	"Carioan",
+	"Creasti",
+	"Crown",
+	"Currie",
+	"Da Selecio",
+	"Derr",
+	"Dumansa",
+	"Enrea",
+	"Friia",
+	"Fuctira",
+	"Gresra",
+	"Hatsfield",
+	"Hellai",
+	"Indigo",
+	"Jerea",
+	"Jirea",
+	"Kamrio",
+	"Kellia",
+	"Lavenda",
+	"Limnto",
+	"Maonsa",
+	"Norie",
+	"Ouri",
+	"Partiue",
+	"Presi",
+	"Quimona",
+	"Razar",
+	"Rumi Basa"
+	"Serotina",
+	"Star",
+	"Stargraze",
+	"Turbo",
+	"Uni",
+	"Ventrio",
+	"Wellinga",
+	"Xaveda",
+	"Xyzera",
+	"Yamon",
+	"Yellowstone",
+	"Yunna",
+	"Zaetyr",
+	"Zuttria"
+};
+
+deque<string> SRLNameGenerator::HomeGroundEnd = deque<string>
+{
+	"Arena",
+	"Bowl",
+	"Bridge",
+	"Central",
+	"Centre",
+	"Field",
+	"Football Stadium",
+	"Grandstand",
+	"Ground",
+	"Park",
+	"Ring",
+	"Sports Arena",
+	"Sports Centre",
+	"Stadium"
 };
 
 deque<string> SRLNameGenerator::FirstNames = deque<string>
@@ -181,6 +254,7 @@ deque<string> SRLNameGenerator::FirstNames = deque<string>
 	"Jack",
 	"Jackson",
 	"Jake",
+	"Jakey",
 	"James",
 	"Jameson",
 	"Jan",
@@ -652,7 +726,7 @@ deque<string> SRLNameGenerator::LastNames = deque<string>
 	"Oarst",
 	"Obea",
 	"Oberst",
-	"Obersta"
+	"Obersta",
 	"Oboe",
 	"Oboitays",
 	"Oertias",
@@ -1182,6 +1256,7 @@ deque<string> SRLNameGenerator::TeamNames = deque<string>
 	"Rose Gardens",
 	"Roses",
 	"Royalty",
+	"Ruminators",
 	"Scallops",
 	"Scalpers",
 	"Scorpions",
@@ -1518,6 +1593,13 @@ string SRLNameGenerator::generateRandomTeamName()
 	return TeamName;
 }
 
+string SRLNameGenerator::generateRandomHomeGround()
+{
+	int number1 = rand() % HomeGroundStart.size();
+	int number2 = rand() % HomeGroundEnd.size();
+	return HomeGroundStart[number1] + " " + HomeGroundEnd[number2];
+}
+
 string SRLNameGenerator::generateRandomTeamNameSafe()
 {
 	return generateRandomCity() + " " + generateRandomTeam();
@@ -1531,6 +1613,176 @@ void SRLNameGenerator::generateAndAddToVector(deque<string>& vec)
 	{
 		vec.push_back(bets[i]);
 	}
+}
+
+string SRLNameGenerator::getTimeBasedOffRoundSizeAndGame(int roundSize, int game)
+{
+	if (roundSize == 8)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 6:00pm";
+		}
+		else if (game == 2)
+		{
+			return "Friday 8:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 3:05pm";
+		}
+		else if (game == 4)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 5)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 6)
+		{
+			return "Sunday 3:00pm";
+		}
+		else if (game == 7)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 7)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 6:00pm";
+		}
+		else if (game == 2)
+		{
+			return "Friday 8:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 4)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 5)
+		{
+			return "Sunday 3:00pm";
+		}
+		else if (game == 6)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 6)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 2)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 4)
+		{
+			return "Sunday 3:00pm";
+		}
+		else if (game == 5)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 5)
+	{
+		if (game == 0)
+		{
+			return "Thursday 8:00pm";
+		}
+		else if (game == 1)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 2)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 3)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 4)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 4)
+	{
+		if (game == 0)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 1)
+		{
+			return "Saturday 5:15pm";
+		}
+		else if (game == 2)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 3)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 3)
+	{
+		if (game == 0)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 1)
+		{
+			return "Saturday 7:45pm";
+		}
+		else if (game == 2)
+		{
+			return "Sunday 6:00pm";
+		}
+	}
+	else if (roundSize == 2)
+	{
+		if (game == 0)
+		{
+			return "Friday 7:45pm";
+		}
+		else if (game == 1)
+		{
+			return "Saturday 7:45pm";
+		}
+	}
+	else if (roundSize == 1)
+	{
+		return "Sunday 4:00pm";
+	}
+	return string();
 }
 
 string SRLNameGenerator::generateRandomFirstName()

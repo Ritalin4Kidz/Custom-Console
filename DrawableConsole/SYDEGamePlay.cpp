@@ -261,6 +261,34 @@ ConsoleWindow SYDEGamePlay::play(SYDEWindowGame * SYDE_GAME, COORD start, const 
 	return window;
 }
 
+ConsoleWindow SYDEGamePlay::play_test_func(SYDEWindowGame* SYDE_GAME, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime)
+{
+	HWND ConsoleWindow = GetConsoleWindow();
+	//KEYBOARD INPUTS
+	for (int i = 0; i < SYDEKeyCode::KeyCodes_Optimized.size(); i++)
+	{
+		// CHECKING THE STATE OF ALL INPUTS
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyDown_Safe(ConsoleWindow);
+		SYDEKeyCode::KeyCodes_Optimized[i].GetKeyUp_Safe(ConsoleWindow);
+	}
+	//MOUSE INPUTS
+	if (ClickEnabled)
+	{
+		SYDE_MouseClickFunction();
+	}
+	//DELTATIME
+	deltaTime.refreshTime();
+	SYDEDefaults::setDeltaTime(deltaTime.getDeltaTime());
+	window = SYDE_GAME->window_draw_game(window, windowWidth, windowHeight);
+	//FPS
+	if (FPS_Counter)
+	{
+		SYDEFPS::draw(window);
+	}
+	//RETURN GAME
+	return window;
+}
+
 ConsoleWindow3D SYDEGamePlay::play3D(SYDEWindowGame3D* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow3D window, int windowWidth, int windowHeight, SYDETIME& deltaTime)
 {
 	HWND ConsoleWindow = GetConsoleWindow();

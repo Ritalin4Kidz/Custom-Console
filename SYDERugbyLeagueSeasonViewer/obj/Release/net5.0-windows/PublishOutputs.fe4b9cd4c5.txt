@@ -1,0 +1,6 @@
+G:\Github Repos\Custom-Console\SYDERugbyLeagueSeasonViewer\bin\Release\net5.0-windows\publish\SYDERugbyLeagueSeasonViewer.exe
+G:\Github Repos\Custom-Console\SYDERugbyLeagueSeasonViewer\bin\Release\net5.0-windows\publish\SYDERugbyLeagueSeasonViewer.dll
+G:\Github Repos\Custom-Console\SYDERugbyLeagueSeasonViewer\bin\Release\net5.0-windows\publish\SYDERugbyLeagueSeasonViewer.deps.json
+G:\Github Repos\Custom-Console\SYDERugbyLeagueSeasonViewer\bin\Release\net5.0-windows\publish\SYDERugbyLeagueSeasonViewer.runtimeconfig.json
+G:\Github Repos\Custom-Console\SYDERugbyLeagueSeasonViewer\bin\Release\net5.0-windows\publish\SYDERugbyLeagueSeasonViewer.pdb
+G:\Github Repos\Custom-Console\SYDERugbyLeagueSeasonViewer\bin\Release\net5.0-windows\publish\Newtonsoft.Json.dll

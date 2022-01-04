@@ -27,6 +27,29 @@ public:
 
 	virtual ~SRLGameManager();
 
+	void ClearCache() { m_Summary.clear(); m_PlayByPlay.clear(); 
+		homeTeamScore = 0; 
+		awayTeamScore = 0; 
+		m_MinutesPassed = 0; 
+		m_SecondsPassed = 0; 
+		m_BallPosition = 100;
+		m_Tackle = 0;
+		m_HomeTeamHasBall = true;
+		halfTimeHasPassed = false;
+		fullTimeHasPassed = false;
+		m_MainGoalKickers = true;
+		m_Weather = true;
+		m_Stamina = true;
+		m_Injuries = false;
+		m_sendOffs = true;
+		m_ExtraTime = false;
+		m_PlayerHasBeenSent = false;
+		weather = Weather_Clear;
+		weatherAtkErrorBonus = 1;
+		weatherDefErrorBonus = 1;
+		weatherGoalErrorBonus = 1;
+	}
+
 	void addPlay(string a_Play);
 	void addPlayNoMinutes(string a_Play);
 	void addPlay(string a_Play, SRLPlayer player);
@@ -34,6 +57,8 @@ public:
 	void addSumaryNoMinutes(string a_Play);
 	void addSummary(string a_Play, SRLPlayer player);
 	void addSummaryDirect(string a_Play);
+
+	string getTimeString();
 
 	void addMinute();
 
@@ -61,6 +86,7 @@ public:
 
 	void teamHaveMainGoalKickers(bool isOn) { m_MainGoalKickers = isOn; }
 	void weatherEffects(bool isOn) { m_Weather = isOn; }
+	void setWeather(SRLGameWeather w) { weather = w; }
 	void staminaEffect(bool isOn) { m_Stamina = isOn; }
 	void injuriesEffect(bool isOn) { m_Injuries = isOn; }
 	void sinBinsEffect(bool isOn) { m_sendOffs = isOn; }
@@ -75,6 +101,7 @@ public:
 	bool doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
 	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
+	int checkOffload(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
 
@@ -114,6 +141,7 @@ private:
 	const int injuryChance = 1000;
 	const int professionalFoulChance = 3;
 	const float playerSentDivision = 0.8f;
+	const int offloadChance = 30;
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;

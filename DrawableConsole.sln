@@ -24,7 +24,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYDESoundDemo", "SYDESoundD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYDERugbyLeague", "SYDERugbyLeague\SYDERugbyLeague.vcxproj", "{56B84B32-352C-418D-9B57-79181DE24655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYDERugbyLeagueSeasonViewer", "SYDERugbyLeagueSeasonViewer\SYDERugbyLeagueSeasonViewer.csproj", "{0A958BF8-E07B-4A6A-890C-BA6DB4BBCCC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYDERugbyLeagueSeasonViewer", "SYDERugbyLeagueSeasonViewer\SYDERugbyLeagueSeasonViewer.csproj", "{0A958BF8-E07B-4A6A-890C-BA6DB4BBCCC8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYDESurvivalIsland", "SYDESurvivalIsland\SYDESurvivalIsland.vcxproj", "{4C2B2FF3-246D-46D7-ACC0-31098A94691F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYDEEngineTests", "SYDEEngineTests\SYDEEngineTests.vcxproj", "{D108377C-1570-4788-9872-6E4B5E50EBE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{811AF076-62B2-4E5C-8DCE-DDEDA35514EE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYDEQuest_Game", "SYDEQuest_Game\SYDEQuest_Game.vcxproj", "{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +116,36 @@ Global
 		{0A958BF8-E07B-4A6A-890C-BA6DB4BBCCC8}.Release|x64.Build.0 = Release|Any CPU
 		{0A958BF8-E07B-4A6A-890C-BA6DB4BBCCC8}.Release|x86.ActiveCfg = Release|Any CPU
 		{0A958BF8-E07B-4A6A-890C-BA6DB4BBCCC8}.Release|x86.Build.0 = Release|Any CPU
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Debug|x64.ActiveCfg = Debug|x64
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Debug|x64.Build.0 = Debug|x64
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Debug|x86.ActiveCfg = Debug|Win32
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Debug|x86.Build.0 = Debug|Win32
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Release|Any CPU.ActiveCfg = Release|Win32
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Release|x64.ActiveCfg = Release|x64
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Release|x64.Build.0 = Release|x64
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Release|x86.ActiveCfg = Release|Win32
+		{4C2B2FF3-246D-46D7-ACC0-31098A94691F}.Release|x86.Build.0 = Release|Win32
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Debug|x64.ActiveCfg = Debug|x64
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Debug|x64.Build.0 = Debug|x64
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Debug|x86.ActiveCfg = Debug|Win32
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Debug|x86.Build.0 = Debug|Win32
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Release|Any CPU.ActiveCfg = Release|Win32
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Release|x64.ActiveCfg = Release|x64
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Release|x64.Build.0 = Release|x64
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Release|x86.ActiveCfg = Release|Win32
+		{D108377C-1570-4788-9872-6E4B5E50EBE5}.Release|x86.Build.0 = Release|Win32
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Debug|x64.ActiveCfg = Debug|x64
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Debug|x64.Build.0 = Debug|x64
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Debug|x86.ActiveCfg = Debug|Win32
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Debug|x86.Build.0 = Debug|Win32
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Release|Any CPU.ActiveCfg = Release|Win32
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Release|x64.ActiveCfg = Release|x64
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Release|x64.Build.0 = Release|x64
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Release|x86.ActiveCfg = Release|Win32
+		{96793F03-5DAF-4D20-BFDE-3D89B1079CD6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

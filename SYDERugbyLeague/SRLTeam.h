@@ -10,8 +10,8 @@ using namespace std;
 class SRLTeam {
 public:
 	SRLTeam();
-	SRLTeam(string name) {m_Name= name;}
-	SRLTeam(deque<SRLPlayer> a_TeamList, string name);
+	SRLTeam(string name, string homeground) { m_Name = name; m_HomeGround = homeground; }
+	SRLTeam(deque<SRLPlayer> a_TeamList, string name, string homeground);
 	virtual ~SRLTeam();
 
 	string Interchange(string& summaryPlay);
@@ -25,14 +25,20 @@ public:
 	void generateJerseys();
 	
 	int getJerseryType() { return jerseryTypeInt; }
+	void setJerseyInt(int newJersey) { jerseryTypeInt = newJersey; }
 
 	int getLogoType() { return logoTypeInt; }
+	void setLogoInt(int newLogo) { logoTypeInt = newLogo; }
 
 	ColourClass getPrimary() { return primaryColour; }
 	ColourClass getSecondary() { return secondaryColour; }
 	ColourClass getBadge() { return badgeColour; }
 
 	SRLPlayer getRandomPlayer();
+
+	SRLPlayer getRandomPlayerAttacker();
+	SRLPlayer getRandomPlayerDefender();
+
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
 
 	void clearTeam();
@@ -40,11 +46,15 @@ public:
 	void setLogoCustom(string _Logo) { m_CustomLogo = _Logo; }
 	string getLogoCustom() { return m_CustomLogo; }
 	string getName() { return m_Name; }
+	void setHomeGround(string hg) { m_HomeGround = hg; }
+	string getHomeGround() { return m_HomeGround; }
 	void setName(string name) { m_Name = name; }
 	void loadTeam(string path);
 	void loadTeamOffContract(string path);
 	void saveTeam();
 	void saveTeamOffContract();
+	
+	void swapStartPositionsAndSave(int pos1, int pos2);
 
 	void addPlayerMetres(string playerName, int metres);
 	void addPlayerKickMetres(string playerName, int metres);
@@ -59,7 +69,7 @@ public:
 	void addPlayerIntercept(string playerName);
 	void addPlayerStrip(string playerName);
 	void addPlayerStamina(string playerName, int Stamina);
-
+	void addPlayerLinebreak(string playerName);
 
 	void addPlayerAtk(string playerName,int val);
 	void addPlayerDef(string playerName,int val);
@@ -126,10 +136,18 @@ public:
 
 	int TeamRating();
 
+	void sortForRepresentativeTeam();
+
+	void AddPlayer(SRLPlayer player) {
+		m_TeamList.push_back(player);
+	}
+
+	void cutToSeventeen();
+
 private:
 	ColourClass getRandomColour();
 	string m_Name;
-
+	string m_HomeGround;
 	int jerseryTypeInt;
 	int logoTypeInt;
 

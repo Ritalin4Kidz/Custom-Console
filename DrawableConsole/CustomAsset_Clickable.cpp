@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CustomAsset_Clickable.h"
 
+string CustomAsset_Clickable::lastTag = "";
 
 ConsoleWindow CustomAsset_Clickable::draw_asset(ConsoleWindow window, Vector2 point)
 {
@@ -8,13 +9,31 @@ ConsoleWindow CustomAsset_Clickable::draw_asset(ConsoleWindow window, Vector2 po
 	{
 		for (int ii = 0; ii < AssetVector[i].size(); ii++)
 		{
-			window.setTextAtPoint(Vector2(ii + point.getX(), i + point.getY()), getStringFromChar(AssetVector[i][ii].getChar()), window._intToColour(AssetVector[i][ii].getColour()));
+			if (highlighted && AssetVector[i][ii].getColour() != NULLCOLOUR)
+			{
+				window.setTextAtPoint(Vector2(ii + point.getX(), i + point.getY()), getStringFromChar(AssetVector[i][ii].getChar()), hilightColour);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(ii + point.getX(), i + point.getY()), getStringFromChar(AssetVector[i][ii].getChar()), window._intToColour(AssetVector[i][ii].getColour()));
+			}
 		}
 	}
 
 	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
 	{
+		lastTag = tag;
+		canClick = false;
+		if (canHighlight)
+		{
+			highlighted = true;
+		}
 		DoFunc();
+	}
+
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
+	{
+		canClick = true;
 	}
 
 	return window;
@@ -40,13 +59,31 @@ ConsoleWindow CustomAsset_Clickable::draw_asset(ConsoleWindow window, Vector2 po
 	{
 		for (int ii = startPointX, jj = StartJJ; ii < windowWidth + point.getX() && ii < AssetVector[i].size(); ii++, jj++)
 		{
-			window.setTextAtPoint(Vector2(jj, j), getStringFromChar(AssetVector[i][ii].getChar()), window._intToColour(AssetVector[i][ii].getColour()));
+			if (highlighted && AssetVector[i][ii].getColour() != NULLCOLOUR)
+			{
+				window.setTextAtPoint(Vector2(ii + point.getX(), i + point.getY()), getStringFromChar(AssetVector[i][ii].getChar()), hilightColour);
+			}
+			else
+			{
+				window.setTextAtPoint(Vector2(ii + point.getX(), i + point.getY()), getStringFromChar(AssetVector[i][ii].getChar()), window._intToColour(AssetVector[i][ii].getColour()));
+			}
 		}
 	}
 
 	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition(), point))
 	{
+		lastTag = tag;
+		canClick = false;
+		if (canHighlight)
+		{
+			highlighted = true;
+		}
 		DoFunc();
+	}
+
+	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
+	{
+		canClick = true;
 	}
 
 	return window;

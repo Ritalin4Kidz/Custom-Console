@@ -1,0 +1,154 @@
+///THIS IS AS OF 04/08/2021
+
+This is a short description of the amount of ABSOLUTELY UNIQUE teams you can generate, and the numbers of how to get there
+
+####Initial Stats
+- 26 Home Ground First Parts
+- 13 Home Ground Second Parts
+- 344 Player First Names
+- 29 Player Middle Names
+- 567 Player Last Names
+- 250 Team Names
+- 246 City Names
+
+Full Team Names = Team Names X City Names = 250x246 = 61,500
+Full Player Names (No Middle Name) = 195,048
+Full Player Names (Middle Name) = 5,656,392
+Full Player Names Count = 5,821,440
+
+Full Home Ground Count = 26x13 = 338
+
+Jersey Types = 102
+Unique Jerseys = 102x15x14x13 = 278,460
+Logo Types = 54
+54x278460 = 15,036,840
+
+Team Names x Home Ground = 20,787,000
+
+Style X Names = 15,036,840 X 20,787,000
+	= 312,570,793,080,000
+
+Without Considering Players Yet, The Amount Of Unique Teams You Can Have Is 312,570,793,080,000
+
+Now Each Team Actually Has 20 Players, And It Tries Not To Have Players Of The Same Name On The Same Team, sooooo
+
+Unique Players = 5,821,440 (Not Including Style, But It Does Become Slightly Irrelevant)
+int total = Unique Players
+	for (int i = i; i<= 20; i++)
+	{
+		total *= (Unique Players - i)
+	}
+
+= 1.997994731780612e+135
+
+Now When We Times That By The Amount Of Unique Teams, We Get:
+	6.245147978823278e+149
+
+Which In A Full Number Is:
+624,514,797,882,327,936,504,912,384,984,880,480,728,872,472,432,960,224,192,904,248,576,128,880,912,896,752,720,368,208,656,984,744,616,360,560,704,336,952,288,072,304,568,024,864,888,488,344,936,296
+
+And By The Way, Here's Some Stats We Didn't Calculate In This Number:
+3,276,800,000 <- The Amount of unique possibilties for stats not including goalkicking
+262,144,000,000 <- With Goal Kicking
+86x13x12x11 = 147,576 <- Player Styles
+20 <- Different Countries Of Origin
+
+That In Total is Equal To:
+7.7372325888e+17
+	Or
+773,723,258,880,000,000
+
+So We Do That Total, Instead Of The Unique Players = 5,821,440, it equals that * 773,723,258,880,000,000;
+But we don't decrement that larger number per player check, we still decrement that 5,821,440, so the algorithm is changed to be:
+
+Unique Players = 5,821,440 (Not Including Style, But It Does Become Slightly Irrelevant)
+int total = Unique Players
+	for (int i = i; i<= 20; i++)
+	{
+		total *= ((Unique Players - i) * 773,723,258,880,000,000)
+	}
+
+So Let's Calculate It Shall We, From The Top To Bottom
+
+5,821,440 * 773,723,258,880,000,000 = 4.504183528174387e+24
+5,821,439 * 773,723,258,880,000,000 = 4.504182754451128e+24
+5,821,438 * 773,723,258,880,000,000 = 4.504181980727869e+24
+5,821,437 * 773,723,258,880,000,000 = 4.504181207004611e+24
+5,821,436 * 773,723,258,880,000,000 = 4.504180433281352e+24
+5,821,435 * 773,723,258,880,000,000 = 4.504179659558093e+24
+5,821,434 * 773,723,258,880,000,000 = 4.504178885834834e+24
+5,821,433 * 773,723,258,880,000,000 = 4.504178112111575e+24
+5,821,432 * 773,723,258,880,000,000 = 4.504177338388316e+24
+5,821,431 * 773,723,258,880,000,000 = 4.504176564665057e+24
+5,821,430 * 773,723,258,880,000,000 = 4.504175790941798e+24
+5,821,429 * 773,723,258,880,000,000 = 4.50417501721854e+24
+5,821,428 * 773,723,258,880,000,000 = 4.504174243495281e+24
+5,821,427 * 773,723,258,880,000,000 = 4.504173469772022e+24
+5,821,426 * 773,723,258,880,000,000 = 4.504172696048763e+24
+5,821,425 * 773,723,258,880,000,000 = 4.504171922325504e+24
+5,821,424 * 773,723,258,880,000,000 = 4.504171148602245e+24
+5,821,423 * 773,723,258,880,000,000 = 4.504170374878986e+24
+5,821,422 * 773,723,258,880,000,000 = 4.504169601155727e+24
+5,821,421 * 773,723,258,880,000,000 = 4.504168827432468e+24
+ 
+So Now For The Most Daunting Task, We Have To Multiply ALL 20 OF THOSE RESULTS together, to get the true number of unique players a team could have.
+Remember that before the number was
+	1.997994731780612e+135
+
+Well Now It's Skyrocketed To
+	1.181156342112632e+493
+
+And Finally, When We Multiply That By The Amount Of Teams We Can Have:
+	3.691949746056172e+507
+
+	Or
+
+3,691,949,746,056,172,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000
+
+That Is The Magic Number For The Amount Of Possible Teams You Can Generate, (As Of 4th August, It's Only Getting Bigger). Note the number would be slightly larger if you want to take into account
+the order of the players generated, however I don't want to
+
+Here's The Number Again Better Formatted
+
+3,691,949,746,056,172,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000
+
+But Wait There's More, there's also 3 custom teams that have a 1 in 1000 chance of being generated every time you click generate new team, so the TRUE TRUE NUMBER IS
+
+3,691,949,746,056,172,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000,000,000,003
+
+To Put These Numbers In Perspective:
+
+Estimated World Population: 7,883,880,349
+Estimated Grains Of Sand On Earth: 7,500,000,000,000,000,000

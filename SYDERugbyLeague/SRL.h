@@ -39,7 +39,9 @@ enum GameStateSYDE
 	NewsViewState,
 	TeamInDepthViewState,
 	ProfileViewState,
-	SponsorChallengeViewState
+	SponsorChallengeViewState,
+	MatchUpInDepthView,
+	SimulateSingleMatchViewState
 };
 
 enum CoachingViewDrawState
@@ -47,7 +49,19 @@ enum CoachingViewDrawState
 	CoachingMain_STATE,
 	CoachingTeamList_STATE,
 	CoachingTrades_STATE,
-	CoachingTraining_STATE
+	CoachingTraining_STATE,
+	CoachingSwapPos_STATE
+};
+
+enum LadderStatsViewState {
+	LSV_DefaultView,
+	LSV_ExtraStatsView
+};
+
+enum JerseySelectViewOptions
+{
+	JSV_Jersey,
+	JSV_Logo
 };
 
 enum SeasonDrawViewState
@@ -63,13 +77,22 @@ enum GameStateInDepthView
 {
 	NormalInDepthView,
 	TeamListViewState,
-	PlayerViewState
+	PlayerViewState,
+	JerseySelectState
+
 };
 
 enum ArticleViewingState
 {
 	HeadlinesState,
 	ArticleFullViewState
+};
+
+enum SeasonConfigState
+{
+	SelectSeasonTypeState,
+	SelectSeasonTeamsState,
+	SelectExhibitionTeamsState
 };
 
 enum GameStateBettingSYDE
@@ -90,7 +113,8 @@ enum GameStateResultSYDE
 enum GameStateSettingsSYDE
 {
 	SeasonSettings_STATE,
-	NormalSettings_STATE
+	NormalSettings_STATE,
+	SummarySettings_STATE
 };
 
 enum GameStateLeaderboardSYDE
@@ -139,6 +163,23 @@ enum SRLSponsorTypeState
 	SponsorState_Zeckfast
 };
 
+enum SRLPositionShowcaseState
+{
+	SRLPS_Backline = 0,
+	SRLPS_Frontline,
+	SRLPS_Interchange
+};
+
+enum SRLTeamListViewState
+{
+	TLV_GeneralStats = 0,
+	TLV_Attack,
+	TLV_Defence,
+	TLV_Speed,
+	TLV_Kicking,
+	TLV_Handling
+};
+
 #pragma endregion
 
 class SRLGame : public SYDEWindowGame {
@@ -170,9 +211,12 @@ public:
 	ConsoleWindow ResultsView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ProfileView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ChallengesView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow MatchUpDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow SingleMatchSimulateView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow TeamInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow TeamInDepthListView(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow JerseyInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow PlayerInDepthView(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow LeaderboardPositions(ConsoleWindow window, deque<SRLLeaderboardPosition> ldrboard);
@@ -207,6 +251,9 @@ public:
 
 	bool addGame(int limit, deque<SRLRound> rounds, deque<SRLGameMatchup>& games, deque<string>& teams, deque<string>& AttemptedTeams);
 
+	int returnJerseyNumberSafe(int jersey);
+	int returnLogoNumberSafe(int logo);
+
 	ConsoleWindow ErrorPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow ExportPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow BetPop_UP(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -217,6 +264,8 @@ public:
 	void CalculatePremiershipOdds();
 	void CalculateTryScorerOdds();
 	void SimulateGames();
+	void SimulateGameLadderAdjustment(int a_Round, int a_Game, SRLGameManager m_srlmanager);
+	void SimulationEndOfRound(int m_ArticlesRemaining);
 	void CalculateFeaturedGame();
 	void CalculateTipMaster();
 
@@ -224,6 +273,7 @@ public:
 	static void loadGameSettings();
 
 	void sortOutNews();
+	void sortOutMatchButtons();
 	void checkSpecificBetAchievements(SRLGameBet _bet);
 	void checkBetAchievements();
 	void checkCoachingAchievements();
@@ -232,8 +282,12 @@ public:
 	void TeamTrade();
 	void UpdateBets();
 
+	void setUpFilters();
+
 	void setUpTeamInDepthView(int teamViewing);
 	void setUpSelectedTeamView();
+
+	void setUpPositionShowcase(SRLPositionShowcaseState _state);
 
 	void setUpPlayer();
 
@@ -257,9 +311,13 @@ public:
 	static SRLPriorBets_State priorBetsState;
 	static ArticleViewingState articleState;
 	static SeasonDrawViewState drawViewState;
+	static JerseySelectViewOptions jerseyViewState;
 	static CoachingViewDrawState coachDrawState;
+	static SeasonConfigState seasCfgState;
+	static LadderStatsViewState ldsViewState;
 
 	static SRLSeasonLength seasonLength;
+	SRLSeasonLength baseSeasonLength = Length_NormalSeason;
 
 	static SRLSponsorTypeState sponsorState;
 
@@ -288,6 +346,7 @@ public:
 	static bool exitConfirmedCall;
 	static bool randomizeCall;
 	static bool randomizeConfirmedCall;
+	static bool saveDetailsCall;
 
 	static bool m_GoalKicker;
 	static bool m_Weather;
@@ -317,6 +376,9 @@ public:
 	static bool premiershipBet;
 	static bool homeTeamTryBet;
 	static bool keyPadCall;
+
+	static bool setUpPosShowcaseCall;
+
 	static int gameNumberBet;
 
 	static bool generateStartCall;
@@ -328,13 +390,17 @@ public:
 	void sortOutTrainingOptions();
 	void sortOutTradingOptions();
 
+	ConsoleWindow CreateSeason(ConsoleWindow window, bool isWorldCup);
+
 	static deque<string> AchievementStrings;
 
 	static int playerClicked;
 	static bool playerCall;
 	static bool finalsSystemCall;
+	static bool RepRoundsOn;
 
 	static bool allowJsonExportingSeason;
+	static bool isExhibitionMatch;
 
 #pragma region coaching mode
 	static bool coachingMode;
@@ -353,7 +419,21 @@ public:
 	static int playerOtherTeamTrade;
 	static SRLTeam otherTeamTrade;
 	static SRLTrainingType trainType;
+	static SRLPositionShowcaseState posSwapState;
+	static SRLTeamListViewState tlViewState;
+	static string posToSwap;
+	static bool posSwapCall;
 #pragma endregion
+
+	static int exhibitionTeam1Num;
+	static int exhibitionTeam2Num;
+	static bool setUpExhibitionDisplayCall;
+
+	static int matchInformationRound;
+	static int matchInformationGame;
+
+	static bool SimulateSingleMatchCall;
+
 private:
 	const int customTeamGenerateChance = 9999;
 
@@ -453,17 +533,28 @@ private:
 	SYDEClickableButton m_PriorBetsTryScorerBtn = SYDEClickableButton();
 
 	//View Season
-	SYDEClickableButton m_SettingsGoalKickerBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsGoalKickerBtn = SYDECheckbox();
 	//View Season
-	SYDEClickableButton m_SettingsWeatherBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsStaminaBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsWeatherBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsStaminaBtn = SYDECheckbox();
 	SYDEClickableButton m_SettingsSeasonLengthBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsExtraTimeBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsInjuryBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsSinBinBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsEventsBtn = SYDEClickableButton();
-	SYDEClickableButton m_SettingsCoachBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsExtraTimeBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsInjuryBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsSinBinBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsEventsBtn = SYDECheckbox();
+	SYDECheckbox m_SettingsCoachBtn = SYDECheckbox();
 	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
+	SYDECheckbox m_SettingsRepRoundsBtn = SYDECheckbox();
+	SYDEClickableButton m_SummaryFilterBtn = SYDEClickableButton();
+
+	//SUMMARY FILTER
+	SYDECheckbox m_FilterError = SYDECheckbox();
+	SYDECheckbox m_FilterPenalty = SYDECheckbox();
+	SYDECheckbox m_FilterSent = SYDECheckbox();
+	SYDECheckbox m_FilterInterchange = SYDECheckbox();
+	SYDECheckbox m_FilterVideoRef = SYDECheckbox();
+	SYDECheckbox m_FilterMissedKicks = SYDECheckbox();
+	SYDECheckbox m_FilterMisc = SYDECheckbox();
 
 
 	//KEYPAD
@@ -495,15 +586,22 @@ private:
 	SRLNewsArticle m_Article;
 
 	SYDEClickableButton m_TeamInDepthView = SYDEClickableButton();
+	SYDEClickableTextBox m_InDepthTeamNameTextBox = SYDEClickableTextBox(Vector2(0,1),Vector2(60,1), BLACK_BRIGHTWHITE_BG);
+	SYDEClickableTextBox m_InDepthPlayerNameTextBox = SYDEClickableTextBox(Vector2(0, 1), Vector2(60, 1), BLACK_BRIGHTWHITE_BG);
 	SYDEClickableButton m_TeamAssetSwitchView = SYDEClickableButton();
 	SYDEClickableButton m_BackTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_NextTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_PrevTeamInDepth = SYDEClickableButton();
 	SYDEClickableButton m_TeamListInDepth = SYDEClickableButton();
+	SYDEClickableButton m_SaveDetailsInDepth = SYDEClickableButton();
 	SYDEClickableButton m_BackTeamListInDepth = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerBtn = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();
+
+	SYDEClickableButton m_ExhibitionMatchSimulateBtn = SYDEClickableButton();
+
+	SYDEClickableButton m_LadderSwitchView = SYDEClickableButton();
 
 	SYDEClickableButton m_ProfileViewBtn = SYDEClickableButton();
 
@@ -521,7 +619,6 @@ private:
 	CustomAsset m_TipMasterImg = CustomAsset(22, 11, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\Tipmaster.bmp", 11, 11));
 	deque<string> TipMasterBets = deque<string>({});
 
-
 	vector<string> m_SavedTeams = vector<string>({});;
 	deque<string> m_SeasonTeams = deque<string>({});;
 	int m_SelectedTeam = 0;
@@ -535,6 +632,8 @@ private:
 	deque<SRLGameBetsWriting> m_TryScorerBetsWriteUp;
 	deque<string> AttackersHome = deque<string>({});
 	deque<string> AttackersAway = deque<string>({});
+
+	deque<SRLTeam> repTeams = deque<SRLTeam>({});
 
 	int m_LineResults = 0;
 	int m_SelectedGame = 0;
@@ -564,8 +663,10 @@ private:
 	int currentBetsTotalSeasonMatchOnly = 0;
 
 	static float m_ScrollingSpeed;
+	static float m_SimulationSpeed;
 
 	FinalsSeriesType fsType = Top8Normal;
+	int baseFsType = 0;
 	string finalsSettingStr = "Top 8 Normal";
 	deque<FinalsSeries> m_FSTYPES = deque<FinalsSeries>({
 		FinalsSeries("Top 8 Normal", Top8Normal, 4, 8),
@@ -580,14 +681,20 @@ private:
 
 	CustomAnimationAsset m_MainMenuBG = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\mainmenuAnim.bmp", astVars, 180, 280, 30, 20, 0, 81));
 	CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
+	CustomAsset m_FieldBg = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fieldShowcase.bmp", 30, 20));
 	CustomAsset m_ProfileLogo = CustomAsset(20, 10, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\DefaultLogo.bmp", 10, 10));
+	CustomAsset_Clickable m_MiniJersery = CustomAsset_Clickable(10, 4, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\MiniJersey.bmp", 5, 4));
+	deque<SRLPositionShowcase> _PositionsShowcase = deque<SRLPositionShowcase>({});
 	float splashScreenTime = 0;
 	bool splashScreenInit = true;
 	SRLTeam m_InDepthTeamView;
-	CustomAsset m_JerseyView;
-	CustomAsset m_LogoView;
+	CustomAsset_Clickable m_JerseyView;
+	CustomAsset_Clickable m_LogoView;
 	int m_TeamViewing = 0;
 	deque<SYDEClickableButton> m_PlayerButtons;
+
+	deque<SYDEClickableButton> m_MatchResultButtons;
+
 	SRLPlayer m_PlayerView;
 	CustomAsset m_PlayerAsset;
 
@@ -604,12 +711,17 @@ private:
 	SYDEClickableButton m_CoachTradeStateBtn;
 	SYDEClickableButton m_CoachTrainStateBtn;
 	SYDEClickableButton m_CoachTeamStateBtn;
+	SYDEClickableButton m_CoachTeamCycleStatsViewBtn;
+	SYDEClickableButton m_CoachTeamSwapPositionsBtn;
 
 	SYDEClickableButton m_CoachTradeConfirmOKBtn;
 	SYDEClickableButton m_CoachTradeConfirmCNCLBtn;
 
 	SYDEClickableButton m_CoachTrainConfirmOKBtn;
 	SYDEClickableButton m_CoachTrainConfirmCNCLBtn;
+
+	SYDEClickableButton m_CoachPosSwapPrev;
+	SYDEClickableButton m_CoachPosSwapNext;
 
 	SYDEClickableButton m_CoachTrainRefreshBtn;
 	const int maxRefreshes = 3;
@@ -625,6 +737,16 @@ private:
 	bool tradingAvailable = false;
 #pragma endregion
 
+	SYDEClickableButton m_RegularSeasonCfgBtn;
+	SYDEClickableButton m_WorldCupCfgBtn;
+	SYDEClickableButton m_ExhibitionCfgBtn;
+	FeaturedGame m_ExhibitionGameFeature;
+
+	SYDEClickableButton m_ExhibitionSwap1Prev;
+	SYDEClickableButton m_ExhibitionSwap1Next;
+	SYDEClickableButton m_ExhibitionSwap2Prev;
+	SYDEClickableButton m_ExhibitionSwap2Next;
+	SYDEClickableButton m_SimulateSingleGameBtn;
 
 #pragma region Challenges
 
@@ -635,4 +757,13 @@ private:
 	void initSponsors();
 #pragma endregion
 
+
+#pragma region SingleSimulation
+	SRLGameManager m_SingleGameManager;
+	int countSummaries = 0;
+	bool singleMatchDisplayInfoCall = false;
+	deque<GameSummaryText> m_LiveGameVector;
+	float m_TimePassedSimulation = 0;
+	float m_GameSimulationDelay = 0.1f;
+#pragma endregion
 };

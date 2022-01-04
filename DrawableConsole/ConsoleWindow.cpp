@@ -17,6 +17,17 @@ ConsoleWindow::ConsoleWindow(int size)
 	system("CLS");
 }
 
+ConsoleWindow::ConsoleWindow(int size, bool clearConsole)
+{
+	// INIT CONSOLE SIZE IN LINES TO SIZE VARIABLE
+	m_Lines = vector<Line>(size);
+	// CLEAR THE SCREEN
+	if (clearConsole)
+	{
+		system("CLS");
+	}
+}
+
 void ConsoleWindow::ClearWindow(bool removeText)
 {
 	// CLEAR THE SCREEN
@@ -81,6 +92,18 @@ string ConsoleWindow::getTextAtPoint(Vector2 point)
 	return std::string("" + getLine(point.getY()).getCharAtIndex(point.getX()));
 }
 
+char ConsoleWindow::getCharAtPoint(Vector2 point)
+{
+	if (point.getY() < m_Lines.size() && point.getY() > 0)
+	{
+		if (point.getX() < m_Lines[(int)point.getY()].getLine().size())
+		{
+			return m_Lines[point.getY()].getLine()[point.getX()].getChar();
+		}
+	}
+	return 0;
+}
+
 ColourClass ConsoleWindow::_intToColour(int colour_int)
 {
 	return (ColourClass)colour_int;
@@ -113,7 +136,7 @@ void ConsoleWindow::initialize(int width, int height)
 	{
 		for (int ii = 0; ii < width; ii++)
 		{
-			addToLine(i, "", WHITE);
+			addToLine(i, " ", WHITE);
 		}
 	}
 }

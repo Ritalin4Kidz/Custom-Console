@@ -47,6 +47,7 @@ Vector2 SYDEKeyCode::offset = Vector2(0);
 INPUT_RECORD SYDEKeyCode::InputRecord;
 DWORD SYDEKeyCode::Events;
 HANDLE SYDEKeyCode::hin;
+std::vector<tempKey> SYDEKeyCode::KeysDownSafeVector = std::vector<tempKey>();
 
 std::vector<SYDEKey> SYDEKeyCode::KeyCodes = {
 	SYDEKeyCode_A,SYDEKeyCode_B,SYDEKeyCode_C,SYDEKeyCode_D,SYDEKeyCode_E,SYDEKeyCode_F,SYDEKeyCode_G,
@@ -63,7 +64,7 @@ std::string SYDEKeyCode::KeysDown()
 {
 	std::string m_return;
 	for (char i = ' '; i <= '`'; i++) {
-		if (GetAsyncKeyState(i))
+		if (GetAsyncKeyState(i) && 0x8000)
 		{
 			char addTxt = static_cast<char>(i);;
 			m_return += addTxt;
@@ -74,6 +75,11 @@ std::string SYDEKeyCode::KeysDown()
 
 std::string SYDEKeyCode::KeysDownSafe()
 {
+	//NONE PRESSED
+	for (int i = 0; i < KeysDownSafeVector.size(); i++)
+	{
+		KeysDownSafeVector[i].pressed = false;
+	}
 	HWND hWnd = GetConsoleWindow();
 	bool inForeground = GetForegroundWindow() == hWnd;
 	std::string m_return;
@@ -81,11 +87,53 @@ std::string SYDEKeyCode::KeysDownSafe()
 	for (char i = ' '; i <= '`'; i++) {
 		if (GetAsyncKeyState(i))
 		{
-			char addTxt = static_cast<char>(i);;
-			m_return += addTxt;
+			bool canAdd = true;
+			for (int ii = 0; ii < KeysDownSafeVector.size(); ii++)
+			{
+				if (KeysDownSafeVector[ii].key == i)
+				{
+					KeysDownSafeVector[ii].pressed = true;
+					canAdd = false;
+				}
+			}
+			if (canAdd)
+			{
+				bool b_Shift = ((GetAsyncKeyState(VK_LSHIFT) & -32768) || (GetAsyncKeyState(VK_RSHIFT))) ? true : false;
+				bool b_Capital = (GetAsyncKeyState(VK_CAPITAL) & 1) ? true : false;
+				bool b_should_upper = (b_Capital && !b_Shift) || (!b_Capital && b_Shift);
+				char addTxt = static_cast<char>(i);
+				KeysDownSafeVector.push_back(tempKey(addTxt, true));
+				if (!b_should_upper)
+				{
+					addTxt = tolower(addTxt);
+				}
+				m_return += addTxt;
+			}
+		}
+	}
+	//REMOVE NOT PRESSED
+	for (int i = 0; i < KeysDownSafeVector.size(); i++)
+	{
+		if (KeysDownSafeVector[i].pressed == false)
+		{
+			KeysDownSafeVector.erase(KeysDownSafeVector.begin() + i);
+			i--;
 		}
 	}
 	return m_return;
+}
+
+bool SYDEKeyCode::getBackSpaceSafe()
+{
+	HWND hWnd = GetConsoleWindow();
+	bool inForeground = GetForegroundWindow() == hWnd;
+	std::string m_return;
+	if (!inForeground) { return false; }
+	if (GetAsyncKeyState(VK_BACK))
+	{
+		return true;
+	}
+	return false;
 }
 
 SYDEKey SYDEKeyCode::get(char KeyCode)

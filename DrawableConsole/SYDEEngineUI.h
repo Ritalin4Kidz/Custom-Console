@@ -12,3 +12,4 @@
 #include "SYDECheckbox.h"
 #include "SYDESlider.h"
 #include "SYDERadioButtonMenu.h"
+#include "SYDERadialMenu.h"

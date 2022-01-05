@@ -125,6 +125,9 @@ Inside our main function, we can initialize all of our variables and call up SYD
 
 ## Release Notes
 
+### 1.4.3.0
+- Radial Menus
+
 ### 1.4.2.0 05/01/2022
 - Test Fixes
 - Added Radio Buttons to UI

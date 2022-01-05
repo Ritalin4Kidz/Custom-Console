@@ -9,35 +9,34 @@
 #include "SYDEKeyCode.h"
 #include "SYDECheckbox.h"
 
-enum SYDERadialMenuType
-{
-	Radial_Basic,
-	Radial_
-};
-
-class SYDERadialOption : public SYDECheckbox
+class SYDERadialOption : public SYDEUI
 {
 public:
 	SYDERadialOption() {}
-	SYDERadialOption(string a_text, ColourClass txtColour, ColourClass checkBoxClr);
+	SYDERadialOption(string a_text, ColourClass txtColour, ColourClass a_hoverColour, string a_Symbol, Vector2 displayPos);
 	virtual ~SYDERadialOption() {}
 	ConsoleWindow draw_ui_at_vector(ConsoleWindow window, Vector2 point);
 
 	bool getOptionClicked() { return optionClicked; }
 
-	void setIsChecked(bool check) { m_Checked = check; }
 
 private:
+	ColourClass TextColour = NULLCOLOUR;
+	ColourClass HoverColour = NULLCOLOUR;
+	bool canClick = true;
 	bool optionClicked = false;
+	string m_Symbol;
 	bool pointIsInCheckRange(Vector2 Point, Vector2 m_Pos);
+
+	Vector2 textDisplayPos;
 };
 
 
-class SYDERadialMenu : public SYDEUI {
+class SYDERadialMenu_Basic : public SYDEUI {
 public:
-	SYDERadialMenu() { }
-	SYDERadialMenu(Vector2 a_Pos);
-	virtual ~SYDERadialMenu() {}
+	SYDERadialMenu_Basic() { }
+	SYDERadialMenu_Basic(Vector2 a_Pos, SYDERadialOption northBtn, SYDERadialOption westBtn, SYDERadialOption southBtn, SYDERadialOption eastBtn);
+	virtual ~SYDERadialMenu_Basic() {}
 	/// <summary>
 	/// Draw the button onto the window
 	/// </summary>
@@ -49,6 +48,10 @@ public:
 	void setSpacing(int space) { m_Spacing = space; }
 
 private:
-	vector<SYDERadialOption> m_Options;
+	SYDERadialOption m_North;
+	SYDERadialOption m_South;
+	SYDERadialOption m_West;
+	SYDERadialOption m_East;
+
 	int m_Spacing = 0;
 };

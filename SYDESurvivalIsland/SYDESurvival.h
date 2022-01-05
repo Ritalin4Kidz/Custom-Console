@@ -89,5 +89,11 @@ private:
 		SYDERadioOption(string("This Is 3 Test"), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG)
 		}));
 
+	SYDERadialMenu_Basic m_Radial = SYDERadialMenu_Basic(Vector2(30, 10),
+		SYDERadialOption("Health", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "H", Vector2(0, 1)),
+		SYDERadialOption("Mana", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "M", Vector2(0, 1)),
+		SYDERadialOption("Exit", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "X", Vector2(0, 1)),
+		SYDERadialOption("Options", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "O", Vector2(0, 1)));
+
 	vector<Biome> _biomes;
 };

@@ -291,6 +291,9 @@
     <ClInclude Include="SYDERadioButtonMenu.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="SYDERadialMenu.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Concerto.cpp">
@@ -447,6 +450,9 @@
       <Filter>Source Files\SYDESpecial\SYDESpecialUI</Filter>
     </ClCompile>
     <ClCompile Include="SYDERadioButtonMenu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="SYDERadialMenu.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>

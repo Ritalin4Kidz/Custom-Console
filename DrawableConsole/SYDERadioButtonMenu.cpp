@@ -72,6 +72,7 @@ ConsoleWindow SYDERadioOption::draw_ui_at_vector(ConsoleWindow window, Vector2 p
 		{
 			optionClicked = true;
 		}
+		DoFunc();
 	}
 
 	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))

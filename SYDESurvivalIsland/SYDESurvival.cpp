@@ -4,6 +4,7 @@ void SYDESurvival::init()
 {
 	test();
 	m_ButtonMenu.setSpacing(1);
+	m_Radial.setSpacing(-1);
 }
 
 void SYDESurvival::test()
@@ -69,6 +70,7 @@ ConsoleWindow SYDESurvival::window_draw_game(ConsoleWindow window, int windowWid
 		}
 	}
 	window.setTextAtPoint(Vector2(0, 19), std::to_string(m_CameraPos.getX()) + "," + std::to_string(m_CameraPos.getY()), BLACK_BRIGHTWHITE_BG);
-	window = m_ButtonMenu.draw_ui(window);
+	//window = m_ButtonMenu.draw_ui(window);
+	window = m_Radial.draw_ui(window);
 	return window;
 }

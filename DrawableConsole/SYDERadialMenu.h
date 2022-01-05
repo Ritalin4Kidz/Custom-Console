@@ -19,6 +19,7 @@ public:
 
 	bool getOptionClicked() { return optionClicked; }
 
+	bool getIsHighlighted() { return isHighlighted; }
 
 private:
 	ColourClass TextColour = NULLCOLOUR;
@@ -27,6 +28,8 @@ private:
 	bool optionClicked = false;
 	string m_Symbol;
 	bool pointIsInCheckRange(Vector2 Point, Vector2 m_Pos);
+
+	bool isHighlighted = false;
 
 	Vector2 textDisplayPos;
 };
@@ -43,7 +46,11 @@ public:
 	/// <param name="window"></param>
 	/// <returns></returns>
 	ConsoleWindow draw_ui(ConsoleWindow window) override;
-
+	/// <summary>
+	/// get the index of the highlighted option (N,W,S,E) -1 if none
+	/// </summary>
+	/// <returns></returns>
+	int getHighlightedIndex();
 
 	void setSpacing(int space) { m_Spacing = space; }
 

@@ -142,6 +142,8 @@ public:
 
 	static void SetLastClickPosition(Vector2 v) { lastClickPosition = v; }
 	static Vector2 GetLastClickPosition() { return lastClickPosition; }
+
+	static void ForceLastMousePosition(Vector2 v) { lastMousePosition = v; }
 private:
 	static Vector2 lastMousePosition;
 	static Vector2 lastClickPosition;

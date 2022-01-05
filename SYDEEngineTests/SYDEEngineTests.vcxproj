@@ -153,6 +153,7 @@
     <ClCompile Include="SYDEEngineTests.cpp" />
     <ClCompile Include="SYDEKeyCodeTest.cpp" />
     <ClCompile Include="SYDEOptionCyclerTest.cpp" />
+    <ClCompile Include="SYDERadialMenuTest.cpp" />
     <ClCompile Include="SYDERadioOptionTest.cpp" />
     <ClCompile Include="SYDESliderTest.cpp" />
     <ClCompile Include="SYDETestHelper.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="SYDEEngineBaseTest.h" />
     <ClInclude Include="SYDEKeyCodeTest.h" />
     <ClInclude Include="SYDEOptionCyclerTest.h" />
+    <ClInclude Include="SYDERadialMenuTest.h" />
     <ClInclude Include="SYDERadioOptionTest.h" />
     <ClInclude Include="SYDESliderTest.h" />
     <ClInclude Include="SYDETestHelper.h" />

@@ -12,11 +12,13 @@ SYDERadialOption::SYDERadialOption(string a_text, ColourClass txtColour, ColourC
 
 ConsoleWindow SYDERadialOption::draw_ui_at_vector(ConsoleWindow window, Vector2 point)
 {
+	isHighlighted = false;
 	ColourClass _TXT = TextColour;
 	if (pointIsInCheckRange(SYDEKeyCode::getMousePosition(), point))
 	{
 		window.setTextAtPoint(textDisplayPos, m_Text, _TXT);
 		_TXT = HoverColour;
+		isHighlighted = true;
 	}
 	optionClicked = false;
 	window.setTextAtPoint(Vector2(point.getX() - 1, point.getY()), " ", _TXT);
@@ -63,4 +65,13 @@ ConsoleWindow SYDERadialMenu_Basic::draw_ui(ConsoleWindow window)
 	window = m_West.draw_ui_at_vector(window, Vector2((m_Pos.getX() - 8) - (m_Spacing * 2), m_Pos.getY()));
 	window = m_East.draw_ui_at_vector(window, Vector2((m_Pos.getX() + 8) + (m_Spacing * 2), m_Pos.getY()));
 	return window;
+}
+
+int SYDERadialMenu_Basic::getHighlightedIndex()
+{
+	if (m_North.getIsHighlighted()) return 0;
+	if (m_West.getIsHighlighted()) return 1;
+	if (m_South.getIsHighlighted()) return 2;
+	if (m_East.getIsHighlighted()) return 3;
+	return -1;
 }

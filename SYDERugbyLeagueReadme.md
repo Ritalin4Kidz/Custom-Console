@@ -36,6 +36,7 @@ SRL Simulation game made inside the SYDE Framework.
 ### 1.1.2.0 Goals
 - Add Export To Exhibition Matches
 - Show Odds When Clicking On Individual Match
+- Customization For Player Stats
 
 ## Release Notes
 

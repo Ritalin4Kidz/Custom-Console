@@ -6511,7 +6511,7 @@ void SRLGame::saveGameSettings()
 	save_file["soundvolume"] = static_cast<int>(BaseSYDESoundSettings::getDefaultVolumeState());
 	save_file["soundtrackon"] = static_cast<int>(soundTrackOn);
 	save_file["scrollspeed"] = m_ScrollingSpeed;
-	save_file["gamesimspeed"] = m_ScrollingSpeed;
+	save_file["gamesimspeed"] = m_SimulationSpeed;
 
 	string filePath = string("EngineFiles\\Settings\\gameSettings.json");
 	std::ofstream ofs(filePath);

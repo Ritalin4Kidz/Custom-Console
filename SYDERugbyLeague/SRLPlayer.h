@@ -128,7 +128,12 @@ public:
 
 	string getStatsString() { return "|Time Played: " + getTimeOnField() + " |Metres: " + std::to_string(m_RunMetres) + " |" + "Tackles: " + std::to_string(m_Tackles) + " |" + "Kicks: " + std::to_string(m_Kicks) + " |" + "Kick Metres: " + std::to_string(m_KickMetres) + " |" + "40/20: " + std::to_string(m_4020) + " |" + "Errors: " + std::to_string(m_Errors) + " |" + "Tries: " + std::to_string(m_Tries) + " |" + "Goals: " + std::to_string(m_Goals) + " |" + "Field Goals: " + std::to_string(m_FieldGoals) + " |" + "Total Points: " + std::to_string(getPoints()) + " |" + "Fantasy Points: " + to_string(getFantasyPoints()); }
 
+	string getTeamname() { return m_Teamname; }
+	void setTeamname(string team) { m_Teamname = team; }
+
 private:
+
+	string m_Teamname;
 
 	string m_PlayerName;
 	string m_CountryOfOrigin;

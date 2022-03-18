@@ -33,12 +33,18 @@ SRL Simulation game made inside the SYDE Framework.
 	- Stadium Played At
 - In Addition, Teams Will Now Have Home Grounds
 
-### 1.1.2.0 Goals
+### 1.2.0.0 Goals
 - Add Export To Exhibition Matches
 - Show Odds When Clicking On Individual Match
 - Customization For Player Stats
+- Massive Code Refactor + Comments
 
 ## Release Notes
+
+### 1.1.4.0 01/01/2022
+- Simulation Speed Fix With Saving
+- Summaries now show the team during plays
+- Simulation Options Start
 
 ### 1.1.3.0 01/01/2022
 - Can change logos and jersey types in in depth view by clicking on them

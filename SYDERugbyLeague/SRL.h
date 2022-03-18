@@ -188,6 +188,16 @@ public:
 	virtual ~SRLGame() {}
 	void init();
 
+	void initSoundtrackButtons();
+	void initSimulationButtons();
+	void initCoachingButtons();
+	void initSeasonButtons();
+	void initKeyPadButtons();
+	void initInDepthViewButtons();
+	void initGameSettingsButtons();
+	void initBettingOptions();
+
+
 	deque<SRLPlayer> createRandomTeam(string prefix);
 	deque<SRLPlayer> createOffSeasonTeam(string prefix);
 	deque<SRLPlayer> createRandomTeam(string prefix, float multiplier);
@@ -382,6 +392,8 @@ public:
 	static int gameNumberBet;
 
 	static bool generateStartCall;
+
+	static bool singleSimulationPaused;
 
 	static int articleClicked;
 
@@ -765,5 +777,8 @@ private:
 	deque<GameSummaryText> m_LiveGameVector;
 	float m_TimePassedSimulation = 0;
 	float m_GameSimulationDelay = 0.1f;
+
+	SYDEClickableButton m_SimulationPause = SYDEClickableButton();
+	SYDEClickableButton m_SimulationResume = SYDEClickableButton();
 #pragma endregion
 };

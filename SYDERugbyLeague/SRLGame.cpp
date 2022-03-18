@@ -79,7 +79,7 @@ void SRLGameManager::addSummary(string a_Play, SRLPlayer player)
 	{
 		secondsStr = "0" + secondsStr;
 	}
-	m_Summary.push_back(minutesStr + ":" + secondsStr + "#" + player.getName() + "#" + a_Play);
+	m_Summary.push_back(minutesStr + ":" + secondsStr + " - " + player.getTeamname()  + "#" + player.getName() + "#" + a_Play);
 }
 
 void SRLGameManager::addSummaryDirect(string a_Play)
@@ -235,11 +235,13 @@ void SRLGameManager::addTeamLineupsPlayByPlay()
 	addPlayNoMinutes("Home Team: " + m_HomeTeam.getName());
 	for (int i = 0; i < m_HomeTeam.getPlayers().size(); i++)
 	{
+		m_HomeTeam.setPlayerTeamName(m_HomeTeam.getName(), i);
 		addPlayNoMinutes(std::to_string(i+1) +": " + m_HomeTeam.getPlayers()[i].getName());
 	}
 	addPlayNoMinutes("Away Team: " + m_AwayTeam.getName());
 	for (int i = 0; i < m_AwayTeam.getPlayers().size(); i++)
 	{
+		m_AwayTeam.setPlayerTeamName(m_AwayTeam.getName(), i);
 		addPlayNoMinutes(std::to_string(i + 1) + ": " + m_AwayTeam.getPlayers()[i].getName());
 	}
 	addPlayNoMinutes("----------GAME-STAT---------");

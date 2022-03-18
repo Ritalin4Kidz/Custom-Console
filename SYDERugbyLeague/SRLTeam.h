@@ -49,6 +49,9 @@ public:
 	void setHomeGround(string hg) { m_HomeGround = hg; }
 	string getHomeGround() { return m_HomeGround; }
 	void setName(string name) { m_Name = name; }
+
+	void setPlayerTeamName(string name, int index) { m_TeamList[index].setTeamname(name); }
+
 	void loadTeam(string path);
 	void loadTeamOffContract(string path);
 	void saveTeam();

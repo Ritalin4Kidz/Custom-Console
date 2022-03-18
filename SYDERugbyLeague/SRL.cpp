@@ -91,6 +91,7 @@ int SRLGame::matchInformationRound = 0;
 int SRLGame::matchInformationGame = 0;
 bool SRLGame::saveDetailsCall = false;
 bool SRLGame::setUpExhibitionDisplayCall = false;
+bool SRLGame::singleSimulationPaused = false;
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
@@ -1023,6 +1024,16 @@ void nextSongClick()
 	}
 }
 
+void SingleSimulationPause()
+{
+	SRLGame::singleSimulationPaused = true;
+}
+
+void SingleSimulationResume()
+{
+	SRLGame::singleSimulationPaused = false;
+}
+
 void GameResultsViewClick()
 {
 	SRLGame::priorBetsState = IndividualGameBets_State;
@@ -1082,162 +1093,14 @@ void SRLGame::init()
 	maxScrollTickTime = maxScrollTickTime / m_ScrollingSpeed;
 	m_GameSimulationDelay = m_GameSimulationDelay / m_SimulationSpeed;
 
-#pragma region SoundTrackSettings
-
-	m_SoundTrackOnBtn =SYDEClickableButton(" Background Music:", Vector2(3, 4), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SoundTrackOnBtn.setHighLight(RED);
-	m_SoundTrackOnBtn.SetFunc(SoundTrackClick);
-
-	m_SoundTrackNextBtn = SYDEClickableButton(" Current Song:", Vector2(7, 6), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SoundTrackNextBtn.setHighLight(RED);
-	m_SoundTrackNextBtn.SetFunc(nextSongClick);
-
-	m_SoundTrackVolume = SYDEClickableButton(" Music Volume:", Vector2(7, 8), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SoundTrackVolume.setHighLight(RED);
-	m_SoundTrackVolume.SetFunc(MusicVolumeClick);
-
-#pragma endregion
-
-#pragma region Coaching View
-	m_SelectTeamBtn = SYDEClickableButton("Start Season", Vector2(48, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
-	m_SelectTeamBtn.setHighLight(RED);
-	m_SelectTeamBtn.SetFunc(SelectTeamCallBtnClick);
-
-	m_CoachMainStateBtn = SYDEClickableButton("  Team Summary ", Vector2(0, 2), Vector2(15, 1), BRIGHTWHITE_RED_BG, false);
-	m_CoachMainStateBtn.setHighLight(RED);
-	m_CoachMainStateBtn.SetFunc(CoachMainViewClick);
-	m_CoachTradeStateBtn = SYDEClickableButton("  Trade Offers ", Vector2(15, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_CoachTradeStateBtn.setHighLight(RED);
-	m_CoachTradeStateBtn.SetFunc(CoachTradeViewClick);
-	m_CoachTrainStateBtn = SYDEClickableButton(" Team Training ", Vector2(30, 2), Vector2(15, 1), BRIGHTWHITE_RED_BG, false);
-	m_CoachTrainStateBtn.setHighLight(RED);
-	m_CoachTrainStateBtn.SetFunc(CoachTrainViewClick);
-	m_CoachTeamStateBtn = SYDEClickableButton(" View Team List", Vector2(45, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_CoachTeamStateBtn.setHighLight(RED);
-	m_CoachTeamStateBtn.SetFunc(CoachTeamViewClick);
-
-	m_CoachTeamCycleStatsViewBtn = SYDEClickableButton("Cycle Stat View", Vector2(0, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_CoachTeamCycleStatsViewBtn.setHighLight(RED);
-	m_CoachTeamCycleStatsViewBtn.SetFunc(TeamListViewStateChange);
-
-	m_CoachTeamSwapPositionsBtn = SYDEClickableButton(" Swap Positions ", Vector2(44, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_CoachTeamSwapPositionsBtn.setHighLight(RED);
-	m_CoachTeamSwapPositionsBtn.SetFunc(CoachSwapPositionsViewClick);
-
-	m_CoachTrainRefreshBtn = SYDEClickableButton("Refresh Options", Vector2(43, 17), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_CoachTrainRefreshBtn.setHighLight(RED);
-	m_CoachTrainRefreshBtn.SetFunc(DoPerformRefreshClick);
-
-	m_CoachTradeConfirmOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_CoachTradeConfirmOKBtn.setHighLight(RED);
-	m_CoachTradeConfirmOKBtn.SetFunc(DoTradeCallOKClick);
-
-	m_CoachTradeConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_CoachTradeConfirmCNCLBtn.setHighLight(RED);
-	m_CoachTradeConfirmCNCLBtn.SetFunc(DoTradeCallCNCLClick);
-
-	m_CoachTrainConfirmOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_CoachTrainConfirmOKBtn.setHighLight(RED);
-	m_CoachTrainConfirmOKBtn.SetFunc(DoTrainCallOKClick);
-	m_CoachTrainConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_CoachTrainConfirmCNCLBtn.setHighLight(RED);
-	m_CoachTrainConfirmCNCLBtn.SetFunc(DoTrainCallCNCLClick);
-
-	m_CoachPosSwapPrev = SYDEClickableButton("<<", Vector2(0, 10), Vector2(2, 1), BLACK_RED_BG, false);
-	m_CoachPosSwapPrev.setHighLight(RED);
-	m_CoachPosSwapPrev.SetFunc(DoPrevPosSwapStateView);
-	m_CoachPosSwapNext = SYDEClickableButton(">>", Vector2(58, 10), Vector2(2, 1), BLACK_RED_BG, false);
-	m_CoachPosSwapNext.setHighLight(RED);
-	m_CoachPosSwapNext.SetFunc(DoNextPosSwapStateView);
-#pragma endregion
-
-	m_SimulateSingleGameBtn = SYDEClickableButton("Simulate This Game", Vector2(5, 14), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
-	m_SimulateSingleGameBtn.setHighLight(RED);
-	m_SimulateSingleGameBtn.SetFunc(SingleMatchSimulateClick);
-
-#pragma region SeasonOptions
-
-	m_RegularSeasonCfgBtn = SYDEClickableButton("Regular Season", Vector2(5, 4), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
-	m_RegularSeasonCfgBtn.setHighLight(RED);
-	m_RegularSeasonCfgBtn.SetFunc(DoRegularSeasonCfg);
-	m_WorldCupCfgBtn = SYDEClickableButton("World Cup Tournament", Vector2(5, 9), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
-	m_WorldCupCfgBtn.setHighLight(RED);
-	m_WorldCupCfgBtn.SetFunc(DoWorldCupSeasonCfg);
-	m_ExhibitionCfgBtn = SYDEClickableButton("Exhibition Match", Vector2(5, 14), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
-	m_ExhibitionCfgBtn.setHighLight(RED);
-	m_ExhibitionCfgBtn.SetFunc(DoExhibitionCfg);
-
-	m_ExhibitionSwap1Prev = SYDEClickableButton("<<", Vector2(2, 14), Vector2(2, 1),BLACK_RED_BG, false);
-	m_ExhibitionSwap1Prev.setHighLight(RED);
-	m_ExhibitionSwap1Prev.SetFunc(DoExhibitionSwap1Prev);
-	m_ExhibitionSwap1Next = SYDEClickableButton(">>", Vector2(26, 14), Vector2(2, 1), BLACK_RED_BG, false);
-	m_ExhibitionSwap1Next.setHighLight(RED);
-	m_ExhibitionSwap1Next.SetFunc(DoExhibitionSwap1Next);
-	m_ExhibitionSwap2Prev = SYDEClickableButton("<<", Vector2(32, 14), Vector2(2, 1), BLACK_RED_BG, false);
-	m_ExhibitionSwap2Prev.setHighLight(RED);
-	m_ExhibitionSwap2Prev.SetFunc(DoExhibitionSwap2Prev);
-	m_ExhibitionSwap2Next = SYDEClickableButton(">>", Vector2(56, 14), Vector2(2, 1), BLACK_RED_BG, false);
-	m_ExhibitionSwap2Next.setHighLight(RED);
-	m_ExhibitionSwap2Next.SetFunc(DoExhibitionSwap2Next);
-
-	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SeasonViewBtn.setHighLight(RED);
-	m_SeasonViewBtn.SetFunc(SeasonViewClick);
-	m_LadderViewBtn = SYDEClickableButton("   Ladder   ", Vector2(12, 1), Vector2(12, 1), BLACK_WHITE_BG, false);
-	m_LadderViewBtn.setHighLight(RED);
-	m_LadderViewBtn.SetFunc(LadderViewClick);
-	m_BettingViewBtn = SYDEClickableButton("   Betting   ", Vector2(24, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_BettingViewBtn.setHighLight(RED);
-	m_BettingViewBtn.SetFunc(BettingViewClick);
-	m_CoachingViewBtn = SYDEClickableButton("  Coaching   ", Vector2(24, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_CoachingViewBtn.setHighLight(RED);
-	m_CoachingViewBtn.SetFunc(CoachingViewClick);
-	m_ResultsViewBtn = SYDEClickableButton("   Results  ", Vector2(36, 1), Vector2(12, 1), BLACK_WHITE_BG, false);
-	m_ResultsViewBtn.setHighLight(RED);
-	m_ResultsViewBtn.SetFunc(ResultsViewClick);
-	m_LeaderboardViewBtn = SYDEClickableButton("Leaderboard ", Vector2(48, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_LeaderboardViewBtn.setHighLight(RED);
-	m_LeaderboardViewBtn.SetFunc(LeaderboardViewClick);
-	m_MainMenuViewBtn = SYDEClickableButton("  Main Menu ", Vector2(0, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
-	m_MainMenuViewBtn.setHighLight(RED);
-	m_MainMenuViewBtn.SetFunc(MainMenuViewClick);
-
-
-	m_FeatureViewBtn = SYDEClickableButton(" Featured", Vector2(15, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_FeatureViewBtn.setHighLight(RED);
-	m_FeatureViewBtn.SetFunc(FeaturedMatchViewClick);
-	m_MainDrawViewBtn = SYDEClickableButton(" Main Draw", Vector2(3, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_MainDrawViewBtn.setHighLight(RED);
-	m_MainDrawViewBtn.SetFunc(MainDrawViewClick);
-
-	m_MainSettingsViewBtn = SYDEClickableButton(" Settings", Vector2(26, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_MainSettingsViewBtn.setHighLight(RED);
-	m_MainSettingsViewBtn.SetFunc(InGameSettingsViewClick);
-
-	m_TipMasterViewBtn = SYDEClickableButton(" TipMaster", Vector2(37, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_TipMasterViewBtn.setHighLight(RED);
-	m_TipMasterViewBtn.SetFunc(TipMasterViewClick);
-
-	m_FeatureSwitchViewBtn = SYDEClickableButton(" Alt View ", Vector2(25, 16), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_FeatureSwitchViewBtn.setHighLight(RED);
-	m_FeatureSwitchViewBtn.SetFunc(FeaturedMatchSwitchViewClick);
-
-
-	//BLANK BUTTONS EDIT LATER
-	m_NewsViewBtn = SYDEClickableButton("Season News ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_NewsViewBtn.setHighLight(RED);
-	m_NewsViewBtn.SetFunc(newsViewClick);
-	m_PreviousRoundViewBtn = SYDEClickableButton("  Previous  ", Vector2(24, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
-	m_PreviousRoundViewBtn.setHighLight(RED);
-	m_PreviousRoundViewBtn.SetFunc(PrevRoundViewClick);
-	m_NextRoundViewBtn = SYDEClickableButton("    Next    ", Vector2(36, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_NextRoundViewBtn.setHighLight(RED);
-	m_NextRoundViewBtn.SetFunc(NextRoundViewClick);
-	m_SimulateBtn = SYDEClickableButton("  Simulate  ", Vector2(48, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
-	m_SimulateBtn.setHighLight(RED);
-	m_SimulateBtn.SetFunc(SimulateClick);
-
-#pragma endregion
+	initSoundtrackButtons();
+	initSimulationButtons();
+	initCoachingButtons();
+	initSeasonButtons();
+	initGameSettingsButtons();
+	initKeyPadButtons();
+	initInDepthViewButtons();
+	initBettingOptions();
 
 	m_ExhibitionMatchSimulateBtn = SYDEClickableButton(" Simulate Game ", Vector2(22, 18), Vector2(15, 1), BRIGHTWHITE_GREEN_BG, false);
 	m_ExhibitionMatchSimulateBtn.setHighLight(RED);
@@ -1246,44 +1109,6 @@ void SRLGame::init()
 	m_LadderSwitchView = SYDEClickableButton(" Switch View ", Vector2(45, 2), Vector2(13, 1), BRIGHTWHITE_GREEN_BG, false);
 	m_LadderSwitchView.setHighLight(RED);
 	m_LadderSwitchView.SetFunc(LDSSwitchViewClick);
-
-#pragma region BettingOptions
-	m_BetBtnCurrentRound = SYDEClickableButton(" This Round ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
-	m_BetBtnCurrentRound.setHighLight(RED);
-	m_BetBtnCurrentRound.SetFunc(CurrentRoundViewClick);
-	m_BetBtnFutures = SYDEClickableButton("  Futures  ", Vector2(12, 2), Vector2(12, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
-	m_BetBtnFutures.setHighLight(RED);
-	m_BetBtnFutures.SetFunc(FuturesViewClick);
-	m_BetTryscorers = SYDEClickableButton(" Try Scorers", Vector2(24, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
-	m_BetTryscorers.setHighLight(RED);
-	m_BetTryscorers.SetFunc(TryScorersViewBetClick);
-	m_BetBtnViewBets = SYDEClickableButton(" Bet History", Vector2(36, 2), Vector2(12, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
-	m_BetBtnViewBets.setHighLight(RED);
-	m_BetBtnViewBets.SetFunc(PastBetViewClick);
-	m_BetBtnAccount = SYDEClickableButton(" My Account ", Vector2(48, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
-	m_BetBtnAccount.setHighLight(RED);
-	m_BetBtnAccount.SetFunc(AccountViewClick);
-
-	m_BetOkViewBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_BetOkViewBtn.setHighLight(RED);
-	m_BetOkViewBtn.SetFunc(betOKClick);
-
-	m_BetCnclViewBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_BetCnclViewBtn.setHighLight(RED);
-	m_BetCnclViewBtn.SetFunc(betCNCLClick);
-
-	m_PriorBetsGameBtn = SYDEClickableButton("  Match Bet Results ", Vector2(0, 3), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_PriorBetsGameBtn.setHighLight(RED);
-	m_PriorBetsGameBtn.SetFunc(GameResultsViewClick);
-
-	m_PriorBetsPremiershipBtn = SYDEClickableButton("Premiership Results ", Vector2(20, 3), Vector2(20, 1), BRIGHTWHITE_RED_BG, false);
-	m_PriorBetsPremiershipBtn.setHighLight(RED);
-	m_PriorBetsPremiershipBtn.SetFunc(PremiershipResultsViewClick);
-
-	m_PriorBetsTryScorerBtn = SYDEClickableButton(" Try Scorer Betting ", Vector2(40, 3), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_PriorBetsTryScorerBtn.setHighLight(RED);
-	m_PriorBetsTryScorerBtn.SetFunc(TryScorerBetsViewClick);
-#pragma endregion
 
 #pragma region SeasonConfig
 	//SEASON CONFIG
@@ -1461,63 +1286,199 @@ void SRLGame::init()
 
 #pragma endregion
 
-#pragma region GameSettingsOptions
-	//SETTINGS
-	m_SettingsGoalKickerBtn = SYDECheckbox(" Main Goal Kicker:", Vector2(3, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_SettingsWeatherBtn = SYDECheckbox(" Weather:", Vector2(12, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_SettingsStaminaBtn = SYDECheckbox(" Stamina:", Vector2(12, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-	m_SettingsSeasonLengthBtn = SYDEClickableButton(" Season Length:", Vector2(6, 10), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsSeasonLengthBtn.setHighLight(RED);
-	m_SettingsSeasonLengthBtn.SetFunc(SettingsLengthViewClick);
+#pragma region SoundTrack
 
-	//string a_text, Vector2 a_Pos, ColourClass txtColour, ColourClass checkBoxClr, bool checked
-	m_SettingsExtraTimeBtn = SYDECheckbox(" Extra Time:", Vector2(9, 12), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-
-	m_SettingsInjuryBtn = SYDECheckbox(" Injuries:", Vector2(11, 14), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-
-	m_SettingsSinBinBtn = SYDECheckbox(" Sin Bins:", Vector2(11, 16), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-
-	m_SettingsEventsBtn = SYDECheckbox(" Season Events:", Vector2(36, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-
-	m_SettingsCoachBtn = SYDECheckbox(" Coaching Mode:", Vector2(36, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
-
-	m_SettingsRepRoundsBtn = SYDECheckbox(" Rep Rounds:", Vector2(39, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
-
-	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SettingsFinalsBtn.setHighLight(RED);
-	m_SettingsFinalsBtn.SetFunc(FinalsSystemClick);
-
-	m_FormatTeamsBtn = SYDEClickableButton(" Format Teams ", Vector2(7, 10), Vector2(14, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_FormatTeamsBtn.setHighLight(RED);
-	m_FormatTeamsBtn.SetFunc(FormatButtonClick);
-
-
-	m_SummaryFilterBtn = SYDEClickableButton(" Summary Filter ", Vector2(5, 12), Vector2(16, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
-	m_SummaryFilterBtn.setHighLight(RED);
-	m_SummaryFilterBtn.SetFunc(SummaryFilterClick);
-
-
-	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_FormatTeamsOKBtn.setHighLight(RED);
-	m_FormatTeamsOKBtn.SetFunc(FormatOKClick);
-
-	m_FormatTeamsCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_FormatTeamsCNCLBtn.setHighLight(RED);
-	m_FormatTeamsCNCLBtn.SetFunc(FormatCNCLClick);
-
-	///Summary Filters
-	m_FilterError = SYDECheckbox(" Show Errors:", Vector2(5, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_FilterPenalty = SYDECheckbox(" Show Penalties:", Vector2(5, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_FilterSent = SYDECheckbox(" Show Send Offs/Sin Bins:", Vector2(5, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_FilterInterchange = SYDECheckbox(" Show Injury/Interchange:", Vector2(5, 10), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_FilterVideoRef = SYDECheckbox(" Show Video Ref:", Vector2(5, 12), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_FilterMissedKicks = SYDECheckbox(" Show Missed Kicks:", Vector2(5, 14), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
-	m_FilterMisc = SYDECheckbox(" Show Misc:", Vector2(5, 16), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz", "", 168);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\05Depression.mp3", "Depression", "Handsprime", "", 140);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\06Icebreaker.mp3", "Icebreaker", "Handsprime", "", 181);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\07MichaelsoftBinbows.mp3", "Michaelsoft Binbows", "Handsprime", "", 137);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\08Trapstar.mp3", "Trapstar", "Handsprime", "", 183);
+	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\09Xnopyt.mp3", "Xnopyt", "Handsprime", "", 140);
+	m_GamePlaySoundtrack.setYPos(14);
+	m_GamePlaySoundtrack.setOn(soundTrackOn);
+	if (soundTrackOn)
+	{
+		m_GamePlaySoundtrack.start();
+	}
+	m_GamePlaySoundtrack.shuffleSongs(true, false);
 
 #pragma endregion
 
-#pragma region keypad
+}
+
+void SRLGame::initSoundtrackButtons()
+{
+	m_SoundTrackOnBtn = SYDEClickableButton(" Background Music:", Vector2(3, 4), Vector2(18, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SoundTrackOnBtn.setHighLight(RED);
+	m_SoundTrackOnBtn.SetFunc(SoundTrackClick);
+
+	m_SoundTrackNextBtn = SYDEClickableButton(" Current Song:", Vector2(7, 6), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SoundTrackNextBtn.setHighLight(RED);
+	m_SoundTrackNextBtn.SetFunc(nextSongClick);
+
+	m_SoundTrackVolume = SYDEClickableButton(" Music Volume:", Vector2(7, 8), Vector2(14, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SoundTrackVolume.setHighLight(RED);
+	m_SoundTrackVolume.SetFunc(MusicVolumeClick);
+}
+
+void SRLGame::initSimulationButtons()
+{
+	m_SimulationPause = SYDEClickableButton("||", Vector2(1, 4), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SimulationPause.setHighLight(RED);
+	m_SimulationPause.SetFunc(SingleSimulationPause);
+
+	m_SimulationResume = SYDEClickableButton("|>", Vector2(1, 6), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SimulationResume.setHighLight(RED);
+	m_SimulationResume.SetFunc(SingleSimulationResume);
+}
+
+void SRLGame::initCoachingButtons()
+{
+	m_SelectTeamBtn = SYDEClickableButton("Start Season", Vector2(48, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_SelectTeamBtn.setHighLight(RED);
+	m_SelectTeamBtn.SetFunc(SelectTeamCallBtnClick);
+
+	m_CoachMainStateBtn = SYDEClickableButton("  Team Summary ", Vector2(0, 2), Vector2(15, 1), BRIGHTWHITE_RED_BG, false);
+	m_CoachMainStateBtn.setHighLight(RED);
+	m_CoachMainStateBtn.SetFunc(CoachMainViewClick);
+	m_CoachTradeStateBtn = SYDEClickableButton("  Trade Offers ", Vector2(15, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTradeStateBtn.setHighLight(RED);
+	m_CoachTradeStateBtn.SetFunc(CoachTradeViewClick);
+	m_CoachTrainStateBtn = SYDEClickableButton(" Team Training ", Vector2(30, 2), Vector2(15, 1), BRIGHTWHITE_RED_BG, false);
+	m_CoachTrainStateBtn.setHighLight(RED);
+	m_CoachTrainStateBtn.SetFunc(CoachTrainViewClick);
+	m_CoachTeamStateBtn = SYDEClickableButton(" View Team List", Vector2(45, 2), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTeamStateBtn.setHighLight(RED);
+	m_CoachTeamStateBtn.SetFunc(CoachTeamViewClick);
+
+	m_CoachTeamCycleStatsViewBtn = SYDEClickableButton("Cycle Stat View", Vector2(0, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTeamCycleStatsViewBtn.setHighLight(RED);
+	m_CoachTeamCycleStatsViewBtn.SetFunc(TeamListViewStateChange);
+
+	m_CoachTeamSwapPositionsBtn = SYDEClickableButton(" Swap Positions ", Vector2(44, 18), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTeamSwapPositionsBtn.setHighLight(RED);
+	m_CoachTeamSwapPositionsBtn.SetFunc(CoachSwapPositionsViewClick);
+
+	m_CoachTrainRefreshBtn = SYDEClickableButton("Refresh Options", Vector2(43, 17), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_CoachTrainRefreshBtn.setHighLight(RED);
+	m_CoachTrainRefreshBtn.SetFunc(DoPerformRefreshClick);
+
+	m_CoachTradeConfirmOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTradeConfirmOKBtn.setHighLight(RED);
+	m_CoachTradeConfirmOKBtn.SetFunc(DoTradeCallOKClick);
+
+	m_CoachTradeConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTradeConfirmCNCLBtn.setHighLight(RED);
+	m_CoachTradeConfirmCNCLBtn.SetFunc(DoTradeCallCNCLClick);
+
+	m_CoachTrainConfirmOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTrainConfirmOKBtn.setHighLight(RED);
+	m_CoachTrainConfirmOKBtn.SetFunc(DoTrainCallOKClick);
+	m_CoachTrainConfirmCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachTrainConfirmCNCLBtn.setHighLight(RED);
+	m_CoachTrainConfirmCNCLBtn.SetFunc(DoTrainCallCNCLClick);
+
+	m_CoachPosSwapPrev = SYDEClickableButton("<<", Vector2(0, 10), Vector2(2, 1), BLACK_RED_BG, false);
+	m_CoachPosSwapPrev.setHighLight(RED);
+	m_CoachPosSwapPrev.SetFunc(DoPrevPosSwapStateView);
+	m_CoachPosSwapNext = SYDEClickableButton(">>", Vector2(58, 10), Vector2(2, 1), BLACK_RED_BG, false);
+	m_CoachPosSwapNext.setHighLight(RED);
+	m_CoachPosSwapNext.SetFunc(DoNextPosSwapStateView);
+}
+
+void SRLGame::initSeasonButtons()
+{
+	m_SimulateSingleGameBtn = SYDEClickableButton("Simulate This Game", Vector2(5, 14), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_SimulateSingleGameBtn.setHighLight(RED);
+	m_SimulateSingleGameBtn.SetFunc(SingleMatchSimulateClick);
+
+	m_RegularSeasonCfgBtn = SYDEClickableButton("Regular Season", Vector2(5, 4), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_RegularSeasonCfgBtn.setHighLight(RED);
+	m_RegularSeasonCfgBtn.SetFunc(DoRegularSeasonCfg);
+	m_WorldCupCfgBtn = SYDEClickableButton("World Cup Tournament", Vector2(5, 9), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_WorldCupCfgBtn.setHighLight(RED);
+	m_WorldCupCfgBtn.SetFunc(DoWorldCupSeasonCfg);
+	m_ExhibitionCfgBtn = SYDEClickableButton("Exhibition Match", Vector2(5, 14), Vector2(50, 3), BLACK_BRIGHTYELLOW_BG, false);
+	m_ExhibitionCfgBtn.setHighLight(RED);
+	m_ExhibitionCfgBtn.SetFunc(DoExhibitionCfg);
+
+	m_ExhibitionSwap1Prev = SYDEClickableButton("<<", Vector2(2, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap1Prev.setHighLight(RED);
+	m_ExhibitionSwap1Prev.SetFunc(DoExhibitionSwap1Prev);
+	m_ExhibitionSwap1Next = SYDEClickableButton(">>", Vector2(26, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap1Next.setHighLight(RED);
+	m_ExhibitionSwap1Next.SetFunc(DoExhibitionSwap1Next);
+	m_ExhibitionSwap2Prev = SYDEClickableButton("<<", Vector2(32, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap2Prev.setHighLight(RED);
+	m_ExhibitionSwap2Prev.SetFunc(DoExhibitionSwap2Prev);
+	m_ExhibitionSwap2Next = SYDEClickableButton(">>", Vector2(56, 14), Vector2(2, 1), BLACK_RED_BG, false);
+	m_ExhibitionSwap2Next.setHighLight(RED);
+	m_ExhibitionSwap2Next.SetFunc(DoExhibitionSwap2Next);
+
+	m_SeasonViewBtn = SYDEClickableButton("   Season   ", Vector2(0, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SeasonViewBtn.setHighLight(RED);
+	m_SeasonViewBtn.SetFunc(SeasonViewClick);
+	m_LadderViewBtn = SYDEClickableButton("   Ladder   ", Vector2(12, 1), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_LadderViewBtn.setHighLight(RED);
+	m_LadderViewBtn.SetFunc(LadderViewClick);
+	m_BettingViewBtn = SYDEClickableButton("   Betting   ", Vector2(24, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BettingViewBtn.setHighLight(RED);
+	m_BettingViewBtn.SetFunc(BettingViewClick);
+	m_CoachingViewBtn = SYDEClickableButton("  Coaching   ", Vector2(24, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_CoachingViewBtn.setHighLight(RED);
+	m_CoachingViewBtn.SetFunc(CoachingViewClick);
+	m_ResultsViewBtn = SYDEClickableButton("   Results  ", Vector2(36, 1), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_ResultsViewBtn.setHighLight(RED);
+	m_ResultsViewBtn.SetFunc(ResultsViewClick);
+	m_LeaderboardViewBtn = SYDEClickableButton("Leaderboard ", Vector2(48, 1), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_LeaderboardViewBtn.setHighLight(RED);
+	m_LeaderboardViewBtn.SetFunc(LeaderboardViewClick);
+	m_MainMenuViewBtn = SYDEClickableButton("  Main Menu ", Vector2(0, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_MainMenuViewBtn.setHighLight(RED);
+	m_MainMenuViewBtn.SetFunc(MainMenuViewClick);
+
+
+	m_FeatureViewBtn = SYDEClickableButton(" Featured", Vector2(15, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_FeatureViewBtn.setHighLight(RED);
+	m_FeatureViewBtn.SetFunc(FeaturedMatchViewClick);
+	m_MainDrawViewBtn = SYDEClickableButton(" Main Draw", Vector2(3, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_MainDrawViewBtn.setHighLight(RED);
+	m_MainDrawViewBtn.SetFunc(MainDrawViewClick);
+
+	m_MainSettingsViewBtn = SYDEClickableButton(" Settings", Vector2(26, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_MainSettingsViewBtn.setHighLight(RED);
+	m_MainSettingsViewBtn.SetFunc(InGameSettingsViewClick);
+
+	m_TipMasterViewBtn = SYDEClickableButton(" TipMaster", Vector2(37, 18), Vector2(11, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_TipMasterViewBtn.setHighLight(RED);
+	m_TipMasterViewBtn.SetFunc(TipMasterViewClick);
+
+	m_FeatureSwitchViewBtn = SYDEClickableButton(" Alt View ", Vector2(25, 16), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_FeatureSwitchViewBtn.setHighLight(RED);
+	m_FeatureSwitchViewBtn.SetFunc(FeaturedMatchSwitchViewClick);
+
+
+	//BLANK BUTTONS EDIT LATER
+	m_NewsViewBtn = SYDEClickableButton("Season News ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_NewsViewBtn.setHighLight(RED);
+	m_NewsViewBtn.SetFunc(newsViewClick);
+	m_PreviousRoundViewBtn = SYDEClickableButton("  Previous  ", Vector2(24, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_PreviousRoundViewBtn.setHighLight(RED);
+	m_PreviousRoundViewBtn.SetFunc(PrevRoundViewClick);
+	m_NextRoundViewBtn = SYDEClickableButton("    Next    ", Vector2(36, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_NextRoundViewBtn.setHighLight(RED);
+	m_NextRoundViewBtn.SetFunc(NextRoundViewClick);
+	m_SimulateBtn = SYDEClickableButton("  Simulate  ", Vector2(48, 19), Vector2(12, 1), BLACK_WHITE_BG, false);
+	m_SimulateBtn.setHighLight(RED);
+	m_SimulateBtn.SetFunc(SimulateClick);
+}
+
+void SRLGame::initKeyPadButtons()
+{
 	m_KeypadBtn_1 = SYDEClickableButton("        1", Vector2(18, 11), Vector2(6, 3), BLACK_BRIGHTWHITE_BG, false);
 	m_KeypadBtn_1.setHighLight(RED);
 	m_KeypadBtn_1.SetFunc(KeypadClick1);
@@ -1587,10 +1548,10 @@ void SRLGame::init()
 	m_KeypadBtn_CNCL.setHighLight(RED);
 	m_KeypadBtn_CNCL.SetFunc(KeypadClickCNCL);
 	m_KeypadBtn_CNCL._WrapText(true);
+}
 
-#pragma endregion
-
-#pragma region Team In-Depth View
+void SRLGame::initInDepthViewButtons()
+{
 	m_SaveDetailsInDepth = SYDEClickableButton(" Save ", Vector2(0, 2), Vector2(6, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_SaveDetailsInDepth.setHighLight(RED);
 	m_SaveDetailsInDepth.SetFunc(SaveDetailsClick);
@@ -1634,30 +1595,101 @@ void SRLGame::init()
 		button.SetFunc(PlayerClick);
 		m_PlayerButtons.push_back(button);
 	}
+}
 
-#pragma endregion
+void SRLGame::initGameSettingsButtons()
+{
+	//SETTINGS
+	m_SettingsGoalKickerBtn = SYDECheckbox(" Main Goal Kicker:", Vector2(3, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_SettingsWeatherBtn = SYDECheckbox(" Weather:", Vector2(12, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_SettingsStaminaBtn = SYDECheckbox(" Stamina:", Vector2(12, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-#pragma region SoundTrack
+	m_SettingsSeasonLengthBtn = SYDEClickableButton(" Season Length:", Vector2(6, 10), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsSeasonLengthBtn.setHighLight(RED);
+	m_SettingsSeasonLengthBtn.SetFunc(SettingsLengthViewClick);
 
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\01MeetMeOneDay.mp3", "Meet Me One Day", "Rit@lin4Kidz", "", 168);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\02IThink.mp3", "I Think, Therefore I Suck", "Handsprime", "(Rit@lin4Kidz Remix)", 96);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\03Waterfall.mp3", "Waterfall", "Handsprime", "(Rit@lin4Kidz Remix)", 136);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\04LetMeShowYouARemix.mp3", "Let Me Show You A Remix", "Rit@lin4Kidz", "", 89);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\05Depression.mp3", "Depression", "Handsprime", "", 140);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\06Icebreaker.mp3", "Icebreaker", "Handsprime", "", 181);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\07MichaelsoftBinbows.mp3", "Michaelsoft Binbows", "Handsprime", "", 137);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\08Trapstar.mp3", "Trapstar", "Handsprime", "", 183);
-	m_GamePlaySoundtrack.addSong("EngineFiles\\Soundtrack\\09Xnopyt.mp3", "Xnopyt", "Handsprime", "", 140);
-	m_GamePlaySoundtrack.setYPos(14);
-	m_GamePlaySoundtrack.setOn(soundTrackOn);
-	if (soundTrackOn)
-	{
-		m_GamePlaySoundtrack.start();
-	}
-	m_GamePlaySoundtrack.shuffleSongs(true, false);
+	//string a_text, Vector2 a_Pos, ColourClass txtColour, ColourClass checkBoxClr, bool checked
+	m_SettingsExtraTimeBtn = SYDECheckbox(" Extra Time:", Vector2(9, 12), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
-#pragma endregion
+	m_SettingsInjuryBtn = SYDECheckbox(" Injuries:", Vector2(11, 14), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
 
+	m_SettingsSinBinBtn = SYDECheckbox(" Sin Bins:", Vector2(11, 16), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+
+	m_SettingsEventsBtn = SYDECheckbox(" Season Events:", Vector2(36, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+
+	m_SettingsCoachBtn = SYDECheckbox(" Coaching Mode:", Vector2(36, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
+
+	m_SettingsRepRoundsBtn = SYDECheckbox(" Rep Rounds:", Vector2(39, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
+
+	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsFinalsBtn.setHighLight(RED);
+	m_SettingsFinalsBtn.SetFunc(FinalsSystemClick);
+
+	m_FormatTeamsBtn = SYDEClickableButton(" Format Teams ", Vector2(7, 10), Vector2(14, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_FormatTeamsBtn.setHighLight(RED);
+	m_FormatTeamsBtn.SetFunc(FormatButtonClick);
+
+
+	m_SummaryFilterBtn = SYDEClickableButton(" Summary Filter ", Vector2(5, 12), Vector2(16, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SummaryFilterBtn.setHighLight(RED);
+	m_SummaryFilterBtn.SetFunc(SummaryFilterClick);
+
+
+	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_FormatTeamsOKBtn.setHighLight(RED);
+	m_FormatTeamsOKBtn.SetFunc(FormatOKClick);
+
+	m_FormatTeamsCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_FormatTeamsCNCLBtn.setHighLight(RED);
+	m_FormatTeamsCNCLBtn.SetFunc(FormatCNCLClick);
+
+	///Summary Filters
+	m_FilterError = SYDECheckbox(" Show Errors:", Vector2(5, 4), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterPenalty = SYDECheckbox(" Show Penalties:", Vector2(5, 6), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterSent = SYDECheckbox(" Show Send Offs/Sin Bins:", Vector2(5, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterInterchange = SYDECheckbox(" Show Injury/Interchange:", Vector2(5, 10), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterVideoRef = SYDECheckbox(" Show Video Ref:", Vector2(5, 12), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterMissedKicks = SYDECheckbox(" Show Missed Kicks:", Vector2(5, 14), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+	m_FilterMisc = SYDECheckbox(" Show Misc:", Vector2(5, 16), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, true);
+}
+
+void SRLGame::initBettingOptions()
+{
+	m_BetBtnCurrentRound = SYDEClickableButton(" This Round ", Vector2(0, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetBtnCurrentRound.setHighLight(RED);
+	m_BetBtnCurrentRound.SetFunc(CurrentRoundViewClick);
+	m_BetBtnFutures = SYDEClickableButton("  Futures  ", Vector2(12, 2), Vector2(12, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
+	m_BetBtnFutures.setHighLight(RED);
+	m_BetBtnFutures.SetFunc(FuturesViewClick);
+	m_BetTryscorers = SYDEClickableButton(" Try Scorers", Vector2(24, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetTryscorers.setHighLight(RED);
+	m_BetTryscorers.SetFunc(TryScorersViewBetClick);
+	m_BetBtnViewBets = SYDEClickableButton(" Bet History", Vector2(36, 2), Vector2(12, 1), BRIGHTWHITE_BRIGHTGREEN_BG, false);
+	m_BetBtnViewBets.setHighLight(RED);
+	m_BetBtnViewBets.SetFunc(PastBetViewClick);
+	m_BetBtnAccount = SYDEClickableButton(" My Account ", Vector2(48, 2), Vector2(12, 1), BRIGHTWHITE_GREEN_BG, false);
+	m_BetBtnAccount.setHighLight(RED);
+	m_BetBtnAccount.SetFunc(AccountViewClick);
+
+	m_BetOkViewBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BetOkViewBtn.setHighLight(RED);
+	m_BetOkViewBtn.SetFunc(betOKClick);
+
+	m_BetCnclViewBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_BetCnclViewBtn.setHighLight(RED);
+	m_BetCnclViewBtn.SetFunc(betCNCLClick);
+
+	m_PriorBetsGameBtn = SYDEClickableButton("  Match Bet Results ", Vector2(0, 3), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_PriorBetsGameBtn.setHighLight(RED);
+	m_PriorBetsGameBtn.SetFunc(GameResultsViewClick);
+
+	m_PriorBetsPremiershipBtn = SYDEClickableButton("Premiership Results ", Vector2(20, 3), Vector2(20, 1), BRIGHTWHITE_RED_BG, false);
+	m_PriorBetsPremiershipBtn.setHighLight(RED);
+	m_PriorBetsPremiershipBtn.SetFunc(PremiershipResultsViewClick);
+
+	m_PriorBetsTryScorerBtn = SYDEClickableButton(" Try Scorer Betting ", Vector2(40, 3), Vector2(20, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_PriorBetsTryScorerBtn.setHighLight(RED);
+	m_PriorBetsTryScorerBtn.SetFunc(TryScorerBetsViewClick);
 }
 
 #pragma region Misc
@@ -3676,6 +3708,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.addTeamLineupsPlayByPlay();
 			m_SingleGameManager.addStartTimePlay();
 			SimulateSingleMatchCall = false;
+			SRLGame::singleSimulationPaused = false;
 			return window;
 		}
 	}
@@ -3805,6 +3838,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.addTeamLineupsPlayByPlay();
 			m_SingleGameManager.addStartTimePlay();
 			SimulateSingleMatchCall = false;
+			SRLGame::singleSimulationPaused = false;
 			return window;
 		}
 	}
@@ -3826,6 +3860,8 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		string awayTeamText = to_string(m_SingleGameManager.getAwayScore()) + " " + m_SingleGameManager.getAwayTeam().getName();
 		window.setTextAtPoint(Vector2(60-awayTeamText.length(), 2), awayTeamText, BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(28, 3), m_SingleGameManager.getTimeString(), BRIGHTWHITE);
+		window = m_SimulationPause.draw_ui(window);
+		window = m_SimulationResume.draw_ui(window);
 		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
 		{
 			if (m_LineResults > 0)
@@ -3876,54 +3912,57 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		}
 		else if (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
 		{
-			m_TimePassedSimulation = 0;
-			try
+			if (!SRLGame::singleSimulationPaused)
 			{
-				m_SingleGameManager.play();
-				if (!isExhibitionMatch)
+				m_TimePassedSimulation = 0;
+				try
 				{
-					m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
-				}
-				if (m_SingleGameManager.getSummary().size() > countSummaries)
-				{
-					//HERE WE WANT TO START SHOWING THE SUMMARIES AS THEY COME IN
-					deque<string> temp2 = m_SingleGameManager.getSummary();
-					for (int i = countSummaries; i < temp2.size(); i++)
+					m_SingleGameManager.play();
+					if (!isExhibitionMatch)
 					{
-						deque<string> temp3 = Split(temp2[i], '#');
-						if (temp3.size() < 4)
-						{
-							GameSummaryText temp = GameSummaryText("Error In Summary", temp2[i], " ", " ");
-							if (temp.isInFilter())
-							{
-								m_LiveGameVector.push_back(temp);
-								if (m_LiveGameVector.size() > 3)
-								{
-									m_LineResults += 5;
-								}
-							}
-						}
-						else
-						{
-							GameSummaryText temp = GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]);
-							if (temp.isInFilter())
-							{
-								m_LiveGameVector.push_back(temp);
-								if (m_LiveGameVector.size() > 3)
-								{
-									m_LineResults += 5;
-								}
-							}
-						}
+						m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].calculateBiggestLeads(m_SingleGameManager.getHomeScore(), m_SingleGameManager.getAwayScore());
 					}
-					//THEN SET THE COUNT AGAIN
-					countSummaries = m_SingleGameManager.getSummary().size();
-					//TODO, ADD A DELAY EVERYTIME WE GET AS NEW SUMMARY PERHAPS
+					if (m_SingleGameManager.getSummary().size() > countSummaries)
+					{
+						//HERE WE WANT TO START SHOWING THE SUMMARIES AS THEY COME IN
+						deque<string> temp2 = m_SingleGameManager.getSummary();
+						for (int i = countSummaries; i < temp2.size(); i++)
+						{
+							deque<string> temp3 = Split(temp2[i], '#');
+							if (temp3.size() < 4)
+							{
+								GameSummaryText temp = GameSummaryText("Error In Summary", temp2[i], " ", " ");
+								if (temp.isInFilter())
+								{
+									m_LiveGameVector.push_back(temp);
+									if (m_LiveGameVector.size() > 3)
+									{
+										m_LineResults += 5;
+									}
+								}
+							}
+							else
+							{
+								GameSummaryText temp = GameSummaryText(temp3[0], temp3[2], temp3[1], temp3[3]);
+								if (temp.isInFilter())
+								{
+									m_LiveGameVector.push_back(temp);
+									if (m_LiveGameVector.size() > 3)
+									{
+										m_LineResults += 5;
+									}
+								}
+							}
+						}
+						//THEN SET THE COUNT AGAIN
+						countSummaries = m_SingleGameManager.getSummary().size();
+						//TODO, ADD A DELAY EVERYTIME WE GET AS NEW SUMMARY PERHAPS
+					}
 				}
-			}
-			catch (exception ex)
-			{
+				catch (exception ex)
+				{
 
+				}
 			}
 		}
 		else if(!singleMatchDisplayInfoCall)
@@ -4418,7 +4457,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.3.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.4.0", BRIGHTWHITE);
 	return window;
 }
 

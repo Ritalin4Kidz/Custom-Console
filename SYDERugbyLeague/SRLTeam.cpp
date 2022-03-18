@@ -107,6 +107,37 @@ void SRLTeam::generateJerseys()
 	}
 }
 
+void SRLTeam::nextPrimary()
+{
+	int colour = primaryColour;
+	colour += 17;
+	if (colour > 255)
+	{
+		colour = 17;
+	}
+	primaryColour = static_cast<ColourClass>(colour);
+}
+void SRLTeam::nextSecondary()
+{
+	int colour = secondaryColour;
+	colour += 17;
+	if (colour > 255)
+	{
+		colour = 17;
+	}
+	secondaryColour = static_cast<ColourClass>(colour);
+}
+void SRLTeam::nextBadge()
+{
+	int colour = badgeColour;
+	colour += 17;
+	if (colour > 255)
+	{
+		colour = 17;
+	}
+	badgeColour = static_cast<ColourClass>(colour);
+}
+
 SRLPlayer SRLTeam::getRandomPlayer()
 {
 	int player = rand() % 13;

@@ -92,6 +92,7 @@ int SRLGame::matchInformationGame = 0;
 bool SRLGame::saveDetailsCall = false;
 bool SRLGame::setUpExhibitionDisplayCall = false;
 bool SRLGame::singleSimulationPaused = false;
+string SRLGame::ColourChangeCall = "";
 SRLSponsorTypeState SRLGame::sponsorState = SponsorState_Casino;
 SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
@@ -285,6 +286,27 @@ void RandomizeOKClick()
 void RandomizeCNCLClick()
 {
 	SRLGame::randomizeCall = false;
+}
+/*
+* Change the primary colour in the in depth view
+*/
+void PrimaryColourChangeClick()
+{
+	SRLGame::ColourChangeCall = "Primary";
+}
+/*
+* Change the Secondary colour in the in depth view
+*/
+void SecondaryColourChangeClick()
+{
+	SRLGame::ColourChangeCall = "Secondary";
+}
+/*
+* Change the Tertiary colour in the in depth view
+*/
+void TertiaryColourChangeClick()
+{
+	SRLGame::ColourChangeCall = "Tertiary";
 }
 
 void ExitButtonClick()
@@ -1586,6 +1608,18 @@ void SRLGame::initInDepthViewButtons()
 	m_RegeneratePlayerCNCLBtn = SYDEClickableButton("CNCL", Vector2(12, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_RegeneratePlayerCNCLBtn.setHighLight(RED);
 	m_RegeneratePlayerCNCLBtn.SetFunc(RandomizeCNCLClick);
+
+	m_PrimaryColourBtn = SYDEClickableButton("  ", Vector2(2, 14), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_PrimaryColourBtn.setHighLight(RED);
+	m_PrimaryColourBtn.SetFunc(PrimaryColourChangeClick);
+
+	m_SecondaryColourBtn = SYDEClickableButton("  ", Vector2(6, 14), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SecondaryColourBtn.setHighLight(RED);
+	m_SecondaryColourBtn.SetFunc(SecondaryColourChangeClick);
+
+	m_TertiaryColourBtn = SYDEClickableButton("  ", Vector2(10, 14), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_TertiaryColourBtn.setHighLight(RED);
+	m_TertiaryColourBtn.SetFunc(TertiaryColourChangeClick);
 
 	for (int i = 0; i < 17; i++)
 	{
@@ -4100,6 +4134,10 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 
 	window.setTextAtPoint(Vector2(2, 11), "Goal Kicker:", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(2, 12), m_InDepthTeamView.getGoalKickerNoLimit().getName(), BRIGHTWHITE);
+
+	window = m_PrimaryColourBtn.draw_ui(window);
+	window = m_SecondaryColourBtn.draw_ui(window);
+	window = m_TertiaryColourBtn.draw_ui(window);
 	if (TeamInDepthViewingJerseyAsset)
 	{
 		window = m_JerseyView.draw_asset(window, Vector2(30, 3));
@@ -4107,6 +4145,25 @@ ConsoleWindow SRLGame::TeamInDepthView(ConsoleWindow window, int windowWidth, in
 	else
 	{
 		window = m_LogoView.draw_asset(window, Vector2(30, 3));
+	}
+	if (SRLGame::ColourChangeCall != "")
+	{
+		if (SRLGame::ColourChangeCall == "Primary")
+		{
+			m_InDepthTeamView.nextPrimary();
+		}
+		else if (SRLGame::ColourChangeCall == "Secondary")
+		{
+			m_InDepthTeamView.nextSecondary();
+		}
+		else if (SRLGame::ColourChangeCall == "Tertiary")
+		{
+			m_InDepthTeamView.nextBadge();
+		}
+		m_InDepthTeamView.saveTeam();
+		setUpTeamInDepthView(m_TeamViewing);
+		SRLGame::ColourChangeCall = "";
+
 	}
 	window = m_TeamAssetSwitchView.draw_ui(window);
 	window = m_BackTeamInDepth.draw_ui(window);
@@ -4212,6 +4269,32 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 	window.setTextAtPoint(Vector2(2, 7), "Handling: " + to_string(m_PlayerView.getHandling()), BRIGHTWHITE);
 
 	window.setTextAtPoint(Vector2(2, 9), "Player Rating: " + to_string(m_PlayerView.getRating()), BRIGHTWHITE);
+
+	window = m_PrimaryColourBtn.draw_ui(window);
+	window = m_SecondaryColourBtn.draw_ui(window);
+	window = m_TertiaryColourBtn.draw_ui(window);
+
+	if (SRLGame::ColourChangeCall != "")
+	{
+		if (SRLGame::ColourChangeCall == "Primary")
+		{
+			m_PlayerView.nextPrimary();
+		}
+		else if (SRLGame::ColourChangeCall == "Secondary")
+		{
+			m_PlayerView.nextSecondary();
+		}
+		else if (SRLGame::ColourChangeCall == "Tertiary")
+		{
+			m_PlayerView.nextTertiary();
+		}
+		m_PlayerView.savePlayer();
+
+		setUpTeamInDepthView(m_TeamViewing);
+		setUpPlayer();
+		SRLGame::ColourChangeCall = "";
+
+	}
 
 	window.setTextAtPoint(Vector2(2, 18), "Country Of Origin: " + m_PlayerView.getOrigin(), BRIGHTWHITE);
 	window = m_RegeneratePlayerBtn.draw_ui(window);
@@ -5342,7 +5425,7 @@ void SRLGame::CalculateTryScorerOdds()
 	else
 	{
 		oddsHomeTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].HomeTeam + ".json");
-		oddsAwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].HomeTeam + ".json");
+		oddsAwayTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].AwayTeam + ".json");
 	}
 	//12 TryScorer Bets For Each Game
 	AttackersHome.clear();
@@ -5350,44 +5433,12 @@ void SRLGame::CalculateTryScorerOdds()
 
 	deque<SRLPlayer> homePlayers = oddsHomeTeam.addBestAttackers(AttackersHome, 6);
 	deque<SRLPlayer> awayPlayers = oddsAwayTeam.addBestAttackers(AttackersAway, 6);
-	for (int i = 0; i < AttackersHome.size(); i++)
-	{
-		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtn.SetFunc(BetMatchClick);
-		a_BetBtn.setTag(to_string(i) + ";10;0;" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
-		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 4), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtnCustom.SetFunc(CustomBetClick);
-		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + AttackersHome[i] + "#" + oddsHomeTeam.getName());
-		m_TryScorerBetButtons.push_back(a_BetBtn);
-		m_TryScorerBetButtons.push_back(a_BetBtnCustom);
-
-		SRLPlayer playerOdds = homePlayers[i];
-		int oddsCents = 200;
-		int additionCents = 10520 / playerOdds.getAttack();
-		oddsCents += additionCents;
-		
-		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].homeTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
-	}
-	for (int i = 0; i < AttackersAway.size(); i++)
-	{
-		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtn.SetFunc(BetMatchClick);
-		a_BetBtn.setTag(to_string(i) + ";10;0;" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());
-		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + 12), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
-		a_BetBtnCustom.SetFunc(CustomBetClick);
-		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + AttackersAway[i] + "#" + oddsAwayTeam.getName());
-		m_TryScorerBetButtons.push_back(a_BetBtn);
-		m_TryScorerBetButtons.push_back(a_BetBtnCustom);
-
-		SRLPlayer playerOdds = awayPlayers[i];
-		int oddsCents = 200;
-		int additionCents = 10520 / playerOdds.getAttack();
-		oddsCents += additionCents;
-
-		m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].awayTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
-	}
+	setUpTryScorerBets(AttackersHome, oddsHomeTeam.getName(), homePlayers, true,4);
+	setUpTryScorerBets(AttackersAway, oddsAwayTeam.getName(), awayPlayers, false,12);
 }
-
+/*
+* Simulation Core
+*/
 void SRLGame::SimulateGames()
 {
 	int roundsSimulated = 0;
@@ -7181,6 +7232,10 @@ void SRLGame::setUpTeamInDepthView(int teamViewing)
 		m_LogoView.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_InDepthTeamView.getBadge());
 	}
 
+	m_PrimaryColourBtn.setColour(m_InDepthTeamView.getPrimary());
+	m_SecondaryColourBtn.setColour(m_InDepthTeamView.getSecondary());
+	m_TertiaryColourBtn.setColour(m_InDepthTeamView.getBadge());
+
 	m_InDepthTeamView.CalculateAverages();
 	m_InDepthTeamNameTextBox.setText(m_InDepthTeamView.getName());
 }
@@ -7270,6 +7325,38 @@ void SRLGame::setUpPlayer()
 	m_PlayerAsset.changeAllInstancesOfColour(BLACK_WHITE_BG, m_PlayerView.getPrimary());
 	m_PlayerAsset.changeAllInstancesOfColour(BLACK, m_PlayerView.getSecondary());
 	m_PlayerAsset.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, m_PlayerView.getTertiary());
+
+	m_PrimaryColourBtn.setColour(m_PlayerView.getPrimary());
+	m_SecondaryColourBtn.setColour(m_PlayerView.getSecondary());
+	m_TertiaryColourBtn.setColour(m_PlayerView.getTertiary());
+}
+void SRLGame::setUpTryScorerBets(std::deque<std::string> attackersList, std::string teamname, deque<SRLPlayer> players, bool homeTeam,int offset)
+{
+	for (int i = 0; i < attackersList.size(); i++)
+	{
+		SYDEClickableButton a_BetBtn = SYDEClickableButton("Bet $10", Vector2(42, i + offset), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtn.SetFunc(BetMatchClick);
+		a_BetBtn.setTag(to_string(i) + ";10;0;" + "T;" + attackersList[i] + "#" + teamname);
+		SYDEClickableButton a_BetBtnCustom = SYDEClickableButton("$Custom", Vector2(51, i + offset), Vector2(7, 1), BLACK_BRIGHTWHITE_BG, false);
+		a_BetBtnCustom.SetFunc(CustomBetClick);
+		a_BetBtnCustom.setTag(to_string(i) + ";" + to_string(m_CustomBet.dollars) + ";" + to_string(m_CustomBet.cents) + ";" + "T;" + attackersList[i] + "#" + teamname);
+		m_TryScorerBetButtons.push_back(a_BetBtn);
+		m_TryScorerBetButtons.push_back(a_BetBtnCustom);
+
+		SRLPlayer playerOdds = players[i];
+		int oddsCents = 200;
+		int additionCents = 10520 / playerOdds.getAttack();
+		oddsCents += additionCents;
+
+		if (homeTeam)
+		{
+			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].homeTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
+		}
+		else
+		{
+			m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_Games[m_SelectedGame].awayTeamTryOdds.push_back(SRLBetPrice(oddsCents / 100, oddsCents % 100));
+		}
+	}
 }
 void SRLGame::otherArticles()
 {

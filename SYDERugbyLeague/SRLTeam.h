@@ -24,6 +24,10 @@ public:
 
 	void generateJerseys();
 	
+	void nextPrimary();
+	void nextSecondary();
+	void nextBadge();
+
 	int getJerseryType() { return jerseryTypeInt; }
 	void setJerseyInt(int newJersey) { jerseryTypeInt = newJersey; }
 

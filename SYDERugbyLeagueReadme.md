@@ -38,13 +38,16 @@ SRL Simulation game made inside the SYDE Framework.
 - Show Odds When Clicking On Individual Match
 - Customization For Player Stats
 - Massive Code Refactor + Comments
+- More Options During Simulation
 
 ## Release Notes
 
-### 1.1.4.0 01/01/2022
+### 1.1.4.0 18/03/2022
 - Simulation Speed Fix With Saving
 - Summaries now show the team during plays
 - Simulation Options Start
+- Colour Change For Teams/Players
+- Try Bets Fix
 
 ### 1.1.3.0 01/01/2022
 - Can change logos and jersey types in in depth view by clicking on them

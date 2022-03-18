@@ -37,6 +37,39 @@ SRLPlayer::~SRLPlayer()
 {
 }
 
+void SRLPlayer::nextPrimary()
+{
+	int colour = primaryColour;
+	colour += 17;
+	if (colour > 255)
+	{
+		colour = 17;
+	}
+	primaryColour = static_cast<ColourClass>(colour);
+}
+
+void SRLPlayer::nextSecondary()
+{
+	int colour = secondaryColour;
+	colour += 17;
+	if (colour > 255)
+	{
+		colour = 17;
+	}
+	secondaryColour = static_cast<ColourClass>(colour);
+}
+
+void SRLPlayer::nextTertiary()
+{
+	int colour = tertiaryColour;
+	colour += 17;
+	if (colour > 255)
+	{
+		colour = 17;
+	}
+	tertiaryColour = static_cast<ColourClass>(colour);
+}
+
 void SRLPlayer::addAttack(int atk)
 {
 	m_BaseAttack += atk; 

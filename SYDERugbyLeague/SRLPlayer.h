@@ -16,6 +16,11 @@ public:
 
 	virtual ~SRLPlayer();
 
+	void nextPrimary();
+	void nextSecondary();
+	void nextTertiary();
+
+
 	bool getPlayerSent() { return m_Sent || m_Sinbin; }
 	void setPlayerOff(bool sendOff) { if (sendOff) { m_Sent = true; m_SendOffs++; } else { m_Sinbin = true; m_SinBins++; } }
 	string getName() { return m_PlayerName; }

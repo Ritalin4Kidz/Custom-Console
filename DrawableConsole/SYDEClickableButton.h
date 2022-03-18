@@ -23,6 +23,8 @@ public:
 	void setTag(string newTag) { tag = newTag; }
 	string getTag() { return tag; }
 
+	void setColour(ColourClass m_Col) { TextColour = m_Col; }
+
 	static string getLastButtonTag();
 private:
 	static string lastTag;

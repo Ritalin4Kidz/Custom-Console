@@ -301,6 +301,8 @@ public:
 
 	void setUpPlayer();
 
+	void setUpTryScorerBets(std::deque<std::string> attackersList, std::string teamname, deque<SRLPlayer> players, bool homeTeam, int offset);
+
 	void otherArticles();
 
 	std::function<ConsoleWindow(ConsoleWindow, int, int)> m_State;
@@ -308,6 +310,8 @@ public:
 	void AssignState(std::function<ConsoleWindow(ConsoleWindow, int, int)> newState) { m_State = newState; }
 
 	ConsoleWindow DoState(ConsoleWindow window, int windowWidth, int windowHeight);
+
+	static string ColourChangeCall;
 
 	static GameStateSYDE currentState;
 	static GameStateSYDE newState;
@@ -450,6 +454,11 @@ private:
 	const int customTeamGenerateChance = 9999;
 
 private:
+	SYDEClickableButton m_PrimaryColourBtn = SYDEClickableButton();
+	SYDEClickableButton m_SecondaryColourBtn = SYDEClickableButton();
+	SYDEClickableButton m_TertiaryColourBtn = SYDEClickableButton();
+
+
 	SYDEClickableButton m_StartSeasonBtn = SYDEClickableButton();
 	SYDEClickableButton m_NextTeamSeasonCfgBtn = SYDEClickableButton();
 	SYDEClickableButton m_PrevTeamSeasonCfgBtn = SYDEClickableButton();

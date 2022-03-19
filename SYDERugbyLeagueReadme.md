@@ -42,6 +42,8 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.4.1 19/03/2022
+
 ### 1.1.4.0 18/03/2022
 - Simulation Speed Fix With Saving
 - Summaries now show the team during plays

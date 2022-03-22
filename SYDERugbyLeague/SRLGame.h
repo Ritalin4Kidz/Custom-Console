@@ -61,6 +61,10 @@ public:
 	string getTimeString();
 
 	void addMinute();
+	void addTimeRandom(int min, int max, bool allowBreak);
+	bool addTime(int seconds, bool allowBreak);
+
+	void addSinBinPlays(int seconds);
 
 	void generateWeather();
 

@@ -42,6 +42,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.4.2 22/03/2022
+- Time refactor (not always set time after conversions)
+- Small changes code wise that otherwise have no effect potentially
+
 ### 1.1.4.1 19/03/2022
 - More Countries Added To Generator
 

@@ -163,6 +163,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="SRL.h" />
     <ClInclude Include="SRLCustomTeams.h" />
+    <ClInclude Include="SRLEnums.h" />
     <ClInclude Include="SRLGame.h" />
     <ClInclude Include="SRLNameGenerator.h" />
     <ClInclude Include="SRLNewsStoryGenerator.h" />

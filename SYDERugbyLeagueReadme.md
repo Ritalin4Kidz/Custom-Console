@@ -42,6 +42,10 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.4.3 23/03/2022
+- Adjusted Round In Double Elim Finals
+- More Code Refactor
+
 ### 1.1.4.2 22/03/2022
 - Time refactor (not always set time after conversions)
 - Small changes code wise that otherwise have no effect potentially

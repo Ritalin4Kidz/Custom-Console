@@ -33,6 +33,8 @@ public:
 	void initGameSettingsButtons();
 	void initBettingOptions();
 
+	void addMinorPremiershipArticle();
+	void pushBackFinalsRound(deque<SRLGameMatchup> games, string roundName);
 
 	deque<SRLPlayer> createRandomTeam(string prefix);
 	deque<SRLPlayer> createOffSeasonTeam(string prefix);

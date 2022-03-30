@@ -99,7 +99,7 @@ SRLTeam SRLGame::otherTeamTrade = SRLTeam();
 SRLTeamListViewState SRLGame::tlViewState = TLV_GeneralStats;
 LadderStatsViewState SRLGame::ldsViewState = LSV_DefaultView;
 
-deque<string> SRLGame::AchievementStrings = deque<string>();
+vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
 
 SRLSoundtrack SRLGame::m_GamePlaySoundtrack = SRLSoundtrack();
@@ -112,7 +112,7 @@ SRLSoundtrack SRLGame::m_GamePlaySoundtrack = SRLSoundtrack();
 /// <param name="a_String"></param>
 /// <param name="splitter"></param>
 /// <returns></returns>
-deque<string> Split(string a_String, char splitter)
+vector<string> Split(string a_String, char splitter)
 {
 	int arraySize = 1;
 	for (int i = 0; i < a_String.length(); i++)
@@ -122,7 +122,7 @@ deque<string> Split(string a_String, char splitter)
 			arraySize++;
 		}
 	}
-	std::deque<std::string> splitString(arraySize);
+	std::vector<std::string> splitString(arraySize);
 	int arrayNo = 0;
 	while (arrayNo < arraySize - 1)
 	{
@@ -151,7 +151,7 @@ void DoTrainCallClick()
 	//Acknowledge In SRLGame That Training Is Happening
 	SRLGame::performTrainCall = true;
 	//Get The Last Tag Of Buttons Clicked
-	deque<string> training = Split(SYDEClickableButton::getLastButtonTag(), ';');
+	vector<string> training = Split(SYDEClickableButton::getLastButtonTag(), ';');
 	//Convert The Tag
 	if (training.size() > 4)
 	{
@@ -200,7 +200,7 @@ void DoTrainCallCNCLClick()
 void DoTradeCallClick()
 {
 	SRLGame::performTradeCall = true;
-	deque<string> tags = Split(SYDEClickableButton::getLastButtonTag(), ';');
+	vector<string> tags = Split(SYDEClickableButton::getLastButtonTag(), ';');
 	//a_TradeBtn.setTag(to_string(i) + ";" + to_string(playerID) + ";" + to_string(playerID2) + ";" + offContract.getName());
 	if (tags.size() > 3)
 	{
@@ -465,7 +465,7 @@ void KeypadClickOK()
 	SRLGame::keyPadCall = false;
 	try
 	{
-		deque<string> bets = Split(SRLGame::customAmountStr, '.');
+		vector<string> bets = Split(SRLGame::customAmountStr, '.');
 		SRLGame::m_BetAmount.dollars = stoi(bets[0]);
 		if (bets.size() >= 2)
 		{
@@ -550,7 +550,7 @@ void CustomBetClick()
 {
 	SRLGame::customAmountStr = "";
 	SRLGame::betTag = SYDEClickableButton::getLastButtonTag();
-	deque<string> bets = Split(SRLGame::betTag, ';');
+	vector<string> bets = Split(SRLGame::betTag, ';');
 	if (bets.size() > 4)
 	{
 		SRLGame::betTag = bets[4];
@@ -570,7 +570,7 @@ void CustomBetClick()
 void BetMatchClick()
 {
 	SRLGame::betTag = SYDEClickableButton::getLastButtonTag();
-	deque<string> bets = Split(SRLGame::betTag, ';');
+	vector<string> bets = Split(SRLGame::betTag, ';');
 	if (bets.size() > 4)
 	{
 		SRLGame::betTag = bets[4];
@@ -946,7 +946,7 @@ void BlankViewClick()
 void MatchUpButtonScoreClick()
 {
 	string tempTag = SYDEClickableButton::getLastButtonTag();
-	deque<string> temp = Split(tempTag, ';');
+	vector<string> temp = Split(tempTag, ';');
 	SRLGame::matchInformationRound = stoi(temp[1]);
 	SRLGame::matchInformationGame = stoi(temp[0]);
 	SRLGame::newState = MatchUpInDepthView;
@@ -1736,7 +1736,7 @@ void SRLGame::addMinorPremiershipArticle()
 	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_MinorPremiershipArticle);
 }
 
-void SRLGame::pushBackFinalsRound(deque<SRLGameMatchup> games, string roundName)
+void SRLGame::pushBackFinalsRound(vector<SRLGameMatchup> games, string roundName)
 {
 	m_Season.m_Draw.m_Rounds.push_back(SRLRound(games));
 	m_Season.m_Draw.m_Rounds[m_Season.m_Draw.m_Rounds.size() - 1].RoundName = roundName;
@@ -1748,9 +1748,9 @@ void SRLGame::pushBackFinalsRound(deque<SRLGameMatchup> games, string roundName)
 /// </summary>
 /// <param name="prefix">Name prefix, leave as "" if none</param>
 /// <returns></returns>
-deque<SRLPlayer> SRLGame::createRandomTeam(string prefix)
+vector<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 {
-	deque<SRLPlayer> m_Team = deque<SRLPlayer>();
+	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 20; i++)
 	{
 		bool canAddPlayer = true;
@@ -1777,9 +1777,9 @@ deque<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 /// </summary>
 /// <param name="prefix"></param>
 /// <returns></returns>
-deque<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
+vector<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
 {
-	deque<SRLPlayer> m_Team = deque<SRLPlayer>();
+	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 200; i++)
 	{
 		bool canAddPlayer = true;
@@ -1801,9 +1801,9 @@ deque<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
 	return m_Team;
 }
 
-deque<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
+vector<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
 {
-	deque<SRLPlayer> m_Team = deque<SRLPlayer>();
+	vector<SRLPlayer> m_Team = vector<SRLPlayer>();
 	for (int i = 0; i < 20; i++)
 	{
 		bool canAddPlayer = true;
@@ -2091,7 +2091,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 				HomeTeam.saveTeamOffContract();
 			}
 			m_SelectedTeam = 0;
-			m_SeasonTeams = deque<string>();
+			m_SeasonTeams = vector<string>();
 			m_SavedTeams = SYDEFileDefaults::getAllFileNamesInFolder("EngineFiles\\GameResults\\Teams", ".json", true, true);
 			setUpFilters();
 			AssignState(std::bind(&SRLGame::season_config_settings, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
@@ -3311,13 +3311,13 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 		{
 			posSwapCall = false;
 			setUpPosShowcaseCall = true;
-			deque<string> PositionsToSwap = Split(posToSwap, ';');
+			vector<string> PositionsToSwap = Split(posToSwap, ';');
 			m_CoachedTeam.swapStartPositionsAndSave(stoi(PositionsToSwap[0]) - 1, stoi(PositionsToSwap[1]) - 1);
 
 			//IF WE SWAPPED A POSITION THAT EXISTS HERE
 			for (int i = 0; i < m_TrainingButtons.size(); i++)
 			{
-				deque<string> tags = Split(m_TrainingButtons[i].getTag(), ';');
+				vector<string> tags = Split(m_TrainingButtons[i].getTag(), ';');
 				int playerID = stoi(tags[1]);
 				if (playerID == stoi(PositionsToSwap[0]) - 1)
 				{
@@ -3333,7 +3333,7 @@ ConsoleWindow SRLGame::CoachingView(ConsoleWindow window, int windowWidth, int w
 			//OR IF WE SWAPPED A POSITION THAT EXISTS HERE
 			for (int i = 0; i < m_TradingButtons.size(); i++)
 			{
-				deque<string> tags = Split(m_TradingButtons[i].getTag(), ';');
+				vector<string> tags = Split(m_TradingButtons[i].getTag(), ';');
 				int playerID = stoi(tags[1]);
 				if (playerID == stoi(PositionsToSwap[0]) - 1)
 				{
@@ -3975,10 +3975,10 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 					if (m_SingleGameManager.getSummary().size() > countSummaries)
 					{
 						//HERE WE WANT TO START SHOWING THE SUMMARIES AS THEY COME IN
-						deque<string> temp2 = m_SingleGameManager.getSummary();
+						vector<string> temp2 = m_SingleGameManager.getSummary();
 						for (int i = countSummaries; i < temp2.size(); i++)
 						{
-							deque<string> temp3 = Split(temp2[i], '#');
+							vector<string> temp3 = Split(temp2[i], '#');
 							if (temp3.size() < 4)
 							{
 								GameSummaryText temp = GameSummaryText("Error In Summary", temp2[i], " ", " ");
@@ -4319,7 +4319,7 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 	return window;
 }
 
-ConsoleWindow SRLGame::LeaderboardPositions(ConsoleWindow window, deque<SRLLeaderboardPosition> ldrboard)
+ConsoleWindow SRLGame::LeaderboardPositions(ConsoleWindow window, vector<SRLLeaderboardPosition> ldrboard)
 {
 	if (ldrboard.size() > 10)
 	{
@@ -4331,7 +4331,7 @@ ConsoleWindow SRLGame::LeaderboardPositions(ConsoleWindow window, deque<SRLLeade
 	return window;
 }
 
-void SRLGame::LeaderboardOutputStrings(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName)
+void SRLGame::LeaderboardOutputStrings(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName)
 {
 	if (ldrboard.size() > 10)
 	{
@@ -4356,7 +4356,7 @@ void SRLGame::LeaderboardOutputStrings(deque<string>& mainVec, deque<SRLLeaderbo
 	}
 }
 
-void SRLGame::LeaderboardOutputStringsTopScorer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName)
+void SRLGame::LeaderboardOutputStringsTopScorer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName)
 {
 	if (ldrboard.size() > 25)
 	{
@@ -4381,7 +4381,7 @@ void SRLGame::LeaderboardOutputStringsTopScorer(deque<string>& mainVec, deque<SR
 	}
 }
 
-void SRLGame::LeaderboardOutputStringsTopPlayer(deque<string>& mainVec, deque<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName)
+void SRLGame::LeaderboardOutputStringsTopPlayer(vector<string>& mainVec, vector<SRLLeaderboardPosition> ldrboard, json& save_file, string ldrboardName)
 {
 	if (ldrboard.size() > 25)
 	{
@@ -4849,7 +4849,7 @@ ConsoleWindow SRLGame::KeypadPop_Up(ConsoleWindow window, int windowWidth, int w
 	return window;
 }
 
-bool SRLGame::addGame(int limit, deque<SRLRound> rounds, deque<SRLGameMatchup>& games, deque<string>& teams, deque<string>& AttemptedTeams)
+bool SRLGame::addGame(int limit, vector<SRLRound> rounds, vector<SRLGameMatchup>& games, vector<string>& teams, vector<string>& AttemptedTeams)
 {
 	if (teams.size() < 2)
 	{
@@ -4970,7 +4970,7 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 					return window;
 				}
 				json season_save_file;
-				deque<string> temp;
+				vector<string> temp;
 				temp.push_back("LADDER RESULTS");
 				temp.push_back("--------------------------------");
 				//season_save_file["ladder"]["arraySize"] = m_Season.m_Ladder.m_Ladder.size();
@@ -5448,8 +5448,8 @@ void SRLGame::CalculateTryScorerOdds()
 	AttackersHome.clear();
 	AttackersAway.clear();
 
-	deque<SRLPlayer> homePlayers = oddsHomeTeam.addBestAttackers(AttackersHome, 6);
-	deque<SRLPlayer> awayPlayers = oddsAwayTeam.addBestAttackers(AttackersAway, 6);
+	vector<SRLPlayer> homePlayers = oddsHomeTeam.addBestAttackers(AttackersHome, 6);
+	vector<SRLPlayer> awayPlayers = oddsAwayTeam.addBestAttackers(AttackersAway, 6);
 	setUpTryScorerBets(AttackersHome, oddsHomeTeam.getName(), homePlayers, true,4);
 	setUpTryScorerBets(AttackersAway, oddsAwayTeam.getName(), awayPlayers, false,12);
 }
@@ -5705,7 +5705,7 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 				}
 				for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets.size(); ii++)
 				{
-					deque<string> betTemp = Split(m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets[ii].m_teamName, '#');
+					vector<string> betTemp = Split(m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets[ii].m_teamName, '#');
 					if (betTemp.size() >= 2)
 					{
 						if (betTemp[0] == m_srlmanager.getHomeTeam().getPlayers()[i].getName())
@@ -5738,7 +5738,7 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 		}
 		for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets.size(); ii++)
 		{
-			deque<string> betTemp = Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#');
+			vector<string> betTemp = Split(m_Season.m_Draw.m_Rounds[m_roundToSimulate].m_TryScorerBets[ii].m_teamName, '#');
 			if (betTemp.size() >= 2)
 			{
 				if (betTemp[1] == m_srlmanager.getHomeTeam().getName())
@@ -5768,7 +5768,7 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 				}
 				for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets.size(); ii++)
 				{
-					deque<string> betTemp = Split(m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets[ii].m_teamName, '#');
+					vector<string> betTemp = Split(m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets[ii].m_teamName, '#');
 					if (betTemp.size() >= 2)
 					{
 						if (betTemp[0] == m_srlmanager.getAwayTeam().getPlayers()[i].getName())
@@ -5801,7 +5801,7 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 		}
 		for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets.size(); ii++)
 		{
-			deque<string> betTemp = Split(m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets[ii].m_teamName, '#');
+			vector<string> betTemp = Split(m_Season.m_Draw.m_Rounds[a_Round].m_TryScorerBets[ii].m_teamName, '#');
 			if (betTemp.size() >= 2)
 			{
 				if (betTemp[1] == m_srlmanager.getAwayTeam().getName())
@@ -6093,7 +6093,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 #pragma region top 8 normal simulation
 				if (m_roundToSimulate == BaseSeasonGames)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //1v4
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[2].teamName)); //2v3
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[4].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //5v8
@@ -6105,21 +6105,21 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //4v5
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //3v6
 					pushBackFinalsRound(games, "Semi-Finals");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 2)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v3
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam));//2v4
 					pushBackFinalsRound(games, "Preliminary-Finals");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 3)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -6130,7 +6130,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 #pragma region top 4 normal simulation
 				if (m_roundToSimulate == BaseSeasonGames)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[1].teamName)); //1v2
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //3v4
 					pushBackFinalsRound(games, "Semi-Finals");
@@ -6140,13 +6140,13 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //2v3
 					pushBackFinalsRound(games, "Consolidation Final");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 2)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam));//1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -6157,7 +6157,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 #pragma region top 2 normal simulation
 				if (m_roundToSimulate == BaseSeasonGames)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[1].teamName)); //1v2
 					pushBackFinalsRound(games, "Grand Final");
 					addMinorPremiershipArticle();
@@ -6171,7 +6171,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 #pragma region top 8 knockout simulation
 				if (m_roundToSimulate == BaseSeasonGames)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
@@ -6182,14 +6182,14 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
 					pushBackFinalsRound(games, "Semi-Finals");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 2)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -6200,7 +6200,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 #pragma region top 4 knockout simulation
 				if (m_roundToSimulate == BaseSeasonGames)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[3].teamName)); //1v4
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[2].teamName)); //2v3
 					pushBackFinalsRound(games, "Semi-Finals");
@@ -6209,7 +6209,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam)); //1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -6220,7 +6220,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 #pragma region top 8 knockout double elimination simulation
 				if (m_roundToSimulate == BaseSeasonGames)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[0].teamName, m_Season.m_Ladder.m_Ladder[7].teamName)); //1v8
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[1].teamName, m_Season.m_Ladder.m_Ladder[6].teamName)); //2v7
 					games.push_back(SRLGameMatchup(m_Season.m_Ladder.m_Ladder[2].teamName, m_Season.m_Ladder.m_Ladder[5].teamName)); //3v6
@@ -6231,7 +6231,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].WinningTeam)); //1v4
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam)); //2v3
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[3].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].LosingTeam)); //5v8
@@ -6240,27 +6240,27 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 2)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam));//3v5
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam));//4v6
 					pushBackFinalsRound(games, "Semi-Finals");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 3)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam));//1v2
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//3v4
 					pushBackFinalsRound(games, "Qualifying Finals");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 4)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[1].WinningTeam));//2v3
 					pushBackFinalsRound(games, "Consolidation Final");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 5)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam));//1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -6284,7 +6284,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 
 				if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
@@ -6293,14 +6293,14 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 2)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam)); //1v4
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
 					pushBackFinalsRound(games, "Semi-Finals");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 3)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam));//1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -6324,7 +6324,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 
 				if (m_roundToSimulate == BaseSeasonGames + 1)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[7].WinningTeam)); //1v8
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[6].WinningTeam)); //2v7
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[2].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames].m_Games[5].WinningTeam)); //3v6
@@ -6338,7 +6338,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 2)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[3].WinningTeam)); //1v4
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[1].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 1].m_Games[2].WinningTeam)); //2v3
 
@@ -6351,7 +6351,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 3)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].WinningTeam)); //1v2
 
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[5].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[2].WinningTeam)); //5v8
@@ -6361,7 +6361,7 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 4)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[1].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[2].WinningTeam)); //3v6
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 2].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[1].WinningTeam)); //4v5
 
@@ -6369,19 +6369,19 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 5)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 4].m_Games[1].WinningTeam)); //3v4
 					pushBackFinalsRound(games, "Consolidation Final");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 6)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].LosingTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 5].m_Games[0].WinningTeam)); //2v3
 					pushBackFinalsRound(games, "Preliminary Final");
 				}
 				else if (m_roundToSimulate == BaseSeasonGames + 7)
 				{
-					deque<SRLGameMatchup> games;
+					vector<SRLGameMatchup> games;
 					games.push_back(SRLGameMatchup(m_Season.m_Draw.m_Rounds[BaseSeasonGames + 3].m_Games[0].WinningTeam, m_Season.m_Draw.m_Rounds[BaseSeasonGames + 6].m_Games[0].WinningTeam)); //1v2
 					pushBackFinalsRound(games, "Grand Final");
 				}
@@ -7380,7 +7380,7 @@ void SRLGame::setUpPlayer()
 	m_SecondaryColourBtn.setColour(m_PlayerView.getSecondary());
 	m_TertiaryColourBtn.setColour(m_PlayerView.getTertiary());
 }
-void SRLGame::setUpTryScorerBets(std::deque<std::string> attackersList, std::string teamname, deque<SRLPlayer> players, bool homeTeam,int offset)
+void SRLGame::setUpTryScorerBets(std::vector<std::string> attackersList, std::string teamname, vector<SRLPlayer> players, bool homeTeam,int offset)
 {
 	for (int i = 0; i < attackersList.size(); i++)
 	{
@@ -7511,7 +7511,7 @@ void SRLGame::sortOutResultsScreen()
 {
 	m_ResultsScreenVector.clear();
 	m_SummaryScreenVector.clear();
-	deque<string> temp = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay;
+	vector<string> temp = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay;
 	for (int i = 0; i < temp.size(); i++)
 	{
 		while (temp[i].length() > 55)
@@ -7522,10 +7522,10 @@ void SRLGame::sortOutResultsScreen()
 		m_ResultsScreenVector.push_back(temp[i]);
 	}
 	temp.clear();
-	deque<string> temp2 = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].SummaryPlayByPlay;
+	vector<string> temp2 = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].SummaryPlayByPlay;
 	for (int i = 0; i < temp2.size(); i++)
 	{
-		deque<string> temp3 = Split(temp2[i], '#');
+		vector<string> temp3 = Split(temp2[i], '#');
 		if (temp3.size() < 4)
 		{
 			GameSummaryText temp = GameSummaryText("Error In Summary", temp2[i], " ", " ");
@@ -7713,7 +7713,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		m_SeasonTeams.clear();
 		//CLEAR THE TEAMS
 		repTeams.clear();
-		deque<SRLTeam> tempTeams = deque<SRLTeam>({});
+		vector<SRLTeam> tempTeams = vector<SRLTeam>({});
 		//GET THE PLAYERS FROM EACH TEAM
 		for (int i = 0; i < m_SeasonTeams.size(); i++)
 		{
@@ -7919,7 +7919,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		BaseSeasonGames = 0;
 		finals = true;
 	}
-	deque<SRLLadderPosition> ladders;
+	vector<SRLLadderPosition> ladders;
 	for (int i = 0; i < m_SeasonTeams.size(); i++)
 	{
 		SRLLadderPosition newPosition;
@@ -7928,11 +7928,11 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 	}
 #pragma region Add Rounds
 	SRLLadder Ladder = SRLLadder(ladders);
-	deque<SRLRound> rounds = deque<SRLRound>();
+	vector<SRLRound> rounds = vector<SRLRound>();
 	if (fsType == KnockoutTournament || fsType == KnockoutTournamentDouble)
 	{
-		deque<SRLGameMatchup> games;
-		deque<string> AvailableTeams = m_SeasonTeams;
+		vector<SRLGameMatchup> games;
+		vector<string> AvailableTeams = m_SeasonTeams;
 		games.push_back(SRLGameMatchup(AvailableTeams[0], AvailableTeams[15]));
 		games.push_back(SRLGameMatchup(AvailableTeams[1], AvailableTeams[14]));
 		games.push_back(SRLGameMatchup(AvailableTeams[2], AvailableTeams[13]));
@@ -7949,8 +7949,8 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		//ROUND ROBIN
 		if (BaseSeasonGames == 15 && VersusLimit == 1)
 		{
-			deque<SRLGameMatchup> games;
-			deque<string> AvailableTeams = m_SeasonTeams;
+			vector<SRLGameMatchup> games;
+			vector<string> AvailableTeams = m_SeasonTeams;
 
 			for (int k = 0; k < i; k++)
 			{
@@ -7985,9 +7985,9 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		else
 		{
 			bool pushBack = true;
-			deque<SRLGameMatchup> games;
-			deque<string> AvailableTeams = m_SeasonTeams;
-			deque<string> AttemptedTeams = deque<string>();
+			vector<SRLGameMatchup> games;
+			vector<string> AvailableTeams = m_SeasonTeams;
+			vector<string> AttemptedTeams = vector<string>();
 			for (int ii = 0; ii < 8; ii++)
 			{
 				if (!addGame(VersusLimit, rounds, games, AvailableTeams, AttemptedTeams))
@@ -8026,7 +8026,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		int teamsGenerated = 0;
 		//CLEAR THE TEAMS
 		repTeams.clear();
-		deque<SRLTeam> tempTeams = deque<SRLTeam>({});
+		vector<SRLTeam> tempTeams = vector<SRLTeam>({});
 		//GET THE PLAYERS FROM EACH TEAM
 		for (int i = 0; i < m_SeasonTeams.size(); i++)
 		{
@@ -8175,8 +8175,8 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		}
 
 #pragma endregion
-		deque<SRLGameMatchup> repGames;
-		deque<string> AvailableTeams = m_SeasonTeams;
+		vector<SRLGameMatchup> repGames;
+		vector<string> AvailableTeams = m_SeasonTeams;
 		for (int j = 0; j < repTeams.size(); j += 2)
 		{
 			repGames.push_back(SRLGameMatchup(repTeams[j].getName(), repTeams[j + 1].getName()));

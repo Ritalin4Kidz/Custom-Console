@@ -130,7 +130,7 @@ Artwork artVars;
 //OTHER ASSETS
 AssetsClass astVars;
 //CHEATS
-deque<string> cheatCodes;
+vector<string> cheatCodes;
 //GDI VALUES
 ULONG_PTR gdiplusToken;
 GdiplusStartupInput startupInput;
@@ -143,7 +143,7 @@ static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 using namespace std;
 
 
-void DoAchievements(deque<string> temp)
+void DoAchievements(vector<string> temp)
 {
 	for (int i = 0; i < temp.size(); i++)
 	{

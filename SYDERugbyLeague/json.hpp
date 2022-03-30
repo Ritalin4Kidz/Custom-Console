@@ -13964,7 +13964,7 @@ class basic_json
     Template type @a CompatibleType includes, but is not limited to, the
     following types:
     - **arrays**: @ref array_t and all kinds of compatible containers such as
-      `std::vector`, `std::deque`, `std::list`, `std::forward_list`,
+      `std::vector`, `std::vector`, `std::list`, `std::forward_list`,
       `std::array`, `std::valarray`, `std::set`, `std::unordered_set`,
       `std::multiset`, and `std::unordered_multiset` with a `value_type` from
       which a @ref basic_json value can be constructed.

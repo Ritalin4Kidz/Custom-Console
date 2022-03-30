@@ -255,7 +255,7 @@ FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars, int ga
 /*
 For Rep Rounds
 */
-FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars,int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, deque<SRLTeam> repTeams)
+FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars,int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, vector<SRLTeam> repTeams)
 {
 	gameNumber = gameNo;
 	for (int j = 0; j < repTeams.size(); j++)
@@ -611,7 +611,7 @@ void SRLGameMatchup::calculateBiggestLeads(int homeScore, int awayScore)
 	}
 }
 
-void SRLProfile::completeChallenge(string name, deque<string>& vec)
+void SRLProfile::completeChallenge(string name, vector<string>& vec)
 {
 	for (int i = 0; i < Sponsor_Clarity_Casino.challenges.size(); i++)
 	{
@@ -670,7 +670,7 @@ void SRLProfile::completeChallenge(string name, deque<string>& vec)
 
 void SRLProfile::initChallenges()
 {
-	deque<SRLSponsorChallenge> casinoChallenges;
+	vector<SRLSponsorChallenge> casinoChallenges;
 	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 50 Times In A Completed Season")); //IMPLEMENTED
 	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 100 Times In A Completed Season")); //IMPLEMENTED
 	casinoChallenges.push_back(SRLSponsorChallenge("Bet At Least 500 Times In A Completed Season")); //IMPLEMENTED
@@ -685,7 +685,7 @@ void SRLProfile::initChallenges()
 	casinoChallenges.push_back(SRLSponsorChallenge("Win Over 500 Bets In A Season")); //IMPLEMENTED
 	Sponsor_Clarity_Casino = SRLSponsor("Clarity Casino", casinoChallenges);
 
-	deque<SRLSponsorChallenge> northChallenges;
+	vector<SRLSponsorChallenge> northChallenges;
 	northChallenges.push_back(SRLSponsorChallenge("Train A Team To A 99 Speed Stat")); //IMPLEMENTED
 	northChallenges.push_back(SRLSponsorChallenge("Max Out A Player's Stats")); //IMPLEMENTED
 	northChallenges.push_back(SRLSponsorChallenge("Go From A Team Rating Of < 40 to 60+")); //IMPLEMENTED
@@ -700,7 +700,7 @@ void SRLProfile::initChallenges()
 	northChallenges.push_back(SRLSponsorChallenge("Win A Grand Final Having Been Down At Anytime")); //IMPLEMENTED
 	Sponsor_Northkellion_Shoes = SRLSponsor("Northkellion Shoes", northChallenges);
 
-	deque<SRLSponsorChallenge> zeckChallenges;
+	vector<SRLSponsorChallenge> zeckChallenges;
 	zeckChallenges.push_back(SRLSponsorChallenge("Coach A Team To A Premiership")); //IMPLEMENTED
 	zeckChallenges.push_back(SRLSponsorChallenge("Comeback From A 12 Point Deficit")); //IMPLEMENTED
 	zeckChallenges.push_back(SRLSponsorChallenge("Win A Game With 10 Or Less Total Points")); //IMPLEMENTED
@@ -784,7 +784,7 @@ string SRLPositionShowcase::getShorterName(string _s)
 			arraySize++;
 		}
 	}
-	std::deque<std::string> splitString(arraySize);
+	std::vector<std::string> splitString(arraySize);
 	int arrayNo = 0;
 	while (arrayNo < arraySize - 1)
 	{

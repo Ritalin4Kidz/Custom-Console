@@ -103,6 +103,16 @@ void SRLGameManager::addSummaryDirect(string a_Play)
 
 string SRLGameManager::getTimeString()
 {
+	if (!halfTimeHasPassed && m_MinutesPassed >= 40)
+	{
+		return "40:00";
+	}
+	if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+	{
+		return "80:00";
+	}
+
+
 	string minutesStr = to_string(m_MinutesPassed);
 	if (minutesStr.length() == 1)
 	{
@@ -132,7 +142,7 @@ void SRLGameManager::addMinute()
 		timeToAddPlayers -= m_SecondsPassed;
 		m_SecondsPassed = 0;
 	}
-	deque<string> SinBinPlays;
+	vector<string> SinBinPlays;
 	SinBinPlays = m_HomeTeam.addTimeOnField(timeToAddPlayers);
 	for (int i = 0; i < SinBinPlays.size(); i++)
 	{
@@ -219,7 +229,7 @@ bool SRLGameManager::addTime(int seconds, bool allowBreak)
 
 void SRLGameManager::addSinBinPlays(int seconds)
 {
-	deque<string> SinBinPlays;
+	vector<string> SinBinPlays;
 	SinBinPlays = m_HomeTeam.addTimeOnField(seconds);
 	for (int i = 0; i < SinBinPlays.size(); i++)
 	{

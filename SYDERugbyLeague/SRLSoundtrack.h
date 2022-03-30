@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include <string>
-#include <deque>
+#include <vector>
 #include "SYDESound.h"
 #include "Defaults.h"
 #include "ConsoleWindow.h"
@@ -63,7 +63,7 @@ protected:
 	FMOD::Sound* m_pSound;
 	FMOD::Channel* m_pChannel;
 private:
-	deque<SRLSoundtrackEntry> m_Soundtrack;
+	vector<SRLSoundtrackEntry> m_Soundtrack;
 	int selectedSong = 0;
 	float timeSongPassed = 0;
 

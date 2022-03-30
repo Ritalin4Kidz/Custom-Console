@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "SRLNewsStoryGenerator.h"
 
-deque<string> SRLNewsStoryGenerator::generateMinorPremiershipArticle(string teamName)
+vector<string> SRLNewsStoryGenerator::generateMinorPremiershipArticle(string teamName)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(teamName + " have won the");
 	temp.push_back("minor premiership after a hard fought season.");
 	temp.push_back("Having confirmed a home qualifying final,");
@@ -13,9 +13,9 @@ deque<string> SRLNewsStoryGenerator::generateMinorPremiershipArticle(string team
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generatePremiershipArticle(string teamName)
+vector<string> SRLNewsStoryGenerator::generatePremiershipArticle(string teamName)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(teamName + " have won the");
 	temp.push_back("premiership after a hard fought grand final.");
 	temp.push_back("The CEO of " + teamName);
@@ -26,9 +26,9 @@ deque<string> SRLNewsStoryGenerator::generatePremiershipArticle(string teamName)
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer)
+vector<string> SRLNewsStoryGenerator::generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer)
 {
-	deque<string> temp;
+	vector<string> temp;
 	int pay = (rand() % 9) + 1;
 	temp.push_back(teamName + " have boosted their squad");
 	temp.push_back("after the signing of the off contract " + newPlayer + ".");
@@ -40,9 +40,9 @@ deque<string> SRLNewsStoryGenerator::generateOffContractTradeArticle(string team
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2)
+vector<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(teamName1 + " & " + teamName2);
 	temp.push_back("have agreed to do a player swap!");
 	temp.push_back("This trade sees " + Player1);
@@ -52,9 +52,9 @@ deque<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, stri
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateGeneralArticle_ToRetire(string Player)
+vector<string> SRLNewsStoryGenerator::generateGeneralArticle_ToRetire(string Player)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("After a long career, " + Player + " has");
 	temp.push_back("decided to hang up the boots at the end");
 	temp.push_back("of the season.");
@@ -62,9 +62,9 @@ deque<string> SRLNewsStoryGenerator::generateGeneralArticle_ToRetire(string Play
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateTrainingArticle(string teamName1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateTrainingArticle(string teamName1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " has had a rough season");
 	temp.push_back("this year, but the player says that after");
 	temp.push_back("an inspiring training session, that they're");
@@ -75,9 +75,9 @@ deque<string> SRLNewsStoryGenerator::generateTrainingArticle(string teamName1, s
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(string teamName1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(string teamName1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " has had a slow season so far.");
 	temp.push_back("But after feeling inspired by the criticism,");
 	temp.push_back(Player1 + " has promised fans that");
@@ -89,9 +89,9 @@ deque<string> SRLNewsStoryGenerator::generateTrainingArticle_Unleashed(string te
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateTrainingArticle_AimsToProve(string teamName1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateTrainingArticle_AimsToProve(string teamName1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " is determined to prove the critics");
 	temp.push_back("wrong, after an inspired training session");
 	temp.push_back("has allegedly impressed the coach.");
@@ -239,9 +239,9 @@ SRLNewsArticle SRLNewsStoryGenerator::getRandomTraining(SRLTeam MainTeam, SRLPla
 	return m_Article;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " met with some young fans");
 	temp.push_back("in a local hospital yesterday. Some people");
 	temp.push_back("have questioned the legitimacy of their act, with some");
@@ -252,9 +252,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleSickKids(string Play
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " has been met with applause today");
 	temp.push_back("after they heroically saved a local 50 year old man");
 	temp.push_back("from drowning at a local beach.");
@@ -265,9 +265,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleSavesDrowner(string 
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleDonatesToCharity(string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelGoodArticleDonatesToCharity(string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " donated $50k to a local charity");
 	temp.push_back("today, and now they are challenging other SRL players");
 	temp.push_back("to match the donation.");
@@ -280,9 +280,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleDonatesToCharity(str
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateRumourArticlePlayerRelease(string Team1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateRumourArticlePlayerRelease(string Team1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("Sources tell us that " + Team1 + " are");
 	temp.push_back("considering telling " + Player1 + " to");
 	temp.push_back("Find a new home immediately. This comes after rumours");
@@ -294,9 +294,9 @@ deque<string> SRLNewsStoryGenerator::generateRumourArticlePlayerRelease(string T
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateRumourArticleContractExtension(string Team1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateRumourArticleContractExtension(string Team1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("Sources tell us that " + Team1 + " are");
 	temp.push_back("considering extending " + Player1 + "'s");
 	temp.push_back("contract by a further 3 years.");
@@ -306,9 +306,9 @@ deque<string> SRLNewsStoryGenerator::generateRumourArticleContractExtension(stri
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(string Player)
+vector<string> SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(string Player)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("After a lengthy battle with terminal illness, it is");
 	temp.push_back("with deep sadness that we report the death of beloved");
 	temp.push_back("player " + Player + " passed away today.");
@@ -319,9 +319,9 @@ deque<string> SRLNewsStoryGenerator::generateGeneralArticle_PassedAway(string Pl
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateGeneralArticle_TalksRetirement(string Player)
+vector<string> SRLNewsStoryGenerator::generateGeneralArticle_TalksRetirement(string Player)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("After a beloved career that was cut short 2 years ago,");
 	temp.push_back(Player + " has taken the time to speak");
 	temp.push_back("out about retirement today.");
@@ -329,9 +329,9 @@ deque<string> SRLNewsStoryGenerator::generateGeneralArticle_TalksRetirement(stri
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(string Team1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(string Team1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("After having watched " + Player1 + " play");
 	temp.push_back("as long as I have for " + Team1 +",");
 	temp.push_back("I have come to the conclusion that their potential is");
@@ -343,9 +343,9 @@ deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldSwap(stri
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(string Team1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(string Team1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("The fans have spoken, and they claim that the best");
 	temp.push_back("player for " + Team1 + " is no other");
 	temp.push_back("than " + Player1 + "!");
@@ -357,9 +357,9 @@ deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerOfYear(string T
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(string Country, string Player1)
+vector<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(string Country, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("With rumours of a world cup coming end of season, ");
 	temp.push_back(Country + " must start looking quick to");
 	temp.push_back("become a major contender for the title. To start,");
@@ -371,9 +371,9 @@ deque<string> SRLNewsStoryGenerator::generateOpinionArticlePlayerShouldCaptain(s
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateOpinionArticleCoachWantsFinalsSystem(string Team1)
+vector<string> SRLNewsStoryGenerator::generateOpinionArticleCoachWantsFinalsSystem(string Team1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Team1 +"'s coach has proposed");
 	temp.push_back("a new finals system to the SRL Today. This new");
 	temp.push_back("system would see the top 11 teams go through,");
@@ -385,9 +385,9 @@ deque<string> SRLNewsStoryGenerator::generateOpinionArticleCoachWantsFinalsSyste
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelBadArticleSexScandal(string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelBadArticleSexScandal(string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " is currently in hot water");
 	temp.push_back("after a sexting scandal arrised today");
 	temp.push_back(Player1 + " has been alleged to have been");
@@ -397,9 +397,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelBadArticleSexScandal(string Pla
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelBadArticlePunchUp(string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelBadArticlePunchUp(string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " is currently out on bail");
 	temp.push_back("after an alleged punch on at northies RSL occured");
 	temp.push_back("last friday night.");
@@ -409,9 +409,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelBadArticlePunchUp(string Player
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelBadArticleGambling(string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelBadArticleGambling(string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " has allegedly lost over $30k");
 	temp.push_back("at the pokies last night after a long bender.");
 	temp.push_back("When reached out for a comment, " + Player1);
@@ -421,9 +421,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelBadArticleGambling(string Playe
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(string Country, string Player1)
+vector<string> SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(string Country, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Country + " have been dealt a possibly huge blow");
 	temp.push_back("after " + Player1 + " was announced");
 	temp.push_back("to be under investigation for possible ineligibility");
@@ -437,9 +437,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelBadEligibilityCrisis(string Cou
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelBadRSLFight(string Player1, string Player2)
+vector<string> SRLNewsStoryGenerator::generateFeelBadRSLFight(string Player1, string Player2)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " & " + Player2 + " are in");
 	temp.push_back("hot water today after the two were caught on");
 	temp.push_back("camera having a drunken brawl at a local RSL.");
@@ -452,9 +452,9 @@ deque<string> SRLNewsStoryGenerator::generateFeelBadRSLFight(string Player1, str
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1)
+vector<string> SRLNewsStoryGenerator::generateArticleDropControversialPlayer(string Team1, string Player1, int team1, int player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("After a recent controversy, " + Team1);
 	temp.push_back("have decided to drop " + Player1 + " from");
 	temp.push_back("their team, and have released them from their contract.");
@@ -465,9 +465,9 @@ deque<string> SRLNewsStoryGenerator::generateArticleDropControversialPlayer(stri
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateArticleWalksOutOnClub(string Team1, string Player1, int team1, int player1)
+vector<string> SRLNewsStoryGenerator::generateArticleWalksOutOnClub(string Team1, string Player1, int team1, int player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("After issues with recent contract negotiations, ");
 	temp.push_back(Player1 + " has walked from the ");
 	temp.push_back(Team1 + ", who in return have released them");
@@ -479,9 +479,9 @@ deque<string> SRLNewsStoryGenerator::generateArticleWalksOutOnClub(string Team1,
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateRumourArticlePlayerUnrest(string Team1)
+vector<string> SRLNewsStoryGenerator::generateRumourArticlePlayerUnrest(string Team1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("It seems that the coach of " + Team1);
 	temp.push_back("has lost the dressing room after bombshell");
 	temp.push_back("allegations arose today that 5 key players are");
@@ -492,9 +492,9 @@ deque<string> SRLNewsStoryGenerator::generateRumourArticlePlayerUnrest(string Te
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateRumourArticlePayCut(string Team1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateRumourArticlePayCut(string Team1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	int pay = (rand() % 9) + 1;
 	temp.push_back(Player1 + " has reportedly been told that");
 	temp.push_back("if they want to stay at " + Team1 + ",");
@@ -514,9 +514,9 @@ deque<string> SRLNewsStoryGenerator::generateRumourArticlePayCut(string Team1, s
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateRumourArticleRetirement(string Team1, string Player1)
+vector<string> SRLNewsStoryGenerator::generateRumourArticleRetirement(string Team1, string Player1)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back("Sources tell us that " + Player1 + " will");
 	temp.push_back("be finishing their career at " + Team1 + ",");
 	temp.push_back("with retirement potentially coming at the end of the season.");
@@ -527,9 +527,9 @@ deque<string> SRLNewsStoryGenerator::generateRumourArticleRetirement(string Team
 	return temp;
 }
 
-deque<string> SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(string Player1, string Player2)
+vector<string> SRLNewsStoryGenerator::generateFeelGoodArticleCharityEvent(string Player1, string Player2)
 {
-	deque<string> temp;
+	vector<string> temp;
 	temp.push_back(Player1 + " & " + Player2 + " have");
 	temp.push_back("today put their SRL rivalry aside to host a charity event");
 	temp.push_back("to help raise money for SYDE Disease awareness.");

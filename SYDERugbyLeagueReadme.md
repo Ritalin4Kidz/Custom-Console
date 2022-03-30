@@ -44,7 +44,7 @@ SRL Simulation game made inside the SYDE Framework.
 
 ### 1.1.5.0 30/03/2022
 - Player ages & retirement
-
+- Other Refactors
 
 ### 1.1.4.3 23/03/2022
 - Adjusted Round In Double Elim Finals

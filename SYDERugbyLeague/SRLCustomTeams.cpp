@@ -2,7 +2,7 @@
 
 SRLTeam SRLCustomTeamGenerator::generateCustomTeamFreebeeNetwork(string& team)
 {
-	deque<SRLPlayer> TeamList;
+	vector<SRLPlayer> TeamList;
 	TeamList.push_back(SRLPlayer("Callum Hands", "Australia", 45, 88, 35, 79, 83, 99, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 4));
 	TeamList.push_back(SRLPlayer("Luke Alexander", "Australia", 85, 65, 75, 29, 33, 87, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 1));
 	TeamList.push_back(SRLPlayer("Peter Waterhouse", "Australia", 50, 78, 72, 48, 22, 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 40));
@@ -29,7 +29,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamFreebeeNetwork(string& team)
 
 SRLTeam SRLCustomTeamGenerator::generateCustomTeamAusmusicCommunity(string& team)
 {
-	deque<SRLPlayer> TeamList;
+	vector<SRLPlayer> TeamList;
 	TeamList.push_back(SRLPlayer("Psychopanda", "Australia", 75, 48, 25, 29, 63, 69, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 59));
 	TeamList.push_back(SRLPlayer("Puddinghead", "Australia", 85, 65, 75, 29, 33, 87, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 9));
 	TeamList.push_back(SRLPlayer("iMagic", "United States", 50, 78, 72, 48, 22, 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 41));
@@ -57,7 +57,7 @@ SRLTeam SRLCustomTeamGenerator::generateCustomTeamAusmusicCommunity(string& team
 SRLTeam SRLCustomTeamGenerator::generateCustomTeamMinimmeCommunity(string& team)
 {
 	//TODO: Properly adjust variables
-	deque<SRLPlayer> TeamList;
+	vector<SRLPlayer> TeamList;
 	TeamList.push_back(SRLPlayer("Minimme", "Australia", 75, 48, 25, 29, 63, 69, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 59));
 	TeamList.push_back(SRLPlayer("Arcana", "England", 85, 65, 75, 29, 33, 87, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 9));
 	TeamList.push_back(SRLPlayer("Xindictive", "United States", 50, 78, 72, 48, 22, 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 41));

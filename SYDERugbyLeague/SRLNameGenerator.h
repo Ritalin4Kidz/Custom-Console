@@ -2,7 +2,7 @@
 
 #include <string>
 #include "SYDEFileDefaults.h"
-#include <deque>
+#include <vector>
 
 using namespace std;
 
@@ -19,7 +19,7 @@ public:
 
 	static string generateRandomTeamNameSafe();
 
-	static void generateAndAddToVector(deque<string>& vec);
+	static void generateAndAddToVector(vector<string>& vec);
 	static string getTimeBasedOffRoundSizeAndGame(int roundSize, int game);
 private:
 	static string generateRandomFirstName();
@@ -29,14 +29,14 @@ private:
 	static string generateRandomCity();
 	static string generateRandomTeam();
 
-	static deque<string> FirstNames;
-	static deque<string> MiddleNames;
-	static deque<string> LastNames;
-	static deque<string> CityNames;
-	static deque<string> HomeGroundStart;
-	static deque<string> HomeGroundEnd;
-	static deque<string> TeamNames;
-	static deque<string> countriesOfOrigin;
+	static vector<string> FirstNames;
+	static vector<string> MiddleNames;
+	static vector<string> LastNames;
+	static vector<string> CityNames;
+	static vector<string> HomeGroundStart;
+	static vector<string> HomeGroundEnd;
+	static vector<string> TeamNames;
+	static vector<string> countriesOfOrigin;
 
-	static deque<deque<string>> BetSentence;
+	static vector<vector<string>> BetSentence;
 };

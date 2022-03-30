@@ -14,7 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <iterator>
-#include <deque>
+#include <vector>
 enum FinalsSeriesType
 {
 	Top8Normal,
@@ -108,9 +108,9 @@ struct SRLGameBet
 struct SRLLadder
 {
 	SRLLadder() {}
-	SRLLadder(deque<SRLLadderPosition> ladder) { m_Ladder = ladder; }
+	SRLLadder(vector<SRLLadderPosition> ladder) { m_Ladder = ladder; }
 	void sortLadder();
-	deque<SRLLadderPosition> m_Ladder;
+	vector<SRLLadderPosition> m_Ladder;
 };
 
 struct SRLGameMatchup
@@ -120,8 +120,8 @@ struct SRLGameMatchup
 	SRLBetPrice awayTeamOdds = SRLBetPrice(1, 90);
 	string HomeTeam;
 	string AwayTeam;
-	deque<string> ResultPlayByPlay;
-	deque<string> SummaryPlayByPlay;
+	vector<string> ResultPlayByPlay;
+	vector<string> SummaryPlayByPlay;
 
 	void setMatchInfo(string v, string t) { Venue = v; Time_Date = t; }
 	string Venue;
@@ -137,8 +137,8 @@ struct SRLGameMatchup
 
 	void calculateBiggestLeads(int homeScore, int awayScore);
 
-	deque<SRLBetPrice> homeTeamTryOdds = deque<SRLBetPrice>();
-	deque<SRLBetPrice> awayTeamTryOdds = deque<SRLBetPrice>();
+	vector<SRLBetPrice> homeTeamTryOdds = vector<SRLBetPrice>();
+	vector<SRLBetPrice> awayTeamTryOdds = vector<SRLBetPrice>();
 
 	int homeTeamScore = 0;
 	int awayTeamScore = 0;
@@ -166,7 +166,7 @@ struct FeaturedGame
 {
 	FeaturedGame() {}
 	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds);
-	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, deque<SRLTeam> repTeams);
+	FeaturedGame(string home, string away, AssetsClass astVars, int gameNo, SRLBetPrice homeOdds, SRLBetPrice awayOdds, vector<SRLTeam> repTeams);
 	bool featuredGameAvail = false;
 	int fg_homeTeamScore = 0;
 	int fg_awayTeamScore = 0;
@@ -179,19 +179,19 @@ struct FeaturedGame
 	SRLBetPrice fg_homeOdds;
 	SRLBetPrice fg_awayOdds;
 
-	deque<string> homeTeamKeyPlayers;
-	deque<string> awayTeamKeyPlayers;
+	vector<string> homeTeamKeyPlayers;
+	vector<string> awayTeamKeyPlayers;
 
-	deque<string> MatchHistory = deque<string>({ "No Match History To Show" });
+	vector<string> MatchHistory = vector<string>({ "No Match History To Show" });
 };
 
 struct SRLRound
 {
-	SRLRound(deque<SRLGameMatchup> games) { m_Games = games; }
-	deque<SRLGameMatchup> m_Games;
-	deque<SRLGameBet> m_Bets;
-	deque<SRLGameBet> m_TryScorerBets;
-	deque<SRLNewsArticle> newsStories;
+	SRLRound(vector<SRLGameMatchup> games) { m_Games = games; }
+	vector<SRLGameMatchup> m_Games;
+	vector<SRLGameBet> m_Bets;
+	vector<SRLGameBet> m_TryScorerBets;
+	vector<SRLNewsArticle> newsStories;
 	string RoundName;
 	bool isRepRound = false;
 
@@ -203,8 +203,8 @@ struct SRLRound
 struct SRLDraw
 {
 	SRLDraw() {}
-	SRLDraw(deque<SRLRound> rounds) { m_Rounds = rounds; }
-	deque<SRLRound> m_Rounds;
+	SRLDraw(vector<SRLRound> rounds) { m_Rounds = rounds; }
+	vector<SRLRound> m_Rounds;
 };
 
 struct SRLLeaderboardPosition
@@ -217,7 +217,7 @@ struct SRLLeaderboardPosition
 struct SRLLeaderboard
 {
 	void addToShortlist(string playerName, string teamName, int points);
-	deque<SRLLeaderboardPosition> shortlist;
+	vector<SRLLeaderboardPosition> shortlist;
 	void orderShortlist();
 	void clear() { shortlist.clear(); }
 	void changePlayerTeam(string playerName, string oldTeam, string newTeam);
@@ -229,7 +229,7 @@ struct SRLSeason
 	SRLSeason(SRLDraw draw, SRLLadder ladder) { m_Draw = draw; m_Ladder = ladder; }
 	void clear();
 	SRLDraw m_Draw;
-	deque<SRLGameBet> m_PremiershipBets;
+	vector<SRLGameBet> m_PremiershipBets;
 	SRLLadder m_Ladder;
 	SRLLeaderboard m_TopPlayers;
 	SRLLeaderboard m_TopTries;
@@ -334,9 +334,9 @@ struct SRLSponsorChallenge
 struct SRLSponsor
 {
 	SRLSponsor() {}
-	SRLSponsor(string name, deque<SRLSponsorChallenge> c) { SponsorName = name; challenges = c; }
+	SRLSponsor(string name, vector<SRLSponsorChallenge> c) { SponsorName = name; challenges = c; }
 	string SponsorName;
-	deque<SRLSponsorChallenge> challenges;
+	vector<SRLSponsorChallenge> challenges;
 };
 
 struct SRLProfile
@@ -349,9 +349,9 @@ public:
 	SRLSponsor Sponsor_Northkellion_Shoes;
 	SRLSponsor Sponsor_Zeckfast;
 
-	void completeChallenge(string name, deque<string> &vec);
+	void completeChallenge(string name, vector<string> &vec);
 
-	void addSeasonSimulated(deque<string>& vec) { seasonsSimulated++; if (seasonsSimulated >= 1000) { completeChallenge("Simulated 1000 Total Seasons",vec); } SaveSettings(); }
+	void addSeasonSimulated(vector<string>& vec) { seasonsSimulated++; if (seasonsSimulated >= 1000) { completeChallenge("Simulated 1000 Total Seasons",vec); } SaveSettings(); }
 
 	void initChallenges();
 

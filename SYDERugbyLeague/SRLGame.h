@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <deque>
+#include <vector>
 #include "SRLTeam.h"
 
 #include "Vector2.h"
@@ -121,8 +121,8 @@ public:
 
 	int getMinutesPassed() { return m_MinutesPassed; }
 
-	deque<string> getPlayByPlay() { return m_PlayByPlay; }
-	deque<string> getSummary() { return m_Summary; }
+	vector<string> getPlayByPlay() { return m_PlayByPlay; }
+	vector<string> getSummary() { return m_Summary; }
 
 private:
 	//CONSTANTS
@@ -155,8 +155,8 @@ private:
 	int m_SecondsPassed;
 	int m_MinutesPassed;
 	//PLAYS
-	deque<string> m_PlayByPlay;
-	deque<string> m_Summary;
+	vector<string> m_PlayByPlay;
+	vector<string> m_Summary;
 	//GAMEPLAY
 	int m_BallPosition = 100;
 	int m_Tackle = 0;

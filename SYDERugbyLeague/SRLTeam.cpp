@@ -4,7 +4,7 @@ SRLTeam::SRLTeam()
 {
 }
 
-SRLTeam::SRLTeam(deque<SRLPlayer> a_TeamList, string name,string homeground)
+SRLTeam::SRLTeam(vector<SRLPlayer> a_TeamList, string name,string homeground)
 {
 	m_TeamList = a_TeamList;
 	m_Name = name;
@@ -557,9 +557,9 @@ void SRLTeam::addPlayerNoTry(string playerName)
 	}
 }
 
-deque<string> SRLTeam::addTimeOnField(int time)
+vector<string> SRLTeam::addTimeOnField(int time)
 {
-	deque<string> temp;
+	vector<string> temp;
 	for (int i = 0; i < 13; i++)
 	{
 		m_TeamList[i].addTimeOnField(time);
@@ -572,9 +572,9 @@ deque<string> SRLTeam::addTimeOnField(int time)
 	return temp;
 }
 
-void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
+void SRLTeam::addBestPlayers(vector<string>& vec, int amount)
 {
-	deque<SRLPlayer> temp = getPlayers();
+	vector<SRLPlayer> temp = getPlayers();
 	for (int i = 0; i < temp.size() && i < 17; i++)
 	{
 		for (int ii = i + 1; ii < temp.size() && ii < 17; ii++)
@@ -595,9 +595,9 @@ void SRLTeam::addBestPlayers(deque<string>& vec, int amount)
 	}
 }
 
-deque<SRLPlayer> SRLTeam::addBestAttackers(deque<string>& vec, int amount)
+vector<SRLPlayer> SRLTeam::addBestAttackers(vector<string>& vec, int amount)
 {
-	deque<SRLPlayer> temp = getPlayers();
+	vector<SRLPlayer> temp = getPlayers();
 	for (int i = 0; i < temp.size() && i < 17; i++)
 	{
 		for (int ii = i + 1; ii < temp.size() && ii < 17; ii++)

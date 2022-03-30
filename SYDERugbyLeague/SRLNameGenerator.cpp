@@ -1,14 +1,14 @@
 #include "SRLNameGenerator.h"
 
-deque<deque<string>> SRLNameGenerator::BetSentence = deque<deque<string>>
+vector<vector<string>> SRLNameGenerator::BetSentence = vector<vector<string>>
 {
-	deque<string>({"This bet is a no brainer.", "I put quite an amount on it myself.", "It's basically free money!"}),
-	deque<string>({"I've seen a lot of disagreements,", "but i'm defiant that they'll get", "the job done here tonight"}),
-	deque<string>({"This was a tough one, but", "I've looked at the stats,","I'd say they're a safe bet"}),
-	deque<string>({"Absolute lock here,","don't miss out on this one!"}),
+	vector<string>({"This bet is a no brainer.", "I put quite an amount on it myself.", "It's basically free money!"}),
+	vector<string>({"I've seen a lot of disagreements,", "but i'm defiant that they'll get", "the job done here tonight"}),
+	vector<string>({"This was a tough one, but", "I've looked at the stats,","I'd say they're a safe bet"}),
+	vector<string>({"Absolute lock here,","don't miss out on this one!"}),
 };
 
-deque<string> SRLNameGenerator::countriesOfOrigin = deque<string>
+vector<string> SRLNameGenerator::countriesOfOrigin = vector<string>
 {
 	"Australia",
 	"Austria",
@@ -53,7 +53,7 @@ deque<string> SRLNameGenerator::countriesOfOrigin = deque<string>
 	"Zyx Islands"
 };
 
-deque<string> SRLNameGenerator::HomeGroundStart = deque<string>
+vector<string> SRLNameGenerator::HomeGroundStart = vector<string>
 {
 	"Abode Bank",
 	"Arnold's",
@@ -122,7 +122,7 @@ deque<string> SRLNameGenerator::HomeGroundStart = deque<string>
 	"Zuttria"
 };
 
-deque<string> SRLNameGenerator::HomeGroundEnd = deque<string>
+vector<string> SRLNameGenerator::HomeGroundEnd = vector<string>
 {
 	"Arena",
 	"Bowl",
@@ -140,7 +140,7 @@ deque<string> SRLNameGenerator::HomeGroundEnd = deque<string>
 	"Stadium"
 };
 
-deque<string> SRLNameGenerator::FirstNames = deque<string>
+vector<string> SRLNameGenerator::FirstNames = vector<string>
 {
 	"Aaron",
 	"Abby",
@@ -493,7 +493,7 @@ deque<string> SRLNameGenerator::FirstNames = deque<string>
 	"Zutie",
 };
 
-deque<string> SRLNameGenerator::MiddleNames = deque<string>
+vector<string> SRLNameGenerator::MiddleNames = vector<string>
 {
 	"A.",
 	"B.",
@@ -526,7 +526,7 @@ deque<string> SRLNameGenerator::MiddleNames = deque<string>
 	"Z.",
 };
 
-deque<string> SRLNameGenerator::LastNames = deque<string>
+vector<string> SRLNameGenerator::LastNames = vector<string>
 {
 	"Aaciro",
 	"Aaronson",
@@ -1097,7 +1097,7 @@ deque<string> SRLNameGenerator::LastNames = deque<string>
 	"ze Zye",
 };
 
-deque<string> SRLNameGenerator::TeamNames = deque<string>
+vector<string> SRLNameGenerator::TeamNames = vector<string>
 {
 	"Accountants",
 	"Aces",
@@ -1352,7 +1352,7 @@ deque<string> SRLNameGenerator::TeamNames = deque<string>
 	"Zebras",
 };
 
-deque<string> SRLNameGenerator::CityNames = deque<string>
+vector<string> SRLNameGenerator::CityNames = vector<string>
 {
 	"Aartioz",
 	"Adelaide",
@@ -1643,10 +1643,10 @@ string SRLNameGenerator::generateRandomTeamNameSafe()
 	return generateRandomCity() + " " + generateRandomTeam();
 }
 
-void SRLNameGenerator::generateAndAddToVector(deque<string>& vec)
+void SRLNameGenerator::generateAndAddToVector(vector<string>& vec)
 {
 	int number = rand() % BetSentence.size();
-	deque<string> bets = BetSentence[number];
+	vector<string> bets = BetSentence[number];
 	for (int i = 0; i < bets.size(); i++)
 	{
 		vec.push_back(bets[i]);

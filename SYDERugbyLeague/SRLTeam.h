@@ -151,6 +151,8 @@ public:
 
 	void cutToSeventeen();
 
+	void addPlayer(SRLPlayer player) { m_TeamList.push_back(player); }
+
 private:
 	ColourClass getRandomColour();
 	string m_Name;

@@ -75,6 +75,8 @@ public:
 	static deque<string> generatePremiershipArticle(string teamName);
 	static deque<string> generateOffContractTradeArticle(string teamName, string newPlayer, string oldPlayer);
 	static deque<string> generateTradeArticle(string teamName1, string teamName2, string Player1, string Player2);
+
+	static deque<string> generateGeneralArticle_ToRetire(string Player);
 #pragma endregion
 
 #pragma region Training

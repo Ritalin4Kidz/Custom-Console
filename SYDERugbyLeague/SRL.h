@@ -128,6 +128,8 @@ public:
 	void offContractTrade();
 	bool offContractTrade(int team1, int player1);
 	void TeamTrade();
+	void RetirePlans();
+	void RetirePlayers();
 	void UpdateBets();
 
 	void setUpFilters();

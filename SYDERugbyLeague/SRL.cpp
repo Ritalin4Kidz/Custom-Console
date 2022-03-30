@@ -1755,7 +1755,7 @@ deque<SRLPlayer> SRLGame::createRandomTeam(string prefix)
 	{
 		bool canAddPlayer = true;
 		//SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), 99, 99,99, 99, 99, 99);
-		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
 		for (int ii = 0; ii < i; ii++)
 		{
 			if (player.getName() == m_Team[ii].getName())
@@ -1783,7 +1783,7 @@ deque<SRLPlayer> SRLGame::createOffSeasonTeam(string prefix)
 	for (int i = 0; i < 200; i++)
 	{
 		bool canAddPlayer = true;
-		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
 		for (int ii = 0; ii < i; ii++)
 		{
 			if (player.getName() == m_Team[ii].getName())
@@ -1807,7 +1807,7 @@ deque<SRLPlayer> SRLGame::createRandomTeam(string prefix, float multiplier)
 	for (int i = 0; i < 20; i++)
 	{
 		bool canAddPlayer = true;
-		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier);
+		SRLPlayer player = SRLPlayer(prefix + SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, ((rand() % 80) + 20) * multiplier, (rand() % 20) + 17);
 		for (int ii = 0; ii < i; ii++)
 		{
 			if (player.getName() == m_Team[ii].getName())
@@ -4312,6 +4312,7 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 
 	}
 
+	window.setTextAtPoint(Vector2(2, 17), "Player Age: " + to_string(m_PlayerView.getAge()), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(2, 18), "Country Of Origin: " + m_PlayerView.getOrigin(), BRIGHTWHITE);
 	window = m_RegeneratePlayerBtn.draw_ui(window);
 	window = m_SaveDetailsInDepth.draw_ui(window);
@@ -4556,7 +4557,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.4.3", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.5.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -4676,7 +4677,7 @@ ConsoleWindow SRLGame::RandomizePopUp(ConsoleWindow window, int windowWidth, int
 		{
 			m_GameProfile.completeChallenge("Randomize A Player With a 90+ Rating", AchievementStrings);
 		}
-		m_PlayerView = SRLPlayer(SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+		m_PlayerView = SRLPlayer(SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
 		m_PlayerView.setID(id);
 		m_PlayerView.savePlayer();
 
@@ -5974,6 +5975,11 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 			TeamTrade();
 			m_ArticlesRemaining--;
 		}
+		for (int i = 0; i < noTrades2; i++)
+		{
+			RetirePlans();
+			m_ArticlesRemaining--;
+		}
 	}
 
 	if (m_roundToSimulate >= m_Season.m_Draw.m_Rounds.size())
@@ -6074,6 +6080,11 @@ void SRLGame::SimulationEndOfRound(int m_ArticlesRemaining)
 			checkBetAchievements();
 			checkCoachingAchievements();
 			sortOutMatchButtons();
+			//END THE CAREERS
+			if (m_SeasonEvents)
+			{
+				RetirePlayers();
+			}
 		}
 		else
 		{
@@ -6887,6 +6898,17 @@ bool SRLGame::offContractTrade(int team1, int player1)
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+
+	if (Player1Character.getStatus() == PlayerStatus_RETIRING)
+	{
+		Player1Character.setStatus(PlayerStatus_RETIRED);
+	}
+
+	if (Player2Character.getStatus() == PlayerStatus_RETIRED)
+	{
+		return false;
+	}
+
 	if (coachingMode)
 	{
 		//CANNOT AUTOMATICALLY TRADE IF COACHING MODE
@@ -6972,6 +6994,7 @@ void SRLGame::TeamTrade()
 	int player2 = offContract.getRandomPlayerInt();
 	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
 	SRLPlayer Player2Character = offContract.getPlayers()[player2];
+
 	for (int i = 0; i < MainTeam.getPlayers().size(); i++)
 	{
 		//DO NOT ALLOW TRADE IF MAIN TEAM HAS A PLAYER WITH THE SAME NAME, THIS WILL CAUSE CONFUSION WITH LEADERBOARD
@@ -7031,6 +7054,79 @@ void SRLGame::TeamTrade()
 
 	MainTeam.saveTeam();
 	offContract.saveTeam();
+}
+
+void SRLGame::RetirePlans()
+{
+	//TRADE OFF
+	int team1 = rand() % 16;
+
+
+	SRLTeam MainTeam;
+	MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[team1].teamName + ".json");
+	int player1 = MainTeam.getRandomPlayerInt();
+	SRLPlayer Player1Character = MainTeam.getPlayers()[player1];
+
+	//PROBABLY ALREADY PLANS TO GO
+	if (Player1Character.getStatus() != PlayerStatus_ACTIVE)
+	{
+		return;
+	}
+
+	int retireChance = 41 - Player1Character.getAge();
+	int retired = rand() % 15;
+	if (retired < retireChance)
+	{
+		return;
+	}
+
+	SRLNewsArticle m_SigningArticle;
+	m_SigningArticle.headline = Player1Character.getName() + " To Retire At Season End";
+	m_SigningArticle.newsStory = SRLNewsStoryGenerator::generateGeneralArticle_ToRetire(Player1Character.getName());
+	m_SigningArticle.type = SRLAT_PlayerTrade;
+	m_SigningArticle.newsPicture = CustomAsset(14, 7, astVars.get_bmp_as_array(L"EngineFiles\\ArticlePictures\\Important.bmp", 7, 7));
+	m_Season.m_Draw.m_Rounds[m_roundToSimulate - 1].newsStories.push_back(m_SigningArticle);
+	
+	Player1Character.setStatus(PlayerStatus_RETIRING);
+	MainTeam.setPlayer(player1, Player1Character);
+	MainTeam.saveTeam();
+}
+
+void SRLGame::RetirePlayers()
+{
+	//IF PLAYER PLANS TO RETIRE, OR IS AGE 40
+	//TRADE OFF
+	SRLTeam offContract;
+	offContract.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");
+	for (int i = 0; i < m_Season.m_Ladder.m_Ladder.size(); i++)
+	{
+
+		SRLTeam MainTeam;
+		MainTeam.loadTeam("EngineFiles\\GameResults\\Teams\\" + m_Season.m_Ladder.m_Ladder[i].teamName + ".json");
+		for (int ii = 0; ii < MainTeam.getPlayers().size(); ii++)
+		{
+			if (MainTeam.getPlayers()[ii].getStatus() == PlayerStatus_RETIRING || MainTeam.getPlayers()[ii].getAge() >= 40)
+			{
+				SRLPlayer PlayerCharacter = MainTeam.getPlayers()[ii];
+				SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), SRLNameGenerator::generateRandomOriginCountry(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
+			
+				PlayerCharacter.incrementAge();
+				PlayerCharacter.setStatus(PlayerStatus_RETIRED);
+
+				MainTeam.setPlayer(ii, newPlayer);
+				offContract.addPlayer(PlayerCharacter);
+			
+			}
+			else
+			{
+				SRLPlayer PlayerCharacter = MainTeam.getPlayers()[ii];
+				PlayerCharacter.incrementAge();
+				MainTeam.setPlayer(ii, PlayerCharacter);
+			}
+			MainTeam.saveTeam();
+		}
+	}
+	offContract.saveTeamOffContract();
 }
 
 void SRLGame::UpdateBets()
@@ -7670,7 +7766,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 		{
 			while (tempTeams[j].getPlayers().size() < 17)
 			{
-				SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), tempTeams[j].getName(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+				SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), tempTeams[j].getName(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
 				offContract.AddPlayer(newPlayer);
 				offContract.saveTeamOffContract();
 				tempTeams[j].AddPlayer(newPlayer);
@@ -7694,7 +7790,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 				SRLTeam newTeam = SRLTeam(__TeamName, "Worlds Stadium");
 				for (int p = 0; p < 17; p++)
 				{
-					SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), __TeamName, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20);
+					SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), __TeamName, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
 					offContract.AddPlayer(newPlayer);
 					offContract.saveTeamOffContract();
 				}

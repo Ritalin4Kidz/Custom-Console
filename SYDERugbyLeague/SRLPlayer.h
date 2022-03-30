@@ -8,11 +8,21 @@
 #include "ConsoleWindow.h"
 using namespace std;
 using json = nlohmann::json;
+
+enum SRLPlayerStatus
+{
+	PlayerStatus_ACTIVE,
+	PlayerStatus_RETIRING,
+	PlayerStatus_RETIRED
+};
+
+
 class SRLPlayer {
 public:
 	SRLPlayer();
-	SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling);
+	SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling, int age);
 	SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle);
+	SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, int age, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle);
 
 	virtual ~SRLPlayer();
 
@@ -79,6 +89,9 @@ public:
 	void addKick() { m_Kicks++; }
 	int getKicks() { return m_Kicks; }
 
+	void setStatus(SRLPlayerStatus stat) { m_PlayerStatus = stat; }
+	SRLPlayerStatus getStatus() { return m_PlayerStatus; }
+
 	void addKickMetres(int metres) { m_KickMetres += metres; }
 	int getKickMetres() { return m_KickMetres; }
 
@@ -96,6 +109,9 @@ public:
 
 	void addRuckError(){ m_RuckInfringements++; }
 	int getRuckErrors() { return m_RuckInfringements; }
+
+	void incrementAge() { m_Age++; }
+	int getAge() { return m_Age; }
 
 	void addPenalty() { m_PenaltiesConceded++; }
 	int getPenalty() { return m_PenaltiesConceded; }
@@ -188,6 +204,10 @@ private:
 	int m_SinBins = 0;
 	int m_SendOffs = 0;
 	int m_Injuries = 0;
+
+	int m_Age = 0;
+
+	SRLPlayerStatus m_PlayerStatus = PlayerStatus_ACTIVE;
 
 	int timeOnField = 0;
 	ColourClass getRandomColour();

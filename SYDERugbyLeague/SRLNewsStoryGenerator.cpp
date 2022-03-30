@@ -52,6 +52,16 @@ deque<string> SRLNewsStoryGenerator::generateTradeArticle(string teamName1, stri
 	return temp;
 }
 
+deque<string> SRLNewsStoryGenerator::generateGeneralArticle_ToRetire(string Player)
+{
+	deque<string> temp;
+	temp.push_back("After a long career, " + Player + " has");
+	temp.push_back("decided to hang up the boots at the end");
+	temp.push_back("of the season.");
+	temp.push_back("'My Brain Is Starting To Hurt'");
+	return temp;
+}
+
 deque<string> SRLNewsStoryGenerator::generateTrainingArticle(string teamName1, string Player1)
 {
 	deque<string> temp;

@@ -4,7 +4,7 @@ SRLPlayer::SRLPlayer()
 {
 }
 
-SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling)
+SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence,int kicking, int goalKicking, int handling, int age)
 {
 	m_PlayerName = name;
 	m_CountryOfOrigin = country;
@@ -14,6 +14,7 @@ SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int def
 	m_BaseKicking = kicking;
 	m_GoalKicking = goalKicking;
 	m_BaseHandling = handling;
+	m_Age = age;
 	generateFeatures();
 }
 
@@ -31,6 +32,24 @@ SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int def
 	secondaryColour = seco;
 	tertiaryColour = tert;
 	playerTypeInt = playerStyle;
+	m_Age = (rand() % 20) + 17;
+}
+
+SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, int age, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle)
+{
+	m_PlayerName = name;
+	m_CountryOfOrigin = country;
+	m_BaseSpeed = speed;
+	m_BaseAttack = attack;
+	m_BaseDefence = defence;
+	m_BaseKicking = kicking;
+	m_GoalKicking = goalKicking;
+	m_BaseHandling = handling;
+	primaryColour = prim;
+	secondaryColour = seco;
+	tertiaryColour = tert;
+	playerTypeInt = playerStyle;
+	m_Age = age;
 }
 
 SRLPlayer::~SRLPlayer()
@@ -115,6 +134,23 @@ void SRLPlayer::loadPlayer(string path)
 	this->secondaryColour = static_cast<ColourClass>(save_file["secondary"]);
 	this->tertiaryColour = static_cast<ColourClass>(save_file["tertiary"]);
 	this->playerTypeInt = save_file["playertype"];
+	if (save_file.contains("age"))
+	{
+		this->m_Age = save_file["age"];
+	}
+	else
+	{
+		m_Age = (rand() % 20) + 17;
+	}
+	if (save_file.contains("status"))
+	{
+		this->m_PlayerStatus = static_cast<SRLPlayerStatus>(save_file["status"]);
+	}
+	else
+	{
+		this->m_PlayerStatus = PlayerStatus_ACTIVE;
+	}
+
 }
 
 void SRLPlayer::savePlayer()
@@ -133,6 +169,8 @@ void SRLPlayer::savePlayer()
 	save_file["primary"] = static_cast<int>(primaryColour);
 	save_file["secondary"] = static_cast<int>(secondaryColour);
 	save_file["tertiary"] = static_cast<int>(tertiaryColour);
+	save_file["age"] = m_Age;
+	save_file["status"] = static_cast<int>(m_PlayerStatus);
 	if (id == 0)
 	{
 		id++;

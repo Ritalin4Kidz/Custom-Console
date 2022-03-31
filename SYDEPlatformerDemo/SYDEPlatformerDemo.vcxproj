@@ -149,7 +149,11 @@
     <ClCompile Include="SYDEPlatformerDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SYDEPlatformer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SYDEPlatformerDemo.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

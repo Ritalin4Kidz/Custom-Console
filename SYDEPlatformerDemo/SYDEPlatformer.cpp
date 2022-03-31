@@ -31,8 +31,11 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
 		}
 	}
-	window = m_MainMap.draw_asset(window, Vector2(PlayerPos.getX() - 20, PlayerPos.getY() - 10), windowWidth, windowHeight);
-	window.setTextAtPoint(Vector2(20, 10), "*", window.determineColourAtPoint(Vector2(20, 10), BRIGHTWHITE, true));
+
+	bool inGravityFreeArea = (m_MainMap.getColourAtPoint(PlayerPos) == BRIGHTGREEN_BRIGHTGREEN_BG);
+
+	window = m_MainMap.draw_asset(window, Vector2(PlayerPos.getX() - (windowWidth/2), PlayerPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
+	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight/2)), "*", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
 	if (dead)
 	{
 		deadTime+= SYDEDefaults::getDeltaTime();
@@ -47,26 +50,57 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	}
 
 	gameTime += SYDEDefaults::getDeltaTime();
-	if (momentumTime > 0.05f)
+	if (!inGravityFreeArea)
 	{
-		ApplyMomentum();
-		momentumTime -= 0.05f;
+		if (momentumTime > 0.05f)
+		{
+			ApplyMomentum();
+			momentumTime -= 0.05f;
+		}
+		momentumTime += SYDEDefaults::getDeltaTime();
 	}
-	momentumTime += SYDEDefaults::getDeltaTime();
 	//DEBUG
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		PlayerPos = Vector2(252*2, 450);
+		PlayerPos = Vector2(7*2, 768);
 	}
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
 		m_State = LevelSelect_STATE;
 	}
 
-	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1))
+	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1) && !inGravityFreeArea)
 	{
 		m_Momentum = (Vector2(0, -3));
 	}
+
+	if (inGravityFreeArea)
+	{
+		if (SYDEKeyCode::get_key('S')._CompareState(KEY))
+		{
+			if (movementTimeVertical > 0.1f)
+			{
+				AddPositionX(Vector2(0, 1));
+				movementTimeVertical -= 0.1f;
+			}
+			movementTimeVertical += SYDEDefaults::getDeltaTime();
+		}
+		else if (SYDEKeyCode::get_key('W')._CompareState(KEY))
+		{
+			if (movementTimeVertical > 0.1f)
+			{
+				AddPositionX(Vector2(0, -1));
+				movementTimeVertical -= 0.1f;
+			}
+			movementTimeVertical += SYDEDefaults::getDeltaTime();
+		}
+		else
+		{
+			movementTimeVertical = 0.1f;
+		}
+	}
+
+
 	if (SYDEKeyCode::get_key('D')._CompareState(KEY))
 	{
 		if (movementTime > 0.05f)
@@ -137,9 +171,10 @@ ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, 
 		exit(NULL);
 	}
 	window.setTextAtPoint(Vector2(0, 1), "SYDE PLATFORMER", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 2), "v1.0.0.0", BRIGHTWHITE);
 
 	window.setTextAtPoint(Vector2(3, 9), "CONTROLS", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(3, 10), "WASD - Move/Chane Map Selection", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(3, 10), "WASD - Move/Change Map Selection", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 11), "ESC - Quit", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 12), "Space - Start/Select", BRIGHTWHITE);
 

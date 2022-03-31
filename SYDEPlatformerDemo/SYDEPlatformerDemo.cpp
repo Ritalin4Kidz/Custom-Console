@@ -10,11 +10,8 @@
 using namespace std;
 using namespace Gdiplus;
 //INITIALIZING VARIABLES
-int windowWidth = 40;
-const int windowHeight = 20;
 const string dir = "BrainFiles\\";
 Settings config("EngineFiles\\Settings\\configSettings.sc");
-ConsoleWindow window(windowHeight);
 //DRAWING SETTINGS
 BackgroundClass bgVars;
 Artwork artVars;
@@ -49,13 +46,14 @@ int main(int argc, char* argv[])
 	}
 	config.volumeControl(0);
 	config.ColourPalette(hOut);
+	ConsoleWindow window(config.getConsoleHeight());
 	srand(time(NULL));
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
 	SYDETIME deltaTime;
 	deltaTime.initialise(std::chrono::high_resolution_clock::now());
 	SYDEGamePlay::initialize_window(hOut, window);
-	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
+	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, config.getConsoleWidth(), config.getConsoleHeight(), artVars);
 	SYDEGamePlay::EnableClicking(hOut);
 
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
@@ -70,7 +68,7 @@ int main(int argc, char* argv[])
 	window.setStartingLine(1);
 	while (true)
 	{
-		window = SYDEGamePlay::play(&m_Platformer, start, hOut, window, windowWidth, windowHeight, deltaTime);
+		window = SYDEGamePlay::play(&m_Platformer, start, hOut, window, config.getConsoleWidth(), config.getConsoleHeight(), deltaTime);
 		window.writeConsoleOptimized();
 	}
 	CONSOLE_CURSOR_INFO cInfo;

@@ -41,6 +41,7 @@ private:
 	bool checkGrounded();
 	bool checkGrounded(ConsoleWindow window);
 	float movementTime = 0;
+	float movementTimeVertical = 0;
 	float momentumTime = 0;
 
 	double gameTime = 0.0f;

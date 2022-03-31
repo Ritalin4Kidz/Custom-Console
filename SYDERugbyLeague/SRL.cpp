@@ -16,6 +16,7 @@ SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 CoachingViewDrawState SRLGame::coachDrawState = CoachingMain_STATE;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
 SeasonConfigState SRLGame::seasCfgState = SelectSeasonTypeState;
+SRLSingleSimulationViewState SRLGame::sinSimViewState = SSV_SummaryViewState;
 bool SRLGame::SeasonStart = false;
 bool SRLGame::SeasonStartCall = false;
 bool SRLGame::NextRoundCall = false;
@@ -778,7 +779,7 @@ void DoExhibitionSwap2Next()
 void DoNextPosSwapStateView()
 {
 	//CHEEKY JERSEY SWAP
-	if (SRLGame::currentState == TeamInDepthViewState)
+	if (SRLGame::currentState == TeamInDepthViewState || SRLGame::currentState == SimulateSingleMatchViewState)
 	{
 		SRLGame::NextRoundCall = true;
 	}
@@ -798,7 +799,7 @@ void DoNextPosSwapStateView()
 
 void DoPrevPosSwapStateView()
 {
-	if (SRLGame::currentState == TeamInDepthViewState)
+	if (SRLGame::currentState == TeamInDepthViewState || SRLGame::currentState == SimulateSingleMatchViewState)
 	{
 		SRLGame::PrevRoundCall = true;
 	}
@@ -1054,6 +1055,16 @@ void SingleSimulationPause()
 void SingleSimulationResume()
 {
 	SRLGame::singleSimulationPaused = false;
+}
+
+void SingleSimulationSummaryView()
+{
+	SRLGame::sinSimViewState = SSV_SummaryViewState;
+}
+
+void SingleSimulationPlayerMatchUpView()
+{
+	SRLGame::sinSimViewState = SSV_PlayerMatchUpViewState;
 }
 
 void GameResultsViewClick()
@@ -1350,12 +1361,16 @@ void SRLGame::initSoundtrackButtons()
 void SRLGame::initSimulationButtons()
 {
 	m_SimulationPause = SYDEClickableButton("||", Vector2(1, 4), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SimulationPause.setHighLight(RED);
 	m_SimulationPause.SetFunc(SingleSimulationPause);
 
 	m_SimulationResume = SYDEClickableButton("|>", Vector2(1, 6), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
-	m_SimulationResume.setHighLight(RED);
 	m_SimulationResume.SetFunc(SingleSimulationResume);
+
+	m_SimulationSummaryView = SYDEClickableButton("SV", Vector2(1, 14), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SimulationSummaryView.SetFunc(SingleSimulationSummaryView);
+
+	m_SimulationPlayerMatchUpView = SYDEClickableButton("PV", Vector2(1, 16), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SimulationPlayerMatchUpView.SetFunc(SingleSimulationPlayerMatchUpView);
 }
 
 void SRLGame::initCoachingButtons()
@@ -3757,6 +3772,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.extraTimeEffect(m_ExtraTime);
 			m_SingleGameManager.addTeamLineupsPlayByPlay();
 			m_SingleGameManager.addStartTimePlay();
+			setUpPlayerMatchUp(0);
 			SimulateSingleMatchCall = false;
 			SRLGame::singleSimulationPaused = false;
 			return window;
@@ -3894,11 +3910,87 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 	}
 	try
 	{
-
-		for (int i = 0; i < (m_LiveGameVector.size()); i++)
+		if (SRLGame::sinSimViewState == SSV_SummaryViewState)
 		{
-			window = m_LiveGameVector[i].draw(window, Vector2(5, ((((i * 5) + 3)) - m_LineResults) + 1));
+			for (int i = 0; i < (m_LiveGameVector.size()); i++)
+			{
+				window = m_LiveGameVector[i].draw(window, Vector2(5, ((((i * 5) + 3)) - m_LineResults) + 1));
+			}
+			if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
+			{
+				if (m_LineResults > 0)
+				{
+					m_LineResults--;
+				}
+			}
+			if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
+			{
+				if (m_LineResults < (m_LiveGameVector.size() * 5))
+				{
+					m_LineResults++;
+				}
+			}
+			else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
+			{
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
+				{
+					if (m_LineResults > 0)
+					{
+						m_LineResults--;
+					}
+					ScrollTickTime = 0;
+				}
+			}
+			else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
+			{
+				ScrollTickTime += SYDEDefaults::getDeltaTime();
+				if (ScrollTickTime >= maxScrollTickTime)
+				{
+					if (m_LineResults < (m_LiveGameVector.size() * 5))
+					{
+						m_LineResults++;
+					}
+					ScrollTickTime = 0;
+				}
+			}
+			else
+			{
+				ScrollTickTime = 0;
+			}
 		}
+		else if (SRLGame::sinSimViewState == SSV_PlayerMatchUpViewState)
+		{
+			if (SRLGame::NextRoundCall)
+			{
+				setUpPlayerMatchUp(1);
+				SRLGame::NextRoundCall = false;
+			}
+			else if (SRLGame::PrevRoundCall)
+			{
+				setUpPlayerMatchUp(-1);
+				SRLGame::PrevRoundCall = false;
+			}
+			else
+			{
+				setUpPlayerMatchUp(0);
+			}
+			window = m_CoachPosSwapPrev.draw_ui(window);
+			window = m_CoachPosSwapNext.draw_ui(window);
+
+			window = m_PlayerAssetHome.draw_asset(window, Vector2(2, 2));
+			window = m_PlayerAssetAway.draw_asset(window, Vector2(29, 2));
+			window.setTextAtPoint(Vector2(6, 15), std::to_string(m_playerMatchUpNumber + 1) +". " + SRLPositionShowcase::getShorterName(m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber].getName()), BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(6, 16), "Attack: " + std::to_string(m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber].getMetres()) + "m, " + std::to_string(m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber].getTries()) + " Tries", BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(6, 17), "Defence: " + std::to_string(m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber].getTackles()) + " Tackles ", BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(6, 18), "General: " + std::to_string(m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber].getPoints()) + " Points, " + std::to_string(m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber].getFantasyPoints()) + " FP", BRIGHTWHITE);
+
+			window.setTextAtPoint(Vector2(33, 15), std::to_string(m_playerMatchUpNumber + 1) + ". " + SRLPositionShowcase::getShorterName(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getName()), BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(33, 16), "Attack: " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getMetres()) + "m, " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getTries()) + " Tries", BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(33, 17), "Defence: " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getTackles()) + " Tackles ", BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(33, 18), "General: " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getPoints()) + " Points, " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getFantasyPoints()) + " FP", BRIGHTWHITE);
+		}
+
 		for (int i = 0; i < windowWidth; i++)
 		{
 			window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
@@ -3908,52 +4000,12 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		}
 		window.setTextAtPoint(Vector2(0, 2), m_SingleGameManager.getHomeTeam().getName() + " " + to_string(m_SingleGameManager.getHomeScore()), BLACK_BRIGHTWHITE_BG);
 		string awayTeamText = to_string(m_SingleGameManager.getAwayScore()) + " " + m_SingleGameManager.getAwayTeam().getName();
-		window.setTextAtPoint(Vector2(60-awayTeamText.length(), 2), awayTeamText, BLACK_BRIGHTWHITE_BG);
+		window.setTextAtPoint(Vector2(60 - awayTeamText.length(), 2), awayTeamText, BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(28, 3), m_SingleGameManager.getTimeString(), BRIGHTWHITE);
 		window = m_SimulationPause.draw_ui(window);
 		window = m_SimulationResume.draw_ui(window);
-		if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEYDOWN))
-		{
-			if (m_LineResults > 0)
-			{
-				m_LineResults--;
-			}
-		}
-		if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEYDOWN))
-		{
-			if (m_LineResults < (m_LiveGameVector.size() * 5))
-			{
-				m_LineResults++;
-			}
-		}
-		else if (SYDEKeyCode::get_key(VK_UP)._CompareState(KEY))
-		{
-			ScrollTickTime += SYDEDefaults::getDeltaTime();
-			if (ScrollTickTime >= maxScrollTickTime)
-			{
-				if (m_LineResults > 0)
-				{
-					m_LineResults--;
-				}
-				ScrollTickTime = 0;
-			}
-		}
-		else if (SYDEKeyCode::get_key(VK_DOWN)._CompareState(KEY))
-		{
-			ScrollTickTime += SYDEDefaults::getDeltaTime();
-			if (ScrollTickTime >= maxScrollTickTime)
-			{
-				if (m_LineResults < (m_LiveGameVector.size() * 5))
-				{
-					m_LineResults++;
-				}
-				ScrollTickTime = 0;
-			}
-		}
-		else
-		{
-			ScrollTickTime = 0;
-		}
+		window = m_SimulationSummaryView.draw_ui(window);
+		window = m_SimulationPlayerMatchUpView.draw_ui(window);
 
 		bool continuePlay = finals || m_ExtraTime;
 		if (m_TimePassedSimulation < m_GameSimulationDelay)
@@ -4557,7 +4609,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.5.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.6.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -7379,6 +7431,43 @@ void SRLGame::setUpPlayer()
 	m_PrimaryColourBtn.setColour(m_PlayerView.getPrimary());
 	m_SecondaryColourBtn.setColour(m_PlayerView.getSecondary());
 	m_TertiaryColourBtn.setColour(m_PlayerView.getTertiary());
+}
+void SRLGame::setUpPlayerMatchUp(int nextNumber)
+{
+	m_playerMatchUpNumber += nextNumber;
+	if (m_playerMatchUpNumber >= 17)
+	{
+		m_playerMatchUpNumber = 0;
+	}
+	if (m_playerMatchUpNumber < 0)
+	{
+		m_playerMatchUpNumber = 16;
+	}
+	//HOME TEAM
+	SRLPlayer tempPlayerHome = m_SingleGameManager.getHomeTeam().getPlayers()[m_playerMatchUpNumber];
+	string PlayerBmpHome = "EngineFiles\\PlayerFeatures\\playerstyle" + to_string(tempPlayerHome.getStyleType()) + ".bmp";
+	wstring wPlayerBmpHome = wstring(PlayerBmpHome.begin(), PlayerBmpHome.end());
+	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
+	m_PlayerAssetHome = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wPlayerBmpHome.c_str(), 15, 15));
+	m_PlayerAssetHome.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	m_PlayerAssetHome.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	m_PlayerAssetHome.changeAllInstancesOfColour(BLACK_WHITE_BG, tempPlayerHome.getPrimary());
+	m_PlayerAssetHome.changeAllInstancesOfColour(BLACK, tempPlayerHome.getSecondary());
+	m_PlayerAssetHome.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, tempPlayerHome.getTertiary());
+
+	SRLPlayer tempPlayerAway = m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber];
+	string PlayerBmpAway = "EngineFiles\\PlayerFeatures\\playerstyle" + to_string(tempPlayerAway.getStyleType()) + ".bmp";
+	wstring wPlayerBmpAway = wstring(PlayerBmpAway.begin(), PlayerBmpAway.end());
+	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
+	m_PlayerAssetAway = CustomAsset(30, 15, astVars.get_bmp_as_array((WCHAR*)wPlayerBmpAway.c_str(), 15, 15));
+	m_PlayerAssetAway.changeAllInstancesOfColour(WHITE_WHITE_BG, BLACK_WHITE_BG);
+	m_PlayerAssetAway.changeAllInstancesOfColour(LIGHTGREY_LIGHTGREY_BG, BLACK_LIGHTGREY_BG);
+
+	m_PlayerAssetAway.changeAllInstancesOfColour(BLACK_WHITE_BG, tempPlayerAway.getPrimary());
+	m_PlayerAssetAway.changeAllInstancesOfColour(BLACK, tempPlayerAway.getSecondary());
+	m_PlayerAssetAway.changeAllInstancesOfColour(BLACK_LIGHTGREY_BG, tempPlayerAway.getTertiary());
+
 }
 void SRLGame::setUpTryScorerBets(std::vector<std::string> attackersList, std::string teamname, vector<SRLPlayer> players, bool homeTeam,int offset)
 {

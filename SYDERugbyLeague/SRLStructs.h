@@ -371,7 +371,7 @@ struct SRLPositionShowcase
 	SYDELabel positionNumber = SYDELabel("", Vector2(0), Vector2(0), BLACK, true);
 	SYDELabel playerName = SYDELabel("", Vector2(0), Vector2(0), BLACK, true);
 
-	string getShorterName(string _s);
+	static string getShorterName(string _s);
 
 	Vector2 pos;
 

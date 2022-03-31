@@ -140,6 +140,7 @@ public:
 	void setUpPositionShowcase(SRLPositionShowcaseState _state);
 
 	void setUpPlayer();
+	void setUpPlayerMatchUp(int nextNumber);
 
 	void setUpTryScorerBets(std::vector<std::string> attackersList, std::string teamname, vector<SRLPlayer> players, bool homeTeam, int offset);
 
@@ -169,6 +170,7 @@ public:
 	static CoachingViewDrawState coachDrawState;
 	static SeasonConfigState seasCfgState;
 	static LadderStatsViewState ldsViewState;
+	static SRLSingleSimulationViewState sinSimViewState;
 
 	static SRLSeasonLength seasonLength;
 	SRLSeasonLength baseSeasonLength = Length_NormalSeason;
@@ -623,11 +625,20 @@ private:
 	SRLGameManager m_SingleGameManager;
 	int countSummaries = 0;
 	bool singleMatchDisplayInfoCall = false;
+
+	int m_playerMatchUpNumber = 0;
+
 	vector<GameSummaryText> m_LiveGameVector;
 	float m_TimePassedSimulation = 0;
 	float m_GameSimulationDelay = 0.1f;
 
 	SYDEClickableButton m_SimulationPause = SYDEClickableButton();
 	SYDEClickableButton m_SimulationResume = SYDEClickableButton();
+
+	SYDEClickableButton m_SimulationSummaryView = SYDEClickableButton();
+	SYDEClickableButton m_SimulationPlayerMatchUpView = SYDEClickableButton();
+
+	CustomAsset m_PlayerAssetHome;
+	CustomAsset m_PlayerAssetAway;
 #pragma endregion
 };

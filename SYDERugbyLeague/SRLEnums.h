@@ -161,4 +161,10 @@ enum SRLTeamListViewState
 	TLV_Handling
 };
 
+enum SRLSingleSimulationViewState
+{
+	SSV_SummaryViewState = 0,
+	SSV_PlayerMatchUpViewState
+};
+
 #pragma endregion

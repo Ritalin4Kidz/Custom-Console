@@ -13,9 +13,6 @@ SRL Simulation game made inside the SYDE Framework.
 
 - Look Into Ladder Predictor Possibly
 
-- Player Retirement
-	- See Player Retirement Design Text
-
 - AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
 
 ## ADDED IN 1.1.00
@@ -41,6 +38,9 @@ SRL Simulation game made inside the SYDE Framework.
 - More Options During Simulation
 
 ## Release Notes
+
+### 1.1.6.0 31/03/2022
+- Player match up view in single simulations
 
 ### 1.1.5.0 30/03/2022
 - Player ages & retirement

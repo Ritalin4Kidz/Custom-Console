@@ -31,13 +31,17 @@ SRL Simulation game made inside the SYDE Framework.
 - In Addition, Teams Will Now Have Home Grounds
 
 ### 1.2.0.0 Goals
-- Add Export To Exhibition Matches
-- Show Odds When Clicking On Individual Match
+- Add Export To Exhibition Matches (DONE)
+- Show Odds When Clicking On Individual Match (DONE)
 - Customization For Player Stats
 - Massive Code Refactor + Comments
 - More Options During Simulation
+- Clean up newspaper stories, add a lot more variety
 
 ## Release Notes
+
+### 1.1.6.1 31/03/2022
+- Single Match Simulations Export
 
 ### 1.1.6.0 31/03/2022
 - Player match up view in single simulations

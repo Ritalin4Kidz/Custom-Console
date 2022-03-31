@@ -1,0 +1,220 @@
+----------LINE-UPS----------
+Home Team: Adelaide Destructors
+1: Turni Woolf
+2: Adam Nadaserty
+3: Allie P. Burt
+4: Mike O. Pardi
+5: Xyaye Banks
+6: Jill Johnson
+7: Barbara ti Unaskis
+8: Declan az Hurtan
+9: Lenny Iyzzer
+10: Diana en Castre
+11: Euan Hurt
+12: Arnold Z. West
+13: Daniel Obersta
+14: Reed Dadrio
+15: Andrew Osees
+16: Mark O. Vondera
+17: Addison Crane
+Away Team: Allambie Tradies
+1: Blade I. vo Freast
+2: Pat Waterhouse
+3: Kris le Monare
+4: Ali Hands
+5: Jimmy T.K
+6: Mike Unres
+7: Al S. Yase
+8: Alexander od Treasan
+9: Ron Humm
+10: Alister Nurtersamo
+11: Jeffrey Hill
+12: Damien le Zasdertya
+13: Ometage Oertias
+14: Jarrod B. Lyon
+15: Anthony Ingodio
+16: Barbara B. Oak
+17: Luno le Nimea
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Adelaide Destructors: 0 v Allambie Tradies: 0
+00:17 - Barbara ti Unaskis - Knock On
+00:46 - Jeffrey Hill - TRY - Adelaide Destructors: 0 v Allambie Tradies: 4
+01:53 - Ron Humm - GOAL - Adelaide Destructors: 0 v Allambie Tradies: 6
+04:03 - Daniel Obersta - Stripped Ball Off Jimmy T.K
+04:39 - Barbara ti Unaskis - TRY - Adelaide Destructors: 4 v Allambie Tradies: 6
+05:28 - Xyaye Banks - GOAL - Adelaide Destructors: 6 v Allambie Tradies: 6
+09:07 - Pat Waterhouse - Incorrect Play The Ball
+09:07 - Pat Waterhouse - Penalty
+10:38 - Allie P. Burt - Intercepted Off A Kris le Monare Pass
+10:38 - Allie P. Burt - TRY - Adelaide Destructors: 10 v Allambie Tradies: 6
+11:24 - Xyaye Banks - CONVERSION MISSED
+12:14 - Mike O. Pardi - Offload
+13:15 - Allie P. Burt - Offload
+13:15 - Allie P. Burt - Knock On
+13:43 - Alister Nurtersamo - TRY - Adelaide Destructors: 10 v Allambie Tradies: 10
+14:42 - Ron Humm - GOAL - Adelaide Destructors: 10 v Allambie Tradies: 12
+16:28 - Blade I. vo Freast - Forward Pass
+16:40 - Allambie Tradies Interchanged Players Blade I. vo Freast & Barbara B. Oak
+17:47 - Xyaye Banks - 6th Tackle Changeover
+18:00 - Ometage Oertias - Knock On
+18:53 - Allie P. Burt - TRY - Adelaide Destructors: 14 v Allambie Tradies: 12
+19:25 - Xyaye Banks - GOAL - Adelaide Destructors: 16 v Allambie Tradies: 12
+20:24 - Allambie Tradies Interchanged Players Kris le Monare & Luno le Nimea
+21:23 - Allambie Tradies Interchanged Players Al S. Yase & Jarrod B. Lyon
+21:52 - Pat Waterhouse - Offload
+21:52 - Pat Waterhouse - Knock On
+22:38 - Jeffrey Hill - Intercepted Off A Mike O. Pardi Pass
+23:51 - Alister Nurtersamo - 6th Tackle Changeover
+24:05 - Mike Unres - Intercepted Off A Mike O. Pardi Pass
+25:15 - ------VIDEO REFEREE------
+25:15 - Barbara B. Oak - NO TRY - 20m Restart
+26:01 - Adelaide Destructors Interchanged Players Xyaye Banks & Addison Crane
+26:01 - Allambie Tradies Interchanged Players Ali Hands & Kris le Monare
+27:48 - Alister Nurtersamo - Kick Out On The Full
+28:17 - Euan Hurt - Knock On
+28:44 - Kris le Monare - Offload
+28:58 - Ron Humm - Offload
+28:58 - Ron Humm - Knock On
+30:39 - Adam Nadaserty - 6th Tackle Changeover
+31:04 - Adelaide Destructors Interchanged Players Addison Crane & Mark O. Vondera
+31:42 - Allambie Tradies Interchanged Players Barbara B. Oak & Ali Hands
+32:45 - Alexander od Treasan - Intercepted Off A Turni Woolf Pass
+32:59 - Arnold Z. West - Intercepted Off A Ali Hands Pass
+35:12 - Declan az Hurtan - Intercepted Off A Kris le Monare Pass
+35:23 - Diana en Castre - Over The Sideline
+36:28 - Lenny Iyzzer - Intercepted Off A Jimmy T.K Pass
+37:46 - Arnold Z. West - 6th Tackle Changeover
+38:51 - 20m Restart - Adelaide Destructors
+40:00 - HALF TIME - Adelaide Destructors: 16 v Allambie Tradies: 12
+40:43 - Allambie Tradies Interchanged Players Ometage Oertias & Blade I. vo Freast
+40:43 - Ali Hands - Over The Sideline
+41:16 - Jill Johnson - Knock On
+41:31 - Mark O. Vondera - Penalty
+42:57 - Blade I. vo Freast - Offload
+43:12 - Kris le Monare - 6th Tackle Changeover
+43:56 - Diana en Castre - Offload
+44:23 - 20m Restart - Allambie Tradies
+45:03 - Adelaide Destructors Interchanged Players Euan Hurt & Andrew Osees
+45:03 - Allambie Tradies Interchanged Players Ali Hands & Al S. Yase
+45:19 - Jeffrey Hill - Knock On
+46:23 - Allambie Tradies Interchanged Players Damien le Zasdertya & Anthony Ingodio
+46:37 - Declan az Hurtan - Offload
+46:52 - Turni Woolf - TRY - Adelaide Destructors: 20 v Allambie Tradies: 12
+48:20 - Mike O. Pardi - GOAL - Adelaide Destructors: 22 v Allambie Tradies: 12
+49:31 - Alister Nurtersamo - Stripped Ball Off Mark O. Vondera
+49:42 - Jeffrey Hill - Offload
+49:42 - Jeffrey Hill - Knock On
+51:08 - Declan az Hurtan - Kick Out On The Full
+52:35 - Ron Humm - 6th Tackle Changeover
+53:04 - Adam Nadaserty - Over The Sideline
+54:28 - Pat Waterhouse - 6th Tackle Changeover
+57:09 - Al S. Yase - 6th Tackle Changeover
+57:34 - Jarrod B. Lyon - Penalty
+58:56 - Adam Nadaserty - 6th Tackle Changeover
+60:21 - Barbara ti Unaskis - Forward Pass
+61:01 - Adelaide Destructors Interchanged Players Adam Nadaserty & Euan Hurt
+61:17 - Jeffrey Hill - Forward Pass
+61:44 - Adelaide Destructors Interchanged Players Barbara ti Unaskis & Reed Dadrio
+61:44 - Al S. Yase - Ruck Infringement
+61:44 - Al S. Yase - Penalty
+61:44 - Al S. Yase - SIN BIN
+62:26 - Allie P. Burt - Forward Pass
+63:25 - Andrew Osees - Stripped Ball Off Lenny Iyzzer
+64:06 - Allie P. Burt - Forward Pass
+65:21 - Adelaide Destructors Interchanged Players Andrew Osees & Adam Nadaserty
+65:50 - Reed Dadrio - TRY - Adelaide Destructors: 26 v Allambie Tradies: 12
+66:41 - Mike O. Pardi - GOAL - Adelaide Destructors: 28 v Allambie Tradies: 12
+68:13 - Daniel Obersta - Forward Pass
+69:19 - Daniel Obersta - Stripped Ball Off Jimmy T.K
+70:01 - Adelaide Destructors Interchanged Players Allie P. Burt & Barbara ti Unaskis
+70:40 - Mark O. Vondera - 6th Tackle Changeover
+71:20 - Daniel Obersta - Penalty
+71:48 - SIN BIN RETURN - Al S. Yase
+71:48 - Kris le Monare - Knock On
+73:33 - Lenny Iyzzer - Intercepted Off A Pat Waterhouse Pass
+73:33 - Lenny Iyzzer - TRY - Adelaide Destructors: 32 v Allambie Tradies: 12
+74:09 - Mike O. Pardi - GOAL - Adelaide Destructors: 34 v Allambie Tradies: 12
+75:54 - Mark O. Vondera - Knock On
+76:20 - Adelaide Destructors Interchanged Players Arnold Z. West & Andrew Osees
+76:20 - ------VIDEO REFEREE------
+76:20 - Blade I. vo Freast - TRY - Adelaide Destructors: 34 v Allambie Tradies: 16
+77:06 - Ron Humm - GOAL - Adelaide Destructors: 34 v Allambie Tradies: 18
+80:00 - FULL TIME - Adelaide Destructors: 34 v Allambie Tradies: 18
+                             
+--------PLAYER STATS--------
+Home Team: Adelaide Destructors
+1: Turni Woolf |Time Played: 80:00 |Metres: 47 |Tackles: 6 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 38
+2: Euan Hurt |Time Played: 64:02 |Metres: 8 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+3: Barbara ti Unaskis |Time Played: 71:43 |Metres: 101 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 18
+4: Mike O. Pardi |Time Played: 80:00 |Metres: 17 |Tackles: 6 |Kicks: 2 |Kick Metres: 43 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 30
+5: Mark O. Vondera |Time Played: 48:56 |Metres: 52 |Tackles: 5 |Kicks: 1 |Kick Metres: 50 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+6: Jill Johnson |Time Played: 80:00 |Metres: 16 |Tackles: 12 |Kicks: 2 |Kick Metres: 73 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+7: Reed Dadrio |Time Played: 18:16 |Metres: 12 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 11
+8: Declan az Hurtan |Time Played: 80:00 |Metres: 48 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+9: Lenny Iyzzer |Time Played: 80:00 |Metres: 115 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 80
+10: Diana en Castre |Time Played: 80:00 |Metres: 18 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Adam Nadaserty |Time Played: 75:40 |Metres: 10 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+12: Andrew Osees |Time Played: 23:58 |Metres: 1 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+13: Daniel Obersta |Time Played: 80:00 |Metres: 4 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+14: Allie P. Burt |Time Played: 70:01 |Metres: 141 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 19
+15: Arnold Z. West |Time Played: 76:20 |Metres: 30 |Tackles: 12 |Kicks: 1 |Kick Metres: 22 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+16: Addison Crane |Time Played: 05:03 |Metres: 4 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+17: Xyaye Banks |Time Played: 26:01 |Metres: 21 |Tackles: 0 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 17
+Highlights:                 
+Most Tackles: Diana en Castre: 16
+Most Points: Allie P. Burt: 8
+Most Metres: Allie P. Burt: 141
+Most Errors: Allie P. Burt: 3
+                             
+Away Team: Allambie Tradies
+1: Al S. Yase |Time Played: 46:16 |Metres: 33 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+2: Pat Waterhouse |Time Played: 80:00 |Metres: 45 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+3: Luno le Nimea |Time Played: 59:36 |Metres: 21 |Tackles: 6 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+4: Kris le Monare |Time Played: 74:23 |Metres: 34 |Tackles: 8 |Kicks: 1 |Kick Metres: 41 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+5: Jimmy T.K |Time Played: 80:00 |Metres: 21 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+6: Mike Unres |Time Played: 80:00 |Metres: 89 |Tackles: 4 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 52
+7: Jarrod B. Lyon |Time Played: 58:37 |Metres: 21 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+8: Alexander od Treasan |Time Played: 80:00 |Metres: 8 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+9: Ron Humm |Time Played: 80:00 |Metres: 9 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 17
+10: Alister Nurtersamo |Time Played: 80:00 |Metres: 48 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 28
+11: Jeffrey Hill |Time Played: 80:00 |Metres: 19 |Tackles: 15 |Kicks: 1 |Kick Metres: 70 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 15
+12: Anthony Ingodio |Time Played: 33:37 |Metres: 6 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+13: Blade I. vo Freast |Time Played: 55:57 |Metres: 78 |Tackles: 4 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 24
+14: Ali Hands |Time Played: 39:22 |Metres: 25 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+15: Damien le Zasdertya |Time Played: 46:23 |Metres: 8 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+16: Ometage Oertias |Time Played: 40:43 |Metres: 12 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+17: Barbara B. Oak |Time Played: 15:02 |Metres: 4 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+Highlights:                 
+Most Tackles: Ron Humm: 17
+Most Points: Ron Humm: 6
+Most Metres: Mike Unres: 89
+Most Errors: Jeffrey Hill: 3
+                             
+---------TEAM STATS---------
+Home Team: Adelaide Destructors
+Total Metres: 645
+Total Kick Metres: 225
+Total Errors: 12
+Total Tackles: 127
+Total Tries: 6
+Total Goals: 5
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Allambie Tradies
+Total Metres: 481
+Total Kick Metres: 171
+Total Errors: 10
+Total Tackles: 136
+Total Tries: 3
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Lenny Iyzzer
+2nd (2 Points) -- Mike O. Pardi
+3rd (1 Point) -- Mike Unres
+----------------------------

@@ -4111,6 +4111,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		{
 			window = drawMainMenuTabs(window);
 		}
+		window = m_ExportBtn.draw_ui(window);
 	}
 	return window;
 }
@@ -4609,7 +4610,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.6.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.1.6.1", BRIGHTWHITE);
 	return window;
 }
 
@@ -4994,24 +4995,36 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 		exportConfirmedCall = false;
 		try
 		{
-			if (currentState == ResultsViewState)
+
+			if (currentState == ResultsViewState || currentState == SimulateSingleMatchViewState)
 			{
-				if (m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay.empty())
+				std::vector<std::string> exportVec;
+				std::chrono::system_clock currentTime;
+				std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
+				std::string time = std::ctime(&t);
+				time.resize(time.size() - 1);
+				string fileName;
+				if (isExhibitionMatch)
+				{
+					exportVec = m_SingleGameManager.getPlayByPlay();
+					fileName = "EngineFiles\\SavedGameResults\\" + m_SingleGameManager.getHomeTeam().getName() + "v" + m_SingleGameManager.getAwayTeam().getName() + "_" + time + ".txt";
+				}
+				else
+				{
+					exportVec = m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay;
+					fileName = "EngineFiles\\SavedGameResults\\" + m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam + "v" + m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam + "_" + time + ".txt";
+				}
+
+				if (exportVec.empty())
 				{
 					errorCall = true;
 					errorMessage = "No data to export";
 					return window;
 				}
-
-				std::chrono::system_clock currentTime;
-				std::time_t t = std::chrono::system_clock::to_time_t(currentTime.now());
-				std::string time = std::ctime(&t);
-				time.resize(time.size() - 1);
-				string fileName = "EngineFiles\\SavedGameResults\\" + m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].HomeTeam + "v" + m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].AwayTeam + "_" + time + ".txt";
 				fileName.erase(std::remove(fileName.begin(), fileName.end(), ':'), fileName.end());
 				fileName.erase(std::remove(fileName.begin(), fileName.end(), ' '), fileName.end());
 				std::ofstream output_file(fileName.c_str());
-				for (const auto& e : m_Season.m_Draw.m_Rounds[m_round].m_Games[m_SelectedGame].ResultPlayByPlay) output_file << e << "\n";
+				for (const auto& e : exportVec) output_file << e << "\n";
 			}
 			else if (currentState == SeasonModeState)
 			{
@@ -5240,7 +5253,7 @@ ConsoleWindow SRLGame::ExportPop_UP(ConsoleWindow window, int windowWidth, int w
 			window.setTextAtPoint(Vector2(i, ii), " ", GREEN_GREEN_BG);
 		}
 	}
-	if (currentState == ResultsViewState)
+	if (currentState == ResultsViewState || currentState == SimulateSingleMatchViewState)
 	{
 		window.setTextAtPoint(Vector2(6, 6), "Export Game To Text File?", BRIGHTWHITE_GREEN_BG);
 	}

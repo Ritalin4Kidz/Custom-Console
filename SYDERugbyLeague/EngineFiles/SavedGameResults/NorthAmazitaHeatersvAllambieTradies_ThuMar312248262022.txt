@@ -1,0 +1,232 @@
+----------LINE-UPS----------
+Home Team: North Amazita Heaters
+1: Jr. McDonald
+2: Arnold o. Ayo
+3: Lenny Freit
+4: Farrah Cleary
+5: Barry az Lemoa
+6: Luke Brock
+7: Em I. Britt
+8: Julie J. McDonalson
+9: Kamros T. Lewis
+10: Hormanio Walker
+11: Phoebe Worsent
+12: Xyaye Reynolds
+13: Effi Kimley
+14: Eric vo Cunstas
+15: Erin vo Cunstas
+16: Myles C.D. en Uinas
+17: Homer I. az Seasont
+Away Team: Allambie Tradies
+1: Blade I. vo Freast
+2: Pat Waterhouse
+3: Kris le Monare
+4: Ali Hands
+5: Jimmy T.K
+6: Mike Unres
+7: Al S. Yase
+8: Alexander od Treasan
+9: Ron Humm
+10: Alister Nurtersamo
+11: Jeffrey Hill
+12: Damien le Zasdertya
+13: Ometage Oertias
+14: Jarrod B. Lyon
+15: Anthony Ingodio
+16: Barbara B. Oak
+17: Luno le Nimea
+----------GAME-STAT---------
+Weather: Rain
+----------------------------
+00:00 - KICK OFF - North Amazita Heaters: 0 v Allambie Tradies: 0
+02:47 - Jeffrey Hill - 6th Tackle Changeover
+03:14 - Jeffrey Hill - Intercepted Off A Farrah Cleary Pass
+03:14 - Jeffrey Hill - TRY - North Amazita Heaters: 0 v Allambie Tradies: 4
+04:27 - Ron Humm - CONVERSION MISSED
+06:03 - Kris le Monare - Over The Sideline
+07:04 - ------VIDEO REFEREE------
+07:04 - Jr. McDonald - TRY - North Amazita Heaters: 4 v Allambie Tradies: 4
+07:47 - Phoebe Worsent - GOAL - North Amazita Heaters: 6 v Allambie Tradies: 4
+09:19 - Jr. McDonald - Offload
+09:45 - Luke Brock - Knock On
+10:12 - Blade I. vo Freast - TRY - North Amazita Heaters: 6 v Allambie Tradies: 8
+11:36 - Ron Humm - CONVERSION MISSED
+13:28 - Hormanio Walker - Penalty
+13:40 - Jimmy T.K - Forward Pass
+15:01 - Barry az Lemoa - 6th Tackle Changeover
+15:12 - Mike Unres - Forward Pass
+16:44 - Luke Brock - 6th Tackle Changeover
+17:13 - Damien le Zasdertya - Knock On
+17:54 - Jeffrey Hill - Penalty
+17:54 - Phoebe Worsent - PENALTY GOAL - North Amazita Heaters: 8 v Allambie Tradies: 8
+19:48 - Phoebe Worsent - Forward Pass
+20:29 - Pat Waterhouse - Offload
+20:42 - Allambie Tradies Interchanged Players Jimmy T.K & Anthony Ingodio
+20:42 - Blade I. vo Freast - TRY - North Amazita Heaters: 8 v Allambie Tradies: 12
+22:07 - Ron Humm - CONVERSION MISSED
+23:19 - Barry az Lemoa - Intercepted Off A Alexander od Treasan Pass
+23:52 - Barry az Lemoa - TRY - North Amazita Heaters: 12 v Allambie Tradies: 12
+24:59 - Phoebe Worsent - GOAL - North Amazita Heaters: 14 v Allambie Tradies: 12
+26:04 - North Amazita Heaters Interchanged Players Phoebe Worsent & Eric vo Cunstas
+26:04 - Allambie Tradies Interchanged Players Mike Unres & Luno le Nimea
+27:25 - Lenny Freit - Intercepted Off A Alexander od Treasan Pass
+27:36 - Kamros T. Lewis - Offload
+27:36 - Kamros T. Lewis - Knock On
+28:20 - Kris le Monare - Forward Pass
+29:21 - Luke Brock - Offload
+30:10 - Luke Brock - 6th Tackle Changeover
+31:24 - Allambie Tradies Interchanged Players Jeffrey Hill & Jimmy T.K
+32:51 - Arnold o. Ayo - 6th Tackle Changeover
+33:05 - Xyaye Reynolds - Intercepted Off A Ali Hands Pass
+34:13 - Em I. Britt - Offload
+34:13 - Em I. Britt - Knock On
+35:21 - North Amazita Heaters Interchanged Players Hormanio Walker & Phoebe Worsent
+35:21 - Lenny Freit - Intercepted Off A Jimmy T.K Pass
+35:32 - Xyaye Reynolds - Offload
+35:32 - Xyaye Reynolds - Knock On
+36:01 - Damien le Zasdertya - Offload
+36:01 - Damien le Zasdertya - Knock On
+36:14 - Farrah Cleary - Over The Sideline
+36:32 - Luno le Nimea - Over The Sideline
+36:44 - Allambie Tradies Interchanged Players Ometage Oertias & Jarrod B. Lyon
+37:24 - Barry az Lemoa - Over The Sideline
+38:55 - Anthony Ingodio - 6th Tackle Changeover
+40:00 - HALF TIME - North Amazita Heaters: 14 v Allambie Tradies: 12
+40:27 - Anthony Ingodio - Knock On
+40:44 - North Amazita Heaters Interchanged Players Luke Brock & Erin vo Cunstas
+41:12 - Em I. Britt - Offload
+41:59 - Barry az Lemoa - Offload
+41:59 - Barry az Lemoa - Knock On
+43:04 - Ali Hands - Over The Sideline
+43:20 - Lenny Freit - Offload
+43:20 - Lenny Freit - Knock On
+43:36 - Blade I. vo Freast - Forward Pass
+43:48 - Em I. Britt - Incorrect Play The Ball
+43:48 - Em I. Britt - Penalty
+44:18 - Barry az Lemoa - Penalty
+44:18 - Ron Humm - PENALTY GOAL MISSED
+45:31 - Jarrod B. Lyon - Forward Pass
+46:02 - Alister Nurtersamo - Intercepted Off A Effi Kimley Pass
+46:43 - North Amazita Heaters Interchanged Players Xyaye Reynolds & Myles C.D. en Uinas
+47:13 - Al S. Yase - 6th Tackle Changeover
+48:54 - Jimmy T.K - Knock On
+49:30 - Eric vo Cunstas - Forward Pass
+50:14 - Al S. Yase - Forward Pass
+51:08 - Farrah Cleary - Kick Out On The Full
+51:20 - North Amazita Heaters Interchanged Players Myles C.D. en Uinas & Luke Brock
+51:54 - Lenny Freit - Intercepted Off A Damien le Zasdertya Pass
+52:08 - Farrah Cleary - Knock On
+53:50 - Ali Hands - 6th Tackle Changeover
+54:06 - Barry az Lemoa - Knock On
+54:36 - Ali Hands - Over The Sideline
+55:15 - Farrah Cleary - Offload
+55:43 - Allambie Tradies Interchanged Players Jarrod B. Lyon & Ometage Oertias
+56:12 - Lenny Freit - Forward Pass
+57:39 - Luke Brock - Knock On
+58:07 - Al S. Yase - Forward Pass
+59:35 - Lenny Freit - 6th Tackle Changeover
+60:20 - North Amazita Heaters Interchanged Players Farrah Cleary & Xyaye Reynolds
+61:04 - Allambie Tradies Interchanged Players Anthony Ingodio & Barbara B. Oak
+62:06 - Luke Brock - Offload
+62:06 - Luke Brock - Knock On
+62:23 - Jimmy T.K - Forward Pass
+62:59 - Xyaye Reynolds - Knock On
+63:53 - Luno le Nimea - Knock On
+64:36 - Em I. Britt - TRY - North Amazita Heaters: 18 v Allambie Tradies: 12
+65:17 - Phoebe Worsent - CONVERSION MISSED
+68:10 - Lenny Freit - Intercepted Off A Alexander od Treasan Pass
+68:24 - Em I. Britt - Knock On
+69:42 - Alister Nurtersamo - Offload
+69:56 - Alister Nurtersamo - Forward Pass
+70:42 - Allambie Tradies Interchanged Players Blade I. vo Freast & Mike Unres
+72:48 - Phoebe Worsent - Knock On
+73:00 - Alister Nurtersamo - Knock On
+73:32 - Julie J. McDonalson - Offload
+74:25 - Arnold o. Ayo - Knock On
+74:54 - Mike Unres - Knock On
+75:21 - North Amazita Heaters Interchanged Players Kamros T. Lewis & Hormanio Walker
+75:21 - Kris le Monare - Penalty
+76:08 - Erin vo Cunstas - Offload
+76:08 - Erin vo Cunstas - Knock On
+76:23 - North Amazita Heaters Interchanged Players Arnold o. Ayo & Farrah Cleary
+76:35 - Kris le Monare - Forward Pass
+77:07 - ------VIDEO REFEREE------
+77:07 - Xyaye Reynolds - NO TRY - Double Movement
+77:07 - Xyaye Reynolds - Penalty
+80:00 - FULL TIME - North Amazita Heaters: 18 v Allambie Tradies: 12
+                             
+--------PLAYER STATS--------
+Home Team: North Amazita Heaters
+1: Jr. McDonald |Time Played: 80:00 |Metres: 24 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 25
+2: Farrah Cleary |Time Played: 63:57 |Metres: 57 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+3: Lenny Freit |Time Played: 80:00 |Metres: 61 |Tackles: 8 |Kicks: 1 |Kick Metres: 43 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+4: Xyaye Reynolds |Time Played: 66:23 |Metres: 57 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+5: Barry az Lemoa |Time Played: 80:00 |Metres: 150 |Tackles: 6 |Kicks: 2 |Kick Metres: 64 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 19
+6: Erin vo Cunstas |Time Played: 39:16 |Metres: 25 |Tackles: 1 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Em I. Britt |Time Played: 80:00 |Metres: 62 |Tackles: 10 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+8: Julie J. McDonalson |Time Played: 80:00 |Metres: 10 |Tackles: 15 |Kicks: 1 |Kick Metres: 44 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+9: Hormanio Walker |Time Played: 40:00 |Metres: 2 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+10: Phoebe Worsent |Time Played: 70:43 |Metres: 55 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 12
+11: Eric vo Cunstas |Time Played: 53:56 |Metres: 4 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+12: Luke Brock |Time Played: 69:24 |Metres: 84 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+13: Effi Kimley |Time Played: 80:00 |Metres: 4 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+14: Kamros T. Lewis |Time Played: 75:21 |Metres: 14 |Tackles: 12 |Kicks: 1 |Kick Metres: 16 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+15: Myles C.D. en Uinas |Time Played: 04:37 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Arnold o. Ayo |Time Played: 76:23 |Metres: 46 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+17: Homer I. az Seasont |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Julie J. McDonalson: 15
+Most Points: Phoebe Worsent: 6
+Most Metres: Barry az Lemoa: 150
+Most Errors: Farrah Cleary: 3
+                             
+Away Team: Allambie Tradies
+1: Mike Unres |Time Played: 35:22 |Metres: 13 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+2: Pat Waterhouse |Time Played: 80:00 |Metres: 22 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+3: Kris le Monare |Time Played: 80:00 |Metres: 40 |Tackles: 10 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+4: Ali Hands |Time Played: 80:00 |Metres: 53 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+5: Barbara B. Oak |Time Played: 18:56 |Metres: 8 |Tackles: 4 |Kicks: 1 |Kick Metres: 49 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+6: Luno le Nimea |Time Played: 53:56 |Metres: 45 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Al S. Yase |Time Played: 80:00 |Metres: 62 |Tackles: 8 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+8: Alexander od Treasan |Time Played: 80:00 |Metres: 29 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 33
+9: Ron Humm |Time Played: 80:00 |Metres: 2 |Tackles: 13 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+10: Alister Nurtersamo |Time Played: 80:00 |Metres: 31 |Tackles: 15 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+11: Jimmy T.K |Time Played: 69:18 |Metres: 26 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+12: Damien le Zasdertya |Time Played: 80:00 |Metres: 11 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+13: Ometage Oertias |Time Played: 61:01 |Metres: 0 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+14: Jarrod B. Lyon |Time Played: 18:59 |Metres: 31 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+15: Jeffrey Hill |Time Played: 31:24 |Metres: 30 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 16
+16: Anthony Ingodio |Time Played: 40:22 |Metres: 50 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+17: Blade I. vo Freast |Time Played: 70:42 |Metres: 169 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 46
+Highlights:                 
+Most Tackles: Alister Nurtersamo: 15
+Most Points: Blade I. vo Freast: 8
+Most Metres: Blade I. vo Freast: 169
+Most Errors: Kris le Monare: 3
+                             
+---------TEAM STATS---------
+Home Team: North Amazita Heaters
+Total Metres: 655
+Total Kick Metres: 212
+Total Errors: 21
+Total Tackles: 125
+Total Tries: 3
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Allambie Tradies
+Total Metres: 622
+Total Kick Metres: 136
+Total Errors: 21
+Total Tackles: 137
+Total Tries: 3
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 7/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Julie J. McDonalson
+2nd (2 Points) -- Jr. McDonald
+3rd (1 Point) -- Barbara B. Oak
+----------------------------

@@ -60,7 +60,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 		momentumTime += SYDEDefaults::getDeltaTime();
 	}
 	//DEBUG
-	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
+	if (SYDEKeyCode::get_key('E')._CompareState(KEYDOWN))
 	{
 		PlayerPos = cheatPos;
 	}
@@ -178,7 +178,7 @@ ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, 
 	{
 		exit(NULL);
 	}
-	window.setTextAtPoint(Vector2(0, 1), "SYDE PLATFORMER", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 1), "ASTERIX MAN", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 2), "v1.0.0.0", BRIGHTWHITE);
 
 	window.setTextAtPoint(Vector2(3, 9), "CONTROLS", BRIGHTWHITE);

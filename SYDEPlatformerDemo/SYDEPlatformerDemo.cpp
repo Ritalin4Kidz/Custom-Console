@@ -70,8 +70,8 @@ int main(int argc, char* argv[])
 {
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	SYDEPlatformer m_Platformer;
-	LPCWSTR title = L"SYDE";
-	SYDECredits::_GAMETITLE = "SYDE";
+	LPCWSTR title = L"Asterix Man";
+	SYDECredits::_GAMETITLE = "Asterix Man";
 	SYDECredits::_ORGANISATION = "Callum Hands \nIn Association With Freebee Games";
 	SetConsoleTitleW(title);
 	//ARGUMENT SETTINGS
@@ -103,9 +103,16 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getDownButton().at(0)));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getLeftButton().at(0)));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getRightButton().at(0)));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('T'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('T'));
+
+	std::vector<std::string> v = config.ReturnCheats();
+
+	if (std::find(v.begin(), v.end(), "DEBUGCONTROLS") != v.end())
+	{
+		SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
+		SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('E'));
+	}
 
 	SYDEGamePlay::showFPS(true);
 

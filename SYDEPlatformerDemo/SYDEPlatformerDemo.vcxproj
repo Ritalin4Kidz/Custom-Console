@@ -145,11 +145,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SYDEPlatformerConfigs.cpp" />
     <ClCompile Include="SYDEPlatformer.cpp" />
     <ClCompile Include="SYDEPlatformerDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SYDEPlatformerConfigs.h" />
     <ClInclude Include="SYDEPlatformer.h" />
   </ItemGroup>
   <ItemGroup>

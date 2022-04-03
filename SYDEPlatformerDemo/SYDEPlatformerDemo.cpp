@@ -1,14 +1,17 @@
 #include "pch.h"
 
 #include "SYDEPlatformer.h"
+#include "SYDEPlatformerConfigs.h"
 #include "SYDEstdafx.h"
 #include "SYDEScreenshot.h"
 #include "SYDEEngineDemos.h"
 #include "SYDEEngineAssets.h"
 #include "SYDEMainDemos.h"
+#include "json.hpp"
 
 using namespace std;
 using namespace Gdiplus;
+using json = nlohmann::json;
 //INITIALIZING VARIABLES
 const string dir = "BrainFiles\\";
 Settings config("EngineFiles\\Settings\\configSettings.sc");
@@ -29,6 +32,38 @@ COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 using namespace std;
+
+std::string getConfigFrom(string key, string defaultKey)
+{
+	try
+	{
+		std::ifstream ifs{ "EngineFiles\\Settings\\controls.json" };
+		json save_file = json::parse(ifs);
+		if (save_file.contains(key))
+		{
+			return save_file[key];
+		}
+		return defaultKey;
+	}
+	catch(exception ex)
+	{
+		return defaultKey;
+	}
+}
+
+void saveSettings()
+{
+
+	json save_file;
+	//PlayerStats
+	save_file["jump"] = SYDEPlatformerControls::getJumpButton();
+	save_file["left"] = SYDEPlatformerControls::getLeftButton();
+	save_file["right"] = SYDEPlatformerControls::getRightButton();
+	save_file["down"] = SYDEPlatformerControls::getDownButton();
+	string filePath = string("EngineFiles\\Settings\\controls.json");
+	std::ofstream ofs(filePath);
+	ofs << save_file;
+}
 
 // MAIN FUNCTION
 int main(int argc, char* argv[])
@@ -56,12 +91,20 @@ int main(int argc, char* argv[])
 	SYDEGamePlay::activate_bySplashscreen(astVars.get_electronic_chime_file_path(), start, hOut, window, config.getConsoleWidth(), config.getConsoleHeight(), artVars);
 	SYDEGamePlay::EnableClicking(hOut);
 
+	SYDEPlatformerControls::setJumpButton(getConfigFrom("jump", SYDEPlatformerControls::getJumpButton()));
+	SYDEPlatformerControls::setLeftButton(getConfigFrom("left", SYDEPlatformerControls::getLeftButton()));
+	SYDEPlatformerControls::setRightButton(getConfigFrom("right", SYDEPlatformerControls::getRightButton()));
+	SYDEPlatformerControls::setDownButton(getConfigFrom("down", SYDEPlatformerControls::getDownButton()));
+
+	saveSettings();
+
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_ESCAPE));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getJumpButton().at(0)));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getDownButton().at(0)));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getLeftButton().at(0)));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getRightButton().at(0)));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
-	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 
 	SYDEGamePlay::showFPS(true);
 

@@ -104,6 +104,7 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getLeftButton().at(0)));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(SYDEPlatformerControls::getRightButton().at(0)));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('Q'));
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('T'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
 
 	SYDEGamePlay::showFPS(true);

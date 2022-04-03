@@ -68,6 +68,10 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	{
 		cheatPos = PlayerPos;
 	}
+	if (SYDEKeyCode::get_key('T')._CompareState(KEY))
+	{
+		window.setTextAtPoint(Vector2(0, 1), timeStringConvert(), BRIGHTGREEN);
+	}
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
 		m_State = LevelSelect_STATE;

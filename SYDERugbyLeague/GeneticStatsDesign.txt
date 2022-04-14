@@ -10,5 +10,6 @@ this stat is currently used for conversions and field goals, and cannot be modif
 we could add stuff like:
  - Innovation & Execution - if high innovation, a good chance they pull a rabbit out of the hat when they have the ball & when high execution a good chance it'll pay off
  - Cunningness - Higher chance of success with video ref
+ - Discipline - Chances of giving away penalties that lead to sin bins + send offs/injuries
 
  stuff like that, would make the game more interesting imo, could easily put an option to toggle it as well

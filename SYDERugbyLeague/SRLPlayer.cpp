@@ -33,6 +33,7 @@ SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int def
 	tertiaryColour = tert;
 	playerTypeInt = playerStyle;
 	m_Age = (rand() % 20) + 17;
+	generateHiddenStats();
 }
 
 SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, int age, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle)
@@ -50,6 +51,7 @@ SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int def
 	tertiaryColour = tert;
 	playerTypeInt = playerStyle;
 	m_Age = age;
+	generateHiddenStats();
 }
 
 SRLPlayer::~SRLPlayer()
@@ -87,6 +89,13 @@ void SRLPlayer::nextTertiary()
 		colour = 17;
 	}
 	tertiaryColour = static_cast<ColourClass>(colour);
+}
+
+void SRLPlayer::generateHiddenStats()
+{
+	m_CunningStat = (rand() % 80) + 20;
+	m_InnovationStat = (rand() % 80) + 20;
+	m_ExecutionStat = (rand() % 80) + 20;
 }
 
 void SRLPlayer::addAttack(int atk)
@@ -150,6 +159,30 @@ void SRLPlayer::loadPlayer(string path)
 	{
 		this->m_PlayerStatus = PlayerStatus_ACTIVE;
 	}
+	if (save_file.contains("innovation"))
+	{
+		this->m_InnovationStat = save_file["innovation"];
+	}
+	else
+	{
+		m_InnovationStat = (rand() % 80) + 20;
+	}
+	if (save_file.contains("execution"))
+	{
+		this->m_ExecutionStat = save_file["execution"];
+	}
+	else
+	{
+		m_ExecutionStat = (rand() % 80) + 20;
+	}
+	if (save_file.contains("cunning"))
+	{
+		this->m_CunningStat = save_file["cunning"];
+	}
+	else
+	{
+		m_CunningStat = (rand() % 80) + 20;
+	}
 
 }
 
@@ -171,6 +204,9 @@ void SRLPlayer::savePlayer()
 	save_file["tertiary"] = static_cast<int>(tertiaryColour);
 	save_file["age"] = m_Age;
 	save_file["status"] = static_cast<int>(m_PlayerStatus);
+	save_file["innovation"] = m_InnovationStat;
+	save_file["execution"] = m_ExecutionStat;
+	save_file["cunning"] = m_CunningStat;
 	if (id == 0)
 	{
 		id++;

@@ -58,6 +58,11 @@ public:
 	void addSummary(string a_Play, SRLPlayer player);
 	void addSummaryDirect(string a_Play);
 
+	void addScoreUniversal(int points);
+	void setPositionUniversal(int metresFromGoalLine);
+	void addPositionUniversal(int metres);
+
+
 	string getTimeString();
 
 	void addMinute();
@@ -95,7 +100,12 @@ public:
 	void injuriesEffect(bool isOn) { m_Injuries = isOn; }
 	void sinBinsEffect(bool isOn) { m_sendOffs = isOn; }
 
+	bool doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam* defendingTeam, SRLTeam* attackingTeam);
+
+
 	void extraTimeEffect(bool isOn) { m_ExtraTime = isOn; }
+
+	bool rollBasicChance(int baseChance, int failureChance);
 
 	SRLPlayer getRandomSafe(SRLTeam team);
 
@@ -103,11 +113,14 @@ public:
 	int checkKick(SRLPlayer defender, SRLPlayer attacker);
 	int doKick(SRLPlayer defender, SRLPlayer attacker);
 	bool doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
+	bool doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacker, SRLTeam* defendingTeam, SRLTeam* attackingTeam);
 	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
 	int checkOffload(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
+
+	bool addTry(SRLTeam* m_AttackingTeam, SRLTeam* m_DefendingTeam, SRLPlayer attacker);
 
 	bool doInjury(SRLPlayer defender, SRLPlayer attacker, bool homeTeam);
 	bool getPlayerWasSentInGame() { return m_PlayerHasBeenSent; }
@@ -146,6 +159,7 @@ private:
 	const int professionalFoulChance = 3;
 	const float playerSentDivision = 0.8f;
 	const int offloadChance = 30;
+	const int videoRefAutoSucceedChance = 50;
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;

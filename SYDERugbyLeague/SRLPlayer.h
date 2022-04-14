@@ -30,6 +30,7 @@ public:
 	void nextSecondary();
 	void nextTertiary();
 
+	void generateHiddenStats();
 
 	bool getPlayerSent() { return m_Sent || m_Sinbin; }
 	void setPlayerOff(bool sendOff) { if (sendOff) { m_Sent = true; m_SendOffs++; } else { m_Sinbin = true; m_SinBins++; } }
@@ -152,6 +153,11 @@ public:
 	string getTeamname() { return m_Teamname; }
 	void setTeamname(string team) { m_Teamname = team; }
 
+	//HIDDEN STATS
+	int getInnovationStat() { return m_InnovationStat; }
+	int getExecutionStat() { return m_ExecutionStat; }
+	int getCunningStat() { return m_CunningStat; }
+
 private:
 
 	string m_Teamname;
@@ -215,4 +221,13 @@ private:
 	ColourClass primaryColour = WHITE;
 	ColourClass secondaryColour = WHITE;
 	ColourClass tertiaryColour = WHITE;
+
+
+	//PRIVATE STATS
+	//THESE STATS CAN ONLY BE PUT INTO PLAY BY THE PLAYMAKERS (6 & 7)
+	int m_InnovationStat = 0;
+	int m_ExecutionStat = 0;
+
+	//UNIVERSAL
+	int m_CunningStat = 0;
 };

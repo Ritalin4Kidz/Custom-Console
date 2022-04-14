@@ -1,0 +1,212 @@
+----------LINE-UPS----------
+Home Team: Paddington Bombers
+1: Jimmy od Asdwere
+2: Nico Curran
+3: Uniko Quake
+4: Kirk az Freastiy
+5: Cliffe o. Umi
+6: Jeffrey Jacklin
+7: Kurt Indigo
+8: Thomas en Uinas
+9: Myles Ramm
+10: Asher Dace
+11: Kim Kay Maynard
+12: Albert vo Burrea
+13: Karli Denoa
+14: Jr. Q. Chappell
+15: Anthony Pearce
+16: Drodan Hannington
+17: Oliver Jackington
+Away Team: Parramatta Potatoes
+1: Walt N. Nu
+2: Ben Forte
+3: Reed Kelly
+4: Nathan o. Xae
+5: Jakk L. Hubbard
+6: Louis Sockert
+7: Uniko Lase
+8: Jackson K. cu Berat
+9: Imm Lynn
+10: Myles Johnson
+11: Randy Watne
+12: Earl Jace
+13: Nita Etten
+14: Zavvi de Arnolio
+15: Freya ze Aert
+16: Christian le Beastea
+17: Dirk Cabatre
+----------GAME-STAT---------
+Weather: Cloudy
+----------------------------
+00:00 - KICK OFF - Paddington Bombers: 0 v Parramatta Potatoes: 0
+00:13 - Kim Kay Maynard - Over The Sideline
+00:39 - Louis Sockert - TRY - Paddington Bombers: 0 v Parramatta Potatoes: 4
+01:40 - Nita Etten - GOAL - Paddington Bombers: 0 v Parramatta Potatoes: 6
+02:27 - Kim Kay Maynard - Ruck Infringement
+02:57 - Louis Sockert - Over The Sideline
+03:20 - Uniko Quake - Over The Sideline
+03:57 - Louis Sockert - Chip Kick
+04:45 - Ben Forte - 6th Tackle Changeover
+06:47 - Nathan o. Xae - Knock On
+08:47 - Ben Forte - Over The Sideline
+09:55 - Nathan o. Xae - Penalty
+10:27 - Kurt Indigo - TRY - Paddington Bombers: 4 v Parramatta Potatoes: 6
+11:16 - Cliffe o. Umi - CONVERSION MISSED
+13:23 - 20m Restart - Parramatta Potatoes
+13:36 - Myles Ramm - Penalty
+14:39 - Earl Jace - Over The Sideline
+15:59 - Nita Etten - Intercepted Off A Thomas en Uinas Pass
+16:10 - Louis Sockert - Chip Kick
+16:21 - Jimmy od Asdwere - Penalty
+16:21 - Nita Etten - PENALTY GOAL - Paddington Bombers: 4 v Parramatta Potatoes: 8
+17:31 - Cliffe o. Umi - Ruck Infringement
+17:43 - Louis Sockert - Chip Kick
+18:45 - Jakk L. Hubbard - Offload
+18:45 - Jakk L. Hubbard - Knock On
+19:15 - Jeffrey Jacklin - Offload
+20:30 - Myles Johnson - Intercepted Off A Thomas en Uinas Pass
+20:41 - Parramatta Potatoes Interchanged Players Randy Watne & Christian le Beastea
+21:40 - Paddington Bombers Interchanged Players Karli Denoa & Anthony Pearce
+22:34 - Kurt Indigo - Chip Kick
+25:12 - Nita Etten - Intercepted Off A Anthony Pearce Pass
+25:26 - Ben Forte - Over The Sideline
+25:42 - Kurt Indigo - Knock On
+25:55 - Louis Sockert - Chip Kick
+26:47 - Jakk L. Hubbard - TRY - Paddington Bombers: 4 v Parramatta Potatoes: 12
+27:29 - Nita Etten - GOAL - Paddington Bombers: 4 v Parramatta Potatoes: 14
+28:41 - Nathan o. Xae - Forward Pass
+29:47 - Albert vo Burrea - Incorrect Play The Ball
+29:47 - Albert vo Burrea - Penalty
+30:02 - Paddington Bombers Interchanged Players Anthony Pearce & Karli Denoa
+30:02 - Parramatta Potatoes Interchanged Players Uniko Lase & Zavvi de Arnolio
+31:43 - Paddington Bombers Interchanged Players Cliffe o. Umi & Anthony Pearce
+31:43 - Zavvi de Arnolio - Ruck Infringement
+32:47 - Anthony Pearce - Offload
+32:47 - Anthony Pearce - Knock On
+34:27 - Ben Forte - Over The Sideline
+40:00 - HALF TIME - Paddington Bombers: 4 v Parramatta Potatoes: 14
+40:46 - Louis Sockert - Chip Kick
+41:14 - Louis Sockert - Knock On
+41:41 - Paddington Bombers Interchanged Players Jimmy od Asdwere & Jr. Q. Chappell
+42:52 - Kurt Indigo - 6th Tackle Changeover
+43:28 - Earl Jace - Knock On
+44:13 - Myles Johnson - Intercepted Off A Jr. Q. Chappell Pass
+44:59 - Jakk L. Hubbard - Knock On
+46:01 - Paddington Bombers Interchanged Players Kim Kay Maynard & Cliffe o. Umi
+46:14 - Jr. Q. Chappell - Over The Sideline
+46:40 - Paddington Bombers Interchanged Players Uniko Quake & Kim Kay Maynard
+46:40 - Parramatta Potatoes Interchanged Players Nathan o. Xae & Uniko Lase
+46:54 - Nico Curran - Penalty
+49:55 - Uniko Lase - Over The Sideline
+51:20 - Jeffrey Jacklin - 6th Tackle Changeover
+52:52 - Christian le Beastea - 6th Tackle Changeover
+54:18 - Christian le Beastea - Over The Sideline
+56:23 - Paddington Bombers Interchanged Players Kirk az Freastiy & Oliver Jackington
+57:45 - Oliver Jackington - Knock On
+58:37 - Reed Kelly - Offload
+59:06 - Albert vo Burrea - Intercepted Off A Zavvi de Arnolio Pass
+59:19 - Christian le Beastea - Intercepted Off A Anthony Pearce Pass
+60:23 - Paddington Bombers Interchanged Players Thomas en Uinas & Jimmy od Asdwere
+60:37 - Nita Etten - 6th Tackle Changeover
+61:10 - Nico Curran - Forward Pass
+61:23 - Oliver Jackington - Stripped Ball Off Ben Forte
+62:24 - Kurt Indigo - Forward Pass
+62:39 - Louis Sockert - Chip Kick
+63:07 - Walt N. Nu - Over The Sideline
+64:24 - Kurt Indigo - Forward Pass
+64:38 - Reed Kelly - Over The Sideline
+66:11 - Oliver Jackington - Penalty
+67:48 - Jackson K. cu Berat - 6th Tackle Changeover
+68:22 - Myles Ramm - Over The Sideline
+68:36 - Louis Sockert - Incorrect Play The Ball
+68:36 - Louis Sockert - Penalty
+69:24 - Anthony Pearce - Offload
+69:24 - Anthony Pearce - Knock On
+71:01 - Louis Sockert - 6th Tackle Changeover
+71:31 - Nita Etten - Intercepted Off A Kim Kay Maynard Pass
+72:05 - Karli Denoa - Stripped Ball Off Imm Lynn
+73:59 - Nico Curran - Intercepted Off A Ben Forte Pass
+75:11 - Anthony Pearce - 6th Tackle Changeover
+75:42 - Parramatta Potatoes Interchanged Players Ben Forte & Freya ze Aert
+77:34 - Myles Ramm - Offload
+77:34 - Myles Ramm - Knock On
+77:46 - Zavvi de Arnolio - Chip Kick
+78:13 - Louis Sockert - Knock On
+78:42 - Asher Dace - Over The Sideline
+80:00 - FULL TIME - Paddington Bombers: 4 v Parramatta Potatoes: 14
+                             
+--------PLAYER STATS--------
+Home Team: Paddington Bombers
+1: Jr. Q. Chappell |Time Played: 38:19 |Metres: 12 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+2: Nico Curran |Time Played: 80:00 |Metres: 80 |Tackles: 12 |Kicks: 2 |Kick Metres: 78 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+3: Kim Kay Maynard |Time Played: 79:21 |Metres: 20 |Tackles: 12 |Kicks: 2 |Kick Metres: 49 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+4: Oliver Jackington |Time Played: 23:37 |Metres: 14 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+5: Anthony Pearce |Time Played: 56:39 |Metres: 10 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+6: Jeffrey Jacklin |Time Played: 80:00 |Metres: 17 |Tackles: 5 |Kicks: 1 |Kick Metres: 49 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 28
+7: Kurt Indigo |Time Played: 80:00 |Metres: 33 |Tackles: 11 |Kicks: 3 |Kick Metres: 114 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 17
+8: Jimmy od Asdwere |Time Played: 61:18 |Metres: 3 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+9: Myles Ramm |Time Played: 80:00 |Metres: 5 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+10: Asher Dace |Time Played: 80:00 |Metres: 9 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+11: Cliffe o. Umi |Time Played: 65:42 |Metres: 45 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+12: Albert vo Burrea |Time Played: 80:00 |Metres: 39 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+13: Karli Denoa |Time Played: 71:38 |Metres: 13 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+14: Thomas en Uinas |Time Played: 60:23 |Metres: 6 |Tackles: 10 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+15: Uniko Quake |Time Played: 46:40 |Metres: 26 |Tackles: 6 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+16: Drodan Hannington |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Kirk az Freastiy |Time Played: 56:23 |Metres: 89 |Tackles: 2 |Kicks: 1 |Kick Metres: 66 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 58
+Highlights:                 
+Most Tackles: Albert vo Burrea: 17
+Most Points: Kurt Indigo: 4
+Most Metres: Kirk az Freastiy: 89
+Most Errors: Kurt Indigo: 3
+                             
+Away Team: Parramatta Potatoes
+1: Walt N. Nu |Time Played: 80:00 |Metres: 13 |Tackles: 8 |Kicks: 3 |Kick Metres: 78 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+2: Freya ze Aert |Time Played: 04:18 |Metres: 8 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+3: Reed Kelly |Time Played: 80:00 |Metres: 29 |Tackles: 10 |Kicks: 1 |Kick Metres: 37 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+4: Uniko Lase |Time Played: 63:22 |Metres: 124 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 30
+5: Jakk L. Hubbard |Time Played: 80:00 |Metres: 95 |Tackles: 6 |Kicks: 1 |Kick Metres: 62 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 24
+6: Louis Sockert |Time Played: 80:00 |Metres: 69 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 10
+7: Zavvi de Arnolio |Time Played: 49:58 |Metres: 28 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+8: Jackson K. cu Berat |Time Played: 80:00 |Metres: 3 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+9: Imm Lynn |Time Played: 80:00 |Metres: 12 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+10: Myles Johnson |Time Played: 80:00 |Metres: 2 |Tackles: 24 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+11: Christian le Beastea |Time Played: 59:19 |Metres: 48 |Tackles: 13 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+12: Earl Jace |Time Played: 80:00 |Metres: 14 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+13: Nita Etten |Time Played: 80:00 |Metres: 11 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 30
+14: Nathan o. Xae |Time Played: 46:40 |Metres: 115 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+15: Ben Forte |Time Played: 75:42 |Metres: 22 |Tackles: 4 |Kicks: 2 |Kick Metres: 47 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+16: Randy Watne |Time Played: 20:41 |Metres: 0 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+17: Dirk Cabatre |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Myles Johnson: 24
+Most Points: Nita Etten: 6
+Most Metres: Uniko Lase: 124
+Most Errors: Louis Sockert: 3
+                             
+---------TEAM STATS---------
+Home Team: Paddington Bombers
+Total Metres: 421
+Total Kick Metres: 391
+Total Errors: 13
+Total Tackles: 149
+Total Tries: 1
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Parramatta Potatoes
+Total Metres: 593
+Total Kick Metres: 238
+Total Errors: 16
+Total Tackles: 151
+Total Tries: 2
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 4/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Nita Etten
+2nd (2 Points) -- Jeffrey Jacklin
+3rd (1 Point) -- Jakk L. Hubbard
+----------------------------

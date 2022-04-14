@@ -158,6 +158,9 @@ public:
 	int getExecutionStat() { return m_ExecutionStat; }
 	int getCunningStat() { return m_CunningStat; }
 
+	void setIsHalfBack(bool value) { m_HalfbackPos = value; }
+	bool isHalfBack() { return m_HalfbackPos; }
+
 private:
 
 	string m_Teamname;
@@ -222,6 +225,7 @@ private:
 	ColourClass secondaryColour = WHITE;
 	ColourClass tertiaryColour = WHITE;
 
+	bool m_HalfbackPos = false;
 
 	//PRIVATE STATS
 	//THESE STATS CAN ONLY BE PUT INTO PLAY BY THE PLAYMAKERS (6 & 7)

@@ -40,6 +40,11 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
+### 1.1.6.2 14/04/2022
+- some more Player hidden stats
+- "Innovations", halfbacks can now have special plays added on to their plays such as chip and chases (more in progress)
+- code refactors no one cares about
+
 ### 1.1.6.1 31/03/2022
 - Single Match Simulations Export
 

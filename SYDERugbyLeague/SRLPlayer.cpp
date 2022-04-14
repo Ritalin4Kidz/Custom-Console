@@ -16,6 +16,7 @@ SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int def
 	m_BaseHandling = handling;
 	m_Age = age;
 	generateFeatures();
+	generateHiddenStats();
 }
 
 SRLPlayer::SRLPlayer(string name, string country, int speed, int attack, int defence, int kicking, int goalKicking, int handling, ColourClass prim, ColourClass seco, ColourClass tert, int playerStyle)

@@ -155,7 +155,12 @@ SRLPlayer SRLTeam::getRandomPlayerAttacker()
 	else
 	{
 		int player = rand() % 7;
-		return m_TeamList[player];
+		SRLPlayer temp = m_TeamList[player];
+		if (player == 5 || player == 6)
+		{
+			temp.setIsHalfBack(true);
+		}
+		return temp;
 	}
 }
 

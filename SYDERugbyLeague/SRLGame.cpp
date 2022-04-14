@@ -537,6 +537,7 @@ void SRLGameManager::play()
 			}
 		}
 	}
+	int attackerNumber = 0;
 	SRLPlayer defender = m_AwayTeam.getRandomPlayerDefender();
 	SRLPlayer attacker = m_HomeTeam.getRandomPlayerAttacker();
 	if (!m_HomeTeamHasBall)
@@ -686,7 +687,7 @@ void SRLGameManager::play()
 	
 }
 
-bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam* defendingTeam, SRLTeam* attackingTeam)
+bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam& defendingTeam, SRLTeam& attackingTeam)
 {
 	addPlay("------VIDEO REFEREE------");
 	addSummary("VIDEO REF#!", attacker);
@@ -701,15 +702,15 @@ bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam*
 	int chance2 = rand() % tryErrorChance;
 	if (chance2 < 6 || chance2 == 8)
 	{
-		attackingTeam->addPlayerNoTry(attacker.getName());
-		attackingTeam->addPlayerStamina(attacker.getName(), -3);
+		attackingTeam.addPlayerNoTry(attacker.getName());
+		attackingTeam.addPlayerStamina(attacker.getName(), -3);
 	}
 	//KNOCK ON
 	if (chance2 == 0)
 	{
 		addPlay("NO TRY - Knock On", attacker);
 		addSummary("NO TRY#Knock On", attacker);
-		attackingTeam->addPlayerError(attacker.getName());
+		attackingTeam.addPlayerError(attacker.getName());
 		changeOver(true);
 		return true;
 	}
@@ -729,7 +730,7 @@ bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam*
 		setPositionUniversal(10);
 		changeOver(false);
 		defender = attacker;
-		attacker = defendingTeam->getRandomPlayer();
+		attacker = defendingTeam.getRandomPlayer();
 		doPenalty(defender, attacker);
 		return true;
 	}
@@ -740,7 +741,7 @@ bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam*
 		setPositionUniversal(10);
 		changeOver(false);
 		defender = attacker;
-		attacker = defendingTeam->getRandomPlayer();
+		attacker = defendingTeam.getRandomPlayer();
 		doPenalty(defender, attacker);
 		return true;
 	}
@@ -794,7 +795,7 @@ bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam*
 		setPositionUniversal(10);
 		changeOver(false);
 		defender = attacker;
-		attacker = defendingTeam->getRandomPlayer();
+		attacker = defendingTeam.getRandomPlayer();
 		doPenalty(defender, attacker);
 		return true;
 	}
@@ -1048,16 +1049,33 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 			return false;
 		}
 	}
+
+	//Five-Eigth or Halfback Only
+	if (attacker.isHalfBack())
+	{
+		if (rollBasicChance(attacker.getInnovationStat(), InnovationSucceedChance))
+		{
+			if (!m_HomeTeamHasBall)
+			{
+				doInnovation(attacker, m_AwayTeam);
+			}
+			else
+			{
+				doInnovation(attacker, m_HomeTeam);
+			}
+		}
+	}
+
 	if (m_HomeTeamHasBall)
 	{
-		if (!doRegularMovementPlay(defender, attacker, &m_AwayTeam, &m_HomeTeam))
+		if (!doRegularMovementPlay(defender, attacker, m_AwayTeam, m_HomeTeam))
 		{
 			return false;
 		}
 	}
 	else
 	{
-		if (!doRegularMovementPlay(defender, attacker, &m_HomeTeam, &m_AwayTeam))
+		if (!doRegularMovementPlay(defender, attacker, m_HomeTeam, m_AwayTeam))
 		{
 			return false;
 		}
@@ -1066,28 +1084,28 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 	return true;
 }
 
-bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacker, SRLTeam* defendingTeam, SRLTeam* attackingTeam)
+bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacker, SRLTeam& defendingTeam, SRLTeam& attackingTeam)
 {
 	if (attacker.getAttack() > defender.getDefence())
 	{
 		int metres = ((rand() % (attacker.getAttack() - defender.getDefence())) + ((attacker.getSpeed() / 20) + 1)) / 2;
-		attackingTeam->addPlayerMetres(attacker.getName(), metres);
+		attackingTeam.addPlayerMetres(attacker.getName(), metres);
 		addPositionUniversal(metres);
 		if (metres >= 25)
 		{
 			addSummary("LINEBREAK#!", attacker);
-			attackingTeam->addPlayerLinebreak(attacker.getName());
+			attackingTeam.addPlayerLinebreak(attacker.getName());
 		}
 	}
 	else
 	{
 		int metres = (((attacker.getSpeed() / 20) + 1)) / 2;
-		attackingTeam->addPlayerMetres(attacker.getName(), metres);
+		attackingTeam.addPlayerMetres(attacker.getName(), metres);
 		addPositionUniversal(metres);
 		if (metres >= 25)
 		{
 			addSummary("LINEBREAK#!", attacker);
-			attackingTeam->addPlayerLinebreak(attacker.getName());
+			attackingTeam.addPlayerLinebreak(attacker.getName());
 		}
 	}
 	int chanceOffload = rand() % offloadChance;
@@ -1098,7 +1116,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 	}
 	if (offload == 0)
 	{
-		defendingTeam->addPlayerTackle(defender.getName());
+		defendingTeam.addPlayerTackle(defender.getName());
 	}
 	else if (offload == 1)
 	{
@@ -1297,12 +1315,12 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		int chance1 = rand() % tryVideoRefChance;
 		if (chance1 == 0 || m_MinutesPassed > 77 || (m_MinutesPassed > 70 && homeTeamScore == awayTeamScore))
 		{
-			if (doVideoRef(defender, attacker, &m_AwayTeam, &m_HomeTeam))
+			if (doVideoRef(defender, attacker, m_AwayTeam, m_HomeTeam))
 			{
 				return true;
 			}
 		}
-		if (addTry(&m_HomeTeam, &m_AwayTeam, attacker))
+		if (addTry(m_HomeTeam, m_AwayTeam, attacker))
 		{
 			return true;
 		}
@@ -1313,12 +1331,12 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 		int chance1 = rand() % tryVideoRefChance;
 		if (chance1 == 0 || m_MinutesPassed > 77 || (m_MinutesPassed > 70 && homeTeamScore == awayTeamScore))
 		{
-			if (doVideoRef(defender, attacker, &m_HomeTeam, &m_AwayTeam))
+			if (doVideoRef(defender, attacker, m_HomeTeam, m_AwayTeam))
 			{
 				return true;
 			}
 		}
-		if (addTry(&m_AwayTeam, &m_HomeTeam, attacker))
+		if (addTry(m_AwayTeam, m_HomeTeam, attacker))
 		{
 			return true;
 		}
@@ -1326,17 +1344,48 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 	return false;
 }
 
-bool SRLGameManager::addTry(SRLTeam* m_AttackingTeam, SRLTeam* m_DefendingTeam, SRLPlayer attacker)
+void SRLGameManager::doInnovation(SRLPlayer attacker, SRLTeam& attackingTeam)
+{
+	int chance = rand() % 2;
+	if (chance == 0)
+	{
+		doChipAndChase(attacker, attackingTeam, rand() % attacker.getExecutionStat());
+		return;
+	}
+	return;
+}
+
+void SRLGameManager::doChipAndChase(SRLPlayer attacker, SRLTeam& attackingTeam, int execution)
+{
+	if (execution < 25)
+	{
+		//NOT ENOUGH SKILLS TO PULL THIS OFF, FOR NOW WE WON'T ATTEMPT THIS
+		return;
+	}
+	//Can Kick Between 5 & 15 Metres
+	int kickDistance = (rand() % 15) + 5;
+	attackingTeam.addPlayerKickMetres(attacker.getName(), kickDistance);
+	attackingTeam.addPlayerKick(attacker.getName());
+	addPositionUniversal(kickDistance);
+	addPlay("Chip Kick", attacker);
+	int metres = execution / 5;
+	attackingTeam.addPlayerMetres(attacker.getName(), metres);
+	addPositionUniversal(metres);
+	//THIS GETS ADDED ONTO THE ALREADY EXISTING PLAY SO WE DON'T NEED TO CARE ABOUT RETURNING ANYTHING
+	//WE ALSO DON'T CARE ABOUT IF THE BALL IS OUT OR NOT THIS IS AN ADVANTAGE PLAY
+}
+
+bool SRLGameManager::addTry(SRLTeam& m_AttackingTeam, SRLTeam& m_DefendingTeam, SRLPlayer attacker)
 {
 	addScoreUniversal(4);
 	addPlay("TRY - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
 	addSummary("TRY#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
-	m_AttackingTeam->addPlayerTry(attacker.getName());
-	m_AttackingTeam->addPlayerStamina(attacker.getName(), 5);
+	m_AttackingTeam.addPlayerTry(attacker.getName());
+	m_AttackingTeam.addPlayerStamina(attacker.getName(), 5);
 	addTimeRandom(30, 90, false);
 	if (m_MainGoalKickers)
 	{
-		attacker = m_AttackingTeam->getGoalKicker();
+		attacker = m_AttackingTeam.getGoalKicker();
 	}
 	int goal1 = (rand() % defaultGoalChance * weatherGoalErrorBonus);
 	if (goal1 < attacker.getGoalKicking())
@@ -1348,8 +1397,8 @@ bool SRLGameManager::addTry(SRLTeam* m_AttackingTeam, SRLTeam* m_DefendingTeam, 
 			addScoreUniversal(2);
 			addPlay("GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
 			addSummary("GOAL#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
-			m_AttackingTeam->addPlayerStamina(attacker.getName(), 1);
-			m_AttackingTeam->addPlayerGoal(attacker.getName());
+			m_AttackingTeam.addPlayerStamina(attacker.getName(), 1);
+			m_AttackingTeam.addPlayerGoal(attacker.getName());
 		}
 		else
 		{

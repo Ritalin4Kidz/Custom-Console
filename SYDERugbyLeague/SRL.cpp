@@ -4002,10 +4002,6 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		string awayTeamText = to_string(m_SingleGameManager.getAwayScore()) + " " + m_SingleGameManager.getAwayTeam().getName();
 		window.setTextAtPoint(Vector2(60 - awayTeamText.length(), 2), awayTeamText, BLACK_BRIGHTWHITE_BG);
 		window.setTextAtPoint(Vector2(28, 3), m_SingleGameManager.getTimeString(), BRIGHTWHITE);
-		window = m_SimulationPause.draw_ui(window);
-		window = m_SimulationResume.draw_ui(window);
-		window = m_SimulationSummaryView.draw_ui(window);
-		window = m_SimulationPlayerMatchUpView.draw_ui(window);
 
 		bool continuePlay = finals || m_ExtraTime;
 		if (m_TimePassedSimulation < m_GameSimulationDelay)
@@ -4105,14 +4101,27 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 	{
 		if (!isExhibitionMatch)
 		{
-			window = drawTabs(window);
+			if (SRLGame::sinSimViewState == SSV_SummaryViewState)
+			{
+				window = drawTabs(window);
+				window = m_ExportBtn.draw_ui(window);
+			}
 		}
 		else
 		{
 			window = drawMainMenuTabs(window);
 		}
-		window = m_ExportBtn.draw_ui(window);
+		if (SRLGame::sinSimViewState == SSV_SummaryViewState)
+		{
+			window = m_ExportBtn.draw_ui(window);
+		}
 	}
+
+	window = m_SimulationPause.draw_ui(window);
+	window = m_SimulationResume.draw_ui(window);
+	window = m_SimulationSummaryView.draw_ui(window);
+	window = m_SimulationPlayerMatchUpView.draw_ui(window);
+
 	return window;
 }
 

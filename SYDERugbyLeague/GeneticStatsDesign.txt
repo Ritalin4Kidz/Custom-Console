@@ -1,0 +1,14 @@
+SRLPlayerAdditions
+
+Currently players do have one hidden stat
+```
+int getGoalKicking() { return m_GoalKicking; }
+```
+
+this stat is currently used for conversions and field goals, and cannot be modified by training. We can add more of these types of stats to make trading players more than just (OH BUT LOOK AT THE BASE STATS)
+
+we could add stuff like:
+ - Innovation & Execution - if high innovation, a good chance they pull a rabbit out of the hat when they have the ball & when high execution a good chance it'll pay off
+ - Cunningness - Higher chance of success with video ref
+
+ stuff like that, would make the game more interesting imo, could easily put an option to toggle it as well

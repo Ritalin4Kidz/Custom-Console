@@ -157,6 +157,7 @@ public:
 	int getInnovationStat() { return m_InnovationStat; }
 	int getExecutionStat() { return m_ExecutionStat; }
 	int getCunningStat() { return m_CunningStat; }
+	int getAggressionStat() { return m_AggressionStat; }
 
 	void setIsHalfBack(bool value) { m_HalfbackPos = value; }
 	bool isHalfBack() { return m_HalfbackPos; }
@@ -234,4 +235,5 @@ private:
 
 	//UNIVERSAL
 	int m_CunningStat = 0;
+	int m_AggressionStat = 0;
 };

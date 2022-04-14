@@ -4,6 +4,7 @@ SRLGameManager::SRLGameManager()
 {
 	m_SecondsPassed = 0;
 	m_MinutesPassed = 0;
+	saveSettings();
 }
 
 SRLGameManager::~SRLGameManager()
@@ -131,6 +132,15 @@ void SRLGameManager::addPositionUniversal(int metres)
 		return;
 	}
 	m_BallPosition -= metres;
+}
+
+int SRLGameManager::getPositionUniversal(int metres)
+{
+	if (!m_HomeTeamHasBall)
+	{
+		return 100 - metres;
+	}
+	return metres;
 }
 
 string SRLGameManager::getTimeString()
@@ -591,8 +601,7 @@ void SRLGameManager::play()
 		return;
 	}
 
-	int chance1 = rand() % injuryChance;
-	if (chance1 == 0)
+	if (rollBasicChance(defender.getAggressionStat(), rand() % injuryChance))
 	{
 		if (doInjury(defender, attacker, m_HomeTeamHasBall))
 		{
@@ -1139,7 +1148,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 	return true;
 }
 
-bool SRLGameManager::checkIntercept(SRLPlayer defender, SRLPlayer attacker)
+bool SRLGameManager::checkIntercept(SRLPlayer& defender, SRLPlayer& attacker)
 {
 	if (defender.getAttack() > attacker.getDefence())
 	{
@@ -1246,63 +1255,11 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 	{
 		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0 && (homeTeamScore - awayTeamScore) % 6 == 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
-			if (m_BallPosition < 30 && m_BallPosition > 0 && m_HomeTeamHasBall)
-			{
-				int chance1 = attacker.getGoalKicking();
-				if (m_Stamina)
-				{
-					chance1 *= attacker.getStamina();
-				}
-				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
-				if (chance1 > chance2)
-				{
-					homeTeamScore += 1;
-					addPlay("FIELD GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
-					addSummary("FIELD GOAL#" + to_string(homeTeamScore) + " v " +  to_string(awayTeamScore), attacker);
-					m_BallPosition = 100;
-					m_HomeTeam.addPlayerFieldGoal(attacker.getName());
-				}
-				else
-				{
-					addPlay("FIELD GOAL MISSED", attacker);
-					addPlay("20m Restart - " + m_AwayTeam.getName());
-					addSummary("FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
-					m_BallPosition = 20;
-					changeOver(true);
-				}
-				m_Tackle = 0;
-				return true;
-			}
+			return doFieldGoalAttempt(attacker, m_HomeTeam, m_AwayTeam);
 		}
 		else if ((m_Tackle == 5 && ((awayTeamScore - homeTeamScore >= 0 && (awayTeamScore - homeTeamScore) % 6 == 0) || awayTeamScore - homeTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
-			if (m_BallPosition > 70 && m_BallPosition < 100 && !m_HomeTeamHasBall)
-			{
-				int chance1 = attacker.getGoalKicking();
-				if (m_Stamina)
-				{
-					chance1 *= attacker.getStamina();
-				}
-				int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
-				if (chance1 > chance2)
-				{
-					awayTeamScore += 1;
-					addPlay("FIELD GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
-					addSummary("FIELD GOAL#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
-					m_BallPosition = 0;
-					m_AwayTeam.addPlayerFieldGoal(attacker.getName());
-				}
-				else
-				{
-					addPlay("FIELD GOAL MISSED", attacker);
-					addPlay("20m Restart - " + m_HomeTeam.getName());
-					addSummary("FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
-					m_BallPosition = 80;
-					changeOver(true);
-				}
-				m_Tackle = 0;
-				return true;
-			}
+			return doFieldGoalAttempt(attacker, m_AwayTeam, m_HomeTeam);
 		}
 	}
 	return false;
@@ -1344,14 +1301,59 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 	return false;
 }
 
+bool SRLGameManager::doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam)
+{
+	if (m_BallPosition < getPositionUniversal(30) && m_BallPosition > getPositionUniversal(0) && m_HomeTeamHasBall)
+	{
+		int chance1 = attacker.getGoalKicking();
+		if (m_Stamina)
+		{
+			chance1 *= attacker.getStamina();
+		}
+		int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
+		if (chance1 > chance2)
+		{
+			addScoreUniversal(1);
+			addPlay("FIELD GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+			addSummary("FIELD GOAL#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
+			setPositionUniversal(100);
+			attackingTeam.addPlayerFieldGoal(attacker.getName());
+		}
+		else
+		{
+			addPlay("FIELD GOAL MISSED", attacker);
+			addPlay("20m Restart - " + defendingTeam.getName());
+			addSummary("FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
+			setPositionUniversal(20);
+			changeOver(true);
+		}
+		m_Tackle = 0;
+		return true;
+	}
+	return false;
+}
+
 void SRLGameManager::doInnovation(SRLPlayer attacker, SRLTeam& attackingTeam)
 {
-	int chance = rand() % 2;
+	int chance = rand() % 3;
 	if (chance == 0)
 	{
 		doChipAndChase(attacker, attackingTeam, rand() % attacker.getExecutionStat());
 		return;
 	}
+	else if (chance == 1)
+	{	
+		//PLAYER DID A DUMMY AND GOT AN EXTRA COUPLE METRES
+		int metres = (rand() % attacker.getExecutionStat()) / 10;
+		attackingTeam.addPlayerMetres(attacker.getName(), metres);
+		addPositionUniversal(metres);
+		return;
+	}
+	else if (chance == 2)
+	{
+		return;
+	}
+	//ADD MORE SPECIAL PLAYS HERE IT'LL BE COOL
 	return;
 }
 
@@ -1635,6 +1637,39 @@ void SRLGameManager::changeOver(bool error)
 		m_Tackle = 0;
 	}
 	m_HomeTeamHasBall = !m_HomeTeamHasBall;
+}
+
+void SRLGameManager::saveSettings()
+{
+	json save_file;
+
+	save_file["defaultAttackErrorChance"] = defaultAttackErrorChance;
+	save_file["defaultDefenceErrorChance"] = defaultDefenceErrorChance;
+	save_file["defaultStealChance"] = defaultStealChance;
+	save_file["defaultGoalChance"] = defaultGoalChance;
+	save_file["secondaryErrorChance"] = secondaryErrorChance;
+	save_file["conversionErrorChance"] = conversionErrorChance;
+	save_file["secondaryStripChance"] = secondaryStripChance;
+	save_file["defaultEarlyKickChance"] = defaultEarlyKickChance;
+	save_file["fortytwentyChance"] = fortytwentyChance;
+	save_file["tryVideoRefChance"] = tryVideoRefChance;
+	save_file["tryErrorChance"] = tryErrorChance;
+	save_file["incorrectPlayTheBallChance"] =incorrectPlayTheBallChance;
+	save_file["tryInfringementChance"] = tryInfringementChance;
+	save_file["minTimeSecondSkip"] = minTimeSecondSkip;
+	save_file["maxTimeSecondSkip"] = maxTimeSecondSkip;
+	save_file["outOnFullErrorChance"] = outOnFullErrorChance;
+	save_file["injuryChance"] = injuryChance;
+	save_file["professionalFoulChance"] = professionalFoulChance;
+	save_file["offloadChance"] = offloadChance;
+	save_file["videoRefAutoSucceedChance"] = videoRefAutoSucceedChance;
+	save_file["InnovationSucceedChance"] = InnovationSucceedChance;
+	save_file["kickOutOnTheFullChance"] = kickOutOnTheFullChance;
+
+
+	string filePath = string("EngineFiles\\Settings\\luckValues.json");
+	std::ofstream ofs(filePath);
+	ofs << save_file;
 }
 
 #pragma endregion

@@ -90,6 +90,7 @@ public:
 	ConsoleWindow drawMainMenuTabs(ConsoleWindow window);
 	ConsoleWindow drawResultTabs(ConsoleWindow window);
 	ConsoleWindow drawCoachingTabs(ConsoleWindow window);
+	ConsoleWindow drawMatchUpTabs(ConsoleWindow window);
 
 	ConsoleWindow drawSeasonModeTabs(ConsoleWindow window);
 
@@ -171,6 +172,7 @@ public:
 	static SeasonConfigState seasCfgState;
 	static LadderStatsViewState ldsViewState;
 	static SRLSingleSimulationViewState sinSimViewState;
+	static SRLMatchUpState matchUpViewState;
 
 	static SRLSeasonLength seasonLength;
 	SRLSeasonLength baseSeasonLength = Length_NormalSeason;
@@ -296,6 +298,11 @@ private:
 	const int customTeamGenerateChance = 9999;
 
 private:
+	//MATCH UP VIEW BUTTON
+	SYDEClickableButton m_MatchUpRegularViewBtn = SYDEClickableButton();
+	SYDEClickableButton m_MatchUpHistoryViewBtn = SYDEClickableButton();
+
+
 	SYDEClickableButton m_PrimaryColourBtn = SYDEClickableButton();
 	SYDEClickableButton m_SecondaryColourBtn = SYDEClickableButton();
 	SYDEClickableButton m_TertiaryColourBtn = SYDEClickableButton();

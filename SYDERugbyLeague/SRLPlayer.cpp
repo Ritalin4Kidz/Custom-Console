@@ -97,6 +97,7 @@ void SRLPlayer::generateHiddenStats()
 	m_CunningStat = (rand() % 80) + 20;
 	m_InnovationStat = (rand() % 80) + 20;
 	m_ExecutionStat = (rand() % 80) + 20;
+	m_AggressionStat = (rand() % 80) + 20;
 }
 
 void SRLPlayer::addAttack(int atk)
@@ -184,6 +185,14 @@ void SRLPlayer::loadPlayer(string path)
 	{
 		m_CunningStat = (rand() % 80) + 20;
 	}
+	if (save_file.contains("aggression"))
+	{
+		this->m_AggressionStat = save_file["aggression"];
+	}
+	else
+	{
+		m_AggressionStat = (rand() % 80) + 20;
+	}
 
 }
 
@@ -208,6 +217,7 @@ void SRLPlayer::savePlayer()
 	save_file["innovation"] = m_InnovationStat;
 	save_file["execution"] = m_ExecutionStat;
 	save_file["cunning"] = m_CunningStat;
+	save_file["aggression"] = m_AggressionStat;
 	if (id == 0)
 	{
 		id++;

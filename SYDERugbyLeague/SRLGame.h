@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include "SRLTeam.h"
-
+#include "SRLStatics.h"
 #include "Vector2.h"
 
 using namespace std;
@@ -62,6 +62,8 @@ public:
 	void setPositionUniversal(int metresFromGoalLine);
 	void addPositionUniversal(int metres);
 
+	int getPositionUniversal(int metres);
+
 
 	string getTimeString();
 
@@ -114,11 +116,13 @@ public:
 	int doKick(SRLPlayer defender, SRLPlayer attacker);
 	bool doRegularMovement(SRLPlayer defender, SRLPlayer attacker);
 	bool doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacker, SRLTeam& defendingTeam, SRLTeam& attackingTeam);
-	bool checkIntercept(SRLPlayer defender, SRLPlayer attacker);
+	bool checkIntercept(SRLPlayer& defender, SRLPlayer& attacker);
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
 	int checkOffload(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
+
+	bool doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam);
 
 	void doInnovation(SRLPlayer attacker, SRLTeam& attackingTeam);
 	void doChipAndChase(SRLPlayer attacker, SRLTeam& attackingTeam, int execution);
@@ -140,30 +144,33 @@ public:
 	vector<string> getPlayByPlay() { return m_PlayByPlay; }
 	vector<string> getSummary() { return m_Summary; }
 
+	void saveSettings();
+
 private:
 	//CONSTANTS
-	const int defaultAttackErrorChance = 90;
-	const int defaultDefenceErrorChance = 90;
-	const int defaultStealChance = 160;
-	const int defaultGoalChance = 90;
-	const int secondaryErrorChance = 19;
-	const int conversionErrorChance = 3;
-	const int secondaryStripChance = 10;
-	const int defaultEarlyKickChance = 15;
-	const int fortytwentyChance = 18;
-	const int tryVideoRefChance = 4;
-	const int tryErrorChance = 18;
-	const int incorrectPlayTheBallChance = 1000;
-	const int tryInfringementChance = 200;
-	const int minTimeSecondSkip = 11;
-	const int maxTimeSecondSkip = 19;
-	const int outOnFullErrorChance = 35;
-	const int injuryChance = 1000;
-	const int professionalFoulChance = 3;
+	const int defaultAttackErrorChance = SRLStatics::loadConstSetting("defaultAttackErrorChance", 90);
+	const int defaultDefenceErrorChance = SRLStatics::loadConstSetting("defaultDefenceErrorChance", 90);
+	const int defaultStealChance = SRLStatics::loadConstSetting("defaultStealChance", 160);
+	const int defaultGoalChance = SRLStatics::loadConstSetting("defaultGoalChance", 90);
+	const int secondaryErrorChance = SRLStatics::loadConstSetting("secondaryErrorChance", 19);
+	const int conversionErrorChance = SRLStatics::loadConstSetting("conversionErrorChance", 3);
+	const int secondaryStripChance = SRLStatics::loadConstSetting("secondaryStripChance", 10);
+	const int defaultEarlyKickChance = SRLStatics::loadConstSetting("defaultEarlyKickChance", 15);
+	const int fortytwentyChance = SRLStatics::loadConstSetting("fortytwentyChance", 18);
+	const int tryVideoRefChance = SRLStatics::loadConstSetting("tryVideoRefChance", 4);
+	const int tryErrorChance = SRLStatics::loadConstSetting("tryErrorChance", 18);
+	const int incorrectPlayTheBallChance = SRLStatics::loadConstSetting("incorrectPlayTheBallChance", 1000);
+	const int tryInfringementChance = SRLStatics::loadConstSetting("tryInfringementChance", 160);
+	const int minTimeSecondSkip = SRLStatics::loadConstSetting("minTimeSecondSkip", 11);
+	const int maxTimeSecondSkip = SRLStatics::loadConstSetting("maxTimeSecondSkip", 19);
+	const int outOnFullErrorChance = SRLStatics::loadConstSetting("outOnFullErrorChance", 35);
+	const int injuryChance = SRLStatics::loadConstSetting("injuryChance", 17500);
+	const int professionalFoulChance = SRLStatics::loadConstSetting("professionalFoulChance", 3);
 	const float playerSentDivision = 0.8f;
-	const int offloadChance = 30;
-	const int videoRefAutoSucceedChance = 50;
-	const int InnovationSucceedChance = 60;
+	const int offloadChance = SRLStatics::loadConstSetting("offloadChance", 30);
+	const int videoRefAutoSucceedChance = SRLStatics::loadConstSetting("videoRefAutoSucceedChance", 50);
+	const int InnovationSucceedChance = SRLStatics::loadConstSetting("InnovationSucceedChance", 60);
+	const int kickOutOnTheFullChance = SRLStatics::loadConstSetting("kickOutOnTheFullChance", 1000);
 	//SCORE
 	SRLTeam m_HomeTeam;
 	SRLTeam m_AwayTeam;

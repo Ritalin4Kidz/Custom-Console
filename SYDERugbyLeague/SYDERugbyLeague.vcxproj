@@ -169,6 +169,7 @@
     <ClInclude Include="SRLNewsStoryGenerator.h" />
     <ClInclude Include="SRLPlayer.h" />
     <ClInclude Include="SRLSoundtrack.h" />
+    <ClInclude Include="SRLStatics.h" />
     <ClInclude Include="SRLSteamAchievements.h" />
     <ClInclude Include="SRLStructs.h" />
     <ClInclude Include="SRLTeam.h" />

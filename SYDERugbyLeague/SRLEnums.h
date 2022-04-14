@@ -161,6 +161,12 @@ enum SRLTeamListViewState
 	TLV_Handling
 };
 
+enum SRLMatchUpState
+{
+	SMUS_GameInfo = 0,
+	SMUS_History
+};
+
 enum SRLSingleSimulationViewState
 {
 	SSV_SummaryViewState = 0,

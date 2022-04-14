@@ -99,6 +99,7 @@ SRLPositionShowcaseState SRLGame::posSwapState = SRLPS_Backline;
 SRLTeam SRLGame::otherTeamTrade = SRLTeam();
 SRLTeamListViewState SRLGame::tlViewState = TLV_GeneralStats;
 LadderStatsViewState SRLGame::ldsViewState = LSV_DefaultView;
+SRLMatchUpState SRLGame::matchUpViewState = SMUS_GameInfo;
 
 vector<string> SRLGame::AchievementStrings = vector<string>();
 ArticleViewingState SRLGame::articleState = HeadlinesState;
@@ -273,6 +274,16 @@ void InGameSettingsViewClick()
 void FeaturedMatchViewClick()
 {
 	SRLGame::drawViewState = FeaturedMatchView;
+}
+
+void MatchUpRegularViewClick()
+{
+	SRLGame::matchUpViewState = SMUS_GameInfo;
+}
+
+void MatchUpHistoryViewClick()
+{
+	SRLGame::matchUpViewState = SMUS_History;
 }
 
 void RandomizeButtonClick()
@@ -1498,6 +1509,15 @@ void SRLGame::initSeasonButtons()
 	m_FeatureSwitchViewBtn.setHighLight(RED);
 	m_FeatureSwitchViewBtn.SetFunc(FeaturedMatchSwitchViewClick);
 
+
+
+	m_MatchUpRegularViewBtn = SYDEClickableButton("Game Info", Vector2(3, 18), Vector2(10, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_MatchUpRegularViewBtn.setHighLight(RED);
+	m_MatchUpRegularViewBtn.SetFunc(MatchUpRegularViewClick);
+
+	m_MatchUpHistoryViewBtn = SYDEClickableButton(" History ", Vector2(15, 18), Vector2(9, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_MatchUpHistoryViewBtn.setHighLight(RED);
+	m_MatchUpHistoryViewBtn.SetFunc(MatchUpHistoryViewClick);
 
 	//BLANK BUTTONS EDIT LATER
 	m_NewsViewBtn = SYDEClickableButton("Season News ", Vector2(12, 19), Vector2(12, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -3731,14 +3751,48 @@ ConsoleWindow SRLGame::MatchUpDepthView(ConsoleWindow window, int windowWidth, i
 	int sizeText = awayTeamText.length();
 	window.setTextAtPoint(Vector2(0, 2), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + " " + to_string(m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].homeTeamScore), WHITE);
 	window.setTextAtPoint(Vector2(60 - sizeText, 2), awayTeamText, WHITE);
-	window.setTextAtPoint(Vector2(4, 4), "Date: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Time_Date, WHITE);
-	window.setTextAtPoint(Vector2(4, 5), "Venue: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Venue, WHITE);
-	window.setTextAtPoint(Vector2(4, 6), "Weather: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].getWeatherString(), WHITE);
+	if (SRLGame::matchUpViewState == SMUS_GameInfo)
+	{
+		window.setTextAtPoint(Vector2(4, 4), "Date: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Time_Date, WHITE);
+		window.setTextAtPoint(Vector2(4, 5), "Venue: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].Venue, WHITE);
+		window.setTextAtPoint(Vector2(4, 6), "Weather: " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].getWeatherString(), WHITE);
 
-	window.setTextAtPoint(Vector2(4, 8), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + ": " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].homeTeamOdds.ReturnPrice(), BRIGHTGREEN);
-	window.setTextAtPoint(Vector2(4, 9), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam + ": " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].awayTeamOdds.ReturnPrice(), BRIGHTRED);
+		window.setTextAtPoint(Vector2(4, 8), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam + ": " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].homeTeamOdds.ReturnPrice(), BRIGHTGREEN);
+		window.setTextAtPoint(Vector2(4, 9), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam + ": " + m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].awayTeamOdds.ReturnPrice(), BRIGHTRED);
 
-	window = m_SimulateSingleGameBtn.draw_ui(window);
+		window = m_SimulateSingleGameBtn.draw_ui(window);
+	}
+	else if (SRLGame::matchUpViewState == SMUS_History)
+	{
+		window.setTextAtPoint(Vector2(23, 10), "MATCH HISTORY:", WHITE);
+		if (m_Season.m_Draw.m_Rounds[m_round].m_Games[matchInformationGame].MatchHistory.empty() && m_roundToSimulate >= matchInformationRound)
+		{
+			for (int i = 0; i < matchInformationRound; i++)
+			{
+				for (int ii = 0; ii < m_Season.m_Draw.m_Rounds[i].m_Games.size(); ii++)
+				{
+					bool homeTeamInMatch = m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam ==m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam || m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam == m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam;
+					bool awayTeamInMatch = m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam ==m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].HomeTeam || m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam == m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].AwayTeam;
+					if (homeTeamInMatch && awayTeamInMatch)
+					{
+						m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].MatchHistory.push_back(m_Season.m_Draw.m_Rounds[i].m_Games[ii].HomeTeam + " " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].homeTeamScore) + " v " + to_string(m_Season.m_Draw.m_Rounds[i].m_Games[ii].awayTeamScore) + " " + m_Season.m_Draw.m_Rounds[i].m_Games[ii].AwayTeam);
+					}
+				}
+			}
+			reverse(m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].MatchHistory.begin(), m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].MatchHistory.end());
+			if (m_Season.m_Draw.m_Rounds[m_round].m_Games[matchInformationGame].MatchHistory.empty())
+			{
+				m_Season.m_Draw.m_Rounds[matchInformationRound].m_Games[matchInformationGame].MatchHistory.push_back("No Match History To Show");
+			}
+		}
+		for (int i = 0; i < 5 && i < m_Season.m_Draw.m_Rounds[m_round].m_Games[matchInformationGame].MatchHistory.size(); i++)
+		{
+			int sizeText = m_Season.m_Draw.m_Rounds[m_round].m_Games[matchInformationGame].MatchHistory[i].length();
+			int spacing = (60 - sizeText) / 2;
+			window.setTextAtPoint(Vector2(spacing, 11 + i), m_Season.m_Draw.m_Rounds[m_round].m_Games[matchInformationGame].MatchHistory[i], BRIGHTGREEN);
+		}
+	}
+	window = drawMatchUpTabs(window);
 	return window;
 }
 
@@ -4858,6 +4912,13 @@ ConsoleWindow SRLGame::drawCoachingTabs(ConsoleWindow window)
 	window = m_CoachTradeStateBtn.draw_ui(window);
 	window = m_CoachTrainStateBtn.draw_ui(window);
 	window = m_CoachTeamStateBtn.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow SRLGame::drawMatchUpTabs(ConsoleWindow window)
+{
+	window = m_MatchUpRegularViewBtn.draw_ui(window);
+	window = m_MatchUpHistoryViewBtn.draw_ui(window);
 	return window;
 }
 

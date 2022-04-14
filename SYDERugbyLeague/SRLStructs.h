@@ -154,6 +154,8 @@ struct SRLGameMatchup
 	string LosingTeam;
 
 	bool GameHasBeenSimulated = false;
+
+	vector<string> MatchHistory = vector<string>();
 };
 
 struct SRLGameBetsWriting

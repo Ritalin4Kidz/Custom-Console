@@ -1255,11 +1255,17 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 	{
 		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0 && (homeTeamScore - awayTeamScore) % 6 == 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
-			return doFieldGoalAttempt(attacker, m_HomeTeam, m_AwayTeam);
+			if (m_HomeTeamHasBall)
+			{
+				return doFieldGoalAttempt(attacker, m_HomeTeam, m_AwayTeam);
+			}
 		}
 		else if ((m_Tackle == 5 && ((awayTeamScore - homeTeamScore >= 0 && (awayTeamScore - homeTeamScore) % 6 == 0) || awayTeamScore - homeTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
-			return doFieldGoalAttempt(attacker, m_AwayTeam, m_HomeTeam);
+			if (!m_HomeTeamHasBall)
+			{
+				return doFieldGoalAttempt(attacker, m_AwayTeam, m_HomeTeam);
+			}
 		}
 	}
 	return false;
@@ -1303,7 +1309,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 
 bool SRLGameManager::doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam)
 {
-	if (m_BallPosition < getPositionUniversal(30) && m_BallPosition > getPositionUniversal(0) && m_HomeTeamHasBall)
+	if (m_BallPosition < getPositionUniversal(30) && m_BallPosition > getPositionUniversal(0))
 	{
 		int chance1 = attacker.getGoalKicking();
 		if (m_Stamina)

@@ -313,19 +313,19 @@ void SRLGameManager::generateWeather()
 	{
 		weatherAtkErrorBonus = 2.15f;
 		weatherDefErrorBonus = 1.75f;
-		weatherGoalErrorBonus = 2.75f;
+		weatherGoalErrorBonus = 2.25f;
 		addPlayNoMinutes("Weather: Stormy");
 	}
 	else if (weather == Weather_Rain)
 	{
 		weatherAtkErrorBonus = 2.25f;
-		weatherGoalErrorBonus = 1.35f;
+		weatherGoalErrorBonus = 1.15f;
 		addPlayNoMinutes("Weather: Rain");
 	}
 	else if (weather == Weather_Windy)
 	{
 		weatherAtkErrorBonus = 1.05f;
-		weatherGoalErrorBonus = 2.95f;
+		weatherGoalErrorBonus = 2.45f;
 		addPlayNoMinutes("Weather: Windy");
 	}
 	else if (weather == Weather_Sunny)
@@ -338,21 +338,21 @@ void SRLGameManager::generateWeather()
 	{
 		weather = Weather_Heatwave;
 		weatherAtkErrorBonus = 2.05f;
-		weatherDefErrorBonus = 2.85f;
+		weatherDefErrorBonus = 2.05f;
 		addPlayNoMinutes("Weather: Heat Wave");
 	}
 	else if (weather == Weather_Hail)
 	{
 		weatherAtkErrorBonus = 3.00f;
 		weatherDefErrorBonus = 3.00f;
-		weatherGoalErrorBonus = 3.00f;
+		weatherGoalErrorBonus = 2.50f;
 		addPlayNoMinutes("Weather: Hail");
 	}
 	else if (weather == Weather_Snow)
 	{
 		weatherAtkErrorBonus = 5.00f;
 		weatherDefErrorBonus = 5.00f;
-		weatherGoalErrorBonus = 5.00f;
+		weatherGoalErrorBonus = 3.00f;
 		addPlayNoMinutes("Weather: Snow");
 	}
 }

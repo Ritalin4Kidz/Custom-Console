@@ -18,7 +18,6 @@
 
 #define STARTING_GOLD_AMOUNT 5000
 
-
 using json = nlohmann::json;
 
 class SYDEMapGame : public SYDEWindowGame {
@@ -192,7 +191,7 @@ public:
 	static string getBossTag() { return m_BossTAG; }
 	static void setBossTag(string tag) { m_BossTAG = tag; }
 	static void clearBossTag() { m_BossTAG = ""; }
-	static void RefreshRun() { gold_from_run = STARTING_GOLD_AMOUNT; _MapState = MState_Normal; m_BossTAG = ""; isFightingBoss = false; }
+	static void RefreshRun() { gold_from_run = STARTING_GOLD_AMOUNT; _MapState = MState_Normal; m_BossTAG = ""; isFightingBoss = false; m_IslandsDeep = 0;}
 	static void AddGold(int amt) { gold_from_run += amt; }
 	static void RefreshDockChoices();
 	static void DeleteMoveChoices();
@@ -212,6 +211,8 @@ public:
 	if (col == 3) return 37;
 	return 36;
 	}
+
+	static Enemy* getRandomEnemyFromPool(int pool, int minLvl);
 
 	static SYDEParticleBurst m_GameOverFireworks;
 	static SYDEClock_Timer m_FireworksTimer;
@@ -243,6 +244,8 @@ private:
 	static Cutscene_Return_State m_CSR_State;
 	static ConsoleWindow windowAtCutsceneTime;
 	static CustomAnimationAsset m_BossCutscene;
+
+	static int m_IslandsDeep;
 };
 
 

@@ -168,6 +168,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SQFunctions.h" />
     <ClInclude Include="StatusAnimations.h" />
+    <ClInclude Include="SYDEQuestGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SYDEQuest_Game.rc" />

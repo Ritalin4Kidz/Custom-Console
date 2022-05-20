@@ -19,7 +19,7 @@ SYDEMenu BattleScene::_FightOptions = SYDEMenu();
 SYDEMenu BattleScene::_MoveOptions = SYDEMenu();
 bool BattleScene::enemy_attack = false;
 bool BattleScene::_StatusApplied = false;
-
+int MainMapScene::m_IslandsDeep = 0;
 SYDEMenu MainMapScene::_PauseOptions = SYDEMenu(vector<SYDEButton> {
 		SYDEButton("RESUME", Vector2(1, 2), Vector2(20, 1), BLACK, true),
 		SYDEButton("EXIT", Vector2(1, 3), Vector2(20, 1), BLACK, true)});
@@ -86,6 +86,15 @@ MainMapSceneState MainMapScene::_MapState = MState_Normal;
 int MainMapScene::gold_from_run = 0;
 #pragma endregion
 
+
+const std::string MAP_BEACHED_BUTTHOLE = "Beached Butthole";
+const std::string MAP_BEACHED_ENTRANCE = "Beached Entrance";
+const std::string MAP_CAPID_ISLE = "Capid Isle";
+const std::string MAP_CAPID_COAST = "Capid Coast";
+const std::string MAP_FLOWERED_FIELDS = "Flowered Fields";
+const std::string MAP_KELIN_ISLAND = "Kelin Island";
+const std::string MAP_MEOW_COAST = "Meow Coast";
+const std::string MAP_START_ISLAND = "Start Island";
 
 SYDEMapGame::SYDEMapGame()
 {
@@ -681,6 +690,7 @@ ConsoleWindow MainMenuScene::window_draw(ConsoleWindow window, int windowWidth, 
 			//MainMapTestSetup();
 			MainMapScene::RefreshRun();
 			MainMapScene::RefreshStartIsland();
+
 			GameScene::SetScene(PlayerSelect);
 		}
 		else if (_Options.getSelected().m_Label == "1")
@@ -766,6 +776,7 @@ void MainMapScene::LoadGameScene()
 				delete[] pixelColor;
 			}
 		}
+		m_IslandsDeep++;
 		RefreshDockChoices();
 		RefreshMoveChoices();
 		delete[] SpawnData;
@@ -1247,62 +1258,17 @@ int MainMapScene::AddEnemy(Vector2 pixelLoc, Gdiplus::Color pixelColour)
 	{
 		AddShopChar(pixelLoc, '=');
 	}
-#pragma region EnemiesRegular
-	//StartIsland Orcs
-	else if (pixelColour.GetRed() == 255 && pixelColour.GetGreen() == 104 && pixelColour.GetBlue() == 0)
-	{
-		json JsonData;
-		std::string str = "";
-		Enemy* e = new Orc(1 + (rand() % 2));
-		e->setStatToIncrease(STATINCREASE_HEALTH);
-		e->to_json(JsonData);
-		str = JsonData.dump();
-		delete e;
-		AddWildChar(pixelLoc, 'v', str, BLACK_GREEN_BG);
-	}
-	//BLUE FISH
-	else if (pixelColour.GetRed() == 156 && pixelColour.GetGreen() == 121 && pixelColour.GetBlue() == 151)
-	{
-		json JsonData;
-		std::string str = "";
-		Enemy* e = new Blue_Fish(1 + (rand() % 3));
-		e->to_json(JsonData);
-		str = JsonData.dump();
-		delete e;
-		AddWildChar(pixelLoc, 'v', str, BLACK_GREEN_BG);
-	}
-	//KelinIsland Wolves
-	else if (pixelColour.GetRed() == 225 && pixelColour.GetGreen() == 37 && pixelColour.GetBlue() == 15)
-	{
-		json JsonData;
-		std::string str = "";
-		Enemy* e = new Wolf(2 + (rand() % 5));
-		e->to_json(JsonData);
-		str = JsonData.dump();
-		delete e;
-		AddWildChar(pixelLoc, 'v', str, BLACK_GREEN_BG);
-	}
-	//Beached Entrance
-	else if (pixelColour.GetRed() == 84 && pixelColour.GetGreen() == 229 && pixelColour.GetBlue() == 74)
-	{
-		json JsonData;
-		std::string str = "";
-		Enemy* e = new Crab(2 + (rand() % 5));
-		e->to_json(JsonData);
-		str = JsonData.dump();
-		delete e;
-		AddWildChar(pixelLoc, 'v', str, BLACK_BRIGHTYELLOW_BG);
-	}
 #pragma endregion
 #pragma region EnemiesStructured
 	//CODE R = Type / 115 = Enemy
-	//CODE G = Island (if not generic) / 1 = Capid Isle
-	//CODE B = Data / 1 = BEE
-	else if (pixelColour.GetRed() == 115 && pixelColour.GetGreen() == 1 && pixelColour.GetBlue() == 1)
+	//CODE G = Level Minimum
+	//CODE B = Pool Of Enemies To Spawn From
+	else if (pixelColour.GetRed() == 115)
 	{
 		json JsonData;
 		std::string str = "";
-		Enemy* e = new Bee(3 + (rand() % 5));
+		//Enemy* e = new Bee(3 + (rand() % 5));
+		Enemy * e = getRandomEnemyFromPool(pixelColour.GetBlue(), pixelColour.GetGreen());
 		e->to_json(JsonData);
 		str = JsonData.dump();
 		delete e;
@@ -1455,22 +1421,28 @@ void MainMapScene::AddBuildingChar(Vector2 loc, char ico, std::string data)
 void MainMapScene::RefreshDockChoices()
 {
 	_DockChoices.clear();
-	if (m_IslandBMP == "Start Island")
+	if (m_IslandBMP == MAP_START_ISLAND)
 	{
-		_DockChoices.push_back(DockChoice("Kelin Island", 100));
-		_DockChoices.push_back(DockChoice("Capid Isle", 150));
+		_DockChoices.push_back(DockChoice(MAP_KELIN_ISLAND, 100));
+		_DockChoices.push_back(DockChoice(MAP_CAPID_ISLE, 150));
+		_DockChoices.push_back(DockChoice(MAP_MEOW_COAST, 50));
 	}
-	if (m_IslandBMP == "Kelin Island")
+	if (m_IslandBMP == MAP_KELIN_ISLAND)
 	{
-		_DockChoices.push_back(DockChoice("Beached Entrance", 125));
+		_DockChoices.push_back(DockChoice(MAP_BEACHED_ENTRANCE, 125));
 	}
-	if (m_IslandBMP == "Beached Entrance")
+	if (m_IslandBMP == MAP_BEACHED_ENTRANCE)
 	{
-		_DockChoices.push_back(DockChoice("Beached Butthole", 225));
+		_DockChoices.push_back(DockChoice(MAP_BEACHED_BUTTHOLE, 225));
 	}
-	if (m_IslandBMP == "Capid Isle")
+	if (m_IslandBMP == MAP_CAPID_ISLE)
 	{
-		_DockChoices.push_back(DockChoice("Flowered Fields", 225));
+		_DockChoices.push_back(DockChoice(MAP_FLOWERED_FIELDS, 225));
+	}
+	if (m_IslandBMP == MAP_MEOW_COAST)
+	{
+		_DockChoices.push_back(DockChoice(MAP_FLOWERED_FIELDS, 275));
+		_DockChoices.push_back(DockChoice(MAP_CAPID_COAST, 200));
 	}
 
 	_DockOptions = SYDEMenu();
@@ -1504,7 +1476,7 @@ void MainMapScene::RefreshMoveChoices()
 {
 	DeleteMoveChoices();
 #pragma region MoveChoices
-	if (m_IslandBMP == "Start Island")
+	if (m_IslandsDeep <= 1)
 	{
 		int MoveSelection = rand() % 3;
 		switch (MoveSelection)
@@ -1527,7 +1499,7 @@ void MainMapScene::RefreshMoveChoices()
 			break;
 		}
 	}
-	else if (m_IslandBMP == "Kelin Island")
+	else if (m_IslandsDeep <= 3)
 	{
 		int MoveSelection = rand() % 3;
 		switch (MoveSelection)
@@ -1586,6 +1558,37 @@ void MainMapScene::RefreshPlayerMenuChoices()
 
 	_PlayerMenuOptions.setPos(Vector2(2, 3));
 	_PlayerMenuOptions.setActive(true);
+}
+
+Enemy* MainMapScene::getRandomEnemyFromPool(int pool, int minLvl)
+{
+	//POOL CAPID ISLE BEES
+	if (pool == 0)
+	{
+		return new Orc(minLvl + (rand() % 4));
+	}
+	if (pool == 1)
+	{
+		return new Bee(minLvl + (rand() % 5));
+	}
+	if (pool == 2)
+	{
+		int i = rand() % 2;
+		if (i == 0)
+		{
+			return new  Orc(minLvl + (rand() % 2));
+		}
+		return new Blue_Fish(minLvl + (rand() % 3));
+	}
+	if (pool == 3)
+	{
+		return new Wolf(minLvl + (rand() % 5));
+	}
+	if (pool == 4)
+	{
+		return new Crab(2 + (rand() % 5));
+	}
+	return new Enemy();
 }
 
 void MainMapScene::SetEnemyFromTag(Enemy& e)

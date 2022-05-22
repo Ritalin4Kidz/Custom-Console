@@ -78,6 +78,7 @@ CustomAnimationAsset SYDEMapGame::m_CRAB = CustomAnimationAsset();
 CustomAnimationAsset SYDEMapGame::m_SMOKE_CRAB = CustomAnimationAsset();
 CustomAnimationAsset SYDEMapGame::m_FREEBEE = CustomAnimationAsset();
 CustomAnimationAsset SYDEMapGame::m_BEE = CustomAnimationAsset();
+CustomAnimationAsset SYDEMapGame::m_RABBIT = CustomAnimationAsset();
 CustomAnimationAsset SYDEMapGame::m_MoveAnimation = CustomAnimationAsset();
 #pragma endregion
 
@@ -104,7 +105,8 @@ SYDEMapGame::SYDEMapGame()
 	m_ORC.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\UIAnimations\\TestEnemy.bmp", astVars, 100, 30, 10, 10, 0, 27));
 	m_WOLF.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\Wolf.bmp", astVars, 120, 30, 10, 10, 0, 36));
 	m_CRAB.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\CrabAnimation.bmp", astVars, 40, 30, 10, 10, 0, 11));
-	m_BEE.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\BeeEnem.bmp", astVars, 40, 30, 10, 10, 0, 11));
+	m_BEE.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\BeeEnem.bmp", astVars, 40, 40, 10, 10, 0, 16));
+	m_RABBIT.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\BunnyAnimation.bmp", astVars, 40, 180, 10, 10, 0, 72));
 
 	m_SMOKE_CRAB.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\CrabAnimationSmoking.bmp", astVars, 40, 130, 10, 10, 0, 51));
 	m_SMOKE_CRAB_CUTSCENE.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\Cutscenes\\SmokingCrabFightCutscene.bmp", astVars, 200, 120, 20, 20, 0, 61));
@@ -129,14 +131,24 @@ ConsoleWindow SYDEMapGame::Animation_UI_EVENT(ConsoleWindow window, CustomAnimat
 
 ConsoleWindow SYDEMapGame::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	if (GameScene::GetSceneTag() != GameScene::GetSceneTagPrev())
+	try
 	{
-		SwitchScene();
-		GameScene::SetScenePrev(GameScene::GetSceneTag());
+		if (GameScene::GetSceneTag() != GameScene::GetSceneTagPrev())
+		{
+			SwitchScene();
+			GameScene::SetScenePrev(GameScene::GetSceneTag());
+		}
+		window = m_Scene->window_draw(window, windowWidth, windowHeight);
+		if (UI_STATE_EVENT) {
+			window = Animation_UI_EVENT(window, m_MoveAnimation);
+		}
 	}
-	window = m_Scene->window_draw(window, windowWidth, windowHeight);
-	if (UI_STATE_EVENT) {
-		window = Animation_UI_EVENT(window, m_MoveAnimation);
+	catch(std::exception ex)
+	{
+		delete m_Scene;
+		m_Scene = new MainMenuScene();
+		window = m_Scene->window_draw(window, windowWidth, windowHeight);
+		//TODO: Display An Error Message
 	}
 	return window;
 }
@@ -1344,6 +1356,8 @@ CustomAnimationAsset SYDEMapGame::StringToAnimation(std::string s)
 		return m_CRAB;
 	else if (s == "BEE")
 		return m_BEE;
+	else if (s == "RABBIT")
+		return m_RABBIT;
 	else if (s == "SMOKE_CRAB")
 		return m_SMOKE_CRAB;
 	else if (s == "FREEBEE")
@@ -1569,6 +1583,11 @@ Enemy* MainMapScene::getRandomEnemyFromPool(int pool, int minLvl)
 	}
 	if (pool == 1)
 	{
+		int i = rand() % 4;
+		if (i == 0)
+		{
+			return new Rabbit(minLvl + (rand() % 4));
+		}
 		return new Bee(minLvl + (rand() % 5));
 	}
 	if (pool == 2)

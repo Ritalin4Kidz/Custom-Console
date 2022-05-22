@@ -356,7 +356,28 @@ Freebee::Freebee(int lvl)
         + std::to_string(static_cast<int>(_SQ_Bulk_Up)) + ";");
     this->init(lvl);
 }
-
+Rabbit::Rabbit(int lvl)
+{
+    this->runChance = 0;
+    this->setLevel(lvl);
+    this->setHealth(15);
+    this->setAttack(70);
+    this->setDefence(10);
+    this->setMagicAttack(40);
+    this->setMagicDefence(10);
+    this->setSpeed(190);
+    this->setName("Bunny");
+    this->setType(Snow);
+    this->setStatToIncrease(STATINCREASE_HEALTH);
+    this->setAbility(Ability_Insomnia);
+    this->setTag("RABBIT;"
+        + std::to_string(static_cast<int>(_SQ_Rabbit_Food)) + ";"
+        + std::to_string(static_cast<int>(_SQ_Snowball)) + ";"
+        + std::to_string(static_cast<int>(_SQ_Garden)) + ";"
+        + std::to_string(static_cast<int>(_SQ_Scary_Face)) + ";"
+        + std::to_string(static_cast<int>(_SQ_Sing)) + ";");
+    this->init(lvl);
+}
 Blue_Fish::Blue_Fish(int lvl)
 {
     //Define FISH Enemy Type Base Stats
@@ -1396,7 +1417,59 @@ Move* SQMoveFunctions::IntToMove(int i)
         return new Bee_Sting();
     case _SQ_Bulk_Up:
         return new Bulk_Up();
+    case _SQ_Rabbit_Food:
+        return new Rabbit_Food();
     }
     return new Water_Blast();
 }
 
+void Rabbit_Food::Execute(Character* Attacker, Character* Defender, FightWindow* f)
+{
+    /*
+    * THIS MOVE DESTROYS ALL FLOWERS FROM THE ATTACKER & DEFENDER AND INCREASES ALL STATS BY 5 * FLOWERS
+    */
+    json j;
+    if (Defender->getJSONTag() != "")
+        j = json::parse(Defender->getJSONTag());
+
+    int _DefenderFlowerAmt = 0;
+    if (j.find("Flowers_Placed") != j.end())
+        _DefenderFlowerAmt = j["Flowers_Placed"];
+
+    if (_DefenderFlowerAmt > 0)
+    {
+        j["Flowers_Placed"] = 0;
+        std::string jsonData = j.dump();
+        Defender->setJSONTag(jsonData);
+    }
+
+    if (Attacker->getJSONTag() != "")
+        j = json::parse(Defender->getJSONTag());
+
+    int _AttackerFlowerAmt = 0;
+    if (j.find("Flowers_Placed") != j.end())
+        _AttackerFlowerAmt += j["Flowers_Placed"];
+
+    if (_AttackerFlowerAmt > 0)
+    {
+        j["Flowers_Placed"] = 0;
+        std::string jsonData = j.dump();
+        Defender->setJSONTag(jsonData);
+    }
+
+    int flowerAmount = _AttackerFlowerAmt + _DefenderFlowerAmt;
+
+    if (flowerAmount > 0)
+    {
+        Attacker->setAttack(Attacker->getAttack() + (flowerAmount * 5));
+        Attacker->setDefence(Attacker->getDefence() + (flowerAmount * 5));
+        Attacker->setMagicAttack(Attacker->getMagicAttack() + (flowerAmount * 5));
+        Attacker->setMagicDefence(Attacker->getMagicDefence() + (flowerAmount * 5));
+        Attacker->setSpeed(Attacker->getSpeed() + (flowerAmount * 5));
+        f->AddFString("Increased Stats");
+    }
+    else
+    {
+        f->AddFString("Had Nothing To Eat");
+    }
+}

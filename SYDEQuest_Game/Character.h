@@ -111,7 +111,8 @@ enum _SQMoves {
 	_SQ_Skull_Pierce,
 	_SQ_Ciggie_Rain,
 	_SQ_Bee_Sting,
-	_SQ_Bulk_Up
+	_SQ_Bulk_Up,
+	_SQ_Rabbit_Food
 };
 
 class Character {
@@ -300,6 +301,10 @@ public:
 class Bee : public Enemy {
 public:
 	Bee(int lvl);
+};
+class Rabbit : public Enemy {
+public:
+	Rabbit(int lvl);
 };
 class Freebee : public Enemy {
 public:
@@ -1078,6 +1083,21 @@ public:
 		m_TeachAbleTypes = std::vector<_SQType>{ Melee, Air, Telekinetic, Metal, Water, Fire, Grass, Electric };
 	}
 	virtual ~Bulk_Up() {}
+	void Execute(Character* Attacker, Character* Defender, FightWindow* f) override;
+protected:
+};
+class Rabbit_Food : public Move {
+public:
+	Rabbit_Food()
+	{
+		m_Move = _SQ_Rabbit_Food;
+		m_Name = "Rabbit Food";
+		m_Type = Melee;
+		BasePower = 0;
+		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\RabbitFood.bmp", BattleFunctions::astVars, 200, 160, 20, 20, 0, 73));
+		m_TeachAbleTypes = std::vector<_SQType>{ Melee, Snow };
+	}
+	virtual ~Rabbit_Food() {}
 	void Execute(Character* Attacker, Character* Defender, FightWindow* f) override;
 protected:
 };

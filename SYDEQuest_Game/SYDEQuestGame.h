@@ -48,6 +48,7 @@ public:
 	static CustomAnimationAsset m_WOLF;
 	static CustomAnimationAsset m_CRAB;
 	static CustomAnimationAsset m_BEE;
+	static CustomAnimationAsset m_RABBIT;
 #pragma region BossAnimations
 	//BOSS ANIMATIONS
 	static CustomAnimationAsset m_SMOKE_CRAB;

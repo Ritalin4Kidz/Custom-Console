@@ -115,7 +115,7 @@ int main(int argc, char* argv[])
 	}
 
 	SYDEGamePlay::showFPS(true);
-
+	SYDEGamePlay::set_FPS_Position(Vector2(config.getConsoleWidth() - 6, 1));
 	window.setStartingLine(1);
 	while (true)
 	{

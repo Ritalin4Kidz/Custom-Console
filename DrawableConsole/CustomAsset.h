@@ -87,6 +87,8 @@ public:
 	/// <param name="newColour"></param>
 	void changeAllInstancesOfColour(ColourClass oldColour, ColourClass newColour);
 
+	int changeAllInstancesOfColour(ColourClass oldColour, ColourClass newColour, char newChar);
+
 	/// <summary>
 	/// return the character at a certain point in the asset
 	/// </summary>

@@ -96,6 +96,7 @@ const std::string MAP_FLOWERED_FIELDS = "Flowered Fields";
 const std::string MAP_KELIN_ISLAND = "Kelin Island";
 const std::string MAP_MEOW_COAST = "Meow Coast";
 const std::string MAP_START_ISLAND = "Start Island";
+const std::string MAP_GREYLOT = "Greylot";
 
 SYDEMapGame::SYDEMapGame()
 {
@@ -1444,6 +1445,7 @@ void MainMapScene::RefreshDockChoices()
 	if (m_IslandBMP == MAP_KELIN_ISLAND)
 	{
 		_DockChoices.push_back(DockChoice(MAP_BEACHED_ENTRANCE, 125));
+		_DockChoices.push_back(DockChoice(MAP_GREYLOT, 250));
 	}
 	if (m_IslandBMP == MAP_BEACHED_ENTRANCE)
 	{
@@ -1605,7 +1607,16 @@ Enemy* MainMapScene::getRandomEnemyFromPool(int pool, int minLvl)
 	}
 	if (pool == 4)
 	{
-		return new Crab(2 + (rand() % 5));
+		return new Crab(minLvl + (rand() % 5));
+	}
+	if (pool == 5)
+	{
+		int i = rand() % 2;
+		if (i == 0)
+		{
+			return new Wolf(minLvl + (rand() % 4));
+		}
+		return new Rabbit(minLvl + rand() % 7);
 	}
 	return new Enemy();
 }

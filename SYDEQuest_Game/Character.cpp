@@ -1430,11 +1430,15 @@ void Rabbit_Food::Execute(Character* Attacker, Character* Defender, FightWindow*
     */
     json j;
     if (Defender->getJSONTag() != "")
+    {
         j = json::parse(Defender->getJSONTag());
+    }
 
     int _DefenderFlowerAmt = 0;
     if (j.find("Flowers_Placed") != j.end())
+    {
         _DefenderFlowerAmt = j["Flowers_Placed"];
+    }
 
     if (_DefenderFlowerAmt > 0)
     {
@@ -1444,7 +1448,9 @@ void Rabbit_Food::Execute(Character* Attacker, Character* Defender, FightWindow*
     }
 
     if (Attacker->getJSONTag() != "")
-        j = json::parse(Defender->getJSONTag());
+    {
+        j = json::parse(Attacker->getJSONTag());
+    }
 
     int _AttackerFlowerAmt = 0;
     if (j.find("Flowers_Placed") != j.end())
@@ -1454,7 +1460,7 @@ void Rabbit_Food::Execute(Character* Attacker, Character* Defender, FightWindow*
     {
         j["Flowers_Placed"] = 0;
         std::string jsonData = j.dump();
-        Defender->setJSONTag(jsonData);
+        Attacker->setJSONTag(jsonData);
     }
 
     int flowerAmount = _AttackerFlowerAmt + _DefenderFlowerAmt;

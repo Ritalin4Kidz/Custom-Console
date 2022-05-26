@@ -4,6 +4,7 @@ AssetsClass SYDEPlatformer::astVars = AssetsClass();
 void SYDEPlatformer::init()
 {
 	m_Levels = SYDEFileDefaults::getAllFileNamesInFolder("EngineFiles\\Bitmaps\\Map", ".bmp",true);
+	changePreviewMap();
 }
 
 ConsoleWindow SYDEPlatformer::window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -71,6 +72,11 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	if (SYDEKeyCode::get_key('T')._CompareState(KEY))
 	{
 		window.setTextAtPoint(Vector2(0, 1), timeStringConvert(), BRIGHTGREEN);
+	}
+	if (coinsOnMap > 0)
+	{
+		coinCounter.setText("Coins Collected: " + to_string(coinsCollected) + "/" + to_string(coinsOnMap));
+		window = coinCounter.draw_ui(window);
 	}
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
@@ -143,8 +149,25 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	}
 	if (m_MainMap.getColourAtPoint(PlayerPos) == AQUA_AQUA_BG)
 	{
-		winMap();
-		return window;
+		bool canWin = true;
+		if (coinsOnMap > 0)
+		{
+			if (coinsCollected < coinsOnMap)
+			{
+				canWin = false;
+			}
+		}
+		if (canWin)
+		{
+			winMap();
+			return window;
+		}
+	}
+	if (m_MainMap.getColourAtPoint(PlayerPos) == BRIGHTYELLOW && m_MainMap.getCharAtPoint(PlayerPos) == 'O')
+	{
+		m_MainMap.setCharAtPoint(PlayerPos,' ');
+		m_MainMap.setColourAtPoint(PlayerPos, BLACK);
+		coinsCollected++;
 	}
 	if (m_MainMap.getColourAtPoint(PlayerPos) == YELLOW_YELLOW_BG)
 	{
@@ -199,6 +222,7 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 	}
 	window.setTextAtPoint(Vector2(0, 1), "SELECT LEVEL", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(2, 5), m_Levels[SelectedLevel], BRIGHTWHITE);
+	window = m_MapPreview.draw_asset(window, Vector2(0, 7));
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
 		m_State = MainMenu_STATE;
@@ -210,6 +234,7 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 		{
 			SelectedLevel = 0;
 		}
+		changePreviewMap();
 	}
 	else if (SYDEKeyCode::get_key('A')._CompareState(KEYDOWN))
 	{
@@ -218,6 +243,7 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 		{
 			SelectedLevel = m_Levels.size() -1;
 		}
+		changePreviewMap();
 	}
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
@@ -229,6 +255,7 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 		CheckPoint = m_MainMap.returnPointOfFirstInstance(LIGHTGREY_LIGHTGREY_BG);
 		PlayerPos = CheckPoint;
 		gameTime = 0.0f;
+		sortOutCoins();
 	}
 	return window;
 }
@@ -251,6 +278,24 @@ ConsoleWindow SYDEPlatformer::draw_WinState(ConsoleWindow window, int windowWidt
 	window.setTextAtPoint(Vector2(3, 10), "Time Taken: " + timeString, BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 11), "Press Space To Return To Menu", BRIGHTWHITE);
 	return window;
+}
+void SYDEPlatformer::changePreviewMap()
+{
+	string bmpFile = "EngineFiles\\Bitmaps\\Preview\\" + m_Levels[SelectedLevel];
+	if (SYDEFileDefaults::exists(bmpFile.c_str()))
+	{
+		wstring wbmpFile = wstring(bmpFile.begin(), bmpFile.end());
+		m_MapPreview = CustomAsset(50, 15, astVars.get_bmp_as_direct_colour_class_array((WCHAR*)wbmpFile.c_str(), 25, 15));
+	}
+	else
+	{
+		m_MapPreview = CustomAsset(50, 15, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\Preview\\DefaultPreview.bmp", 25, 15));
+	}
+}
+void SYDEPlatformer::sortOutCoins()
+{
+	coinsCollected = 0;
+	coinsOnMap = m_MainMap.changeAllInstancesOfColour(BRIGHTYELLOW_BRIGHTYELLOW_BG, BRIGHTYELLOW, 'O');
 }
 void SYDEPlatformer::AddPositionX(Vector2 add)
 {
@@ -314,6 +359,12 @@ void SYDEPlatformer::ApplyMomentum()
 					dead = true;
 					return;
 				}
+				if (m_MainMap.getColourAtPoint(PlayerPos) == BRIGHTYELLOW && m_MainMap.getCharAtPoint(PlayerPos) == 'O')
+				{
+					m_MainMap.setCharAtPoint(PlayerPos, ' ');
+					m_MainMap.setColourAtPoint(PlayerPos, BLACK);
+					coinsCollected++;
+				}
 			}
 			else
 			{
@@ -337,6 +388,12 @@ void SYDEPlatformer::ApplyMomentum()
 				{
 					dead = true;
 					return;
+				}
+				if (m_MainMap.getColourAtPoint(PlayerPos) == BRIGHTYELLOW && m_MainMap.getCharAtPoint(PlayerPos) == 'O')
+				{
+					m_MainMap.setCharAtPoint(PlayerPos, ' ');
+					m_MainMap.setColourAtPoint(PlayerPos, BLACK);
+					coinsCollected++;
 				}
 			}
 			else

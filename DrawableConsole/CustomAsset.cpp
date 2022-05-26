@@ -98,6 +98,24 @@ void CustomAsset::changeAllInstancesOfColour(ColourClass oldColour, ColourClass 
 	}
 }
 
+int CustomAsset::changeAllInstancesOfColour(ColourClass oldColour, ColourClass newColour, char newChar)
+{
+	int instances = 0;
+	for (int i = 0; i < AssetVector.size(); i++)
+	{
+		for (int ii = 0; ii < AssetVector[i].size(); ii++)
+		{
+			if (AssetVector[i][ii].getColour() == oldColour)
+			{
+				AssetVector[i][ii].setColour(newColour);
+				AssetVector[i][ii].setChar(newChar);
+				instances++;
+			}
+		}
+	}
+	return instances;
+}
+
 char CustomAsset::getCharAtPoint(Vector2 Point)
 {
 	return AssetVector[Point.getY()][Point.getX()].getChar();

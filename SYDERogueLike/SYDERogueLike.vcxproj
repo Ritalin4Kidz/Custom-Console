@@ -149,7 +149,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GameTypes.h" />
     <ClInclude Include="MainMenuScenes.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
   </ItemGroup>

@@ -162,7 +162,7 @@ public:
 	MainMapScene();
 	~MainMapScene();
 	void LoadGameScene();
-	void DestroyScene(bool quitGame);
+	static void DestroyScene(bool quitGame);
 
 	ConsoleWindow Selecting(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow Sailing(ConsoleWindow window, int windowWidth, int windowHeight);
@@ -218,8 +218,9 @@ public:
 	static SYDEParticleBurst m_GameOverFireworks;
 	static SYDEClock_Timer m_FireworksTimer;
 
+	static void setMapState(MainMapSceneState state) { _MapState = state; }
+	static SYDERadialMenu_Basic m_RadialPause;
 private:
-	static SYDEMenu _PauseOptions;
 	static SYDEMenu _DockOptions;
 	static SYDEMenu _ShopOptions;
 	static SYDEMenu _PlayerMenuOptions;

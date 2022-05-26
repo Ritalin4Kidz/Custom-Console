@@ -108,7 +108,6 @@ int main(int argc, char* argv[])
 	CustomAnimationAsset::setStandardMaxFrameTime(0.03f);
 
 	SYDEMapGame m_MapSYDE;
-
 	//KEYS
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('A'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('W'));
@@ -135,7 +134,7 @@ int main(int argc, char* argv[])
 	{
 		SYDEGamePlay::opening_splashscreens(astVars.get_electronic_chime_file_path(), start, hOut, window, windowWidth, windowHeight, artVars);
 	}
-
+	SYDEGamePlay::EnableClicking(hOut);
 	//MAIN GAMEPLAY LOOP
 	SYDEScreenshotError e;
 	SYDEScreenshot::init();

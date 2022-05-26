@@ -10,6 +10,16 @@ SYDERadialOption::SYDERadialOption(string a_text, ColourClass txtColour, ColourC
 	textDisplayPos = displayPos;
 }
 
+SYDERadialOption::SYDERadialOption(string a_text, ColourClass txtColour, ColourClass a_hoverColour, string a_Symbol, Vector2 displayPos, void(*f)())
+{
+	m_Text = a_text;
+	TextColour = txtColour;
+	HoverColour = a_hoverColour;
+	m_Symbol = a_Symbol;
+	textDisplayPos = displayPos;
+	SetFunc(f);
+}
+
 ConsoleWindow SYDERadialOption::draw_ui_at_vector(ConsoleWindow window, Vector2 point)
 {
 	isHighlighted = false;

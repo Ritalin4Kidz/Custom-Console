@@ -20,9 +20,8 @@ SYDEMenu BattleScene::_MoveOptions = SYDEMenu();
 bool BattleScene::enemy_attack = false;
 bool BattleScene::_StatusApplied = false;
 int MainMapScene::m_IslandsDeep = 0;
-SYDEMenu MainMapScene::_PauseOptions = SYDEMenu(vector<SYDEButton> {
-		SYDEButton("RESUME", Vector2(1, 2), Vector2(20, 1), BLACK, true),
-		SYDEButton("EXIT", Vector2(1, 3), Vector2(20, 1), BLACK, true)});
+
+SYDERadialMenu_Basic MainMapScene::m_RadialPause = SYDERadialMenu_Basic();
 #pragma endregion
 
 #pragma region MapLoadingVars
@@ -98,6 +97,18 @@ const std::string MAP_MEOW_COAST = "Meow Coast";
 const std::string MAP_START_ISLAND = "Start Island";
 const std::string MAP_GREYLOT = "Greylot";
 
+void PauseMenuExitFunc()
+{
+	MainMapScene::setMapState(MState_Normal);
+	MainMapScene::DestroyScene(true);
+	GameScene::SetScene(MainMenu);
+}
+void PauseMenuResumeFunc()
+{
+	MainMapScene::setMapState(MState_Normal);
+}
+
+
 SYDEMapGame::SYDEMapGame()
 {
 	Bounties::Load();
@@ -117,6 +128,12 @@ SYDEMapGame::SYDEMapGame()
 	m_FREEBEE_CUTSCENE.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\Cutscenes\\FreebeeCutscene.bmp", astVars, 200, 120, 20, 20, 0, 61));
 	m_FREEBEE_CUTSCENE_WON.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\Cutscenes\\FreebeeDeathCutscene.bmp", astVars, 200, 100, 20, 20, 0, 50));
 	StatusAnimations::LoadAnimations();
+
+	MainMapScene::m_RadialPause = SYDERadialMenu_Basic(Vector2(20, 10),
+	SYDERadialOption("Player", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "P", Vector2(0, 1)),
+	SYDERadialOption("???", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "?", Vector2(0, 1)),
+	SYDERadialOption("Exit", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "X", Vector2(0, 1), PauseMenuExitFunc),
+	SYDERadialOption("Resume", BLACK_BRIGHTWHITE_BG, RED_LIGHTBLUE_BG, "R", Vector2(0, 1), PauseMenuResumeFunc));
 }
 
 ConsoleWindow SYDEMapGame::Animation_UI_EVENT(ConsoleWindow window, CustomAnimationAsset& _anim)
@@ -736,17 +753,6 @@ MainMapScene::MainMapScene()
 	m_FireworksTimer.SetFunc(TickFunc);
 	LoadGameScene();
 
-	_PauseOptions[0].m_Label = "0";
-	_PauseOptions[1].m_Label = "1";
-
-	_PauseOptions.setActive(false);
-	_PauseOptions.setPos(Vector2(1, 2));
-
-	for (int i = 0; i < _PauseOptions.getSize(); i++)
-	{
-		_PauseOptions[i].setHighLight(RED);
-	}
-
 	m_SAIL.setMaxDeltatime(0.05f);
 
 	///
@@ -979,30 +985,10 @@ ConsoleWindow MainMapScene::GameWon(ConsoleWindow window, int windowWidth, int w
 
 ConsoleWindow MainMapScene::Paused(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	window = _PauseOptions.draw_menu(window);
+	window = m_RadialPause.draw_ui(window);
 	for (int l = 0; l < windowWidth; l++)
 	{
 		window.setTextAtPoint(Vector2(l, 19), " ", WHITE_WHITE_BG);
-	}
-	if (SYDEKeyCode::get_key(VK_TAB)._CompareState(KEYDOWN))
-	{
-		_PauseOptions.nextSelect();
-	}
-	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
-	{
-		if (_PauseOptions[_PauseOptions.getSelectedNumber()].m_Label == "0")
-		{
-			//return to game
-			_MapState = MState_Normal;
-			return window;
-		}
-		else if (_PauseOptions[_PauseOptions.getSelectedNumber()].m_Label == "1")
-		{
-			_MapState = MState_Normal;
-			DestroyScene(true);
-			GameScene::SetScene(MainMenu);
-			return window;
-		}
 	}
 	return window;
 }
@@ -1112,11 +1098,13 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 	if (_MapState == MState_MoveSwap) { return MoveSwap(window, windowWidth, windowHeight); }
 	if (_MapState == MState_Cutscene) {return BossCutscene(window, windowWidth, windowHeight);}
 	if (_MapState == MState_GameWon) { return GameWon(window, windowWidth, windowHeight); }
+
+	window = m_bg.draw_asset(window, Vector2(0, 0));
+	window = m_Map.draw_asset(window, Vector2(SYDEMapGame::camera_Pos.getX() - 20, SYDEMapGame::camera_Pos.getY() - 10), windowWidth, windowHeight);
+
 	if (_MapState == MState_Paused) { return Paused(window, windowWidth, windowHeight); }
 	float _dt = SYDEDefaults::getDeltaTime() * SYDEMapGame::movementSpeed;
 	Vector2 MovementBuffer(0);
-	window = m_bg.draw_asset(window, Vector2(0, 0));
-	window = m_Map.draw_asset(window, Vector2(SYDEMapGame::camera_Pos.getX() - 20, SYDEMapGame::camera_Pos.getY() - 10), windowWidth, windowHeight);
 	//PlayerPos
 	window.setTextAtPoint(Vector2(20, 10), "><", window.determineColourAtPoint(Vector2(20, 10), BLACK, true));
 	char tempChar = m_Map.getCharAtPoint(SYDEMapGame::camera_Pos);

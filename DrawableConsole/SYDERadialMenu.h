@@ -14,6 +14,7 @@ class SYDERadialOption : public SYDEUI
 public:
 	SYDERadialOption() {}
 	SYDERadialOption(string a_text, ColourClass txtColour, ColourClass a_hoverColour, string a_Symbol, Vector2 displayPos);
+	SYDERadialOption(string a_text, ColourClass txtColour, ColourClass a_hoverColour, string a_Symbol, Vector2 displayPos, void(*f)());
 	virtual ~SYDERadialOption() {}
 	ConsoleWindow draw_ui_at_vector(ConsoleWindow window, Vector2 point);
 

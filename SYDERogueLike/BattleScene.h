@@ -5,6 +5,8 @@
 #include "SYDEstdafx.h"
 #include "SYDEUI.h"
 
+#include "OrcEnemy.h"
+
 class BattleScene : public GameScene
 {
 public:
@@ -13,5 +15,12 @@ public:
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
+
+	void test();
+
+
+	void doMovePreWork();
+
 private:
+	Enemy* m_Enemy;
 };

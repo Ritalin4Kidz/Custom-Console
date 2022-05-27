@@ -45,7 +45,7 @@ public:
 	/// <param name="g"></param>
 	/// <param name="b"></param>
 	/// <returns>true/false</returns>
-	bool rgb_match(vector<string> rgb, string r, string g, string b);
+	static bool rgb_match(vector<string> rgb, string r, string g, string b);
 	/// <summary>
 	/// Compare RGB
 	/// </summary>
@@ -62,7 +62,7 @@ public:
 	/// <param name="g"></param>
 	/// <param name="b"></param>
 	/// <returns></returns>
-	ColourClass return_colour_from_RGB(string r, string g, string b);
+	static ColourClass return_colour_from_RGB(string r, string g, string b);
 	/// <summary>
 	/// get colour from RGB
 	/// </summary>

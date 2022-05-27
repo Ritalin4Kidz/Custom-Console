@@ -95,6 +95,10 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('S'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_SPACE));
+
+	CustomAnimationAsset::SetDeltatimeBasedAnimation(true);
+	CustomAnimationAsset::setStandardMaxFrameTime(0.03f);
+
 	window.setStartingLine(1);
 	SYDERogueLikeMainControl m_MainControl;
 	while (true)

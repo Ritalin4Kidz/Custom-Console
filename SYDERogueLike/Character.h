@@ -57,7 +57,7 @@ public:
 	CustomAnimationAsset getAnimationAsset() { return m_Animation; }
 
 	void setAnimationLoop(bool loop) { m_Animation.setLooping(true); }
-	ConsoleWindow drawAnimationAsset(ConsoleWindow window, Vector2 v) { window = m_Animation.draw_asset(window, v); return window; }
+	ConsoleWindow drawAnimationAsset(ConsoleWindow window, Vector2 v) { return m_Animation.draw_asset(window, v); }
 
 protected:
 	_SQType m_Type = Melee;

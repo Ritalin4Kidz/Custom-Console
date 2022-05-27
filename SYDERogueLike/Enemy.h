@@ -10,5 +10,6 @@ public:
 
 	virtual Move* determineMove(Character opponent) { return new Move(); }
 
-private:
+
+protected:
 };

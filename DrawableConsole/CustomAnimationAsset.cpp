@@ -69,7 +69,7 @@ void CustomAnimationAsset::nextFrame()
 	}
 }
 
-vector<CustomAsset> AnimationSpriteSheets::load_from_animation_sheet(const WCHAR * bmpFile, AssetsClass astVars, int file_totalWidth, int file_totalHeight, int sprite_width, int sprite_height, int startingSprite, int noSprites)
+vector<CustomAsset> AnimationSpriteSheets::load_from_animation_sheet(const WCHAR * bmpFile, int file_totalWidth, int file_totalHeight, int sprite_width, int sprite_height, int startingSprite, int noSprites)
 {
 	Bitmap temp(bmpFile, FALSE);
 	vector<CustomAsset> tempAssetVec;
@@ -91,7 +91,7 @@ vector<CustomAsset> AnimationSpriteSheets::load_from_animation_sheet(const WCHAR
 			{
 				Gdiplus::Color pixelColor;
 				temp.GetPixel(ii + xPos, i + yPos, &pixelColor);
-				ColourClass colour_use = astVars.return_colour_from_RGB(to_string(pixelColor.GetR()), to_string(pixelColor.GetG()), to_string(pixelColor.GetB()));
+				ColourClass colour_use = AssetsClass::return_colour_from_RGB(to_string(pixelColor.GetR()), to_string(pixelColor.GetG()), to_string(pixelColor.GetB()));
 				tempVec.push_back(colour_use); //twice for one pixel
 				tempVec.push_back(colour_use);
 			}

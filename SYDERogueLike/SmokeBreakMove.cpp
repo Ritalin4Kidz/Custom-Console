@@ -8,21 +8,28 @@ void SmokeBreakMove::Execute(json* Attacker, json* Defender)
 
     //Defender Get Attacked By Water
     float totalDamage = BaseDamageCalculation(Attacker->at("level").get<int>(), Attacker->at("attack").get<int>(), Defender->at("defence").get<int>(), Bonus_Damage);
-    Attacker->AddHealth(Attacker->getMaxHealth() / 5);
+    int healthDef = Defender->at("health").get<int>();
+    int maxHealthAttk = Attacker->at("maxHealth").get<int>();
+
+    int attackDef = Attacker->at("defence").get<int>();
+
+     _SQAbility ability = static_cast<_SQAbility>(Attacker->at("ability").get<int>());
     //SMOKE ATTACKS GIVE HEALTH, BUT LOWER DEFENCE STAT
-    if (Attacker->getDefence() > 5 && Attacker->getAbility() != Ability_ChainSmoker)
+    if (attackDef > 5 && ability != Ability_ChainSmoker)
     {
-        Attacker->setDefence(Attacker->getDefence() - 1);
-        if (Attacker->getDefence() < 5)
+        attackDef--;;
+        if (attackDef < 5)
         {
-            Attacker->setDefence(5);
+            attackDef = 5;;
         }
     }
     if (totalDamage > 0)
     {
-        Defender->AddHealth(-totalDamage);
+        healthDef -= totalDamage;
     }
 
     //THEN WE NEED TO MAKE SURE JSON IS SAVED
+    Attacker->at("defence") = attackDef;
+    Defender->at("health") = healthDef;
 
 }

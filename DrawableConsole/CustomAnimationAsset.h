@@ -22,7 +22,7 @@ public:
 	/// <param name="startingSprite"></param>
 	/// <param name="noSprites"></param>
 	/// <returns></returns>
-	static vector<CustomAsset> load_from_animation_sheet(const WCHAR* bmpFile, AssetsClass astVars, int file_totalWidth, int file_totalHeight, int sprite_width, int sprite_height, int startingSprite, int noSprites);
+	static vector<CustomAsset> load_from_animation_sheet(const WCHAR* bmpFile, int file_totalWidth, int file_totalHeight, int sprite_width, int sprite_height, int startingSprite, int noSprites);
 };
 
 class CustomAnimationAsset {

@@ -2218,7 +2218,7 @@ void SYDEMainDemos::Sprite_Sheet_Test()
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
 	CustomAnimationAsset testSheetAnim;
-	testSheetAnim.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\TestAnimations\\TestSpriteSheet_2.bmp", astVars, 80, 100, 20, 20, 6, 11));
+	testSheetAnim.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\TestAnimations\\TestSpriteSheet_2.bmp", 80, 100, 20, 20, 6, 11));
 	testSheetAnim.setLooping(true);
 	while (true)
 	{

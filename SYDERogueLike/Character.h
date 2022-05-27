@@ -1,4 +1,5 @@
 #pragma once
+#include "SYDEEngineAssets.h"
 #include <string>
 #include "GameTypes.h"
 #include "Move.h"
@@ -41,8 +42,22 @@ public:
 	void setJSONTag(json t) { m_JSONTag = t; }
 	json getJSONTag();
 
-	void validateFromJson(json t);
+	void validateCurrentJsonTag();
 
+	void validateFromJson(const json& j);
+
+	void SetMoves(std::vector<Move*> _Moves);
+	void SetMoveAtIndex(int index, Move* m);
+	Move* getMoveAtIndex(int index) { return m_MoveArray[index]; }
+	std::vector<Move*> getMoves() { return m_MoveArray; }
+	void ClearMoves() { for (int i = 0; i < m_MoveArray.size(); i++) { delete m_MoveArray[i]; }m_MoveArray.clear(); }
+
+	void SetAnimation(CustomAnimationAsset a) { m_Animation = a; m_Animation.setFrame(0); m_Animation.setPaused(false); m_Animation.setLooping(true); }
+	void init(int lvl);
+	CustomAnimationAsset getAnimationAsset() { return m_Animation; }
+
+	void setAnimationLoop(bool loop) { m_Animation.setLooping(true); }
+	ConsoleWindow drawAnimationAsset(ConsoleWindow window, Vector2 v) { window = m_Animation.draw_asset(window, v); return window; }
 
 protected:
 	_SQType m_Type = Melee;
@@ -60,5 +75,6 @@ protected:
 	std::string m_Name = "N/A";
 	json m_JSONTag;
 
-	vector<Move*> m_MoveTags = vector<Move*>();
+	vector<Move*> m_MoveArray = vector<Move*>();
+	CustomAnimationAsset m_Animation;
 };

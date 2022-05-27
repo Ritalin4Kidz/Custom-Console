@@ -143,17 +143,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BattleScene.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="MainMenuScenes.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="OrcEnemy.cpp" />
+    <ClCompile Include="SmokeBreakMove.cpp" />
     <ClCompile Include="SYDERogueLike.cpp" />
     <ClCompile Include="SydeRogueLikeMainControl.cpp" />
     <ClCompile Include="SydeRogueLikeStatics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleScene.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameTypes.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="MainMenuScenes.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="OrcEnemy.h" />
+    <ClInclude Include="SmokeBreakMove.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
   </ItemGroup>

@@ -142,12 +142,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="MainMenuScenes.cpp" />
     <ClCompile Include="SYDERogueLike.cpp" />
     <ClCompile Include="SydeRogueLikeMainControl.cpp" />
     <ClCompile Include="SydeRogueLikeStatics.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleScene.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameTypes.h" />
     <ClInclude Include="MainMenuScenes.h" />

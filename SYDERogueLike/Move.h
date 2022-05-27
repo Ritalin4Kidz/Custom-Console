@@ -20,7 +20,9 @@ public:
 	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);
 
 	CustomAnimationAsset getAnimation() { return m_Animation; }
+	ConsoleWindow drawAnimation(ConsoleWindow window, Vector2 point) { return m_Animation.draw_asset(window, point); }
 
+	void resetAnimation() { m_Animation.setFrame(0); }
 protected:
 	_SQType m_Type;
 	std::string m_Name;

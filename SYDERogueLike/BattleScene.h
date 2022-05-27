@@ -4,8 +4,24 @@
 
 #include "SYDEstdafx.h"
 #include "SYDEUI.h"
-
+#include <SYDEClickableButton.h>
 #include "OrcEnemy.h"
+#include "PlayerFuri.h"
+
+enum BattleSceneStates
+{
+	m_BSS_Normal = 0,
+	m_BSS_DoMovePreWork = 1,
+	m_BSS_DoMoves = 2
+};
+
+enum BattleState
+{
+	m_BS_Prework = 0,
+	m_BS_Animation = 1,
+	m_BS_Postwork = 2
+};
+
 
 class BattleScene : public GameScene
 {
@@ -18,9 +34,27 @@ public:
 
 	void test();
 
+	static void callMove() { doMoveCall = true; }
 
 	void doMovePreWork();
 
+	ConsoleWindow doMoves(ConsoleWindow window);
+
 private:
+	static bool doMoveCall;
+
+	BattleSceneStates m_SceneState = m_BSS_Normal;
+
 	Enemy* m_Enemy;
+	Player* m_Player;
+	vector<SYDEUI*> m_UIControl = vector<SYDEUI*>();
+
+	vector<Move*> m_MovesForTurn = vector<Move*>();
+	bool enemyTurn = false;
+
+	BattleState m_BattleState = m_BS_Prework;
+
+	std::string windowText_Top = "";
+	std::string windowText_Bottom = "";
+	float timeTakenPostWork = 0;
 };

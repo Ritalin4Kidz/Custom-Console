@@ -70,18 +70,6 @@ void BattleScene::onNewScene()
 
 	m_UIControl.clear();
 
-	m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
-
-	m_UIControl.push_back(new SYDEClickableButton(
-		"Test Move",
-		Vector2(4,15),
-		Vector2(9, 1),
-		BLACK_BRIGHTWHITE_BG,
-		NULLCOLOUR, 
-		false,
-		startMove
-	));
-
 	test();
 }
 
@@ -89,6 +77,18 @@ void BattleScene::test()
 {
 	m_Enemy = new OrcEnemy(5);
 	m_Player = new PlayerFuri(5);
+
+	m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
+
+	m_UIControl.push_back(new SYDEClickableButton(
+		"Test Move",
+		Vector2(4, 15),
+		Vector2(9, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		startMove
+	));
 }
 
 void BattleScene::doMovePreWork()
@@ -133,6 +133,10 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		}
 		windowText_Top = (enemyTurn ? m_Enemy->getName() : m_Player->getName()) + " Used";
 		windowText_Bottom = m_MovesForTurn[0]->getName();
+		//TODO: GET STATUS AND IF FAILED
+		//IF MISS, USGAE DECREMENTS
+		//IF STATUS AFFECTED, USAGES STAY SAME
+		m_MovesForTurn[0]->decrementUsages();
 		m_BattleState = m_BS_Animation;
 	}
 	else if (m_BattleState == m_BS_Animation)
@@ -142,14 +146,15 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		{
 			m_Player->validateCurrentJsonTag();
 			m_Enemy->validateCurrentJsonTag();
-
+			std::string moveTag;
 			json player = m_Player->getJSONTag();
 			json enemy = m_Enemy->getJSONTag();
 			//ANIMATION DONE
 			timeTakenPostWork = 0;
 			m_MovesForTurn[0]->Execute(
 				enemyTurn ? &enemy : &player,
-				enemyTurn ? &player : &enemy);
+				enemyTurn ? &player : &enemy,
+				&moveTag);
 			enemyTurn = !enemyTurn;
 
 			m_MovesForTurn.erase(m_MovesForTurn.begin());

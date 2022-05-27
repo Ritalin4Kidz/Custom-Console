@@ -59,6 +59,8 @@ public:
 	void setAnimationLoop(bool loop) { m_Animation.setLooping(true); }
 	ConsoleWindow drawAnimationAsset(ConsoleWindow window, Vector2 v) { return m_Animation.draw_asset(window, v); }
 
+	vector<Move*> getUsableMoves();
+
 protected:
 	_SQType m_Type = Melee;
 	_SQStatus m_Status = Status_None;
@@ -77,4 +79,6 @@ protected:
 
 	vector<Move*> m_MoveArray = vector<Move*>();
 	CustomAnimationAsset m_Animation;
+
+	Move* m_LastEffortMove;
 };

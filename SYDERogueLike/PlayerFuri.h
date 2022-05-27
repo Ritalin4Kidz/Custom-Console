@@ -1,7 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Move.h"
-#include "SmokeBreakMove.h"
+#include "MovesHeader.h"
 class PlayerFuri : public Player
 {
 public:

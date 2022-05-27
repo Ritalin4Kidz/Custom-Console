@@ -1,6 +1,6 @@
 #pragma once
 #include "Enemy.h"
-#include "SmokeBreakMove.h"
+#include "MovesHeader.h"
 class OrcEnemy : public Enemy
 {
 public:

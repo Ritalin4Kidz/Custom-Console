@@ -57,3 +57,16 @@ void Character::SetMoveAtIndex(int index, Move* m)
 void Character::init(int lvl)
 {
 }
+
+vector<Move*> Character::getUsableMoves()
+{
+    vector<Move*> vec = vector<Move*>();
+    for (int i = 0; i < m_MoveArray.size(); i++)
+    {
+        if (m_MoveArray[i]->getUsagesLeft() > 0)
+        {
+            vec.push_back(m_MoveArray[i]);
+        }
+    }
+    return vec;
+}

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "GameTypes.h"
+#include "Move.h"
 
 class Character {
 public:
@@ -37,9 +38,10 @@ public:
 	void clearStatus() { m_Status = Status_None; }
 	_SQStatus getStatus() { return m_Status; };
 
-	void setJSONTag(std::string t) { m_JSONTag = t; }
-	std::string getJSONTag() { return m_JSONTag; }
+	void setJSONTag(json t) { m_JSONTag = t; }
+	json getJSONTag();
 
+	void validateFromJson(json t);
 
 
 protected:
@@ -56,7 +58,7 @@ protected:
 	int m_Level = 1;
 	int m_Speed = 30;
 	std::string m_Name = "N/A";
-	std::string m_JSONTag = "";
+	json m_JSONTag;
 
-	vector<string> m_MoveTags = vector<string>();
+	vector<Move*> m_MoveTags = vector<Move*>();
 };

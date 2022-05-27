@@ -24,11 +24,11 @@ float Move::BaseDamageCalculation(int level, float AttackStat, float DefenceStat
 }
 
 
-float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
+float BattleFunctions::DetermineMultiplier(Move* Attack, _SQType Defender)
 {
     if (Attack->getType() == Water)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Fire:
             return 3.0f;
@@ -44,7 +44,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Fire)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Grass:
             return 3.0f;
@@ -60,7 +60,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Grass)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Water:
             return 2.0f;
@@ -72,7 +72,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Air)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Melee:
             return 1.5f;
@@ -84,7 +84,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Metal)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Fire:
             return 0.5f;
@@ -100,7 +100,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Melee)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Fire:
             return 1.25f;
@@ -116,7 +116,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Electric)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Air:
             return 3.0f;
@@ -132,7 +132,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Snow)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Fire:
             return 0.5f;
@@ -150,7 +150,7 @@ float BattleFunctions::DetermineMultiplier(Move* Attack, Character* Defender)
     }
     else if (Attack->getType() == Telekinetic)
     {
-        switch (Defender->getType())
+        switch (Defender)
         {
         case Melee:
             return 2.5f;

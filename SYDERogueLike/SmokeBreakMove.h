@@ -10,6 +10,6 @@ public:
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\ItemUseAnimations\\CigaretteUseAnimation.bmp", , 200, 280, 20, 20, 0, 137));
 	}
 	virtual ~SmokeBreakMove() {}
-	void Execute(Character* Attacker, Character* Defender) override;
+	void Execute(json* Attacker, json* Defender) override;
 protected:
 };

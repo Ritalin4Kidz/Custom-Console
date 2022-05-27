@@ -1,7 +1,10 @@
 #include "SmokeBreakMove.h"
 
-void SmokeBreakMove::Execute(Character* Attacker, Character* Defender)
+void SmokeBreakMove::Execute(json* Attacker, json* Defender)
 {
+    //WE NEED TO VALIDATE THE JSON
+    //THEN WE CAN USE THAT DATA TO AFFECT THE MOVE
+
     float Bonus_Damage = BattleFunctions::DetermineMultiplier(this, Defender);
 
     //Defender Get Attacked By Water
@@ -20,4 +23,7 @@ void SmokeBreakMove::Execute(Character* Attacker, Character* Defender)
     {
         Defender->AddHealth(-totalDamage);
     }
+
+    //THEN WE NEED TO MAKE SURE JSON IS SAVED
+
 }

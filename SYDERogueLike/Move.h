@@ -3,18 +3,18 @@
 #include "GameTypes.h"
 #include <string>
 #include "SYDEEngineAssets.h"
-#include "Character.h"
+#include "json.hpp"
+using json = nlohmann::json;
 /*
 TODO: DESIGN HOW MOVES WILL WORK PROPERLY
 */
-
 class Move {
 public:
 	Move() {}
 	virtual ~Move() { }
 	_SQType getType() { return m_Type; }
 	std::string getName() { return m_Name; }
-	virtual void Execute(Character* Attacker, Character* Defender) {};
+	virtual void Execute(json* Attacker, json* Defender) {};
 
 	float getPower() { return BasePower; }
 	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);
@@ -32,6 +32,6 @@ protected:
 
 class BattleFunctions {
 public:
-	static float DetermineMultiplier(Move* Attack, Character* Defender);
+	static float DetermineMultiplier(Move* Attack, _SQType Defender);
 	static AssetsClass astVars;
 };

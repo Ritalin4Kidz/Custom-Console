@@ -5,6 +5,8 @@
 #include "json.hpp"
 #include "FightWindow.h"
 
+using json = nlohmann::json;
+
 class LevelUPRates {
 public:
 	static int FAST_LEVEL_UP_GROUP_START;
@@ -154,6 +156,7 @@ public:
 
 	void setJSONTag(std::string t) { m_JSONTag = t; }
 	std::string getJSONTag() { return m_JSONTag; }
+
 
 protected:
 	_SQType m_Type = Melee;

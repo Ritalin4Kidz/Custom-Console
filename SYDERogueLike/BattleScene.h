@@ -35,14 +35,16 @@ public:
 	void test();
 
 	static void callMove() { doMoveCall = true; }
-
+	static void setSelectedMoveInt(int index) { selectedMove = index; }
 	void doMovePreWork();
 
 	ConsoleWindow doMoves(ConsoleWindow window);
 
+	void ValidateUI();
+
 private:
 	static bool doMoveCall;
-
+	static int selectedMove;
 	BattleSceneStates m_SceneState = m_BSS_Normal;
 
 	Enemy* m_Enemy;

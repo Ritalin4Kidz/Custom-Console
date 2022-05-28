@@ -1,9 +1,24 @@
 #include "BattleScene.h"
 
 bool BattleScene::doMoveCall = false;
-
+int BattleScene::selectedMove = 0;
+/*
+TO DO LIST FOR BATTLE SCENE:
+- ADD ACCURACY INTO MOVE (DONE)
+- ADD STATUS EFFECTS INTO BATTLE
+- ADD DEATH ANIMATIONS TO CHARACTERS
+- ADD MOVE TO NEW SCENE WHEN BATTLE WON
+- MAYBE INVENTORY (SO HEALING ITEMS AND SHIT NOT A PRIORITY)
+*/
 void startMove()
 {
+	BattleScene::callMove();
+}
+
+void moveClick()
+{
+
+	BattleScene::setSelectedMoveInt(stoi(SYDEClickableButton::getLastButtonTag()));
 	BattleScene::callMove();
 }
 
@@ -69,8 +84,40 @@ void BattleScene::onNewScene()
 	m_SceneState = m_BSS_Normal;
 
 	m_UIControl.clear();
-
 	test();
+	for (int i = 0; i < m_Player->getMoves().size(); i++)
+	{
+		m_UIControl.push_back(new SYDEClickableButton(
+			m_Player->getMoveAtIndex(i)->getName(),
+			Vector2(1, 8 + (i * 2)),
+			Vector2(18, 1),
+			BLACK_BRIGHTWHITE_BG,
+			NULLCOLOUR,
+			false,
+			moveClick,
+			to_string(i),
+			"MoveData-" + to_string(i)
+		));
+		m_UIControl.push_back(new SYDELabel(
+			to_string(m_Player->getMoveAtIndex(i)->getUsagesLeft()) + "/" + to_string(m_Player->getMoveAtIndex(i)->getMaxUsages()),
+			Vector2(1, 9 + (i * 2)),
+			Vector2(18, 1),
+			BLACK,
+			true,
+			"LabelData-" + to_string(i)));
+	}
+	m_UIControl.push_back(new SYDEClickableButton(
+		m_Player->getLastEffortMove()->getName(),
+		Vector2(1, 17),
+		Vector2(18, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		moveClick,
+		to_string(4),
+		"MoveData-" + to_string(4)
+	));
+	ValidateUI();
 }
 
 void BattleScene::test()
@@ -80,23 +127,37 @@ void BattleScene::test()
 
 	m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
 
-	m_UIControl.push_back(new SYDEClickableButton(
-		"Test Move",
-		Vector2(4, 15),
-		Vector2(9, 1),
-		BLACK_BRIGHTWHITE_BG,
-		NULLCOLOUR,
-		false,
-		startMove
-	));
+	//m_UIControl.push_back(new SYDEClickableButton(
+	//	"Test Move",
+	//	Vector2(4, 15),
+	//	Vector2(9, 1),
+	//	BLACK_BRIGHTWHITE_BG,
+	//	NULLCOLOUR,
+	//	false,
+	//	startMove
+	//));
 }
 
 void BattleScene::doMovePreWork()
 {
+	Move* PlayerMove;
+	if (selectedMove >= 4)
+	{
+		PlayerMove = m_Player->getLastEffortMove();
+	}
+	else
+	{
+		PlayerMove = m_Player->getMoveAtIndex(selectedMove);
+	}
+	if (PlayerMove->getUsagesLeft() <= 0 && !PlayerMove->isLastEffortMove())
+	{
+		m_SceneState = m_BSS_Normal;
+		return;
+	}
+
+
 	//GENERATE ENEMY MOVE
 	Move* EnemyMove = m_Enemy->determineMove(*m_Player);
-	//TODO: GET CHOSEN MOVE FROM PLAYER
-	Move* PlayerMove = m_Player->getMoveAtIndex(0);
 	EnemyMove->resetAnimation();
 	PlayerMove->resetAnimation();
 	//DETERMINE THE ORDER OF THE MOVES
@@ -129,6 +190,7 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		if (m_MovesForTurn.size() == 0)
 		{
 			m_SceneState = m_BSS_Normal;
+			ValidateUI();
 			return window;
 		}
 		windowText_Top = (enemyTurn ? m_Enemy->getName() : m_Player->getName()) + " Used";
@@ -136,8 +198,24 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		//TODO: GET STATUS AND IF FAILED
 		//IF MISS, USGAE DECREMENTS
 		//IF STATUS AFFECTED, USAGES STAY SAME
+
+		//ELSE ASSUME MOVE WAS USED
 		m_MovesForTurn[0]->decrementUsages();
-		m_BattleState = m_BS_Animation;
+		std::string moveTag;
+		m_Player->validateCurrentJsonTag();
+		m_Enemy->validateCurrentJsonTag();
+		json player = m_Player->getJSONTag();
+		json enemy = m_Enemy->getJSONTag();
+		if (!m_MovesForTurn[0]->isSuccessful(enemyTurn ? &enemy : &player,enemyTurn ? &player : &enemy, &moveTag))
+		{
+			//TODO: SHOW AN ATTACK FAILED SCREEN
+			m_BattleState = m_BS_Postwork;
+			m_MovesForTurn.erase(m_MovesForTurn.begin());
+		}
+		else
+		{
+			m_BattleState = m_BS_Animation;
+		}
 	}
 	else if (m_BattleState == m_BS_Animation)
 	{
@@ -186,4 +264,29 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		}
 	}
 	return window;
+}
+
+void BattleScene::ValidateUI()
+{
+	int FinishedMoves = 4;
+	for (int i = 0; i < m_UIControl.size(); i++)
+	{
+		if (m_UIControl[i]->m_Label.find("LabelData") != std::string::npos)
+		{
+			int moveIndex = stoi(m_UIControl[i]->m_Label.substr(m_UIControl[i]->m_Label.size() - 1, 1));
+			m_UIControl[i]->m_Text = to_string(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft()) + "/" + to_string(m_Player->getMoveAtIndex(moveIndex)->getMaxUsages());
+		}
+		if (m_UIControl[i]->m_Label.find("MoveData") != std::string::npos)
+		{
+			int moveIndex =stoi(m_UIControl[i]->m_Label.substr(m_UIControl[i]->m_Label.size() - 1, 1));
+			if (moveIndex >= m_Player->getMoves().size())
+			{
+				m_UIControl[i]->setEnabled(m_Player->getUsableMoves().size() <= 0);
+			}
+			else
+			{
+				m_UIControl[i]->setEnabled(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft() > 0);
+			}
+		}
+	}
 }

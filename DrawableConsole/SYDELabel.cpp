@@ -10,6 +10,16 @@ SYDELabel::SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass t
 	TextColour = txtColour;
 }
 
+SYDELabel::SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, string tag)
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	_TRANSPARENT = _TRANSPARENTBG;
+	TextColour = txtColour;
+	m_Label = tag;
+}
+
 ConsoleWindow SYDELabel::draw_ui(ConsoleWindow window)
 {
 	switch (_Anchor)

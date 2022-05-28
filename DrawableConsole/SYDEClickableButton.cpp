@@ -32,6 +32,29 @@ SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a
 	_TRANSPARENT = _TRANSPARENTBG;
 	SetFunc(f);
 }
+SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)(), string a_Tag)
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	TextColour = txtColour;
+	HiLightColour = a_hiLightColour;
+	_TRANSPARENT = _TRANSPARENTBG;
+	SetFunc(f);
+	tag = a_Tag;
+}
+SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)(), string a_Tag, string a_Label)
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	TextColour = txtColour;
+	HiLightColour = a_hiLightColour;
+	_TRANSPARENT = _TRANSPARENTBG;
+	SetFunc(f);
+	tag = a_Tag;
+	m_Label = a_Label;
+}
 
 ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 {
@@ -40,6 +63,10 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 	if (_HIGHLIGHTED)
 	{
 		_TXT = HiLightColour;
+	}
+	if (!enabled)
+	{
+		_TXT = disabledColour;
 	}
 	if (_WRAPTEXT) {
 		int y = m_Size.getY();
@@ -57,7 +84,11 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 		{
 			if (_TRANSPARENT)
 			{
-				if (_HIGHLIGHTED) {
+				if (!enabled)
+				{
+					_TXT = window.determineColourAtPoint(Vector2(i, ii), disabledColour, true);
+				}
+				else if (_HIGHLIGHTED) {
 					_TXT = window.determineColourAtPoint(Vector2(i, ii), HiLightColour, true);
 				}
 				else {
@@ -76,17 +107,19 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window)
 		}
 	}
 	_CheckState();
-	
-	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()) &&canClick)
+	if (enabled)
 	{
-		lastTag = tag;
-		canClick = false;
-		DoFunc();
-	}
+		if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(SYDEKeyCode::GetLastClickPosition()) && canClick)
+		{
+			lastTag = tag;
+			canClick = false;
+			DoFunc();
+		}
 
-	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
-	{
-		canClick = true;
+		if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
+		{
+			canClick = true;
+		}
 	}
 	return window;
 }
@@ -98,6 +131,10 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window, Vector2 point)
 	if (_HIGHLIGHTED)
 	{
 		_TXT = HiLightColour;
+	}
+	if (!enabled)
+	{
+		_TXT = disabledColour;
 	}
 	if (_WRAPTEXT) {
 		int y = m_Size.getY();
@@ -115,7 +152,11 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window, Vector2 point)
 		{
 			if (_TRANSPARENT)
 			{
-				if (_HIGHLIGHTED) {
+				if (!enabled)
+				{
+					_TXT = window.determineColourAtPoint(Vector2(i, ii), disabledColour, true);
+				}
+				else if (_HIGHLIGHTED) {
 					_TXT = window.determineColourAtPoint(Vector2(i, ii), HiLightColour, true);
 				}
 				else {
@@ -134,17 +175,19 @@ ConsoleWindow SYDEClickableButton::draw_ui(ConsoleWindow window, Vector2 point)
 		}
 	}
 	_CheckState();
-
-	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(point, SYDEKeyCode::GetLastClickPosition()) && canClick)
+	if (enabled)
 	{
-		lastTag = tag;
-		canClick = false;
-		DoFunc();
-	}
+		if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYDOWN) && pointIsInButtonRange(point, SYDEKeyCode::GetLastClickPosition()) && canClick)
+		{
+			lastTag = tag;
+			canClick = false;
+			DoFunc();
+		}
 
-	if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
-	{
-		canClick = true;
+		if (SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(KEYUP) || SYDEKeyCode::SYDEKeyCode_LEFT_CLICK_MOUSE._CompareState(NONE))
+		{
+			canClick = true;
+		}
 	}
 
 	return window;

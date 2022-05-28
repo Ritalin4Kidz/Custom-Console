@@ -39,6 +39,8 @@ public:
 	string m_Text = "";
 	string m_Label = "";
 
+	string returnLabel() { return m_Label; }
+
 	/// <summary>
 	/// Execute the main button function
 	/// </summary>
@@ -48,7 +50,7 @@ public:
 			m_Function();
 		}
 	}
-
+	void setEnabled(bool isEnabled) { enabled = isEnabled; }
 	virtual ConsoleWindow draw_ui(ConsoleWindow window) { return window; }
 
 	/// <summary>
@@ -64,7 +66,7 @@ protected:
 	TextState m_TxtState = TEXTNONE;
 	ButtonState m_BtnState = BUTTONNONE;
 	string m_LastText = "";
-
+	bool enabled = true;
 	Vector2 m_Pos = Vector2(0, 0);
 private:
 	bool m_FunctionSet = false;

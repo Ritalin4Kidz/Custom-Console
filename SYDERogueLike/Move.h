@@ -22,6 +22,9 @@ public:
 	/// <param name="tag">Optional parameter if we need toi return anything</param>
 	virtual void Execute(json* Attacker, json* Defender, std::string* tag) {};
 
+	//CAN BE OVERRIDEN BY OTHER MOVES
+	virtual bool isSuccessful(json* Attacker, json* Defender, std::string* tag) { int randNum = rand() % 100; return randNum < m_Accuracy; }
+
 	float getPower() { return BasePower; }
 	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);
 
@@ -39,6 +42,8 @@ public:
 
 	void decrementUsages() { usagesLeft--; }
 	int getUsagesLeft() { return usagesLeft; }
+
+	int getMaxUsages() { return maxUsages; }
 protected:
 	_SQType m_Type;
 	std::string m_Name;
@@ -47,6 +52,7 @@ protected:
 
 	int usagesLeft = 0;
 	int maxUsages = 0;
+	int m_Accuracy = 100;
 	bool lastEffortMove = false;
 	CustomAnimationAsset m_Animation;
 };

@@ -12,6 +12,8 @@ public:
 	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
 	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG);
 	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)());
+	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)(), string a_Tag);
+	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)(), string a_Tag, string a_Label);
 	virtual ~SYDEClickableButton() {}
 	/// <summary>
 	/// Draw the button onto the window
@@ -24,7 +26,6 @@ public:
 	string getTag() { return tag; }
 
 	void setColour(ColourClass m_Col) { TextColour = m_Col; }
-
 	static string getLastButtonTag();
 private:
 	static string lastTag;
@@ -33,4 +34,6 @@ private:
 	bool pointIsInButtonRange(Vector2 Point, Vector2 mousePos);
 
 	bool canClick = true;
+
+	ColourClass disabledColour = BLACK_LIGHTGREY_BG;
 };

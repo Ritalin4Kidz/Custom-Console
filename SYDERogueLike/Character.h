@@ -3,7 +3,10 @@
 #include <string>
 #include "GameTypes.h"
 #include "Move.h"
-
+/*
+TODO:
+- MOVE POOL, VECTOR OF STRING OF LEARNABLE MOVES
+*/
 class Character {
 public:
 	Character() {}
@@ -60,7 +63,7 @@ public:
 	ConsoleWindow drawAnimationAsset(ConsoleWindow window, Vector2 v) { return m_Animation.draw_asset(window, v); }
 
 	vector<Move*> getUsableMoves();
-
+	Move* getLastEffortMove() { return m_LastEffortMove; }
 protected:
 	_SQType m_Type = Melee;
 	_SQStatus m_Status = Status_None;

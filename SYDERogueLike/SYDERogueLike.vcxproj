@@ -150,6 +150,7 @@
     <ClCompile Include="OrcEnemy.cpp" />
     <ClCompile Include="PlayerFuri.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
+    <ClCompile Include="SlashMove.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
     <ClCompile Include="SYDERogueLike.cpp" />
     <ClCompile Include="SydeRogueLikeMainControl.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerFuri.h" />
     <ClInclude Include="ScrapMove.h" />
+    <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SmokeBreakMove.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />

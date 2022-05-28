@@ -7,7 +7,7 @@ public:
 		m_Name = "Scrap";
 		m_Type = Typeless;
 		BasePower = 25;
-		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Scrap.bmp", 100, 180, 20, 20, 0, 45));
+		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Typeless\\Scrap.bmp", 100, 180, 20, 20, 0, 45));
 		lastEffortMove = true;
 	}
 	virtual ~ScrapMove() {}

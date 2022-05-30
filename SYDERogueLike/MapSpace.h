@@ -18,6 +18,12 @@ public:
 	MapSpace(std::string data, MapSpaceTypes spaceType, int path, int space, Vector2 pos);
 
 	virtual ~MapSpace() {}
+
+	int getPathNumber() { return m_PathNumber; }
+	int getSpaceNumber() { return m_SpaceNumber; }
+
+	Vector2 getDrawPos() { return m_DrawPosition; }
+
 private:
 	MapSpaceTypes m_MapSpaceType = MST_NormalSpace;
 	std::string m_Data = "";

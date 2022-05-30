@@ -9,13 +9,13 @@ void MainMapScene::test()
 {
 	m_MapToLoad = "SydeCoast";
 	setUpMap();
-	cameraPos = Vector2(20, 50);
+	//cameraPos = Vector2(20, 50);
 }
 
 void MainMapScene::setUpMap()
 {
 	string IslandBmp = "EngineFiles\\Levels\\Map\\" + m_MapToLoad + ".bmp";
-	string IslandPathData = "EngineFiles\\Levels\\PathData\\" + m_MapToLoad + "_WildSpawns.bmp";
+	string IslandPathData = "EngineFiles\\Levels\\PathData\\" + m_MapToLoad + ".bmp";
 	wstring wIslandBmp = wstring(IslandBmp.begin(), IslandBmp.end());
 	wstring wIslandPathData = wstring(IslandPathData.begin(), IslandPathData.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
@@ -27,12 +27,45 @@ void MainMapScene::setUpMap()
 		{
 			Gdiplus::Color* pixelColor = new Gdiplus::Color();
 			SpawnData->GetPixel(ii + 1, i, pixelColor);
-			//GET BASED OFF pixelColour.GetRed() == 243 && pixelColour.GetGreen() == 21 && pixelColour.GetBlue() == 246
-			addSpace(Vector2(ii * 2, i), *pixelColor);
+			int spawnType = pixelColor->GetRed();
+			switch (spawnType)
+			{
+			case 200:
+			case 105:
+			case 28:
+				addSpace(Vector2(ii * 2, i), *pixelColor);
+				break;
+			default:
+				break;
+			}
 			delete[] pixelColor;
 		}
 	}
 	delete[] SpawnData;
+	sortSpaces();
+}
+
+void MainMapScene::sortSpaces()
+{
+	for (int i = 0; i < m_MapPaths.size(); i++)
+	{
+		m_MapPaths[i].orderSpaceArray();
+	}
+
+	for (int i = 0; i < m_MapPaths.size(); i++)
+	{
+		for (int ii = 0; ii < m_MapPaths[i].getSize(); ii++)
+		{
+			//TODO: DETERMINE COLOUR BASED OFF BOARD PIECE
+			Vector2 loc = m_MapPaths[i].getElement(ii).getDrawPos();
+			m_MapBg.setCharAtPoint(loc, '[');
+			m_MapBg.setColourAtPoint(loc, BRIGHTWHITE);
+			loc.addX(1);
+			m_MapBg.setCharAtPoint(loc, ']');
+			m_MapBg.setColourAtPoint(loc, BRIGHTWHITE);
+		}
+	}
+	cameraPos = getSpace(0, 0).getDrawPos();
 }
 
 void MainMapScene::addSpace(Vector2 location, Color pix)
@@ -52,10 +85,47 @@ void MainMapScene::addSpace(Vector2 location, Color pix)
 
 	//WE NEED TO USE THE CONFIG FILE TO SORT OUT SPLIT PATHS
 	//WE ALSO NEED TO SORT THE PATHS HERE
+	if (!addSpaceToExistingPath(pix.GetGreen(), pix.GetBlue(), location, ""))
+	{
+		m_MapPaths.push_back(MapPath(pix.GetGreen()));
+		addSpaceToExistingPath(pix.GetGreen(), pix.GetBlue(), location, "");
+	}
+}
+
+bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data)
+{
+	for (int i = 0; i < m_MapPaths.size(); i++)
+	{
+		if (path == m_MapPaths[i].getID())
+		{
+			m_MapPaths[i].addSpace(MapSpace(data, MST_NormalSpace, path, space, pos));
+			return true;
+		}
+	}
+	return false;
+}
+
+MapSpace MainMapScene::getSpace(int path, int space)
+{
+	for (int i = 0; i < m_MapPaths.size(); i++)
+	{
+		if (path == m_MapPaths[i].getID())
+		{
+			return m_MapPaths[i].getElement(space);
+		}
+	}
+	return MapSpace();
 }
 
 ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() + (windowWidth/2), cameraPos.getY() + (windowHeight/2)), windowWidth, windowHeight);
+	for (int i = 0; i < windowWidth; i++)
+	{
+		for (int ii = 0; ii < windowHeight; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BLUE_BLUE_BG);
+		}
+	}
+	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth/2), cameraPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
 	return window;
 }

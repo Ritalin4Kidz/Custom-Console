@@ -1,0 +1,40 @@
+BASIC FLOW:
+On each turn, the player will be able a certain number of spaces (like a dice roll). On each space there will be an event, such as:
+- Shop
+- Battle
+- Boss Fight
+- Other Event
+
+the board will look like:
+------<=======
+
+as different paths will end up in a different boss fight.
+
+The boss fought at the end will determine the next level the player goes to, with an eventual final level which has one final boss.
+
+On events such as battles, we need to send the player into a fight scene, and return us on finish.
+
+We will probs also need to handle backgrounds and shit.
+
+
+MAP DESIGN:
+The paths will be generated in a image file, with the rgb Values determing the data of the space.
+
+R - Pool of the spawn
+	200 = Split path
+	105 = Random Space
+	28 = Boss
+	etc
+G - Path Number
+	0 = Initial path, when split it will change number
+		(IN CONFIG FILE, WE WILL SET WHAT OPTIONS ARE AVAILABLE AT EACH SPLIT, eg 200,0,25 = {2} as paths to split onto)
+B - Position of the path
+	0 = start of path, when/if we split we can move to this starting point
+
+Having the data like this will allow us to determine the set paths for all movement outside of code. This will be created similarly to how Wildspawns worked in SYDE_QUEST
+
+RGB_DATA 0,0,0 will be the start position in the map :)
+
+SINCE one pixel = 2 On engine side, each board piece will take up 2 code wise '()' or '><' or maybe '[]'. Either way it'll look like a square
+
+Additionally, we should create a [map_name].config file which we can use to set all possible battle pools & shop data and other stuff

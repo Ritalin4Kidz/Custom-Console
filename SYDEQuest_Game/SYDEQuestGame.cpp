@@ -1,3 +1,4 @@
+#include "..\SYDERogueLike\MainMapScene.h"
 #pragma once
 #include "SYDEQuestGame.h"
 

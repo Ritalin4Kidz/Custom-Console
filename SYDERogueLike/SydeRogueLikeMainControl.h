@@ -4,6 +4,7 @@
 #include "MainMenuScenes.h"
 #include "SydeRogueLikeStatics.h"
 #include "BattleScene.h"
+#include "MainMapScene.h"
 class SYDERogueLikeMainControl : public SYDEWindowGame {
 public:
 	SYDERogueLikeMainControl() { init(); }
@@ -22,6 +23,7 @@ private:
 			new MainSplashScreenScene(),
 			new MainMenuScene(),
 			new BattleScene(),
+			new MainMapScene(),
 		});
 
 	GameScene* mainScene;

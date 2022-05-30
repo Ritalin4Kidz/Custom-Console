@@ -87,7 +87,7 @@ public:
 	/// <param name="bmpWidth"></param>
 	/// <param name="bmpHeight"></param>
 	/// <returns></returns>
-	vector<ColourClass> get_bmp_as_direct_colour_class_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight);
+	static vector<ColourClass> get_bmp_as_direct_colour_class_array(const WCHAR* bmpFile, int bmpWidth, int bmpHeight);
 	/// <summary>
 	/// Get bmp as a colour class array
 	/// </summary>

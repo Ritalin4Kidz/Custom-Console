@@ -4,6 +4,7 @@
 #include <string>
 #include "SYDEEngineMath.h"
 #include "MapPath.h"
+#include "MapConfig.h"
 class MainMapScene : public GameScene
 {
 public:
@@ -28,6 +29,7 @@ public:
 private:
 	static std::string m_MapToLoad;
 	std::vector<MapPath> m_MapPaths = std::vector<MapPath>();
+	MapConfigObject m_CfgObj;
 	CustomAsset m_MapBg;
 	Vector2 cameraPos;
 };

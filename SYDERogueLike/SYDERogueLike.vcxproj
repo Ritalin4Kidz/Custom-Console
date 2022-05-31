@@ -147,6 +147,7 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="MainMapScene.cpp" />
     <ClCompile Include="MainMenuScenes.cpp" />
+    <ClCompile Include="MapConfig.cpp" />
     <ClCompile Include="MapPath.cpp" />
     <ClCompile Include="MapSpace.cpp" />
     <ClCompile Include="Move.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="MainMapEnums.h" />
     <ClInclude Include="MainMapScene.h" />
     <ClInclude Include="MainMenuScenes.h" />
+    <ClInclude Include="MapConfig.h" />
     <ClInclude Include="MapPath.h" />
     <ClInclude Include="MapSpace.h" />
     <ClInclude Include="Move.h" />

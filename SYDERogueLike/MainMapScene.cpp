@@ -20,6 +20,10 @@ void MainMapScene::onNewScene()
 	showRouteOptions = false;
 }
 
+void MainMapScene::destroyScene()
+{
+}
+
 void MainMapScene::test()
 {
 	m_MapToLoad = "SydeCoast";
@@ -83,12 +87,31 @@ void MainMapScene::sortSpaces()
 		for (int ii = 0; ii < m_MapPaths[i].getSize(); ii++)
 		{
 			//TODO: DETERMINE COLOUR BASED OFF BOARD PIECE
+			ColourClass m_BoardColour = NULLCOLOUR;
+			switch (m_MapPaths[i].getElement(ii).getType())
+			{
+				case MST_SwitchPathsSpace:
+					m_BoardColour = BRIGHTWHITE;
+					break;
+				case MST_BossBattleSpace:
+					m_BoardColour = YELLOW_YELLOW_BG;
+					break;
+				case MST_BattleSpace:
+					m_BoardColour = RED_RED_BG;
+					break;
+				case MST_ShopSpace:
+					m_BoardColour = PURPLE_PURPLE_BG;
+					break;
+				default:
+					m_BoardColour = BLUE_BLUE_BG;
+					break;
+			}
 			Vector2 loc = m_MapPaths[i].getElement(ii).getDrawPos();
-			m_MapBg.setCharAtPoint(loc, '[');
-			m_MapBg.setColourAtPoint(loc, BRIGHTWHITE);
+			m_MapBg.setCharAtPoint(loc, ' ');
+			m_MapBg.setColourAtPoint(loc, m_BoardColour);
 			loc.addX(1);
-			m_MapBg.setCharAtPoint(loc, ']');
-			m_MapBg.setColourAtPoint(loc, BRIGHTWHITE);
+			m_MapBg.setCharAtPoint(loc, ' ');
+			m_MapBg.setColourAtPoint(loc, m_BoardColour);
 		}
 	}
 	cameraPos = getSpace(0, 0).getDrawPos();
@@ -118,12 +141,25 @@ void MainMapScene::addSpace(Vector2 location, Color pix)
 	}
 }
 
+void MainMapScene::loadBasicBattleScene()
+{
+	//TODO, WE NEED TO SET UP THE ENEMY HERE
+	//GRAB THE POOL FROM MAP CONFIGS OR SOMETHING
+	SydeRogueLikeStatics::setSceneTag("Battle Scene");
+}
+
 bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType)
 {
 	for (int i = 0; i < m_MapPaths.size(); i++)
 	{
 		if (path == m_MapPaths[i].getID())
 		{
+			if (path == 0 && space == 0)
+			{
+				//START VALUE MUST ALWAYS BE NORMAL
+				m_MapPaths[i].addSpace(MapSpace(data, MST_NormalSpace, path, space, pos));
+				return true;
+			}
 			m_MapPaths[i].addSpace(MapSpace(data, getPixRedToType(pathType), path, space, pos));
 			return true;
 		}
@@ -149,6 +185,29 @@ MapSpaceTypes MainMapScene::getPixRedToType(int red)
 	{
 		return MST_SwitchPathsSpace;
 	}
+	if (red == 28)
+	{
+		return MST_BossBattleSpace;
+	}
+
+	//POOLS
+	if (red == 105)
+	{
+		int space = rand() % 100;
+		if (space < 50)
+		{
+			return MST_NormalSpace;
+		}
+		if (space < 90)
+		{
+			return MST_BattleSpace;
+		}
+		else
+		{
+			return MST_ShopSpace;
+		}
+	}
+
 	return MST_NormalSpace;
 }
 
@@ -266,6 +325,12 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 				choosePath, SYDEMathUtils::VectorToString(Vector2(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber() + 1)), (windowWidth / 2), (windowHeight / 2));
 			m_ContinuePathBtn = aCont.click;
 			contBtnPos = aCont.vec;
+			return window;
+		}
+		else if (spaceCurrent.getType() == MST_BattleSpace)
+		{
+			//TODO: ANIMATION FOR LOADING INTO BATTLE
+			loadBasicBattleScene();
 			return window;
 		}
 	}

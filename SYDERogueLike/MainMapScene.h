@@ -24,6 +24,8 @@ public:
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
 
+	void destroyScene() override;
+
 	void test();
 
 	void setUpMap();
@@ -31,6 +33,8 @@ public:
 	void sortSpaces();
 
 	void addSpace(Vector2 location, Color pix);
+
+	void loadBasicBattleScene();
 
 	bool addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType);
 

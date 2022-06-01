@@ -9,7 +9,7 @@ void SYDERogueLikeMainControl::init()
 
 void SYDERogueLikeMainControl::initNewScene()
 {
-	delete mainScene;
+	mainScene->destroyScene();
 	for (int i = 0; i < m_ScenesList.size(); i++)
 	{
 		if (m_ScenesList[i]->GetSceneTag() == SydeRogueLikeStatics::getSceneTag())

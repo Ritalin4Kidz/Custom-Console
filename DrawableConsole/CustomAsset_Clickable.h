@@ -9,7 +9,7 @@ public:
 	CustomAsset_Clickable() {}
 	CustomAsset_Clickable(int width, int height, vector<ColourClass> colour_array) { setAsset(width, height, colour_array); }
 	CustomAsset_Clickable(int width, int height, vector<ColourClass> colour_array, void(*f)()) { setAsset(width, height, colour_array); m_Function = f;}
-
+	CustomAsset_Clickable(int width, int height, vector<ColourClass> colour_array, void(*f)(), string a_Tag) { setAsset(width, height, colour_array); m_Function = f; tag = a_Tag; }
 	virtual ~CustomAsset_Clickable() {}
 
 
@@ -41,6 +41,7 @@ public:
 	void setHilightColour(ColourClass c) { hilightColour = c; canHighlight = true; }
 	void clearHighlight() { highlighted = false; }
 	static string getLastButtonTag() { return lastTag; }
+	bool allowNullClick(bool isOn) { allowNullColourClick = isOn; }
 private:
 	static string lastTag;
 	string tag = "";
@@ -55,5 +56,6 @@ private:
 	bool canClick = true;
 	bool canHighlight = false;
 	bool highlighted = false;
+	bool allowNullColourClick = false;
 	ColourClass hilightColour;
 };

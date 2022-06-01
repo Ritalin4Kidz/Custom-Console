@@ -94,5 +94,14 @@ bool CustomAsset_Clickable::pointIsInButtonRange(Vector2 Point, Vector2 m_Pos)
 	Vector2 bottomRight = Vector2(AssetVector[0].size(), AssetVector.size());
 	bool withinLengthBoundaries = (Point.getX() >= m_Pos.getX() && (Point.getX() < m_Pos.getX() + bottomRight.getX()));
 	bool withinHeightBoundaries = (Point.getY() >= m_Pos.getY() && (Point.getY() < m_Pos.getY() + bottomRight.getY()));
+
+	if (!allowNullColourClick)
+	{
+		if (withinHeightBoundaries && withinLengthBoundaries)
+		{
+			//IF POINT IS NULL COLOUR, RETURN FALSE
+			return getColourAtPoint(Vector2(Point - m_Pos)) != NULLCOLOUR;
+		}
+	}
 	return withinHeightBoundaries && withinLengthBoundaries;
 }

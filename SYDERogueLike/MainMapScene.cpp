@@ -1,10 +1,17 @@
 #include "MainMapScene.h"
 std::string MainMapScene::m_MapToLoad = "";
 bool MainMapScene::moveCall = false;
-
+bool MainMapScene::choiceCall = false;
+Vector2 MainMapScene::m_SpaceMoveTo = Vector2(0, 0);
 void moveSingleSpaceTest()
 {
 	MainMapScene::triggerMove();
+}
+
+void choosePath()
+{
+	MainMapScene::setSpaceMoveTo(SYDEMathUtils::VectorFromString(CustomAsset_Clickable::getLastButtonTag()));
+	MainMapScene::triggerChoice();
 }
 
 void MainMapScene::onNewScene()
@@ -145,6 +152,92 @@ MapSpaceTypes MainMapScene::getPixRedToType(int red)
 	return MST_NormalSpace;
 }
 
+ArrowDisplay MainMapScene::returnArrowForPath(Vector2 nextPathPos, Vector2 currentPos, void(*f)(), string a_Tag, int middleWidth, int middleHeight)
+{
+	if (nextPathPos.getY() < currentPos.getY())
+	{
+		if (nextPathPos.getX() > currentPos.getX())
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				16,
+				6,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_UpRight.bmp", 8, 6),
+				f,
+				a_Tag), Vector2(middleWidth, middleHeight - 6));
+		}
+		else if (nextPathPos.getX() < currentPos.getX())
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				16,
+				6,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_UpLeft.bmp", 8, 6),
+				f,
+				a_Tag), Vector2(middleWidth -16, middleHeight - 6));
+		}
+		else
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				12,
+				8,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_Up.bmp", 6, 8),
+				f,
+				a_Tag), Vector2(middleWidth - 6, middleHeight - 8));
+		}
+	}
+	else if (nextPathPos.getY() > currentPos.getY())
+	{
+		if (nextPathPos.getX() > currentPos.getX())
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				16,
+				6,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_DownRight.bmp", 8, 6),
+				f,
+				a_Tag), Vector2(middleWidth, middleHeight));
+		}
+		else if (nextPathPos.getX() < currentPos.getX())
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				16,
+				6,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_DownLeft.bmp", 8, 6),
+				f,
+				a_Tag), Vector2(middleWidth - 16, middleHeight));
+		}
+		else
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				12,
+				8,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_Down.bmp", 6, 8),
+				f,
+				a_Tag), Vector2(middleWidth - 6, middleHeight + 1));
+		}
+	}
+	else
+	{
+		if (nextPathPos.getX() > currentPos.getX())
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				16,
+				6,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_Right.bmp", 8, 6),
+				f,
+				a_Tag), Vector2(middleWidth, middleHeight - 2));
+		}
+		else
+		{
+			return ArrowDisplay(CustomAsset_Clickable(
+				16,
+				6,
+				AssetsClass::get_bmp_as_array(L"EngineFiles\\Bitmaps\\Arrows\\Arrow_Left.bmp", 8, 6),
+				f,
+				a_Tag), Vector2(middleWidth - 16, middleHeight - 2));
+		}
+	}
+	return ArrowDisplay(CustomAsset_Clickable(), Vector2());
+}
+
 ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	if (moveCall)
@@ -160,18 +253,21 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		if (spaceCurrent.getType() == MST_SwitchPathsSpace)
 		{
 			//TODO: SHOW A POP UP OF ARROWS ASKING WHICH ROUTE WANTED TO BE TAKEN
-			//DETERMINE WHICH BUTTONS TO SHOW
 			showRouteOptions = true;
+			//DETERMINE WHICH BUTTONS TO SHOW
+			//SWAP BTN
+			int nextPath = m_CfgObj.getPathNumberToMoveAtPos(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber());
+			Vector2 nextPathPos = getSpace(nextPath, 0).getDrawPos();
+			ArrowDisplay aNext = MainMapScene::returnArrowForPath(nextPathPos, cameraPos, 
+				choosePath, SYDEMathUtils::VectorToString(Vector2(nextPath, 0)), (windowWidth / 2), (windowHeight / 2));
+			m_SwapPathBtn = aNext.click;
+			swapBtnPos = aNext.vec;
+			ArrowDisplay aCont = MainMapScene::returnArrowForPath(getSpace(m_Space.getX(), m_Space.getY() + 1).getDrawPos(), cameraPos,
+				choosePath, SYDEMathUtils::VectorToString(Vector2(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber() + 1)), (windowWidth / 2), (windowHeight / 2));
+			m_ContinuePathBtn = aCont.click;
+			contBtnPos = aCont.vec;
+			return window;
 		}
-	}
-
-	if (showRouteOptions)
-	{
-		//if (buttonClicked)
-		//{
-		//	showRouteOptions = false;
-		//	//DO OPTION
-		//}
 	}
 
 	for (int i = 0; i < windowWidth; i++)
@@ -183,6 +279,22 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 	}
 	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth/2), cameraPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
 	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), "><", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
+	if (showRouteOptions)
+	{
+		if (choiceCall)
+		{
+			choiceCall = false;
+			showRouteOptions = false;
+			//DO OPTION
+			m_Space = m_SpaceMoveTo;
+			MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
+			cameraPos = spaceCurrent.getDrawPos();
+			return window;
+		}
+		window = m_SwapPathBtn.draw_asset(window, swapBtnPos);
+		window = m_ContinuePathBtn.draw_asset(window, contBtnPos);
+		return window;
+	}
 	for (int i = 0; i < m_UIControl.size(); i++)
 	{
 		window = m_UIControl[i]->draw_ui(window);

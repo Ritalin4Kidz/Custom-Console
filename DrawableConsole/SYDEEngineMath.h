@@ -4,3 +4,4 @@
 #include "SYDETime.h"
 #include "Vector2.h"
 #include "Vector3.h"
+#include "SYDEMathUtils.h"

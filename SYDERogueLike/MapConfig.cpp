@@ -32,6 +32,18 @@ MapConfigObject::MapConfigObject(std::string filename)
 	}
 }
 
+int MapConfigObject::getPathNumberToMoveAtPos(int path, int space)
+{
+	for (int i = 0; i < m_PathData.size(); i++)
+	{
+		if (m_PathData[i].getPathNo() == path && m_PathData[i].getSpaceNo() == space)
+		{
+			return m_PathData[i].getMoveTo();
+		}
+	}
+	return 0;
+}
+
 std::vector<std::string> MapConfigObject::Split(std::string str, char split)
 {
 	int arraySize = 1;

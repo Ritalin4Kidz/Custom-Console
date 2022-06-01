@@ -6,6 +6,15 @@
 #include "MapPath.h"
 #include "MapConfig.h"
 #include "SYDEEngineUI.h"
+#include "SYDEEngineAssets.h"
+
+struct ArrowDisplay
+{
+	ArrowDisplay(CustomAsset_Clickable a, Vector2 v) { click = a; vec = v; }
+	CustomAsset_Clickable click;
+	Vector2 vec;
+};
+
 class MainMapScene : public GameScene
 {
 public:
@@ -30,12 +39,17 @@ public:
 	MapSpaceTypes getPixRedToType(int red);
 
 	static void triggerMove() { moveCall = true; }
+	static void triggerChoice() { choiceCall = true; }
+
+	ArrowDisplay returnArrowForPath(Vector2 nextPathPos, Vector2 currentPos, void(*f)(), string a_Tag, int middleWidth, int middleHeight);
+
+	static void setSpaceMoveTo(Vector2 v) { m_SpaceMoveTo = v; }
 
 private:
 	static std::string m_MapToLoad;
-
+	static Vector2 m_SpaceMoveTo;
 	static bool moveCall;
-
+	static bool choiceCall;
 	bool showRouteOptions = false;
 
 	std::vector<MapPath> m_MapPaths = std::vector<MapPath>();
@@ -45,4 +59,9 @@ private:
 	Vector2 m_Space = Vector2(0, 0);
 
 	vector<SYDEUI*> m_UIControl = vector<SYDEUI*>();
+
+	CustomAsset_Clickable m_SwapPathBtn;
+	Vector2 swapBtnPos;
+	CustomAsset_Clickable m_ContinuePathBtn;
+	Vector2 contBtnPos;
 };

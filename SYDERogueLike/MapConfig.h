@@ -33,6 +33,8 @@ public:
 
 	std::vector<PathDataObject> getPathData() { return m_PathData; }
 
+	int getPathNumberToMoveAtPos(int path, int space);
+
 	std::vector<std::string> Split(std::string str, char split);
 private:
 	std::vector<PathDataObject> m_PathData = std::vector<PathDataObject>();

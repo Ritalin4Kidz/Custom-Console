@@ -33,4 +33,5 @@ private:
 	int m_PathNumber;
 	int m_SpaceNumber;
 	Vector2 m_DrawPosition;
+
 };

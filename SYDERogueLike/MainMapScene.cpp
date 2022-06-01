@@ -10,6 +10,7 @@ void moveSingleSpaceTest()
 void MainMapScene::onNewScene()
 {
 	test();
+	showRouteOptions = false;
 }
 
 void MainMapScene::test()
@@ -158,9 +159,19 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		cameraPos = spaceCurrent.getDrawPos();
 		if (spaceCurrent.getType() == MST_SwitchPathsSpace)
 		{
-			//TODO: SHOW A POP UP ASKING WHICH ROUTE WANTED TO BE TAKEN
-			window = window;
+			//TODO: SHOW A POP UP OF ARROWS ASKING WHICH ROUTE WANTED TO BE TAKEN
+			//DETERMINE WHICH BUTTONS TO SHOW
+			showRouteOptions = true;
 		}
+	}
+
+	if (showRouteOptions)
+	{
+		//if (buttonClicked)
+		//{
+		//	showRouteOptions = false;
+		//	//DO OPTION
+		//}
 	}
 
 	for (int i = 0; i < windowWidth; i++)

@@ -36,6 +36,8 @@ private:
 
 	static bool moveCall;
 
+	bool showRouteOptions = false;
+
 	std::vector<MapPath> m_MapPaths = std::vector<MapPath>();
 	MapConfigObject m_CfgObj;
 	CustomAsset m_MapBg;

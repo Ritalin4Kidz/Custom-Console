@@ -24,6 +24,8 @@ public:
 
 	Vector2 getDrawPos() { return m_DrawPosition; }
 
+	MapSpaceTypes getType() { return m_MapSpaceType; }
+
 private:
 	MapSpaceTypes m_MapSpaceType = MST_NormalSpace;
 	std::string m_Data = "";

@@ -1,5 +1,12 @@
 #include "MainMapScene.h"
 std::string MainMapScene::m_MapToLoad = "";
+bool MainMapScene::moveCall = false;
+
+void moveSingleSpaceTest()
+{
+	MainMapScene::triggerMove();
+}
+
 void MainMapScene::onNewScene()
 {
 	test();
@@ -10,6 +17,16 @@ void MainMapScene::test()
 	m_MapToLoad = "SydeCoast";
 	setUpMap();
 	//cameraPos = Vector2(20, 50);
+	m_UIControl.push_back(new SYDEClickableButton(
+		"Test Move",
+		Vector2(3, 19),
+		Vector2(9, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		moveSingleSpaceTest
+	));
+
 }
 
 void MainMapScene::setUpMap()
@@ -86,20 +103,20 @@ void MainMapScene::addSpace(Vector2 location, Color pix)
 
 	//WE NEED TO USE THE CONFIG FILE TO SORT OUT SPLIT PATHS
 	//WE ALSO NEED TO SORT THE PATHS HERE
-	if (!addSpaceToExistingPath(pix.GetGreen(), pix.GetBlue(), location, ""))
+	if (!addSpaceToExistingPath(pix.GetGreen(), pix.GetBlue(), location, "",pix.GetRed()))
 	{
 		m_MapPaths.push_back(MapPath(pix.GetGreen()));
-		addSpaceToExistingPath(pix.GetGreen(), pix.GetBlue(), location, "");
+		addSpaceToExistingPath(pix.GetGreen(), pix.GetBlue(), location, "", pix.GetRed());
 	}
 }
 
-bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data)
+bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType)
 {
 	for (int i = 0; i < m_MapPaths.size(); i++)
 	{
 		if (path == m_MapPaths[i].getID())
 		{
-			m_MapPaths[i].addSpace(MapSpace(data, MST_NormalSpace, path, space, pos));
+			m_MapPaths[i].addSpace(MapSpace(data, getPixRedToType(pathType), path, space, pos));
 			return true;
 		}
 	}
@@ -118,8 +135,34 @@ MapSpace MainMapScene::getSpace(int path, int space)
 	return MapSpace();
 }
 
+MapSpaceTypes MainMapScene::getPixRedToType(int red)
+{
+	if (red == 200)
+	{
+		return MST_SwitchPathsSpace;
+	}
+	return MST_NormalSpace;
+}
+
 ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (moveCall)
+	{
+		//TODO:
+		//DETERMINE DICE ROLL
+		//RUN LOOP FOR EACH SPACE TO MOVE
+		//ON SOME SQUARES THEY CAN ONLY BE ACTIVE WHEN SPACES = 0
+		moveCall = false;
+		m_Space.addY(1);
+		MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
+		cameraPos = spaceCurrent.getDrawPos();
+		if (spaceCurrent.getType() == MST_SwitchPathsSpace)
+		{
+			//TODO: SHOW A POP UP ASKING WHICH ROUTE WANTED TO BE TAKEN
+			window = window;
+		}
+	}
+
 	for (int i = 0; i < windowWidth; i++)
 	{
 		for (int ii = 0; ii < windowHeight; ii++)
@@ -128,5 +171,10 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		}
 	}
 	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth/2), cameraPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
+	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), "><", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
+	for (int i = 0; i < m_UIControl.size(); i++)
+	{
+		window = m_UIControl[i]->draw_ui(window);
+	}
 	return window;
 }

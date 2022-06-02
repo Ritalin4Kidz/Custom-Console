@@ -11,7 +11,6 @@ void PlayerFuri::init_Char(int lvl)
 	m_LastEffortMove = new ScrapMove();
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\PlayerAnimations\\FuriBehindAnim.bmp", 50, 20, 10, 10, 0, 10));
 	setAnimationLoop(true);
-
 	this->setLevel(lvl);
 	this->setHealth(30); //70
 	this->setMaxHealth(30); //70

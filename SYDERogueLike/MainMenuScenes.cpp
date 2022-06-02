@@ -43,7 +43,7 @@ ConsoleWindow MainSplashScreenScene::window_draw(ConsoleWindow window, int windo
 	window.setTextAtPoint(Vector2(0, 1), "SYDE ROGUELIKE", BRIGHTWHITE);
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+		SydeRogueLikeStatics::setSceneTag("Character Select Scene");
 		return window;
 	}
 	return window;

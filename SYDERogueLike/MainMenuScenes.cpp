@@ -18,6 +18,11 @@ void MainMenuScene::onNewScene()
 {
 }
 
+void MainSplashScreenScene::test()
+{
+	SydeRogueLikeStatics::setPlayer(new PlayerFuri(5));
+}
+
 /// <summary>
 /// This scene just needs to display a splashscreen really
 /// </summary>
@@ -46,4 +51,5 @@ ConsoleWindow MainSplashScreenScene::window_draw(ConsoleWindow window, int windo
 
 void MainSplashScreenScene::onNewScene()
 {
+	test();
 }

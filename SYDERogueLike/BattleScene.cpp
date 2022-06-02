@@ -82,6 +82,8 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 void BattleScene::onNewScene()
 {
 	m_SceneState = m_BSS_Normal;
+	m_Player = SydeRogueLikeStatics::getPlayer();
+
 
 	m_UIControl.clear();
 	test();
@@ -120,10 +122,18 @@ void BattleScene::onNewScene()
 	ValidateUI();
 }
 
+void BattleScene::destroyScene()
+{
+	//ALL THE WORK WE NEED TO DO BEFORE MOVING TO ANOTHER SCENE :P
+	SydeRogueLikeStatics::setPlayer(m_Player);
+	
+
+	m_UIControl.clear();
+}
+
 void BattleScene::test()
 {
 	m_Enemy = new OrcEnemy(5);
-	m_Player = new PlayerFuri(5);
 
 	m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
 
@@ -243,16 +253,16 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		}
 		else
 		{
-			for (int i = 0; i < 14; i++)
+			for (int i = 0; i < 20; i++)
 			{
-				window.setTextAtPoint(Vector2(45 + i, 17), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+				window.setTextAtPoint(Vector2(i, 17), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 			}
-			for (int i = 0; i < 14; i++)
+			for (int i = 0; i < 20; i++)
 			{
-				window.setTextAtPoint(Vector2(45 + i, 18), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+				window.setTextAtPoint(Vector2(i, 18), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 			}
-			window.setTextAtPoint(Vector2(45, 17), windowText_Top, BLACK_BRIGHTWHITE_BG);
-			window.setTextAtPoint(Vector2(45, 18), windowText_Bottom, BLACK_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(0, 17), windowText_Top, BLACK_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(0, 18), windowText_Bottom, BLACK_BRIGHTWHITE_BG);
 		}
 	}
 	else if (m_BattleState == m_BS_Postwork)

@@ -6,7 +6,7 @@
 #include "SYDEUI.h"
 #include <SYDEClickableButton.h>
 #include "OrcEnemy.h"
-#include "PlayerFuri.h"
+#include "Player.h"
 
 enum BattleSceneStates
 {
@@ -31,6 +31,7 @@ public:
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
+	void destroyScene() override;
 
 	void test();
 

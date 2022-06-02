@@ -18,6 +18,7 @@ void MainMapScene::onNewScene()
 {
 	test();
 	showRouteOptions = false;
+	m_SceneState = MMS_Normal;
 }
 
 void MainMapScene::destroyScene()
@@ -143,9 +144,16 @@ void MainMapScene::addSpace(Vector2 location, Color pix)
 
 void MainMapScene::loadBasicBattleScene()
 {
-	//TODO, WE NEED TO SET UP THE ENEMY HERE
-	//GRAB THE POOL FROM MAP CONFIGS OR SOMETHING
-	SydeRogueLikeStatics::setSceneTag("Battle Scene");
+	m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\UIAnimations\\FightInitAnimation.bmp", 300, 100, 30, 20, 0, 50));
+	m_UIAnimation.setLooping(false);
+	m_UIAnimation.setFrame(0);
+	m_SceneState = MMS_UIAnimation;
+	sceneLoad = "Battle Scene";
+	//TODO:
+	/*
+	WE NEED TO GENERATE THE BATTLE HERE
+	THIS IS NOT FOR BOSS FIGHTS, WHICH WILL HAVE AN ENTIRELY DIFFERENT START ANIMATION REGARDLESS
+	*/
 }
 
 bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType)
@@ -344,25 +352,44 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 	}
 	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth/2), cameraPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
 	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), "><", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
-	if (showRouteOptions)
+	if (m_SceneState == MMS_Normal)
 	{
-		if (choiceCall)
+		if (showRouteOptions)
 		{
-			choiceCall = false;
-			showRouteOptions = false;
-			//DO OPTION
-			m_Space = m_SpaceMoveTo;
-			MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
-			cameraPos = spaceCurrent.getDrawPos();
+			if (choiceCall)
+			{
+				choiceCall = false;
+				showRouteOptions = false;
+				//DO OPTION
+				m_Space = m_SpaceMoveTo;
+				MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
+				cameraPos = spaceCurrent.getDrawPos();
+				return window;
+			}
+			window = m_SwapPathBtn.draw_asset(window, swapBtnPos);
+			window = m_ContinuePathBtn.draw_asset(window, contBtnPos);
 			return window;
 		}
-		window = m_SwapPathBtn.draw_asset(window, swapBtnPos);
-		window = m_ContinuePathBtn.draw_asset(window, contBtnPos);
-		return window;
+		for (int i = 0; i < m_UIControl.size(); i++)
+		{
+			window = m_UIControl[i]->draw_ui(window);
+		}
 	}
-	for (int i = 0; i < m_UIControl.size(); i++)
+	else if (m_SceneState == MMS_UIAnimation)
 	{
-		window = m_UIControl[i]->draw_ui(window);
+		window = m_UIAnimation.draw_asset(window, Vector2(0, 1));
+		if (m_UIAnimation.getFrame() >= m_UIAnimation.getFrameSize() - 1)
+		{
+			if (sceneLoad != "")
+			{
+				SydeRogueLikeStatics::setSceneTag(sceneLoad);
+			}
+			else
+			{
+				m_SceneState = MMS_Normal;
+			}
+		}
+		return window;
 	}
 	return window;
 }

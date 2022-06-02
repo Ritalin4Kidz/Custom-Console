@@ -8,6 +8,13 @@
 #include "SYDEEngineUI.h"
 #include "SYDEEngineAssets.h"
 
+enum MainMapScene_States
+{
+	MMS_Normal = 0,
+	MMS_UIAnimation = 1
+};
+
+
 struct ArrowDisplay
 {
 	ArrowDisplay(CustomAsset_Clickable a, Vector2 v) { click = a; vec = v; }
@@ -68,4 +75,9 @@ private:
 	Vector2 swapBtnPos;
 	CustomAsset_Clickable m_ContinuePathBtn;
 	Vector2 contBtnPos;
+
+	CustomAnimationAsset m_UIAnimation;
+	std::string sceneLoad;
+
+	MainMapScene_States m_SceneState = MMS_Normal;
 };

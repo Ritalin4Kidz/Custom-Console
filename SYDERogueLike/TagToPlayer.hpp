@@ -15,19 +15,33 @@ public:
 
 	CustomAsset getImg() { return m_CharacterSelectImg; }
 	int getRating() { return m_Rating; }
+
+	std::string getTag() { return m_Tag; }
+
 private:
 	std::string m_Tag;
 	CustomAsset m_CharacterSelectImg;
 	int m_Rating;
 };
 
-//class TagToHeader
-//{
-//public:
-//	static Player* getNewFromString(int level, std::string tag);
-//};
-//
-//Player* TagToHeader::getNewFromString(int level, std::string tag)
-//{
-//	return new Player();
-//}
+class TagToPlayer
+{
+public:
+	static Player* getNewFromString(int level, std::string tag)
+	{
+		if (tag == "Furi")
+		{
+			return new PlayerFuri(level);
+		}
+		else if (tag == "Alison")
+		{
+			return new PlayerAlison(level);
+		}
+		else if (tag == "Bruce")
+		{
+			return new PlayerBruce(level);
+		}
+		return new Player();
+	}
+private:
+};

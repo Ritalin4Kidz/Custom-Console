@@ -1,7 +1,54 @@
 #include "CharacterSelectScene.h"
 
+
+bool  CharacterSelectScene::nextCharCall = false;
+ bool  CharacterSelectScene::prevCharCall = false;
+ bool  CharacterSelectScene::startGameCall = false;
+
+void startGameClick()
+{
+	CharacterSelectScene::CallStartGame();
+}
+
+void nextCharClick()
+{
+	CharacterSelectScene::CallNextChar();
+}
+
+void prevCharClick()
+{
+	CharacterSelectScene::CallPrevChar();
+}
+
 ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (nextCharCall)
+	{
+		nextCharCall = false;
+		m_SelectedPlayer++;
+		if (m_SelectedPlayer >= m_PlayersVec.size())
+		{
+			m_SelectedPlayer = 0;
+		}
+	}
+	if (prevCharCall)
+	{
+		prevCharCall = false;
+		m_SelectedPlayer--;
+		if (m_SelectedPlayer < 0)
+		{
+			m_SelectedPlayer = m_PlayersVec.size() - 1;
+		}
+	}
+	if (startGameCall)
+	{
+		//TODO: SHOW A POPUP
+		startGameCall = false;
+		SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+		SydeRogueLikeStatics::setPlayer(TagToPlayer::getNewFromString(5,m_PlayersVec[m_SelectedPlayer].getTag()));
+		return window;
+	}
+
 	for (int i = 0; i < windowWidth; i++)
 	{
 		for (int ii = 0; ii < windowHeight; ii++)
@@ -9,7 +56,12 @@ ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int window
 			window.setTextAtPoint(Vector2(i, ii), " ", BLACK);
 		}
 	}
+	window = m_Spotlight.draw_asset(window, Vector2(22, 1));
+	for (int i = 0; i < windowWidth; i++)
+	{
 
+		window.setTextAtPoint(Vector2(i, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+	}
 	for (int i = 0; i < 20; i++)
 	{
 		for (int ii = 0; ii < windowHeight; ii++)
@@ -17,8 +69,14 @@ ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int window
 			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTGREY_LIGHTGREY_BG);
 		}
 	}
+	window = m_PlayersVec[m_SelectedPlayer].getImg().draw_asset(window, Vector2(32,10));
 
-	window = m_PlayersVec[m_SelectedPlayer].getImg().draw_asset(window, Vector2(40,12));
+	window.setTextAtPoint(Vector2(0, 1), "CHARACTER:", BLACK_LIGHTGREY_BG);
+	window.setTextAtPoint(Vector2(0, 2), m_PlayersVec[m_SelectedPlayer].getTag(), BLACK_LIGHTGREY_BG);
+	for (int i = 0; i < m_UIControl.size(); i++)
+	{
+		window = m_UIControl[i]->draw_ui(window);
+	}
 
 	return window;
 }
@@ -31,6 +89,44 @@ void CharacterSelectScene::onNewScene()
 			PlayerSelectObject(2, "Alison",L"EngineFiles\\CharacterBMPS\\Alison.bmp"),
 			PlayerSelectObject(2, "Bruce", L"EngineFiles\\CharacterBMPS\\Bruce.bmp")
 		});
+
+	m_UIControl.clear();
+
+	m_UIControl.push_back(new SYDEClickableButton(
+		"    START GAME    ",
+		Vector2(31, 19),
+		Vector2(18, 1),
+		BRIGHTWHITE_BRIGHTGREEN_BG,
+		NULLCOLOUR,
+		false,
+		startGameClick,
+		"StartGameLabel",
+		"StartGameLabel"
+	));
+
+	m_UIControl.push_back(new SYDEClickableButton(
+		"<<",
+		Vector2(27, 19),
+		Vector2(2, 1),
+		BRIGHTWHITE_BRIGHTGREEN_BG,
+		NULLCOLOUR,
+		false,
+		prevCharClick,
+		"PrevCharLabel",
+		"PrevCharLabel"
+	));
+
+	m_UIControl.push_back(new SYDEClickableButton(
+		">>",
+		Vector2(51, 19),
+		Vector2(2, 1),
+		BRIGHTWHITE_BRIGHTGREEN_BG,
+		NULLCOLOUR,
+		false,
+		nextCharClick,
+		"NextCharLabel",
+		"NextCharLabel"
+	));
 }
 
 void CharacterSelectScene::destroyScene()

@@ -5,7 +5,7 @@ void PlayerFuri::init_Char(int lvl)
 	SetMoves(vector<Move*>({
 	new SmokeBreakMove(),
 	new BoneClubMove(),
-	new SmokeBreakMove(),
+	new EmberMove(),
 	new SmokeBreakMove(),
 		}));
 	m_LastEffortMove = new ScrapMove();

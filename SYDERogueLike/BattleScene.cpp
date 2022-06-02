@@ -135,7 +135,7 @@ void BattleScene::test()
 {
 	m_Enemy = new OrcEnemy(5);
 
-	m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
+	//m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
 
 	//m_UIControl.push_back(new SYDEClickableButton(
 	//	"Test Move",

@@ -33,6 +33,9 @@ public:
 	void onNewScene() override;
 	void destroyScene() override;
 
+
+	void endBattle();
+
 	void test();
 
 	static void callMove() { doMoveCall = true; }

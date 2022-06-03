@@ -61,6 +61,7 @@ private:
 	static Vector2 m_SpaceMoveTo;
 	static bool moveCall;
 	static bool choiceCall;
+
 	bool showRouteOptions = false;
 
 	std::vector<MapPath> m_MapPaths = std::vector<MapPath>();

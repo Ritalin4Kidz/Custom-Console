@@ -131,6 +131,14 @@ void BattleScene::destroyScene()
 	m_UIControl.clear();
 }
 
+void BattleScene::endBattle()
+{
+	//CHECK WHO DIED
+	m_MovesForTurn.clear();
+
+	SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+}
+
 void BattleScene::test()
 {
 	m_Enemy = new OrcEnemy(5);
@@ -249,7 +257,19 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 
 			m_Player->validateFromJson(player);
 			m_Enemy->validateFromJson(enemy);
-			m_BattleState = m_BS_Prework;
+
+			//IF ONE PLAYER DEAD
+			if (m_Player->getHealth() <= 0 || m_Enemy->getHealth() <= 0)
+			{
+				endBattle();
+				m_SceneState = m_BSS_Normal;
+				return window;
+			}
+			else
+			{
+				m_BattleState = m_BS_Prework;
+			}
+
 		}
 		else
 		{

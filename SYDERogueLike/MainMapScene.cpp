@@ -17,18 +17,19 @@ void choosePath()
 void MainMapScene::onNewScene()
 {
 	test();
+	setUpMap();
 	showRouteOptions = false;
 	m_SceneState = MMS_Normal;
 }
 
 void MainMapScene::destroyScene()
 {
+	m_UIControl.clear();
 }
 
 void MainMapScene::test()
 {
 	m_MapToLoad = "SydeCoast";
-	setUpMap();
 	//cameraPos = Vector2(20, 50);
 	m_UIControl.push_back(new SYDEClickableButton(
 		"Test Move",
@@ -44,6 +45,10 @@ void MainMapScene::test()
 
 void MainMapScene::setUpMap()
 {
+	if (!SydeRogueLikeStatics::getInitMap())
+	{
+		return;
+	}
 	string IslandBmp = "EngineFiles\\Levels\\Map\\" + m_MapToLoad + ".bmp";
 	string IslandPathData = "EngineFiles\\Levels\\PathData\\" + m_MapToLoad + ".bmp";
 	wstring wIslandBmp = wstring(IslandBmp.begin(), IslandBmp.end());
@@ -74,6 +79,7 @@ void MainMapScene::setUpMap()
 	}
 	delete[] SpawnData;
 	sortSpaces();
+	SydeRogueLikeStatics::toggleInitMap(false);
 }
 
 void MainMapScene::sortSpaces()

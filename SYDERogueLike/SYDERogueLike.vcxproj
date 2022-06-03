@@ -157,6 +157,7 @@
     <ClCompile Include="PlayerAlison.cpp" />
     <ClCompile Include="PlayerBruce.cpp" />
     <ClCompile Include="PlayerFuri.cpp" />
+    <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
     <ClCompile Include="SlashMove.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="PlayerBruce.h" />
     <ClInclude Include="PlayerFuri.h" />
     <ClInclude Include="PlayerIncludeHeader.h" />
+    <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="ScrapMove.h" />
     <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SmokeBreakMove.h" />

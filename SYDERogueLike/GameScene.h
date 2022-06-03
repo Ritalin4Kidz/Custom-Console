@@ -12,6 +12,10 @@ public:
 	virtual void destroyScene() {}
 
 	virtual void onNewScene() {}
+
+	bool getIsTransient() { return m_isTransient; }
+
 protected:
 	std::string m_SceneTag;
+	bool m_isTransient = false;
 };

@@ -17,7 +17,6 @@ void startMove()
 
 void moveClick()
 {
-
 	BattleScene::setSelectedMoveInt(stoi(SYDEClickableButton::getLastButtonTag()));
 	BattleScene::callMove();
 }
@@ -120,15 +119,19 @@ void BattleScene::onNewScene()
 		"MoveData-" + to_string(4)
 	));
 	ValidateUI();
+
+	SydeRogueLikeStatics::toggleFightSuccess(true);
 }
 
 void BattleScene::destroyScene()
 {
 	//ALL THE WORK WE NEED TO DO BEFORE MOVING TO ANOTHER SCENE :P
 	SydeRogueLikeStatics::setPlayer(m_Player);
-	
-
 	m_UIControl.clear();
+	m_MovesForTurn.clear();
+
+	m_Player = NULL;
+	m_Enemy = NULL;
 }
 
 void BattleScene::endBattle()
@@ -136,7 +139,7 @@ void BattleScene::endBattle()
 	//CHECK WHO DIED
 	m_MovesForTurn.clear();
 	//TEMP FOR NOW
-	SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+	SydeRogueLikeStatics::setSceneTag("Post Battle Scene");
 	//TODO:
 	/*
 	CREATE A POST-BATTLE SCENE
@@ -145,6 +148,10 @@ void BattleScene::endBattle()
 	DELAY BETWEEN LAST HIT AND GOING TO THIS SCREEN, PERHAPS AN ANIMATION
 	IF BOSS BATTLE, NEED A WAY TO SHOW THE DEATH ANIMATION THEN A STAGE WIN SCREEN AFTER
 	*/
+	if (m_Player->getHealth() <= 0)
+	{
+		SydeRogueLikeStatics::toggleFightSuccess(false);
+	}
 }
 
 void BattleScene::test()

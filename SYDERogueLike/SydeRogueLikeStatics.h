@@ -12,9 +12,16 @@ public:
 
 	static void toggleInitMap(bool isOn) { initializeMap = isOn; }
 	static bool getInitMap() { return initializeMap; }
+
+	static void toggleFightSuccess(bool isOn) { fightSuccess = isOn; }
+	static bool getFightSuccess() { return fightSuccess; }
+
 private:
 	static std::string m_SceneTag;
 	static Player* m_Player;
 
 	static bool initializeMap;
+
+	static bool fightSuccess;
+
 };

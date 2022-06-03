@@ -79,6 +79,7 @@ void MainMapScene::setUpMap()
 	}
 	delete[] SpawnData;
 	sortSpaces();
+	m_Space = Vector2(0, 0);
 	SydeRogueLikeStatics::toggleInitMap(false);
 }
 

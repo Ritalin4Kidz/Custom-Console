@@ -43,6 +43,8 @@ public:
 
 	void loadBasicBattleScene();
 
+	void loadShopScene();
+
 	bool addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType);
 
 	MapSpace getSpace(int path, int space);

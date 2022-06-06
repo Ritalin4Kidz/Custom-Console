@@ -163,6 +163,15 @@ void MainMapScene::loadBasicBattleScene()
 	*/
 }
 
+void MainMapScene::loadShopScene()
+{
+	m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\UIAnimations\\ShoppingAnimation.bmp", 150, 160, 30, 20, 0, 40));
+	m_UIAnimation.setLooping(false);
+	m_UIAnimation.setFrame(0);
+	m_SceneState = MMS_UIAnimation;
+	sceneLoad = "Shop Scene";
+}
+
 bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType)
 {
 	for (int i = 0; i < m_MapPaths.size(); i++)
@@ -346,6 +355,12 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		{
 			//TODO: ANIMATION FOR LOADING INTO BATTLE
 			loadBasicBattleScene();
+			return window;
+		}
+		else if (spaceCurrent.getType() == MST_ShopSpace)
+		{
+			//TODO: ANIMATION FOR LOADING INTO BATTLE
+			loadShopScene();
 			return window;
 		}
 	}

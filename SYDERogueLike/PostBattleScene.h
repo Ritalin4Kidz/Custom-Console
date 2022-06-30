@@ -16,5 +16,4 @@ public:
 	void onNewScene() override;
 	void destroyScene() override;
 private:
-	vector<SYDEUI*> m_UIControl = vector<SYDEUI*>();
 };

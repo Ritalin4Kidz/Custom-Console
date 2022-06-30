@@ -10,6 +10,23 @@ void SYDERogueLikeMainControl::init()
 void SYDERogueLikeMainControl::initNewScene()
 {
 	mainScene->destroyScene();
+	GameScene::clearUI();
+	if (mainScene->getIsTransient())
+	{
+		delete mainScene;
+	}
+	if (SydeRogueLikeStatics::getSceneTag() == "Battle Scene")
+	{
+		mainScene = new BattleScene();
+		mainScene->onNewScene();
+		return;
+	}
+	else if (SydeRogueLikeStatics::getSceneTag() == "Shop Scene")
+	{
+		mainScene = new ShopScene();
+		mainScene->onNewScene();
+		return;
+	}
 	for (int i = 0; i < m_ScenesList.size(); i++)
 	{
 		if (m_ScenesList[i]->GetSceneTag() == SydeRogueLikeStatics::getSceneTag())
@@ -32,5 +49,6 @@ ConsoleWindow SYDERogueLikeMainControl::window_draw_game(ConsoleWindow window, i
 		initNewScene();
 	}
 	window = mainScene->window_draw(window, windowWidth, windowHeight);
+	window = GameScene::drawUI(window);
 	return window;
 }

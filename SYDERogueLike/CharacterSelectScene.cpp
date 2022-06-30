@@ -74,10 +74,6 @@ ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int window
 
 	window.setTextAtPoint(Vector2(0, 1), "CHARACTER:", BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(0, 2), m_PlayersVec[m_SelectedPlayer].getTag(), BLACK_LIGHTGREY_BG);
-	for (int i = 0; i < m_UIControl.size(); i++)
-	{
-		window = m_UIControl[i]->draw_ui(window);
-	}
 
 	return window;
 }
@@ -91,9 +87,7 @@ void CharacterSelectScene::onNewScene()
 			PlayerSelectObject(2, "Bruce", L"EngineFiles\\CharacterBMPS\\Bruce.bmp")
 		});
 
-	m_UIControl.clear();
-
-	m_UIControl.push_back(new SYDEClickableButton(
+	addToUIControl(new SYDEClickableButton(
 		"    START GAME    ",
 		Vector2(31, 19),
 		Vector2(18, 1),
@@ -105,7 +99,7 @@ void CharacterSelectScene::onNewScene()
 		"StartGameLabel"
 	));
 
-	m_UIControl.push_back(new SYDEClickableButton(
+	addToUIControl(new SYDEClickableButton(
 		"<<",
 		Vector2(27, 19),
 		Vector2(2, 1),
@@ -117,7 +111,7 @@ void CharacterSelectScene::onNewScene()
 		"PrevCharLabel"
 	));
 
-	m_UIControl.push_back(new SYDEClickableButton(
+	addToUIControl(new SYDEClickableButton(
 		">>",
 		Vector2(51, 19),
 		Vector2(2, 1),

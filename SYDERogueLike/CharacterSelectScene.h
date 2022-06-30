@@ -33,6 +33,4 @@ private:
 	std::vector<PlayerSelectObject> m_PlayersVec;
 	CustomAsset m_Spotlight = CustomAsset(40, 20, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\CharSelectBG.bmp", 20, 20));
 	int m_SelectedPlayer = 0;
-
-	vector<SYDEUI*> m_UIControl = vector<SYDEUI*>();
 };

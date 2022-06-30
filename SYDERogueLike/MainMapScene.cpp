@@ -24,14 +24,13 @@ void MainMapScene::onNewScene()
 
 void MainMapScene::destroyScene()
 {
-	m_UIControl.clear();
 }
 
 void MainMapScene::test()
 {
 	m_MapToLoad = "SydeCoast";
 	//cameraPos = Vector2(20, 50);
-	m_UIControl.push_back(new SYDEClickableButton(
+	addToUIControl(new SYDEClickableButton(
 		"Test Move",
 		Vector2(3, 19),
 		Vector2(9, 1),
@@ -391,10 +390,6 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			window = m_SwapPathBtn.draw_asset(window, swapBtnPos);
 			window = m_ContinuePathBtn.draw_asset(window, contBtnPos);
 			return window;
-		}
-		for (int i = 0; i < m_UIControl.size(); i++)
-		{
-			window = m_UIControl[i]->draw_ui(window);
 		}
 	}
 	else if (m_SceneState == MMS_UIAnimation)

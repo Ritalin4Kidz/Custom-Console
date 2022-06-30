@@ -146,6 +146,7 @@
     <ClCompile Include="BoneClubMove.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CharacterSelectScene.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GustMove.cpp" />
     <ClCompile Include="MainMapScene.cpp" />
     <ClCompile Include="MainMenuScenes.cpp" />

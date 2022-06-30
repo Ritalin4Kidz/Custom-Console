@@ -26,8 +26,7 @@ enum BattleState
 class BattleScene : public GameScene
 {
 public:
-	BattleScene() { m_SceneTag = "Battle Scene"; }
-	virtual ~BattleScene() {}
+	BattleScene() { m_SceneTag = "Battle Scene"; m_isTransient = true; }
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
@@ -53,7 +52,6 @@ private:
 
 	Enemy* m_Enemy;
 	Player* m_Player;
-	vector<SYDEUI*> m_UIControl = vector<SYDEUI*>();
 
 	vector<Move*> m_MovesForTurn = vector<Move*>();
 	bool enemyTurn = false;

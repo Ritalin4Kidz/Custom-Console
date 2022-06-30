@@ -1,5 +1,10 @@
 #include "ShopScene.h"
 
+void BackToMapClick()
+{
+	SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+}
+
 ConsoleWindow ShopScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 0; i < windowWidth; i++)
@@ -22,7 +27,18 @@ ConsoleWindow ShopScene::window_draw(ConsoleWindow window, int windowWidth, int 
 
 void ShopScene::onNewScene()
 {
-
+	//GENERATE SHOP ITEMS
+	//6 ITEMS, TOP 3 ALL MOVES
+	//BOTTOM 3 ALL ITEMS
+	addToUIControl(new SYDEClickableButton(
+		"Back To Map",
+		Vector2(21, 18),
+		Vector2(11, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		BackToMapClick
+	));
 }
 
 void ShopScene::destroyScene()

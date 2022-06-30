@@ -30,10 +30,6 @@ ConsoleWindow PostBattleScene::window_draw(ConsoleWindow window, int windowWidth
 
 	//TODO: IF FAILURE, ADD OPTION TO GO BACK TO MENU
 	//IF SUCCESS, GO BACK TO MAP
-	for (int i = 0; i < m_UIControl.size(); i++)
-	{
-		window = m_UIControl[i]->draw_ui(window);
-	}
 	//SHOW STATS
 
 
@@ -45,7 +41,7 @@ void PostBattleScene::onNewScene()
 	//IF SUCCESS
 	if (SydeRogueLikeStatics::getFightSuccess())
 	{
-		m_UIControl.push_back(new SYDEClickableButton(
+		addToUIControl(new SYDEClickableButton(
 			"Continue",
 			Vector2(44, 16),
 			Vector2(8, 1),
@@ -54,7 +50,7 @@ void PostBattleScene::onNewScene()
 			false,
 			successClick
 		));
-		m_UIControl.push_back(new SYDELabel(
+		addToUIControl(new SYDELabel(
 			"Battle Won",
 			Vector2(6, 4 ),
 			Vector2(10, 1),
@@ -63,7 +59,7 @@ void PostBattleScene::onNewScene()
 	}
 	else
 	{
-		m_UIControl.push_back(new SYDEClickableButton(
+		addToUIControl(new SYDEClickableButton(
 			"Back To Menu",
 			Vector2(40, 16),
 			Vector2(12, 1),
@@ -73,7 +69,7 @@ void PostBattleScene::onNewScene()
 			failureClick
 
 		));
-		m_UIControl.push_back(new SYDELabel(
+		addToUIControl(new SYDELabel(
 			"Battle Lost",
 			Vector2(6, 4),
 			Vector2(11, 1),
@@ -84,5 +80,5 @@ void PostBattleScene::onNewScene()
 
 void PostBattleScene::destroyScene()
 {
-	m_UIControl.clear();
+	
 }

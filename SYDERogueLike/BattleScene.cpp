@@ -55,10 +55,6 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 
 	if (m_SceneState == m_BSS_Normal)
 	{
-		for (int i = 0; i < m_UIControl.size(); i++)
-		{
-			window = m_UIControl[i]->draw_ui(window);
-		}
 		if (doMoveCall)
 		{
 			doMoveCall = false;
@@ -82,13 +78,10 @@ void BattleScene::onNewScene()
 {
 	m_SceneState = m_BSS_Normal;
 	m_Player = SydeRogueLikeStatics::getPlayer();
-
-
-	m_UIControl.clear();
 	test();
 	for (int i = 0; i < m_Player->getMoves().size(); i++)
 	{
-		m_UIControl.push_back(new SYDEClickableButton(
+		addToUIControl(new SYDEClickableButton(
 			m_Player->getMoveAtIndex(i)->getName(),
 			Vector2(1, 8 + (i * 2)),
 			Vector2(18, 1),
@@ -99,7 +92,7 @@ void BattleScene::onNewScene()
 			to_string(i),
 			"MoveData-" + to_string(i)
 		));
-		m_UIControl.push_back(new SYDELabel(
+		addToUIControl(new SYDELabel(
 			to_string(m_Player->getMoveAtIndex(i)->getUsagesLeft()) + "/" + to_string(m_Player->getMoveAtIndex(i)->getMaxUsages()),
 			Vector2(1, 9 + (i * 2)),
 			Vector2(18, 1),
@@ -107,7 +100,7 @@ void BattleScene::onNewScene()
 			true,
 			"LabelData-" + to_string(i)));
 	}
-	m_UIControl.push_back(new SYDEClickableButton(
+	addToUIControl(new SYDEClickableButton(
 		m_Player->getLastEffortMove()->getName(),
 		Vector2(1, 17),
 		Vector2(18, 1),
@@ -127,11 +120,12 @@ void BattleScene::destroyScene()
 {
 	//ALL THE WORK WE NEED TO DO BEFORE MOVING TO ANOTHER SCENE :P
 	SydeRogueLikeStatics::setPlayer(m_Player);
-	m_UIControl.clear();
+	for (int i = 0; i < m_MovesForTurn.size(); i++)
+	{
+		delete m_MovesForTurn[i];
+	}
 	m_MovesForTurn.clear();
-
-	m_Player = NULL;
-	m_Enemy = NULL;
+	delete m_Enemy;
 }
 
 void BattleScene::endBattle()
@@ -290,14 +284,14 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		{
 			for (int i = 0; i < 20; i++)
 			{
-				window.setTextAtPoint(Vector2(i, 17), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+				window.setTextAtPoint(Vector2(i, 2), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 			}
 			for (int i = 0; i < 20; i++)
 			{
-				window.setTextAtPoint(Vector2(i, 18), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
+				window.setTextAtPoint(Vector2(i, 3), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 			}
-			window.setTextAtPoint(Vector2(0, 17), windowText_Top, BLACK_BRIGHTWHITE_BG);
-			window.setTextAtPoint(Vector2(0, 18), windowText_Bottom, BLACK_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(0, 2), windowText_Top, BLACK_BRIGHTWHITE_BG);
+			window.setTextAtPoint(Vector2(0, 3), windowText_Bottom, BLACK_BRIGHTWHITE_BG);
 		}
 	}
 	else if (m_BattleState == m_BS_Postwork)
@@ -314,23 +308,23 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 void BattleScene::ValidateUI()
 {
 	int FinishedMoves = 4;
-	for (int i = 0; i < m_UIControl.size(); i++)
+	for (int i = 0; i < getUISize(); i++)
 	{
-		if (m_UIControl[i]->m_Label.find("LabelData") != std::string::npos)
+		if (findLabelInUI("LabelData", i) != std::string::npos)
 		{
-			int moveIndex = stoi(m_UIControl[i]->m_Label.substr(m_UIControl[i]->m_Label.size() - 1, 1));
-			m_UIControl[i]->m_Text = to_string(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft()) + "/" + to_string(m_Player->getMoveAtIndex(moveIndex)->getMaxUsages());
+			int moveIndex = stoi(getLabelInUI(i).substr(getLabelInUI(i).size() - 1, 1));
+			setUIText(to_string(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft()) + "/" + to_string(m_Player->getMoveAtIndex(moveIndex)->getMaxUsages()),i);
 		}
-		if (m_UIControl[i]->m_Label.find("MoveData") != std::string::npos)
+		if (findLabelInUI("MoveData", i) != std::string::npos)
 		{
-			int moveIndex =stoi(m_UIControl[i]->m_Label.substr(m_UIControl[i]->m_Label.size() - 1, 1));
+			int moveIndex =stoi(getLabelInUI(i).substr(getLabelInUI(i).size() - 1, 1));
 			if (moveIndex >= m_Player->getMoves().size())
 			{
-				m_UIControl[i]->setEnabled(m_Player->getUsableMoves().size() <= 0);
+				setUIEnabled(m_Player->getUsableMoves().size() <= 0, i);
 			}
 			else
 			{
-				m_UIControl[i]->setEnabled(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft() > 0);
+				setUIEnabled(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft() > 0, i);
 			}
 		}
 	}

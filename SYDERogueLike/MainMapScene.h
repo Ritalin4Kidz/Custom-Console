@@ -72,8 +72,6 @@ private:
 	Vector2 cameraPos; 
 	Vector2 m_Space = Vector2(0, 0);
 
-	vector<SYDEUI*> m_UIControl = vector<SYDEUI*>();
-
 	CustomAsset_Clickable m_SwapPathBtn;
 	Vector2 swapBtnPos;
 	CustomAsset_Clickable m_ContinuePathBtn;

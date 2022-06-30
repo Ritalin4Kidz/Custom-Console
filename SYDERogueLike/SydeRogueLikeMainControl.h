@@ -21,15 +21,14 @@ public:
 	static AssetsClass astVars;
 
 private:
+	//DO NOT ADD TRANSIENT SCENES INTO THIS LIST, INSTEAD LET'S DO IT MANUALLY
 	std::vector<GameScene*> m_ScenesList = std::vector<GameScene*>(
 		{
 			new MainSplashScreenScene(),
 			new MainMenuScene(),
-			new BattleScene(),
 			new MainMapScene(),
 			new CharacterSelectScene(),
-			new PostBattleScene(),
-			new ShopScene()
+			new PostBattleScene()
 		});
 
 	GameScene* mainScene;

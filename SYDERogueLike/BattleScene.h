@@ -37,13 +37,15 @@ public:
 
 	void test();
 
-	static void callMove() { doMoveCall = true; }
+	static void callMove() { HideUI();  doMoveCall = true; }
 	static void setSelectedMoveInt(int index) { selectedMove = index; }
 	void doMovePreWork();
 
 	ConsoleWindow doMoves(ConsoleWindow window);
 
 	void ValidateUI();
+
+	static bool getMoveCall() { return doMoveCall; }
 
 private:
 	static bool doMoveCall;

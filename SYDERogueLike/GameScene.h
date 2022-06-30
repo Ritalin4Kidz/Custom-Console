@@ -25,6 +25,9 @@ public:
 	static int getUISize() { return m_UIControl.size(); }
 	static void setUIText(std::string newText, int index) { m_UIControl[index]->m_Text = newText; }
 
+	static void HideUI() { showUI = false; }
+	static void ShowUI() { showUI = true; }
+
 	static void clearUI();
 
 protected:
@@ -33,4 +36,5 @@ protected:
 
 private:
 	static vector<SYDEUI*> m_UIControl;
+	static bool showUI;
 };

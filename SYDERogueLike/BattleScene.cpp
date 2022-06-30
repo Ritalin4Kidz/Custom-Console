@@ -112,7 +112,7 @@ void BattleScene::onNewScene()
 		"MoveData-" + to_string(4)
 	));
 	ValidateUI();
-
+	ShowUI();
 	SydeRogueLikeStatics::toggleFightSuccess(true);
 }
 
@@ -125,6 +125,7 @@ void BattleScene::destroyScene()
 		delete m_MovesForTurn[i];
 	}
 	m_MovesForTurn.clear();
+	ShowUI();
 	delete m_Enemy;
 }
 
@@ -218,6 +219,7 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		{
 			m_SceneState = m_BSS_Normal;
 			ValidateUI();
+			ShowUI();
 			return window;
 		}
 		windowText_Top = (enemyTurn ? m_Enemy->getName() : m_Player->getName()) + " Used";

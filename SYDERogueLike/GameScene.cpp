@@ -1,9 +1,13 @@
 #include "GameScene.h"
 
 vector<SYDEUI*> GameScene::m_UIControl = vector<SYDEUI*>();
-
+bool GameScene::showUI = true;
 ConsoleWindow GameScene::drawUI(ConsoleWindow window)
 {
+	if (!showUI)
+	{
+		return window;
+	}
 	for (int i = 0; i < getUISize(); i++)
 	{
 		window = m_UIControl[i]->draw_ui(window);

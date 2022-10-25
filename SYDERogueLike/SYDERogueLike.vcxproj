@@ -160,6 +160,7 @@
     <ClCompile Include="PlayerFuri.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
+    <ClCompile Include="ShopItem.cpp" />
     <ClCompile Include="ShopScene.cpp" />
     <ClCompile Include="SlashMove.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
@@ -195,6 +196,8 @@
     <ClInclude Include="PlayerIncludeHeader.h" />
     <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="ScrapMove.h" />
+    <ClInclude Include="ShopItem.h" />
+    <ClInclude Include="ShopItemRarity.h" />
     <ClInclude Include="ShopScene.h" />
     <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SmokeBreakMove.h" />

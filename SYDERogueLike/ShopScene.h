@@ -4,34 +4,18 @@
 
 #include "SYDEstdafx.h"
 #include "SYDEUI.h"
+#include "ShopItem.h"
 #include <SYDEClickableButton.h>
 
-class ShopItem
-{
-public:
-	ShopItem() {}
-	virtual ~ShopItem() {}
-
-	CustomAsset getIcon() { return icon; }
-	void setIcon(CustomAsset newIcon) { icon = newIcon; }
-
-	int getPrice() { return price; }
-	void setPrice(int newPrice) { price = newPrice; }
-
-protected:
-	CustomAsset icon;
-	int price;
-};
-
-class MoveShopItem : public ShopItem
-{
-public:
-	MoveShopItem() {}
-	virtual ~MoveShopItem() { }
-protected:
-};
-
-
+/*
+TODO:
+BUY BUTTON BUYS MOVE WHEN GOLD SHOWING
+ADD OPTION TO HEAL
+PLAN INVENTORY ITEMS
+MOVE SWAPPING
+SHOW DETAILS IN SHOP
+ITEM GENERATION
+*/
 class ShopScene : public GameScene
 {
 public:
@@ -40,5 +24,10 @@ public:
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
 	void destroyScene() override;
+
+	void test();
+
 private:
+	vector<ShopItem*> m_ShopItems;
+	vector<SYDEClickableButton> m_BuyButtons;
 };

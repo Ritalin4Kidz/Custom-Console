@@ -60,7 +60,10 @@ int main(int argc, char* argv[])
 	SYDEGamePlay::getConfig().ColourPalette(hOut);
 	HWND hwnd = GetConsoleWindow();
 	HMENU hmenu = GetSystemMenu(hwnd, FALSE);
-	EnableMenuItem(hmenu, SC_CLOSE, MF_GRAYED);
+	if (!debug)
+	{
+		EnableMenuItem(hmenu, SC_CLOSE, MF_GRAYED);
+	}
 	GdiplusStartup(&gdiplusToken, &startupInput, 0);
 	srand(time(NULL));
 	LPCWSTR title = L"SYDE Roguelike";

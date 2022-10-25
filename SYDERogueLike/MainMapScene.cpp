@@ -8,6 +8,22 @@ void moveSingleSpaceTest()
 	MainMapScene::triggerMove();
 }
 
+void options()
+{
+	/*
+	TODO: OPTIONS MENU TO QUIT TO MENU, RESUME OR EXIT GAME
+		OTHER SETTINGS LATER
+	*/
+}
+
+void playerStats()
+{
+	/*
+	PLAYER STATS STATE
+		SEE CURRENT MOVES + STATS + HEALTH
+	*/
+}
+
 void choosePath()
 {
 	MainMapScene::setSpaceMoveTo(SYDEMathUtils::VectorFromString(CustomAsset_Clickable::getLastButtonTag()));
@@ -20,6 +36,26 @@ void MainMapScene::onNewScene()
 	setUpMap();
 	showRouteOptions = false;
 	m_SceneState = MMS_Normal;
+
+	addToUIControl(new SYDEClickableButton(
+		"OP",
+		Vector2(3, 1),
+		Vector2(2, 1),
+		BLACK_WHITE_BG,
+		NULLCOLOUR,
+		false,
+		options
+	));
+
+	addToUIControl(new SYDEClickableButton(
+		"PS",
+		Vector2(6, 1),
+		Vector2(2, 1),
+		BLACK_WHITE_BG,
+		NULLCOLOUR,
+		false,
+		playerStats
+	));
 }
 
 void MainMapScene::destroyScene()

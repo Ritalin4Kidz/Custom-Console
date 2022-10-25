@@ -1,0 +1,10 @@
+***Air Type Moves:
+
+- Balloon Pop
+Animation already done, lowers the targets defence, harsher drop if asleep but wakes them up
+
+***Fire Type Moves:
+
+***Water Type Moves:
+
+***Melee Type Moves:

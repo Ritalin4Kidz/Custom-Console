@@ -202,7 +202,7 @@ ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, 
 		exit(NULL);
 	}
 	window.setTextAtPoint(Vector2(0, 1), "ASTERIX MAN", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 2), "v1.0.0.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 2), "v1.0.0.0-Prerelease", BRIGHTWHITE);
 
 	window.setTextAtPoint(Vector2(3, 9), "CONTROLS", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 10), "WASD - Move/Change Map Selection", BRIGHTWHITE);

@@ -11,7 +11,6 @@ public:
 	Line() {}
 	Line(vector<TextItem> a_Line) { m_Line = a_Line; }
 	Line(Line* a_Line) { *this = a_Line; }
-	virtual ~Line() {}
 
 	void writeLine(); 
 	void writeLine(int offsetX); 

@@ -7,8 +7,7 @@ class TextItem {
 public:
 	TextItem() { m_char = ' ', m_colour = 0; }
 	TextItem(char a_char, int a_colour) { m_char = a_char; m_colour = a_colour; };
-	TextItem(TextItem* a_txtItem) { *this = a_txtItem; }
-	virtual ~TextItem() {}
+	TextItem(TextItem* a_txtItem) { m_char = a_txtItem->getChar(); m_colour = a_txtItem->getColour(); delete a_txtItem; }
 
 	void setChar(char text) { m_char = text; }
 	void setColour(int color) { m_colour = color; }

@@ -27,9 +27,5 @@ size_t GameScene::findLabelInUI(std::string a_Lbl, int index)
 
 void GameScene::clearUI()
 {
-	for (int i = 0; i < m_UIControl.size(); i++)
-	{
-		delete m_UIControl[i];
-	}
 	m_UIControl.clear();
 }

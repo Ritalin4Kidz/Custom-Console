@@ -90,5 +90,5 @@ private:
 
 	MainMapScene_States m_SceneState = MMS_Normal;
 
-	vector<SYDEClickableButton> m_OptionsMenu;
+	vector<SYDEClickableButton*> m_OptionsMenu;
 };

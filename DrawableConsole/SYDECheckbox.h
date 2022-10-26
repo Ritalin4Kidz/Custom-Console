@@ -10,7 +10,6 @@ class SYDECheckbox : public SYDEUI {
 public:
 	SYDECheckbox() { }
 	SYDECheckbox(string a_text, Vector2 a_Pos, ColourClass txtColour, ColourClass checkBoxClr, bool checked);
-	virtual ~SYDECheckbox() {}
 	/// <summary>
 	/// Draw the button onto the window
 	/// </summary>

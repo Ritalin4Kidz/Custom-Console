@@ -15,7 +15,6 @@ public:
 	SYDELabel() { m_Label = ""; }
 	SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
 	SYDELabel(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, string tag);
-	virtual ~SYDELabel() {}
 	/// <summary>
 	/// Draw the label onto the window and return it
 	/// </summary>

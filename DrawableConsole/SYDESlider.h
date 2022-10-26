@@ -10,7 +10,6 @@ class SYDESlider : public SYDEUI {
 public:
 	SYDESlider() { }
 	SYDESlider(Vector2 a_Pos, int size, ColourClass BackClr, ColourClass SliderClr);
-	virtual ~SYDESlider() {}
 	/// <summary>
 	/// Draw the button onto the window
 	/// </summary>
@@ -44,7 +43,6 @@ class SYDEVerticalSlider : public SYDESlider {
 public:
 	SYDEVerticalSlider() { }
 	SYDEVerticalSlider(Vector2 a_Pos, int size, ColourClass BackClr, ColourClass SliderClr);
-	virtual ~SYDEVerticalSlider() {}
 	/// <summary>
 	/// Draw the button onto the window
 	/// </summary>

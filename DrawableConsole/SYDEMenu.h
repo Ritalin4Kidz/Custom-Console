@@ -17,7 +17,6 @@ public:
 	/// </summary>
 	/// <param name="_ITEMS"></param>
 	SYDEMenu(vector<SYDEButton> _ITEMS) { m_Items = _ITEMS; m_Items[0]._HIGHLIGHT(true); }
-	virtual ~SYDEMenu() {}
 	/// <summary>
 	/// Draw the menu onto the screen
 	/// </summary>
@@ -78,7 +77,7 @@ class SYDEAdaptiveMenu_Item{
 public:
 	SYDEAdaptiveMenu_Item(SYDEButton* Button) { m_display = false; m_Button = Button; }
 	SYDEAdaptiveMenu_Item(SYDEButton* Button, CustomAsset* Display, Vector2 Loc) { m_display = true; m_Button = Button; m_DisplayItem = Display; m_DisplayLoc = Loc;}
-	virtual ~SYDEAdaptiveMenu_Item() {}
+	virtual ~SYDEAdaptiveMenu_Item() { if (m_Button != NULL) delete& m_Button; if (m_DisplayItem != NULL) delete& m_DisplayItem; }
 
 	void setButtonHighlight(bool a) { m_Button->_HIGHLIGHT(a); }
 	void setButtonHighlightColour(ColourClass c) { m_Button->setHighLight(c); }
@@ -111,7 +110,6 @@ public:
 	/// </summary>
 	/// <param name="_ITEMS"></param>
 	SYDEAdaptiveMenu(vector<SYDEAdaptiveMenu_Item> _ITEMS) { m_Items = _ITEMS; m_Items[0].setButtonHighlight(true); selectionNumber = 0;}
-	virtual ~SYDEAdaptiveMenu() {}
 	/// <summary>
 	/// Draw the menu onto the screen
 	/// </summary>

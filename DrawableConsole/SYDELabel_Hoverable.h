@@ -12,7 +12,7 @@ public:
 	SYDELabel_Hoverable() { m_Label = ""; }
 	SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG);
 	SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, void(*f)());
-	virtual ~SYDELabel_Hoverable() {}
+	virtual ~SYDELabel_Hoverable() { if (m_Function != NULL) delete& m_Function; }
 	/// <summary>
 	/// Draw the label onto the window and return it
 	/// </summary>

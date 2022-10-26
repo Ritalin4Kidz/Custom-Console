@@ -20,7 +20,6 @@ struct ColorRGB_SYDE {
 class AssetsClass {
 public:
 	AssetsClass() {}
-	virtual ~AssetsClass() {}
 
 	/// <summary>
 	/// get the size of the file

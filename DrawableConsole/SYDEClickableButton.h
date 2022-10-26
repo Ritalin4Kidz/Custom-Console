@@ -14,7 +14,6 @@ public:
 	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)());
 	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)(), string a_Tag);
 	SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG, void(*f)(), string a_Tag, string a_Label);
-	virtual ~SYDEClickableButton() {}
 	/// <summary>
 	/// Draw the button onto the window
 	/// </summary>

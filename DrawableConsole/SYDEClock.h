@@ -13,7 +13,7 @@ enum SYDEClock_Draw_State
 class SYDEClock_Timer {
 public:
 	SYDEClock_Timer(float interval) { m_Interval = interval; }
-	virtual ~SYDEClock_Timer() {}
+	virtual ~SYDEClock_Timer() { if (m_Function != NULL) delete& m_Function; }
 
 	/// <summary>
 	/// Tick function, call every fram clock is in use

@@ -11,7 +11,6 @@ public:
 	SYDEParticle(Vector2 pos, Vector2 vel) { m_Pos = pos; m_Velocity = vel; }
 	SYDEParticle(Vector2 pos, Vector2 vel, float lifeSpan) { m_Pos = pos; m_Velocity = vel; m_LifeTime = lifeSpan; m_maxLifeTime = lifeSpan; }
 	SYDEParticle(Vector2 pos, Vector2 vel, float lifeSpan, ColourClass c, std::string _char);
-	virtual ~SYDEParticle() {}
 
 	void draw(ConsoleWindow& w);
 
@@ -36,7 +35,6 @@ protected:
 class SYDEParticleEmitter {
 public:
 	SYDEParticleEmitter(Vector2 pos, Vector2 minV, Vector2 maxV) { m_Pos = pos; m_VelocityMin = minV; m_VelocityMax = maxV; }
-	virtual ~SYDEParticleEmitter() {}
 
 	virtual void draw(ConsoleWindow& w);
 
@@ -94,7 +92,6 @@ protected:
 class SYDEParticleBurst {
 public:
 	SYDEParticleBurst(Vector2 pos, Vector2 minV, Vector2 maxV) { m_Pos = pos; m_VelocityMin = minV; m_VelocityMax = maxV; }
-	virtual ~SYDEParticleBurst() {}
 
 	virtual void draw(ConsoleWindow& w);
 	virtual void burst();

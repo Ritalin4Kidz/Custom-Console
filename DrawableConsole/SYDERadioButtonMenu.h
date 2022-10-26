@@ -15,7 +15,6 @@ class SYDERadioOption : public SYDECheckbox
 public:
 	SYDERadioOption() {}
 	SYDERadioOption(string a_text, ColourClass txtColour, ColourClass checkBoxClr);
-	virtual ~SYDERadioOption() {}
 	ConsoleWindow draw_ui_at_vector(ConsoleWindow window, Vector2 point);
 
 	bool getOptionClicked() { return optionClicked; }

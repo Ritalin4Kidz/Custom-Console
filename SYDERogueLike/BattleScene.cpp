@@ -126,12 +126,18 @@ void BattleScene::destroyScene()
 	}
 	m_MovesForTurn.clear();
 	ShowUI();
+	m_Enemy = NULL;
+	m_Player = NULL;
 	delete m_Enemy;
 }
 
 void BattleScene::endBattle()
 {
 	//CHECK WHO DIED
+	for (int i = 0; i < m_MovesForTurn.size(); i++)
+	{
+		m_MovesForTurn[i] == NULL;
+	}
 	m_MovesForTurn.clear();
 	//TEMP FOR NOW
 	SydeRogueLikeStatics::setSceneTag("Post Battle Scene");

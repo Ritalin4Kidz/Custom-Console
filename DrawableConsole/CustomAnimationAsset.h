@@ -30,8 +30,6 @@ public:
 	CustomAnimationAsset() { max_frame_time = _standardMaxFrameTime; }
 	CustomAnimationAsset(vector<CustomAsset> frames) { setAsset(frames); max_frame_time = _standardMaxFrameTime;}
 
-	virtual ~CustomAnimationAsset() {}
-
 	/// <summary>
 	/// Set if animation should go to next frame based off deltaTime
 	/// </summary>

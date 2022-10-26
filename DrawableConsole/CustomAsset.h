@@ -24,9 +24,6 @@ public:
 	CustomAsset() {}
 	CustomAsset(int width, int height, vector<ColourClass> colour_array) { setAsset(width, height, colour_array); }
 
-
-	virtual ~CustomAsset() {}
-
 	void operator=(CustomAsset other);
 	/// <summary>
 	/// Draw the asset onto the window at a point

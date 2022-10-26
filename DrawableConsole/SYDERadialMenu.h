@@ -15,7 +15,6 @@ public:
 	SYDERadialOption() {}
 	SYDERadialOption(string a_text, ColourClass txtColour, ColourClass a_hoverColour, string a_Symbol, Vector2 displayPos);
 	SYDERadialOption(string a_text, ColourClass txtColour, ColourClass a_hoverColour, string a_Symbol, Vector2 displayPos, void(*f)());
-	virtual ~SYDERadialOption() {}
 	ConsoleWindow draw_ui_at_vector(ConsoleWindow window, Vector2 point);
 
 	bool getOptionClicked() { return optionClicked; }
@@ -40,7 +39,6 @@ class SYDERadialMenu_Basic : public SYDEUI {
 public:
 	SYDERadialMenu_Basic() { }
 	SYDERadialMenu_Basic(Vector2 a_Pos, SYDERadialOption northBtn, SYDERadialOption westBtn, SYDERadialOption southBtn, SYDERadialOption eastBtn);
-	virtual ~SYDERadialMenu_Basic() {}
 	/// <summary>
 	/// Draw the button onto the window
 	/// </summary>

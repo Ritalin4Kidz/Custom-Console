@@ -12,7 +12,6 @@ public:
 	SYDETextBox() { m_Label = ""; }
 	SYDETextBox(string a_Label) { m_Label = a_Label; }
 	SYDETextBox(Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour);
-	virtual ~SYDETextBox() {}
 
 	/// <summary>
 	/// Draw the textbox on the screen
@@ -44,7 +43,6 @@ public:
 	SYDEClickableTextBox() { m_Label = ""; }
 	SYDEClickableTextBox(string a_Label) { m_Label = a_Label; }
 	SYDEClickableTextBox(Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour);
-	virtual ~SYDEClickableTextBox() {}
 
 	/// <summary>
 	/// Draw the textbox on the screen

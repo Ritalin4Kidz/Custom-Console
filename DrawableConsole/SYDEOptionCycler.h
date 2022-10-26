@@ -36,7 +36,6 @@ public:
 		m_Items = items;
 		size = a_Size;
 	}
-	virtual ~SYDEOptionCycler() {}
 	/// <summary>
 	/// Draw the label onto the window and return it
 	/// </summary>

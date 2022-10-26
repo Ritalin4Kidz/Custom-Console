@@ -69,26 +69,25 @@ void MainMapScene::onNewScene()
 		playerStats
 	));
 
-	m_OptionsMenu = std::vector<SYDEClickableButton>({
-		SYDEClickableButton(
-			"     Resume Game     ",
-			Vector2(20, 5),
-			Vector2(20, 1),
-			BLACK_BRIGHTWHITE_BG,
-			NULLCOLOUR,
-			false,
-			options),
+	m_OptionsMenu = std::vector<SYDEClickableButton*>({});
+	m_OptionsMenu.push_back(new SYDEClickableButton(
+		"     Resume Game     ",
+		Vector2(20, 5),
+		Vector2(20, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		options));
 
-		SYDEClickableButton(
+	m_OptionsMenu.push_back(new SYDEClickableButton(
 			"     Back To Menu     ",
 			Vector2(20, 15),
 			Vector2(20, 1),
 			BLACK_BRIGHTWHITE_BG,
 			NULLCOLOUR,
 			false,
-			mainMenu),
-
-		});
+			mainMenu)
+		);
 
 }
 
@@ -496,7 +495,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 	{
 		for (int i = 0; i < m_OptionsMenu.size(); i++)
 		{
-			window = m_OptionsMenu[i].draw_ui(window);
+			window = m_OptionsMenu[i]->draw_ui(window);
 		}
 	}
 	else if (m_SceneState == MMS_UIAnimation)

@@ -8,6 +8,7 @@
 #include "CharacterSelectScene.h"
 #include "PostBattleScene.h"
 #include "ShopScene.h"
+#include "PlayerStateScene.h"
 class SYDERogueLikeMainControl : public SYDEWindowGame {
 public:
 	SYDERogueLikeMainControl() { init(); }
@@ -28,7 +29,8 @@ private:
 			new MainMenuScene(),
 			new MainMapScene(),
 			new CharacterSelectScene(),
-			new PostBattleScene()
+			new PostBattleScene(),
+			new PlayerStateScene()
 		});
 
 	GameScene* mainScene;

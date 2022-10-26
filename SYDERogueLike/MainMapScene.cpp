@@ -2,6 +2,8 @@
 std::string MainMapScene::m_MapToLoad = "";
 bool MainMapScene::moveCall = false;
 bool MainMapScene::choiceCall = false;
+bool MainMapScene::optionsCall = false;
+bool MainMapScene::nukeCall = false;
 Vector2 MainMapScene::m_SpaceMoveTo = Vector2(0, 0);
 void moveSingleSpaceTest()
 {
@@ -14,6 +16,7 @@ void options()
 	TODO: OPTIONS MENU TO QUIT TO MENU, RESUME OR EXIT GAME
 		OTHER SETTINGS LATER
 	*/
+	MainMapScene::triggerOptions();
 }
 
 void playerStats()
@@ -22,6 +25,14 @@ void playerStats()
 	PLAYER STATS STATE
 		SEE CURRENT MOVES + STATS + HEALTH
 	*/
+	SydeRogueLikeStatics::setSceneTag("Player State Scene");
+}
+
+void mainMenu()
+{
+	SydeRogueLikeStatics::setSceneTag("Main Splashscreen");
+	MainMapScene::triggerNuke();
+	GameScene::ShowUI();
 }
 
 void choosePath()
@@ -33,6 +44,7 @@ void choosePath()
 void MainMapScene::onNewScene()
 {
 	test();
+
 	setUpMap();
 	showRouteOptions = false;
 	m_SceneState = MMS_Normal;
@@ -56,10 +68,39 @@ void MainMapScene::onNewScene()
 		false,
 		playerStats
 	));
+
+	m_OptionsMenu = std::vector<SYDEClickableButton>({
+		SYDEClickableButton(
+			"     Resume Game     ",
+			Vector2(20, 5),
+			Vector2(20, 1),
+			BLACK_BRIGHTWHITE_BG,
+			NULLCOLOUR,
+			false,
+			options),
+
+		SYDEClickableButton(
+			"     Back To Menu     ",
+			Vector2(20, 15),
+			Vector2(20, 1),
+			BLACK_BRIGHTWHITE_BG,
+			NULLCOLOUR,
+			false,
+			mainMenu),
+
+		});
+
 }
 
 void MainMapScene::destroyScene()
 {
+	m_OptionsMenu.clear();
+
+	if (nukeCall)
+	{
+		nukeCall = false;
+		nukeMap();
+	}
 }
 
 void MainMapScene::test()
@@ -84,6 +125,7 @@ void MainMapScene::setUpMap()
 	{
 		return;
 	}
+	nukeMap();
 	string IslandBmp = "EngineFiles\\Levels\\Map\\" + m_MapToLoad + ".bmp";
 	string IslandPathData = "EngineFiles\\Levels\\PathData\\" + m_MapToLoad + ".bmp";
 	wstring wIslandBmp = wstring(IslandBmp.begin(), IslandBmp.end());
@@ -158,6 +200,11 @@ void MainMapScene::sortSpaces()
 		}
 	}
 	cameraPos = getSpace(0, 0).getDrawPos();
+}
+
+void MainMapScene::nukeMap()
+{
+	m_MapPaths.clear();
 }
 
 void MainMapScene::addSpace(Vector2 location, Color pix)
@@ -358,6 +405,22 @@ ArrowDisplay MainMapScene::returnArrowForPath(Vector2 nextPathPos, Vector2 curre
 
 ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (optionsCall)
+	{
+		optionsCall = false;
+		if (m_SceneState == MMS_Normal)
+		{
+			m_SceneState = MMS_Options;
+			GameScene::HideUI();
+		}
+		else if (m_SceneState == MMS_Options)
+		{
+			m_SceneState = MMS_Normal;
+			GameScene::ShowUI();
+		}
+		return window;
+	}
+
 	if (moveCall)
 	{
 		//TODO:
@@ -376,7 +439,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			//SWAP BTN
 			int nextPath = m_CfgObj.getPathNumberToMoveAtPos(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber());
 			Vector2 nextPathPos = getSpace(nextPath, 0).getDrawPos();
-			ArrowDisplay aNext = MainMapScene::returnArrowForPath(nextPathPos, cameraPos, 
+			ArrowDisplay aNext = MainMapScene::returnArrowForPath(nextPathPos, cameraPos,
 				choosePath, SYDEMathUtils::VectorToString(Vector2(nextPath, 0)), (windowWidth / 2), (windowHeight / 2));
 			m_SwapPathBtn = aNext.click;
 			swapBtnPos = aNext.vec;
@@ -407,8 +470,9 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			window.setTextAtPoint(Vector2(i, ii), " ", BLUE_BLUE_BG);
 		}
 	}
-	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth/2), cameraPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
+	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth / 2), cameraPos.getY() - (windowHeight / 2)), windowWidth, windowHeight);
 	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), "><", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
+
 	if (m_SceneState == MMS_Normal)
 	{
 		if (showRouteOptions)
@@ -426,6 +490,13 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			window = m_SwapPathBtn.draw_asset(window, swapBtnPos);
 			window = m_ContinuePathBtn.draw_asset(window, contBtnPos);
 			return window;
+		}
+	}
+	else if (m_SceneState == MMS_Options)
+	{
+		for (int i = 0; i < m_OptionsMenu.size(); i++)
+		{
+			window = m_OptionsMenu[i].draw_ui(window);
 		}
 	}
 	else if (m_SceneState == MMS_UIAnimation)

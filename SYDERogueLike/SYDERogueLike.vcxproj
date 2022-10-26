@@ -158,6 +158,7 @@
     <ClCompile Include="PlayerAlison.cpp" />
     <ClCompile Include="PlayerBruce.cpp" />
     <ClCompile Include="PlayerFuri.cpp" />
+    <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
     <ClCompile Include="ShopItem.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="PlayerBruce.h" />
     <ClInclude Include="PlayerFuri.h" />
     <ClInclude Include="PlayerIncludeHeader.h" />
+    <ClInclude Include="PlayerStateScene.h" />
     <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="ScrapMove.h" />
     <ClInclude Include="ShopItem.h" />

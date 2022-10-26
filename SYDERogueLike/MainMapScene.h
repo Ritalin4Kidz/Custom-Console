@@ -11,7 +11,8 @@
 enum MainMapScene_States
 {
 	MMS_Normal = 0,
-	MMS_UIAnimation = 1
+	MMS_UIAnimation = 1,
+	MMS_Options = 2
 };
 
 
@@ -39,6 +40,8 @@ public:
 
 	void sortSpaces();
 
+	void nukeMap();
+
 	void addSpace(Vector2 location, Color pix);
 
 	void loadBasicBattleScene();
@@ -53,6 +56,8 @@ public:
 
 	static void triggerMove() { moveCall = true; }
 	static void triggerChoice() { choiceCall = true; }
+	static void triggerOptions() { optionsCall = true; }
+	static void triggerNuke() { nukeCall = true; }
 
 	ArrowDisplay returnArrowForPath(Vector2 nextPathPos, Vector2 currentPos, void(*f)(), string a_Tag, int middleWidth, int middleHeight);
 
@@ -63,6 +68,9 @@ private:
 	static Vector2 m_SpaceMoveTo;
 	static bool moveCall;
 	static bool choiceCall;
+	static bool optionsCall;
+
+	static bool nukeCall;
 
 	bool showRouteOptions = false;
 
@@ -81,4 +89,6 @@ private:
 	std::string sceneLoad;
 
 	MainMapScene_States m_SceneState = MMS_Normal;
+
+	vector<SYDEClickableButton> m_OptionsMenu;
 };

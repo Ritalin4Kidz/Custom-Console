@@ -48,7 +48,7 @@ void MainMapScene::onNewScene()
 	setUpMap();
 	showRouteOptions = false;
 	m_SceneState = MMS_Normal;
-
+	m_MovementState = MoveState_STANDING;
 	addToUIControl(new SYDEClickableButton(
 		"OP",
 		Vector2(3, 1),
@@ -237,6 +237,7 @@ void MainMapScene::loadBasicBattleScene()
 	m_UIAnimation.setFrame(0);
 	m_SceneState = MMS_UIAnimation;
 	sceneLoad = "Battle Scene";
+	HideUI();
 	//TODO:
 	/*
 	WE NEED TO GENERATE THE BATTLE HERE
@@ -251,6 +252,17 @@ void MainMapScene::loadShopScene()
 	m_UIAnimation.setFrame(0);
 	m_SceneState = MMS_UIAnimation;
 	sceneLoad = "Shop Scene";
+	HideUI();
+}
+
+void MainMapScene::rollDice()
+{
+	m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\D20Anim\\DiceAnimation002.bmp", 90, 180, 30, 20, 0, 25));
+	m_UIAnimation.setLooping(false);
+	m_UIAnimation.setFrame(0);
+	m_SceneState = MMS_UIAnimation;
+	sceneLoad = "DiceRollingAnim";
+	HideUI();
 }
 
 bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType)
@@ -282,6 +294,18 @@ MapSpace MainMapScene::getSpace(int path, int space)
 		}
 	}
 	return MapSpace();
+}
+
+bool MainMapScene::isLastSpace(int path, int space)
+{
+	for (int i = 0; i < m_MapPaths.size(); i++)
+	{
+		if (path == m_MapPaths[i].getID())
+		{
+			return m_MapPaths[i].getSize() - 1 == space;
+		}
+	}
+	return false;
 }
 
 MapSpaceTypes MainMapScene::getPixRedToType(int red)
@@ -419,18 +443,48 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		}
 		return window;
 	}
-
 	if (moveCall)
+	{
+		moveCall = false;
+		if (!showRouteOptions)
+		{
+			rollDice();
+		}
+		return window;
+	}
+	if (m_MovementState == MoveState_ROLLING)
 	{
 		//TODO:
 		//DETERMINE DICE ROLL
 		//RUN LOOP FOR EACH SPACE TO MOVE
 		//ON SOME SQUARES THEY CAN ONLY BE ACTIVE WHEN SPACES = 0
-		moveCall = false;
-		m_Space.addY(1);
+		if (m_SceneState == MMS_Normal)
+		{
+			m_MovementState = MoveState_MOVEMENT;
+			spacesToMove = (rand() % maxSpacesToMoveRange) + 1;
+		}
+	}
+	else if (m_MovementState == MoveState_MOVEMENT && !showRouteOptions)
+	{
 		MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
 		cameraPos = spaceCurrent.getDrawPos();
-		if (spaceCurrent.getType() == MST_SwitchPathsSpace)
+		if (spaceCurrent.getType() != MST_SwitchPathsSpace)
+		{
+			if (isLastSpace(m_Space.getX(), m_Space.getY()))
+			{
+				spacesToMove = 0;
+			}
+			if (spacesToMove > 0)
+			{
+				spacesToMove--;
+				m_Space.addY(1);
+			}
+			else if (spacesToMove == 0)
+			{
+				m_MovementState = MoveState_STANDING;
+			}
+		}
+		else if (spaceCurrent.getType() == MST_SwitchPathsSpace)
 		{
 			//TODO: SHOW A POP UP OF ARROWS ASKING WHICH ROUTE WANTED TO BE TAKEN
 			showRouteOptions = true;
@@ -448,13 +502,14 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			contBtnPos = aCont.vec;
 			return window;
 		}
-		else if (spaceCurrent.getType() == MST_BattleSpace)
+		spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
+		if (spaceCurrent.getType() == MST_BattleSpace && m_MovementState == MoveState_STANDING)
 		{
 			//TODO: ANIMATION FOR LOADING INTO BATTLE
 			loadBasicBattleScene();
 			return window;
 		}
-		else if (spaceCurrent.getType() == MST_ShopSpace)
+		else if (spaceCurrent.getType() == MST_ShopSpace && m_MovementState == MoveState_STANDING)
 		{
 			//TODO: ANIMATION FOR LOADING INTO BATTLE
 			loadShopScene();
@@ -503,7 +558,14 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		window = m_UIAnimation.draw_asset(window, Vector2(0, 1));
 		if (m_UIAnimation.getFrame() >= m_UIAnimation.getFrameSize() - 1)
 		{
-			if (sceneLoad != "")
+			ShowUI();
+			//CHEAT SHEET
+			if (sceneLoad == "DiceRollingAnim")
+			{
+				m_MovementState = MoveState_ROLLING;
+				m_SceneState = MMS_Normal;
+			}
+			else if (sceneLoad != "")
 			{
 				SydeRogueLikeStatics::setSceneTag(sceneLoad);
 			}

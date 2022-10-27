@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BalloonPopMove.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BoneClubMove.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="TagToPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BoneClubMove.h" />
     <ClInclude Include="Character.h" />

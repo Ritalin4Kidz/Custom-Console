@@ -16,6 +16,14 @@ enum MainMapScene_States
 };
 
 
+enum MovementStates
+{
+	MoveState_STANDING = 0,
+	MoveState_ROLLING = 1,
+	MoveState_MOVEMENT = 2
+};
+
+
 struct ArrowDisplay
 {
 	ArrowDisplay(CustomAsset_Clickable a, Vector2 v) { click = a; vec = v; }
@@ -48,9 +56,13 @@ public:
 
 	void loadShopScene();
 
+	void rollDice();
+
 	bool addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType);
 
 	MapSpace getSpace(int path, int space);
+	bool isLastSpace(int path, int space);
+
 
 	MapSpaceTypes getPixRedToType(int red);
 
@@ -72,6 +84,11 @@ private:
 
 	static bool nukeCall;
 
+	int spacesToMove = 0;
+
+	int maxSpacesToMoveRange = 6;
+
+	MovementStates m_MovementState = MoveState_STANDING;
 	bool showRouteOptions = false;
 
 	std::vector<MapPath> m_MapPaths = std::vector<MapPath>();

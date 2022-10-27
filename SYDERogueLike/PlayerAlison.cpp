@@ -6,7 +6,7 @@ void PlayerAlison::init_Char(int lvl)
 	new SmokeBreakMove(),
 	new BoneClubMove(),
 	new GustMove(),
-	new SmokeBreakMove(),
+	new BalloonPopMove(),
 		}));
 	m_LastEffortMove = new ScrapMove();
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\PlayerAnimations\\AlisonBehindAnim.bmp", 50, 20, 10, 10, 0, 10));

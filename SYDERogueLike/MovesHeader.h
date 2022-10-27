@@ -5,3 +5,4 @@
 #include "SlashMove.h"
 #include "GustMove.h"
 #include "EmberMove.h"
+#include "BalloonPopMove.h"

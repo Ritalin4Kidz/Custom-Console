@@ -79,7 +79,7 @@ int main(int argc, char* argv[])
 	{
 		std::string arg = argv[i];
 	}
-	config.volumeControl(0);
+	config.volumeControl(1);
 	config.ColourPalette(hOut);
 	ConsoleWindow window(config.getConsoleHeight());
 	srand(time(NULL));

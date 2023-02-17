@@ -44,6 +44,7 @@ public:
 	void setSongArtist(std::string Artist) { m_SongArtist = Artist; }
 	void setFeatureArtist(std::string Artist) { m_FeatArtist = Artist; }
 
+	void setFileName(std::string FileName) { m_FileName = std::wstring(FileName.begin(), FileName.end()); }
 
 	std::string getLongerString();
 

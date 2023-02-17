@@ -4,6 +4,7 @@
 #include "SYDEEngineAssets.h"
 #include "SYDEEngineUI.h"
 #include "SYDEFileDefaults.h"
+#include "SYDESounds.h"
 #include "Vector2.h"
 
 enum GameStateSYDE
@@ -66,4 +67,6 @@ private:
 
 	int coinsOnMap = 0;
 	int coinsCollected = 0;
+
+	SYDESoundFile m_BgMusic = SYDESoundFile("EngineFiles\\Sounds\\LevelSoundtracks\\???.wav");
 };

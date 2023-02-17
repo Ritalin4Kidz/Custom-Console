@@ -81,6 +81,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
 		m_State = LevelSelect_STATE;
+		m_BgMusic.stopSound();
 	}
 
 	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1) && !inGravityFreeArea)
@@ -255,7 +256,15 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 		CheckPoint = m_MainMap.returnPointOfFirstInstance(LIGHTGREY_LIGHTGREY_BG);
 		PlayerPos = CheckPoint;
 		gameTime = 0.0f;
+		//MUSIC STUFF HERE
+		string musicPath = "EngineFiles\\Sounds\\LevelSoundtracks\\" + m_Levels[SelectedLevel];
+		musicPath = musicPath.replace(musicPath.find(".bmp"), musicPath.find(".bmp") + 4, ".wav");
 		sortOutCoins();
+		if (SYDEFileDefaults::exists(musicPath.c_str()))
+		{
+			m_BgMusic.setFileName(musicPath);
+			m_BgMusic.playSoundLooped();
+		}
 	}
 	return window;
 }
@@ -329,6 +338,7 @@ void SYDEPlatformer::winMap()
 		}
 	}
 	timeString = timeStringConvert();
+	m_BgMusic.stopSound();
 }
 void SYDEPlatformer::ApplyMomentum()
 {

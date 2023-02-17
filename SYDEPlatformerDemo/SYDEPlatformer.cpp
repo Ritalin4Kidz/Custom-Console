@@ -36,7 +36,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	bool inGravityFreeArea = (m_MainMap.getColourAtPoint(PlayerPos) == BRIGHTGREEN_BRIGHTGREEN_BG);
 
 	window = m_MainMap.draw_asset(window, Vector2(PlayerPos.getX() - (windowWidth/2), PlayerPos.getY() - (windowHeight/2)), windowWidth, windowHeight);
-	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight/2)), "*", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
+	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight/2)), characterModel, window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), characterColour, true));
 	if (dead)
 	{
 		deadTime+= SYDEDefaults::getDeltaTime();
@@ -84,14 +84,14 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 		m_BgMusic.stopSound();
 	}
 
-	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1) && !inGravityFreeArea)
+	if (SYDEKeyCode::get_key(SYDEPlatformerControls::getJumpButton().at(0))._CompareState(KEYDOWN) && (checkGrounded() || m_Momentum.getY() == 1) && !inGravityFreeArea)
 	{
 		m_Momentum = (Vector2(0, -3));
 	}
 
 	if (inGravityFreeArea)
 	{
-		if (SYDEKeyCode::get_key('S')._CompareState(KEY))
+		if (SYDEKeyCode::get_key(SYDEPlatformerControls::getDownButton().at(0))._CompareState(KEY))
 		{
 			if (movementTimeVertical > 0.1f)
 			{
@@ -100,7 +100,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 			}
 			movementTimeVertical += SYDEDefaults::getDeltaTime();
 		}
-		else if (SYDEKeyCode::get_key('W')._CompareState(KEY))
+		else if (SYDEKeyCode::get_key(SYDEPlatformerControls::getJumpButton().at(0))._CompareState(KEY))
 		{
 			if (movementTimeVertical > 0.1f)
 			{
@@ -116,7 +116,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 	}
 
 
-	if (SYDEKeyCode::get_key('D')._CompareState(KEY))
+	if (SYDEKeyCode::get_key(SYDEPlatformerControls::getRightButton().at(0))._CompareState(KEY))
 	{
 		if (movementTime > 0.05f)
 		{
@@ -125,7 +125,7 @@ ConsoleWindow SYDEPlatformer::draw_game(ConsoleWindow window, int windowWidth, i
 		}
 		movementTime += SYDEDefaults::getDeltaTime();
 	}
-	else if (SYDEKeyCode::get_key('A')._CompareState(KEY))
+	else if (SYDEKeyCode::get_key(SYDEPlatformerControls::getLeftButton().at(0))._CompareState(KEY))
 	{
 		if (movementTime > 0.05f)
 		{
@@ -202,6 +202,42 @@ ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, 
 	{
 		exit(NULL);
 	}
+	if (SYDEKeyCode::get_key('A')._CompareState(KEYDOWN))
+	{
+		selectedCharModel--;
+		if (selectedCharModel < 0)
+		{
+			selectedCharModel = m_CharModels.size() -1;
+		}
+		characterModel = m_CharModels[selectedCharModel];
+	}
+	else if (SYDEKeyCode::get_key('D')._CompareState(KEYDOWN))
+	{
+		selectedCharModel++;
+		if (selectedCharModel >= m_CharModels.size())
+		{
+			selectedCharModel = 0;
+		}
+		characterModel = m_CharModels[selectedCharModel];
+	}
+	if (SYDEKeyCode::get_key('W')._CompareState(KEYDOWN))
+	{
+		selectedCharColour--;
+		if (selectedCharColour < 0)
+		{
+			selectedCharColour = m_CharColours.size() - 1;
+		}
+		characterColour = m_CharColours[selectedCharColour];
+	}
+	else if (SYDEKeyCode::get_key('S')._CompareState(KEYDOWN))
+	{
+		selectedCharColour++;
+		if (selectedCharColour >= m_CharColours.size())
+		{
+			selectedCharColour = 0;
+		}
+		characterColour = m_CharColours[selectedCharColour];
+	}
 	window.setTextAtPoint(Vector2(0, 1), "ASTERIX MAN", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 2), "v1.0.0.0-Prerelease", BRIGHTWHITE);
 
@@ -209,6 +245,12 @@ ConsoleWindow SYDEPlatformer::draw_title(ConsoleWindow window, int windowWidth, 
 	window.setTextAtPoint(Vector2(3, 10), "WASD - Move/Change Map Selection", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 11), "ESC - Quit", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(3, 12), "Space - Start/Select", BRIGHTWHITE);
+
+
+	window.setTextAtPoint(Vector2(3, 17), "A <> D Change Character", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(3, 18), "W <> S Change Colour", BRIGHTWHITE);
+
+	window.setTextAtPoint(Vector2(30, 17), characterModel, characterColour);
 
 	return window;
 }

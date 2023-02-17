@@ -4,6 +4,7 @@
 #include "SYDEEngineAssets.h"
 #include "SYDEEngineUI.h"
 #include "SYDEFileDefaults.h"
+#include "SYDEPlatformerConfigs.h"
 #include "SYDESounds.h"
 #include "Vector2.h"
 
@@ -67,6 +68,29 @@ private:
 
 	int coinsOnMap = 0;
 	int coinsCollected = 0;
+
+	string characterModel = "*";
+	ColourClass characterColour = BRIGHTWHITE;
+
+	std::vector<std::string> m_CharModels = std::vector<std::string>(
+	{
+		"*",
+		"+",
+		"@",
+		"~",
+		"!"
+	});
+	int selectedCharModel = 0;
+
+	std::vector<ColourClass> m_CharColours = std::vector<ColourClass>(
+		{
+			BRIGHTWHITE,
+			BRIGHTRED,
+			BRIGHTGREEN,
+			AQUA,
+			BRIGHTYELLOW
+		});;
+	int selectedCharColour = 0;
 
 	SYDESoundFile m_BgMusic = SYDESoundFile("EngineFiles\\Sounds\\LevelSoundtracks\\???.wav");
 };

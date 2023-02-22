@@ -22,7 +22,6 @@ class SYDEUI
 public:
 	bool _CompareTextState(TextState m_State) { return m_State == m_TxtState; }
 	bool _CompareButtonState(ButtonState m_State) { return m_State == m_BtnState; }
-	virtual ~SYDEUI() { if (m_Function != NULL) delete& m_Function; }
 	void _CheckState() {
 		if (m_Text == m_LastText)
 		{
@@ -71,5 +70,5 @@ protected:
 	Vector2 m_Pos = Vector2(0, 0);
 private:
 	bool m_FunctionSet = false;
-	void(*m_Function)();
+	void(*m_Function)() = NULL;
 };

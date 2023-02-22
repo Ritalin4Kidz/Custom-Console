@@ -64,12 +64,18 @@ public:
 
 	int getPositionUniversal(int metres);
 
+	//Get the position of the ball scaled down
+	int getBallPosition(int divider) { return m_BallPosition / divider; }
 
 	string getTimeString();
+
+	string getTackle();
 
 	void addMinute();
 	void addTimeRandom(int min, int max, bool allowBreak);
 	bool addTime(int seconds, bool allowBreak);
+
+	string getTeamInPossession() { if (m_HomeTeamHasBall) { return getHomeTeam().getName(); } return getAwayTeam().getName(); }
 
 	void addSinBinPlays(int seconds);
 

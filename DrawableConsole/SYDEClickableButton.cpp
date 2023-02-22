@@ -10,6 +10,7 @@ SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a
 	m_Size = a_Size;
 	TextColour = txtColour;
 	_TRANSPARENT = _TRANSPARENTBG;
+
 }
 
 SYDEClickableButton::SYDEClickableButton(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, ColourClass a_hiLightColour, bool _TRANSPARENTBG)

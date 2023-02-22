@@ -1068,6 +1068,11 @@ void SingleSimulationResume()
 	SRLGame::singleSimulationPaused = false;
 }
 
+void SingleSimulationOddsView()
+{
+	SRLGame::sinSimViewState = SSV_OddsViewState;
+}
+
 void SingleSimulationSummaryView()
 {
 	SRLGame::sinSimViewState = SSV_SummaryViewState;
@@ -1376,6 +1381,9 @@ void SRLGame::initSimulationButtons()
 
 	m_SimulationResume = SYDEClickableButton("|>", Vector2(1, 6), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SimulationResume.SetFunc(SingleSimulationResume);
+
+	m_SimulationOddsView = SYDEClickableButton("FV", Vector2(1, 12), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SimulationOddsView.SetFunc(SingleSimulationOddsView);
 
 	m_SimulationSummaryView = SYDEClickableButton("SV", Vector2(1, 14), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SimulationSummaryView.SetFunc(SingleSimulationSummaryView);
@@ -4045,6 +4053,36 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			window.setTextAtPoint(Vector2(33, 18), "General: " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getPoints()) + " Points, " + std::to_string(m_SingleGameManager.getAwayTeam().getPlayers()[m_playerMatchUpNumber].getFantasyPoints()) + " FP", BRIGHTWHITE);
 		}
 
+		else if (SRLGame::sinSimViewState == SSV_OddsViewState)
+		{
+			for (int i = 0; i < 3; i++)
+			{
+				for (int ii = 0; ii < 50; ii++)
+				{
+					window.setTextAtPoint(Vector2(ii + 5, i + 14), " ", BRIGHTGREEN_BRIGHTGREEN_BG);
+				}
+			}
+
+			for (int i = 0; i < 3; i++)
+			{
+				window.setTextAtPoint(Vector2(5, i + 14), "|", BRIGHTWHITE_BRIGHTWHITE_BG);
+				window.setTextAtPoint(Vector2(55, i + 14), "|", BRIGHTWHITE_BRIGHTWHITE_BG);
+				window.setTextAtPoint(Vector2(30, i + 14), "|", BRIGHTWHITE_BRIGHTWHITE_BG);
+			}
+
+			if (m_LiveGameVector.size() > 0)
+			{
+				window = m_LiveGameVector[m_LiveGameVector.size() - 1].draw(window, Vector2(5, 4));
+			}
+
+			window.setTextAtPoint(Vector2(5, 9), "Tackle: " + m_SingleGameManager.getTackle(), BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(5, 10), "Position: " + to_string(m_SingleGameManager.getBallPosition(1) % 50) + "m", BRIGHTWHITE);
+
+			window.setTextAtPoint(Vector2(5, 12), "In Possession: " + m_SingleGameManager.getTeamInPossession(), BRIGHTWHITE);
+
+			window.setTextAtPoint(Vector2(m_SingleGameManager.getBallPosition(2) + 5, 15), "*", window.determineColourAtPoint(Vector2(m_SingleGameManager.getBallPosition(2) + 5, 15), BLACK, true));
+		}
+
 		for (int i = 0; i < windowWidth; i++)
 		{
 			window.setTextAtPoint(Vector2(i, 1), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
@@ -4173,6 +4211,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 
 	window = m_SimulationPause.draw_ui(window);
 	window = m_SimulationResume.draw_ui(window);
+	window = m_SimulationOddsView.draw_ui(window);
 	window = m_SimulationSummaryView.draw_ui(window);
 	window = m_SimulationPlayerMatchUpView.draw_ui(window);
 

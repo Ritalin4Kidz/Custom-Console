@@ -40,8 +40,9 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
-### 1.?.?.? ??/??/2022
+### 1.?.?.? ??/??/2023
 - Tabs inside single matchup infos
+- Field View inside single simulations
 
 ### 1.1.6.2 14/04/2022
 - some more Player hidden stats

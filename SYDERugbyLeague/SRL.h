@@ -549,7 +549,7 @@ private:
 		FinalsSeries("Double Elim Tourny", KnockoutTournamentDouble, 8, 16),
 		});
 
-	CustomAnimationAsset m_MainMenuBG = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\mainmenuAnim.bmp", astVars, 180, 280, 30, 20, 0, 81));
+	CustomAnimationAsset m_MainMenuBG = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\mainmenuAnim.bmp", 180, 280, 30, 20, 0, 81));
 	CustomAsset m_FmodSplash = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fmodlogo.bmp", 30, 20));
 	CustomAsset m_FieldBg = CustomAsset(60, 20, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\fieldShowcase.bmp", 30, 20));
 	CustomAsset m_ProfileLogo = CustomAsset(20, 10, astVars.get_bmp_as_array(L"EngineFiles\\Bitmaps\\DefaultLogo.bmp", 10, 10));
@@ -641,6 +641,8 @@ private:
 
 	SYDEClickableButton m_SimulationPause = SYDEClickableButton();
 	SYDEClickableButton m_SimulationResume = SYDEClickableButton();
+
+	SYDEClickableButton m_SimulationOddsView = SYDEClickableButton();
 
 	SYDEClickableButton m_SimulationSummaryView = SYDEClickableButton();
 	SYDEClickableButton m_SimulationPlayerMatchUpView = SYDEClickableButton();

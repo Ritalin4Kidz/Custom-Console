@@ -168,6 +168,11 @@ string SRLGameManager::getTimeString()
 	return minutesStr + ":" + secondsStr;
 }
 
+string SRLGameManager::getTackle()
+{
+	return to_string(m_Tackle + 1);
+}
+
 void SRLGameManager::addMinute()
 {
 	m_MinutesPassed++;

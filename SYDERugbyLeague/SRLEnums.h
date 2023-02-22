@@ -170,7 +170,8 @@ enum SRLMatchUpState
 enum SRLSingleSimulationViewState
 {
 	SSV_SummaryViewState = 0,
-	SSV_PlayerMatchUpViewState
+	SSV_PlayerMatchUpViewState,
+	SSV_OddsViewState
 };
 
 #pragma endregion

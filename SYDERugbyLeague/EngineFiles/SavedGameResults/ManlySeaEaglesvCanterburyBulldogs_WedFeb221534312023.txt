@@ -1,0 +1,216 @@
+----------LINE-UPS----------
+Home Team: Manly Sea Eagles
+1: Tom Trbojevic
+2: Christian Tuipulotu
+3: Tolutau Koula
+4: Brad Parker
+5: Reuben Garrick
+6: Kaeo Weekes
+7: Daly Cherry Evans
+8: Josh Aloiai
+9: Lachlan Croker
+10: Taniela Paseka
+11: Kelma Tuilagi
+12: Haulmole Olakauatu
+13: Jake Trbojevic
+14: Gordon Chan Kum Tong
+15: Toafofoa Sipley
+16: Sean Keppie
+17: Ethan Bullemor
+Away Team: Canterbury Bulldogs
+1: Hayze Perham
+2: Jacob Kiraz
+3: Jake Averillo
+4: Paul Alamoti
+5: Josh Addo Carr
+6: Matt Burton
+7: Kyle Flanagan
+8: Luke Thompson
+9: Reed Mahoney
+10: Max King
+11: Raymond Faitala Mariner
+12: Viliame Kikau
+13: Ryan Sutton
+14: Josh Reynolds
+15: Chris Patolo
+16: Andrew Davey
+17: Franklin Pele
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Manly Sea Eagles: 0 v Canterbury Bulldogs: 0
+01:25 - Josh Addo Carr - Offload
+01:25 - Josh Addo Carr - Knock On
+03:16 - Jake Trbojevic - 6th Tackle Changeover
+03:54 - Max King - Offload
+03:54 - Max King - Knock On
+04:50 - Kaeo Weekes - Knock On
+06:35 - Raymond Faitala Mariner - 6th Tackle Changeover
+07:01 - Paul Alamoti - Penalty
+08:25 - Reuben Garrick - 6th Tackle Changeover
+09:08 - Ryan Sutton - Intercepted Off A Kelma Tuilagi Pass
+10:18 - Tom Trbojevic - 6th Tackle Changeover
+11:06 - Viliame Kikau - Offload
+11:19 - Reuben Garrick - Penalty
+12:08 - Viliame Kikau - Intercepted Off A Kelma Tuilagi Pass
+13:26 - Jake Averillo - Offload
+13:54 - Jacob Kiraz - Over The Sideline
+15:27 - Matt Burton - Intercepted Off A Jake Trbojevic Pass
+16:13 - ------VIDEO REFEREE------
+16:13 - Brad Parker - TRY - Manly Sea Eagles: 4 v Canterbury Bulldogs: 0
+17:36 - Tom Trbojevic - GOAL - Manly Sea Eagles: 6 v Canterbury Bulldogs: 0
+18:51 - Max King - Penalty
+19:55 - Kaeo Weekes - Offload
+19:55 - Kaeo Weekes - Knock On
+21:23 - Manly Sea Eagles Interchanged Players Christian Tuipulotu & Ethan Bullemor
+21:23 - Hayze Perham - TRY - Manly Sea Eagles: 6 v Canterbury Bulldogs: 4
+22:04 - Reed Mahoney - GOAL - Manly Sea Eagles: 6 v Canterbury Bulldogs: 6
+25:02 - Tom Trbojevic - Offload
+25:02 - Tom Trbojevic - Knock On
+25:50 - Kaeo Weekes - Penalty
+25:50 - Reed Mahoney - PENALTY GOAL - Manly Sea Eagles: 6 v Canterbury Bulldogs: 8
+27:23 - Luke Thompson - Intercepted Off A Brad Parker Pass
+27:23 - Luke Thompson - TRY - Manly Sea Eagles: 10 v Canterbury Bulldogs: 8
+28:06 - Tom Trbojevic - GOAL - Manly Sea Eagles: 12 v Canterbury Bulldogs: 8
+30:40 - Canterbury Bulldogs Interchanged Players Max King & Chris Patolo
+30:57 - Kelma Tuilagi - Ruck Infringement
+32:13 - Chris Patolo - Intercepted Off A Kaeo Weekes Pass
+32:55 - Brad Parker - Intercepted Off A Reed Mahoney Pass
+33:34 - Raymond Faitala Mariner - Forward Pass
+34:22 - Tom Trbojevic - Offload
+34:22 - Tom Trbojevic - Knock On
+34:34 - Kyle Flanagan - Offload
+34:46 - Josh Addo Carr - Intercepted Off A Kelma Tuilagi Pass
+36:02 - Manly Sea Eagles Interchanged Players Josh Aloiai & Toafofoa Sipley
+36:02 - Canterbury Bulldogs Interchanged Players Viliame Kikau & Josh Reynolds
+36:02 - Matt Burton - Knock On
+37:50 - Reuben Garrick - 6th Tackle Changeover
+38:22 - Tolutau Koula - Penalty
+39:08 - Jake Averillo - Offload
+39:08 - Jake Averillo - Knock On
+40:00 - HALF TIME - Manly Sea Eagles: 12 v Canterbury Bulldogs: 8
+41:16 - Paul Alamoti - Forward Pass
+42:45 - Haulmole Olakauatu - 6th Tackle Changeover
+44:17 - Luke Thompson - Stripped Ball Off Daly Cherry Evans
+45:20 - Canterbury Bulldogs Interchanged Players Matt Burton & Max King
+45:51 - Josh Addo Carr - 6th Tackle Changeover
+47:23 - Luke Thompson - Intercepted Off A Toafofoa Sipley Pass
+47:50 - Ethan Bullemor - Forward Pass
+48:05 - Josh Addo Carr - Forward Pass
+49:23 - Tolutau Koula - Offload
+49:49 - Toafofoa Sipley - 6th Tackle Changeover
+50:20 - Manly Sea Eagles Interchanged Players Tolutau Koula & Christian Tuipulotu
+50:20 - Canterbury Bulldogs Interchanged Players Reed Mahoney & Andrew Davey
+52:09 - Toafofoa Sipley - Offload
+52:09 - Toafofoa Sipley - Knock On
+52:27 - Max King - Offload
+53:30 - Hayze Perham - Knock On
+53:58 - Kaeo Weekes - Intercepted Off A Jake Averillo Pass
+54:23 - Hayze Perham - TRY - Manly Sea Eagles: 12 v Canterbury Bulldogs: 12
+55:41 - Paul Alamoti - GOAL - Manly Sea Eagles: 12 v Canterbury Bulldogs: 14
+57:01 - Kyle Flanagan - Offload
+58:04 - Luke Thompson - Penalty
+59:24 - Christian Tuipulotu - 6th Tackle Changeover
+60:24 - Canterbury Bulldogs Interchanged Players Chris Patolo & Matt Burton
+60:52 - Ryan Sutton - 6th Tackle Changeover
+61:21 - Canterbury Bulldogs Interchanged Players Josh Reynolds & Viliame Kikau
+61:21 - Jake Trbojevic - Intercepted Off A Raymond Faitala Mariner Pass
+61:38 - Kyle Flanagan - TRY - Manly Sea Eagles: 12 v Canterbury Bulldogs: 18
+62:57 - Paul Alamoti - GOAL - Manly Sea Eagles: 12 v Canterbury Bulldogs: 20
+66:44 - Manly Sea Eagles Interchanged Players Christian Tuipulotu & Gordon Chan Kum Tong
+66:44 - Paul Alamoti - Over The Sideline
+66:59 - Daly Cherry Evans - TRY - Manly Sea Eagles: 16 v Canterbury Bulldogs: 20
+67:57 - Tom Trbojevic - CONVERSION MISSED
+70:21 - Manly Sea Eagles Interchanged Players Brad Parker & Sean Keppie
+70:21 - Canterbury Bulldogs Interchanged Players Andrew Davey & Reed Mahoney
+71:06 - Ryan Sutton - 6th Tackle Changeover
+71:44 - Canterbury Bulldogs Interchanged Players Ryan Sutton & Josh Reynolds
+71:44 - Kaeo Weekes - Offload
+72:12 - Gordon Chan Kum Tong - Knock On
+72:42 - Max King - Forward Pass
+74:28 - Paul Alamoti - Intercepted Off A Haulmole Olakauatu Pass
+74:58 - ------VIDEO REFEREE------
+74:58 - Gordon Chan Kum Tong - NO TRY - Offside
+74:58 - Gordon Chan Kum Tong - Penalty
+75:53 - Paul Alamoti - Intercepted Off A Gordon Chan Kum Tong Pass
+76:23 - Manly Sea Eagles Interchanged Players Reuben Garrick & Brad Parker
+78:43 - Tom Trbojevic - Offload
+78:43 - Tom Trbojevic - Knock On
+79:19 - Jake Trbojevic - Stripped Ball Off Raymond Faitala Mariner
+80:00 - FULL TIME - Manly Sea Eagles: 16 v Canterbury Bulldogs: 20
+                             
+--------PLAYER STATS--------
+Home Team: Manly Sea Eagles
+1: Tom Trbojevic |Time Played: 80:00 |Metres: 30 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 6
+2: Ethan Bullemor |Time Played: 58:37 |Metres: 90 |Tackles: 3 |Kicks: 2 |Kick Metres: 84 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+3: Gordon Chan Kum Tong |Time Played: 13:16 |Metres: 43 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+4: Sean Keppie |Time Played: 09:39 |Metres: 4 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+5: Brad Parker |Time Played: 73:58 |Metres: 31 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 36
+6: Kaeo Weekes |Time Played: 80:00 |Metres: 43 |Tackles: 6 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+7: Daly Cherry Evans |Time Played: 80:00 |Metres: 36 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+8: Toafofoa Sipley |Time Played: 43:58 |Metres: 9 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+9: Lachlan Croker |Time Played: 80:00 |Metres: 8 |Tackles: 11 |Kicks: 1 |Kick Metres: 43 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 33
+10: Taniela Paseka |Time Played: 80:00 |Metres: 40 |Tackles: 12 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+11: Kelma Tuilagi |Time Played: 80:00 |Metres: 10 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+12: Haulmole Olakauatu |Time Played: 80:00 |Metres: 22 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+13: Jake Trbojevic |Time Played: 80:00 |Metres: 9 |Tackles: 12 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+14: Christian Tuipulotu |Time Played: 37:47 |Metres: 20 |Tackles: 3 |Kicks: 2 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+15: Josh Aloiai |Time Played: 36:02 |Metres: 4 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+16: Reuben Garrick |Time Played: 76:23 |Metres: 51 |Tackles: 5 |Kicks: 2 |Kick Metres: 94 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+17: Tolutau Koula |Time Played: 50:20 |Metres: 13 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+Highlights:                 
+Most Tackles: Haulmole Olakauatu: 14
+Most Points: Tom Trbojevic: 4
+Most Metres: Ethan Bullemor: 90
+Most Errors: Tom Trbojevic: 3
+                             
+Away Team: Canterbury Bulldogs
+1: Hayze Perham |Time Played: 80:00 |Metres: 167 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 47
+2: Jacob Kiraz |Time Played: 80:00 |Metres: 30 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+3: Jake Averillo |Time Played: 80:00 |Metres: 62 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+4: Paul Alamoti |Time Played: 80:00 |Metres: 18 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 5
+5: Josh Addo Carr |Time Played: 80:00 |Metres: 127 |Tackles: 2 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+6: Max King |Time Played: 65:20 |Metres: 54 |Tackles: 7 |Kicks: 2 |Kick Metres: 44 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+7: Kyle Flanagan |Time Played: 80:00 |Metres: 221 |Tackles: 10 |Kicks: 2 |Kick Metres: 66 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 133
+8: Luke Thompson |Time Played: 80:00 |Metres: 14 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+9: Reed Mahoney |Time Played: 59:59 |Metres: 17 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 30
+10: Matt Burton |Time Played: 64:56 |Metres: 8 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+11: Raymond Faitala Mariner |Time Played: 80:00 |Metres: 12 |Tackles: 21 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 21
+12: Viliame Kikau |Time Played: 54:41 |Metres: 19 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+13: Josh Reynolds |Time Played: 33:35 |Metres: 2 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+14: Ryan Sutton |Time Played: 71:44 |Metres: 67 |Tackles: 10 |Kicks: 1 |Kick Metres: 64 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 61
+15: Chris Patolo |Time Played: 29:44 |Metres: 0 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+16: Andrew Davey |Time Played: 20:01 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Franklin Pele |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Raymond Faitala Mariner: 21
+Most Points: Hayze Perham: 8
+Most Metres: Kyle Flanagan: 221
+Most Errors: Paul Alamoti: 2
+                             
+---------TEAM STATS---------
+Home Team: Manly Sea Eagles
+Total Metres: 463
+Total Kick Metres: 362
+Total Errors: 8
+Total Tackles: 125
+Total Tries: 2
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 6/8
+                             
+Away Team: Canterbury Bulldogs
+Total Metres: 818
+Total Kick Metres: 197
+Total Errors: 11
+Total Tackles: 139
+Total Tries: 3
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Kyle Flanagan
+2nd (2 Points) -- Hayze Perham
+3rd (1 Point) -- Taniela Paseka
+----------------------------

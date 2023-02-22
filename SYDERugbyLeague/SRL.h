@@ -251,6 +251,7 @@ public:
 	void sortOutTradingOptions();
 
 	ConsoleWindow CreateSeason(ConsoleWindow window, bool isWorldCup);
+	ConsoleWindow CreateSeasonCustom(ConsoleWindow window);
 
 	static vector<string> AchievementStrings;
 

@@ -254,6 +254,8 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_DOWN));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_LEFT));
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey(VK_RIGHT));
+
+	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('P'));
 	window.setStartingLine(1);
 	SRLGame m_SRL;
 	while (!SRLGame::exitConfirmedCall)

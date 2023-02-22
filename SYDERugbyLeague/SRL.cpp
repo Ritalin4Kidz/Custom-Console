@@ -2175,6 +2175,10 @@ ConsoleWindow SRLGame::season_config_settings(ConsoleWindow window, int windowWi
 		window = m_RegularSeasonCfgBtn.draw_ui(window);
 		window = m_WorldCupCfgBtn.draw_ui(window);
 		window = m_ExhibitionCfgBtn.draw_ui(window);
+		if (SYDEKeyCode::get_key('P')._CompareState(KEYDOWN) && SYDEFileDefaults::exists("EngineFiles\\defaultSeasonConfig.json"))
+		{
+			return CreateSeasonCustom(window);
+		}
 		if (SeasonStart)
 		{
 			try
@@ -8431,6 +8435,97 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 	m_Season = SRLSeason(Draw, Ladder);
 	m_Season.m_PremiershipBets.clear();
 	m_Season.isWorldCup = isWorldCup;
+	m_GameBetsWriteUp.clear();
+	m_PremiershipBetsWriteUp.clear();
+	m_BetMoney = SRLBetPrice(500, 0);
+	if (coachingMode)
+	{
+		newState = SelectTeamCoachingState;
+	}
+	else
+	{
+		newState = SeasonModeState;
+	}
+	m_round = 0;
+	m_roundToSimulate = 0;
+	drawViewState = SeasonDrawMainView;
+	CalculateOdds();
+	m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_homeOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].homeTeamOdds;
+	m_Season.m_Draw.m_Rounds[0].gameToFeature.fg_awayOdds = m_Season.m_Draw.m_Rounds[0].m_Games[_HighlightedFirstGame].awayTeamOdds;
+	CalculatePremiershipOdds();
+	sortOutMatchButtons();
+	return window;
+}
+
+ConsoleWindow SRLGame::CreateSeasonCustom(ConsoleWindow window)
+{
+	m_Season.clear();
+	baseSeasonLength = seasonLength;
+	baseFsType = finalsSystemInt;
+
+	currentWonBetsSeason = 0;
+	currentLostBetsSeason = 0;
+	currentBetsTotalSeason = 0;
+	currentWonBetsSeasonMatchOnly = 0;
+	currentLostBetsSeasonMatchOnly = 0;
+	currentBetsTotalSeasonMatchOnly = 0;
+
+	refreshAvailable = maxRefreshes;
+
+	SeasonStart = false;
+
+	//CHECKBOX SETTINGS
+	m_ExtraTime = m_SettingsExtraTimeBtn.isChecked();
+	m_Injuries = m_SettingsInjuryBtn.isChecked();
+	m_SinBins = m_SettingsSinBinBtn.isChecked();
+	m_Stamina = m_SettingsStaminaBtn.isChecked();
+	m_Weather = m_SettingsWeatherBtn.isChecked();
+	SRLGameMatchup::WeatherIsOn = m_Weather;
+	coachingMode = m_SettingsCoachBtn.isChecked();
+	m_SeasonEvents = m_SettingsEventsBtn.isChecked();
+	m_GoalKicker = m_SettingsGoalKickerBtn.isChecked();
+	RepRoundsOn = m_SettingsRepRoundsBtn.isChecked();
+	std::ifstream ifs{ "EngineFiles\\defaultSeasonConfig.json" };
+	json cfg_file = json::parse(ifs);
+	m_SeasonTeams.clear();
+	for (auto& elem : cfg_file["teams"])
+	{
+		m_SeasonTeams.push_back(elem["name"]);
+	}
+	//DO CONFIG IN HERE
+	finals = false;
+	vector<SRLLadderPosition> ladders;
+	for (int i = 0; i < m_SeasonTeams.size(); i++)
+	{
+		SRLLadderPosition newPosition;
+		newPosition.teamName = m_SeasonTeams[i];
+		ladders.push_back(newPosition);
+	}
+#pragma region Add Rounds
+	SRLLadder Ladder = SRLLadder(ladders);
+	vector<SRLRound> rounds = vector<SRLRound>();
+	for (auto& round : cfg_file["rounds"])
+	{
+		vector<SRLGameMatchup> games;
+		for (auto& game : round["games"])
+		{
+			games.push_back(SRLGameMatchup(game["homeTeam"], game["awayTeam"]));
+		}
+		rounds.push_back(SRLRound(games));
+	}
+	for (int i = 0; i < rounds.size(); i++)
+	{
+		rounds[i].RoundName = "Round " + to_string(i + 1);
+	}
+	BaseSeasonGames = rounds.size();
+#pragma endregion
+	//FEATURE A GAME
+	int _HighlightedFirstGame = rand() % rounds[0].m_Games.size();
+	rounds[0].gameToFeature = FeaturedGame(rounds[0].m_Games[_HighlightedFirstGame].HomeTeam, rounds[0].m_Games[_HighlightedFirstGame].AwayTeam, astVars, _HighlightedFirstGame, SRLBetPrice(0, 0), SRLBetPrice(0, 0));
+	SRLDraw Draw(rounds);
+	m_Season = SRLSeason(Draw, Ladder);
+	m_Season.m_PremiershipBets.clear();
+	m_Season.isWorldCup = false;
 	m_GameBetsWriteUp.clear();
 	m_PremiershipBetsWriteUp.clear();
 	m_BetMoney = SRLBetPrice(500, 0);

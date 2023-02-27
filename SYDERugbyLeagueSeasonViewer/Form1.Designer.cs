@@ -35,6 +35,9 @@ namespace SYDERugbyLeagueSeasonViewer
             this.RoundLabel = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.nudieRunBtn = new System.Windows.Forms.Button();
+            this.outscorersBtn = new System.Windows.Forms.Button();
+            this.highFantasy = new System.Windows.Forms.Button();
             this.highScorers = new System.Windows.Forms.Button();
             this.hattricksBtn = new System.Windows.Forms.Button();
             this.plyerSentGme = new System.Windows.Forms.Button();
@@ -44,7 +47,7 @@ namespace SYDERugbyLeagueSeasonViewer
             this.LdrBoardBtn = new System.Windows.Forms.Button();
             this.LadderBtn = new System.Windows.Forms.Button();
             this.hmePage = new System.Windows.Forms.Button();
-            this.highFantasy = new System.Windows.Forms.Button();
+            this.errorCheckBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +72,7 @@ namespace SYDERugbyLeagueSeasonViewer
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(929, 12);
+            this.button2.Location = new System.Drawing.Point(918, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 23);
             this.button2.TabIndex = 2;
@@ -81,9 +84,9 @@ namespace SYDERugbyLeagueSeasonViewer
             // 
             this.RoundLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RoundLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RoundLabel.Location = new System.Drawing.Point(968, 12);
+            this.RoundLabel.Location = new System.Drawing.Point(956, 12);
             this.RoundLabel.Name = "RoundLabel";
-            this.RoundLabel.Size = new System.Drawing.Size(25, 23);
+            this.RoundLabel.Size = new System.Drawing.Size(37, 23);
             this.RoundLabel.TabIndex = 3;
             this.RoundLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -101,6 +104,9 @@ namespace SYDERugbyLeagueSeasonViewer
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MainPanel.Controls.Add(this.errorCheckBtn);
+            this.MainPanel.Controls.Add(this.nudieRunBtn);
+            this.MainPanel.Controls.Add(this.outscorersBtn);
             this.MainPanel.Controls.Add(this.highFantasy);
             this.MainPanel.Controls.Add(this.highScorers);
             this.MainPanel.Controls.Add(this.hattricksBtn);
@@ -115,6 +121,37 @@ namespace SYDERugbyLeagueSeasonViewer
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1020, 74);
             this.MainPanel.TabIndex = 5;
+            // 
+            // nudieRunBtn
+            // 
+            this.nudieRunBtn.Location = new System.Drawing.Point(555, 35);
+            this.nudieRunBtn.Name = "nudieRunBtn";
+            this.nudieRunBtn.Size = new System.Drawing.Size(133, 34);
+            this.nudieRunBtn.TabIndex = 11;
+            this.nudieRunBtn.Text = "Nudie Run";
+            this.nudieRunBtn.UseVisualStyleBackColor = true;
+            this.nudieRunBtn.Click += new System.EventHandler(this.nudieRunBtn_Click);
+            // 
+            // outscorersBtn
+            // 
+            this.outscorersBtn.Location = new System.Drawing.Point(833, 0);
+            this.outscorersBtn.Name = "outscorersBtn";
+            this.outscorersBtn.Size = new System.Drawing.Size(133, 34);
+            this.outscorersBtn.TabIndex = 10;
+            this.outscorersBtn.Text = "Out-Scorers";
+            this.outscorersBtn.UseVisualStyleBackColor = true;
+            this.outscorersBtn.Click += new System.EventHandler(this.outscorersBtn_Click);
+            // 
+            // highFantasy
+            // 
+            this.highFantasy.Location = new System.Drawing.Point(416, 35);
+            this.highFantasy.Name = "highFantasy";
+            this.highFantasy.Size = new System.Drawing.Size(133, 34);
+            this.highFantasy.TabIndex = 9;
+            this.highFantasy.Text = "High Fantasy";
+            this.highFantasy.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.highFantasy.UseVisualStyleBackColor = true;
+            this.highFantasy.Click += new System.EventHandler(this.highFantasy_Click);
             // 
             // highScorers
             // 
@@ -208,16 +245,15 @@ namespace SYDERugbyLeagueSeasonViewer
             this.hmePage.UseVisualStyleBackColor = true;
             this.hmePage.Click += new System.EventHandler(this.hmePage_Click);
             // 
-            // highFantasy
+            // errorCheckBtn
             // 
-            this.highFantasy.Location = new System.Drawing.Point(416, 35);
-            this.highFantasy.Name = "highFantasy";
-            this.highFantasy.Size = new System.Drawing.Size(133, 34);
-            this.highFantasy.TabIndex = 9;
-            this.highFantasy.Text = "High Fantasy";
-            this.highFantasy.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.highFantasy.UseVisualStyleBackColor = true;
-            this.highFantasy.Click += new System.EventHandler(this.highFantasy_Click);
+            this.errorCheckBtn.Location = new System.Drawing.Point(694, 35);
+            this.errorCheckBtn.Name = "errorCheckBtn";
+            this.errorCheckBtn.Size = new System.Drawing.Size(133, 34);
+            this.errorCheckBtn.TabIndex = 12;
+            this.errorCheckBtn.Text = "Error Check";
+            this.errorCheckBtn.UseVisualStyleBackColor = true;
+            this.errorCheckBtn.Click += new System.EventHandler(this.errorCheckBtn_Click);
             // 
             // Form1
             // 
@@ -256,6 +292,9 @@ namespace SYDERugbyLeagueSeasonViewer
         private System.Windows.Forms.Button hattricksBtn;
         private System.Windows.Forms.Button highScorers;
         private System.Windows.Forms.Button highFantasy;
+        private System.Windows.Forms.Button outscorersBtn;
+        private System.Windows.Forms.Button nudieRunBtn;
+        private System.Windows.Forms.Button errorCheckBtn;
     }
 }
 

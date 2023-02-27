@@ -672,5 +672,146 @@ namespace SYDERugbyLeagueSeasonViewer
                 }
             }
         }
+
+        private void outscorersBtn_Click(object sender, EventArgs e)
+        {
+            mainBackPanel.Controls.Clear();
+            for (int i = _MainSeason.rounds.Count - 1; i >= 0; i--)
+            {
+                for (int ii = _MainSeason.rounds[i].games.Count - 1; ii >= 0; ii--)
+                {
+                    for (int iii = _MainSeason.rounds[i].games[ii].plays.Count - 1; iii >= 0; iii--)
+                    {
+                        //Tries: 1
+                        if (_MainSeason.rounds[i].games[ii].plays[iii].Contains("|Total Points: "))
+                        {
+                            List<String> stats = _MainSeason.rounds[i].games[ii].plays[iii].Split("|").ToList<string>();
+                            for (int j = 0; j < stats.Count; j++)
+                            {
+                                if (stats[j].Contains("Total Points: "))
+                                {
+                                    string value = stats[j].Replace("Total Points: ", "");
+                                    value = value.Trim();
+                                    int points = Int16.Parse(value);
+                                    if (points > 10 && (points > _MainSeason.rounds[i].games[ii].awayTeamScore || points > _MainSeason.rounds[i].games[ii].homeTeamScore))
+                                    {
+                                        Panel p = new Panel();
+                                        p.Name = $"";
+                                        p.BackColor = Color.FromArgb(95, 64, 210, 41);
+                                        Label lbl = new Label();
+                                        lbl.Tag = i.ToString();
+                                        lbl.Name = "lbl" + i;
+                                        lbl.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                                        lbl.Text = $"Round {i + 1}:\n{_MainSeason.rounds[i].games[ii].homeTeam} {_MainSeason.rounds[i].games[ii].homeTeamScore} v {_MainSeason.rounds[i].games[ii].awayTeamScore} {_MainSeason.rounds[i].games[ii].awayTeam}\n{stats[0].Split(":")[1].Trim()}\n{points} Points";
+                                        p.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                                        p.Controls.Add(lbl);
+                                        mainBackPanel.Controls.Add(p);
+                                        mainBackPanel.Controls.SetChildIndex(p, 0);  // this moves the new one to the top!
+                                                                                     // this is just for fun:
+                                        p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.White, 22, 11); };
+                                        mainBackPanel.Invalidate();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void nudieRunBtn_Click(object sender, EventArgs e)
+        {
+            List<string> nudieRunPlayers = new List<string>();
+            List<string> checkedPlayers = new List<string>();
+            mainBackPanel.Controls.Clear();
+            for (int i = _MainSeason.rounds.Count - 1; i >= 0; i--)
+            {
+                for (int ii = _MainSeason.rounds[i].games.Count - 1; ii >= 0; ii--)
+                {
+                    for (int iii = _MainSeason.rounds[i].games[ii].plays.Count - 1; iii >= 0; iii--)
+                    {
+                        //Tries: 1
+                        if (_MainSeason.rounds[i].games[ii].plays[iii].Contains("|Tries: "))
+                        {
+                            List<String> stats = _MainSeason.rounds[i].games[ii].plays[iii].Split("|").ToList<string>();
+                            if (!checkedPlayers.Contains(stats[0].Split(":")[1].Trim()))
+                            {
+                                checkedPlayers.Add(stats[0].Split(":")[1].Trim());
+                                nudieRunPlayers.Add(stats[0].Split(":")[1].Trim());
+                            }
+                            for (int j = 0; j < stats.Count; j++)
+                            {
+                                if (stats[j].Contains("Tries: "))
+                                {
+                                    string value = stats[j].Replace("Tries: ", "");
+                                    value = value.Trim();
+                                    int tries = Int16.Parse(value);
+                                    if (tries != 0)
+                                    {
+                                        nudieRunPlayers.Remove(stats[0].Split(":")[1].Trim());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < nudieRunPlayers.Count; i++)
+            {
+                Panel p = new Panel();
+                p.Name = $"";
+                p.BackColor = Color.FromArgb(95, 64, 210, 41);
+                Label lbl = new Label();
+                lbl.Tag = i.ToString();
+                lbl.Name = "lbl" + i;
+                lbl.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                lbl.Text = $"{nudieRunPlayers[i]}";
+                p.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                p.Controls.Add(lbl);
+                mainBackPanel.Controls.Add(p);
+                mainBackPanel.Controls.SetChildIndex(p, 0);  // this moves the new one to the top!
+                                                             // this is just for fun:
+                p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.White, 22, 11); };
+                mainBackPanel.Invalidate();
+            }
+        }
+
+        private void errorCheckBtn_Click(object sender, EventArgs e)
+        {
+            mainBackPanel.Controls.Clear();
+            for (int i = _MainSeason.rounds.Count - 1; i >= 0; i--)
+            {
+                for (int ii = _MainSeason.rounds[i].games.Count - 1; ii >= 0; ii--)
+                {
+                    for (int iii = 0; iii < _MainSeason.rounds[i].games[ii].summaries.Count - 1; iii++)
+                    {
+                        //Tries: 1
+                        if (_MainSeason.rounds[i].games[ii].summaries[iii].Contains("#TRY#"))
+                        {
+                            string name1 = _MainSeason.rounds[i].games[ii].summaries[iii].Split("#").ToList<string>()[0].Split("-")[1].Trim();
+                            string name2 = _MainSeason.rounds[i].games[ii].summaries[iii + 1].Split("#").ToList<string>()[0].Split("-")[1].Trim();
+                            if (name1 != name2)
+                            {
+                                 Panel p = new Panel();
+                                 p.Name = $"";
+                                 p.BackColor = Color.FromArgb(95, 64, 210, 41);
+                                 Label lbl = new Label();
+                                 lbl.Tag = i.ToString();
+                                 lbl.Name = "lbl" + i;
+                                 lbl.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                                 lbl.Text = $"Round {i + 1}:\n{_MainSeason.rounds[i].games[ii].homeTeam} {_MainSeason.rounds[i].games[ii].homeTeamScore} v {_MainSeason.rounds[i].games[ii].awayTeamScore} {_MainSeason.rounds[i].games[ii].awayTeam}\n{_MainSeason.rounds[i].games[ii].summaries[iii]}\n{_MainSeason.rounds[i].games[ii].summaries[iii+1]}";
+                                 p.Size = new Size(mainBackPanel.ClientSize.Width - 40, 65);
+                                 p.Controls.Add(lbl);
+                                 mainBackPanel.Controls.Add(p);
+                                 mainBackPanel.Controls.SetChildIndex(p, 0);  // this moves the new one to the top!
+                                                                              // this is just for fun:
+                                 p.Paint += (ss, ee) => { ee.Graphics.DrawString(p.Name, Font, Brushes.White, 22, 11); };
+                                 mainBackPanel.Invalidate();
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

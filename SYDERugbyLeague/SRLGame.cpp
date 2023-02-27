@@ -634,6 +634,7 @@ void SRLGameManager::play()
 		{
 			defender = m_HomeTeam.getRandomPlayer();
 		}
+		m_HomeTeamHasBall = !m_HomeTeamHasBall;
 	}
 	//CHANCE FOR STRIP
 	else

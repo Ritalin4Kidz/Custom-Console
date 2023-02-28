@@ -10,7 +10,6 @@ public:
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Typeless\\Scrap.bmp", 100, 180, 20, 20, 0, 45));
 		lastEffortMove = true;
 	}
-	virtual ~ScrapMove() {}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 protected:
 };

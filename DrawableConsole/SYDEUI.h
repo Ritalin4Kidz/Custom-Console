@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-
+#include <functional>
 #include "Vector2.h"
 
 using namespace std;
@@ -41,6 +41,8 @@ public:
 
 	string returnLabel() { return m_Label; }
 
+	void deleteFunction() { m_Function = nullptr; }
+
 	/// <summary>
 	/// Execute the main button function
 	/// </summary>
@@ -59,6 +61,8 @@ public:
 	/// <param name="f"></param>
 	void SetFunc(void(*f)()) { m_FunctionSet = true;  m_Function = f; }
 
+	void SetFunc(std::function<void()> f) { m_FunctionSet = true;  m_Function = f; }
+
 	Vector2 getPos() { return m_Pos; }
 	void setPos(Vector2 p) { m_Pos = p; }
 
@@ -70,5 +74,5 @@ protected:
 	Vector2 m_Pos = Vector2(0, 0);
 private:
 	bool m_FunctionSet = false;
-	void(*m_Function)() = NULL;
+	std::function<void()> m_Function;
 };

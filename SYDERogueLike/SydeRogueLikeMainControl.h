@@ -4,7 +4,7 @@
 #include "MainMenuScenes.h"
 #include "SydeRogueLikeStatics.h"
 #include "BattleScene.h"
-#include "MainMapScene.h"
+#include "SydeCoastLevel.h"
 #include "CharacterSelectScene.h"
 #include "PostBattleScene.h"
 #include "ShopScene.h"
@@ -12,7 +12,6 @@
 class SYDERogueLikeMainControl : public SYDEWindowGame {
 public:
 	SYDERogueLikeMainControl() { init(); }
-	virtual ~SYDERogueLikeMainControl() {}
 
 	void init();
 
@@ -27,7 +26,7 @@ private:
 		{
 			new MainSplashScreenScene(),
 			new MainMenuScene(),
-			new MainMapScene(),
+			new SydeCoastLevel(),
 			new CharacterSelectScene(),
 			new PostBattleScene(),
 			new PlayerStateScene()

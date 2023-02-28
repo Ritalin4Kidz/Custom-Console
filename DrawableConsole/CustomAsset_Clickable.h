@@ -10,7 +10,6 @@ public:
 	CustomAsset_Clickable(int width, int height, vector<ColourClass> colour_array) { setAsset(width, height, colour_array); }
 	CustomAsset_Clickable(int width, int height, vector<ColourClass> colour_array, void(*f)()) { setAsset(width, height, colour_array); m_Function = f;}
 	CustomAsset_Clickable(int width, int height, vector<ColourClass> colour_array, void(*f)(), string a_Tag) { setAsset(width, height, colour_array); m_Function = f; tag = a_Tag; }
-	virtual ~CustomAsset_Clickable() {}
 
 
 	/// <summary>

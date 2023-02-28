@@ -8,7 +8,6 @@
 class Artwork {
 public:
 	Artwork() {}
-	virtual ~Artwork() {}
 
 	/// <summary>
 	/// Draw the freebee bee to the window

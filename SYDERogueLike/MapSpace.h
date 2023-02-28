@@ -17,8 +17,6 @@ public:
 	/// <param name=""></param>
 	MapSpace(std::string data, MapSpaceTypes spaceType, int path, int space, Vector2 pos);
 
-	virtual ~MapSpace() {}
-
 	int getPathNumber() { return m_PathNumber; }
 	int getSpaceNumber() { return m_SpaceNumber; }
 

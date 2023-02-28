@@ -7,7 +7,6 @@ class ShopItem
 {
 public:
 	ShopItem() {}
-	virtual ~ShopItem() {}
 
 	CustomAsset getIcon() { return icon; }
 	void setIcon(CustomAsset newIcon) { icon = newIcon; }
@@ -33,6 +32,5 @@ class MoveShopItem : public ShopItem
 public:
 	MoveShopItem() {}
 	MoveShopItem(int a_price, CustomAsset a_icon, ShopItemRarity a_rarity, string name);
-	virtual ~MoveShopItem() { }
 protected:
 };

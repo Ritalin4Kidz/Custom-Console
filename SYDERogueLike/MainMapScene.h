@@ -35,7 +35,6 @@ class MainMapScene : public GameScene
 {
 public:
 	MainMapScene() { m_SceneTag = "Main Map Scene"; }
-	virtual ~MainMapScene() {}
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
@@ -75,7 +74,8 @@ public:
 
 	static void setSpaceMoveTo(Vector2 v) { m_SpaceMoveTo = v; }
 
-private:
+
+protected:
 	static std::string m_MapToLoad;
 	static Vector2 m_SpaceMoveTo;
 	static bool moveCall;
@@ -108,4 +108,7 @@ private:
 	MainMapScene_States m_SceneState = MMS_Normal;
 
 	vector<SYDEClickableButton*> m_OptionsMenu;
+
+	virtual void doBossAction(MapSpace currentSpace);
+	virtual void generateEnemy();
 };

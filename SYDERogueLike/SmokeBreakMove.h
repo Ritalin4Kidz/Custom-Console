@@ -11,7 +11,6 @@ public:
 		maxUsages = 10;
 		usagesLeft = maxUsages;
 	}
-	virtual ~SmokeBreakMove() {}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 protected:
 };

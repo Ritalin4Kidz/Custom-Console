@@ -10,7 +10,6 @@ TODO:
 class Character {
 public:
 	Character() {}
-	virtual ~Character() {}
 	void setHealth(int HP) { m_Health = HP; }
 	void AddHealth(int _Add) { m_Health += _Add; if (m_Health > m_MaxHealth) { m_Health = m_MaxHealth; } }
 	void setMaxHealth(int HP_Max) { m_MaxHealth = HP_Max; }

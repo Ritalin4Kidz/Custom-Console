@@ -237,12 +237,13 @@ void MainMapScene::loadBasicBattleScene()
 	m_UIAnimation.setFrame(0);
 	m_SceneState = MMS_UIAnimation;
 	sceneLoad = "Battle Scene";
-	HideUI();
+	//HideUI();
 	//TODO:
 	/*
 	WE NEED TO GENERATE THE BATTLE HERE
 	THIS IS NOT FOR BOSS FIGHTS, WHICH WILL HAVE AN ENTIRELY DIFFERENT START ANIMATION REGARDLESS
 	*/
+	generateEnemy();
 }
 
 void MainMapScene::loadShopScene()
@@ -426,6 +427,14 @@ ArrowDisplay MainMapScene::returnArrowForPath(Vector2 nextPathPos, Vector2 curre
 	return ArrowDisplay(CustomAsset_Clickable(), Vector2());
 }
 
+void MainMapScene::doBossAction(MapSpace currentSpace)
+{
+}
+
+void MainMapScene::generateEnemy()
+{
+}
+
 ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	if (optionsCall)
@@ -513,6 +522,12 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		{
 			//TODO: ANIMATION FOR LOADING INTO BATTLE
 			loadShopScene();
+			return window;
+		}
+		else if (spaceCurrent.getType() == MST_BossBattleSpace && m_MovementState == MoveState_STANDING)
+		{
+			//TODO: ANIMATION FOR LOADING INTO BATTLE
+			doBossAction(spaceCurrent);
 			return window;
 		}
 	}

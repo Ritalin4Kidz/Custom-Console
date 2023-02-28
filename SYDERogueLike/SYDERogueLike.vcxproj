@@ -169,6 +169,8 @@
     <ClCompile Include="ShopScene.cpp" />
     <ClCompile Include="SlashMove.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
+    <ClCompile Include="SmokingCrab.cpp" />
+    <ClCompile Include="SydeCoastLevel.cpp" />
     <ClCompile Include="SYDERogueLike.cpp" />
     <ClCompile Include="SydeRogueLikeMainControl.cpp" />
     <ClCompile Include="SydeRogueLikeStatics.cpp" />
@@ -208,6 +210,8 @@
     <ClInclude Include="ShopScene.h" />
     <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SmokeBreakMove.h" />
+    <ClInclude Include="SmokingCrab.h" />
+    <ClInclude Include="SydeCoastLevel.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
     <ClInclude Include="TagToPlayer.hpp" />

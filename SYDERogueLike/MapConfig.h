@@ -12,7 +12,6 @@ class PathDataObject
 public:
 	PathDataObject() {}
 	PathDataObject(int path, int space, int moveTo);
-	virtual ~PathDataObject() {}
 
 	int getPathNo() { return pathNumber; }
 	int getSpaceNo() { return spaceNumber; }
@@ -29,7 +28,6 @@ class MapConfigObject
 public:
 	MapConfigObject() {}
 	MapConfigObject(std::string filename);
-	virtual ~MapConfigObject() {}
 
 	std::vector<PathDataObject> getPathData() { return m_PathData; }
 

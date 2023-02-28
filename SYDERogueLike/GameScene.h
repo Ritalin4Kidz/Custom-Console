@@ -5,7 +5,6 @@
 class GameScene {
 public:
 	GameScene() {}
-	~GameScene() {}
 	virtual ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) { return window; }
 	std::string GetSceneTag() { return m_SceneTag; }
 

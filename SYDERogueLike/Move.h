@@ -11,7 +11,6 @@ TODO: DESIGN HOW MOVES WILL WORK PROPERLY
 class Move {
 public:
 	Move() {}
-	virtual ~Move() { }
 	_SQType getType() { return m_Type; }
 	std::string getName() { return m_Name; }
 	/// <summary>

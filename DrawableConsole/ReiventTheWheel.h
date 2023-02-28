@@ -34,7 +34,6 @@ using namespace Gdiplus;
 class GAME_RTW_KEYCODE {
 public:
 	GAME_RTW_KEYCODE(char a_keyCode) { keyCode = a_keyCode; }
-	virtual ~GAME_RTW_KEYCODE() {}
 	bool getIsPressed() { return isPressed; }
 	void setPressed(bool a_press) { isPressed = a_press; }
 
@@ -53,7 +52,6 @@ public:
 	
 	Vector2 getPoint() { return m_point; }
 	ColourClass getColour() { return m_color; }
-	virtual ~GAME_RTW_PIXEL() {}
 private:
 	Vector2 m_point;
 	ColourClass m_color;
@@ -63,7 +61,6 @@ class GAME_RTW : public SYDEWindowGame {
 public:
 	GAME_RTW() { generalConstructor(); setUpPaintArray(40,20); }
 	GAME_RTW(int windowWidth, int windowHeight) { generalConstructor(); setUpPaintArray(windowWidth, windowHeight); }
-	virtual ~GAME_RTW() {}
 	void generalConstructor();
 	void setUpPaintArray(int windowWidth, int windowHeight);
 	void setPaintArrayAtPoint(Vector2 aPoint, ColourClass colour);

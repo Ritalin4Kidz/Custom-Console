@@ -78,7 +78,7 @@ void BattleScene::onNewScene()
 {
 	m_SceneState = m_BSS_Normal;
 	m_Player = SydeRogueLikeStatics::getPlayer();
-	test();
+	m_Enemy = SydeRogueLikeStatics::getEnemy();
 	for (int i = 0; i < m_Player->getMoves().size(); i++)
 	{
 		addToUIControl(new SYDEClickableButton(
@@ -126,9 +126,8 @@ void BattleScene::destroyScene()
 	}
 	m_MovesForTurn.clear();
 	ShowUI();
-	m_Enemy = NULL;
-	m_Player = NULL;
 	delete m_Enemy;
+	m_Player = NULL;
 }
 
 void BattleScene::endBattle()
@@ -157,7 +156,7 @@ void BattleScene::endBattle()
 
 void BattleScene::test()
 {
-	m_Enemy = new OrcEnemy(5);
+	//m_Enemy = new OrcEnemy(5);
 
 	//m_UIControl.push_back(new SYDELabel("Battle", Vector2(0, 1), Vector2(6, 1), BLACK, true));
 

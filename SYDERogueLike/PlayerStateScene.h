@@ -13,7 +13,6 @@ class PlayerStateScene : public GameScene
 {
 public:
 	PlayerStateScene() { m_SceneTag = "Player State Scene"; }
-	virtual ~PlayerStateScene() {}
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;

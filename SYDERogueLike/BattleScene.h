@@ -5,7 +5,7 @@
 #include "SYDEstdafx.h"
 #include "SYDEUI.h"
 #include <SYDEClickableButton.h>
-#include "OrcEnemy.h"
+#include "Enemy.h"
 #include "Player.h"
 
 enum BattleSceneStates
@@ -27,7 +27,6 @@ class BattleScene : public GameScene
 {
 public:
 	BattleScene() { m_SceneTag = "Battle Scene"; m_isTransient = true; }
-
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;
 	void destroyScene() override;

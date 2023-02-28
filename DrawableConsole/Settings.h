@@ -80,7 +80,6 @@ class Settings {
 public:
 	Settings() {}
 	Settings(string settingsFile);
-	virtual ~Settings() {}
 
 	Vector2 getOffset() { return Vector2(xOffset, yOffset); }
 
@@ -131,7 +130,6 @@ public:
 	AdvancedSettings() {}
 	AdvancedSettings(string settingsFile);
 
-	virtual ~AdvancedSettings() {}
 
 	void addCheat(string c) { cheats += c + ";"; }
 

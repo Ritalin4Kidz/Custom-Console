@@ -49,7 +49,6 @@ void TickFunc();
 class Concerto : public SYDEWindowGame {
 public:
 	Concerto() { Initialize(); }
-	virtual ~Concerto() {}
 
 	//DRAW
 	void Initialize();

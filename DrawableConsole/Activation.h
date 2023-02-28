@@ -37,7 +37,6 @@ using namespace Gdiplus;
 class Activation{
 public:
 	Activation() {}
-	virtual ~Activation() {}
 
 	//DRAW
 	static ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight);

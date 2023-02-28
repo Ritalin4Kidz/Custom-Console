@@ -45,7 +45,7 @@ ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int window
 		//TODO: SHOW A POPUP
 		startGameCall = false;
 		SydeRogueLikeStatics::toggleInitMap(true);
-		SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+		SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
 		SydeRogueLikeStatics::setPlayer(TagToPlayer::getNewFromString(5,m_PlayersVec[m_SelectedPlayer].getTag()));
 		return window;
 	}

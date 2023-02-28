@@ -13,7 +13,6 @@ class CharacterSelectScene : public GameScene
 {
 public:
 	CharacterSelectScene() { m_SceneTag = "Character Select Scene"; }
-	virtual ~CharacterSelectScene() {}
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;

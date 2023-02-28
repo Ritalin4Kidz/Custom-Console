@@ -7,7 +7,6 @@ class MapPath
 public:
 	MapPath() {}
 	MapPath(int id) { m_PathID = id; }
-	virtual ~MapPath() {}
 
 	void addSpace(MapSpace a_Space) { m_Spaces.push_back(a_Space); }
 	

@@ -14,6 +14,7 @@ void SYDERogueLikeMainControl::initNewScene()
 	if (mainScene->getIsTransient())
 	{
 		delete mainScene;
+		mainScene = nullptr;
 	}
 	if (SydeRogueLikeStatics::getSceneTag() == "Battle Scene")
 	{

@@ -9,7 +9,6 @@ class MainSplashScreenScene : public GameScene
 {
 public:
 	MainSplashScreenScene() { m_SceneTag = "Main Splashscreen"; }
-	virtual ~MainSplashScreenScene() {}
 
 	void test();
 
@@ -23,7 +22,6 @@ class MainMenuScene : public GameScene
 {
 public:
 	MainMenuScene() { m_SceneTag = "Main Menu"; }
-	virtual ~MainMenuScene() {}
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;

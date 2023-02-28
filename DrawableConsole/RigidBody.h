@@ -8,7 +8,6 @@ class RigidBody {
 public:
 	RigidBody() {}
 	RigidBody(Vector2 pos, float Weight, bool kinemat) { m_pos = pos; m_Weight = Weight; m_Kinematic = kinemat; }
-	virtual ~RigidBody() {}
 	/// <summary>
 	/// Main Gravity Loop
 	/// </summary>

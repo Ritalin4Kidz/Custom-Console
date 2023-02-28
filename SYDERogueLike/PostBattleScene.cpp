@@ -2,7 +2,7 @@
 
 void successClick()
 {
-	SydeRogueLikeStatics::setSceneTag("Main Map Scene");
+	SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
 }
 
 void failureClick()
@@ -39,17 +39,36 @@ ConsoleWindow PostBattleScene::window_draw(ConsoleWindow window, int windowWidth
 void PostBattleScene::onNewScene()
 {
 	//IF SUCCESS
+	string bossTag = SydeRogueLikeStatics::getEnemy()->getEnemyTag();
+	SydeRogueLikeStatics::setEnemy(nullptr);
 	if (SydeRogueLikeStatics::getFightSuccess())
 	{
-		addToUIControl(new SYDEClickableButton(
-			"Continue",
-			Vector2(44, 16),
-			Vector2(8, 1),
-			BLACK_BRIGHTWHITE_BG,
-			NULLCOLOUR,
-			false,
-			successClick
-		));
+		if (bossTag == "Boss")
+		{
+			//FIREWORKS SCENE
+			addToUIControl(new SYDEClickableButton(
+				"Back To Menu",
+				Vector2(40, 16),
+				Vector2(12, 1),
+				BLACK_BRIGHTWHITE_BG,
+				NULLCOLOUR,
+				false,
+				failureClick
+
+			));
+		}
+		else
+		{ 
+			addToUIControl(new SYDEClickableButton(
+				"Continue",
+				Vector2(44, 16),
+				Vector2(8, 1),
+				BLACK_BRIGHTWHITE_BG,
+				NULLCOLOUR,
+				false,
+				successClick
+			));
+		}
 		addToUIControl(new SYDELabel(
 			"Battle Won",
 			Vector2(6, 4 ),

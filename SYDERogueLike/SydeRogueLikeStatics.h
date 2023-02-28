@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Enemy.h"
 #include "Player.h"
 class SydeRogueLikeStatics
 {
@@ -10,6 +11,9 @@ public:
 	static void setPlayer(Player* newPlayer) { m_Player = newPlayer; }
 	static Player* getPlayer() { return m_Player; }
 
+	static void setEnemy(Enemy* newEnemy) { m_Enemy = newEnemy; }
+	static Enemy* getEnemy() { return m_Enemy; }
+
 	static void toggleInitMap(bool isOn) { initializeMap = isOn; }
 	static bool getInitMap() { return initializeMap; }
 
@@ -19,6 +23,7 @@ public:
 private:
 	static std::string m_SceneTag;
 	static Player* m_Player;
+	static Enemy* m_Enemy;
 
 	static bool initializeMap;
 

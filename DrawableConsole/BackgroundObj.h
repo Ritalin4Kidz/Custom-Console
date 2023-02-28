@@ -8,7 +8,6 @@ class BackgroundObj {
 public:
 	BackgroundObj();
 	BackgroundObj(ColourClass a_color, Vector2 a_pos, string text) { colour = a_color; pos = a_pos; mText = text; }
-	virtual ~BackgroundObj() {}
 
 	Vector2 getPos() { return pos; }
 	ColourClass getColour() { return colour; }

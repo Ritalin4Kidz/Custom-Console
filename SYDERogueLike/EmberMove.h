@@ -12,6 +12,5 @@ public:
 		useMagicAttack = true;
 		usagesLeft = maxUsages;
 	}
-	virtual ~EmberMove() {}
 protected:
 };

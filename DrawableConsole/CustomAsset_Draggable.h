@@ -9,7 +9,6 @@ public:
 	CustomAsset_Draggable() {}
 	CustomAsset_Draggable(int width, int height, vector<ColourClass> colour_array) { setAsset(width, height, colour_array); }
 
-	virtual ~CustomAsset_Draggable() {}
 
 
 	/// <summary>

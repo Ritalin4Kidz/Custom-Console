@@ -10,7 +10,6 @@ class PostBattleScene : public GameScene
 {
 public:
 	PostBattleScene() { m_SceneTag = "Post Battle Scene"; }
-	virtual ~PostBattleScene() {}
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	void onNewScene() override;

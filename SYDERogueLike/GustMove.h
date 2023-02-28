@@ -11,6 +11,5 @@ public:
 		maxUsages = 10;
 		usagesLeft = maxUsages;
 	}
-	virtual ~GustMove() {}
 protected:
 };

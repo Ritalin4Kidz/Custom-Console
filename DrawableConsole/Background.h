@@ -4,7 +4,6 @@
 class BackgroundClass {
 public:
 	BackgroundClass() {}
-	virtual ~BackgroundClass() {}
 	//DRAW FUNCTIONS
 	ConsoleWindow draw_diptio_park_cutscene_bg(ConsoleWindow window, int windowWidth, int windowHeight);
 

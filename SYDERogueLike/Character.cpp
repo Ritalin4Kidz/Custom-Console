@@ -40,7 +40,7 @@ void Character::validateFromJson(const json& j)
     m_JSONTag = j;
 }
 
-void Character::SetMoves(std::vector<Move*> _Moves)
+void Character::SetMoves(vector<std::shared_ptr<Move>> _Moves)
 {
     if (_Moves.size() > 5)
     {
@@ -49,7 +49,7 @@ void Character::SetMoves(std::vector<Move*> _Moves)
    m_MoveArray = _Moves;
 }
 
-void Character::SetMoveAtIndex(int index, Move* m)
+void Character::SetMoveAtIndex(int index, std::shared_ptr<Move> m)
 {
     this->m_MoveArray[index] = m;
 }
@@ -58,9 +58,9 @@ void Character::init(int lvl)
 {
 }
 
-vector<Move*> Character::getUsableMoves()
+vector<std::shared_ptr<Move>> Character::getUsableMoves()
 {
-    vector<Move*> vec = vector<Move*>();
+    vector<std::shared_ptr<Move>> vec = vector<std::shared_ptr<Move>>();
     for (int i = 0; i < m_MoveArray.size(); i++)
     {
         if (m_MoveArray[i]->getUsagesLeft() > 0)

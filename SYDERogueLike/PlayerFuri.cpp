@@ -2,13 +2,13 @@
 
 void PlayerFuri::init_Char(int lvl)
 {
-	SetMoves(vector<Move*>({
-	new SmokeBreakMove(),
-	new BoneClubMove(),
-	new EmberMove(),
-	new SmokeBreakMove(),
+	SetMoves(vector<std::shared_ptr<Move>>({
+		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new BoneClubMove()),
+		std::shared_ptr<Move>(new EmberMove()),
+		std::shared_ptr<Move>(new SmokeBreakMove()),
 		}));
-	m_LastEffortMove = new ScrapMove();
+	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\PlayerAnimations\\FuriBehindAnim.bmp", 50, 20, 10, 10, 0, 10));
 	setAnimationLoop(true);
 	this->setLevel(lvl);

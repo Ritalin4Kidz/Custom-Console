@@ -54,7 +54,7 @@ private:
 	Enemy* m_Enemy;
 	Player* m_Player;
 
-	vector<Move*> m_MovesForTurn = vector<Move*>();
+	vector<std::shared_ptr<Move>> m_MovesForTurn = vector<std::shared_ptr<Move>>();
 	bool enemyTurn = false;
 
 	BattleState m_BattleState = m_BS_Prework;

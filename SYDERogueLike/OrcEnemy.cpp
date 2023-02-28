@@ -2,13 +2,13 @@
 
 void OrcEnemy::init_Char(int lvl)
 {
-	SetMoves(vector<Move*>({
-		new SmokeBreakMove(),
-		new BoneClubMove(),
-		new SmokeBreakMove(),
-		new SmokeBreakMove(),
+	SetMoves(vector<std::shared_ptr<Move>>({
+		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new BoneClubMove()),
+		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new SmokeBreakMove()),
 		}));
-	m_LastEffortMove = new ScrapMove();
+	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\UIAnimations\\TestEnemy.bmp", 100, 30, 10, 10, 0, 27));
 	setAnimationLoop(true);
 
@@ -24,9 +24,9 @@ void OrcEnemy::init_Char(int lvl)
     this->setType(Grass);
 }
 
-Move* OrcEnemy::determineMove(Character opponent)
+std::shared_ptr<Move> OrcEnemy::determineMove(Character opponent)
 {
-	vector<Move*> moves = getUsableMoves();
+	vector<std::shared_ptr<Move>> moves = getUsableMoves();
 	if (moves.size() == 0)
 	{
 		return m_LastEffortMove;

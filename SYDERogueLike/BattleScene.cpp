@@ -120,10 +120,10 @@ void BattleScene::destroyScene()
 {
 	//ALL THE WORK WE NEED TO DO BEFORE MOVING TO ANOTHER SCENE :P
 	SydeRogueLikeStatics::setPlayer(m_Player);
-	for (int i = 0; i < m_MovesForTurn.size(); i++)
-	{
-		delete m_MovesForTurn[i];
-	}
+//	for (int i = 0; i < m_MovesForTurn.size(); i++)
+//	{
+//		delete m_MovesForTurn[i];
+//	}
 	m_MovesForTurn.clear();
 	ShowUI();
 	delete m_Enemy;
@@ -173,7 +173,7 @@ void BattleScene::test()
 
 void BattleScene::doMovePreWork()
 {
-	Move* PlayerMove;
+	std::shared_ptr<Move> PlayerMove;
 	if (selectedMove >= 4)
 	{
 		PlayerMove = m_Player->getLastEffortMove();
@@ -190,7 +190,7 @@ void BattleScene::doMovePreWork()
 
 
 	//GENERATE ENEMY MOVE
-	Move* EnemyMove = m_Enemy->determineMove(*m_Player);
+	std::shared_ptr<Move> EnemyMove = m_Enemy->determineMove(*m_Player);
 	EnemyMove->resetAnimation();
 	PlayerMove->resetAnimation();
 	//DETERMINE THE ORDER OF THE MOVES

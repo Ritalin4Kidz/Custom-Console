@@ -3,6 +3,7 @@
 #include <string>
 #include "GameTypes.h"
 #include "Move.h"
+#include <memory>
 /*
 TODO:
 - MOVE POOL, VECTOR OF STRING OF LEARNABLE MOVES
@@ -48,11 +49,11 @@ public:
 
 	void validateFromJson(const json& j);
 
-	void SetMoves(std::vector<Move*> _Moves);
-	void SetMoveAtIndex(int index, Move* m);
-	Move* getMoveAtIndex(int index) { return m_MoveArray[index]; }
-	std::vector<Move*> getMoves() { return m_MoveArray; }
-	void ClearMoves() { for (int i = 0; i < m_MoveArray.size(); i++) { delete m_MoveArray[i]; }m_MoveArray.clear(); }
+	void SetMoves(vector<std::shared_ptr<Move>> _Moves);
+	void SetMoveAtIndex(int index, std::shared_ptr<Move> m);
+	std::shared_ptr<Move> getMoveAtIndex(int index) { return m_MoveArray[index]; }
+	vector<std::shared_ptr<Move>> getMoves() { return m_MoveArray; }
+	void ClearMoves() { m_MoveArray.clear(); }
 
 	void SetAnimation(CustomAnimationAsset a) { m_Animation = a; m_Animation.setFrame(0); m_Animation.setPaused(false); m_Animation.setLooping(true); }
 	void init(int lvl);
@@ -61,8 +62,8 @@ public:
 	void setAnimationLoop(bool loop) { m_Animation.setLooping(true); }
 	ConsoleWindow drawAnimationAsset(ConsoleWindow window, Vector2 v) { return m_Animation.draw_asset(window, v); }
 
-	vector<Move*> getUsableMoves();
-	Move* getLastEffortMove() { return m_LastEffortMove; }
+	vector<std::shared_ptr<Move>> getUsableMoves();
+	std::shared_ptr<Move> getLastEffortMove() { return m_LastEffortMove; }
 protected:
 	_SQType m_Type = Melee;
 	_SQStatus m_Status = Status_None;
@@ -79,8 +80,8 @@ protected:
 	std::string m_Name = "N/A";
 	json m_JSONTag;
 
-	vector<Move*> m_MoveArray = vector<Move*>();
+	vector<std::shared_ptr<Move>> m_MoveArray = vector<std::shared_ptr<Move>>();
 	CustomAnimationAsset m_Animation;
 
-	Move* m_LastEffortMove;
+	std::shared_ptr<Move> m_LastEffortMove;
 };

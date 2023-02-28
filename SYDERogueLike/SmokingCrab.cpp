@@ -2,13 +2,13 @@
 
 void SmokingCrab::init_Char(int lvl)
 {
-	SetMoves(vector<Move*>({
-	new SmokeBreakMove(),
-	new BoneClubMove(),
-	new SmokeBreakMove(),
-	new SmokeBreakMove(),
+	SetMoves(vector<std::shared_ptr<Move>>({
+		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new BoneClubMove()),
+		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new SmokeBreakMove()),
 		}));
-	m_LastEffortMove = new ScrapMove();
+	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\CrabAnimationSmoking.bmp", 40, 130, 10, 10, 0, 51));
 	setAnimationLoop(true);
 
@@ -25,9 +25,9 @@ void SmokingCrab::init_Char(int lvl)
 	m_EnemyTag = "Boss";
 }
 
-Move* SmokingCrab::determineMove(Character opponent)
+std::shared_ptr<Move> SmokingCrab::determineMove(Character opponent)
 {
-	vector<Move*> moves = getUsableMoves();
+	vector<std::shared_ptr<Move>> moves = getUsableMoves();
 	if (moves.size() == 0)
 	{
 		return m_LastEffortMove;

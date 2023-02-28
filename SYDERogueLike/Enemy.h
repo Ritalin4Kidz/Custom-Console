@@ -8,7 +8,7 @@ public:
 	
 	virtual void init_Char(int lvl) {}
 
-	virtual Move* determineMove(Character opponent) { return new Move(); }
+	virtual std::shared_ptr<Move> determineMove(Character opponent) { return nullptr; }
 
 	string getEnemyTag() { return m_EnemyTag; }
 

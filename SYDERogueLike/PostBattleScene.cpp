@@ -46,7 +46,7 @@ void PostBattleScene::onNewScene()
 		if (bossTag == "Boss")
 		{
 			//FIREWORKS SCENE
-			addToUIControl(new SYDEClickableButton(
+			addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 				"Back To Menu",
 				Vector2(40, 16),
 				Vector2(12, 1),
@@ -55,11 +55,11 @@ void PostBattleScene::onNewScene()
 				false,
 				failureClick
 
-			));
+			)));
 		}
 		else
 		{ 
-			addToUIControl(new SYDEClickableButton(
+			addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 				"Continue",
 				Vector2(44, 16),
 				Vector2(8, 1),
@@ -67,18 +67,18 @@ void PostBattleScene::onNewScene()
 				NULLCOLOUR,
 				false,
 				successClick
-			));
+			)));
 		}
-		addToUIControl(new SYDELabel(
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
 			"Battle Won",
 			Vector2(6, 4 ),
 			Vector2(10, 1),
 			BLACK,
-			true));
+			true)));
 	}
 	else
 	{
-		addToUIControl(new SYDEClickableButton(
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 			"Back To Menu",
 			Vector2(40, 16),
 			Vector2(12, 1),
@@ -87,13 +87,13 @@ void PostBattleScene::onNewScene()
 			false,
 			failureClick
 
-		));
-		addToUIControl(new SYDELabel(
+		)));
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
 			"Battle Lost",
 			Vector2(6, 4),
 			Vector2(11, 1),
 			BLACK,
-			true));
+			true)));
 	}
 }
 

@@ -8,7 +8,7 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 	m_SceneState = MMS_UIAnimation;
 	sceneLoad = "Battle Scene";
 	HideUI();
-	SydeRogueLikeStatics::setEnemy(new SmokingCrab(5));
+	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SmokingCrab(5)));
 	//TODO:
 	/*
 	WE NEED TO GENERATE THE BATTLE HERE
@@ -18,5 +18,5 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 
 void SydeCoastLevel::generateEnemy()
 {
-	SydeRogueLikeStatics::setEnemy(new OrcEnemy(5));
+	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new OrcEnemy(5)));
 }

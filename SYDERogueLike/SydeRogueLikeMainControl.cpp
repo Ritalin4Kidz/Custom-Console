@@ -13,18 +13,17 @@ void SYDERogueLikeMainControl::initNewScene()
 	GameScene::clearUI();
 	if (mainScene->getIsTransient())
 	{
-		delete mainScene;
 		mainScene = nullptr;
 	}
 	if (SydeRogueLikeStatics::getSceneTag() == "Battle Scene")
 	{
-		mainScene = new BattleScene();
+		mainScene = std::shared_ptr<GameScene>(new BattleScene());
 		mainScene->onNewScene();
 		return;
 	}
 	else if (SydeRogueLikeStatics::getSceneTag() == "Shop Scene")
 	{
-		mainScene = new ShopScene();
+		mainScene = std::shared_ptr<GameScene>(new ShopScene());
 		mainScene->onNewScene();
 		return;
 	}

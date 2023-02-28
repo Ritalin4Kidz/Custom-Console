@@ -81,7 +81,7 @@ void BattleScene::onNewScene()
 	m_Enemy = SydeRogueLikeStatics::getEnemy();
 	for (int i = 0; i < m_Player->getMoves().size(); i++)
 	{
-		addToUIControl(new SYDEClickableButton(
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 			m_Player->getMoveAtIndex(i)->getName(),
 			Vector2(1, 8 + (i * 2)),
 			Vector2(18, 1),
@@ -91,16 +91,16 @@ void BattleScene::onNewScene()
 			moveClick,
 			to_string(i),
 			"MoveData-" + to_string(i)
-		));
-		addToUIControl(new SYDELabel(
+		)));
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
 			to_string(m_Player->getMoveAtIndex(i)->getUsagesLeft()) + "/" + to_string(m_Player->getMoveAtIndex(i)->getMaxUsages()),
 			Vector2(1, 9 + (i * 2)),
 			Vector2(18, 1),
 			BLACK,
 			true,
-			"LabelData-" + to_string(i)));
+			"LabelData-" + to_string(i))));
 	}
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		m_Player->getLastEffortMove()->getName(),
 		Vector2(1, 17),
 		Vector2(18, 1),
@@ -110,7 +110,7 @@ void BattleScene::onNewScene()
 		moveClick,
 		to_string(4),
 		"MoveData-" + to_string(4)
-	));
+	)));
 	ValidateUI();
 	ShowUI();
 	SydeRogueLikeStatics::toggleFightSuccess(true);
@@ -126,7 +126,6 @@ void BattleScene::destroyScene()
 //	}
 	m_MovesForTurn.clear();
 	ShowUI();
-	delete m_Enemy;
 	m_Player = NULL;
 }
 

@@ -20,7 +20,7 @@ void MainMenuScene::onNewScene()
 
 void MainSplashScreenScene::test()
 {
-	SydeRogueLikeStatics::setPlayer(new PlayerFuri(5));
+	SydeRogueLikeStatics::setPlayer(std::shared_ptr<Player>(new PlayerFuri(5)));
 }
 
 /// <summary>

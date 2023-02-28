@@ -175,6 +175,7 @@
     <ClCompile Include="SydeRogueLikeMainControl.cpp" />
     <ClCompile Include="SydeRogueLikeStatics.cpp" />
     <ClCompile Include="TagToPlayer.cpp" />
+    <ClCompile Include="WaveMove.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BalloonPopMove.h" />
@@ -215,6 +216,7 @@
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
     <ClInclude Include="TagToPlayer.hpp" />
+    <ClInclude Include="WaveMove.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="MainMapDesignDoc.txt" />

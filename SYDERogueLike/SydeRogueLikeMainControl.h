@@ -22,15 +22,15 @@ public:
 
 private:
 	//DO NOT ADD TRANSIENT SCENES INTO THIS LIST, INSTEAD LET'S DO IT MANUALLY
-	std::vector<GameScene*> m_ScenesList = std::vector<GameScene*>(
+	std::vector<std::shared_ptr<GameScene>> m_ScenesList = std::vector<std::shared_ptr<GameScene>>(
 		{
-			new MainSplashScreenScene(),
-			new MainMenuScene(),
-			new SydeCoastLevel(),
-			new CharacterSelectScene(),
-			new PostBattleScene(),
-			new PlayerStateScene()
+			std::shared_ptr<GameScene>(new MainSplashScreenScene()),
+			std::shared_ptr<GameScene>(new MainMenuScene()),
+			std::shared_ptr<GameScene>(new SydeCoastLevel()),
+			std::shared_ptr<GameScene>(new CharacterSelectScene()),
+			std::shared_ptr<GameScene>(new PostBattleScene()),
+			std::shared_ptr<GameScene>(new PlayerStateScene())
 		});
 
-	GameScene* mainScene;
+	std::shared_ptr<GameScene> mainScene;
 };

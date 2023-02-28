@@ -2,9 +2,9 @@
 
 std::string SydeRogueLikeStatics::m_SceneTag = "";
 
-Player* SydeRogueLikeStatics::m_Player = new Player();
+std::shared_ptr<Player> SydeRogueLikeStatics::m_Player = nullptr;
 
-Enemy* SydeRogueLikeStatics::m_Enemy = nullptr;
+std::shared_ptr<Enemy> SydeRogueLikeStatics::m_Enemy = nullptr;
 
 bool SydeRogueLikeStatics::initializeMap = false;
 

@@ -46,7 +46,7 @@ void ShopScene::onNewScene()
 	//GENERATE SHOP ITEMS
 	//6 ITEMS, TOP 3 ALL MOVES
 	//BOTTOM 3 ALL ITEMS
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"Back To Map",
 		Vector2(21, 18),
 		Vector2(11, 1),
@@ -54,12 +54,12 @@ void ShopScene::onNewScene()
 		NULLCOLOUR,
 		false,
 		BackToMapClick
-	));
+	)));
 	test();
 
 	for (int i = 0; i < m_ShopItems.size(); i++)
 	{
-		addToUIControl(new SYDEClickableButton(
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 			"    Buy   ",
 			Vector2((i * 12) + 24, 11),
 			Vector2(10, 1),
@@ -68,7 +68,7 @@ void ShopScene::onNewScene()
 			false,
 			shopClick,
 			to_string(i),
-			"ShopData-" + to_string(i)));
+			"ShopData-" + to_string(i))));
 	}
 }
 

@@ -51,8 +51,8 @@ private:
 	static int selectedMove;
 	BattleSceneStates m_SceneState = m_BSS_Normal;
 
-	Enemy* m_Enemy;
-	Player* m_Player;
+	std::shared_ptr<Enemy> m_Enemy;
+	std::shared_ptr<Player> m_Player;
 
 	vector<std::shared_ptr<Move>> m_MovesForTurn = vector<std::shared_ptr<Move>>();
 	bool enemyTurn = false;

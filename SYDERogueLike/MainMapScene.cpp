@@ -49,7 +49,7 @@ void MainMapScene::onNewScene()
 	showRouteOptions = false;
 	m_SceneState = MMS_Normal;
 	m_MovementState = MoveState_STANDING;
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"OP",
 		Vector2(3, 1),
 		Vector2(2, 1),
@@ -57,9 +57,9 @@ void MainMapScene::onNewScene()
 		NULLCOLOUR,
 		false,
 		options
-	));
+	)));
 
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"PS",
 		Vector2(6, 1),
 		Vector2(2, 1),
@@ -67,26 +67,26 @@ void MainMapScene::onNewScene()
 		NULLCOLOUR,
 		false,
 		playerStats
-	));
+	)));
 
-	m_OptionsMenu = std::vector<SYDEClickableButton*>({});
-	m_OptionsMenu.push_back(new SYDEClickableButton(
+	m_OptionsMenu = std::vector<std::shared_ptr<SYDEClickableButton>>({});
+	m_OptionsMenu.push_back(std::shared_ptr<SYDEClickableButton>(new SYDEClickableButton(
 		"     Resume Game     ",
 		Vector2(20, 5),
 		Vector2(20, 1),
 		BLACK_BRIGHTWHITE_BG,
 		NULLCOLOUR,
 		false,
-		options));
+		options)));
 
-	m_OptionsMenu.push_back(new SYDEClickableButton(
+	m_OptionsMenu.push_back(std::shared_ptr<SYDEClickableButton>(new SYDEClickableButton(
 			"     Back To Menu     ",
 			Vector2(20, 15),
 			Vector2(20, 1),
 			BLACK_BRIGHTWHITE_BG,
 			NULLCOLOUR,
 			false,
-			mainMenu)
+			mainMenu))
 		);
 
 }
@@ -106,7 +106,7 @@ void MainMapScene::test()
 {
 	//m_MapToLoad = "SydeCoast";
 	//cameraPos = Vector2(20, 50);
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"Test Move",
 		Vector2(3, 19),
 		Vector2(9, 1),
@@ -114,7 +114,7 @@ void MainMapScene::test()
 		NULLCOLOUR,
 		false,
 		moveSingleSpaceTest
-	));
+	)));
 
 }
 

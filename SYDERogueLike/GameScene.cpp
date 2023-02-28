@@ -1,6 +1,6 @@
 #include "GameScene.h"
 
-vector<SYDEUI*> GameScene::m_UIControl = vector<SYDEUI*>();
+vector<std::shared_ptr<SYDEUI>> GameScene::m_UIControl = vector<std::shared_ptr<SYDEUI>>();
 bool GameScene::showUI = true;
 ConsoleWindow GameScene::drawUI(ConsoleWindow window)
 {
@@ -30,7 +30,6 @@ void GameScene::clearUI()
 	for (int i = 0; i < m_UIControl.size(); i++)
 	{
 		m_UIControl[i]->deleteFunction();
-		delete m_UIControl[i];
 	}
 	m_UIControl.clear();
 }

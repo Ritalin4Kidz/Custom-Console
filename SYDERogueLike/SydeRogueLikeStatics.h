@@ -8,11 +8,11 @@ public:
 	static void setSceneTag(std::string sceneTag) { m_SceneTag = sceneTag; }
 	static std::string getSceneTag() { return m_SceneTag; }
 
-	static void setPlayer(Player* newPlayer) { m_Player = newPlayer; }
-	static Player* getPlayer() { return m_Player; }
+	static void setPlayer(std::shared_ptr<Player> newPlayer) { m_Player = newPlayer; }
+	static std::shared_ptr<Player> getPlayer() { return m_Player; }
 
-	static void setEnemy(Enemy* newEnemy) { m_Enemy = newEnemy; }
-	static Enemy* getEnemy() { return m_Enemy; }
+	static void setEnemy(std::shared_ptr<Enemy> newEnemy) { m_Enemy = newEnemy; }
+	static std::shared_ptr<Enemy> getEnemy() { return m_Enemy; }
 
 	static void toggleInitMap(bool isOn) { initializeMap = isOn; }
 	static bool getInitMap() { return initializeMap; }
@@ -22,8 +22,8 @@ public:
 
 private:
 	static std::string m_SceneTag;
-	static Player* m_Player;
-	static Enemy* m_Enemy;
+	static std::shared_ptr<Player> m_Player;
+	static std::shared_ptr<Enemy> m_Enemy;
 
 	static bool initializeMap;
 

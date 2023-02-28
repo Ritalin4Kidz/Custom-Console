@@ -6,3 +6,4 @@
 #include "GustMove.h"
 #include "EmberMove.h"
 #include "BalloonPopMove.h"
+#include "WaveMove.h"

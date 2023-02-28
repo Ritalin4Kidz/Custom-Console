@@ -46,7 +46,7 @@ ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int window
 		startGameCall = false;
 		SydeRogueLikeStatics::toggleInitMap(true);
 		SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
-		SydeRogueLikeStatics::setPlayer(TagToPlayer::getNewFromString(5,m_PlayersVec[m_SelectedPlayer].getTag()));
+		SydeRogueLikeStatics::setPlayer(std::shared_ptr<Player>(TagToPlayer::getNewFromString(5,m_PlayersVec[m_SelectedPlayer].getTag())));
 		return window;
 	}
 
@@ -87,7 +87,7 @@ void CharacterSelectScene::onNewScene()
 			PlayerSelectObject(2, "Bruce", L"EngineFiles\\CharacterBMPS\\Bruce.bmp")
 		});
 
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"    START GAME    ",
 		Vector2(31, 19),
 		Vector2(18, 1),
@@ -97,9 +97,9 @@ void CharacterSelectScene::onNewScene()
 		startGameClick,
 		"StartGameLabel",
 		"StartGameLabel"
-	));
+	)));
 
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"<<",
 		Vector2(27, 19),
 		Vector2(2, 1),
@@ -109,9 +109,9 @@ void CharacterSelectScene::onNewScene()
 		prevCharClick,
 		"PrevCharLabel",
 		"PrevCharLabel"
-	));
+	)));
 
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		">>",
 		Vector2(51, 19),
 		Vector2(2, 1),
@@ -121,7 +121,7 @@ void CharacterSelectScene::onNewScene()
 		nextCharClick,
 		"NextCharLabel",
 		"NextCharLabel"
-	));
+	)));
 }
 
 void CharacterSelectScene::destroyScene()

@@ -43,7 +43,7 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 
 void PlayerStateScene::onNewScene()
 {
-	addToUIControl(new SYDEClickableButton(
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"BACK TO MAP",
 		Vector2(0, 19),
 		Vector2(11, 1),
@@ -51,7 +51,7 @@ void PlayerStateScene::onNewScene()
 		NULLCOLOUR,
 		false,
 		returnToMap
-	));
+	)));
 
 	string charBmp = "EngineFiles\\CharacterBMPS\\" + SydeRogueLikeStatics::getPlayer()->getName() + ".bmp";
 	wstring wCharBmp = wstring(charBmp.begin(), charBmp.end());

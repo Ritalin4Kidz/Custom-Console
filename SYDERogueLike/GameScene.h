@@ -17,7 +17,7 @@ public:
 	static ConsoleWindow drawUI(ConsoleWindow window);
 
 
-	static void addToUIControl(SYDEUI* item) { m_UIControl.push_back(item); }
+	static void addToUIControl(std::shared_ptr<SYDEUI> item) { m_UIControl.push_back(item); }
 	static void setUIEnabled(bool enabled, int index);
 	static size_t findLabelInUI(std::string a_Lbl, int index);
 	static std::string getLabelInUI(int index) { return m_UIControl[index]->m_Label; }
@@ -34,6 +34,6 @@ protected:
 	bool m_isTransient = false;
 
 private:
-	static vector<SYDEUI*> m_UIControl;
+	static vector<std::shared_ptr<SYDEUI>> m_UIControl;
 	static bool showUI;
 };

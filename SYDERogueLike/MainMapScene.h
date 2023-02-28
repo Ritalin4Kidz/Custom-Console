@@ -108,7 +108,7 @@ protected:
 
 	MainMapScene_States m_SceneState = MMS_Normal;
 
-	vector<SYDEClickableButton*> m_OptionsMenu;
+	vector<std::shared_ptr<SYDEClickableButton>> m_OptionsMenu;
 
 	virtual void doBossAction(MapSpace currentSpace);
 	virtual void generateEnemy();

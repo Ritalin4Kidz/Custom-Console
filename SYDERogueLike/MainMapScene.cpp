@@ -104,7 +104,7 @@ void MainMapScene::destroyScene()
 
 void MainMapScene::test()
 {
-	m_MapToLoad = "SydeCoast";
+	//m_MapToLoad = "SydeCoast";
 	//cameraPos = Vector2(20, 50);
 	addToUIControl(new SYDEClickableButton(
 		"Test Move",
@@ -473,6 +473,32 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			spacesToMove = (rand() % maxSpacesToMoveRange) + 1;
 		}
 	}
+	else if (m_MovementState == MoveState_CHECKING)
+	{
+		m_MovementState = MoveState_STANDING;
+		MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
+		if (spaceCurrent.getType() == MST_BattleSpace)
+		{
+			//TODO: ANIMATION FOR LOADING INTO BATTLE
+			HideUI();
+			loadBasicBattleScene();
+			return window;
+		}
+		else if (spaceCurrent.getType() == MST_ShopSpace)
+		{
+			//TODO: ANIMATION FOR LOADING INTO BATTLE
+			HideUI();
+			loadShopScene();
+			return window;
+		}
+		else if (spaceCurrent.getType() == MST_BossBattleSpace)
+		{
+			//TODO: ANIMATION FOR LOADING INTO BATTLE
+			HideUI();
+			doBossAction(spaceCurrent);
+			return window;
+		}
+	}
 	else if (m_MovementState == MoveState_MOVEMENT && !showRouteOptions)
 	{
 		MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
@@ -490,7 +516,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			}
 			else if (spacesToMove == 0)
 			{
-				m_MovementState = MoveState_STANDING;
+				m_MovementState = MoveState_CHECKING;
 			}
 		}
 		else if (spaceCurrent.getType() == MST_SwitchPathsSpace)
@@ -509,25 +535,6 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 				choosePath, SYDEMathUtils::VectorToString(Vector2(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber() + 1)), (windowWidth / 2), (windowHeight / 2));
 			m_ContinuePathBtn = aCont.click;
 			contBtnPos = aCont.vec;
-			return window;
-		}
-		spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
-		if (spaceCurrent.getType() == MST_BattleSpace && m_MovementState == MoveState_STANDING)
-		{
-			//TODO: ANIMATION FOR LOADING INTO BATTLE
-			loadBasicBattleScene();
-			return window;
-		}
-		else if (spaceCurrent.getType() == MST_ShopSpace && m_MovementState == MoveState_STANDING)
-		{
-			//TODO: ANIMATION FOR LOADING INTO BATTLE
-			loadShopScene();
-			return window;
-		}
-		else if (spaceCurrent.getType() == MST_BossBattleSpace && m_MovementState == MoveState_STANDING)
-		{
-			//TODO: ANIMATION FOR LOADING INTO BATTLE
-			doBossAction(spaceCurrent);
 			return window;
 		}
 	}

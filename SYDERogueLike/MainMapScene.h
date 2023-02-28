@@ -20,7 +20,8 @@ enum MovementStates
 {
 	MoveState_STANDING = 0,
 	MoveState_ROLLING = 1,
-	MoveState_MOVEMENT = 2
+	MoveState_MOVEMENT = 2,
+	MoveState_CHECKING = 3
 };
 
 

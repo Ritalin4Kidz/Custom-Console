@@ -8,3 +8,7 @@ Animation already done, lowers the targets defence, harsher drop if asleep but w
 ***Water Type Moves:
 
 ***Melee Type Moves:
+
+***Grass Type Moves:
+- Enchantment
+when this move is used you get a guaranted high roll on each damage calculation whilst in effect. Lasts 5 turns. Other Moves could have bonus effects whilst character is enchanted

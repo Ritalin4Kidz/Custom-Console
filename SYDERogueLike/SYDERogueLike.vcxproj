@@ -148,8 +148,10 @@
     <ClCompile Include="BalloonPopMove.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BoneClubMove.cpp" />
+    <ClCompile Include="BurntStatus.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CharacterSelectScene.cpp" />
+    <ClCompile Include="EmberMove.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GustMove.cpp" />
     <ClCompile Include="MainMapScene.cpp" />
@@ -167,7 +169,9 @@
     <ClCompile Include="ScrapMove.cpp" />
     <ClCompile Include="ShopItem.cpp" />
     <ClCompile Include="ShopScene.cpp" />
+    <ClCompile Include="SingMove.cpp" />
     <ClCompile Include="SlashMove.cpp" />
+    <ClCompile Include="SleepStatus.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
     <ClCompile Include="SmokingCrab.cpp" />
     <ClCompile Include="SydeCoastLevel.cpp" />
@@ -181,10 +185,12 @@
     <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BoneClubMove.h" />
+    <ClInclude Include="BurntStatus.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterSelectScene.h" />
     <ClInclude Include="EmberMove.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FireballMove.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameTypes.h" />
     <ClInclude Include="GustMove.h" />
@@ -209,7 +215,9 @@
     <ClInclude Include="ShopItem.h" />
     <ClInclude Include="ShopItemRarity.h" />
     <ClInclude Include="ShopScene.h" />
+    <ClInclude Include="SingMove.h" />
     <ClInclude Include="SlashMove.h" />
+    <ClInclude Include="SleepStatus.h" />
     <ClInclude Include="SmokeBreakMove.h" />
     <ClInclude Include="SmokingCrab.h" />
     <ClInclude Include="SydeCoastLevel.h" />

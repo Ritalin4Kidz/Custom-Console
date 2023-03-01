@@ -7,3 +7,7 @@
 #include "EmberMove.h"
 #include "BalloonPopMove.h"
 #include "WaveMove.h"
+#include "FireballMove.h"
+#include "SingMove.h"
+#include "SleepStatus.h"
+#include "BurntStatus.h"

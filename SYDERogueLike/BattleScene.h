@@ -7,6 +7,7 @@
 #include <SYDEClickableButton.h>
 #include "Enemy.h"
 #include "Player.h"
+#include "MovesHeader.h"
 
 enum BattleSceneStates
 {
@@ -22,6 +23,13 @@ enum BattleState
 	m_BS_Postwork = 2
 };
 
+struct MoveTurn
+{
+	MoveTurn(std::shared_ptr<Move> m, bool e) { move = m; enemyTurn = e; }
+	std::shared_ptr<Move> move;
+	bool enemyTurn = false;
+};
+
 
 class BattleScene : public GameScene
 {
@@ -31,6 +39,9 @@ public:
 	void onNewScene() override;
 	void destroyScene() override;
 
+	string getStatusString(_SQStatus s);
+
+	ColourClass getStatusColour(_SQStatus s);
 
 	void endBattle();
 
@@ -39,6 +50,9 @@ public:
 	static void callMove() { HideUI();  doMoveCall = true; }
 	static void setSelectedMoveInt(int index) { selectedMove = index; }
 	void doMovePreWork();
+
+	void doStatus(std::shared_ptr<Character> charac, bool enemy);
+	void doSleepStatus(std::shared_ptr<Move>* move, std::shared_ptr<Character> charac);
 
 	ConsoleWindow doMoves(ConsoleWindow window);
 
@@ -54,8 +68,7 @@ private:
 	std::shared_ptr<Enemy> m_Enemy;
 	std::shared_ptr<Player> m_Player;
 
-	vector<std::shared_ptr<Move>> m_MovesForTurn = vector<std::shared_ptr<Move>>();
-	bool enemyTurn = false;
+	vector<MoveTurn> m_MovesForTurn = vector<MoveTurn>();
 
 	BattleState m_BattleState = m_BS_Prework;
 

@@ -39,7 +39,7 @@ public:
 	/// <returns></returns>
 	bool isLastEffortMove() { return lastEffortMove; }
 
-	void decrementUsages() { usagesLeft--; }
+	virtual void decrementUsages() { usagesLeft--; }
 	int getUsagesLeft() { return usagesLeft; }
 
 	int getMaxUsages() { return maxUsages; }

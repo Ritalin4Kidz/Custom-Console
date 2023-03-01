@@ -45,6 +45,7 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 			window.setTextAtPoint(Vector2(21 + i, 1), " ", RED_RED_BG);
 	}
 	window.setTextAtPoint(Vector2(21, 2), m_Enemy->getName() + " " + to_string(m_Enemy->getHealth()) + "/" + to_string(m_Enemy->getMaxHealth()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(21, 3), getStatusString(m_Enemy->getStatus()), getStatusColour(m_Enemy->getStatus()));
 
 	window = m_Player->drawAnimationAsset(window, Vector2(20, 10));
 	for (int i = 0; i < ((float)m_Player->getHealth() / m_Player->getMaxHealth()) * 19; i++)
@@ -52,6 +53,7 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 		window.setTextAtPoint(Vector2(40 + i, 19), " ", RED_RED_BG);
 	}
 	window.setTextAtPoint(Vector2(40, 18), m_Player->getName() + " " + to_string(m_Player->getHealth()) + "/" + to_string(m_Player->getMaxHealth()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(40, 17), getStatusString(m_Player->getStatus()), getStatusColour(m_Player->getStatus()));
 
 	if (m_SceneState == m_BSS_Normal)
 	{
@@ -129,13 +131,39 @@ void BattleScene::destroyScene()
 	m_Player = NULL;
 }
 
+string BattleScene::getStatusString(_SQStatus s)
+{
+	if (s == Status_Sleep)
+	{
+		return "SLP";
+	}
+	else if (s == Status_Burnt)
+	{
+		return "BRN";
+	}
+	return "";
+}
+
+ColourClass BattleScene::getStatusColour(_SQStatus s)
+{
+	if (s == Status_Sleep)
+	{
+		return BLACK_BRIGHTWHITE_BG;
+	}
+	if (s == Status_Burnt)
+	{
+		return BRIGHTWHITE_RED_BG;
+	}
+	return NULLCOLOUR;
+}
+
 void BattleScene::endBattle()
 {
 	//CHECK WHO DIED
-	for (int i = 0; i < m_MovesForTurn.size(); i++)
-	{
-		m_MovesForTurn[i] == NULL;
-	}
+	//for (int i = 0; i < m_MovesForTurn.size(); i++)
+	//{
+	//	m_MovesForTurn[i].;
+	//}
 	m_MovesForTurn.clear();
 	//TEMP FOR NOW
 	SydeRogueLikeStatics::setSceneTag("Post Battle Scene");
@@ -190,22 +218,19 @@ void BattleScene::doMovePreWork()
 
 	//GENERATE ENEMY MOVE
 	std::shared_ptr<Move> EnemyMove = m_Enemy->determineMove(*m_Player);
-	EnemyMove->resetAnimation();
-	PlayerMove->resetAnimation();
+	//ADD STATUS AFFECTS NOW
+	doStatus(m_Player, false);
+	doStatus(m_Enemy, true);
 	//DETERMINE THE ORDER OF THE MOVES
 	if (m_Enemy->getSpeed() >= m_Player->getSpeed())
 	{
-		enemyTurn = true;
-	}
-	if (enemyTurn)
-	{
-		m_MovesForTurn.push_back(EnemyMove);
-		m_MovesForTurn.push_back(PlayerMove);
+		m_MovesForTurn.push_back(MoveTurn(EnemyMove, true));
+		m_MovesForTurn.push_back(MoveTurn(PlayerMove, false));
 	}
 	else
 	{
-		m_MovesForTurn.push_back(PlayerMove);
-		m_MovesForTurn.push_back(EnemyMove);
+		m_MovesForTurn.push_back(MoveTurn(PlayerMove, false));
+		m_MovesForTurn.push_back(MoveTurn(EnemyMove, true));
 	}
 	//ANY OTHER LOADING
 	windowText_Top = "";
@@ -214,6 +239,25 @@ void BattleScene::doMovePreWork()
 	//FINISH
 	m_SceneState = m_BSS_DoMoves;
 }
+
+void BattleScene::doStatus(std::shared_ptr<Character> charac, bool enemy)
+{
+	if (charac->getStatus() == Status_Burnt)
+	{
+		m_MovesForTurn.push_back(MoveTurn(std::shared_ptr<Move>(new BurntStatus()), enemy));
+	}
+}
+
+void BattleScene::doSleepStatus(std::shared_ptr<Move>* move, std::shared_ptr<Character> charac)
+{
+	if (charac->getStatus() == Status_Sleep)
+	{
+		*move = std::shared_ptr<Move>(new SleepStatus());
+	}
+}
+
+
+
 
 ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 {
@@ -226,20 +270,23 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			ShowUI();
 			return window;
 		}
-		windowText_Top = (enemyTurn ? m_Enemy->getName() : m_Player->getName()) + " Used";
-		windowText_Bottom = m_MovesForTurn[0]->getName();
+		//CHECK STATUS
+		doSleepStatus(&m_MovesForTurn[0].move, m_MovesForTurn[0].enemyTurn ? std::shared_ptr<Character>(m_Enemy) : std::shared_ptr<Character>(m_Player));
+
+		windowText_Top = (m_MovesForTurn[0].enemyTurn ? m_Enemy->getName() : m_Player->getName()) + " Used";
+		windowText_Bottom = m_MovesForTurn[0].move->getName();
 		//TODO: GET STATUS AND IF FAILED
 		//IF MISS, USGAE DECREMENTS
 		//IF STATUS AFFECTED, USAGES STAY SAME
-
 		//ELSE ASSUME MOVE WAS USED
-		m_MovesForTurn[0]->decrementUsages();
+		m_MovesForTurn[0].move->decrementUsages();
 		std::string moveTag;
 		m_Player->validateCurrentJsonTag();
 		m_Enemy->validateCurrentJsonTag();
 		json player = m_Player->getJSONTag();
 		json enemy = m_Enemy->getJSONTag();
-		if (!m_MovesForTurn[0]->isSuccessful(enemyTurn ? &enemy : &player,enemyTurn ? &player : &enemy, &moveTag))
+		m_MovesForTurn[0].move->resetAnimation();
+		if (!m_MovesForTurn[0].move->isSuccessful(m_MovesForTurn[0].enemyTurn ? &enemy : &player, m_MovesForTurn[0].enemyTurn ? &player : &enemy, &moveTag))
 		{
 			//TODO: SHOW AN ATTACK FAILED SCREEN
 			m_BattleState = m_BS_Postwork;
@@ -252,8 +299,8 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 	}
 	else if (m_BattleState == m_BS_Animation)
 	{
-		window = m_MovesForTurn[0]->drawAnimation(window, Vector2(20, 1));
-		if (m_MovesForTurn[0]->getAnimation().getFrame() >= m_MovesForTurn[0]->getAnimation().getFrameSize() - 1)
+		window = m_MovesForTurn[0].move->drawAnimation(window, Vector2(20, 1));
+		if (m_MovesForTurn[0].move->getAnimation().getFrame() >= m_MovesForTurn[0].move->getAnimation().getFrameSize() - 1)
 		{
 			m_Player->validateCurrentJsonTag();
 			m_Enemy->validateCurrentJsonTag();
@@ -262,11 +309,10 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			json enemy = m_Enemy->getJSONTag();
 			//ANIMATION DONE
 			timeTakenPostWork = 0;
-			m_MovesForTurn[0]->Execute(
-				enemyTurn ? &enemy : &player,
-				enemyTurn ? &player : &enemy,
+			m_MovesForTurn[0].move->Execute(
+				m_MovesForTurn[0].enemyTurn ? &enemy : &player,
+				m_MovesForTurn[0].enemyTurn ? &player : &enemy,
 				&moveTag);
-			enemyTurn = !enemyTurn;
 
 			m_MovesForTurn.erase(m_MovesForTurn.begin());
 

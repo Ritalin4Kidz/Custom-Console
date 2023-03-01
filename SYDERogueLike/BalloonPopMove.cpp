@@ -13,7 +13,12 @@ void BalloonPopMove::Execute(json* Attacker, json* Defender, std::string* tag)
             defenceDef = 5;
         }
     }
-
+    _SQStatus status = static_cast<_SQStatus>(Defender->at("status").get<int>());
+    if (status == Status_Sleep)
+    {
+        Defender->at("status") = static_cast<int>(Status_None);
+        defenceDef = 5;
+    }
     Defender->at("defence") = defenceDef;
 
 }

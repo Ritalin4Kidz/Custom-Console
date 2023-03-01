@@ -6,11 +6,12 @@ public:
 	{
 		m_Name = "Ember";
 		m_Type = Fire;
-		BasePower = 25;
+		BasePower = 10;
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Fire\\Ember.bmp", 100, 100, 20, 20, 0, 25));
-		maxUsages = 10;
+		maxUsages = 20;
 		useMagicAttack = true;
 		usagesLeft = maxUsages;
 	}
+	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 protected:
 };

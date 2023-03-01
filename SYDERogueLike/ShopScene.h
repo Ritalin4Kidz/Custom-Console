@@ -16,6 +16,13 @@ MOVE SWAPPING
 SHOW DETAILS IN SHOP
 ITEM GENERATION
 */
+
+/*
+SHOP MOVE GENERATION:
+The moves that can be generated in a shop can only be moves that are learnable by a character
+every character has a movepool so we can use that value to determine a list of moves to generate from
+*/
+
 class ShopScene : public GameScene
 {
 public:

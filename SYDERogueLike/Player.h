@@ -11,6 +11,7 @@ public:
 
 	virtual void init_Char(int lvl) {}
 
+	std::vector<std::string> getMovePool() { return m_MovePool; }
 
 protected:
 	//THIS SHOULD NOT BE OVERRIDDEN, AS WE CAN MAKE CERTAIN MOVES TEACHABLE TO ALL CHARACTERS

@@ -6,7 +6,7 @@ void PlayerFuri::init_Char(int lvl)
 		std::shared_ptr<Move>(new SmokeBreakMove()),
 		std::shared_ptr<Move>(new BoneClubMove()),
 		std::shared_ptr<Move>(new EmberMove()),
-		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new FireballMove()),
 		}));
 	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\PlayerAnimations\\FuriBehindAnim.bmp", 50, 20, 10, 10, 0, 10));

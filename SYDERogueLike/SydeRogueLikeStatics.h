@@ -9,6 +9,7 @@ public:
 	static std::string getSceneTag() { return m_SceneTag; }
 
 	static void setPlayer(std::shared_ptr<Player> newPlayer) { m_Player = newPlayer; }
+	static void addPlayerXP(int xp) { m_Player->addXPToPlayer(xp); }
 	static std::shared_ptr<Player> getPlayer() { return m_Player; }
 
 	static void setEnemy(std::shared_ptr<Enemy> newEnemy) { m_Enemy = newEnemy; }

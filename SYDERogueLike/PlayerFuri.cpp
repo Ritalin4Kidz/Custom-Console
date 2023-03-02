@@ -22,3 +22,13 @@ void PlayerFuri::init_Char(int lvl)
 	this->setSpeed(20);
 	this->setType(Fire);
 }
+
+void PlayerFuri::levelUpStats()
+{
+	this->setMaxHealth(this->getMaxHealth() + 2); //70
+	this->setHealth(this->getMaxHealth());
+	this->setAttack(this->getAttack() + 3); //120
+	this->setMagicAttack(this->getMagicAttack() + 1); //290
+	this->setName("Furi");
+	this->setSpeed(this->getSpeed() + 2);
+}

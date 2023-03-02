@@ -11,3 +11,5 @@
 #include "SingMove.h"
 #include "SleepStatus.h"
 #include "BurntStatus.h"
+#include "SabotageMove.h"
+#include "SabotagedMoveEffect.h"

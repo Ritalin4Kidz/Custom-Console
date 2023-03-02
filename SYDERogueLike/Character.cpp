@@ -19,7 +19,7 @@ void Character::validateCurrentJsonTag()
          {"level",m_Level},
          {"name",m_Name},
          {"ability", static_cast<int>(m_Ability)},
-         {"status",static_cast<int>(getStatus())}
+         {"status",static_cast<int>(getStatus())},
     };
 }
 

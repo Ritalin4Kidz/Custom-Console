@@ -141,6 +141,10 @@ string BattleScene::getStatusString(_SQStatus s)
 	{
 		return "BRN";
 	}
+	else if (s == Status_Sabotaged)
+	{
+		return "SBT";
+	}
 	return "";
 }
 
@@ -153,6 +157,10 @@ ColourClass BattleScene::getStatusColour(_SQStatus s)
 	if (s == Status_Burnt)
 	{
 		return BRIGHTWHITE_RED_BG;
+	}
+	if (s == Status_Sabotaged)
+	{
+		return BLACK_BRIGHTYELLOW_BG;
 	}
 	return NULLCOLOUR;
 }
@@ -250,9 +258,18 @@ void BattleScene::doStatus(std::shared_ptr<Character> charac, bool enemy)
 
 void BattleScene::doSleepStatus(std::shared_ptr<Move>* move, std::shared_ptr<Character> charac)
 {
+	json tag = charac->getJSONTag();
 	if (charac->getStatus() == Status_Sleep)
 	{
 		*move = std::shared_ptr<Move>(new SleepStatus());
+	}
+	else if (charac->getStatus() == Status_Sabotaged)
+	{
+		int Chance = rand() % 100;
+		if (Chance > 65)
+		{
+			*move = std::shared_ptr<Move>(new SabotagedMoveEffect());
+		}
 	}
 }
 

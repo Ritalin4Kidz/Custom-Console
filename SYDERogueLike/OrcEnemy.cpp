@@ -22,6 +22,7 @@ void OrcEnemy::init_Char(int lvl)
 	this->setSpeed(40);
     this->setName("Orc");
     this->setType(Grass);
+	xpGainedFromFight = (200 * lvl) / 5;
 }
 
 std::shared_ptr<Move> OrcEnemy::determineMove(Character opponent)

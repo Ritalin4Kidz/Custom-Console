@@ -89,6 +89,13 @@ void MainMapScene::onNewScene()
 			mainMenu))
 		);
 
+	if (SydeRogueLikeStatics::getBattleTag() == "Boss Defeated")
+	{
+		doBossDefeatedAction();
+
+	}
+	SydeRogueLikeStatics::setBattleTag("");
+
 }
 
 void MainMapScene::destroyScene()
@@ -431,6 +438,10 @@ void MainMapScene::doBossAction(MapSpace currentSpace)
 {
 }
 
+void MainMapScene::doBossDefeatedAction()
+{
+}
+
 void MainMapScene::generateEnemy()
 {
 }
@@ -575,25 +586,36 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			window = m_OptionsMenu[i]->draw_ui(window);
 		}
 	}
-	else if (m_SceneState == MMS_UIAnimation)
+	else if (m_SceneState == MMS_UIAnimation || m_SceneState == MMS_END_UIAnimation)
 	{
 		window = m_UIAnimation.draw_asset(window, Vector2(0, 1));
 		if (m_UIAnimation.getFrame() >= m_UIAnimation.getFrameSize() - 1)
 		{
-			ShowUI();
-			//CHEAT SHEET
-			if (sceneLoad == "DiceRollingAnim")
+			if (m_SceneState == MMS_END_UIAnimation)
 			{
-				m_MovementState = MoveState_ROLLING;
-				m_SceneState = MMS_Normal;
-			}
-			else if (sceneLoad != "")
-			{
-				SydeRogueLikeStatics::setSceneTag(sceneLoad);
+				HideUI();
+				//SHOW FIREWORKS
+				m_MovementState = MoveState_END;
+				m_SceneState = MMS_END;
+				//TODO: FIREWORKS + OPTION TO EXIT TO MENU
 			}
 			else
 			{
-				m_SceneState = MMS_Normal;
+				ShowUI();
+				//CHEAT SHEET
+				if (sceneLoad == "DiceRollingAnim")
+				{
+					m_MovementState = MoveState_ROLLING;
+					m_SceneState = MMS_Normal;
+				}
+				else if (sceneLoad != "")
+				{
+					SydeRogueLikeStatics::setSceneTag(sceneLoad);
+				}
+				else
+				{
+					m_SceneState = MMS_Normal;
+				}
 			}
 		}
 		return window;

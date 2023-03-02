@@ -8,6 +8,9 @@ public:
 	static void setSceneTag(std::string sceneTag) { m_SceneTag = sceneTag; }
 	static std::string getSceneTag() { return m_SceneTag; }
 
+	static void setBattleTag(std::string battleTag) { m_BattleTag = battleTag; }
+	static std::string getBattleTag() { return m_BattleTag; }
+
 	static void setPlayer(std::shared_ptr<Player> newPlayer) { m_Player = newPlayer; }
 	static void addPlayerXP(int xp) { m_Player->addXPToPlayer(xp); }
 	static std::shared_ptr<Player> getPlayer() { return m_Player; }
@@ -23,6 +26,7 @@ public:
 
 private:
 	static std::string m_SceneTag;
+	static std::string m_BattleTag;
 	static std::shared_ptr<Player> m_Player;
 	static std::shared_ptr<Enemy> m_Enemy;
 

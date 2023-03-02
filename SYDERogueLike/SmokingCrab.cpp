@@ -13,7 +13,7 @@ void SmokingCrab::init_Char(int lvl)
 	setAnimationLoop(true);
 
 	this->setLevel(lvl);
-	this->setHealth(50); //70
+	this->setHealth(5); //70
 	this->setMaxHealth(50); //70
 	this->setAttack(90); //120
 	this->setDefence(40); //220

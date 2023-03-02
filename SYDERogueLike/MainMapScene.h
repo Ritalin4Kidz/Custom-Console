@@ -12,7 +12,9 @@ enum MainMapScene_States
 {
 	MMS_Normal = 0,
 	MMS_UIAnimation = 1,
-	MMS_Options = 2
+	MMS_Options = 2,
+	MMS_END_UIAnimation = 3,
+	MMS_END = 4
 };
 
 
@@ -21,7 +23,8 @@ enum MovementStates
 	MoveState_STANDING = 0,
 	MoveState_ROLLING = 1,
 	MoveState_MOVEMENT = 2,
-	MoveState_CHECKING = 3
+	MoveState_CHECKING = 3,
+	MoveState_END = 4
 };
 
 
@@ -111,5 +114,6 @@ protected:
 	vector<std::shared_ptr<SYDEClickableButton>> m_OptionsMenu;
 
 	virtual void doBossAction(MapSpace currentSpace);
+	virtual void doBossDefeatedAction();
 	virtual void generateEnemy();
 };

@@ -1,6 +1,7 @@
 #include "SydeRogueLikeStatics.h"
 
 std::string SydeRogueLikeStatics::m_SceneTag = "";
+std::string SydeRogueLikeStatics::m_BattleTag = "";
 
 std::shared_ptr<Player> SydeRogueLikeStatics::m_Player = nullptr;
 

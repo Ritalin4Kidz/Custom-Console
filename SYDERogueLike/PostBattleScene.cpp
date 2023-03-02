@@ -47,30 +47,19 @@ void PostBattleScene::onNewScene()
 	{
 		if (bossTag == "Boss")
 		{
-			//FIREWORKS SCENE
-			addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
-				"Back To Menu",
-				Vector2(40, 16),
-				Vector2(12, 1),
-				BLACK_BRIGHTWHITE_BG,
-				NULLCOLOUR,
-				false,
-				failureClick
-
-			)));
+			SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
+			SydeRogueLikeStatics::setBattleTag("Boss Defeated");
+			return;
 		}
-		else
-		{ 
-			addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
-				"Continue",
-				Vector2(44, 16),
-				Vector2(8, 1),
-				BLACK_BRIGHTWHITE_BG,
-				NULLCOLOUR,
-				false,
-				successClick
-			)));
-		}
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+			"Continue",
+			Vector2(44, 16),
+			Vector2(8, 1),
+			BLACK_BRIGHTWHITE_BG,
+			NULLCOLOUR,
+			false,
+			successClick
+		)));
 		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
 			"Battle Won",
 			Vector2(6, 4 ),

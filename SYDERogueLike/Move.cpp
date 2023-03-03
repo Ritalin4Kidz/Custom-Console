@@ -51,6 +51,31 @@ float Move::BaseDamageCalculation(int level, float AttackStat, float DefenceStat
     return damage_dealt;
 }
 
+bool Move::setStatus(_SQStatus newStatus, json* charac, int chanceRoll)
+{
+    _SQStatus status = static_cast<_SQStatus>(charac->at("status").get<int>());
+    _SQAbility ability = static_cast<_SQAbility>(charac->at("ability").get<int>());
+    if (status != Status_None)
+    {
+        return false;
+    }
+    if (newStatus == Status_Sleep)
+    {
+        //SMOKE ATTACKS GIVE HEALTH, BUT LOWER DEFENCE STAT
+        if (ability == Ability_Insomnia)
+        {
+            return false;
+        }
+    }
+    int Chance = (rand() % 100) + 1;
+    if (Chance > chanceRoll)
+    {
+       charac->at("status") = static_cast<int>(newStatus);
+       return true;
+    }
+    return false;
+}
+
 bool Move::ExecuteMove(json* Attacker, json* Defender, std::string* tag)
 {
     if (isSuccessful(Attacker, Defender, tag))

@@ -1,11 +1,10 @@
 #include "SabotageMove.h"
 
+bool SabotageMove::isSuccessful(json* Attacker, json* Defender, std::string* tag)
+{
+    return setStatus(Status_Sabotaged, Defender, 0);
+}
+
 void SabotageMove::Execute(json* Attacker, json* Defender, std::string* tag)
 {
-    _SQAbility ability = static_cast<_SQAbility>(Defender->at("status").get<int>());
-    _SQStatus status = static_cast<_SQStatus>(Defender->at("status").get<int>());
-    if (status == Status_None)
-    {
-        Defender->at("status") = static_cast<int>(Status_Sabotaged);
-    }
 }

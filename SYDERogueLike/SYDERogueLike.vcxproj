@@ -193,6 +193,7 @@
     <ClInclude Include="CharacterSelectScene.h" />
     <ClInclude Include="EmberMove.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FailedMove.h" />
     <ClInclude Include="FireballMove.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameTypes.h" />

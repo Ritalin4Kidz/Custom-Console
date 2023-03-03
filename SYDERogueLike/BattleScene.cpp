@@ -303,16 +303,7 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		json player = m_Player->getJSONTag();
 		json enemy = m_Enemy->getJSONTag();
 		m_MovesForTurn[0].move->resetAnimation();
-		if (!m_MovesForTurn[0].move->isSuccessful(m_MovesForTurn[0].enemyTurn ? &enemy : &player, m_MovesForTurn[0].enemyTurn ? &player : &enemy, &moveTag))
-		{
-			//TODO: SHOW AN ATTACK FAILED SCREEN
-			m_BattleState = m_BS_Postwork;
-			m_MovesForTurn.erase(m_MovesForTurn.begin());
-		}
-		else
-		{
-			m_BattleState = m_BS_Animation;
-		}
+		m_BattleState = m_BS_Animation;
 	}
 	else if (m_BattleState == m_BS_Animation)
 	{
@@ -326,12 +317,17 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			json enemy = m_Enemy->getJSONTag();
 			//ANIMATION DONE
 			timeTakenPostWork = 0;
-			m_MovesForTurn[0].move->ExecuteMove(
+			if (!m_MovesForTurn[0].move->ExecuteMove(
 				m_MovesForTurn[0].enemyTurn ? &enemy : &player,
 				m_MovesForTurn[0].enemyTurn ? &player : &enemy,
-				&moveTag);
-
-			m_MovesForTurn.erase(m_MovesForTurn.begin());
+				&moveTag))
+			{
+				m_MovesForTurn[0].move = std::shared_ptr<Move>(new FailedMove());
+			}
+			else
+			{
+				m_MovesForTurn.erase(m_MovesForTurn.begin());
+			}
 
 			m_Player->validateFromJson(player);
 			m_Enemy->validateFromJson(enemy);

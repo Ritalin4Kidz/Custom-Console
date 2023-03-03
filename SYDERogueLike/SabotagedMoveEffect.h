@@ -11,6 +11,7 @@ public:
 		maxUsages = 0;
 		usagesLeft = maxUsages;
 	}
+	bool isSuccessful(json* Attacker, json* Defender, std::string* tag) override { return true; };
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 	void decrementUsages() override;
 protected:

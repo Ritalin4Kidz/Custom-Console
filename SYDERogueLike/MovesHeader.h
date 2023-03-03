@@ -13,3 +13,4 @@
 #include "BurntStatus.h"
 #include "SabotageMove.h"
 #include "SabotagedMoveEffect.h"
+#include "FailedMove.h"

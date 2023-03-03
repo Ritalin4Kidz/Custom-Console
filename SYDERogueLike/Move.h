@@ -26,6 +26,8 @@ public:
 	float getPower() { return BasePower; }
 	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);
 
+	bool setStatus(_SQStatus newStatus, json* charac, int chanceRoll);
+
 	virtual bool ExecuteMove(json* Attacker, json* Defender, std::string* tag);
 
 	CustomAnimationAsset getAnimation() { return m_Animation; }

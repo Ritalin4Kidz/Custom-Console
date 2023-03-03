@@ -12,6 +12,7 @@ public:
 		useMagicAttack = true;
 		usagesLeft = maxUsages;
 	}
+	bool isSuccessful(json* Attacker, json* Defender, std::string* tag) override;
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 protected:
 };

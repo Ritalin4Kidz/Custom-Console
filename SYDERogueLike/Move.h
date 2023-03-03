@@ -19,13 +19,14 @@ public:
 	/// <param name="Attacker"></param>
 	/// <param name="Defender"></param>
 	/// <param name="tag">Optional parameter if we need toi return anything</param>
-	virtual void Execute(json* Attacker, json* Defender, std::string* tag);
 
 	//CAN BE OVERRIDEN BY OTHER MOVES
 	virtual bool isSuccessful(json* Attacker, json* Defender, std::string* tag) { int randNum = rand() % 100; return randNum < m_Accuracy; }
 
 	float getPower() { return BasePower; }
 	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);
+
+	virtual bool ExecuteMove(json* Attacker, json* Defender, std::string* tag);
 
 	CustomAnimationAsset getAnimation() { return m_Animation; }
 	ConsoleWindow drawAnimation(ConsoleWindow window, Vector2 point) { return m_Animation.draw_asset(window, point); }
@@ -44,7 +45,7 @@ public:
 
 	int getMaxUsages() { return maxUsages; }
 protected:
-
+	virtual void Execute(json* Attacker, json* Defender, std::string* tag);
 	_SQType m_Type;
 	std::string m_Name;
 	float BasePower;

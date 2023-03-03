@@ -326,7 +326,7 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			json enemy = m_Enemy->getJSONTag();
 			//ANIMATION DONE
 			timeTakenPostWork = 0;
-			m_MovesForTurn[0].move->Execute(
+			m_MovesForTurn[0].move->ExecuteMove(
 				m_MovesForTurn[0].enemyTurn ? &enemy : &player,
 				m_MovesForTurn[0].enemyTurn ? &player : &enemy,
 				&moveTag);

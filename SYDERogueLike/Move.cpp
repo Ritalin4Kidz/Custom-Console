@@ -51,6 +51,16 @@ float Move::BaseDamageCalculation(int level, float AttackStat, float DefenceStat
     return damage_dealt;
 }
 
+bool Move::ExecuteMove(json* Attacker, json* Defender, std::string* tag)
+{
+    if (isSuccessful(Attacker, Defender, tag))
+    {
+        Execute(Attacker, Defender, tag); 
+        return true;
+    }
+    return false;
+}
+
 
 float BattleFunctions::DetermineMultiplier(Move* Attack, _SQType Defender)
 {

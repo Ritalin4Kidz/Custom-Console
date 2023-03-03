@@ -175,6 +175,7 @@
     <ClCompile Include="SlashMove.cpp" />
     <ClCompile Include="SleepStatus.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
+    <ClCompile Include="SmokeMoveType.cpp" />
     <ClCompile Include="SmokingCrab.cpp" />
     <ClCompile Include="SydeCoastLevel.cpp" />
     <ClCompile Include="SYDERogueLike.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SleepStatus.h" />
     <ClInclude Include="SmokeBreakMove.h" />
+    <ClInclude Include="SmokeMoveType.h" />
     <ClInclude Include="SmokingCrab.h" />
     <ClInclude Include="SydeCoastLevel.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />

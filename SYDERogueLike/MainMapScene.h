@@ -63,6 +63,8 @@ public:
 
 	bool addSpaceToExistingPath(int path, int space, Vector2 pos, std::string data, int pathType);
 
+	void setUpEndMapUI();
+
 	MapSpace getSpace(int path, int space);
 	bool isLastSpace(int path, int space);
 
@@ -73,6 +75,7 @@ public:
 	static void triggerChoice() { choiceCall = true; }
 	static void triggerOptions() { optionsCall = true; }
 	static void triggerNuke() { nukeCall = true; }
+	static void triggerTick() { tickCall = true; }
 
 	ArrowDisplay returnArrowForPath(Vector2 nextPathPos, Vector2 currentPos, void(*f)(), string a_Tag, int middleWidth, int middleHeight);
 
@@ -85,6 +88,7 @@ protected:
 	static bool moveCall;
 	static bool choiceCall;
 	static bool optionsCall;
+	static bool tickCall;
 
 	static bool nukeCall;
 
@@ -100,6 +104,9 @@ protected:
 	CustomAsset m_MapBg;
 	Vector2 cameraPos; 
 	Vector2 m_Space = Vector2(0, 0);
+
+	SYDEParticleBurst m_GameOverFireworks = SYDEParticleBurst(Vector2(0, 0), Vector2(-1.5, -1.5), Vector2(1.5, 1.5));;
+	SYDEClock_Timer m_FireworksTimer = SYDEClock_Timer(0.75f);;
 
 	CustomAsset_Clickable m_SwapPathBtn;
 	Vector2 swapBtnPos;

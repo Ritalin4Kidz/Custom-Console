@@ -1,6 +1,6 @@
 #pragma once
-#include "Move.h"
-class SmokeBreakMove : public Move {
+#include "SmokeMoveType.h"
+class SmokeBreakMove : public SmokeMoveType {
 public:
 	SmokeBreakMove()
 	{

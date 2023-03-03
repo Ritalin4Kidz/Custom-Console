@@ -4,10 +4,16 @@ bool MainMapScene::moveCall = false;
 bool MainMapScene::choiceCall = false;
 bool MainMapScene::optionsCall = false;
 bool MainMapScene::nukeCall = false;
+bool MainMapScene::tickCall = false;
 Vector2 MainMapScene::m_SpaceMoveTo = Vector2(0, 0);
 void moveSingleSpaceTest()
 {
 	MainMapScene::triggerMove();
+}
+
+void TickFunc()
+{
+	MainMapScene::triggerTick();
 }
 
 void options()
@@ -292,6 +298,18 @@ bool MainMapScene::addSpaceToExistingPath(int path, int space, Vector2 pos, std:
 	return false;
 }
 
+void MainMapScene::setUpEndMapUI()
+{
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"     Back To Menu     ",
+		Vector2(20, 15),
+		Vector2(20, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		mainMenu)));
+}
+
 MapSpace MainMapScene::getSpace(int path, int space)
 {
 	for (int i = 0; i < m_MapPaths.size(); i++)
@@ -448,6 +466,17 @@ void MainMapScene::generateEnemy()
 
 ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
+	if (tickCall)
+	{
+		if (m_GameOverFireworks.isDead())
+		{
+			float _x = 0 + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (40 - 0)));
+			float _y = 0 + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (19 - 0)));
+			m_GameOverFireworks.setPos(Vector2(_x, _y));
+			m_GameOverFireworks.burst();
+		}
+		tickCall = false;
+	}
 	if (optionsCall)
 	{
 		optionsCall = false;
@@ -586,6 +615,11 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			window = m_OptionsMenu[i]->draw_ui(window);
 		}
 	}
+	else if (m_SceneState == MMS_END)
+	{
+		m_GameOverFireworks.draw(window);
+		m_FireworksTimer.Tick();
+	}
 	else if (m_SceneState == MMS_UIAnimation || m_SceneState == MMS_END_UIAnimation)
 	{
 		window = m_UIAnimation.draw_asset(window, Vector2(0, 1));
@@ -593,11 +627,19 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		{
 			if (m_SceneState == MMS_END_UIAnimation)
 			{
-				HideUI();
 				//SHOW FIREWORKS
 				m_MovementState = MoveState_END;
 				m_SceneState = MMS_END;
 				//TODO: FIREWORKS + OPTION TO EXIT TO MENU
+				m_GameOverFireworks.setColour(YELLOW);
+				m_GameOverFireworks.setCharacter("*");
+				m_GameOverFireworks.RainbowOn(true);
+				m_GameOverFireworks.setMaxParticles(35);
+				m_GameOverFireworks.setFinishingColour(WHITE);
+				m_FireworksTimer.SetFunc(TickFunc);
+				clearUI();
+				setUpEndMapUI();
+				ShowUI();
 			}
 			else
 			{

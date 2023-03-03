@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="BalloonPopMove.cpp" />
     <ClCompile Include="BattleScene.cpp" />
+    <ClCompile Include="BloodGhostEnemy.cpp" />
     <ClCompile Include="BoneClubMove.cpp" />
     <ClCompile Include="BurntStatus.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -187,6 +188,7 @@
   <ItemGroup>
     <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
+    <ClInclude Include="BloodGhostEnemy.h" />
     <ClInclude Include="BoneClubMove.h" />
     <ClInclude Include="BurntStatus.h" />
     <ClInclude Include="Character.h" />

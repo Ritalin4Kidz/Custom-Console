@@ -1,6 +1,7 @@
 #pragma once
 #include "MainMapScene.h"
 #include "OrcEnemy.h"
+#include "BloodGhostEnemy.h"
 #include "SmokingCrab.h"
 class SydeCoastLevel : public MainMapScene
 {

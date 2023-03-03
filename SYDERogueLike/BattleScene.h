@@ -13,7 +13,8 @@ enum BattleSceneStates
 {
 	m_BSS_Normal = 0,
 	m_BSS_DoMovePreWork = 1,
-	m_BSS_DoMoves = 2
+	m_BSS_DoMoves = 2,
+	m_BSS_EndFall = 3
 };
 
 enum BattleState
@@ -36,6 +37,9 @@ class BattleScene : public GameScene
 public:
 	BattleScene() { m_SceneTag = "Battle Scene"; m_isTransient = true; }
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
+
+	ConsoleWindow drawChars(ConsoleWindow window);
+
 	void onNewScene() override;
 	void destroyScene() override;
 
@@ -63,6 +67,12 @@ public:
 private:
 	static bool doMoveCall;
 	static int selectedMove;
+
+	float playerHeight;
+	float enemyHeight;
+
+	const float fallSpeed = 22.5f;
+
 	BattleSceneStates m_SceneState = m_BSS_Normal;
 
 	std::shared_ptr<Enemy> m_Enemy;

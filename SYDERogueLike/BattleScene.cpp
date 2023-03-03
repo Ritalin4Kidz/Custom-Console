@@ -39,21 +39,7 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 		}
 	}
 
-	window = m_Enemy->drawAnimationAsset(window, Vector2(40, 1));
-	for (int i = 0; i < ((float)m_Enemy->getHealth() / m_Enemy->getMaxHealth()) * 19; i++)
-	{
-			window.setTextAtPoint(Vector2(21 + i, 1), " ", RED_RED_BG);
-	}
-	window.setTextAtPoint(Vector2(21, 2), m_Enemy->getName() + " " + to_string(m_Enemy->getHealth()) + "/" + to_string(m_Enemy->getMaxHealth()), BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(21, 3), getStatusString(m_Enemy->getStatus()), getStatusColour(m_Enemy->getStatus()));
-
-	window = m_Player->drawAnimationAsset(window, Vector2(20, 10));
-	for (int i = 0; i < ((float)m_Player->getHealth() / m_Player->getMaxHealth()) * 19; i++)
-	{
-		window.setTextAtPoint(Vector2(40 + i, 19), " ", RED_RED_BG);
-	}
-	window.setTextAtPoint(Vector2(40, 18), m_Player->getName() + " " + to_string(m_Player->getHealth()) + "/" + to_string(m_Player->getMaxHealth()), BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(40, 17), getStatusString(m_Player->getStatus()), getStatusColour(m_Player->getStatus()));
+	window = drawChars(window);
 
 	if (m_SceneState == m_BSS_Normal)
 	{
@@ -73,12 +59,52 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 		window = doMoves(window);
 		return window;
 	}
+	else if (m_SceneState == m_BSS_EndFall)
+	{
+		if (m_Player->getHealth() <= 0)
+		{
+			playerHeight += fallSpeed * SYDEDefaults::getDeltaTime();
+		}
+		if (m_Enemy->getHealth() <= 0)
+		{
+			enemyHeight += fallSpeed * SYDEDefaults::getDeltaTime();
+		}
+		if (playerHeight > 50 || enemyHeight > 50)
+		{
+			m_SceneState = m_BSS_Normal;
+			m_Player->clearStatus();
+			SydeRogueLikeStatics::setSceneTag("Post Battle Scene");
+		}
+		return window;
+	}
+	return window;
+}
+
+ConsoleWindow BattleScene::drawChars(ConsoleWindow window)
+{
+	window = m_Enemy->drawAnimationAsset(window, Vector2(40, enemyHeight));
+	for (int i = 0; i < ((float)m_Enemy->getHealth() / m_Enemy->getMaxHealth()) * 19; i++)
+	{
+		window.setTextAtPoint(Vector2(21 + i, 1), " ", RED_RED_BG);
+	}
+	window.setTextAtPoint(Vector2(21, 2), m_Enemy->getName() + " " + to_string(m_Enemy->getHealth()) + "/" + to_string(m_Enemy->getMaxHealth()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(21, 3), getStatusString(m_Enemy->getStatus()), getStatusColour(m_Enemy->getStatus()));
+
+	window = m_Player->drawAnimationAsset(window, Vector2(20, playerHeight));
+	for (int i = 0; i < ((float)m_Player->getHealth() / m_Player->getMaxHealth()) * 19; i++)
+	{
+		window.setTextAtPoint(Vector2(40 + i, 19), " ", RED_RED_BG);
+	}
+	window.setTextAtPoint(Vector2(40, 18), m_Player->getName() + " " + to_string(m_Player->getHealth()) + "/" + to_string(m_Player->getMaxHealth()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(40, 17), getStatusString(m_Player->getStatus()), getStatusColour(m_Player->getStatus()));
 	return window;
 }
 
 void BattleScene::onNewScene()
 {
 	m_SceneState = m_BSS_Normal;
+	playerHeight = 10;
+	enemyHeight = 1;
 	m_Player = SydeRogueLikeStatics::getPlayer();
 	m_Enemy = SydeRogueLikeStatics::getEnemy();
 	for (int i = 0; i < m_Player->getMoves().size(); i++)
@@ -167,15 +193,7 @@ ColourClass BattleScene::getStatusColour(_SQStatus s)
 
 void BattleScene::endBattle()
 {
-	//CHECK WHO DIED
-	//for (int i = 0; i < m_MovesForTurn.size(); i++)
-	//{
-	//	m_MovesForTurn[i].;
-	//}
 	m_MovesForTurn.clear();
-	//TEMP FOR NOW
-	SydeRogueLikeStatics::setSceneTag("Post Battle Scene");
-	//TODO:
 	/*
 	CREATE A POST-BATTLE SCENE
 	SHOW STATS FROM THE BATTLE
@@ -185,7 +203,13 @@ void BattleScene::endBattle()
 	*/
 	if (m_Player->getHealth() <= 0)
 	{
+		m_Player->setHealth(0);
 		SydeRogueLikeStatics::toggleFightSuccess(false);
+	}
+	else
+	{
+		m_Enemy->setHealth(0);
+		SydeRogueLikeStatics::toggleFightSuccess(true);
 	}
 }
 
@@ -336,7 +360,7 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			if (m_Player->getHealth() <= 0 || m_Enemy->getHealth() <= 0)
 			{
 				endBattle();
-				m_SceneState = m_BSS_Normal;
+				m_SceneState = m_BSS_EndFall;
 				return window;
 			}
 			else

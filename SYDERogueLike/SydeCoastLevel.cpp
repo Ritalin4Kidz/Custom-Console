@@ -28,5 +28,5 @@ void SydeCoastLevel::doBossDefeatedAction()
 
 void SydeCoastLevel::generateEnemy()
 {
-	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new BloodGhostEnemy(5)));
+	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new OrcEnemy(5)));
 }

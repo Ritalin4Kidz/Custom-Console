@@ -5,10 +5,12 @@
 #include "SydeRogueLikeStatics.h"
 #include "BattleScene.h"
 #include "SydeCoastLevel.h"
+#include "MeowCoastLevel.h"
 #include "CharacterSelectScene.h"
 #include "PostBattleScene.h"
 #include "ShopScene.h"
 #include "PlayerStateScene.h"
+#include "LevelSelectScene.h"
 class SYDERogueLikeMainControl : public SYDEWindowGame {
 public:
 	SYDERogueLikeMainControl() { init(); }
@@ -29,7 +31,9 @@ private:
 			std::shared_ptr<GameScene>(new SydeCoastLevel()),
 			std::shared_ptr<GameScene>(new CharacterSelectScene()),
 			std::shared_ptr<GameScene>(new PostBattleScene()),
-			std::shared_ptr<GameScene>(new PlayerStateScene())
+			std::shared_ptr<GameScene>(new PlayerStateScene()),
+			std::shared_ptr<GameScene>(new LevelSelectScene()),
+			std::shared_ptr<GameScene>(new MeowCoastLevel()),
 		});
 
 	std::shared_ptr<GameScene> mainScene;

@@ -29,6 +29,19 @@ void Move::Execute(json* Attacker, json* Defender, std::string* tag)
     Defender->at("health") = healthDef;
 }
 
+bool Move::isSuccessful(json* Attacker, json* Defender, std::string* tag)
+{
+    //WE NEED TO VALIDATE THE JSON
+     //THEN WE CAN USE THAT DATA TO AFFECT THE MOVE
+    float Bonus_Damage = BattleFunctions::DetermineMultiplier(this, static_cast<_SQType>(Defender->at("type").get<int>()));
+    if (Bonus_Damage == 0)
+    {
+        return false;
+    }
+    int randNum = rand() % 100;
+    return randNum < m_Accuracy; 
+}
+
 float Move::BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage)
 {
     //Can't Do Damage Regardless

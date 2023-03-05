@@ -1,5 +1,4 @@
 #include "MainMapScene.h"
-std::string MainMapScene::m_MapToLoad = "";
 bool MainMapScene::moveCall = false;
 bool MainMapScene::choiceCall = false;
 bool MainMapScene::optionsCall = false;

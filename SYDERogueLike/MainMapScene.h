@@ -83,7 +83,7 @@ public:
 
 
 protected:
-	static std::string m_MapToLoad;
+	std::string m_MapToLoad;
 	static Vector2 m_SpaceMoveTo;
 	static bool moveCall;
 	static bool choiceCall;

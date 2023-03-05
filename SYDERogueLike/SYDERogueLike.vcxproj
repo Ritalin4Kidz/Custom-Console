@@ -155,13 +155,16 @@
     <ClCompile Include="EmberMove.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GustMove.cpp" />
+    <ClCompile Include="LevelSelectScene.cpp" />
     <ClCompile Include="MainMapScene.cpp" />
     <ClCompile Include="MainMenuScenes.cpp" />
     <ClCompile Include="MapConfig.cpp" />
     <ClCompile Include="MapPath.cpp" />
     <ClCompile Include="MapSpace.cpp" />
+    <ClCompile Include="MeowCoastLevel.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="OrcEnemy.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAlison.cpp" />
     <ClCompile Include="PlayerBruce.cpp" />
     <ClCompile Include="PlayerFuri.cpp" />
@@ -183,6 +186,7 @@
     <ClCompile Include="SydeRogueLikeMainControl.cpp" />
     <ClCompile Include="SydeRogueLikeStatics.cpp" />
     <ClCompile Include="TagToPlayer.cpp" />
+    <ClCompile Include="TypeSwapMove.cpp" />
     <ClCompile Include="WaveMove.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -201,12 +205,14 @@
     <ClInclude Include="GameTypes.h" />
     <ClInclude Include="GustMove.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="LevelSelectScene.h" />
     <ClInclude Include="MainMapEnums.h" />
     <ClInclude Include="MainMapScene.h" />
     <ClInclude Include="MainMenuScenes.h" />
     <ClInclude Include="MapConfig.h" />
     <ClInclude Include="MapPath.h" />
     <ClInclude Include="MapSpace.h" />
+    <ClInclude Include="MeowCoastLevel.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MovesHeader.h" />
     <ClInclude Include="OrcEnemy.h" />
@@ -233,6 +239,7 @@
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
     <ClInclude Include="TagToPlayer.hpp" />
+    <ClInclude Include="TypeSwapMove.h" />
     <ClInclude Include="WaveMove.h" />
   </ItemGroup>
   <ItemGroup>

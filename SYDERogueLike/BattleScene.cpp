@@ -106,6 +106,7 @@ void BattleScene::onNewScene()
 	playerHeight = 10;
 	enemyHeight = 1;
 	m_Player = SydeRogueLikeStatics::getPlayer();
+	m_Player->saveStats();
 	m_Enemy = SydeRogueLikeStatics::getEnemy();
 	for (int i = 0; i < m_Player->getMoves().size(); i++)
 	{
@@ -147,6 +148,7 @@ void BattleScene::onNewScene()
 void BattleScene::destroyScene()
 {
 	//ALL THE WORK WE NEED TO DO BEFORE MOVING TO ANOTHER SCENE :P
+	m_Player->reviveStats();
 	SydeRogueLikeStatics::setPlayer(m_Player);
 //	for (int i = 0; i < m_MovesForTurn.size(); i++)
 //	{

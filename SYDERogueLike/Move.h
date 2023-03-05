@@ -21,7 +21,7 @@ public:
 	/// <param name="tag">Optional parameter if we need toi return anything</param>
 
 	//CAN BE OVERRIDEN BY OTHER MOVES
-	virtual bool isSuccessful(json* Attacker, json* Defender, std::string* tag) { int randNum = rand() % 100; return randNum < m_Accuracy; }
+	virtual bool isSuccessful(json* Attacker, json* Defender, std::string* tag);
 
 	float getPower() { return BasePower; }
 	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);

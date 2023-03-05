@@ -14,3 +14,4 @@
 #include "SabotageMove.h"
 #include "SabotagedMoveEffect.h"
 #include "FailedMove.h"
+#include "TypeSwapMove.h"

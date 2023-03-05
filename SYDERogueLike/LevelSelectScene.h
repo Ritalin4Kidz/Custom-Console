@@ -32,7 +32,7 @@ private:
 
 	std::vector<LevelSelectObject> m_LevelList = std::vector<LevelSelectObject>( {
 		LevelSelectObject("SYDE Coast Map Scene", "SydeCoast", "Syde Coast"),
-		LevelSelectObject("Meow Coast Map Scene", "MeowCoast", "The Meow Coast")
+		LevelSelectObject("Meow Coast Map Scene", "MeowCoast", "Meowscia Isles")
 	});
 	CustomAsset m_MapPreview = CustomAsset(50, 15, astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\Preview\\DefaultPreview.bmp", 25, 15));
 

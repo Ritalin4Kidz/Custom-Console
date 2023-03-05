@@ -2,7 +2,7 @@
 
 void successClick()
 {
-	SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
+	SydeRogueLikeStatics::setSceneTag(SydeRogueLikeStatics::getLevelSceneTag());
 }
 
 void failureClick()

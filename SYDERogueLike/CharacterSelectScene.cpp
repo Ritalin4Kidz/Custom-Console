@@ -88,7 +88,7 @@ void CharacterSelectScene::onNewScene()
 		});
 
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
-		"    START GAME    ",
+		"   SELECT CHAR    ",
 		Vector2(31, 19),
 		Vector2(18, 1),
 		BRIGHTWHITE_BRIGHTGREEN_BG,

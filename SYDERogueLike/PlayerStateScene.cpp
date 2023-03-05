@@ -3,7 +3,7 @@
 
 void returnToMap()
 {
-	SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
+	SydeRogueLikeStatics::setSceneTag(SydeRogueLikeStatics::getLevelSceneTag());
 }
 
 ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)

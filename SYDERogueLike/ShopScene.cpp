@@ -2,7 +2,7 @@
 
 void BackToMapClick()
 {
-	SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
+	SydeRogueLikeStatics::setSceneTag(SydeRogueLikeStatics::getLevelSceneTag());
 }
 
 void shopClick()

@@ -24,7 +24,7 @@ public:
 	virtual bool isSuccessful(json* Attacker, json* Defender, std::string* tag);
 
 	float getPower() { return BasePower; }
-	float BaseDamageCalculation(int level, float AttackStat, float DefenceStat, float Bonus_Damage);
+	float BaseDamageCalculation(json* Attacker, json* Defender, float Bonus_Damage, bool usesMagic);
 
 	bool setStatus(_SQStatus newStatus, json* charac, int chanceRoll);
 

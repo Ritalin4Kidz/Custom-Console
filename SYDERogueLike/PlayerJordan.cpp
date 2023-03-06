@@ -21,4 +21,5 @@ void PlayerJordan::init_Char(int lvl)
 	this->setName("Jordan");
 	this->setSpeed(110);
 	this->setType(Electric);
+	this->setAbility(Ability_NaturalBoost);
 }

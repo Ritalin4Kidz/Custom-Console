@@ -8,6 +8,8 @@ public:
 		m_Type = Melee;
 		BasePower = 70;
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Melee\\SlashAnimation.bmp", 200, 80, 20, 20, 0, 40));
+		maxUsages = 10;
+		m_Accuracy = 80;
 	}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 protected:

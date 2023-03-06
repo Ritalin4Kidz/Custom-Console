@@ -15,3 +15,5 @@
 #include "SabotagedMoveEffect.h"
 #include "FailedMove.h"
 #include "TypeSwapMove.h"
+#include "LightningBoltMove.h"
+#include "LightningPunchMove.h"

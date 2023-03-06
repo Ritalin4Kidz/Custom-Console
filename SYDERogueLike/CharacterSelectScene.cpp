@@ -84,7 +84,8 @@ void CharacterSelectScene::onNewScene()
 		{
 			PlayerSelectObject(2, "Furi", L"EngineFiles\\CharacterBMPS\\Furi.bmp"),
 			PlayerSelectObject(2, "Alison",L"EngineFiles\\CharacterBMPS\\Alison.bmp"),
-			PlayerSelectObject(2, "Bruce", L"EngineFiles\\CharacterBMPS\\Bruce.bmp")
+			PlayerSelectObject(2, "Bruce", L"EngineFiles\\CharacterBMPS\\Bruce.bmp"),
+			PlayerSelectObject(3, "Jordan", L"EngineFiles\\CharacterBMPS\\Jordan.bmp")
 		});
 
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(

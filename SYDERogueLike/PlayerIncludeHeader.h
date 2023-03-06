@@ -3,3 +3,4 @@
 #include "PlayerFuri.h"
 #include "PlayerAlison.h"
 #include "PlayerBruce.h"
+#include "PlayerJordan.h"

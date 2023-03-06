@@ -156,6 +156,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GustMove.cpp" />
     <ClCompile Include="LevelSelectScene.cpp" />
+    <ClCompile Include="LightningBoltMove.cpp" />
     <ClCompile Include="MainMapScene.cpp" />
     <ClCompile Include="MainMenuScenes.cpp" />
     <ClCompile Include="MapConfig.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="PlayerAlison.cpp" />
     <ClCompile Include="PlayerBruce.cpp" />
     <ClCompile Include="PlayerFuri.cpp" />
+    <ClCompile Include="PlayerJordan.cpp" />
     <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="SabotagedMoveEffect.cpp" />
@@ -206,6 +208,8 @@
     <ClInclude Include="GustMove.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="LevelSelectScene.h" />
+    <ClInclude Include="LightningBoltMove.h" />
+    <ClInclude Include="LightningPunchMove.h" />
     <ClInclude Include="MainMapEnums.h" />
     <ClInclude Include="MainMapScene.h" />
     <ClInclude Include="MainMenuScenes.h" />
@@ -221,6 +225,7 @@
     <ClInclude Include="PlayerBruce.h" />
     <ClInclude Include="PlayerFuri.h" />
     <ClInclude Include="PlayerIncludeHeader.h" />
+    <ClInclude Include="PlayerJordan.h" />
     <ClInclude Include="PlayerStateScene.h" />
     <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="SabotagedMoveEffect.h" />

@@ -4,6 +4,7 @@
 #include "GameTypes.h"
 #include "Move.h"
 #include "ItemClass.h"
+#include "ConsumableItem.h"
 #include <memory>
 /*
 TODO:
@@ -59,7 +60,9 @@ public:
 	void AddInventory(std::shared_ptr<ItemClass> item) { m_Inventory.push_back(item); }
 	void SetInventory(vector<std::shared_ptr<ItemClass>> _Inv);
 	void SetInventoryAtIndex(int index, std::shared_ptr<ItemClass> i);
+	void SetInventoryDetailsAtIndex(int index, std::function<void()> f, string tag) { m_Inventory[index]->setFunction_Tag(f, tag); }
 	std::shared_ptr<ItemClass> getInventoryAtIndex(int index) { return m_Inventory[index]; }
+	void removeInventoryAtIndex(int index) { m_Inventory.erase(m_Inventory.begin() + index); }
 	vector<std::shared_ptr<ItemClass>> getInventory() { return m_Inventory; }
 	void ClearInventory() { m_Inventory.clear(); }
 

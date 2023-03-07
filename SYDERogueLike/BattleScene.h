@@ -43,6 +43,10 @@ public:
 	void onNewScene() override;
 	void destroyScene() override;
 
+	ConsoleWindow drawInventoryScreen(ConsoleWindow window, int windowWidth, int windowHeight);
+
+	static void validateInventory();
+
 	string getStatusString(_SQStatus s);
 
 	ColourClass getStatusColour(_SQStatus s);
@@ -52,6 +56,7 @@ public:
 	void test();
 
 	static void callMove() { HideUI();  doMoveCall = true; }
+	static void setUsesItem() { isItemMove = true; }
 	static void setSelectedMoveInt(int index) { selectedMove = index; }
 	void doMovePreWork();
 
@@ -63,10 +68,13 @@ public:
 	void ValidateUI();
 
 	static bool getMoveCall() { return doMoveCall; }
-
+	static bool inventoryActive;
 private:
 	static bool doMoveCall;
+	static bool isItemMove;
 	static int selectedMove;
+
+
 
 	float playerHeight;
 	float enemyHeight;

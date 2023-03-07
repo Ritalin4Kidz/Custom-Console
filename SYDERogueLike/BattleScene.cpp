@@ -1,6 +1,8 @@
 #include "BattleScene.h"
 
 bool BattleScene::doMoveCall = false;
+bool BattleScene::isItemMove = false;
+bool BattleScene::inventoryActive = false;
 int BattleScene::selectedMove = 0;
 /*
 TO DO LIST FOR BATTLE SCENE:
@@ -12,13 +14,38 @@ TO DO LIST FOR BATTLE SCENE:
 */
 void startMove()
 {
+	if (!BattleScene::inventoryActive)
+	{
+		BattleScene::callMove();
+	}
+}
+
+void inventoryClick()
+{
+	BattleScene::inventoryActive = !BattleScene::inventoryActive;
+}
+
+void nullClick()
+{
+	
+}
+
+void inventoryItemClick()
+{
+	BattleScene::inventoryActive = false;
+	BattleScene::setUsesItem();
+	BattleScene::setSelectedMoveInt(stoi(CustomAsset_Clickable::getLastButtonTag()));
 	BattleScene::callMove();
 }
 
+
 void moveClick()
 {
-	BattleScene::setSelectedMoveInt(stoi(SYDEClickableButton::getLastButtonTag()));
-	BattleScene::callMove();
+	if (!BattleScene::inventoryActive)
+	{
+		BattleScene::setSelectedMoveInt(stoi(SYDEClickableButton::getLastButtonTag()));
+		BattleScene::callMove();
+	}
 }
 
 ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -38,6 +65,12 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTGREY_LIGHTGREY_BG);
 		}
 	}
+
+	if (inventoryActive)
+	{
+		return drawInventoryScreen(window, windowWidth, windowHeight);
+	}
+
 
 	window = drawChars(window);
 
@@ -102,6 +135,8 @@ ConsoleWindow BattleScene::drawChars(ConsoleWindow window)
 
 void BattleScene::onNewScene()
 {
+	inventoryActive = false;
+	isItemMove = false;
 	m_SceneState = m_BSS_Normal;
 	playerHeight = 10;
 	enemyHeight = 1;
@@ -140,6 +175,21 @@ void BattleScene::onNewScene()
 		to_string(4),
 		"MoveData-" + to_string(4)
 	)));
+
+	//INVENTORY
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"    Inventory    ",
+		Vector2(1, 4),
+		Vector2(17, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		inventoryClick,
+		"Inventory",
+		"Inventory"
+	)));
+
+
 	ValidateUI();
 	ShowUI();
 	SydeRogueLikeStatics::toggleFightSuccess(true);
@@ -149,6 +199,12 @@ void BattleScene::destroyScene()
 {
 	//ALL THE WORK WE NEED TO DO BEFORE MOVING TO ANOTHER SCENE :P
 	m_Player->reviveStats();
+
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	{
+		SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, nullptr, nullptr);
+	}
+
 	SydeRogueLikeStatics::setPlayer(m_Player);
 //	for (int i = 0; i < m_MovesForTurn.size(); i++)
 //	{
@@ -157,6 +213,33 @@ void BattleScene::destroyScene()
 	m_MovesForTurn.clear();
 	ShowUI();
 	m_Player = NULL;
+}
+
+ConsoleWindow BattleScene::drawInventoryScreen(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	{
+		int x = (20 * (i % 2)) + 24;
+		int y = i % 4 >= 2 ? 12 : 2;
+		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->getItemIcon().draw_asset(window, Vector2(x, y));
+		window.setTextAtPoint(Vector2(x, y + 7), SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->getName(), BRIGHTWHITE);
+	}
+	return window;
+}
+
+void BattleScene::validateInventory()
+{
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	{
+		if (SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->isUsableInBattle())
+		{
+			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, inventoryItemClick, to_string(i));
+		}
+		else
+		{
+			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, nullClick, to_string(i));
+		}
+	}
 }
 
 string BattleScene::getStatusString(_SQStatus s)
@@ -235,20 +318,29 @@ void BattleScene::test()
 void BattleScene::doMovePreWork()
 {
 	std::shared_ptr<Move> PlayerMove;
-	if (selectedMove >= 4)
+
+	if (isItemMove)
 	{
-		PlayerMove = m_Player->getLastEffortMove();
-	}
-	else
-	{
-		PlayerMove = m_Player->getMoveAtIndex(selectedMove);
-	}
-	if (PlayerMove->getUsagesLeft() <= 0 && !PlayerMove->isLastEffortMove())
-	{
-		m_SceneState = m_BSS_Normal;
-		return;
+		PlayerMove = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(selectedMove);
+		SydeRogueLikeStatics::getPlayer()->removeInventoryAtIndex(selectedMove);
 	}
 
+	else
+	{
+		if (selectedMove >= 4)
+		{
+			PlayerMove = m_Player->getLastEffortMove();
+		}
+		else
+		{
+			PlayerMove = m_Player->getMoveAtIndex(selectedMove);
+		}
+		if (PlayerMove->getUsagesLeft() <= 0 && !PlayerMove->isLastEffortMove())
+		{
+			m_SceneState = m_BSS_Normal;
+			return;
+		}
+	}
 
 	//GENERATE ENEMY MOVE
 	std::shared_ptr<Move> EnemyMove = m_Enemy->determineMove(*m_Player);
@@ -256,7 +348,7 @@ void BattleScene::doMovePreWork()
 	doStatus(m_Player, false);
 	doStatus(m_Enemy, true);
 	//DETERMINE THE ORDER OF THE MOVES
-	if (m_Enemy->getSpeed() >= m_Player->getSpeed())
+	if (m_Enemy->getSpeed() >= m_Player->getSpeed() && !isItemMove)
 	{
 		m_MovesForTurn.push_back(MoveTurn(EnemyMove, true));
 		m_MovesForTurn.push_back(MoveTurn(PlayerMove, false));
@@ -269,6 +361,8 @@ void BattleScene::doMovePreWork()
 	//ANY OTHER LOADING
 	windowText_Top = "";
 	windowText_Bottom = "";
+	isItemMove = false;
+	validateInventory();
 	m_BattleState = m_BS_Prework;
 	//FINISH
 	m_SceneState = m_BSS_DoMoves;

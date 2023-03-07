@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <functional>
 #include "ConsoleWindow.h"
 #include "CustomAsset.h"
 #include "SYDEKeyCode.h"
@@ -34,6 +35,7 @@ public:
 	/// </summary>
 	/// <param name="f"></param>
 	void SetFunc(void(*f)()) { m_Function = f; }
+	void SetFunc(std::function<void()> f) { m_Function = f; }
 	void setTag(string newTag) { tag = newTag; }
 	string getTag() { return tag; }
 	void ForceHighlight() { highlighted = true; }
@@ -48,9 +50,9 @@ protected:
 	/// <summary>
 	/// Execute the main button function
 	/// </summary>
-	void DoFunc() { m_Function(); }
+	void DoFunc() { if (m_Function != nullptr) { m_Function(); } }
 private:
-	void(*m_Function)();
+	std::function<void()> m_Function = nullptr;
 	bool pointIsInButtonRange(Vector2 Point, Vector2 m_Pos);
 	bool canClick = true;
 	bool canHighlight = false;

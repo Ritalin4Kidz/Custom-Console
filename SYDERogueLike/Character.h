@@ -3,6 +3,7 @@
 #include <string>
 #include "GameTypes.h"
 #include "Move.h"
+#include "ItemClass.h"
 #include <memory>
 /*
 TODO:
@@ -55,6 +56,13 @@ public:
 	vector<std::shared_ptr<Move>> getMoves() { return m_MoveArray; }
 	void ClearMoves() { m_MoveArray.clear(); }
 
+	void AddInventory(std::shared_ptr<ItemClass> item) { m_Inventory.push_back(item); }
+	void SetInventory(vector<std::shared_ptr<ItemClass>> _Inv);
+	void SetInventoryAtIndex(int index, std::shared_ptr<ItemClass> i);
+	std::shared_ptr<ItemClass> getInventoryAtIndex(int index) { return m_Inventory[index]; }
+	vector<std::shared_ptr<ItemClass>> getInventory() { return m_Inventory; }
+	void ClearInventory() { m_Inventory.clear(); }
+
 	void SetAnimation(CustomAnimationAsset a) { m_Animation = a; m_Animation.setFrame(0); m_Animation.setPaused(false); m_Animation.setLooping(true); }
 	void init(int lvl);
 	CustomAnimationAsset getAnimationAsset() { return m_Animation; }
@@ -81,6 +89,7 @@ protected:
 	json m_JSONTag;
 
 	vector<std::shared_ptr<Move>> m_MoveArray = vector<std::shared_ptr<Move>>();
+	vector<std::shared_ptr<ItemClass>> m_Inventory = vector<std::shared_ptr<ItemClass>>();
 	CustomAnimationAsset m_Animation;
 
 	std::shared_ptr<Move> m_LastEffortMove;

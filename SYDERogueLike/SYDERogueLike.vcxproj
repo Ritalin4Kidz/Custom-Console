@@ -173,6 +173,7 @@
     <ClCompile Include="PlayerJordan.cpp" />
     <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
+    <ClCompile Include="PotionItem.cpp" />
     <ClCompile Include="SabotagedMoveEffect.cpp" />
     <ClCompile Include="SabotageMove.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
@@ -209,6 +210,7 @@
     <ClInclude Include="GameTypes.h" />
     <ClInclude Include="GustMove.h" />
     <ClInclude Include="ItemClass.h" />
+    <ClInclude Include="ItemsHeader.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="LevelSelectScene.h" />
     <ClInclude Include="LightningBoltMove.h" />
@@ -231,6 +233,7 @@
     <ClInclude Include="PlayerJordan.h" />
     <ClInclude Include="PlayerStateScene.h" />
     <ClInclude Include="PostBattleScene.h" />
+    <ClInclude Include="PotionItem.h" />
     <ClInclude Include="SabotagedMoveEffect.h" />
     <ClInclude Include="SabotageMove.h" />
     <ClInclude Include="ScrapMove.h" />

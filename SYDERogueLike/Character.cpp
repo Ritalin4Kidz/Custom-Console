@@ -54,6 +54,16 @@ void Character::SetMoveAtIndex(int index, std::shared_ptr<Move> m)
     this->m_MoveArray[index] = m;
 }
 
+void Character::SetInventory(vector<std::shared_ptr<ItemClass>> _Inv)
+{
+    m_Inventory = _Inv;
+}
+
+void Character::SetInventoryAtIndex(int index, std::shared_ptr<ItemClass> i)
+{
+    this->m_Inventory[index] =i;
+}
+
 void Character::init(int lvl)
 {
 }

@@ -1,9 +1,19 @@
 #include "pch.h"
 #include "PlayerStateScene.h"
-
+PlayerStateScene_State PlayerStateScene::m_SceneState = PSS_PlayerViewState;
 void returnToMap()
 {
 	SydeRogueLikeStatics::setSceneTag(SydeRogueLikeStatics::getLevelSceneTag());
+}
+
+void selectPV()
+{
+	PlayerStateScene::m_SceneState = PSS_PlayerViewState;
+}
+
+void selectIV()
+{
+	PlayerStateScene::m_SceneState = PSS_InventoryViewState;
 }
 
 ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -16,6 +26,19 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 		}
 	}
 
+	if (m_SceneState == PSS_PlayerViewState)
+	{
+		window = drawPV(window, windowWidth, windowHeight);
+	}
+	else if (m_SceneState == PSS_InventoryViewState)
+	{
+		window = drawIV(window, windowWidth, windowHeight);
+	}
+	return window;
+}
+
+ConsoleWindow PlayerStateScene::drawPV(ConsoleWindow window, int windowWidth, int windowHeight)
+{
 	window.setTextAtPoint(Vector2(2, 1), SydeRogueLikeStatics::getPlayer()->getName(), BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(2, 3), "Health: " + to_string(SydeRogueLikeStatics::getPlayer()->getHealth()) + "/" + to_string(SydeRogueLikeStatics::getPlayer()->getMaxHealth()), BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(2, 4), "Attack: " + to_string(SydeRogueLikeStatics::getPlayer()->getAttack()), BLACK_LIGHTGREY_BG);
@@ -27,7 +50,7 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 	window.setTextAtPoint(Vector2(2, 10), "Moves: ", BLACK_LIGHTGREY_BG);
 	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
 	{
-		window.setTextAtPoint(Vector2(2, (i *2) + 11), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
+		window.setTextAtPoint(Vector2(2, (i * 2) + 11), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
 			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getUsagesLeft()) + "/" +
 			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getMaxUsages())
 			, BLACK_LIGHTGREY_BG);
@@ -41,8 +64,32 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 	return window;
 }
 
+ConsoleWindow PlayerStateScene::drawIV(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	{
+		int x = (20 * (i % 3)) + 4;
+		int y = i % 6 >= 3 ? 12 : 2;
+		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->getItemIcon().draw_asset(window, Vector2(x, y));
+	}
+	return window;
+}
+
+void PlayerStateScene::test()
+{
+	if (SydeRogueLikeStatics::getPlayer()->getInventory().size() == 0)
+	{
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+	}
+}
+
 void PlayerStateScene::onNewScene()
 {
+	test();
+	PlayerStateScene::m_SceneState = PSS_PlayerViewState;
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"BACK TO MAP",
 		Vector2(0, 19),
@@ -51,6 +98,26 @@ void PlayerStateScene::onNewScene()
 		NULLCOLOUR,
 		false,
 		returnToMap
+	)));
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"PV",
+		Vector2(30, 1),
+		Vector2(2, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		selectPV
+	)));
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"IV",
+		Vector2(34, 1),
+		Vector2(2, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		selectIV
 	)));
 
 	string charBmp = "EngineFiles\\CharacterBMPS\\" + SydeRogueLikeStatics::getPlayer()->getName() + ".bmp";

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "PlayerStateScene.h"
+int PlayerStateScene::inventoryStart = 0;
 PlayerStateScene_State PlayerStateScene::m_SceneState = PSS_PlayerViewState;
 void returnToMap()
 {
@@ -14,6 +15,16 @@ void selectPV()
 void selectIV()
 {
 	PlayerStateScene::m_SceneState = PSS_InventoryViewState;
+}
+
+void inventoryStateNextClick()
+{
+	PlayerStateScene::addInvStart(4);
+}
+
+void inventoryStatePrevClick()
+{
+	PlayerStateScene::addInvStart(-4);
 }
 
 ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -66,12 +77,31 @@ ConsoleWindow PlayerStateScene::drawPV(ConsoleWindow window, int windowWidth, in
 
 ConsoleWindow PlayerStateScene::drawIV(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	for (int i = 0; i < windowWidth; i++)
 	{
-		int x = (20 * (i % 3)) + 4;
-		int y = i % 6 >= 3 ? 12 : 2;
-		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->getItemIcon().draw_asset(window, Vector2(x, y));
+		for (int ii = 0; ii < windowHeight; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BLACK);
+		}
 	}
+
+	for (int i = 0; i < 20; i++)
+	{
+		for (int ii = 0; ii < windowHeight; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTGREY_LIGHTGREY_BG);
+		}
+	}
+	for (int i = 0; (i + inventoryStart) < SydeRogueLikeStatics::getPlayer()->getInventory().size() && i < 4; i++)
+	{
+		int x = (20 * (i % 2)) + 24;
+		int y = i % 4 >= 2 ? 12 : 2;
+		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getItemIcon().draw_asset(window, Vector2(x, y));
+		window.setTextAtPoint(Vector2(x, y + 7), SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getName(), BRIGHTWHITE);
+	}
+	window.setTextAtPoint(Vector2(1, 4), "    Inventory    ", BLACK_BRIGHTWHITE_BG);
+	window = invNext.draw_ui(window);
+	window = invPrev.draw_ui(window);
 	return window;
 }
 
@@ -80,15 +110,20 @@ void PlayerStateScene::test()
 	if (SydeRogueLikeStatics::getPlayer()->getInventory().size() == 0)
 	{
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));
 	}
 }
 
 void PlayerStateScene::onNewScene()
 {
 	test();
+	inventoryStart = 0;
 	PlayerStateScene::m_SceneState = PSS_PlayerViewState;
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"BACK TO MAP",
@@ -119,6 +154,33 @@ void PlayerStateScene::onNewScene()
 		false,
 		selectIV
 	)));
+
+	invPrev = SYDEClickableButton(
+		"<<",
+		Vector2(1, 5),
+		Vector2(2, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryStatePrevClick,
+		"prevInv",
+		"prevInv"
+	);
+	invPrev.setEnabled(true);
+	invNext = SYDEClickableButton(
+		">>",
+		Vector2(16, 5),
+		Vector2(2, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryStateNextClick,
+		"nextInv",
+		"nextInv"
+	);
+	invNext.setEnabled(true);
+
+
 
 	string charBmp = "EngineFiles\\CharacterBMPS\\" + SydeRogueLikeStatics::getPlayer()->getName() + ".bmp";
 	wstring wCharBmp = wstring(charBmp.begin(), charBmp.end());

@@ -35,6 +35,22 @@ public:
 
 	static PlayerStateScene_State m_SceneState;
 
+	static void addInvStart(int amt) {
+		if ((inventoryStart + amt) >= SydeRogueLikeStatics::getPlayer()->getInventory().size())
+		{
+			return;
+		}
+		inventoryStart += amt;
+		if (inventoryStart < 0)
+		{
+			inventoryStart = 0;
+		}
+	}
+
 private:
+	static int inventoryStart;
+
+	SYDEClickableButton invPrev;
+	SYDEClickableButton invNext;
 	CustomAsset playerAsset = CustomAsset();
 };

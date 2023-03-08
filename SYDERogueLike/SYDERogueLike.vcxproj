@@ -174,6 +174,7 @@
     <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="PotionItem.cpp" />
+    <ClCompile Include="RockItem.cpp" />
     <ClCompile Include="SabotagedMoveEffect.cpp" />
     <ClCompile Include="SabotageMove.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
@@ -234,6 +235,7 @@
     <ClInclude Include="PlayerStateScene.h" />
     <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="PotionItem.h" />
+    <ClInclude Include="RockItem.h" />
     <ClInclude Include="SabotagedMoveEffect.h" />
     <ClInclude Include="SabotageMove.h" />
     <ClInclude Include="ScrapMove.h" />

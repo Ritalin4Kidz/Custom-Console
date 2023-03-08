@@ -23,7 +23,7 @@ public:
 	};
 	void Execute(json* Attacker, json* Defender, std::string* tag) override {}
 
-	void setFunction_Tag(std::function<void()> f, string tag) { m_ItemIcon.SetFunc(f); m_ItemIcon.setTag(tag); }
+	void setFunction_Tag(std::function<void()> f, string tag);
 
 protected:
 	CustomAsset_Clickable m_ItemIcon;

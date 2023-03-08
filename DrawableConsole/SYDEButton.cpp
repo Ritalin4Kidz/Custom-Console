@@ -79,5 +79,6 @@ SYDEButton & SYDEButton::operator=(SYDEButton other)
 	this->HiLightColour = other.HiLightColour;
 	this->m_Active = other.m_Active;
 	this->_TRANSPARENT = other._TRANSPARENT;
+	this->SetFunc(other.getFunction());
 	return*this;
 }

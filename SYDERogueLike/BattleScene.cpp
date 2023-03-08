@@ -4,6 +4,7 @@ bool BattleScene::doMoveCall = false;
 bool BattleScene::isItemMove = false;
 bool BattleScene::inventoryActive = false;
 int BattleScene::selectedMove = 0;
+int BattleScene::inventoryStart = 0;
 /*
 TO DO LIST FOR BATTLE SCENE:
 - ADD ACCURACY INTO MOVE (DONE)
@@ -23,6 +24,17 @@ void startMove()
 void inventoryClick()
 {
 	BattleScene::inventoryActive = !BattleScene::inventoryActive;
+	BattleScene::refreshInv();
+}
+
+void inventoryNextClick()
+{
+	BattleScene::addInvStart(4);
+}
+
+void inventoryPrevClick()
+{
+	BattleScene::addInvStart(-4);
 }
 
 void nullClick()
@@ -143,6 +155,33 @@ void BattleScene::onNewScene()
 	m_Player = SydeRogueLikeStatics::getPlayer();
 	m_Player->saveStats();
 	m_Enemy = SydeRogueLikeStatics::getEnemy();
+	invPrev = SYDEClickableButton(
+		"<<",
+		Vector2(1, 5),
+		Vector2(2, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryPrevClick,
+		"prevInv",
+		"prevInv"
+	);
+	invPrev.setEnabled(true);
+	invNext = SYDEClickableButton(
+		">>",
+		Vector2(16, 5),
+		Vector2(2, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryNextClick,
+		"nextInv",
+		"nextInv"
+	);
+	invNext.setEnabled(true);
+
+	validateInventory();
+
 	for (int i = 0; i < m_Player->getMoves().size(); i++)
 	{
 		addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
@@ -202,7 +241,7 @@ void BattleScene::destroyScene()
 
 	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
 	{
-		SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, nullptr, nullptr);
+		SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, nullptr, "");
 	}
 
 	SydeRogueLikeStatics::setPlayer(m_Player);
@@ -217,13 +256,15 @@ void BattleScene::destroyScene()
 
 ConsoleWindow BattleScene::drawInventoryScreen(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	for (int i = 0; (i + inventoryStart) < SydeRogueLikeStatics::getPlayer()->getInventory().size() && i < 4; i++)
 	{
 		int x = (20 * (i % 2)) + 24;
 		int y = i % 4 >= 2 ? 12 : 2;
-		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->getItemIcon().draw_asset(window, Vector2(x, y));
-		window.setTextAtPoint(Vector2(x, y + 7), SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->getName(), BRIGHTWHITE);
+		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getItemIcon().draw_asset(window, Vector2(x, y));
+		window.setTextAtPoint(Vector2(x, y + 7), SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getName(), BRIGHTWHITE);
 	}
+	window = invNext.draw_ui(window);
+	window = invPrev.draw_ui(window);
 	return window;
 }
 
@@ -240,6 +281,7 @@ void BattleScene::validateInventory()
 			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, nullClick, to_string(i));
 		}
 	}
+	inventoryStart = 0;
 }
 
 string BattleScene::getStatusString(_SQStatus s)

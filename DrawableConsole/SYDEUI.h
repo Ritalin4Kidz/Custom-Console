@@ -40,7 +40,7 @@ public:
 	string m_Label = "";
 
 	string returnLabel() { return m_Label; }
-
+	std::function<void()> getFunction() {return m_Function;}
 	void deleteFunction() { m_Function = nullptr; }
 
 	/// <summary>

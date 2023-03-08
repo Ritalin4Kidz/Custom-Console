@@ -69,12 +69,27 @@ public:
 
 	static bool getMoveCall() { return doMoveCall; }
 	static bool inventoryActive;
+	static void refreshInv() { inventoryStart = 0; }
+	static void addInvStart(int amt) {
+		if ((inventoryStart + amt) >= SydeRogueLikeStatics::getPlayer()->getInventory().size())
+		{
+			return;
+		}
+		inventoryStart += amt;
+		if (inventoryStart < 0)
+		{
+			inventoryStart = 0;
+		}
+	}
 private:
 	static bool doMoveCall;
 	static bool isItemMove;
 	static int selectedMove;
 
+	static int inventoryStart;
 
+	SYDEClickableButton invPrev;
+	SYDEClickableButton invNext;
 
 	float playerHeight;
 	float enemyHeight;

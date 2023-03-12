@@ -3,7 +3,7 @@
 #include "SydeRogueLikeStatics.h"
 
 #include "SYDEstdafx.h"
-#include "SYDEUI.h"
+#include "SYDEEngineUI.h"
 #include <SYDEClickableButton.h>
 #include "Enemy.h"
 #include "Player.h"
@@ -15,6 +15,12 @@ enum BattleSceneStates
 	m_BSS_DoMovePreWork = 1,
 	m_BSS_DoMoves = 2,
 	m_BSS_EndFall = 3
+};
+
+enum BattleSceneViewState
+{
+	BSVS_Normal,
+	BSVS_Inventory
 };
 
 enum BattleState
@@ -44,6 +50,7 @@ public:
 	void destroyScene() override;
 
 	ConsoleWindow drawInventoryScreen(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow drawDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	static void validateInventory();
 
@@ -69,6 +76,7 @@ public:
 
 	static bool getMoveCall() { return doMoveCall; }
 	static bool inventoryActive;
+	static bool detailsActive;
 	static void refreshInv() { inventoryStart = 0; }
 	static void addInvStart(int amt) {
 		if ((inventoryStart + amt) >= SydeRogueLikeStatics::getPlayer()->getInventory().size())

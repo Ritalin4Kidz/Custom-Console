@@ -10,14 +10,35 @@ SYDELabel_Hoverable::SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a
 	TextColour = txtColour;
 }
 
-SYDELabel_Hoverable::SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, void(*f)())
+SYDELabel_Hoverable::SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, string tag)
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	_TRANSPARENT = _TRANSPARENTBG;
+	TextColour = txtColour;
+	m_Tag = tag;
+}
+
+SYDELabel_Hoverable::SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, std::function<void()> f, std::function<void()> g)
 {
 	m_Text = a_text;
 	m_Pos = a_Pos;
 	m_Size = a_Size;
 	TextColour = txtColour;
 	_TRANSPARENT = _TRANSPARENTBG;
-	m_Function = f;
+	SetFunc(f);
+	SetFuncHoverOff(g);
+}
+
+SYDELabel_Hoverable::SYDELabel_Hoverable(string a_text, Vector2 a_Pos, Vector2 a_Size, ColourClass txtColour, bool _TRANSPARENTBG, std::function<void()> f)
+{
+	m_Text = a_text;
+	m_Pos = a_Pos;
+	m_Size = a_Size;
+	TextColour = txtColour;
+	_TRANSPARENT = _TRANSPARENTBG;
+	SetFunc(f);
 }
 
 ConsoleWindow SYDELabel_Hoverable::draw_ui(ConsoleWindow window)
@@ -27,11 +48,21 @@ ConsoleWindow SYDELabel_Hoverable::draw_ui(ConsoleWindow window)
 		if (hovering == false)
 		{
 			hovering = true;
-			DoFunc();
+			if (getFunction() != NULL)
+			{
+				DoFunc();
+			}
 		}
 	}
 	else
 	{
+		if (hovering == true)
+		{
+			if (m_Function_OffHover != NULL)
+			{
+				DoFuncHoverOff();
+			}
+		}
 		hovering = false;
 	}
 	switch (_Anchor)

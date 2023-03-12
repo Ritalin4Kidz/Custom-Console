@@ -31,7 +31,6 @@ public:
 
 	void destroyScene() override;
 
-	string TypeToString(_SQType type);
 
 	static PlayerStateScene_State m_SceneState;
 

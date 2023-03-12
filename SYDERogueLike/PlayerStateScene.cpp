@@ -65,7 +65,7 @@ ConsoleWindow PlayerStateScene::drawPV(ConsoleWindow window, int windowWidth, in
 			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getUsagesLeft()) + "/" +
 			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getMaxUsages())
 			, BLACK_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(4, (i * 2) + 12), TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType()) + "  P: " +
+		window.setTextAtPoint(Vector2(4, (i * 2) + 12), SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType()) + "  P: " +
 			to_string((int)SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getPower())
 			, BLACK_LIGHTGREY_BG);
 	}
@@ -192,28 +192,3 @@ void PlayerStateScene::destroyScene()
 {
 }
 
-string PlayerStateScene::TypeToString(_SQType type)
-{
-	switch (type)
-	{
-	case Fire:
-		return "Fire";
-	case Water:
-		return "Water";
-	case Air:
-		return "Air";
-	case Grass:
-		return "Grass";
-	case Metal:
-		return "Metal";
-	case Melee:
-		return "Melee";
-	case Snow:
-		return "Snow";
-	case Electric:
-		return "Electric";
-	case Telekinetic:
-		return "Telekinetic";
-	}
-	return "Typeless";
-}

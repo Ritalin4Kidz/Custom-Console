@@ -27,6 +27,8 @@ public:
 	static void toggleFightSuccess(bool isOn) { fightSuccess = isOn; }
 	static bool getFightSuccess() { return fightSuccess; }
 
+	static string TypeToString(_SQType type);
+
 private:
 	static std::string m_SceneTag;
 	static std::string m_BattleTag;

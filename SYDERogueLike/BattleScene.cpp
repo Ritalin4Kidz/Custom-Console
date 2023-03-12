@@ -3,6 +3,7 @@
 bool BattleScene::doMoveCall = false;
 bool BattleScene::isItemMove = false;
 bool BattleScene::inventoryActive = false;
+bool BattleScene::detailsActive = false;
 int BattleScene::selectedMove = 0;
 int BattleScene::inventoryStart = 0;
 /*
@@ -26,6 +27,16 @@ void inventoryClick()
 	BattleScene::inventoryActive = !BattleScene::inventoryActive;
 	BattleScene::refreshInv();
 }
+
+void detailsHoverOn()
+{
+	BattleScene::detailsActive = true;
+}
+void detailsHoverOff()
+{
+	BattleScene::detailsActive = false;
+}
+
 
 void inventoryNextClick()
 {
@@ -60,6 +71,15 @@ void moveClick()
 	}
 }
 
+ConsoleWindow BattleScene::drawDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+
+	window.setTextAtPoint(Vector2(22, 2), m_Enemy->getName(), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(22, 3), "Level: " + to_string(m_Enemy->getLevel()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(22, 4), "Type: " + SydeRogueLikeStatics::TypeToString(m_Enemy->getType()), BRIGHTWHITE);
+	return window;
+}
+
 ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 0; i < windowWidth; i++)
@@ -81,6 +101,10 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 	if (inventoryActive)
 	{
 		return drawInventoryScreen(window, windowWidth, windowHeight);
+	}
+	else if (detailsActive)
+	{
+		return drawDetailsScreen(window, windowWidth, windowHeight);
 	}
 
 
@@ -148,6 +172,7 @@ ConsoleWindow BattleScene::drawChars(ConsoleWindow window)
 void BattleScene::onNewScene()
 {
 	inventoryActive = false;
+	detailsActive = false;
 	isItemMove = false;
 	m_SceneState = m_BSS_Normal;
 	playerHeight = 10;
@@ -227,6 +252,9 @@ void BattleScene::onNewScene()
 		"Inventory",
 		"Inventory"
 	)));
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel_Hoverable("  Enemy Details  ", Vector2(1, 6),
+		Vector2(17, 1), BLACK_BRIGHTWHITE_BG, false, detailsHoverOn, detailsHoverOff)));
 
 
 	ValidateUI();

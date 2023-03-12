@@ -52,12 +52,14 @@ public:
 	/// <param name="a"> - Text Anchor</param>
 	void setLabelAnchor(SYDELabelAnchor a) { _Anchor = a; }
 
+	string getTag() { return m_Tag; }
+
 protected:
 	bool _WRAPTEXT = false;
 	bool _TRANSPARENT = false;
 	Vector2 m_Size = Vector2(0, 0);
 	ColourClass TextColour = NULLCOLOUR;
-
+	string m_Tag;
 	ConsoleWindow draw_normal(ConsoleWindow window);
 	ConsoleWindow draw_center_anchored(ConsoleWindow window);
 	ConsoleWindow draw_right_anchored(ConsoleWindow window);

@@ -4,7 +4,7 @@ void PlayerFuego::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
 		std::shared_ptr<Move>(new SlashMove()),
-		std::shared_ptr<Move>(new BoneClubMove()),
+		std::shared_ptr<Move>(new EnchantmentMove()),
 		std::shared_ptr<Move>(new SabotageMove()),
 		std::shared_ptr<Move>(new TypeSwapMove()),
 		}));

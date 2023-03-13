@@ -18,7 +18,8 @@ enum _SQStatus {
 	Status_Burnt,
 	Status_Paralyzed,
 	Status_Sleep,
-	Status_Sabotaged
+	Status_Sabotaged,
+	Status_Enchanted
 };
 enum _SQ_Stat_Increase {
 	STATINCREASE_HEALTH = 0,

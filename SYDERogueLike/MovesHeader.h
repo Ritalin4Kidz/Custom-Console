@@ -18,3 +18,4 @@
 #include "LightningBoltMove.h"
 #include "LightningPunchMove.h"
 #include "FuegoSwordMove.h"
+#include "EnchantmentMove.h"

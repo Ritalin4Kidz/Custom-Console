@@ -76,10 +76,10 @@ ConsoleWindow BattleScene::drawDetailsScreen(ConsoleWindow window, int windowWid
 	window.setTextAtPoint(Vector2(22, 3), "Level: " + to_string(m_Enemy->getLevel()), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(22, 4), "Type: " + SydeRogueLikeStatics::TypeToString(m_Enemy->getType()), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(22, 5), "Moves: ", BRIGHTWHITE);
-	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
+	for (int i = 0; i < m_Enemy->getMoves().size(); i++)
 	{
-		window.setTextAtPoint(Vector2(22, (i + 6)), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
-			SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType())
+		window.setTextAtPoint(Vector2(22, (i + 6)), m_Enemy->getMoveAtIndex(i)->getName() + ": " +
+			SydeRogueLikeStatics::TypeToString(m_Enemy->getMoveAtIndex(i)->getType())
 			, BRIGHTWHITE);
 	}
 	return window;
@@ -340,6 +340,10 @@ string BattleScene::getStatusString(_SQStatus s)
 	{
 		return "SBT";
 	}
+	else if (s == Status_Enchanted)
+	{
+		return "ECT";
+	}
 	return "";
 }
 
@@ -356,6 +360,10 @@ ColourClass BattleScene::getStatusColour(_SQStatus s)
 	if (s == Status_Sabotaged)
 	{
 		return BLACK_BRIGHTYELLOW_BG;
+	}
+	if (s == Status_Enchanted)
+	{
+		return BRIGHTWHITE_PURPLE_BG;
 	}
 	return NULLCOLOUR;
 }

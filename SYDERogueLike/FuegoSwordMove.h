@@ -9,6 +9,7 @@ public:
 		BasePower = 25;
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Metal\\SwordAnimation.bmp", 100, 100, 20, 20, 0, 25));
 		lastEffortMove = true;
+		m_Accuracy = 100;
 	}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 protected:

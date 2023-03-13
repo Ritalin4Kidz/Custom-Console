@@ -17,3 +17,4 @@
 #include "TypeSwapMove.h"
 #include "LightningBoltMove.h"
 #include "LightningPunchMove.h"
+#include "FuegoSwordMove.h"

@@ -16,7 +16,7 @@ TO DO LIST FOR BATTLE SCENE:
 */
 void startMove()
 {
-	if (!BattleScene::inventoryActive)
+	if (!BattleScene::inventoryActive && !BattleScene::detailsActive)
 	{
 		BattleScene::callMove();
 	}
@@ -25,16 +25,14 @@ void startMove()
 void inventoryClick()
 {
 	BattleScene::inventoryActive = !BattleScene::inventoryActive;
+	BattleScene::detailsActive = false;
 	BattleScene::refreshInv();
 }
 
-void detailsHoverOn()
+void detailsClick()
 {
-	BattleScene::detailsActive = true;
-}
-void detailsHoverOff()
-{
-	BattleScene::detailsActive = false;
+	BattleScene::detailsActive = !BattleScene::detailsActive;
+	BattleScene::inventoryActive = false;
 }
 
 
@@ -77,6 +75,13 @@ ConsoleWindow BattleScene::drawDetailsScreen(ConsoleWindow window, int windowWid
 	window.setTextAtPoint(Vector2(22, 2), m_Enemy->getName(), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(22, 3), "Level: " + to_string(m_Enemy->getLevel()), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(22, 4), "Type: " + SydeRogueLikeStatics::TypeToString(m_Enemy->getType()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(22, 5), "Moves: ", BRIGHTWHITE);
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
+	{
+		window.setTextAtPoint(Vector2(22, (i + 6)), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
+			SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType())
+			, BRIGHTWHITE);
+	}
 	return window;
 }
 
@@ -253,8 +258,17 @@ void BattleScene::onNewScene()
 		"Inventory"
 	)));
 
-	addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel_Hoverable("  Enemy Details  ", Vector2(1, 6),
-		Vector2(17, 1), BLACK_BRIGHTWHITE_BG, false, detailsHoverOn, detailsHoverOff)));
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"  Enemy Details  ",
+		Vector2(1, 6),
+		Vector2(17, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		detailsClick,
+		"Enemy Details",
+		"Enemy Details"
+	)));
 
 
 	ValidateUI();
@@ -575,7 +589,7 @@ void BattleScene::ValidateUI()
 			int moveIndex =stoi(getLabelInUI(i).substr(getLabelInUI(i).size() - 1, 1));
 			if (moveIndex >= m_Player->getMoves().size())
 			{
-				setUIEnabled(m_Player->getUsableMoves().size() <= 0, i);
+				setUIEnabled(m_Player->getUsableMoves().size() <= 0 || m_Player->getAbility() == Ability_Constant_Struggle, i);
 			}
 			else
 			{

@@ -45,6 +45,10 @@ public:
 		{
 			return new PlayerJordan(level);
 		}
+		else if (tag == "Fuego")
+		{
+			return new PlayerFuego(level);
+		}
 		return new Player();
 	}
 private:

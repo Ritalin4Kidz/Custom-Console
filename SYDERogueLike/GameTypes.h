@@ -41,5 +41,7 @@ enum _SQAbility
 	//CHARACTER CANNOT SLEEP
 	Ability_Insomnia,
 	//ATTACK BOOSTED WHEN MOVE IS SAME TYPE AS CHARACTER
-	Ability_NaturalBoost
+	Ability_NaturalBoost,
+	//CAN USE LAST EFFORT MOVES WHENEVER
+	Ability_Constant_Struggle
 };

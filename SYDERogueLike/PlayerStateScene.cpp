@@ -57,7 +57,7 @@ ConsoleWindow PlayerStateScene::drawPV(ConsoleWindow window, int windowWidth, in
 	window.setTextAtPoint(Vector2(2, 6), "Speed: " + to_string(SydeRogueLikeStatics::getPlayer()->getSpeed()), BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(2, 7), "M Attack: " + to_string(SydeRogueLikeStatics::getPlayer()->getMagicAttack()), BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(2, 8), "M Defence: " + to_string(SydeRogueLikeStatics::getPlayer()->getMagicDefence()), BLACK_LIGHTGREY_BG);
-
+	window.setTextAtPoint(Vector2(2, 9), "Money: " + to_string(SydeRogueLikeStatics::getPlayer()->getMoney()), BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(2, 10), "Moves: ", BLACK_LIGHTGREY_BG);
 	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
 	{

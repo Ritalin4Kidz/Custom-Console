@@ -49,6 +49,10 @@ public:
 
 	void validateCurrentJsonTag();
 
+	void setMoney(int money) { m_Money = money; }
+	int getMoney() { return m_Money; }
+	void addMoney(int m) { m_Money += m; }
+
 	void validateFromJson(const json& j);
 
 	void SetMoves(vector<std::shared_ptr<Move>> _Moves);
@@ -88,6 +92,9 @@ protected:
 	int m_MagicDefence = 1;
 	int m_Level = 1;
 	int m_Speed = 30;
+
+	int m_Money = 0;
+
 	std::string m_Name = "N/A";
 	json m_JSONTag;
 

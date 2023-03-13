@@ -41,7 +41,9 @@ void PostBattleScene::onNewScene()
 	//IF SUCCESS
 	string bossTag = SydeRogueLikeStatics::getEnemy()->getEnemyTag();
 	int xpGain = SydeRogueLikeStatics::getEnemy()->getXpGain();
+	int moneyGain = SydeRogueLikeStatics::getEnemy()->getMoney();
 	SydeRogueLikeStatics::addPlayerXP(xpGain);
+	SydeRogueLikeStatics::addPlayerMoney(moneyGain);
 	SydeRogueLikeStatics::setEnemy(nullptr);
 	if (SydeRogueLikeStatics::getFightSuccess())
 	{
@@ -69,7 +71,7 @@ void PostBattleScene::onNewScene()
 		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
 			"XP Gained: " + std::to_string(xpGain),
 			Vector2(6, 5),
-			Vector2(10, 1),
+			Vector2(20, 1),
 			BLACK,
 			true)));
 		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
@@ -81,6 +83,12 @@ void PostBattleScene::onNewScene()
 		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
 			SydeRogueLikeStatics::getPlayer()->getXPStr(),
 			Vector2(6, 7),
+			Vector2(20, 1),
+			BLACK,
+			true)));
+		addToUIControl(std::shared_ptr<SYDEUI>(new SYDELabel(
+			"Money Gained: " + std::to_string(moneyGain),
+			Vector2(6, 8),
 			Vector2(20, 1),
 			BLACK,
 			true)));

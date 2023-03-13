@@ -21,4 +21,5 @@ void PlayerBruce::init_Char(int lvl)
 	this->setName("Bruce");
 	this->setSpeed(50);
 	this->setType(Melee);
+	this->setMoney(100);
 }

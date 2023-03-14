@@ -22,3 +22,6 @@
 #include "BrightIdeaMove.h"
 #include "RoboticsMove.h"
 #include "ShatteredBulbMove.h"
+#include "BulkUpMove.h"
+#include "BloodPactMove.h"
+#include "SnowballMove.h"

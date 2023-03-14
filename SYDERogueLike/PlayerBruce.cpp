@@ -22,4 +22,10 @@ void PlayerBruce::init_Char(int lvl)
 	this->setSpeed(50);
 	this->setType(Melee);
 	this->setMoney(100);
+	addMovePool();
+}
+
+void PlayerBruce::addMovePool()
+{
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new BloodPactMove()), 50));
 }

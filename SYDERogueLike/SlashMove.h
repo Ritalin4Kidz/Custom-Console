@@ -10,7 +10,7 @@ public:
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Melee\\SlashAnimation.bmp", 200, 80, 20, 20, 0, 40));
 		maxUsages = 10;
 		usagesLeft = maxUsages;
-		m_Accuracy = 80;
+		m_Accuracy = 95;
 		m_TM_Identifier = "TM_001";
 	}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;

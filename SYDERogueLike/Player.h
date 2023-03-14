@@ -41,7 +41,9 @@ protected:
 	//WE SHOULD ONLY ADD TO THIS
 	std::vector<MovePoolItem> m_MovePool = std::vector<MovePoolItem>(
 		{
-			MovePoolItem(std::shared_ptr<Move>(new SlashMove()), 30)
+			MovePoolItem(std::shared_ptr<Move>(new SlashMove()), 30),
+			MovePoolItem(std::shared_ptr<Move>(new BulkUpMove()), 35),
+			MovePoolItem(std::shared_ptr<Move>(new SnowballMove()), 40)
 		}); 
 	int savedAttackStat;
 	int savedDefenceStat;

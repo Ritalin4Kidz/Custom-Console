@@ -148,8 +148,10 @@
     <ClCompile Include="BalloonPopMove.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BloodGhostEnemy.cpp" />
+    <ClCompile Include="BloodPactMove.cpp" />
     <ClCompile Include="BoneClubMove.cpp" />
     <ClCompile Include="BrightIdeaMove.cpp" />
+    <ClCompile Include="BulkUpMove.cpp" />
     <ClCompile Include="BurntStatus.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CharacterSelectScene.cpp" />
@@ -206,8 +208,10 @@
     <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BloodGhostEnemy.h" />
+    <ClInclude Include="BloodPactMove.h" />
     <ClInclude Include="BoneClubMove.h" />
     <ClInclude Include="BrightIdeaMove.h" />
+    <ClInclude Include="BulkUpMove.h" />
     <ClInclude Include="BurntStatus.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterSelectScene.h" />
@@ -264,6 +268,7 @@
     <ClInclude Include="SmokeBreakMove.h" />
     <ClInclude Include="SmokeMoveType.h" />
     <ClInclude Include="SmokingCrab.h" />
+    <ClInclude Include="SnowballMove.h" />
     <ClInclude Include="SydeCoastLevel.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />

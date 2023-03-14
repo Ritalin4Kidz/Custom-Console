@@ -11,6 +11,7 @@ public:
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\ItemUseAnimations\\PotionUsage.bmp", 100, 180, 20, 20, 0, 45));
 	}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
+	void useItem(json* Attacker) override;
 private:
 
 };

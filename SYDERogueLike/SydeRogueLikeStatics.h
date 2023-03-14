@@ -19,9 +19,15 @@ public:
 	static std::shared_ptr<Player> getPlayer() { return m_Player; }
 
 	static void addPlayerInv(std::shared_ptr<ItemClass> newItem) { m_Player->AddInventory(newItem); }
+	static void removePlayerInv(int index) { m_Player->removeInventoryAtIndex(index); }
+	static void addPlayerMove(std::shared_ptr<Move> newMove) { m_Player->addMove(newMove); }
+	static void removePlayerMove(int index) { m_Player->removeMoveAtIndex(index); }
 
 	static void addPlayerMoney(int m) { m_Player->addMoney(m); }
 	static bool spendPlayerMoney(int m) {return m_Player->removeMoney(m); }
+
+	static void validatePlayerJson() { m_Player->validateCurrentJsonTag(); }
+	static void validatePlayerFromJson(json j) { m_Player->validateFromJson(j); }
 
 	static void setEnemy(std::shared_ptr<Enemy> newEnemy) { m_Enemy = newEnemy; }
 	static std::shared_ptr<Enemy> getEnemy() { return m_Enemy; }

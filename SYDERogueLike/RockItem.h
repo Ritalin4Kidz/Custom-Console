@@ -9,6 +9,7 @@ public:
 		m_Name = "A Rock";
 		m_Type = Typeless;
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\ItemUseAnimations\\RockItem.bmp", 100, 140, 20, 20, 0, 35));
+		m_CanBeUsedOutsideBattle = false;
 	}
 	void Execute(json* Attacker, json* Defender, std::string* tag) override;
 private:

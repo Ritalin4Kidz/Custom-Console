@@ -8,11 +8,13 @@
 #include "SYDEEngineUI.h"
 #include "SYDEEngineAssets.h"
 #include "ItemsHeader.h"
+#include "MovesHeader.h"
 
 enum PlayerStateScene_State
 {
 	PSS_PlayerViewState = 0,
-	PSS_InventoryViewState = 1
+	PSS_InventoryViewState = 1,
+	PSS_RemoveMoveState = 2
 };
 
 class PlayerStateScene : public GameScene
@@ -25,12 +27,17 @@ public:
 	ConsoleWindow drawPV(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow drawIV(ConsoleWindow window, int windowWidth, int windowHeight);
 
+	ConsoleWindow drawRM(ConsoleWindow window, int windowWidth, int windowHeight);
+
 	void test();
 
 	void onNewScene() override;
 
 	void destroyScene() override;
 
+	void validateInventory();
+
+	void createBaseUI();
 
 	static PlayerStateScene_State m_SceneState;
 
@@ -45,6 +52,10 @@ public:
 			inventoryStart = 0;
 		}
 	}
+
+	static bool useItemCall;
+	static bool useDeleteCall;
+	static int itemIndex;
 
 private:
 	static int inventoryStart;

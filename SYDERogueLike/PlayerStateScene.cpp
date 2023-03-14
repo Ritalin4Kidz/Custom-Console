@@ -2,6 +2,11 @@
 #include "PlayerStateScene.h"
 int PlayerStateScene::inventoryStart = 0;
 PlayerStateScene_State PlayerStateScene::m_SceneState = PSS_PlayerViewState;
+
+bool PlayerStateScene::useItemCall = false;
+bool PlayerStateScene::useDeleteCall = false;
+int	 PlayerStateScene::itemIndex = -1;
+
 void returnToMap()
 {
 	SydeRogueLikeStatics::setSceneTag(SydeRogueLikeStatics::getLevelSceneTag());
@@ -27,6 +32,23 @@ void inventoryStatePrevClick()
 	PlayerStateScene::addInvStart(-4);
 }
 
+void psInventoryItemClick()
+{
+	PlayerStateScene::useItemCall = true;
+	PlayerStateScene::itemIndex = stoi(CustomAsset_Clickable::getLastButtonTag());
+}
+
+void psDeleteClick()
+{
+	PlayerStateScene::useDeleteCall = true;
+	PlayerStateScene::itemIndex = stoi(SYDEClickableButton::getLastButtonTag());
+}
+
+void psNullClick()
+{
+
+}
+
 ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 0; i < windowWidth; i++)
@@ -44,6 +66,10 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 	else if (m_SceneState == PSS_InventoryViewState)
 	{
 		window = drawIV(window, windowWidth, windowHeight);
+	}
+	else if (m_SceneState == PSS_RemoveMoveState)
+	{
+		window = drawRM(window, windowWidth, windowHeight);
 	}
 	return window;
 }
@@ -92,6 +118,41 @@ ConsoleWindow PlayerStateScene::drawIV(ConsoleWindow window, int windowWidth, in
 			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTGREY_LIGHTGREY_BG);
 		}
 	}
+
+	if (useItemCall)
+	{
+		useItemCall = false;
+		SydeRogueLikeStatics::validatePlayerJson();
+		json player = SydeRogueLikeStatics::getPlayer()->getJSONTag();
+		SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(itemIndex)->useItem(&player);
+		SydeRogueLikeStatics::validatePlayerFromJson(player);
+		SydeRogueLikeStatics::removePlayerInv(itemIndex);
+		validateInventory();
+
+		if (SydeRogueLikeStatics::getPlayer()->getMoves().size() > 4)
+		{
+			//WE GOT TO REMOVE SOME
+			PlayerStateScene::m_SceneState = PSS_RemoveMoveState;
+			clearUI();
+			for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
+			{
+				addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+					"DELETE",
+					Vector2(25, (i * 2) + 3),
+					Vector2(6, 1),
+					BRIGHTWHITE_RED_BG,
+					NULLCOLOUR,
+					false,
+					psDeleteClick,
+					to_string(i)
+				)));
+			}
+
+		}
+
+		return window;
+	}
+
 	for (int i = 0; (i + inventoryStart) < SydeRogueLikeStatics::getPlayer()->getInventory().size() && i < 4; i++)
 	{
 		int x = (20 * (i % 2)) + 24;
@@ -105,26 +166,118 @@ ConsoleWindow PlayerStateScene::drawIV(ConsoleWindow window, int windowWidth, in
 	return window;
 }
 
+ConsoleWindow PlayerStateScene::drawRM(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window.setTextAtPoint(Vector2(2, 1), "DELETE A MOVE: ", BLACK_LIGHTGREY_BG);
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
+	{
+		window.setTextAtPoint(Vector2(2, (i * 2) + 3), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
+			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getUsagesLeft()) + "/" +
+			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getMaxUsages())
+			, BLACK_LIGHTGREY_BG);
+		window.setTextAtPoint(Vector2(4, (i * 2) + 4), SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType()) + "  P: " +
+			to_string((int)SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getPower())
+			, BLACK_LIGHTGREY_BG);
+	}
+
+	if (useDeleteCall)
+	{
+		useDeleteCall = false;
+		m_SceneState = PSS_PlayerViewState;
+		SydeRogueLikeStatics::removePlayerMove(itemIndex);
+		clearUI();
+		createBaseUI();
+	}
+
+
+	return window;
+}
+
 void PlayerStateScene::test()
 {
 	if (SydeRogueLikeStatics::getPlayer()->getInventory().size() == 0)
 	{
-		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
+		/*SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
 		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
-		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new RockItem()));*/
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new MoveItemClass(std::shared_ptr<Move>(new FireballMove()),
+			16, 8, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ItemIcons\\FireTM.bmp", 8, 8), 
+			"Fireball TM")));
+		SydeRogueLikeStatics::getPlayer()->AddInventory(shared_ptr<ItemClass>(new PotionItem()));
 	}
 }
 
 void PlayerStateScene::onNewScene()
 {
-	//test();
+	test();
 	inventoryStart = 0;
+	useItemCall = false;
+	useDeleteCall = false;
+	itemIndex = -1;
 	PlayerStateScene::m_SceneState = PSS_PlayerViewState;
+
+	createBaseUI();
+
+	invPrev = SYDEClickableButton(
+		"<<",
+		Vector2(1, 5),
+		Vector2(2, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryStatePrevClick,
+		"prevInv",
+		"prevInv"
+	);
+	invPrev.setEnabled(true);
+	invNext = SYDEClickableButton(
+		">>",
+		Vector2(16, 5),
+		Vector2(2, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryStateNextClick,
+		"nextInv",
+		"nextInv"
+	);
+	invNext.setEnabled(true);
+
+	validateInventory();
+
+	string charBmp = "EngineFiles\\CharacterBMPS\\" + SydeRogueLikeStatics::getPlayer()->getName() + ".bmp";
+	wstring wCharBmp = wstring(charBmp.begin(), charBmp.end());
+	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
+	playerAsset.setAsset(20, 10, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wCharBmp.c_str(), 10, 10));
+}
+
+void PlayerStateScene::destroyScene()
+{
+}
+
+void PlayerStateScene::validateInventory()
+{
+	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getInventory().size(); i++)
+	{
+		if (SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i)->isUsableOutBattle())
+		{
+			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, psInventoryItemClick, to_string(i));
+		}
+		else
+		{
+			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, psNullClick, to_string(i));
+		}
+	}
+	inventoryStart = 0;
+}
+
+void PlayerStateScene::createBaseUI()
+{
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"BACK TO MAP",
 		Vector2(0, 19),
@@ -154,41 +307,5 @@ void PlayerStateScene::onNewScene()
 		false,
 		selectIV
 	)));
-
-	invPrev = SYDEClickableButton(
-		"<<",
-		Vector2(1, 5),
-		Vector2(2, 1),
-		BRIGHTWHITE_GREEN_BG,
-		NULLCOLOUR,
-		false,
-		inventoryStatePrevClick,
-		"prevInv",
-		"prevInv"
-	);
-	invPrev.setEnabled(true);
-	invNext = SYDEClickableButton(
-		">>",
-		Vector2(16, 5),
-		Vector2(2, 1),
-		BRIGHTWHITE_GREEN_BG,
-		NULLCOLOUR,
-		false,
-		inventoryStateNextClick,
-		"nextInv",
-		"nextInv"
-	);
-	invNext.setEnabled(true);
-
-
-
-	string charBmp = "EngineFiles\\CharacterBMPS\\" + SydeRogueLikeStatics::getPlayer()->getName() + ".bmp";
-	wstring wCharBmp = wstring(charBmp.begin(), charBmp.end());
-	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
-	playerAsset.setAsset(20, 10, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wCharBmp.c_str(), 10, 10));
-}
-
-void PlayerStateScene::destroyScene()
-{
 }
 

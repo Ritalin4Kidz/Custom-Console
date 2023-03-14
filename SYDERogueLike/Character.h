@@ -60,6 +60,9 @@ public:
 	void SetMoves(vector<std::shared_ptr<Move>> _Moves);
 	void SetMoveAtIndex(int index, std::shared_ptr<Move> m);
 	std::shared_ptr<Move> getMoveAtIndex(int index) { return m_MoveArray[index]; }
+	void removeMoveAtIndex(int index) { m_MoveArray.erase(m_MoveArray.begin() + index); }
+	void addMove(std::shared_ptr<Move> m) { m_MoveArray.push_back(m); }
+
 	vector<std::shared_ptr<Move>> getMoves() { return m_MoveArray; }
 	void ClearMoves() { m_MoveArray.clear(); }
 

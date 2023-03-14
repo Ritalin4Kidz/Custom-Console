@@ -46,12 +46,17 @@ public:
 	int getUsagesLeft() { return usagesLeft; }
 
 	int getMaxUsages() { return maxUsages; }
+
+	string getTMId() { return m_TM_Identifier; }
+
 protected:
 	virtual void Execute(json* Attacker, json* Defender, std::string* tag);
 	_SQType m_Type;
 	std::string m_Name;
 	float BasePower;
 	std::string m_Info = "";
+
+	std::string m_TM_Identifier = "";
 
 	int usagesLeft = 0;
 	int maxUsages = 0;

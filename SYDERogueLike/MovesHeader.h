@@ -19,3 +19,6 @@
 #include "LightningPunchMove.h"
 #include "FuegoSwordMove.h"
 #include "EnchantmentMove.h"
+#include "BrightIdeaMove.h"
+#include "RoboticsMove.h"
+#include "ShatteredBulbMove.h"

@@ -149,6 +149,7 @@
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BloodGhostEnemy.cpp" />
     <ClCompile Include="BoneClubMove.cpp" />
+    <ClCompile Include="BrightIdeaMove.cpp" />
     <ClCompile Include="BurntStatus.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CharacterSelectScene.cpp" />
@@ -179,10 +180,12 @@
     <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="PotionItem.cpp" />
+    <ClCompile Include="RoboticsMove.cpp" />
     <ClCompile Include="RockItem.cpp" />
     <ClCompile Include="SabotagedMoveEffect.cpp" />
     <ClCompile Include="SabotageMove.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
+    <ClCompile Include="ShatteredBulbMove.cpp" />
     <ClCompile Include="ShopItem.cpp" />
     <ClCompile Include="ShopScene.cpp" />
     <ClCompile Include="SingMove.cpp" />
@@ -204,6 +207,7 @@
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BloodGhostEnemy.h" />
     <ClInclude Include="BoneClubMove.h" />
+    <ClInclude Include="BrightIdeaMove.h" />
     <ClInclude Include="BurntStatus.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterSelectScene.h" />
@@ -232,6 +236,7 @@
     <ClInclude Include="MeowCoastLevel.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveItemClass.h" />
+    <ClInclude Include="MovePoolItem.h" />
     <ClInclude Include="MovesHeader.h" />
     <ClInclude Include="OrcEnemy.h" />
     <ClInclude Include="Player.h" />
@@ -244,10 +249,12 @@
     <ClInclude Include="PlayerStateScene.h" />
     <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="PotionItem.h" />
+    <ClInclude Include="RoboticsMove.h" />
     <ClInclude Include="RockItem.h" />
     <ClInclude Include="SabotagedMoveEffect.h" />
     <ClInclude Include="SabotageMove.h" />
     <ClInclude Include="ScrapMove.h" />
+    <ClInclude Include="ShatteredBulbMove.h" />
     <ClInclude Include="ShopItem.h" />
     <ClInclude Include="ShopItemRarity.h" />
     <ClInclude Include="ShopScene.h" />

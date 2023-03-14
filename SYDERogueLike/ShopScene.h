@@ -34,6 +34,9 @@ public:
 	void destroyScene() override;
 
 	void test();
+
+	void generateItems();
+
 	static bool doBuy;
 	static int lastBoughtItem;
 	void purchaseItem();

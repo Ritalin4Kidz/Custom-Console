@@ -60,7 +60,8 @@ void ShopScene::onNewScene()
 	//6 ITEMS, TOP 3 ALL MOVES
 	//BOTTOM 3 ALL ITEMS
 	doBuy = false;
-	test();
+	//test();
+	generateItems();
 
 	for (int i = 0; i < m_ShopItems.size(); i++)
 	{
@@ -123,6 +124,41 @@ void ShopScene::test()
 		shared_ptr<ItemClass>(new RockItem())));
 	m_ShopItems.push_back(ShopItem(100, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\FireIcon.bmp", 5, 5)), SIR_LEGEND, "Rock",
 		shared_ptr<ItemClass>(new RockItem())));*/
+}
+
+void ShopScene::generateItems()
+{
+	for (int i = 0; i < 6; i++)
+	{
+		int chance = rand() % 2;
+		if (chance == 1)
+		{
+			//FOR NOW JUST DO A ROCK
+			m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\RockIcon.bmp", 5, 5)), SIR_COMMON, "Rock",
+				shared_ptr<ItemClass>(new RockItem())));
+		}
+		else
+		{
+			int moveInt= rand() % SydeRogueLikeStatics::getPlayer()->getMovePool().size();
+			string moveName = SydeRogueLikeStatics::getPlayer()->getMovePool().at(moveInt).getMove()->getTMId();
+
+			string typeStr = SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMovePool().at(moveInt).getMove()->getType());
+
+			string shopIconBmp = "EngineFiles\\Bitmaps\\ShopIcons\\" + typeStr + "Icon.bmp";
+			string invIconBmp = "EngineFiles\\Bitmaps\\ItemIcons\\" + typeStr + "TM.bmp";
+			wstring wShopIconBmp = wstring(shopIconBmp.begin(), shopIconBmp.end());
+			wstring wInvIconBmp = wstring(invIconBmp.begin(), invIconBmp.end());
+
+			m_ShopItems.push_back(ShopItem(SydeRogueLikeStatics::getPlayer()->getMovePool().at(moveInt).getCost(),
+				CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wShopIconBmp.c_str(), 5, 5)), SIR_RARE,
+				moveName,
+				shared_ptr<ItemClass>(new MoveItemClass(std::shared_ptr<Move>(SydeRogueLikeStatics::getPlayer()->getMovePool().at(moveInt).getMove()),
+				16, 8, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wInvIconBmp.c_str(), 8, 8),
+				moveName))));
+		}
+	}
+
+
 }
 
 void ShopScene::purchaseItem()

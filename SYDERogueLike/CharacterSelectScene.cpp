@@ -75,6 +75,12 @@ ConsoleWindow CharacterSelectScene::window_draw(ConsoleWindow window, int window
 	window.setTextAtPoint(Vector2(0, 1), "CHARACTER:", BLACK_LIGHTGREY_BG);
 	window.setTextAtPoint(Vector2(0, 2), m_PlayersVec[m_SelectedPlayer].getTag(), BLACK_LIGHTGREY_BG);
 
+	window.setTextAtPoint(Vector2(0, 7), "RATING: ", BLACK_LIGHTGREY_BG);
+	for (int i = 0; i < m_PlayersVec[m_SelectedPlayer].getRating(); i++)
+	{
+		window.setTextAtPoint(Vector2(i + 1, 8), "|", RED_LIGHTGREY_BG);
+	}
+
 	return window;
 }
 
@@ -88,7 +94,6 @@ void CharacterSelectScene::onNewScene()
 			PlayerSelectObject(3, "Jordan", L"EngineFiles\\CharacterBMPS\\Jordan.bmp"),
 			PlayerSelectObject(2, "Fuego", L"EngineFiles\\CharacterBMPS\\Fuego.bmp")
 		});
-
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"   SELECT CHAR    ",
 		Vector2(31, 19),

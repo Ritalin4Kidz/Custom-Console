@@ -2,8 +2,8 @@
 #include "Character.h"
 #include <vector>
 #include <string>
-
-
+#include "MovePoolItem.h"
+#include "MovesHeader.h"
 class Player : public Character
 {
 public:
@@ -11,7 +11,7 @@ public:
 
 	virtual void init_Char(int lvl) {}
 
-	std::vector<std::string> getMovePool() { return m_MovePool; }
+	std::vector<MovePoolItem> getMovePool() { return m_MovePool; }
 	void addXPToPlayer(int x) { xp += x; while (xp >= xpToNextLevel) { xp -= xpToNextLevel; xpToNextLevel *= 1.5; m_Level++; levelUpStats(); } }
 
 	virtual void levelUpStats() {}
@@ -39,10 +39,10 @@ public:
 protected:
 	//THIS SHOULD NOT BE OVERRIDDEN, AS WE CAN MAKE CERTAIN MOVES TEACHABLE TO ALL CHARACTERS
 	//WE SHOULD ONLY ADD TO THIS
-	std::vector<std::string> m_MovePool = std::vector<std::string>(
+	std::vector<MovePoolItem> m_MovePool = std::vector<MovePoolItem>(
 		{
-
-		});
+			MovePoolItem(std::shared_ptr<Move>(new SlashMove()), 30)
+		}); 
 	int savedAttackStat;
 	int savedDefenceStat;
 	int savedMagicAttackStat;

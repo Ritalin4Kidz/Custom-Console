@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ShopItem.h"
 
-MoveShopItem::MoveShopItem(int a_price, CustomAsset a_icon, ShopItemRarity a_rarity, string name)
+ShopItem::ShopItem(int a_price, CustomAsset a_icon, ShopItemRarity a_rarity, string name, std::shared_ptr<ItemClass> item)
 {
 	itemRarity = a_rarity;
 	if (itemRarity == SIR_COMMON)
@@ -23,4 +23,5 @@ MoveShopItem::MoveShopItem(int a_price, CustomAsset a_icon, ShopItemRarity a_rar
 	price = a_price;
 	icon = a_icon;
 	displayName = name;
+	m_InventoryItem = item;
 }

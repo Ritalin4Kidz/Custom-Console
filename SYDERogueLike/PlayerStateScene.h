@@ -48,7 +48,7 @@ public:
 
 private:
 	static int inventoryStart;
-
+	
 	SYDEClickableButton invPrev;
 	SYDEClickableButton invNext;
 	CustomAsset playerAsset = CustomAsset();

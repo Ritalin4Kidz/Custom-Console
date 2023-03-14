@@ -6,7 +6,8 @@
 #include "SYDEUI.h"
 #include "ShopItem.h"
 #include <SYDEClickableButton.h>
-
+#include <memory>
+#include "ItemsHeader.h"
 /*
 TODO:
 BUY BUTTON BUYS MOVE WHEN GOLD SHOWING
@@ -33,8 +34,11 @@ public:
 	void destroyScene() override;
 
 	void test();
+	static bool doBuy;
+	static int lastBoughtItem;
+	void purchaseItem();
 
 private:
-	vector<ShopItem*> m_ShopItems;
+	vector<ShopItem> m_ShopItems;
 	vector<SYDEClickableButton> m_BuyButtons;
 };

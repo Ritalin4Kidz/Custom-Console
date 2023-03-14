@@ -18,7 +18,10 @@ public:
 	static void addPlayerXP(int xp) { m_Player->addXPToPlayer(xp); }
 	static std::shared_ptr<Player> getPlayer() { return m_Player; }
 
+	static void addPlayerInv(std::shared_ptr<ItemClass> newItem) { m_Player->AddInventory(newItem); }
+
 	static void addPlayerMoney(int m) { m_Player->addMoney(m); }
+	static bool spendPlayerMoney(int m) {return m_Player->removeMoney(m); }
 
 	static void setEnemy(std::shared_ptr<Enemy> newEnemy) { m_Enemy = newEnemy; }
 	static std::shared_ptr<Enemy> getEnemy() { return m_Enemy; }

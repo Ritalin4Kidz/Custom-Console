@@ -53,6 +53,8 @@ public:
 	int getMoney() { return m_Money; }
 	void addMoney(int m) { m_Money += m; }
 
+	bool removeMoney(int m) { if (m_Money >= m) { m_Money -= m; return true; } return false; }
+
 	void validateFromJson(const json& j);
 
 	void SetMoves(vector<std::shared_ptr<Move>> _Moves);

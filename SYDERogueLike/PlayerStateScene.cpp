@@ -122,7 +122,7 @@ void PlayerStateScene::test()
 
 void PlayerStateScene::onNewScene()
 {
-	test();
+	//test();
 	inventoryStart = 0;
 	PlayerStateScene::m_SceneState = PSS_PlayerViewState;
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(

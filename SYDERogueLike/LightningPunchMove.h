@@ -10,6 +10,7 @@ public:
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Electric\\LightningPunch.bmp", 100, 100, 20, 20, 0, 25));
 		maxUsages = 20;
 		usagesLeft = maxUsages;
+		m_TM_Identifier = "TM_006";
 	}
 protected:
 };

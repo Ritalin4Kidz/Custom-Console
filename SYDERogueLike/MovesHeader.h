@@ -25,3 +25,4 @@
 #include "BulkUpMove.h"
 #include "BloodPactMove.h"
 #include "SnowballMove.h"
+#include "ThunderStormMove.h"

@@ -4,7 +4,7 @@ void PlayerJordan::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
 	std::shared_ptr<Move>(new RoboticsMove()),
-	std::shared_ptr<Move>(new LightningPunchMove()),
+	std::shared_ptr<Move>(new ThunderStormMove()),
 	std::shared_ptr<Move>(new ShatteredBulbMove()),
 	std::shared_ptr<Move>(new BrightIdeaMove()),
 		}));
@@ -28,4 +28,5 @@ void PlayerJordan::init_Char(int lvl)
 void PlayerJordan::addMovePool()
 {
 	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LightningBoltMove()), 100));
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LightningPunchMove()), 50));
 }

@@ -273,6 +273,7 @@
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
     <ClInclude Include="TagToPlayer.hpp" />
+    <ClInclude Include="ThunderStormMove.h" />
     <ClInclude Include="TypeSwapMove.h" />
     <ClInclude Include="WaveMove.h" />
   </ItemGroup>

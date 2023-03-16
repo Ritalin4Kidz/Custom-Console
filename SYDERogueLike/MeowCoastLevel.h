@@ -2,7 +2,7 @@
 #include "MainMapScene.h"
 #include "OrcEnemy.h"
 #include "BloodGhostEnemy.h"
-#include "SmokingCrab.h"
+#include "FreebeeBoss.h"
 class MeowCoastLevel : public MainMapScene
 {
 public:

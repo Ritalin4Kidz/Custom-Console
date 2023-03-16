@@ -12,7 +12,12 @@ public:
 
 	string getEnemyTag() { return m_EnemyTag; }
 	int getXpGain() { return xpGainedFromFight; }
+
+	bool getRequireBG() { return requireBG; }
+	int getDrawPos() { return xDrawPos; }
 protected:
 	int xpGainedFromFight = 0;
 	string m_EnemyTag = "Normal";
+	int xDrawPos = 40;
+	bool requireBG = false;
 };

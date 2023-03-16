@@ -112,7 +112,7 @@ private:
 	vector<MoveTurn> m_MovesForTurn = vector<MoveTurn>();
 
 	BattleState m_BattleState = m_BS_Prework;
-
+	CustomAsset m_EnemBG = CustomAsset(28, 12, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\EnemBG.bmp", 14, 12));
 	std::string windowText_Top = "";
 	std::string windowText_Bottom = "";
 	float timeTakenPostWork = 0;

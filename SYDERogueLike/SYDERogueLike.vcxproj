@@ -158,6 +158,7 @@
     <ClCompile Include="EmberMove.cpp" />
     <ClCompile Include="Enchantment.cpp" />
     <ClCompile Include="EnchantmentMove.cpp" />
+    <ClCompile Include="FreebeeBoss.cpp" />
     <ClCompile Include="FuegoSwordMove.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GustMove.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FailedMove.h" />
     <ClInclude Include="FireballMove.h" />
+    <ClInclude Include="FreebeeBoss.h" />
     <ClInclude Include="FuegoSwordMove.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameTypes.h" />

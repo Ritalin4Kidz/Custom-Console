@@ -156,7 +156,11 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 
 ConsoleWindow BattleScene::drawChars(ConsoleWindow window)
 {
-	window = m_Enemy->drawAnimationAsset(window, Vector2(40, enemyHeight));
+	if (m_Enemy->getRequireBG())
+	{
+		window = m_EnemBG.draw_asset(window, Vector2(m_Enemy->getDrawPos(), enemyHeight));
+	}
+	window = m_Enemy->drawAnimationAsset(window, Vector2(m_Enemy->getDrawPos(), enemyHeight));
 	for (int i = 0; i < ((float)m_Enemy->getHealth() / m_Enemy->getMaxHealth()) * 19; i++)
 	{
 		window.setTextAtPoint(Vector2(21 + i, 1), " ", RED_RED_BG);

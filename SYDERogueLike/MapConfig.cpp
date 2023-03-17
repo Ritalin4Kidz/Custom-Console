@@ -51,7 +51,7 @@ int MapConfigObject::getPathNumberToMoveAtPos(int path, int space)
 
 int MapConfigObject::getBossTagAtPos(int path, int space)
 {
-	for (int i = 0; i < m_PathData.size(); i++)
+	for (int i = 0; i < m_BossData.size(); i++)
 	{
 		if (m_BossData[i].getPathNo() == path && m_BossData[i].getSpaceNo() == space)
 		{

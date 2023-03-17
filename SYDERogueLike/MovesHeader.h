@@ -26,3 +26,7 @@
 #include "BloodPactMove.h"
 #include "SnowballMove.h"
 #include "ThunderStormMove.h"
+#include "HealSlimeMove.h"
+#include "WaterSlimeMove.h"
+#include "LightningSlimeMove.h"
+#include "DefaultSlimeMove.h"

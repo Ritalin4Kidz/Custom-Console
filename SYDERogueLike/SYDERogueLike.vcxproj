@@ -163,6 +163,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GhostFish.cpp" />
     <ClCompile Include="GustMove.cpp" />
+    <ClCompile Include="HealSlimeMove.cpp" />
     <ClCompile Include="ItemClass.cpp" />
     <ClCompile Include="LevelSelectScene.cpp" />
     <ClCompile Include="LightningBoltMove.cpp" />
@@ -195,6 +196,7 @@
     <ClCompile Include="SingMove.cpp" />
     <ClCompile Include="SlashMove.cpp" />
     <ClCompile Include="SleepStatus.cpp" />
+    <ClCompile Include="SlimeKeeper.cpp" />
     <ClCompile Include="SmokeBreakMove.cpp" />
     <ClCompile Include="SmokeMoveType.cpp" />
     <ClCompile Include="SmokingCrab.cpp" />
@@ -218,6 +220,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterSelectScene.h" />
     <ClInclude Include="ConsumableItem.h" />
+    <ClInclude Include="DefaultSlimeMove.h" />
     <ClInclude Include="EmberMove.h" />
     <ClInclude Include="EnchantmentMove.h" />
     <ClInclude Include="Enemy.h" />
@@ -229,12 +232,14 @@
     <ClInclude Include="GameTypes.h" />
     <ClInclude Include="GhostFish.h" />
     <ClInclude Include="GustMove.h" />
+    <ClInclude Include="HealSlimeMove.h" />
     <ClInclude Include="ItemClass.h" />
     <ClInclude Include="ItemsHeader.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="LevelSelectScene.h" />
     <ClInclude Include="LightningBoltMove.h" />
     <ClInclude Include="LightningPunchMove.h" />
+    <ClInclude Include="LightningSlimeMove.h" />
     <ClInclude Include="MainMapEnums.h" />
     <ClInclude Include="MainMapScene.h" />
     <ClInclude Include="MainMenuScenes.h" />
@@ -269,6 +274,7 @@
     <ClInclude Include="SingMove.h" />
     <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SleepStatus.h" />
+    <ClInclude Include="SlimeKeeper.h" />
     <ClInclude Include="SmokeBreakMove.h" />
     <ClInclude Include="SmokeMoveType.h" />
     <ClInclude Include="SmokingCrab.h" />
@@ -279,6 +285,7 @@
     <ClInclude Include="TagToPlayer.hpp" />
     <ClInclude Include="ThunderStormMove.h" />
     <ClInclude Include="TypeSwapMove.h" />
+    <ClInclude Include="WaterSlimeMove.h" />
     <ClInclude Include="WaveMove.h" />
   </ItemGroup>
   <ItemGroup>

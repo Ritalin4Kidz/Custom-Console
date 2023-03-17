@@ -10,7 +10,7 @@ public:
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Water\\BlueSlime.bmp", 100, 400, 20, 20, 0, 100));
 		maxUsages = 5;
 		usagesLeft = maxUsages;
-		m_Accuracy = 75;
+		m_Accuracy = 35;
 		useMagicAttack = true;
 	}
 protected:

@@ -28,6 +28,11 @@ MapConfigObject::MapConfigObject(std::string filename)
 				std::vector<std::string> PathDataValues = Split(FileData[1], ',');
 				m_PathData.push_back(PathDataObject(std::stoi(PathDataValues[0]), std::stoi(PathDataValues[1]), std::stoi(PathDataValues[2])));
 			}
+			else if (FileData[0] == "BossData")
+			{
+				std::vector<std::string> PathDataValues = Split(FileData[1], ',');
+				m_BossData.push_back(BossDataObject(std::stoi(PathDataValues[0]), std::stoi(PathDataValues[1]), std::stoi(PathDataValues[2])));
+			}
 		}
 	}
 }
@@ -39,6 +44,18 @@ int MapConfigObject::getPathNumberToMoveAtPos(int path, int space)
 		if (m_PathData[i].getPathNo() == path && m_PathData[i].getSpaceNo() == space)
 		{
 			return m_PathData[i].getMoveTo();
+		}
+	}
+	return 0;
+}
+
+int MapConfigObject::getBossTagAtPos(int path, int space)
+{
+	for (int i = 0; i < m_PathData.size(); i++)
+	{
+		if (m_BossData[i].getPathNo() == path && m_BossData[i].getSpaceNo() == space)
+		{
+			return m_BossData[i].getbossTagNo();
 		}
 	}
 	return 0;
@@ -71,4 +88,11 @@ std::vector<std::string> MapConfigObject::Split(std::string str, char split)
 	}
 	splitString[arraySize - 1] = str;
 	return splitString;
+}
+
+BossDataObject::BossDataObject(int path, int space, int bossTag)
+{
+	pathNumber = path;
+	spaceNumber = space;
+	bossTagNumber = bossTag;
 }

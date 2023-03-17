@@ -3,6 +3,7 @@
 #include "OrcEnemy.h"
 #include "BloodGhostEnemy.h"
 #include "FreebeeBoss.h"
+#include "GhostFish.h"
 class MeowCoastLevel : public MainMapScene
 {
 public:
@@ -12,4 +13,5 @@ public:
 	void doBossDefeatedAction() override;
 	void generateEnemy() override;
 private:
+	int m_BossTag = 0;
 };

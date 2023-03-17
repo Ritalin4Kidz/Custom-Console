@@ -23,6 +23,22 @@ private:
 	int	pathMoveTo;
 };
 
+class BossDataObject
+{
+public:
+	BossDataObject() {}
+	BossDataObject(int path, int space, int bossTag);
+
+	int getPathNo() { return pathNumber; }
+	int getSpaceNo() { return spaceNumber; }
+	int getbossTagNo() { return bossTagNumber; }
+
+private:
+	int pathNumber;
+	int	spaceNumber;
+	int	bossTagNumber;
+};
+
 class MapConfigObject
 {
 public:
@@ -33,7 +49,10 @@ public:
 
 	int getPathNumberToMoveAtPos(int path, int space);
 
+	int getBossTagAtPos(int path, int space);
+
 	std::vector<std::string> Split(std::string str, char split);
 private:
 	std::vector<PathDataObject> m_PathData = std::vector<PathDataObject>();
+	std::vector<BossDataObject> m_BossData = std::vector<BossDataObject>();
 };

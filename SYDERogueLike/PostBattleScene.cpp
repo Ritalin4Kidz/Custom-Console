@@ -49,7 +49,7 @@ void PostBattleScene::onNewScene()
 	{
 		if (bossTag == "Boss")
 		{
-			SydeRogueLikeStatics::setSceneTag("SYDE Coast Map Scene");
+			SydeRogueLikeStatics::setSceneTag(SydeRogueLikeStatics::getLevelSceneTag());
 			SydeRogueLikeStatics::setBattleTag("Boss Defeated");
 			return;
 		}

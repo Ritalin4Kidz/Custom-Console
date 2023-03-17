@@ -161,6 +161,7 @@
     <ClCompile Include="FreebeeBoss.cpp" />
     <ClCompile Include="FuegoSwordMove.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GhostFish.cpp" />
     <ClCompile Include="GustMove.cpp" />
     <ClCompile Include="ItemClass.cpp" />
     <ClCompile Include="LevelSelectScene.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="FuegoSwordMove.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameTypes.h" />
+    <ClInclude Include="GhostFish.h" />
     <ClInclude Include="GustMove.h" />
     <ClInclude Include="ItemClass.h" />
     <ClInclude Include="ItemsHeader.h" />

@@ -10,6 +10,7 @@ public:
 	void init_Char(int lvl) override;
 
 	void addMovePool();
+	void levelUpStats() override;
 private:
 
 };

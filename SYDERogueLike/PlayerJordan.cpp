@@ -22,6 +22,7 @@ void PlayerJordan::init_Char(int lvl)
 	this->setSpeed(110);
 	this->setType(Electric);
 	this->setAbility(Ability_NaturalBoost);
+	this->setMoney(30);
 	addMovePool();
 }
 
@@ -29,4 +30,11 @@ void PlayerJordan::addMovePool()
 {
 	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LightningBoltMove()), 100));
 	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LightningPunchMove()), 50));
+}
+
+void PlayerJordan::levelUpStats()
+{
+	this->setMaxHealth(this->getMaxHealth() + 3); //70
+	this->setHealth(this->getMaxHealth());
+	this->setMagicAttack(this->getMagicAttack() + 4); //290
 }

@@ -29,3 +29,10 @@ void PlayerBruce::addMovePool()
 {
 	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new BloodPactMove()), 50));
 }
+
+void PlayerBruce::levelUpStats()
+{
+	this->setMaxHealth(this->getMaxHealth() + 2);
+	this->setAttack(this->getAttack() + 4);
+	this->setDefence(this->getDefence() + 4);
+}

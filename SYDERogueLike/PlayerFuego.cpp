@@ -22,4 +22,13 @@ void PlayerFuego::init_Char(int lvl)
 	this->setSpeed(60);
 	this->setType(Metal);
 	this->setAbility(Ability_Constant_Struggle);
+	this->setMoney(250);
+}
+
+void PlayerFuego::levelUpStats()
+{
+	this->setMaxHealth(this->getMaxHealth() + 2); //70
+	this->setAttack(this->getAttack() + 3); //120
+	this->setMagicDefence(this->getMagicAttack() + 3); //290
+	this->setSpeed(this->getSpeed() + 2);
 }

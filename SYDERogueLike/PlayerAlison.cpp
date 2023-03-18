@@ -21,4 +21,13 @@ void PlayerAlison::init_Char(int lvl)
 	this->setName("Alison");
 	this->setSpeed(50);
 	this->setType(Air);
+	this->setMoney(1);
+}
+
+void PlayerAlison::levelUpStats()
+{
+	this->setMaxHealth(this->getMaxHealth() + 1); //70
+	this->setAttack(this->getAttack() + 1); //120
+	this->setMagicDefence(this->getMagicAttack() + 1); //290
+	this->setSpeed(this->getSpeed() + 4);
 }

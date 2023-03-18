@@ -37,6 +37,14 @@ public:
 
 	void generateItems();
 
+	void generateRandomInventoryItem();
+
+	void generateCommonInventoryItem();
+
+	void generateRareInventoryItem();
+
+	void generateLegendaryInventoryItem();
+
 	static bool doBuy;
 	static int lastBoughtItem;
 	void purchaseItem();
@@ -44,4 +52,6 @@ public:
 private:
 	vector<ShopItem> m_ShopItems;
 	vector<SYDEClickableButton> m_BuyButtons;
+
+
 };

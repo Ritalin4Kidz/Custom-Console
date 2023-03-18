@@ -214,7 +214,7 @@ void PlayerStateScene::test()
 
 void PlayerStateScene::onNewScene()
 {
-	test();
+	//test();
 	inventoryStart = 0;
 	useItemCall = false;
 	useDeleteCall = false;

@@ -12,7 +12,39 @@ public:
 	virtual void init_Char(int lvl) {}
 
 	std::vector<MovePoolItem> getMovePool() { return m_MovePool; }
-	void addXPToPlayer(int x) { xp += x; while (xp >= xpToNextLevel) { xp -= xpToNextLevel; xpToNextLevel *= 1.5; m_Level++; levelUpStats(); } }
+	void addXPToPlayer(int x) { xp += x; while (xp >= xpToNextLevel) { xp -= xpToNextLevel; xpToNextLevel *= 1.5; m_Level++; addRandomStats(); levelUpStats(); } }
+
+	void addRandomStats()
+	{
+		int statPoints = rand() % 3 + 1;
+		while (statPoints > 0)
+		{
+			int statToIncrease = rand() % 6;
+			switch (statToIncrease)
+			{
+			case 0:
+				m_MaxHealth += 1;
+				break;
+			case 1:
+				m_Attack += 1;
+				break;
+			case 2:
+				m_Defence += 1;
+				break;
+			case 3:
+				m_MagicAttack += 1;
+				break;
+			case 4:
+				m_MagicDefence += 1;
+				break;
+			case 5:
+			default:
+				m_Speed += 1;
+				break;
+			}
+			statPoints--;
+		}
+	}
 
 	virtual void levelUpStats() {}
 	void saveStats()

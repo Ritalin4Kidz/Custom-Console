@@ -8,6 +8,7 @@ public:
 	PlayerAlison() {}
 	PlayerAlison(int lvl) { init_Char(lvl); }
 	void init_Char(int lvl) override;
+	void levelUpStats() override;
 private:
 
 };

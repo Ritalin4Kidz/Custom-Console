@@ -130,12 +130,10 @@ void ShopScene::generateItems()
 {
 	for (int i = 0; i < 6; i++)
 	{
-		int chance = rand() % 2;
-		if (chance == 1)
+		int chance = rand() % 100;
+		if (chance < 70)
 		{
-			//FOR NOW JUST DO A ROCK
-			m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\RockIcon.bmp", 5, 5)), SIR_COMMON, "Rock",
-				shared_ptr<ItemClass>(new RockItem())));
+			generateRandomInventoryItem();
 		}
 		else
 		{
@@ -159,6 +157,50 @@ void ShopScene::generateItems()
 	}
 
 
+}
+
+void ShopScene::generateRandomInventoryItem()
+{
+	int chance = rand() % 1000;
+	if (chance < 700)
+	{
+		generateCommonInventoryItem();
+	}
+	else if (chance >= 700 && chance < 990)
+	{
+		generateRareInventoryItem();
+	}
+	else
+	{
+		generateLegendaryInventoryItem();
+	}
+}
+
+void ShopScene::generateCommonInventoryItem()
+{
+	const int Items = 2;
+	int chance = rand() % Items;
+	switch(chance)
+	{
+	case 0:
+		m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\HealIcon.bmp", 5, 5)), SIR_COMMON, "Potion",
+			shared_ptr<ItemClass>(new PotionItem())));
+	default:
+		m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\RockIcon.bmp", 5, 5)), SIR_COMMON, "Rock",
+			shared_ptr<ItemClass>(new RockItem())));
+	}
+}
+
+void ShopScene::generateRareInventoryItem()
+{
+	m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\RockIcon.bmp", 5, 5)), SIR_RARE, "Rock",
+		shared_ptr<ItemClass>(new RockItem())));
+}
+
+void ShopScene::generateLegendaryInventoryItem()
+{
+	m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\RockIcon.bmp", 5, 5)), SIR_LEGEND, "Rock",
+		shared_ptr<ItemClass>(new RockItem())));
 }
 
 void ShopScene::purchaseItem()

@@ -35,6 +35,13 @@ struct ArrowDisplay
 	Vector2 vec;
 };
 
+struct DiceDisplay
+{
+	DiceDisplay(CustomAsset a, Vector2 v) { spaces = a; vec = v; }
+	CustomAsset spaces;
+	Vector2 vec;
+};
+
 class MainMapScene : public GameScene
 {
 public:
@@ -65,6 +72,8 @@ public:
 
 	void setUpEndMapUI();
 
+	void refreshStepsUI(int width, int height);
+
 	MapSpace getSpace(int path, int space);
 	bool isLastSpace(int path, int space);
 
@@ -78,6 +87,7 @@ public:
 	static void triggerTick() { tickCall = true; }
 
 	ArrowDisplay returnArrowForPath(Vector2 nextPathPos, Vector2 currentPos, void(*f)(), string a_Tag, int middleWidth, int middleHeight);
+	DiceDisplay returnSteps(int steps, int middleWidth, int middleHeight);
 
 	static void setSpaceMoveTo(Vector2 v) { m_SpaceMoveTo = v; }
 
@@ -112,6 +122,14 @@ protected:
 	Vector2 swapBtnPos;
 	CustomAsset_Clickable m_ContinuePathBtn;
 	Vector2 contBtnPos;
+
+	CustomAsset m_StepsAmountAsset;
+	Vector2 m_StepsAmountAsset_Pos;
+
+
+	const float timeBetweenSteps = 0.65f;
+	float stepTimer = 0;
+
 
 	CustomAnimationAsset m_UIAnimation;
 	std::string sceneLoad;

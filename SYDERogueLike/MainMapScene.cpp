@@ -309,6 +309,14 @@ void MainMapScene::setUpEndMapUI()
 		mainMenu)));
 }
 
+void MainMapScene::refreshStepsUI(int width, int height)
+{
+	DiceDisplay diceRoll = MainMapScene::returnSteps(spacesToMove, width, height);
+	m_StepsAmountAsset = diceRoll.spaces;
+	m_StepsAmountAsset_Pos = diceRoll.vec;
+	stepTimer = 0.0f;
+}
+
 MapSpace MainMapScene::getSpace(int path, int space)
 {
 	for (int i = 0; i < m_MapPaths.size(); i++)
@@ -451,6 +459,14 @@ ArrowDisplay MainMapScene::returnArrowForPath(Vector2 nextPathPos, Vector2 curre
 	return ArrowDisplay(CustomAsset_Clickable(), Vector2());
 }
 
+DiceDisplay MainMapScene::returnSteps(int steps, int middleWidth, int middleHeight)
+{
+	string numberBmp = "EngineFiles\\Bitmaps\\Numbers\\" + to_string(steps) + ".bmp";
+	wstring wNumberBmp = wstring(numberBmp.begin(), numberBmp.end());
+
+	return DiceDisplay(CustomAsset(10,5,AssetsClass::get_bmp_as_array((WCHAR*)wNumberBmp.c_str(), 5, 5)), Vector2(middleWidth- 4, middleHeight - 6));
+}
+
 void MainMapScene::doBossAction(MapSpace currentSpace)
 {
 }
@@ -510,6 +526,8 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		{
 			m_MovementState = MoveState_MOVEMENT;
 			spacesToMove = (rand() % maxSpacesToMoveRange) + 1;
+			refreshStepsUI(windowWidth / 2, windowHeight / 2);
+
 		}
 	}
 	else if (m_MovementState == MoveState_CHECKING)
@@ -537,6 +555,11 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			doBossAction(spaceCurrent);
 			return window;
 		}
+		else
+		{
+			ShowUI();
+			return window;
+		}
 	}
 	else if (m_MovementState == MoveState_MOVEMENT && !showRouteOptions)
 	{
@@ -550,8 +573,13 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			}
 			if (spacesToMove > 0)
 			{
-				spacesToMove--;
-				m_Space.addY(1);
+				stepTimer += SYDEDefaults::getDeltaTime();
+				if (stepTimer >= timeBetweenSteps)
+				{
+					spacesToMove--;
+					m_Space.addY(1);
+					refreshStepsUI(windowWidth / 2, windowHeight / 2);
+				}
 			}
 			else if (spacesToMove == 0)
 			{
@@ -587,6 +615,11 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 	}
 	window = m_MapBg.draw_asset(window, Vector2(cameraPos.getX() - (windowWidth / 2), cameraPos.getY() - (windowHeight / 2)), windowWidth, windowHeight);
 	window.setTextAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), "><", window.determineColourAtPoint(Vector2((windowWidth / 2), (windowHeight / 2)), BRIGHTWHITE, true));
+
+	if (m_MovementState == MoveState_MOVEMENT && !showRouteOptions)
+	{
+		window = m_StepsAmountAsset.draw_asset(window, m_StepsAmountAsset_Pos);
+	}
 
 	if (m_SceneState == MMS_Normal)
 	{
@@ -642,20 +675,22 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			}
 			else
 			{
-				ShowUI();
 				//CHEAT SHEET
 				if (sceneLoad == "DiceRollingAnim")
 				{
+					HideUI();
 					m_MovementState = MoveState_ROLLING;
 					m_SceneState = MMS_Normal;
 				}
 				else if (sceneLoad != "")
 				{
 					SydeRogueLikeStatics::setSceneTag(sceneLoad);
+					ShowUI();
 				}
 				else
 				{
 					m_SceneState = MMS_Normal;
+					ShowUI();
 				}
 			}
 		}

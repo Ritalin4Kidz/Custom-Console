@@ -11,7 +11,7 @@ public:
 
 	void doBossAction(MapSpace currentSpace) override;
 	void doBossDefeatedAction() override;
-	void generateEnemy() override;
+	void generateEnemy(MapSpace currentSpace) override;
 private:
 	int m_BossTag = 0;
 };

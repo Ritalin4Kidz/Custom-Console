@@ -255,7 +255,7 @@ void MainMapScene::loadBasicBattleScene()
 	WE NEED TO GENERATE THE BATTLE HERE
 	THIS IS NOT FOR BOSS FIGHTS, WHICH WILL HAVE AN ENTIRELY DIFFERENT START ANIMATION REGARDLESS
 	*/
-	generateEnemy();
+	generateEnemy(getSpace(m_Space.getX(), m_Space.getY()));
 }
 
 void MainMapScene::loadShopScene()
@@ -475,7 +475,7 @@ void MainMapScene::doBossDefeatedAction()
 {
 }
 
-void MainMapScene::generateEnemy()
+void MainMapScene::generateEnemy(MapSpace currentSpace)
 {
 }
 

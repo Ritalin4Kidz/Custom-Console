@@ -49,7 +49,7 @@ void SydeCoastLevel::doBossDefeatedAction()
 	HideUI();
 }
 
-void SydeCoastLevel::generateEnemy()
+void SydeCoastLevel::generateEnemy(MapSpace currentSpace)
 {
 	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new OrcEnemy(5)));
 }

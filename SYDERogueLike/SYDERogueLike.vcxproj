@@ -189,6 +189,7 @@
     <ClCompile Include="RockItem.cpp" />
     <ClCompile Include="SabotagedMoveEffect.cpp" />
     <ClCompile Include="SabotageMove.cpp" />
+    <ClCompile Include="ScaryFaceMove.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
     <ClCompile Include="ShatteredBulbMove.cpp" />
     <ClCompile Include="ShopItem.cpp" />
@@ -207,10 +208,12 @@
     <ClCompile Include="TagToPlayer.cpp" />
     <ClCompile Include="TypeSwapMove.cpp" />
     <ClCompile Include="WaveMove.cpp" />
+    <ClCompile Include="WolfEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
+    <ClInclude Include="BiteMove.h" />
     <ClInclude Include="BloodGhostEnemy.h" />
     <ClInclude Include="BloodPactMove.h" />
     <ClInclude Include="BoneClubMove.h" />
@@ -266,6 +269,7 @@
     <ClInclude Include="RockItem.h" />
     <ClInclude Include="SabotagedMoveEffect.h" />
     <ClInclude Include="SabotageMove.h" />
+    <ClInclude Include="ScaryFaceMove.h" />
     <ClInclude Include="ScrapMove.h" />
     <ClInclude Include="ShatteredBulbMove.h" />
     <ClInclude Include="ShopItem.h" />
@@ -287,6 +291,7 @@
     <ClInclude Include="TypeSwapMove.h" />
     <ClInclude Include="WaterSlimeMove.h" />
     <ClInclude Include="WaveMove.h" />
+    <ClInclude Include="WolfEnemy.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="MainMapDesignDoc.txt" />

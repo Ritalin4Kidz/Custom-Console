@@ -30,3 +30,5 @@
 #include "WaterSlimeMove.h"
 #include "LightningSlimeMove.h"
 #include "DefaultSlimeMove.h"
+#include "BiteMove.h"
+#include "ScaryFaceMove.h"

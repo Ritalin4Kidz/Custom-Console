@@ -140,5 +140,5 @@ protected:
 
 	virtual void doBossAction(MapSpace currentSpace);
 	virtual void doBossDefeatedAction();
-	virtual void generateEnemy();
+	virtual void generateEnemy(MapSpace currentSpace);
 };

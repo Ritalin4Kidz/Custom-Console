@@ -49,7 +49,17 @@ void MeowCoastLevel::doBossDefeatedAction()
 	HideUI();
 }
 
-void MeowCoastLevel::generateEnemy()
+void MeowCoastLevel::generateEnemy(MapSpace currentSpace)
 {
-	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new BloodGhostEnemy(5)));
+	int LevelAdditions = currentSpace.getSpaceNumber() / 10;
+	if (currentSpace.getPathNumber() == 1)
+	{
+		int level = ((rand() % 3) + 4) + LevelAdditions; //(4-6) + LevelAdditions
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new BloodGhostEnemy(level)));
+	}
+	else
+	{
+		int level = ((rand() % 3) + 4) + LevelAdditions; //(4-6) + LevelAdditions
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new WolfEnemy(level)));
+	}
 }

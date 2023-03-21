@@ -159,6 +159,7 @@
     <ClCompile Include="EmberMove.cpp" />
     <ClCompile Include="Enchantment.cpp" />
     <ClCompile Include="EnchantmentMove.cpp" />
+    <ClCompile Include="FishEnemy.cpp" />
     <ClCompile Include="FreebeeBoss.cpp" />
     <ClCompile Include="FuegoSwordMove.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
     <ClCompile Include="PotionItem.cpp" />
+    <ClCompile Include="RabbitEnemy.cpp" />
     <ClCompile Include="RoboticsMove.cpp" />
     <ClCompile Include="RockItem.cpp" />
     <ClCompile Include="SabotagedMoveEffect.cpp" />
@@ -220,6 +222,7 @@
     <ClInclude Include="BloodPactMove.h" />
     <ClInclude Include="BoneClubMove.h" />
     <ClInclude Include="BrightIdeaMove.h" />
+    <ClInclude Include="BubblerMove.h" />
     <ClInclude Include="BulkUpMove.h" />
     <ClInclude Include="BurntStatus.h" />
     <ClInclude Include="Character.h" />
@@ -231,8 +234,10 @@
     <ClInclude Include="EmberMove.h" />
     <ClInclude Include="EnchantmentMove.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnergyBeamMove.h" />
     <ClInclude Include="FailedMove.h" />
     <ClInclude Include="FireballMove.h" />
+    <ClInclude Include="FishEnemy.h" />
     <ClInclude Include="FreebeeBoss.h" />
     <ClInclude Include="FuegoSwordMove.h" />
     <ClInclude Include="GameScene.h" />
@@ -269,6 +274,8 @@
     <ClInclude Include="PlayerStateScene.h" />
     <ClInclude Include="PostBattleScene.h" />
     <ClInclude Include="PotionItem.h" />
+    <ClInclude Include="RabbitEnemy.h" />
+    <ClInclude Include="RabbitFoodMove.h" />
     <ClInclude Include="RelightMove.h" />
     <ClInclude Include="RoboticsMove.h" />
     <ClInclude Include="RockItem.h" />
@@ -289,12 +296,15 @@
     <ClInclude Include="SmokingCrab.h" />
     <ClInclude Include="SnowballMove.h" />
     <ClInclude Include="SourNoteMove.h" />
+    <ClInclude Include="SwarmAttack.h" />
     <ClInclude Include="SydeCoastLevel.h" />
     <ClInclude Include="SydeRogueLikeMainControl.h" />
     <ClInclude Include="SydeRogueLikeStatics.h" />
     <ClInclude Include="TagToPlayer.hpp" />
     <ClInclude Include="ThunderStormMove.h" />
     <ClInclude Include="TypeSwapMove.h" />
+    <ClInclude Include="WaterboardMove.h" />
+    <ClInclude Include="WaterPinchMove.h" />
     <ClInclude Include="WaterSlimeMove.h" />
     <ClInclude Include="WaveMove.h" />
     <ClInclude Include="WolfEnemy.h" />

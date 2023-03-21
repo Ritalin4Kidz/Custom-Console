@@ -52,10 +52,18 @@ void MeowCoastLevel::doBossDefeatedAction()
 void MeowCoastLevel::generateEnemy(MapSpace currentSpace)
 {
 	int LevelAdditions = currentSpace.getSpaceNumber() / 10;
+	int chanceSpawn = rand() % 100;
 	if (currentSpace.getPathNumber() == 1)
 	{
 		int level = ((rand() % 3) + 4) + LevelAdditions; //(4-6) + LevelAdditions
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new BloodGhostEnemy(level)));
+		if (chanceSpawn >= 0 && chanceSpawn < 50)
+		{
+			SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new BloodGhostEnemy(level)));
+		}
+		else
+		{
+			SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new FishEnemy(level)));
+		}
 	}
 	else
 	{

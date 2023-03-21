@@ -46,10 +46,11 @@ ConsoleWindow MainSplashScreenScene::window_draw(ConsoleWindow window, int windo
 		SydeRogueLikeStatics::setSceneTag("Character Select Scene");
 		return window;
 	}
+	window.setTextAtPoint(Vector2(20, 17), "PRESS SPACE TO START!", BRIGHTWHITE);
 	return window;
 }
 
 void MainSplashScreenScene::onNewScene()
 {
-	test();
+	//test();
 }

@@ -4,6 +4,7 @@
 #include "BloodGhostEnemy.h"
 #include "SmokingCrab.h"
 #include "SlimeKeeper.h"
+#include "CrabEnemy.h"
 class SydeCoastLevel : public MainMapScene
 {
 public:

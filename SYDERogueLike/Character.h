@@ -49,6 +49,14 @@ public:
 
 	void validateCurrentJsonTag();
 
+	void refillMoves()
+	{
+		for (int i = 0; i < m_MoveArray.size(); i++)
+		{
+			m_MoveArray[i]->refreshUsages();
+		}
+	}
+
 	void setMoney(int money) { m_Money = money; }
 	int getMoney() { return m_Money; }
 	void addMoney(int m) { m_Money += m; }

@@ -330,6 +330,14 @@ void BattleScene::validateInventory()
 	inventoryStart = 0;
 }
 
+void BattleScene::checkTags(std::string moveTag)
+{
+	if (moveTag == "RELIGHT")
+	{
+		m_MovesForTurn[0].enemyTurn ? m_Enemy->refillMoves() : m_Player->refillMoves();
+	}
+}
+
 string BattleScene::getStatusString(_SQStatus s)
 {
 	if (s == Status_Sleep)
@@ -542,6 +550,7 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			}
 			else
 			{
+				checkTags(moveTag);
 				m_MovesForTurn.erase(m_MovesForTurn.begin());
 			}
 

@@ -54,6 +54,8 @@ public:
 
 	static void validateInventory();
 
+	void checkTags(std::string moveTag);
+
 	string getStatusString(_SQStatus s);
 
 	ColourClass getStatusColour(_SQStatus s);

@@ -1,5 +1,10 @@
 #include "PlayerAlison.h"
 
+void PlayerAlison::addMovePool()
+{
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new SourNoteMove()), 100));
+}
+
 void PlayerAlison::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({

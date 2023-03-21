@@ -51,5 +51,15 @@ void SydeCoastLevel::doBossDefeatedAction()
 
 void SydeCoastLevel::generateEnemy(MapSpace currentSpace)
 {
-	SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new OrcEnemy(5)));
+	int LevelAdditions = currentSpace.getSpaceNumber() / 10;
+	if (currentSpace.getPathNumber() == 2)
+	{
+		int level = ((rand() % 3) + 4) + LevelAdditions; //(4-6) + LevelAdditions
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new CrabEnemy(level)));
+	}
+	else
+	{
+		int level = ((rand() % 3) + 4) + LevelAdditions; //(4-6) + LevelAdditions
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new OrcEnemy(level)));
+	}
 }

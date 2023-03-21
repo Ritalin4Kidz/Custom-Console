@@ -3,12 +3,12 @@
 void SmokingCrab::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
-		std::shared_ptr<Move>(new SmokeBreakMove()),
+		std::shared_ptr<Move>(new CrabClawMove()),
 		std::shared_ptr<Move>(new BoneClubMove()),
 		std::shared_ptr<Move>(new SmokeBreakMove()),
 		std::shared_ptr<Move>(new WaveMove()),
 		}));
-	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
+	m_LastEffortMove = std::shared_ptr<Move>(new RelightMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\CrabAnimationSmoking.bmp", 40, 130, 10, 10, 0, 51));
 	setAnimationLoop(true);
 

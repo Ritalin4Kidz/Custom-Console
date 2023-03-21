@@ -30,6 +30,8 @@ public:
 
 	virtual bool ExecuteMove(json* Attacker, json* Defender, std::string* tag);
 
+	void refreshUsages() { usagesLeft = maxUsages; }
+
 	CustomAnimationAsset getAnimation() { return m_Animation; }
 	ConsoleWindow drawAnimation(ConsoleWindow window, Vector2 point) { return m_Animation.draw_asset(window, point); }
 

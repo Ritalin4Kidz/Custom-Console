@@ -27,6 +27,8 @@ void PlayerAlison::init_Char(int lvl)
 	this->setSpeed(50);
 	this->setType(Air);
 	this->setMoney(1);
+
+	addMovePool();
 }
 
 void PlayerAlison::levelUpStats()

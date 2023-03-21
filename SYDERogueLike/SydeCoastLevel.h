@@ -7,6 +7,7 @@
 #include "FishEnemy.h"
 #include "CrabEnemy.h"
 #include "RabbitEnemy.h"
+#include "SharkBoss.h"
 class SydeCoastLevel : public MainMapScene
 {
 public:

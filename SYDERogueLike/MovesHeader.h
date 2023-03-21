@@ -42,3 +42,7 @@
 #include "BubblerMove.h"
 #include "EnergyBeamMove.h"
 #include "RabbitFoodMove.h"
+#include "SkullPiercerMove.h"
+#include "LooseMatchMove.h"
+#include "EntangleMove.h"
+#include "IceBeamMove.h"

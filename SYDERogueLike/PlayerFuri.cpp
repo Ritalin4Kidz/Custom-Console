@@ -22,6 +22,7 @@ void PlayerFuri::init_Char(int lvl)
 	this->setSpeed(20);
 	this->setType(Fire);
 	this->setMoney(20);
+	addMovePool();
 }
 
 void PlayerFuri::levelUpStats()
@@ -31,4 +32,9 @@ void PlayerFuri::levelUpStats()
 	this->setAttack(this->getAttack() + 3); //120
 	this->setMagicAttack(this->getMagicAttack() + 1); //290
 	this->setSpeed(this->getSpeed() + 2);
+}
+
+void PlayerFuri::addMovePool()
+{
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LooseMatchMove()), 20));
 }

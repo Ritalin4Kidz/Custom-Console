@@ -194,6 +194,7 @@
     <ClCompile Include="SabotageMove.cpp" />
     <ClCompile Include="ScaryFaceMove.cpp" />
     <ClCompile Include="ScrapMove.cpp" />
+    <ClCompile Include="SharkBoss.cpp" />
     <ClCompile Include="ShatteredBulbMove.cpp" />
     <ClCompile Include="ShopItem.cpp" />
     <ClCompile Include="ShopScene.cpp" />
@@ -235,6 +236,7 @@
     <ClInclude Include="EnchantmentMove.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnergyBeamMove.h" />
+    <ClInclude Include="EntangleMove.h" />
     <ClInclude Include="FailedMove.h" />
     <ClInclude Include="FireballMove.h" />
     <ClInclude Include="FishEnemy.h" />
@@ -245,6 +247,7 @@
     <ClInclude Include="GhostFish.h" />
     <ClInclude Include="GustMove.h" />
     <ClInclude Include="HealSlimeMove.h" />
+    <ClInclude Include="IceBeamMove.h" />
     <ClInclude Include="ItemClass.h" />
     <ClInclude Include="ItemsHeader.h" />
     <ClInclude Include="json.hpp" />
@@ -252,6 +255,7 @@
     <ClInclude Include="LightningBoltMove.h" />
     <ClInclude Include="LightningPunchMove.h" />
     <ClInclude Include="LightningSlimeMove.h" />
+    <ClInclude Include="LooseMatchMove.h" />
     <ClInclude Include="MainMapEnums.h" />
     <ClInclude Include="MainMapScene.h" />
     <ClInclude Include="MainMenuScenes.h" />
@@ -283,11 +287,13 @@
     <ClInclude Include="SabotageMove.h" />
     <ClInclude Include="ScaryFaceMove.h" />
     <ClInclude Include="ScrapMove.h" />
+    <ClInclude Include="SharkBoss.h" />
     <ClInclude Include="ShatteredBulbMove.h" />
     <ClInclude Include="ShopItem.h" />
     <ClInclude Include="ShopItemRarity.h" />
     <ClInclude Include="ShopScene.h" />
     <ClInclude Include="SingMove.h" />
+    <ClInclude Include="SkullPiercerMove.h" />
     <ClInclude Include="SlashMove.h" />
     <ClInclude Include="SleepStatus.h" />
     <ClInclude Include="SlimeKeeper.h" />

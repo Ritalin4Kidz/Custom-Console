@@ -6,7 +6,7 @@ void RabbitEnemy::init_Char(int lvl)
 	std::shared_ptr<Move>(new RabbitFoodMove()),
 	std::shared_ptr<Move>(new BiteMove()),
 	std::shared_ptr<Move>(new SingMove()),
-	std::shared_ptr<Move>(new BulkUpMove()),
+	std::shared_ptr<Move>(new EntangleMove()),
 		}));
 	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\BunnyAnimation.bmp", 40, 180, 10, 10, 0, 72));

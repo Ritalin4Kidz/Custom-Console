@@ -23,6 +23,8 @@ void PlayerFuego::init_Char(int lvl)
 	this->setType(Metal);
 	this->setAbility(Ability_Constant_Struggle);
 	this->setMoney(250);
+
+	addMovePool();
 }
 
 void PlayerFuego::levelUpStats()
@@ -31,4 +33,9 @@ void PlayerFuego::levelUpStats()
 	this->setAttack(this->getAttack() + 3); //120
 	this->setMagicDefence(this->getMagicAttack() + 3); //290
 	this->setSpeed(this->getSpeed() + 2);
+}
+
+void PlayerFuego::addMovePool()
+{
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new SkullPiercerMove()), 90));
 }

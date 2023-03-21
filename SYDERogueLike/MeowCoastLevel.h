@@ -6,6 +6,8 @@
 #include "GhostFish.h"
 #include "WolfEnemy.h"
 #include "FishEnemy.h"
+#include "AliBoss.h"
+#include "FireSkeletonBoss.h"
 class MeowCoastLevel : public MainMapScene
 {
 public:

@@ -46,3 +46,5 @@
 #include "LooseMatchMove.h"
 #include "EntangleMove.h"
 #include "IceBeamMove.h"
+#include "PigRollMove.h"
+#include "MudThrowMove.h"

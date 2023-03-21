@@ -37,6 +37,17 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SharkBoss(5)));
 		return;
 	}
+	else if (BossTag == 3)
+	{
+		m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\BossAnimations\\StartCutscenes\\DefaultBossCutscene.bmp", 150, 120, 30, 20, 0, 30));
+		m_UIAnimation.setLooping(false);
+		m_UIAnimation.setFrame(0);
+		m_SceneState = MMS_UIAnimation;
+		sceneLoad = "Battle Scene";
+		HideUI();
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new PigBoss(5)));
+		return;
+	}
 }
 
 void SydeCoastLevel::doBossDefeatedAction()
@@ -58,6 +69,14 @@ void SydeCoastLevel::doBossDefeatedAction()
 		sceneLoad = "";
 	}
 	else if (m_BossTag == 2)
+	{
+		m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\BossAnimations\\EndCutscenes\\DefaultBossWin.bmp", 150, 40, 30, 20, 0, 10));
+		m_UIAnimation.setLooping(false);
+		m_UIAnimation.setFrame(0);
+		m_SceneState = MMS_END_UIAnimation;
+		sceneLoad = "";
+	}
+	else if (m_BossTag == 3)
 	{
 		m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\BossAnimations\\EndCutscenes\\DefaultBossWin.bmp", 150, 40, 30, 20, 0, 10));
 		m_UIAnimation.setLooping(false);

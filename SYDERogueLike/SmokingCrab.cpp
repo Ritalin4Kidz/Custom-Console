@@ -22,6 +22,7 @@ void SmokingCrab::init_Char(int lvl)
 	this->setSpeed(40);
 	this->setName("Smoking Crab");
 	this->setType(Water);
+	this->setAbility(SYDEQuestAbilites::SQA_ChainSmoker);
 	m_EnemyTag = "Boss";
 }
 

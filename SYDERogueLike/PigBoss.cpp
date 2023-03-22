@@ -22,6 +22,7 @@ void PigBoss::init_Char(int lvl)
 	this->setSpeed(5);
 	this->setName("Piggy");
 	this->setType(Melee);
+	this->setAbility(SYDEQuestAbilites::SQA_NaturalBoost);
 	m_EnemyTag = "Boss";
 }
 

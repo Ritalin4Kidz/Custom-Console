@@ -18,7 +18,7 @@ void Character::validateCurrentJsonTag()
          {"speed",m_Speed},
          {"level",m_Level},
          {"name",m_Name},
-         {"ability", static_cast<int>(m_Ability)},
+         {"ability", static_cast<int>(m_Ability.m_Ability)},
          {"status",static_cast<int>(getStatus())},
     };
 }
@@ -27,7 +27,7 @@ void Character::validateFromJson(const json& j)
 {
     this->m_Name = j.at("name").get<std::string>();
     this->m_Type = static_cast<_SQType>(j.at("type").get<int>());
-    this->m_Ability = static_cast<_SQAbility>(j.at("ability").get<int>());
+    this->m_Ability.m_Ability = static_cast<_SQAbility>(j.at("ability").get<int>());
     this->m_Status = static_cast<_SQStatus>(j.at("status").get<int>());
     this->m_Health = j.at("health").get<int>();
     this->m_MaxHealth = j.at("maxHealth").get<int>();

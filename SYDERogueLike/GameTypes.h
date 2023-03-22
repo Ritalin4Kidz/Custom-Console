@@ -33,7 +33,7 @@ enum _SQ_Stat_Increase {
 enum _SQAbility
 {
 	Ability_None,
-	//ATTACK IS INCREASED WHEN USING MOVE OF SAME TYPE
+	//SPEED IS INCREASED WHEN USING MOVE OF SAME TYPE
 	Ability_Hasten,
 	//DEFENCE DOESN'T DECREASE WHEN SMOKING
 	Ability_ChainSmoker,

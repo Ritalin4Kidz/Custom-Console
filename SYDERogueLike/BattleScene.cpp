@@ -452,7 +452,11 @@ void BattleScene::doMovePreWork()
 	doStatus(m_Player, false);
 	doStatus(m_Enemy, true);
 	//DETERMINE THE ORDER OF THE MOVES
-	if (m_Enemy->getSpeed() >= m_Player->getSpeed() && !isItemMove)
+
+	int enemySpeed = m_Enemy->getSpeed() + ((EnemyMove->getType() ==  m_Enemy->getType()) && m_Enemy->getAbility().m_Ability == Ability_Hasten) ? 50 : 0;
+	int playerSpeed = m_Enemy->getSpeed() + ((PlayerMove->getType() == m_Player->getType()) && m_Player->getAbility().m_Ability == Ability_Hasten) ? 50 : 0;
+
+	if (enemySpeed >= playerSpeed && !isItemMove)
 	{
 		m_MovesForTurn.push_back(MoveTurn(EnemyMove, true));
 		m_MovesForTurn.push_back(MoveTurn(PlayerMove, false));
@@ -610,7 +614,7 @@ void BattleScene::ValidateUI()
 			int moveIndex =stoi(getLabelInUI(i).substr(getLabelInUI(i).size() - 1, 1));
 			if (moveIndex >= m_Player->getMoves().size())
 			{
-				setUIEnabled(m_Player->getUsableMoves().size() <= 0 || m_Player->getAbility() == Ability_Constant_Struggle, i);
+				setUIEnabled(m_Player->getUsableMoves().size() <= 0 || m_Player->getAbility().m_Ability == Ability_Constant_Struggle, i);
 			}
 			else
 			{

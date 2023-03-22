@@ -21,7 +21,7 @@ void PlayerFuego::init_Char(int lvl)
 	this->setName("Fuego");
 	this->setSpeed(60);
 	this->setType(Metal);
-	this->setAbility(Ability_Constant_Struggle);
+	this->setAbility(SYDEQuestAbilites::SQA_ConstantStruggle);
 	this->setMoney(250);
 
 	addMovePool();

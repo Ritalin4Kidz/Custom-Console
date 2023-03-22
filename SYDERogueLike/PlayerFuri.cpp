@@ -22,6 +22,7 @@ void PlayerFuri::init_Char(int lvl)
 	this->setSpeed(20);
 	this->setType(Fire);
 	this->setMoney(20);
+	this->setAbility(SYDEQuestAbilites::SQA_NaturalBoost);
 	addMovePool();
 }
 

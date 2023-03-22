@@ -27,7 +27,7 @@ void PlayerAlison::init_Char(int lvl)
 	this->setSpeed(80);
 	this->setType(Air);
 	this->setMoney(20);
-
+	this->setAbility(SYDEQuestAbilites::SQA_Hasten);
 	addMovePool();
 }
 

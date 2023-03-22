@@ -6,6 +6,7 @@
 #include "ItemClass.h"
 #include "ConsumableItem.h"
 #include <memory>
+#include "Abilities.h"
 /*
 TODO:
 - MOVE POOL, VECTOR OF STRING OF LEARNABLE MOVES
@@ -30,8 +31,8 @@ public:
 	int getLevel() { return m_Level; }
 	void setType(_SQType type) { m_Type = type; }
 
-	_SQAbility getAbility() { return m_Ability; }
-	void setAbility(_SQAbility a) { m_Ability = a; }
+	AbilityStruct getAbility() { return m_Ability; }
+	void setAbility(AbilityStruct a) { m_Ability = a; }
 
 	void setSpeed(int speed) { m_Speed = speed; }
 	int getSpeed() { return m_Speed; }
@@ -95,7 +96,7 @@ public:
 protected:
 	_SQType m_Type = Melee;
 	_SQStatus m_Status = Status_None;
-	_SQAbility m_Ability = Ability_None;
+	AbilityStruct m_Ability;
 
 	int m_Health = 1;
 	int m_MaxHealth = 1;

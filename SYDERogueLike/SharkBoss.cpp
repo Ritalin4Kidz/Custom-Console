@@ -22,6 +22,7 @@ void SharkBoss::init_Char(int lvl)
 	this->setSpeed(60);
 	this->setName("Shark");
 	this->setType(Water);
+	this->setAbility(SYDEQuestAbilites::SQA_Hasten);
 	m_EnemyTag = "Boss";
 }
 

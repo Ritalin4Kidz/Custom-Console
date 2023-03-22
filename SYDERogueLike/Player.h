@@ -54,7 +54,7 @@ public:
 		savedMagicAttackStat	= m_MagicAttack;
 		savedMagicDefenceStat	= m_MagicDefence;
 		savedSpeedStat			= m_Speed;
-		savedAbility			= m_Ability;
+		savedAbility	= m_Ability;
 		savedType				= m_Type;
 	}
 	void reviveStats()
@@ -82,7 +82,7 @@ protected:
 	int savedMagicAttackStat;
 	int savedMagicDefenceStat;
 	int savedSpeedStat;
-	_SQAbility savedAbility;
+	AbilityStruct savedAbility;
 	_SQType savedType;
 	int xp = 0;
 	int xpToNextLevel = 500;

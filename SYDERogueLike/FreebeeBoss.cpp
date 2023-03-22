@@ -23,6 +23,7 @@ void FreebeeBoss::init_Char(int lvl)
 	this->setName("Freebee");
 	this->setType(Air);
 	this->requireBG = true;
+	this->setAbility(SYDEQuestAbilites::SQA_Hasten);
 	m_EnemyTag = "Boss";
 	this->xDrawPos = 36;
 }

@@ -219,12 +219,15 @@
     <ClCompile Include="WolfEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Abilities.h" />
     <ClInclude Include="AliBoss.h" />
     <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
+    <ClInclude Include="BeeStingMove.h" />
     <ClInclude Include="BiteMove.h" />
     <ClInclude Include="BloodGhostEnemy.h" />
     <ClInclude Include="BloodPactMove.h" />
+    <ClInclude Include="BloodRainMove.h" />
     <ClInclude Include="BoneClubMove.h" />
     <ClInclude Include="BrightIdeaMove.h" />
     <ClInclude Include="BubblerMove.h" />
@@ -306,6 +309,7 @@
     <ClInclude Include="SleepStatus.h" />
     <ClInclude Include="SlimeKeeper.h" />
     <ClInclude Include="SmokeBreakMove.h" />
+    <ClInclude Include="SmokeCloudMove.h" />
     <ClInclude Include="SmokeMoveType.h" />
     <ClInclude Include="SmokingCrab.h" />
     <ClInclude Include="SnowballMove.h" />

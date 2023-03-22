@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AliBoss.cpp" />
     <ClCompile Include="BalloonPopMove.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BloodGhostEnemy.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="EmberMove.cpp" />
     <ClCompile Include="Enchantment.cpp" />
     <ClCompile Include="EnchantmentMove.cpp" />
+    <ClCompile Include="FireSkeletonBoss.cpp" />
     <ClCompile Include="FishEnemy.cpp" />
     <ClCompile Include="FreebeeBoss.cpp" />
     <ClCompile Include="FuegoSwordMove.cpp" />
@@ -178,6 +180,7 @@
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="MoveItemClass.cpp" />
     <ClCompile Include="OrcEnemy.cpp" />
+    <ClCompile Include="PigBoss.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAlison.cpp" />
     <ClCompile Include="PlayerBruce.cpp" />
@@ -216,6 +219,7 @@
     <ClCompile Include="WolfEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AliBoss.h" />
     <ClInclude Include="BalloonPopMove.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BiteMove.h" />
@@ -239,6 +243,7 @@
     <ClInclude Include="EntangleMove.h" />
     <ClInclude Include="FailedMove.h" />
     <ClInclude Include="FireballMove.h" />
+    <ClInclude Include="FireSkeletonBoss.h" />
     <ClInclude Include="FishEnemy.h" />
     <ClInclude Include="FreebeeBoss.h" />
     <ClInclude Include="FuegoSwordMove.h" />
@@ -267,7 +272,10 @@
     <ClInclude Include="MoveItemClass.h" />
     <ClInclude Include="MovePoolItem.h" />
     <ClInclude Include="MovesHeader.h" />
+    <ClInclude Include="MudThrowMove.h" />
     <ClInclude Include="OrcEnemy.h" />
+    <ClInclude Include="PigBoss.h" />
+    <ClInclude Include="PigRollMove.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerAlison.h" />
     <ClInclude Include="PlayerBruce.h" />

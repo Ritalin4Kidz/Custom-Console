@@ -4,7 +4,7 @@ class LooseMatchMove : public Move {
 public:
 	LooseMatchMove()
 	{
-		m_Name = "Ember";
+		m_Name = "Loose Match";
 		m_Type = Fire;
 		BasePower = 0;
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Fire\\LooseMatch.bmp", 100, 160, 20, 20, 0, 40));

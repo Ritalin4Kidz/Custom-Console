@@ -3,9 +3,9 @@
 void GhostFish::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
-	std::shared_ptr<Move>(new SmokeBreakMove()),
-	std::shared_ptr<Move>(new BoneClubMove()),
-	std::shared_ptr<Move>(new SmokeBreakMove()),
+	std::shared_ptr<Move>(new BloodPactMove()),
+	std::shared_ptr<Move>(new BloodRainMove()),
+	std::shared_ptr<Move>(new SabotageMove()),
 	std::shared_ptr<Move>(new WaveMove()),
 		}));
 	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());

@@ -3,10 +3,10 @@
 void FreebeeBoss::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
-		std::shared_ptr<Move>(new SmokeBreakMove()),
-		std::shared_ptr<Move>(new BoneClubMove()),
-		std::shared_ptr<Move>(new SmokeBreakMove()),
-		std::shared_ptr<Move>(new WaveMove()),
+		std::shared_ptr<Move>(new GustMove()),
+		std::shared_ptr<Move>(new BeeStingMove()),
+		std::shared_ptr<Move>(new BulkUpMove()),
+		std::shared_ptr<Move>(new SlashMove()),
 		}));
 	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\FreebeeEnem.bmp", 36, 48, 12, 12, 0, 12));

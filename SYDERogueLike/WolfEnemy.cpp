@@ -4,9 +4,7 @@ void WolfEnemy::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
 		std::shared_ptr<Move>(new BiteMove()),
-		std::shared_ptr<Move>(new BoneClubMove()),
 		std::shared_ptr<Move>(new ScaryFaceMove()),
-		std::shared_ptr<Move>(new SmokeBreakMove()),
 		}));
 	m_LastEffortMove = std::shared_ptr<Move>(new ScrapMove());
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\EnemAnimations\\Wolf.bmp", 120, 30, 10, 10, 0, 36));

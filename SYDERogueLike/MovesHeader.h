@@ -48,3 +48,6 @@
 #include "IceBeamMove.h"
 #include "PigRollMove.h"
 #include "MudThrowMove.h"
+#include "BeeStingMove.h"
+#include "SmokeCloudMove.h"
+#include "BloodRainMove.h"

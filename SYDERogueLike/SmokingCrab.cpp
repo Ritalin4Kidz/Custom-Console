@@ -4,7 +4,7 @@ void SmokingCrab::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
 		std::shared_ptr<Move>(new CrabClawMove()),
-		std::shared_ptr<Move>(new BoneClubMove()),
+		std::shared_ptr<Move>(new SmokeCloudMove()),
 		std::shared_ptr<Move>(new SmokeBreakMove()),
 		std::shared_ptr<Move>(new WaveMove()),
 		}));

@@ -3,7 +3,7 @@
 void SlimeKeeper::init_Char(int lvl)
 {
 	SetMoves(vector<std::shared_ptr<Move>>({
-	std::shared_ptr<Move>(new HealSlimeMove()),
+	std::shared_ptr<Move>(new BulkUpMove()),
 	std::shared_ptr<Move>(new HealSlimeMove()),
 	std::shared_ptr<Move>(new LightningSlimeMove()),
 	std::shared_ptr<Move>(new WaterSlimeMove()),

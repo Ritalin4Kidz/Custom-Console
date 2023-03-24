@@ -12,11 +12,11 @@ void PlayerFuego::init_Char(int lvl)
 	m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\PlayerAnimations\\FuegoBehindAnim.bmp", 50, 20, 10, 10, 0, 10));
 	setAnimationLoop(true);
 	this->setLevel(lvl);
-	this->setHealth(25); //70
-	this->setMaxHealth(25); //70
+	this->setHealth(30); //70
+	this->setMaxHealth(30); //70
 	this->setAttack(80); //120
 	this->setDefence(75); //220
-	this->setMagicAttack(5); //290
+	this->setMagicAttack(75); //290
 	this->setMagicDefence(75); //300
 	this->setName("Fuego");
 	this->setSpeed(60);

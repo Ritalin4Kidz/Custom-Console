@@ -48,6 +48,7 @@ void FishEnemy::init_Char(int lvl)
 	this->setType(Water);
 	xpGainedFromFight = (200 * lvl) / 5;
 	this->setAbility(SYDEQuestAbilites::SQA_None);
+	addStats(lvl);
 	this->setMoney((rand() % (10 * lvl)) + (3 * lvl));
 }
 

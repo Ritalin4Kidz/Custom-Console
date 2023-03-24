@@ -85,6 +85,10 @@ bool Move::setStatus(_SQStatus newStatus, json* charac, int chanceRoll)
     if (Chance > chanceRoll)
     {
        charac->at("status") = static_cast<int>(newStatus);
+       if (newStatus == Status_Sleep)
+       {
+           charac->at("turnsSleeping") = 0;
+       }
        return true;
     }
     return false;

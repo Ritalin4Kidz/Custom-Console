@@ -14,38 +14,6 @@ public:
 	std::vector<MovePoolItem> getMovePool() { return m_MovePool; }
 	void addXPToPlayer(int x) { xp += x; while (xp >= xpToNextLevel) { xp -= xpToNextLevel; xpToNextLevel *= 1.5; m_Level++; addRandomStats(); levelUpStats(); } }
 
-	void addRandomStats()
-	{
-		int statPoints = rand() % 3 + 1;
-		while (statPoints > 0)
-		{
-			int statToIncrease = rand() % 6;
-			switch (statToIncrease)
-			{
-			case 0:
-				m_MaxHealth += 1;
-				break;
-			case 1:
-				m_Attack += 1;
-				break;
-			case 2:
-				m_Defence += 1;
-				break;
-			case 3:
-				m_MagicAttack += 1;
-				break;
-			case 4:
-				m_MagicDefence += 1;
-				break;
-			case 5:
-			default:
-				m_Speed += 1;
-				break;
-			}
-			statPoints--;
-		}
-	}
-
 	virtual void levelUpStats() {}
 	void saveStats()
 	{
@@ -54,7 +22,7 @@ public:
 		savedMagicAttackStat	= m_MagicAttack;
 		savedMagicDefenceStat	= m_MagicDefence;
 		savedSpeedStat			= m_Speed;
-		savedAbility	= m_Ability;
+		savedAbility			= m_Ability;
 		savedType				= m_Type;
 	}
 	void reviveStats()
@@ -66,6 +34,7 @@ public:
 		m_Speed					= savedSpeedStat;
 		m_Ability				= savedAbility;
 		m_Type					= savedType;
+		m_turnsSleeping = 0;
 	}
 	string getXPStr() { return to_string(xp) + "xp/" + to_string(xpToNextLevel) + "xp"; }
 protected:

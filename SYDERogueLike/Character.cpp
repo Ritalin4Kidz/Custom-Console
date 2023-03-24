@@ -20,6 +20,7 @@ void Character::validateCurrentJsonTag()
          {"name",m_Name},
          {"ability", static_cast<int>(m_Ability.m_Ability)},
          {"status",static_cast<int>(getStatus())},
+         {"turnsSleeping", m_turnsSleeping }
     };
 }
 
@@ -37,6 +38,7 @@ void Character::validateFromJson(const json& j)
     this->m_MagicDefence = j.at("magicDefence").get<int>();
     this->m_Speed = j.at("speed").get<int>();
     this->m_Level = j.at("level").get<int>();
+    this->m_turnsSleeping = j.at("turnsSleeping").get<int>();
     m_JSONTag = j;
 }
 

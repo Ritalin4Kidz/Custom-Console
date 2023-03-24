@@ -58,6 +58,39 @@ public:
 		}
 	}
 
+	void addRandomStats()
+	{
+		int statPoints = rand() % 3 + 1;
+		while (statPoints > 0)
+		{
+			int statToIncrease = rand() % 6;
+			switch (statToIncrease)
+			{
+			case 0:
+				m_Health += 1;
+				m_MaxHealth += 1;
+				break;
+			case 1:
+				m_Attack += 1;
+				break;
+			case 2:
+				m_Defence += 1;
+				break;
+			case 3:
+				m_MagicAttack += 1;
+				break;
+			case 4:
+				m_MagicDefence += 1;
+				break;
+			case 5:
+			default:
+				m_Speed += 1;
+				break;
+			}
+			statPoints--;
+		}
+	}
+
 	void setMoney(int money) { m_Money = money; }
 	int getMoney() { return m_Money; }
 	void addMoney(int m) { m_Money += m; }
@@ -108,6 +141,8 @@ protected:
 	int m_Speed = 30;
 
 	int m_Money = 0;
+
+	int m_turnsSleeping = 0;
 
 	std::string m_Name = "N/A";
 	json m_JSONTag;

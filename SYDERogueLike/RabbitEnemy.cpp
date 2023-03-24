@@ -22,6 +22,7 @@ void RabbitEnemy::init_Char(int lvl)
 	this->setSpeed(95);
 	this->setName("Bunny");
 	this->setType(Grass);
+	addStats(lvl);
 	xpGainedFromFight = (250 * lvl) / 5;
 
 	this->setMoney((rand() % (10 * lvl)) + (3 * lvl));

@@ -24,7 +24,7 @@ void PlayerAlison::init_Char(int lvl)
 	this->setMagicAttack(120); //290
 	this->setMagicDefence(30); //300
 	this->setName("Alison");
-	this->setSpeed(80);
+	this->setSpeed(120);
 	this->setType(Air);
 	this->setMoney(20);
 	this->setAbility(SYDEQuestAbilites::SQA_Hasten);

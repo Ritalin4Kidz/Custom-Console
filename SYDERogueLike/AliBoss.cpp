@@ -23,6 +23,7 @@ void AliBoss::init_Char(int lvl)
 	this->setName("Ali");
 	this->setType(Fire);
 	this->setAbility(SYDEQuestAbilites::SQA_ChainSmoker);
+	addStats(lvl);
 	m_EnemyTag = "Boss";
 }
 

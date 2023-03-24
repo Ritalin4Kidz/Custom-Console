@@ -21,7 +21,7 @@ void OrcEnemy::init_Char(int lvl)
     this->setName("Orc");
     this->setType(Grass);
 	xpGainedFromFight = (200 * lvl) / 5;
-
+	addStats(lvl);
 	this->setMoney((rand() % (10 * lvl)) + (3 * lvl));
 }
 

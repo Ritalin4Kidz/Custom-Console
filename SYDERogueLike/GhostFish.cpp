@@ -23,6 +23,7 @@ void GhostFish::init_Char(int lvl)
 	this->setName("Ghost Fish");
 	this->setType(Water);
 	this->setAbility(SYDEQuestAbilites::SQA_Immunity);
+	addStats(lvl);
 	m_EnemyTag = "Boss";
 }
 

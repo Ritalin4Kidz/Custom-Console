@@ -17,7 +17,7 @@ void PlayerFuri::init_Char(int lvl)
 	this->setAttack(50); //120
 	this->setDefence(100); //220
 	this->setMagicAttack(70); //290
-	this->setMagicDefence(10); //300
+	this->setMagicDefence(20); //300
 	this->setName("Furi");
 	this->setSpeed(20);
 	this->setType(Fire);

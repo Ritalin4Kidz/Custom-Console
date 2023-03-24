@@ -14,12 +14,12 @@ void PlayerBruce::init_Char(int lvl)
 	this->setLevel(lvl);
 	this->setHealth(50); //70
 	this->setMaxHealth(50); //70
-	this->setAttack(100); //120
-	this->setDefence(100); //220
+	this->setAttack(130); //120
+	this->setDefence(90); //220
 	this->setMagicAttack(20); //290
-	this->setMagicDefence(10); //300
+	this->setMagicDefence(20); //300
 	this->setName("Bruce");
-	this->setSpeed(50);
+	this->setSpeed(40);
 	this->setType(Melee);
 	this->setAbility(SYDEQuestAbilites::SQA_None);
 	this->setMoney(100);

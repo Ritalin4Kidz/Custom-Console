@@ -23,6 +23,7 @@ void SlimeKeeper::init_Char(int lvl)
 	this->setName("Slime Keeper");
 	this->setAbility(SYDEQuestAbilites::SQA_NaturalBoost);
 	this->setType(Melee);
+	addStats(lvl);
 	m_EnemyTag = "Boss";
 }
 

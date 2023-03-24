@@ -23,6 +23,7 @@ void FireSkeletonBoss::init_Char(int lvl)
 	this->setName("Skelly");
 	this->setType(Fire);
 	this->setAbility(SYDEQuestAbilites::SQA_Hasten);
+	addStats(lvl);
 	m_EnemyTag = "Boss";
 }
 

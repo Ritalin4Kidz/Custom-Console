@@ -10,6 +10,18 @@ public:
 
 	virtual std::shared_ptr<Move> determineMove(Character opponent) { return nullptr; }
 
+	void addStats(int lvl)
+	{
+		while (lvl > 0)
+		{
+			int HPBuff = rand() % 3 + 1;
+			this->setHealth(getHealth() + HPBuff);
+			this->setMaxHealth(getMaxHealth() + HPBuff);
+			addRandomStats();
+			lvl--;
+		}
+	}
+
 	string getEnemyTag() { return m_EnemyTag; }
 	int getXpGain() { return xpGainedFromFight; }
 

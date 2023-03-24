@@ -14,10 +14,10 @@ void PlayerJordan::init_Char(int lvl)
 	this->setLevel(lvl);
 	this->setHealth(35); //70
 	this->setMaxHealth(35); //70
-	this->setAttack(95); //120
-	this->setDefence(5); //220
+	this->setAttack(55); //120
+	this->setDefence(25); //220
 	this->setMagicAttack(95); //290
-	this->setMagicDefence(5); //300
+	this->setMagicDefence(25); //300
 	this->setName("Jordan");
 	this->setSpeed(110);
 	this->setType(Electric);

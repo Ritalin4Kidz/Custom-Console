@@ -12,7 +12,7 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SmokingCrab(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SmokingCrab(8)));
 		return;
 	}
 	else if (BossTag == 1)
@@ -23,7 +23,7 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SlimeKeeper(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SlimeKeeper(10)));
 		return;
 	}
 	else if (BossTag == 2)
@@ -34,7 +34,7 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SharkBoss(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new SharkBoss(10)));
 		return;
 	}
 	else if (BossTag == 3)
@@ -45,7 +45,7 @@ void SydeCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new PigBoss(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new PigBoss(1)));
 		return;
 	}
 }

@@ -185,9 +185,11 @@ void ShopScene::generateCommonInventoryItem()
 	case 0:
 		m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\HealIcon.bmp", 5, 5)), SIR_COMMON, "Potion",
 			shared_ptr<ItemClass>(new PotionItem())));
+		break;
 	default:
 		m_ShopItems.push_back(ShopItem(12, CustomAsset(10, 5, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ShopIcons\\RockIcon.bmp", 5, 5)), SIR_COMMON, "Rock",
 			shared_ptr<ItemClass>(new RockItem())));
+		break;
 	}
 }
 

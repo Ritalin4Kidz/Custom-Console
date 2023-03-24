@@ -20,6 +20,7 @@ void WolfEnemy::init_Char(int lvl)
 	this->setSpeed(120);
 	this->setName("Wolf");
 	this->setType(Melee);
+	addStats(lvl);
 	xpGainedFromFight = (100 * lvl) / 5;
 
 	this->setMoney((rand() % (10 * lvl)) + (3 * lvl));

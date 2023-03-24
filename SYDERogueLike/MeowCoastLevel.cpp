@@ -12,7 +12,7 @@ void MeowCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new GhostFish(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new GhostFish(10)));
 		return;
 	}
 	else if (BossTag == 1)
@@ -23,7 +23,7 @@ void MeowCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new FreebeeBoss(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new FreebeeBoss(8)));
 		return;
 	}
 	else if (BossTag == 2)
@@ -34,7 +34,7 @@ void MeowCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new AliBoss(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new AliBoss(9)));
 		return;
 	}
 	else if (BossTag == 3)
@@ -45,7 +45,7 @@ void MeowCoastLevel::doBossAction(MapSpace currentSpace)
 		m_SceneState = MMS_UIAnimation;
 		sceneLoad = "Battle Scene";
 		HideUI();
-		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new FireSkeletonBoss(5)));
+		SydeRogueLikeStatics::setEnemy(std::shared_ptr<Enemy>(new FireSkeletonBoss(11)));
 		return;
 	}
 }

@@ -23,6 +23,7 @@ void BloodGhostEnemy::init_Char(int lvl)
 	this->setName("Blood Ghost");
 	this->setType(Telekinetic);
 	this->setAbility(SYDEQuestAbilites::SQA_Insomnia);
+	addStats(lvl);
 	xpGainedFromFight = (275 * lvl) / 5;
 }
 

@@ -33,6 +33,11 @@ MapConfigObject::MapConfigObject(std::string filename)
 				std::vector<std::string> PathDataValues = Split(FileData[1], ',');
 				m_BossData.push_back(BossDataObject(std::stoi(PathDataValues[0]), std::stoi(PathDataValues[1]), std::stoi(PathDataValues[2])));
 			}
+			else if (FileData[0] == "ForcedChangePathData")
+			{
+				std::vector<std::string> PathDataValues = Split(FileData[1], ',');
+				m_ForcedPathData.push_back(ForcedPathDataObject(Vector2(std::stoi(PathDataValues[0]), std::stoi(PathDataValues[1])), Vector2(std::stoi(PathDataValues[2]), std::stoi(PathDataValues[3]))));
+			}
 		}
 	}
 }
@@ -44,6 +49,18 @@ int MapConfigObject::getPathNumberToMoveAtPos(int path, int space)
 		if (m_PathData[i].getPathNo() == path && m_PathData[i].getSpaceNo() == space)
 		{
 			return m_PathData[i].getMoveTo();
+		}
+	}
+	return 0;
+}
+
+Vector2 MapConfigObject::getForcedPathNumberToMoveAtPos(int path, int space)
+{
+	for (int i = 0; i < m_ForcedPathData.size(); i++)
+	{
+		if (m_ForcedPathData[i].getSpaceNo().getX() == path && m_ForcedPathData[i].getSpaceNo().getY() == space)
+		{
+			return m_ForcedPathData[i].getMoveTo();
 		}
 	}
 	return 0;
@@ -95,4 +112,10 @@ BossDataObject::BossDataObject(int path, int space, int bossTag)
 	pathNumber = path;
 	spaceNumber = space;
 	bossTagNumber = bossTag;
+}
+
+ForcedPathDataObject::ForcedPathDataObject(Vector2 space, Vector2 moveTo)
+{
+	spacePos = space;
+	spacePosMoveTo = moveTo;
 }

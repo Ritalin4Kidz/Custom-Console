@@ -1,7 +1,17 @@
 PathData=0,17,1
 PathData=0,25,2
 PathData=1,11,3
+PathData=3,10,4
+PathData=0,30,5
+PathData=5,21,6
+PathData=3,22,7
+PathData=7,9,8
 BossData=0,37,2
 BossData=1,41,3
 BossData=2,4,0
 BossData=3,31,1
+ForcedChangePathData=4,28,0,12
+ForcedChangePathData=5,31,0,22
+ForcedChangePathData=6,7,1,17
+ForcedChangePathData=7,30,1,27
+ForcedChangePathData=8,12,3,6

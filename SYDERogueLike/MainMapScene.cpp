@@ -155,6 +155,7 @@ void MainMapScene::setUpMap()
 			switch (spawnType)
 			{
 			case 200:
+			case 201:
 			case 105:
 			case 28:
 				addSpace(Vector2(ii * 2, i), *pixelColor);
@@ -189,6 +190,9 @@ void MainMapScene::sortSpaces()
 				case MST_SwitchPathsSpace:
 					m_BoardColour = BRIGHTWHITE;
 					break;
+				case MST_ForceSwitchPathsSpace:
+					m_BoardColour = NULLCOLOUR;
+					break;
 				case MST_BossBattleSpace:
 					m_BoardColour = YELLOW_YELLOW_BG;
 					break;
@@ -202,12 +206,15 @@ void MainMapScene::sortSpaces()
 					m_BoardColour = BLUE_BLUE_BG;
 					break;
 			}
-			Vector2 loc = m_MapPaths[i].getElement(ii).getDrawPos();
-			m_MapBg.setCharAtPoint(loc, ' ');
-			m_MapBg.setColourAtPoint(loc, m_BoardColour);
-			loc.addX(1);
-			m_MapBg.setCharAtPoint(loc, ' ');
-			m_MapBg.setColourAtPoint(loc, m_BoardColour);
+			if (m_BoardColour != NULLCOLOUR)
+			{
+				Vector2 loc = m_MapPaths[i].getElement(ii).getDrawPos();
+				m_MapBg.setCharAtPoint(loc, ' ');
+				m_MapBg.setColourAtPoint(loc, m_BoardColour);
+				loc.addX(1);
+				m_MapBg.setCharAtPoint(loc, ' ');
+				m_MapBg.setColourAtPoint(loc, m_BoardColour);
+			}
 		}
 	}
 	cameraPos = getSpace(0, 0).getDrawPos();
@@ -346,6 +353,10 @@ MapSpaceTypes MainMapScene::getPixRedToType(int red)
 	if (red == 200)
 	{
 		return MST_SwitchPathsSpace;
+	}
+	if (red == 201)
+	{
+		return MST_ForceSwitchPathsSpace;
 	}
 	if (red == 28)
 	{
@@ -565,7 +576,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 	{
 		MapSpace spaceCurrent = getSpace(m_Space.getX(), m_Space.getY());
 		cameraPos = spaceCurrent.getDrawPos();
-		if (spaceCurrent.getType() != MST_SwitchPathsSpace)
+		if (spaceCurrent.getType() != MST_SwitchPathsSpace && spaceCurrent.getType() != MST_ForceSwitchPathsSpace)
 		{
 			if (isLastSpace(m_Space.getX(), m_Space.getY()))
 			{
@@ -585,6 +596,11 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			{
 				m_MovementState = MoveState_CHECKING;
 			}
+		}
+		else if (spaceCurrent.getType() == MST_ForceSwitchPathsSpace)
+		{
+			m_Space = m_CfgObj.getForcedPathNumberToMoveAtPos(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber());
+			return window;
 		}
 		else if (spaceCurrent.getType() == MST_SwitchPathsSpace)
 		{

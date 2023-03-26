@@ -5,8 +5,23 @@
 #include <fstream>
 #include <vector>
 #include <iostream>
+#include "Vector2.h"
 #include <regex>
 using json = nlohmann::json;
+class ForcedPathDataObject
+{
+public:
+	ForcedPathDataObject() {}
+	ForcedPathDataObject(Vector2 space, Vector2 moveTo);
+
+	Vector2 getSpaceNo() { return spacePos; }
+	Vector2 getMoveTo() { return spacePosMoveTo; }
+
+private:
+	Vector2 spacePos;
+	Vector2 spacePosMoveTo;
+};
+
 class PathDataObject
 {
 public:
@@ -49,10 +64,13 @@ public:
 
 	int getPathNumberToMoveAtPos(int path, int space);
 
+	Vector2 getForcedPathNumberToMoveAtPos(int path, int space);
+
 	int getBossTagAtPos(int path, int space);
 
 	std::vector<std::string> Split(std::string str, char split);
 private:
 	std::vector<PathDataObject> m_PathData = std::vector<PathDataObject>();
 	std::vector<BossDataObject> m_BossData = std::vector<BossDataObject>();
+	std::vector<ForcedPathDataObject> m_ForcedPathData = std::vector<ForcedPathDataObject>();
 };

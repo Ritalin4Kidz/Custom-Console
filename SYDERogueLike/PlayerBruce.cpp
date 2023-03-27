@@ -21,7 +21,7 @@ void PlayerBruce::init_Char(int lvl)
 	this->setName("Bruce");
 	this->setSpeed(40);
 	this->setType(Melee);
-	this->setAbility(SYDEQuestAbilites::SQA_None);
+	this->setAbility(SYDEQuestAbilites::SQA_Withstand);
 	this->setMoney(100);
 	addMovePool();
 }

@@ -17,6 +17,16 @@ void selectPV()
 	PlayerStateScene::m_SceneState = PSS_PlayerViewState;
 }
 
+void selectMV()
+{
+	PlayerStateScene::m_SceneState = PSS_PlayerMovesState;
+}
+
+void selectOV()
+{
+	PlayerStateScene::m_SceneState = PSS_PlayerOtherState;
+}
+
 void selectIV()
 {
 	PlayerStateScene::m_SceneState = PSS_InventoryViewState;
@@ -59,7 +69,7 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 		}
 	}
 
-	if (m_SceneState == PSS_PlayerViewState)
+	if (m_SceneState == PSS_PlayerViewState || m_SceneState == PSS_PlayerMovesState  || m_SceneState == PSS_PlayerOtherState)
 	{
 		window = drawPV(window, windowWidth, windowHeight);
 	}
@@ -76,24 +86,45 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 
 ConsoleWindow PlayerStateScene::drawPV(ConsoleWindow window, int windowWidth, int windowHeight)
 {
-	window.setTextAtPoint(Vector2(2, 1), SydeRogueLikeStatics::getPlayer()->getName(), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 3), "Health: " + to_string(SydeRogueLikeStatics::getPlayer()->getHealth()) + "/" + to_string(SydeRogueLikeStatics::getPlayer()->getMaxHealth()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 4), "Attack: " + to_string(SydeRogueLikeStatics::getPlayer()->getAttack()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 5), "Defence: " + to_string(SydeRogueLikeStatics::getPlayer()->getDefence()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 6), "Speed: " + to_string(SydeRogueLikeStatics::getPlayer()->getSpeed()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 7), "M Attack: " + to_string(SydeRogueLikeStatics::getPlayer()->getMagicAttack()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 8), "M Defence: " + to_string(SydeRogueLikeStatics::getPlayer()->getMagicDefence()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 9), "Money: " + to_string(SydeRogueLikeStatics::getPlayer()->getMoney()), BLACK_LIGHTGREY_BG);
-	window.setTextAtPoint(Vector2(2, 10), "Moves: ", BLACK_LIGHTGREY_BG);
-	for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
+	for (int i = 2; i < 58; i++)
 	{
-		window.setTextAtPoint(Vector2(2, (i * 2) + 11), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
-			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getUsagesLeft()) + "/" +
-			to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getMaxUsages())
-			, BLACK_LIGHTGREY_BG);
-		window.setTextAtPoint(Vector2(4, (i * 2) + 12), SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType()) + "  P: " +
-			to_string((int)SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getPower())
-			, BLACK_LIGHTGREY_BG);
+		for (int ii = 2; ii < 12; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BLACK);
+		}
+	}
+	window.setTextAtPoint(Vector2(2, 2), SydeRogueLikeStatics::getPlayer()->getName(), BRIGHTWHITE);
+	if (m_SceneState == PSS_PlayerViewState)
+	{
+		window.setTextAtPoint(Vector2(2, 3), "Health: " + to_string(SydeRogueLikeStatics::getPlayer()->getHealth()) + "/" + to_string(SydeRogueLikeStatics::getPlayer()->getMaxHealth()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 4), "Attack: " + to_string(SydeRogueLikeStatics::getPlayer()->getAttack()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 5), "Defence: " + to_string(SydeRogueLikeStatics::getPlayer()->getDefence()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 6), "Speed: " + to_string(SydeRogueLikeStatics::getPlayer()->getSpeed()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 7), "M Attack: " + to_string(SydeRogueLikeStatics::getPlayer()->getMagicAttack()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 8), "M Defence: " + to_string(SydeRogueLikeStatics::getPlayer()->getMagicDefence()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 9), "Money: " + to_string(SydeRogueLikeStatics::getPlayer()->getMoney()), BRIGHTWHITE);
+	}
+	else if (m_SceneState == PSS_PlayerMovesState)
+	{
+		window.setTextAtPoint(Vector2(2, 3), "Moves: ", BRIGHTWHITE);
+		for (int i = 0; i < SydeRogueLikeStatics::getPlayer()->getMoves().size(); i++)
+		{
+			window.setTextAtPoint(Vector2(2, (i * 2) + 4), SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getName() + ": " +
+				to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getUsagesLeft()) + "/" +
+				to_string(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getMaxUsages())
+				, BRIGHTWHITE);
+			window.setTextAtPoint(Vector2(4, (i * 2) + 5), SydeRogueLikeStatics::TypeToString(SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getType()) + "  P: " +
+				to_string((int)SydeRogueLikeStatics::getPlayer()->getMoveAtIndex(i)->getPower())
+				, BRIGHTWHITE);
+		}
+	}
+	else if (m_SceneState == PSS_PlayerOtherState)
+	{
+		window.setTextAtPoint(Vector2(2, 3), "Ability: " + SydeRogueLikeStatics::getPlayer()->getAbility().m_AbilityName, BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 4), SydeRogueLikeStatics::getPlayer()->getAbility().m_Description, BRIGHTWHITE);
+
+		window.setTextAtPoint(Vector2(2, 6), "Level: " + to_string(SydeRogueLikeStatics::getPlayer()->getLevel()), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 7), "XP: " + SydeRogueLikeStatics::getPlayer()->getXPStr(), BRIGHTWHITE);
 	}
 
 	window = playerAsset.draw_asset(window, Vector2(40, 12));
@@ -290,12 +321,32 @@ void PlayerStateScene::createBaseUI()
 
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"PV",
-		Vector2(30, 1),
+		Vector2(22, 1),
 		Vector2(2, 1),
 		BRIGHTWHITE_RED_BG,
 		NULLCOLOUR,
 		false,
 		selectPV
+	)));
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"MV",
+		Vector2(26, 1),
+		Vector2(2, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		selectMV
+	)));
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"OV",
+		Vector2(30, 1),
+		Vector2(2, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		selectOV
 	)));
 
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(

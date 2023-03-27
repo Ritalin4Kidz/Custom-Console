@@ -48,6 +48,7 @@ float Move::BaseDamageCalculation(json* Attacker, json* Defender, float Bonus_Da
     int level = Attacker->at("level").get<int>();
     int attack = usesMagic ? Attacker->at("magicAttack").get<int>() : Attacker->at("attack").get<int>();
     int defence = usesMagic ? Defender->at("magicDefence").get<int>() : Defender->at("defence").get<int>();
+
     //BASED OFF POKEMON https://bulbapedia.bulbagarden.net/wiki/Damage
     float damage_dealt = ((((((2 * level) / 5) + 2) * this->BasePower * (attack / defence)) / 50) + 2) * Bonus_Damage;
     //MINIMUM OF 1 DAMAGE IF ATTACK CAN HIT
@@ -57,9 +58,31 @@ float Move::BaseDamageCalculation(json* Attacker, json* Defender, float Bonus_Da
     {
         damage_dealt *= 1.5;
     }
+    else if ((ability == Ability_Dying_Breath) && (type == this->getType()))
+    {
+        int h = Attacker->at("health").get<int>(); 
+        int mH = Attacker->at("maxHealth").get<int>();
+        if (h < (mH / 5))
+        {
+            damage_dealt *= 2.5;
+        }
+    }
+
     if (damage_dealt < 1 && Bonus_Damage != 0)
     {
         damage_dealt = 1;
+    }
+
+
+    _SQAbility defAbility = static_cast<_SQAbility>(Defender->at("ability").get<int>());
+    if (defAbility == Ability_Withstand)
+    {
+        int h = Defender->at("health").get<int>();
+        int mH = Defender->at("maxHealth").get<int>();
+        if (h == mH && damage_dealt >= mH)
+        {
+            damage_dealt = mH - 1;
+        }
     }
 
     return damage_dealt;

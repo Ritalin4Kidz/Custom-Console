@@ -14,7 +14,9 @@ enum PlayerStateScene_State
 {
 	PSS_PlayerViewState = 0,
 	PSS_InventoryViewState = 1,
-	PSS_RemoveMoveState = 2
+	PSS_RemoveMoveState = 2,
+	PSS_PlayerMovesState = 3,
+	PSS_PlayerOtherState = 4
 };
 
 class PlayerStateScene : public GameScene

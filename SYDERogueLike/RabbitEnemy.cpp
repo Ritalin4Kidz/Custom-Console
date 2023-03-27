@@ -24,7 +24,7 @@ void RabbitEnemy::init_Char(int lvl)
 	this->setType(Grass);
 	addStats(lvl);
 	xpGainedFromFight = (250 * lvl) / 5;
-
+	this->setAbility(SYDEQuestAbilites::SQA_NaturalBoost);
 	this->setMoney((rand() % (10 * lvl)) + (3 * lvl));
 }
 

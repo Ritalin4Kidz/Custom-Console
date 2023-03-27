@@ -82,6 +82,9 @@ ConsoleWindow BattleScene::drawDetailsScreen(ConsoleWindow window, int windowWid
 			SydeRogueLikeStatics::TypeToString(m_Enemy->getMoveAtIndex(i)->getType())
 			, BRIGHTWHITE);
 	}
+
+	window.setTextAtPoint(Vector2(22, 16), "Ability: " + m_Enemy->getAbility().m_AbilityName, BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(22, 17), m_Enemy->getAbility().m_Description, BRIGHTWHITE);
 	return window;
 }
 

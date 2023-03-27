@@ -44,5 +44,9 @@ enum _SQAbility
 	//ATTACK BOOSTED WHEN MOVE IS SAME TYPE AS CHARACTER
 	Ability_NaturalBoost,
 	//CAN USE LAST EFFORT MOVES WHENEVER
-	Ability_Constant_Struggle
+	Ability_Constant_Struggle,
+	//MOVES OF SAME TYPE POWERED UP IN A PINCH
+	Ability_Dying_Breath,
+	//CAN NOT GET ONE SHOT
+	Ability_Withstand
 };

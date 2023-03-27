@@ -31,4 +31,7 @@ public:
 	static AbilityStruct SQA_Insomnia;
 	static AbilityStruct SQA_NaturalBoost;
 	static AbilityStruct SQA_ConstantStruggle;
+	static AbilityStruct SQA_DyingBreath;
+	static AbilityStruct SQA_Withstand;
+	static AbilityStruct SQA_Piggy;
 };

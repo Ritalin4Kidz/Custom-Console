@@ -22,6 +22,7 @@ void OrcEnemy::init_Char(int lvl)
     this->setType(Grass);
 	xpGainedFromFight = (200 * lvl) / 5;
 	addStats(lvl);
+	this->setAbility(SYDEQuestAbilites::SQA_Insomnia);
 	this->setMoney((rand() % (10 * lvl)) + (3 * lvl));
 }
 

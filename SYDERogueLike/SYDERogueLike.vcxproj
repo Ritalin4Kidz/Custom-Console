@@ -321,7 +321,9 @@
     <ClInclude Include="SydeRogueLikeStatics.h" />
     <ClInclude Include="TagToPlayer.hpp" />
     <ClInclude Include="ThunderStormMove.h" />
+    <ClInclude Include="TypeBeamMove.h" />
     <ClInclude Include="TypeSwapMove.h" />
+    <ClInclude Include="VoltTackleMove.h" />
     <ClInclude Include="WaterboardMove.h" />
     <ClInclude Include="WaterPinchMove.h" />
     <ClInclude Include="WaterSlimeMove.h" />

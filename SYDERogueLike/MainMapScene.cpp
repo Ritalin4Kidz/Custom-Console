@@ -536,7 +536,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		if (m_SceneState == MMS_Normal)
 		{
 			m_MovementState = MoveState_MOVEMENT;
-			spacesToMove = (rand() % maxSpacesToMoveRange) + 1;
+			spacesToMove = (rand() % SydeRogueLikeStatics::getPlayer()->getRollSize()) + SydeRogueLikeStatics::getPlayer()->getMinRoll();
 			refreshStepsUI(windowWidth / 2, windowHeight / 2);
 
 		}

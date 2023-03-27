@@ -14,6 +14,9 @@ public:
 	std::vector<MovePoolItem> getMovePool() { return m_MovePool; }
 	void addXPToPlayer(int x) { xp += x; while (xp >= xpToNextLevel) { xp -= xpToNextLevel; xpToNextLevel *= 1.5; m_Level++; addRandomStats(); levelUpStats(); } }
 
+	int getMinRoll() { return minimumRoll; }
+	int getRollSize() { return rollSize; }
+
 	virtual void levelUpStats() {}
 	void saveStats()
 	{
@@ -44,7 +47,8 @@ protected:
 		{
 			MovePoolItem(std::shared_ptr<Move>(new SlashMove()), 30),
 			MovePoolItem(std::shared_ptr<Move>(new BulkUpMove()), 35),
-			MovePoolItem(std::shared_ptr<Move>(new SnowballMove()), 40)
+			MovePoolItem(std::shared_ptr<Move>(new SnowballMove()), 40),
+			MovePoolItem(std::shared_ptr<Move>(new TypeBeamMove()), 50)
 		}); 
 	int savedAttackStat;
 	int savedDefenceStat;
@@ -55,4 +59,7 @@ protected:
 	_SQType savedType;
 	int xp = 0;
 	int xpToNextLevel = 500;
+
+	int minimumRoll = 1;
+	int rollSize = 6;
 };

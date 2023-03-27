@@ -30,6 +30,8 @@ void PlayerJordan::addMovePool()
 {
 	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LightningBoltMove()), 100));
 	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new LightningPunchMove()), 50));
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new EnergyBeamMove()), 75));
+	m_MovePool.push_back(MovePoolItem(std::shared_ptr<Move>(new VoltTackleMove()), 100));
 }
 
 void PlayerJordan::levelUpStats()

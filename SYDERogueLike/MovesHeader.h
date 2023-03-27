@@ -51,3 +51,5 @@
 #include "BeeStingMove.h"
 #include "SmokeCloudMove.h"
 #include "BloodRainMove.h"
+#include "VoltTackleMove.h"
+#include "TypeBeamMove.h"

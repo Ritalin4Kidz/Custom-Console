@@ -6,7 +6,7 @@ public:
 	{
 		m_Name = "Energy Beam";
 		m_Type = Telekinetic;
-		BasePower = 45;
+		BasePower = 55;
 		m_Animation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\AttackAnimations\\Telekinetic\\Psybeam.bmp", 100, 100, 20, 20, 0, 25));
 		maxUsages = 15;
 		useMagicAttack = true;

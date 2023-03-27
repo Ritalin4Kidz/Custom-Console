@@ -12,7 +12,6 @@ public:
 		usagesLeft = maxUsages;
 		m_Accuracy = 100;
 		useMagicAttack = true;
-		m_TM_Identifier = "TM_002";
 	}
 protected:
 };

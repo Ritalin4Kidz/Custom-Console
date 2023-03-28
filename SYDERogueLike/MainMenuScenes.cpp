@@ -1,5 +1,15 @@
 #include "MainMenuScenes.h"
 
+void characterSelectClick()
+{
+	SydeRogueLikeStatics::setSceneTag("Character Select Scene");
+}
+
+void exitGameClick()
+{
+	SydeRogueLikeStatics::setSceneTag("Exit Game");
+}
+
 ConsoleWindow MainMenuScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 0; i < windowWidth; i++)
@@ -16,6 +26,30 @@ ConsoleWindow MainMenuScene::window_draw(ConsoleWindow window, int windowWidth, 
 
 void MainMenuScene::onNewScene()
 {
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"New Game",
+		Vector2(2, 3),
+		Vector2(8, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		characterSelectClick,
+		"SwapViewLBL",
+		"SwapViewLBL"
+	)));
+
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"Exit Game",
+		Vector2(2, 18),
+		Vector2(9, 1),
+		BRIGHTWHITE_BRIGHTRED_BG,
+		NULLCOLOUR,
+		false,
+		exitGameClick,
+		"SwapViewLBL",
+		"SwapViewLBL"
+	)));
 }
 
 void MainSplashScreenScene::test()
@@ -40,17 +74,17 @@ ConsoleWindow MainSplashScreenScene::window_draw(ConsoleWindow window, int windo
 		}
 	}
 	//TEMP
+	window = m_BGImage.draw_asset(window, Vector2(1,0));
 	window.setTextAtPoint(Vector2(0, 1), "SYDE ROGUELIKE", BRIGHTWHITE);
 	if (SYDEKeyCode::get_key(VK_SPACE)._CompareState(KEYDOWN))
 	{
-		SydeRogueLikeStatics::setSceneTag("Character Select Scene");
+		SydeRogueLikeStatics::setSceneTag("Main Menu");
 		return window;
 	}
-	window.setTextAtPoint(Vector2(20, 17), "PRESS SPACE TO START!", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(20, 19), "PRESS SPACE TO START!", BRIGHTWHITE);
 	return window;
 }
 
 void MainSplashScreenScene::onNewScene()
 {
-	//test();
 }

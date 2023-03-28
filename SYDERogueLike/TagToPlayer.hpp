@@ -2,26 +2,29 @@
 #include "PlayerIncludeHeader.h"
 #include <string>
 #include "SYDEEngineAssets.h"
+#include <vector>
 class PlayerSelectObject
 {
 public:
 
-	PlayerSelectObject(int rat, std::string tag, const WCHAR* bmpPath) 
+	PlayerSelectObject(int rat, std::string tag, const WCHAR* bmpPath, std::vector<std::string> desc) 
 	{
 		m_Rating = rat;
 		m_CharacterSelectImg.setAsset(20, 10, AssetsClass::get_bmp_as_direct_colour_class_array(bmpPath, 10, 10));
 		m_Tag = tag;
+		m_Desc = desc;
 	}
 
 	CustomAsset getImg() { return m_CharacterSelectImg; }
 	int getRating() { return m_Rating; }
 
 	std::string getTag() { return m_Tag; }
-
+	std::vector<std::string> getDesc() { return m_Desc; }
 private:
 	std::string m_Tag;
 	CustomAsset m_CharacterSelectImg;
 	int m_Rating;
+	std::vector<std::string> m_Desc;
 };
 
 class TagToPlayer

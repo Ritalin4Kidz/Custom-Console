@@ -22,6 +22,8 @@ public:
 	ConsoleWindow window_draw_game(ConsoleWindow window, int windowWidth, int windowHeight) override;
 	static AssetsClass astVars;
 
+	static bool exitGameCall;
+
 private:
 	//DO NOT ADD TRANSIENT SCENES INTO THIS LIST, INSTEAD LET'S DO IT MANUALLY
 	std::vector<std::shared_ptr<GameScene>> m_ScenesList = std::vector<std::shared_ptr<GameScene>>(

@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
 
 	window.setStartingLine(1);
 	SYDERogueLikeMainControl m_MainControl;
-	while (true)
+	while (!SYDERogueLikeMainControl::exitGameCall)
 	{
 		window = SYDEGamePlay::play(&m_MainControl, start, hOut, window, windowWidth, windowHeight, deltaTime);
 		window.writeConsoleOptimized();

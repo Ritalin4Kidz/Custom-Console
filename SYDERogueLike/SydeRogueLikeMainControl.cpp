@@ -1,5 +1,7 @@
 #include "SydeRoguelikeMainControl.h"
 
+bool SYDERogueLikeMainControl::exitGameCall = false;
+
 void SYDERogueLikeMainControl::init()
 {
 	mainScene = m_ScenesList.at(0);
@@ -14,6 +16,11 @@ void SYDERogueLikeMainControl::initNewScene()
 	if (mainScene->getIsTransient())
 	{
 		mainScene = nullptr;
+	}
+	if (SydeRogueLikeStatics::getSceneTag() == "Exit Game")
+	{
+		exitGameCall = true;
+		return;
 	}
 	if (SydeRogueLikeStatics::getSceneTag() == "Battle Scene")
 	{

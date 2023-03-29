@@ -8,13 +8,13 @@
 #include "SYDEKeyCode.h"
 #include "SYDEUI.h"
 #include "SYDESlider.h"
+#include <memory>
 
 class SYDEScrollViewerElement
 {
 public:
 	SYDEScrollViewerElement() { }
-	SYDEScrollViewerElement(SYDEUI* ui) { m_UIElement = ui; }
-	virtual ~SYDEScrollViewerElement() {}
+	SYDEScrollViewerElement(std::shared_ptr<SYDEUI> ui) { m_UIElement = ui; }
 
 	Vector2 getPos() 
 	{
@@ -32,7 +32,7 @@ public:
 	}
 
 private:
-	SYDEUI* m_UIElement;
+	std::shared_ptr<SYDEUI> m_UIElement;
 };
 
 /// <summary>
@@ -47,7 +47,6 @@ public:
 		m_Items = items; BackgroundColour = backGround; 
 		init(); 
 	}
-	virtual ~SYDEScrollViewer() {}
 
 	void init();
 
@@ -57,6 +56,8 @@ public:
 	/// <param name="window"></param>
 	/// <returns></returns>
 	ConsoleWindow draw_ui(ConsoleWindow window) override;
+
+	void addElement(SYDEScrollViewerElement e) { m_Items.push_back(e); }
 
 protected:
 	Vector2 m_Pos;

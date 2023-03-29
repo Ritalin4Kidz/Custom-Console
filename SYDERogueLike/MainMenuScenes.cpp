@@ -7,9 +7,10 @@ void characterSelectClick()
 
 void challengeModeClick()
 {
-	SydeRogueLikeStatics::toggleInitMap(true);
-	SydeRogueLikeStatics::setSceneTag("Challenge Map 001 Scene");
-	SydeRogueLikeStatics::setLevelSceneTag("Challenge Map 001 Scene");
+	SydeRogueLikeStatics::setSceneTag("Challenge Select Scene");
+	//SydeRogueLikeStatics::toggleInitMap(true);
+	//SydeRogueLikeStatics::setSceneTag("Challenge Map 001 Scene");
+	//SydeRogueLikeStatics::setLevelSceneTag("Challenge Map 001 Scene");
 }
 
 void exitGameClick()

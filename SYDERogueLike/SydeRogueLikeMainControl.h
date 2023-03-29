@@ -12,6 +12,7 @@
 #include "PlayerStateScene.h"
 #include "ChallengeMapLevel.h"
 #include "LevelSelectScene.h"
+#include "ChallengeSelectScene.h"
 class SYDERogueLikeMainControl : public SYDEWindowGame {
 public:
 	SYDERogueLikeMainControl() { init(); }
@@ -37,6 +38,7 @@ private:
 			std::shared_ptr<GameScene>(new PlayerStateScene()),
 			std::shared_ptr<GameScene>(new LevelSelectScene()),
 			std::shared_ptr<GameScene>(new MeowCoastLevel()),
+			std::shared_ptr<GameScene>(new ChallengeSelectScene()),
 			std::shared_ptr<GameScene>(new ChallengeMap001())
 		});
 

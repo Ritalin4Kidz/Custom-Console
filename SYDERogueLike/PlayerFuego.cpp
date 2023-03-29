@@ -25,6 +25,7 @@ void PlayerFuego::init_Char(int lvl)
 	this->setMoney(250);
 
 	addMovePool();
+	addStats(lvl);
 }
 
 void PlayerFuego::levelUpStats()

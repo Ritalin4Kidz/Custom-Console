@@ -10,6 +10,7 @@
 #include "PostBattleScene.h"
 #include "ShopScene.h"
 #include "PlayerStateScene.h"
+#include "ChallengeMapLevel.h"
 #include "LevelSelectScene.h"
 class SYDERogueLikeMainControl : public SYDEWindowGame {
 public:
@@ -36,6 +37,7 @@ private:
 			std::shared_ptr<GameScene>(new PlayerStateScene()),
 			std::shared_ptr<GameScene>(new LevelSelectScene()),
 			std::shared_ptr<GameScene>(new MeowCoastLevel()),
+			std::shared_ptr<GameScene>(new ChallengeMap001())
 		});
 
 	std::shared_ptr<GameScene> mainScene;

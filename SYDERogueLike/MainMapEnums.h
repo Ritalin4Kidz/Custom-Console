@@ -7,5 +7,6 @@ enum MapSpaceTypes {
 	MST_BossBattleSpace,
 	MST_EventSpace,
 	MST_SwitchPathsSpace,
-	MST_ForceSwitchPathsSpace
+	MST_ForceSwitchPathsSpace,
+	MST_EndMapSpace
 };

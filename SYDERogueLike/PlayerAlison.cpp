@@ -29,6 +29,7 @@ void PlayerAlison::init_Char(int lvl)
 	this->setMoney(20);
 	this->setAbility(SYDEQuestAbilites::SQA_Hasten);
 	addMovePool();
+	addStats(lvl);
 }
 
 void PlayerAlison::levelUpStats()

@@ -7,6 +7,7 @@
 #include "MapConfig.h"
 #include "SYDEEngineUI.h"
 #include "SYDEEngineAssets.h"
+#include "SYDEFileDefaults.h"
 
 enum MainMapScene_States
 {
@@ -64,7 +65,13 @@ public:
 
 	void loadBasicBattleScene();
 
+	void loadEndFireworks();
+
 	void loadShopScene();
+
+	virtual int generateDiceRollAmount();
+
+	virtual MapSpaceTypes generateFromPool();
 
 	void rollDice();
 

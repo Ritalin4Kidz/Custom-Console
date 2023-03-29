@@ -17,7 +17,6 @@ public:
 	int getMinRoll() { return minimumRoll; }
 	int getRollSize() { return rollSize; }
 
-	virtual void levelUpStats() {}
 	void saveStats()
 	{
 		savedAttackStat			= m_Attack;

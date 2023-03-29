@@ -456,8 +456,8 @@ void BattleScene::doMovePreWork()
 	doStatus(m_Enemy, true);
 	//DETERMINE THE ORDER OF THE MOVES
 
-	int enemySpeed = m_Enemy->getSpeed() + ((EnemyMove->getType() ==  m_Enemy->getType()) && m_Enemy->getAbility().m_Ability == Ability_Hasten) ? 50 : 0;
-	int playerSpeed = m_Enemy->getSpeed() + ((PlayerMove->getType() == m_Player->getType()) && m_Player->getAbility().m_Ability == Ability_Hasten) ? 50 : 0;
+	int enemySpeed = m_Enemy->getSpeed() + (((EnemyMove->getType() ==  m_Enemy->getType()) && m_Enemy->getAbility().m_Ability == Ability_Hasten) ? 50 : 0);
+	int playerSpeed = m_Player->getSpeed() + (((PlayerMove->getType() == m_Player->getType()) && m_Player->getAbility().m_Ability == Ability_Hasten) ? 50 : 0);
 
 	if (enemySpeed >= playerSpeed && !isItemMove)
 	{

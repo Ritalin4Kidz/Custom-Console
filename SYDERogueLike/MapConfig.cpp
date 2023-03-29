@@ -38,6 +38,11 @@ MapConfigObject::MapConfigObject(std::string filename)
 				std::vector<std::string> PathDataValues = Split(FileData[1], ',');
 				m_ForcedPathData.push_back(ForcedPathDataObject(Vector2(std::stoi(PathDataValues[0]), std::stoi(PathDataValues[1])), Vector2(std::stoi(PathDataValues[2]), std::stoi(PathDataValues[3]))));
 			}
+			else if (FileData[0] == "FinalSpaceData")
+			{
+				std::vector<std::string> PathDataValues = Split(FileData[1], ',');
+				m_FinalSpaceData.push_back(FinalSpaceDataObject(std::stoi(PathDataValues[0]), std::stoi(PathDataValues[1])));
+			}
 		}
 	}
 }
@@ -118,4 +123,10 @@ ForcedPathDataObject::ForcedPathDataObject(Vector2 space, Vector2 moveTo)
 {
 	spacePos = space;
 	spacePosMoveTo = moveTo;
+}
+
+FinalSpaceDataObject::FinalSpaceDataObject(int path, int space)
+{
+	pathNumber = path;
+	spaceNumber = space;
 }

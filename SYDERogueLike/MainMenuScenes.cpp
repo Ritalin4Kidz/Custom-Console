@@ -5,6 +5,14 @@ void characterSelectClick()
 	SydeRogueLikeStatics::setSceneTag("Character Select Scene");
 }
 
+void challengeModeClick()
+{
+	SydeRogueLikeStatics::toggleInitMap(true);
+	SydeRogueLikeStatics::setSceneTag("Challenge Map 001 Scene");
+	SydeRogueLikeStatics::setLevelSceneTag("Challenge Map 001 Scene");
+	SydeRogueLikeStatics::setPlayer(std::shared_ptr<Player>(new PlayerFuri(99)));
+}
+
 void exitGameClick()
 {
 	SydeRogueLikeStatics::setSceneTag("Exit Game");
@@ -21,6 +29,7 @@ ConsoleWindow MainMenuScene::window_draw(ConsoleWindow window, int windowWidth, 
 	}
 	//TEMP
 	window.setTextAtPoint(Vector2(0, 1), "MAIN MENU", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(36, 19), "Version: 0.0.1.0-alpha", BRIGHTWHITE);
 	return window;
 }
 
@@ -36,6 +45,18 @@ void MainMenuScene::onNewScene()
 		characterSelectClick,
 		"SwapViewLBL",
 		"SwapViewLBL"
+	)));
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"Challenges",
+		Vector2(2, 5),
+		Vector2(10, 1),
+		BLACK_BRIGHTWHITE_BG,
+		NULLCOLOUR,
+		false,
+		challengeModeClick,
+		"challengeModeClick",
+		"challengeModeClick"
 	)));
 
 

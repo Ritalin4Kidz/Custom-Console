@@ -54,6 +54,20 @@ private:
 	int	bossTagNumber;
 };
 
+class FinalSpaceDataObject
+{
+public:
+	FinalSpaceDataObject() {}
+	FinalSpaceDataObject(int path, int space);
+
+	int getPathNo() { return pathNumber; }
+	int getSpaceNo() { return spaceNumber; }
+
+private:
+	int pathNumber;
+	int	spaceNumber;
+};
+
 class MapConfigObject
 {
 public:
@@ -73,4 +87,5 @@ private:
 	std::vector<PathDataObject> m_PathData = std::vector<PathDataObject>();
 	std::vector<BossDataObject> m_BossData = std::vector<BossDataObject>();
 	std::vector<ForcedPathDataObject> m_ForcedPathData = std::vector<ForcedPathDataObject>();
+	std::vector<FinalSpaceDataObject> m_FinalSpaceData = std::vector<FinalSpaceDataObject>();
 };

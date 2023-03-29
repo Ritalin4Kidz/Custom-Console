@@ -1,0 +1,11 @@
+PathData=0,28,1
+PathData=1,21,2
+PathData=1,83,3
+PathData=3,19,4
+PathData=3,44,5
+BossData=2,22,0
+BossData=4,39,1
+ForcedChangePathData=3,52,3,9
+ForcedChangePathData=5,7,1,91
+SailEventData=4,2
+SailEventData=5,3

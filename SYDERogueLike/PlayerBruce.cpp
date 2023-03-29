@@ -24,6 +24,7 @@ void PlayerBruce::init_Char(int lvl)
 	this->setAbility(SYDEQuestAbilites::SQA_Withstand);
 	this->setMoney(100);
 	addMovePool();
+	addStats(lvl);
 }
 
 void PlayerBruce::addMovePool()

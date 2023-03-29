@@ -142,7 +142,8 @@ void MainMapScene::setUpMap()
 	wstring wIslandBmp = wstring(IslandBmp.begin(), IslandBmp.end());
 	wstring wIslandPathData = wstring(IslandPathData.begin(), IslandPathData.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
-	m_MapBg = CustomAsset(200, 100, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wIslandBmp.c_str(), 100, 100));
+	SYDEBMPDimensions fileSize = SYDEFileDefaults::getBMPDimensions(IslandBmp);
+	m_MapBg = CustomAsset(fileSize.width * 2, fileSize.height, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wIslandBmp.c_str(), fileSize.width, fileSize.height));
 	m_CfgObj = MapConfigObject("EngineFiles\\Levels\\Configs\\" + m_MapToLoad + ".sc");
 	Bitmap* SpawnData = new Bitmap((WCHAR*)wIslandPathData.c_str(), FALSE);
 	for (int i = 0; i < 100; i++)
@@ -154,6 +155,7 @@ void MainMapScene::setUpMap()
 			int spawnType = pixelColor->GetRed();
 			switch (spawnType)
 			{
+			case 1:
 			case 200:
 			case 201:
 			case 105:
@@ -193,6 +195,7 @@ void MainMapScene::sortSpaces()
 				case MST_ForceSwitchPathsSpace:
 					m_BoardColour = NULLCOLOUR;
 					break;
+				case MST_EndMapSpace:
 				case MST_BossBattleSpace:
 					m_BoardColour = YELLOW_YELLOW_BG;
 					break;
@@ -265,6 +268,23 @@ void MainMapScene::loadBasicBattleScene()
 	generateEnemy(getSpace(m_Space.getX(), m_Space.getY()));
 }
 
+void MainMapScene::loadEndFireworks()
+{
+	//SHOW FIREWORKS
+	m_MovementState = MoveState_END;
+	m_SceneState = MMS_END;
+	//TODO: FIREWORKS + OPTION TO EXIT TO MENU
+	m_GameOverFireworks.setColour(YELLOW);
+	m_GameOverFireworks.setCharacter("*");
+	m_GameOverFireworks.RainbowOn(true);
+	m_GameOverFireworks.setMaxParticles(35);
+	m_GameOverFireworks.setFinishingColour(WHITE);
+	m_FireworksTimer.SetFunc(TickFunc);
+	clearUI();
+	setUpEndMapUI();
+	ShowUI();
+}
+
 void MainMapScene::loadShopScene()
 {
 	m_UIAnimation.setAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\UIAnimations\\ShoppingAnimation.bmp", 150, 160, 30, 20, 0, 40));
@@ -273,6 +293,28 @@ void MainMapScene::loadShopScene()
 	m_SceneState = MMS_UIAnimation;
 	sceneLoad = "Shop Scene";
 	HideUI();
+}
+
+int MainMapScene::generateDiceRollAmount()
+{
+	return (rand() % SydeRogueLikeStatics::getPlayer()->getRollSize()) + SydeRogueLikeStatics::getPlayer()->getMinRoll();
+}
+
+MapSpaceTypes MainMapScene::generateFromPool()
+{
+	int space = rand() % 100;
+	if (space < 50)
+	{
+		return MST_NormalSpace;
+	}
+	if (space < 90)
+	{
+		return MST_BattleSpace;
+	}
+	else
+	{
+		return MST_ShopSpace;
+	}
 }
 
 void MainMapScene::rollDice()
@@ -362,23 +404,15 @@ MapSpaceTypes MainMapScene::getPixRedToType(int red)
 	{
 		return MST_BossBattleSpace;
 	}
+	if (red == 1)
+	{
+		return MST_EndMapSpace;
+	}
 
 	//POOLS
 	if (red == 105)
 	{
-		int space = rand() % 100;
-		if (space < 50)
-		{
-			return MST_NormalSpace;
-		}
-		if (space < 90)
-		{
-			return MST_BattleSpace;
-		}
-		else
-		{
-			return MST_ShopSpace;
-		}
+		return generateFromPool();
 	}
 
 	return MST_NormalSpace;
@@ -536,7 +570,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		if (m_SceneState == MMS_Normal)
 		{
 			m_MovementState = MoveState_MOVEMENT;
-			spacesToMove = (rand() % SydeRogueLikeStatics::getPlayer()->getRollSize()) + SydeRogueLikeStatics::getPlayer()->getMinRoll();
+			spacesToMove = generateDiceRollAmount();
 			refreshStepsUI(windowWidth / 2, windowHeight / 2);
 
 		}
@@ -564,6 +598,11 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			//TODO: ANIMATION FOR LOADING INTO BATTLE
 			HideUI();
 			doBossAction(spaceCurrent);
+			return window;
+		}
+		else if (spaceCurrent.getType() == MST_EndMapSpace)
+		{
+			loadEndFireworks();
 			return window;
 		}
 		else
@@ -596,11 +635,6 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 			{
 				m_MovementState = MoveState_CHECKING;
 			}
-		}
-		else if (spaceCurrent.getType() == MST_ForceSwitchPathsSpace)
-		{
-			m_Space = m_CfgObj.getForcedPathNumberToMoveAtPos(spaceCurrent.getPathNumber(), spaceCurrent.getSpaceNumber());
-			return window;
 		}
 		else if (spaceCurrent.getType() == MST_SwitchPathsSpace)
 		{
@@ -675,19 +709,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		{
 			if (m_SceneState == MMS_END_UIAnimation)
 			{
-				//SHOW FIREWORKS
-				m_MovementState = MoveState_END;
-				m_SceneState = MMS_END;
-				//TODO: FIREWORKS + OPTION TO EXIT TO MENU
-				m_GameOverFireworks.setColour(YELLOW);
-				m_GameOverFireworks.setCharacter("*");
-				m_GameOverFireworks.RainbowOn(true);
-				m_GameOverFireworks.setMaxParticles(35);
-				m_GameOverFireworks.setFinishingColour(WHITE);
-				m_FireworksTimer.SetFunc(TickFunc);
-				clearUI();
-				setUpEndMapUI();
-				ShowUI();
+				loadEndFireworks();
 			}
 			else
 			{

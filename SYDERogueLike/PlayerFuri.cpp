@@ -24,6 +24,7 @@ void PlayerFuri::init_Char(int lvl)
 	this->setMoney(20);
 	this->setAbility(SYDEQuestAbilites::SQA_NaturalBoost);
 	addMovePool();
+	addStats(lvl);
 }
 
 void PlayerFuri::levelUpStats()

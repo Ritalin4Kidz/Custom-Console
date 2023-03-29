@@ -24,6 +24,7 @@ void PlayerJordan::init_Char(int lvl)
 	this->setAbility(SYDEQuestAbilites::SQA_NaturalBoost);
 	this->setMoney(30);
 	addMovePool();
+	addStats(lvl);
 }
 
 void PlayerJordan::addMovePool()

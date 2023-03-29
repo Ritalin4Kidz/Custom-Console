@@ -31,6 +31,22 @@ public:
 	int getLevel() { return m_Level; }
 	void setType(_SQType type) { m_Type = type; }
 
+	void addStats(int lvl)
+	{
+		while (lvl > 0)
+		{
+			levelUpStats();
+			addRandomStats();
+			lvl--;
+		}
+	}
+
+	virtual void levelUpStats() {
+		int HPBuff = rand() % 3 + 1;
+		this->setHealth(getHealth() + HPBuff);
+		this->setMaxHealth(getMaxHealth() + HPBuff);
+	}
+
 	AbilityStruct getAbility() { return m_Ability; }
 	void setAbility(AbilityStruct a) { m_Ability = a; }
 

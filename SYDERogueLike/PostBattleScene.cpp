@@ -7,7 +7,7 @@ void successClick()
 
 void failureClick()
 {
-	SydeRogueLikeStatics::setSceneTag("Character Select Scene");
+	SydeRogueLikeStatics::setSceneTag("Main Splashscreen");
 }
 
 ConsoleWindow PostBattleScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)

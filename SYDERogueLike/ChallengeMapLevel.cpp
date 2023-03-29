@@ -16,7 +16,7 @@ int ChallengeMap001::generateDiceRollAmount()
 void ChallengeMap001::generateEnemy(MapSpace currentSpace)
 {
 
-	int level = currentSpace.getSpaceNumber(); //(4-6) + LevelAdditions
+	int level = currentSpace.getSpaceNumber() * 10; //(4-6) + LevelAdditions
 	std::shared_ptr<Enemy> enemy = std::shared_ptr<Enemy>(new OrcEnemy(level));
 	enemy->setXpGain(0);
 	SydeRogueLikeStatics::setEnemy(enemy);

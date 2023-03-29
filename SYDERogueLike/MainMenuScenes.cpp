@@ -10,7 +10,6 @@ void challengeModeClick()
 	SydeRogueLikeStatics::toggleInitMap(true);
 	SydeRogueLikeStatics::setSceneTag("Challenge Map 001 Scene");
 	SydeRogueLikeStatics::setLevelSceneTag("Challenge Map 001 Scene");
-	SydeRogueLikeStatics::setPlayer(std::shared_ptr<Player>(new PlayerFuri(99)));
 }
 
 void exitGameClick()

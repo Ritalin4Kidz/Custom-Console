@@ -11,6 +11,11 @@ void startGameClick()
 	CharacterSelectScene::CallStartGame();
 }
 
+void backToMenuClick()
+{
+	SydeRogueLikeStatics::setSceneTag("Main Menu");
+}
+
 void nextCharClick()
 {
 	CharacterSelectScene::CallNextChar();
@@ -153,6 +158,19 @@ void CharacterSelectScene::onNewScene()
 		NULLCOLOUR,
 		false,
 		changeDetailsClick,
+		"SwapViewLBL",
+		"SwapViewLBL"
+	)));
+
+
+	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
+		"Back To Menu",
+		Vector2(0, 19),
+		Vector2(13, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		backToMenuClick,
 		"SwapViewLBL",
 		"SwapViewLBL"
 	)));

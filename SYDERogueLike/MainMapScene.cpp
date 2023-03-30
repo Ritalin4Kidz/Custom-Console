@@ -49,7 +49,6 @@ void choosePath()
 void MainMapScene::onNewScene()
 {
 	test();
-
 	setUpMap();
 	showRouteOptions = false;
 	m_SceneState = MMS_Normal;
@@ -136,6 +135,7 @@ void MainMapScene::setUpMap()
 	{
 		return;
 	}
+	doChallengeCustoms();
 	nukeMap();
 	string IslandBmp = "EngineFiles\\Levels\\Map\\" + m_MapToLoad + ".bmp";
 	string IslandPathData = "EngineFiles\\Levels\\PathData\\" + m_MapToLoad + ".bmp";
@@ -221,6 +221,11 @@ void MainMapScene::sortSpaces()
 		}
 	}
 	cameraPos = getSpace(0, 0).getDrawPos();
+}
+
+void MainMapScene::doEndSpaceMethod(MapSpace currentSpace)
+{
+	loadEndFireworks();
 }
 
 void MainMapScene::nukeMap()
@@ -602,7 +607,7 @@ ConsoleWindow MainMapScene::window_draw(ConsoleWindow window, int windowWidth, i
 		}
 		else if (spaceCurrent.getType() == MST_EndMapSpace)
 		{
-			loadEndFireworks();
+			doEndSpaceMethod(spaceCurrent);
 			return window;
 		}
 		else

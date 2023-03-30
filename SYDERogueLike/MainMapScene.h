@@ -49,6 +49,12 @@ public:
 	MainMapScene() { m_SceneTag = "Main Map Scene"; }
 
 	ConsoleWindow window_draw(ConsoleWindow window, int windowWidth, int windowHeight) override;
+
+	/// <summary>
+	/// This is for any part of the map/player we want to manipulate ourselves before generation for use of a challenge
+	/// </summary>
+	virtual void doChallengeCustoms() {}
+
 	void onNewScene() override;
 
 	void destroyScene() override;
@@ -58,6 +64,8 @@ public:
 	void setUpMap();
 
 	void sortSpaces();
+
+	virtual void doEndSpaceMethod(MapSpace currentSpace);
 
 	void nukeMap();
 

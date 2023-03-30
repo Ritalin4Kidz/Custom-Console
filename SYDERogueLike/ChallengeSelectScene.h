@@ -6,12 +6,18 @@
 
 #include "SYDEScrollViewer.h"
 
+enum ChallengeSelectSceneStates
+{
+	m_CSS_Normal = 0,
+	m_CSS_Details = 1,
+};
+
 struct ChallengeSelectObject
 {
 public:
-	ChallengeSelectObject(string s, string desc, string d) { m_SceneTag = s; m_Desc = desc; m_DisplayTag = d; }
+	ChallengeSelectObject(string s, std::vector<std::string> desc, string d) { m_SceneTag = s; m_Desc = desc; m_DisplayTag = d; }
 	string m_SceneTag;
-	string m_Desc;
+	std::vector<std::string> m_Desc;
 	string m_DisplayTag;
 };
 
@@ -24,13 +30,25 @@ public:
 	void onNewScene() override;
 	static void setSelectedChallengeInt(int index) { selectedChallenge = index; }
 
+	static ChallengeSelectSceneStates m_SceneState;
+
+	static void initChallengeCall() { startChallengeCall = true; }
+
 private:
 	static AssetsClass astVars;
 
-	static int selectedChallenge;
-	std::vector<ChallengeSelectObject> m_LevelList = std::vector<ChallengeSelectObject>({
-		ChallengeSelectObject("Challenge Map 001 Scene", "SydeCoast", "Furi Of The Orcs"),
-		ChallengeSelectObject("Challenge Map 001 Scene", "MeowCoast", "Shopping Spree")
-		});
+	static bool startChallengeCall;
 
+	static int selectedChallenge;
+	std::vector<ChallengeSelectObject> m_LevelList = std::vector<ChallengeSelectObject>();
+
+
+	SYDEClickableButton m_BackDtlsBtn;
+	SYDEClickableButton m_StartGameDtlsBtn;
+};
+
+class ChallengeDescStatics
+{
+public:
+	static std::vector<std::string> generateBaseDesc();
 };

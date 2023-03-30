@@ -3,29 +3,33 @@
 #include "OrcEnemy.h"
 #include "PlayerIncludeHeader.h"
 #include "ItemsHeader.h"
+#include "SharkBoss.h"
 class ChallengeMapLevel : public MainMapScene
 {
 public:
 	ChallengeMapLevel() {}
-
 	void doBossAction(MapSpace currentSpace) override;
 	void doBossDefeatedAction() override;
-
+	int generateDiceRollAmount() override;
 private:
 	int m_BossTag = 0;
+	int m_DiceRollMin = 1;
+	int m_DiceRollSize = 1;
 };
 
 
 class ChallengeMap001 : public ChallengeMapLevel
 {
 public:
-	ChallengeMap001()
-	{
+	ChallengeMap001() {
 		m_SceneTag = "Challenge Map 001 Scene"; m_MapToLoad = "ChallengeMap001";
+	}
+	void doChallengeCustoms() override
+	{
 
 		std::shared_ptr<Player> player = std::shared_ptr<Player>(new PlayerFuri(50));
 	
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			player->AddInventory(std::shared_ptr<ItemClass>(new PotionItem()));
 		}
@@ -34,11 +38,30 @@ public:
 
 
 	}
-	int generateDiceRollAmount() override;
 	void generateEnemy(MapSpace currentSpace) override;
 	MapSpaceTypes generateFromPool() override;
 private:
-	int m_BossTag = 0;
-	int m_DiceRollMin = 1;
-	int m_DiceRollSize = 1;
+};
+
+class ChallengeMap002 : public ChallengeMapLevel
+{
+public:
+	ChallengeMap002() {
+		m_SceneTag = "Challenge Map 002 Scene"; m_MapToLoad = "ChallengeMap001";
+	}
+	void doChallengeCustoms() override
+	{
+
+		std::shared_ptr<Player> player = std::shared_ptr<Player>(new PlayerJordan(50));
+
+		player->setMoney(100000);
+
+		SydeRogueLikeStatics::setPlayer(player);
+
+
+	}
+	void generateEnemy(MapSpace currentSpace) override;
+	void doEndSpaceMethod(MapSpace currentSpace) override;
+	MapSpaceTypes generateFromPool() override;
+private:
 };

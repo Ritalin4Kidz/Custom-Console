@@ -30,16 +30,22 @@ private:
 	//DO NOT ADD TRANSIENT SCENES INTO THIS LIST, INSTEAD LET'S DO IT MANUALLY
 	std::vector<std::shared_ptr<GameScene>> m_ScenesList = std::vector<std::shared_ptr<GameScene>>(
 		{
+			//MAIN MENU SCREENS
 			std::shared_ptr<GameScene>(new MainSplashScreenScene()),
 			std::shared_ptr<GameScene>(new MainMenuScene()),
-			std::shared_ptr<GameScene>(new SydeCoastLevel()),
 			std::shared_ptr<GameScene>(new CharacterSelectScene()),
 			std::shared_ptr<GameScene>(new PostBattleScene()),
 			std::shared_ptr<GameScene>(new PlayerStateScene()),
 			std::shared_ptr<GameScene>(new LevelSelectScene()),
-			std::shared_ptr<GameScene>(new MeowCoastLevel()),
 			std::shared_ptr<GameScene>(new ChallengeSelectScene()),
-			std::shared_ptr<GameScene>(new ChallengeMap001())
+
+			//MAP SCENES
+			std::shared_ptr<GameScene>(new MeowCoastLevel()),
+			std::shared_ptr<GameScene>(new SydeCoastLevel()),
+
+			//CHALLENGE MAPS
+			std::shared_ptr<GameScene>(new ChallengeMap001()),
+			std::shared_ptr<GameScene>(new ChallengeMap002()),
 		});
 
 	std::shared_ptr<GameScene> mainScene;

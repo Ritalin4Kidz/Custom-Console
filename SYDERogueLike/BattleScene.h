@@ -20,7 +20,9 @@ enum BattleSceneStates
 enum BattleSceneViewState
 {
 	BSVS_Normal,
-	BSVS_Inventory
+	BSVS_Inventory,
+	BSVS_InvDetail,
+	BSVS_EnemDetail
 };
 
 enum BattleState
@@ -50,6 +52,7 @@ public:
 	void destroyScene() override;
 
 	ConsoleWindow drawInventoryScreen(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow drawInvDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow drawDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	static void validateInventory();
@@ -67,6 +70,10 @@ public:
 	static void callMove() { HideUI();  doMoveCall = true; }
 	static void setUsesItem() { isItemMove = true; }
 	static void setSelectedMoveInt(int index) { selectedMove = index; }
+	static void setSelectedInvInt(int index) { selectedInv = index; }
+
+	static int getSelectedInvInt() { return selectedInv; }
+
 	void doMovePreWork();
 
 	void doStatus(std::shared_ptr<Character> charac, bool enemy);
@@ -76,9 +83,9 @@ public:
 
 	void ValidateUI();
 
+	static bool canUseItem;
+
 	static bool getMoveCall() { return doMoveCall; }
-	static bool inventoryActive;
-	static bool detailsActive;
 	static void refreshInv() { inventoryStart = 0; }
 	static void addInvStart(int amt) {
 		if ((inventoryStart + amt) >= SydeRogueLikeStatics::getPlayer()->getInventory().size())
@@ -91,10 +98,14 @@ public:
 			inventoryStart = 0;
 		}
 	}
+
+	static BattleSceneViewState m_ViewState;
+
 private:
 	static bool doMoveCall;
 	static bool isItemMove;
 	static int selectedMove;
+	static int selectedInv;
 
 	static int inventoryStart;
 
@@ -118,4 +129,7 @@ private:
 	std::string windowText_Top = "";
 	std::string windowText_Bottom = "";
 	float timeTakenPostWork = 0;
+
+	SYDEClickableButton confirmItemButton;
+	SYDEClickableButton backItemButton;
 };

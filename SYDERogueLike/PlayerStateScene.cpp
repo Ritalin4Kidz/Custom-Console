@@ -44,7 +44,7 @@ void inventoryStatePrevClick()
 
 void psInventoryItemClick()
 {
-	PlayerStateScene::useItemCall = true;
+	PlayerStateScene::m_SceneState = PSS_InventoryDetailsViewState;
 	PlayerStateScene::itemIndex = stoi(CustomAsset_Clickable::getLastButtonTag());
 }
 
@@ -59,6 +59,11 @@ void psNullClick()
 
 }
 
+void psConfirmItemClick()
+{
+	PlayerStateScene::useItemCall = true;
+}
+
 ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidth, int windowHeight)
 {
 	for (int i = 0; i < windowWidth; i++)
@@ -67,6 +72,15 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 		{
 			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTGREY_LIGHTGREY_BG);
 		}
+	}
+
+	if (m_SceneState == PSS_InventoryDetailsViewState)
+	{
+		HideUI();
+	}
+	else
+	{
+		ShowUI();
 	}
 
 	if (m_SceneState == PSS_PlayerViewState || m_SceneState == PSS_PlayerMovesState  || m_SceneState == PSS_PlayerOtherState)
@@ -80,6 +94,10 @@ ConsoleWindow PlayerStateScene::window_draw(ConsoleWindow window, int windowWidt
 	else if (m_SceneState == PSS_RemoveMoveState)
 	{
 		window = drawRM(window, windowWidth, windowHeight);
+	}
+	else if (m_SceneState == PSS_InventoryDetailsViewState)
+	{
+		window = drawIVDetails(window, windowWidth, windowHeight);
 	}
 	return window;
 }
@@ -150,6 +168,45 @@ ConsoleWindow PlayerStateScene::drawIV(ConsoleWindow window, int windowWidth, in
 		}
 	}
 
+
+	for (int i = 0; (i + inventoryStart) < SydeRogueLikeStatics::getPlayer()->getInventory().size() && i < 4; i++)
+	{
+		int x = (20 * (i % 2)) + 24;
+		int y = i % 4 >= 2 ? 12 : 2;
+		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getItemIcon().draw_asset(window, Vector2(x, y));
+		window.setTextAtPoint(Vector2(x, y + 7), SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getName(), BRIGHTWHITE);
+	}
+	window.setTextAtPoint(Vector2(1, 4), "    Inventory    ", BLACK_BRIGHTWHITE_BG);
+	window = invNext.draw_ui(window);
+	window = invPrev.draw_ui(window);
+	return window;
+}
+
+ConsoleWindow PlayerStateScene::drawIVDetails(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	for (int i = 0; i < windowWidth; i++)
+	{
+		for (int ii = 0; ii < windowHeight; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", BLACK);
+		}
+	}
+
+	for (int i = 0; i < 20; i++)
+	{
+		for (int ii = 0; ii < windowHeight; ii++)
+		{
+			window.setTextAtPoint(Vector2(i, ii), " ", LIGHTGREY_LIGHTGREY_BG);
+		}
+	}
+
+
+	window.setTextAtPoint(Vector2(22, 1), "Item: " + SydeRogueLikeStatics::getPlayer()->getInventory().at(itemIndex)->getName(), BRIGHTWHITE);
+
+	window = backItemButton.draw_ui(window);
+	window = confirmItemButton.draw_ui(window);
+
+
 	if (useItemCall)
 	{
 		useItemCall = false;
@@ -180,20 +237,15 @@ ConsoleWindow PlayerStateScene::drawIV(ConsoleWindow window, int windowWidth, in
 			}
 
 		}
+		else
+		{
+			PlayerStateScene::m_SceneState = PSS_InventoryViewState;
+		}
 
 		return window;
 	}
 
-	for (int i = 0; (i + inventoryStart) < SydeRogueLikeStatics::getPlayer()->getInventory().size() && i < 4; i++)
-	{
-		int x = (20 * (i % 2)) + 24;
-		int y = i % 4 >= 2 ? 12 : 2;
-		window = SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getItemIcon().draw_asset(window, Vector2(x, y));
-		window.setTextAtPoint(Vector2(x, y + 7), SydeRogueLikeStatics::getPlayer()->getInventoryAtIndex(i + inventoryStart)->getName(), BRIGHTWHITE);
-	}
-	window.setTextAtPoint(Vector2(1, 4), "    Inventory    ", BLACK_BRIGHTWHITE_BG);
-	window = invNext.draw_ui(window);
-	window = invPrev.draw_ui(window);
+
 	return window;
 }
 
@@ -285,6 +337,30 @@ void PlayerStateScene::onNewScene()
 	wstring wCharBmp = wstring(charBmp.begin(), charBmp.end());
 	//m_Map = CustomAsset(200, 100, SYDEMapGame::astVars.get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\StartIsland.bmp", 100, 100));
 	playerAsset.setAsset(20, 10, AssetsClass::get_bmp_as_direct_colour_class_array((WCHAR*)wCharBmp.c_str(), 10, 10));
+
+
+	confirmItemButton = SYDEClickableButton(
+		"CONFIRM",
+		Vector2(50, 19),
+		Vector2(7, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		psConfirmItemClick,
+		to_string(4),
+		""
+	);
+	backItemButton = SYDEClickableButton(
+		"GO BACK",
+		Vector2(22, 19),
+		Vector2(7, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		selectIV,
+		to_string(4),
+		""
+	);
 }
 
 void PlayerStateScene::destroyScene()

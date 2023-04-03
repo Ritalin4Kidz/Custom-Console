@@ -33,6 +33,9 @@ public:
 		{
 			player->AddInventory(std::shared_ptr<ItemClass>(new PotionItem()));
 		}
+		player->AddInventory(shared_ptr<ItemClass>(new MoveItemClass(std::shared_ptr<Move>(new FireballMove()),
+			16, 8, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ItemIcons\\FireTM.bmp", 8, 8),
+			"TM_001")));
 
 		SydeRogueLikeStatics::setPlayer(player);
 

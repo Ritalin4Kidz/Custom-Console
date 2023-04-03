@@ -2,9 +2,10 @@
 
 bool BattleScene::doMoveCall = false;
 bool BattleScene::isItemMove = false;
-bool BattleScene::inventoryActive = false;
-bool BattleScene::detailsActive = false;
+bool BattleScene::canUseItem = false;
+BattleSceneViewState BattleScene::m_ViewState = BSVS_Normal;
 int BattleScene::selectedMove = 0;
+int BattleScene::selectedInv = 0;
 int BattleScene::inventoryStart = 0;
 /*
 TO DO LIST FOR BATTLE SCENE:
@@ -16,7 +17,7 @@ TO DO LIST FOR BATTLE SCENE:
 */
 void startMove()
 {
-	if (!BattleScene::inventoryActive && !BattleScene::detailsActive)
+	if (!BattleScene::m_ViewState == BSVS_Normal)
 	{
 		BattleScene::callMove();
 	}
@@ -24,15 +25,20 @@ void startMove()
 
 void inventoryClick()
 {
-	BattleScene::inventoryActive = !BattleScene::inventoryActive;
-	BattleScene::detailsActive = false;
+	if (BattleScene::m_ViewState == BSVS_Inventory)
+	{
+		BattleScene::m_ViewState = BSVS_Normal;
+	}
+	else
+	{
+		BattleScene::m_ViewState = BSVS_Inventory;
+	}
 	BattleScene::refreshInv();
 }
 
 void detailsClick()
 {
-	BattleScene::detailsActive = !BattleScene::detailsActive;
-	BattleScene::inventoryActive = false;
+	BattleScene::m_ViewState = BSVS_EnemDetail;
 }
 
 
@@ -51,22 +57,55 @@ void nullClick()
 	
 }
 
+void inventoryItemNullClick()
+{
+	BattleScene::m_ViewState = BSVS_InvDetail;
+	BattleScene::setSelectedInvInt(stoi(CustomAsset_Clickable::getLastButtonTag()));
+	BattleScene::canUseItem = false;
+}
+
 void inventoryItemClick()
 {
-	BattleScene::inventoryActive = false;
+	BattleScene::m_ViewState = BSVS_InvDetail;
+	BattleScene::canUseItem = true;
+	BattleScene::setSelectedInvInt(stoi(CustomAsset_Clickable::getLastButtonTag()));
+}
+
+void inventoryItemConfirmClick()
+{
+	BattleScene::m_ViewState = BSVS_Normal;
+	BattleScene::setSelectedMoveInt(BattleScene::getSelectedInvInt());
 	BattleScene::setUsesItem();
-	BattleScene::setSelectedMoveInt(stoi(CustomAsset_Clickable::getLastButtonTag()));
 	BattleScene::callMove();
 }
+
+void inventoryItemBackClick()
+{
+	BattleScene::m_ViewState = BSVS_Inventory;
+}
+
 
 
 void moveClick()
 {
-	if (!BattleScene::inventoryActive)
+	if (BattleScene::m_ViewState == BSVS_Normal || BattleScene::m_ViewState == BSVS_EnemDetail)
 	{
 		BattleScene::setSelectedMoveInt(stoi(SYDEClickableButton::getLastButtonTag()));
 		BattleScene::callMove();
 	}
+}
+
+ConsoleWindow BattleScene::drawInvDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight)
+{
+	window.setTextAtPoint(Vector2(22, 1), "Item: " + SydeRogueLikeStatics::getPlayer()->getInventory().at(selectedInv)->getName(), BRIGHTWHITE);
+
+	window = backItemButton.draw_ui(window);
+	if (canUseItem)
+	{
+		window = confirmItemButton.draw_ui(window);
+	}
+
+	return window;
 }
 
 ConsoleWindow BattleScene::drawDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight)
@@ -106,13 +145,17 @@ ConsoleWindow BattleScene::window_draw(ConsoleWindow window, int windowWidth, in
 		}
 	}
 
-	if (inventoryActive)
+	if (m_ViewState == BSVS_Inventory)
 	{
 		return drawInventoryScreen(window, windowWidth, windowHeight);
 	}
-	else if (detailsActive)
+	else if (m_ViewState == BSVS_EnemDetail)
 	{
 		return drawDetailsScreen(window, windowWidth, windowHeight);
+	}
+	else if (m_ViewState == BSVS_InvDetail)
+	{
+		return drawInvDetailsScreen(window, windowWidth, windowHeight);
 	}
 
 
@@ -183,8 +226,8 @@ ConsoleWindow BattleScene::drawChars(ConsoleWindow window)
 
 void BattleScene::onNewScene()
 {
-	inventoryActive = false;
-	detailsActive = false;
+	m_ViewState = BSVS_Normal;
+	canUseItem = false;
 	isItemMove = false;
 	m_SceneState = m_BSS_Normal;
 	playerHeight = 10;
@@ -278,6 +321,29 @@ void BattleScene::onNewScene()
 	)));
 
 
+	confirmItemButton = SYDEClickableButton(
+		"CONFIRM",
+		Vector2(50, 19),
+		Vector2(7, 1),
+		BRIGHTWHITE_GREEN_BG,
+		NULLCOLOUR,
+		false,
+		inventoryItemConfirmClick,
+		to_string(4),
+		""
+	);
+	backItemButton = SYDEClickableButton(
+		"GO BACK",
+		Vector2(22, 19),
+		Vector2(7, 1),
+		BRIGHTWHITE_RED_BG,
+		NULLCOLOUR,
+		false,
+		inventoryItemBackClick,
+		to_string(4),
+		""
+	);
+
 	ValidateUI();
 	ShowUI();
 	SydeRogueLikeStatics::toggleFightSuccess(true);
@@ -327,7 +393,7 @@ void BattleScene::validateInventory()
 		}
 		else
 		{
-			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, nullClick, to_string(i));
+			SydeRogueLikeStatics::getPlayer()->SetInventoryDetailsAtIndex(i, inventoryItemNullClick, to_string(i));
 		}
 	}
 	inventoryStart = 0;

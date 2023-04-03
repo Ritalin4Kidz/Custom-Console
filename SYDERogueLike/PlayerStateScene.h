@@ -16,7 +16,8 @@ enum PlayerStateScene_State
 	PSS_InventoryViewState = 1,
 	PSS_RemoveMoveState = 2,
 	PSS_PlayerMovesState = 3,
-	PSS_PlayerOtherState = 4
+	PSS_PlayerOtherState = 4,
+	PSS_InventoryDetailsViewState = 5
 };
 
 class PlayerStateScene : public GameScene
@@ -28,6 +29,7 @@ public:
 
 	ConsoleWindow drawPV(ConsoleWindow window, int windowWidth, int windowHeight);
 	ConsoleWindow drawIV(ConsoleWindow window, int windowWidth, int windowHeight);
+	ConsoleWindow drawIVDetails(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	ConsoleWindow drawRM(ConsoleWindow window, int windowWidth, int windowHeight);
 
@@ -65,4 +67,7 @@ private:
 	SYDEClickableButton invPrev;
 	SYDEClickableButton invNext;
 	CustomAsset playerAsset = CustomAsset();
+
+	SYDEClickableButton confirmItemButton;
+	SYDEClickableButton backItemButton;
 };

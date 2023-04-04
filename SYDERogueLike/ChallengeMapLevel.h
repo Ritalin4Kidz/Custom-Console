@@ -32,6 +32,7 @@ public:
 		for (int i = 0; i < 2; i++)
 		{
 			player->AddInventory(std::shared_ptr<ItemClass>(new PotionItem()));
+			player->AddInventory(std::shared_ptr<ItemClass>(new RockItem()));
 		}
 		player->AddInventory(shared_ptr<ItemClass>(new MoveItemClass(std::shared_ptr<Move>(new FireballMove()),
 			16, 8, AssetsClass::get_bmp_as_direct_colour_class_array(L"EngineFiles\\Bitmaps\\ItemIcons\\FireTM.bmp", 8, 8),

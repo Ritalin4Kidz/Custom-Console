@@ -170,6 +170,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GhostFish.cpp" />
     <ClCompile Include="GustMove.cpp" />
+    <ClCompile Include="HackMove.cpp" />
     <ClCompile Include="HealSlimeMove.cpp" />
     <ClCompile Include="ItemClass.cpp" />
     <ClCompile Include="LevelSelectScene.cpp" />
@@ -189,6 +190,7 @@
     <ClCompile Include="PlayerBruce.cpp" />
     <ClCompile Include="PlayerFuego.cpp" />
     <ClCompile Include="PlayerFuri.cpp" />
+    <ClCompile Include="PlayerHacker.cpp" />
     <ClCompile Include="PlayerJordan.cpp" />
     <ClCompile Include="PlayerStateScene.cpp" />
     <ClCompile Include="PostBattleScene.cpp" />
@@ -259,6 +261,7 @@
     <ClInclude Include="GameTypes.h" />
     <ClInclude Include="GhostFish.h" />
     <ClInclude Include="GustMove.h" />
+    <ClInclude Include="HackMove.h" />
     <ClInclude Include="HealSlimeMove.h" />
     <ClInclude Include="IceBeamMove.h" />
     <ClInclude Include="ItemClass.h" />
@@ -289,6 +292,7 @@
     <ClInclude Include="PlayerBruce.h" />
     <ClInclude Include="PlayerFuego.h" />
     <ClInclude Include="PlayerFuri.h" />
+    <ClInclude Include="PlayerHacker.h" />
     <ClInclude Include="PlayerIncludeHeader.h" />
     <ClInclude Include="PlayerJordan.h" />
     <ClInclude Include="PlayerStateScene.h" />

@@ -92,7 +92,7 @@ bool Move::setStatus(_SQStatus newStatus, json* charac, int chanceRoll)
 {
     _SQStatus status = static_cast<_SQStatus>(charac->at("status").get<int>());
     _SQAbility ability = static_cast<_SQAbility>(charac->at("ability").get<int>());
-    if (status != Status_None)
+    if (status != Status_None || ability == Ability_Immunity)
     {
         return false;
     }

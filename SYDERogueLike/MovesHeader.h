@@ -53,3 +53,4 @@
 #include "BloodRainMove.h"
 #include "VoltTackleMove.h"
 #include "TypeBeamMove.h"
+#include "HackMove.h"

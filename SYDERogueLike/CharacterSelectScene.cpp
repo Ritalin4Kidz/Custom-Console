@@ -111,7 +111,8 @@ void CharacterSelectScene::onNewScene()
 			PlayerSelectObject(2, "Alison",L"EngineFiles\\CharacterBMPS\\Alison.bmp", DesciptionStatics::generateAlisonDesc()),
 			PlayerSelectObject(2, "Bruce", L"EngineFiles\\CharacterBMPS\\Bruce.bmp", DesciptionStatics::generateBruceDesc()),
 			PlayerSelectObject(3, "Jordan", L"EngineFiles\\CharacterBMPS\\Jordan.bmp", DesciptionStatics::generateJordanDesc()),
-			PlayerSelectObject(2, "Fuego", L"EngineFiles\\CharacterBMPS\\Fuego.bmp", DesciptionStatics::generateFuegoDesc())
+			PlayerSelectObject(2, "Fuego", L"EngineFiles\\CharacterBMPS\\Fuego.bmp", DesciptionStatics::generateFuegoDesc()),
+			PlayerSelectObject(1, "Hacker", L"EngineFiles\\CharacterBMPS\\Hacker.bmp", DesciptionStatics::generateAlisonDesc())
 		});
 	addToUIControl(std::shared_ptr<SYDEUI>(new SYDEClickableButton(
 		"   SELECT CHAR    ",

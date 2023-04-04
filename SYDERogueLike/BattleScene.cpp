@@ -365,6 +365,7 @@ void BattleScene::destroyScene()
 //		delete m_MovesForTurn[i];
 //	}
 	m_MovesForTurn.clear();
+	m_StatChanges.clear();
 	ShowUI();
 	m_Player = NULL;
 }

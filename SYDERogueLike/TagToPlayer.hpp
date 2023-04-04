@@ -52,6 +52,10 @@ public:
 		{
 			return new PlayerFuego(level);
 		}
+		else if (tag == "Hacker")
+		{
+			return new PlayerHacker(level);
+		}
 		return new Player();
 	}
 private:

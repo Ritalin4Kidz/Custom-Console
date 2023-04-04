@@ -29,7 +29,29 @@ enum BattleState
 {
 	m_BS_Prework = 0,
 	m_BS_Animation = 1,
-	m_BS_Postwork = 2
+	m_BS_Postwork = 2,
+	m_BS_StatChangeAnimation = 3
+};
+
+struct StoredStatsObj
+{
+	StoredStatsObj(int a, int d, int mA, int mD, int s) { atk = a; def = d; mAtk = mA; mDef = mD; spd = s; }
+	int atk;
+	int def;
+	int mDef;
+	int mAtk;
+	int spd;
+};
+
+
+struct StatChangeObj
+{
+	StatChangeObj(std::string s, int a, bool p, bool i, CustomAnimationAsset anim) { stat = s; amount = a; isPlayer = p; isIncrease = i;  animation = anim; }
+	std::string stat;
+	int amount;
+	bool isPlayer;
+	bool isIncrease;
+	CustomAnimationAsset animation;
 };
 
 struct MoveTurn
@@ -56,6 +78,8 @@ public:
 	ConsoleWindow drawDetailsScreen(ConsoleWindow window, int windowWidth, int windowHeight);
 
 	static void validateInventory();
+
+	void addStatChanges(StoredStatsObj obj, Character c, bool isPlayer);
 
 	void checkTags(std::string moveTag);
 
@@ -122,6 +146,8 @@ private:
 	std::shared_ptr<Enemy> m_Enemy;
 	std::shared_ptr<Player> m_Player;
 
+	std::vector<StatChangeObj> m_StatChanges = std::vector<StatChangeObj>();
+
 	vector<MoveTurn> m_MovesForTurn = vector<MoveTurn>();
 
 	BattleState m_BattleState = m_BS_Prework;
@@ -129,6 +155,9 @@ private:
 	std::string windowText_Top = "";
 	std::string windowText_Bottom = "";
 	float timeTakenPostWork = 0;
+
+	const CustomAnimationAsset m_StatDown = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\BattleAnim\\StatDrop.bmp", 80, 32, 8, 8, 0, 40));
+	const CustomAnimationAsset m_StatUp = CustomAnimationAsset(AnimationSpriteSheets::load_from_animation_sheet(L"EngineFiles\\Animations\\BattleAnim\\StatIncrease.bmp", 80, 32, 8, 8, 0, 40));
 
 	SYDEClickableButton confirmItemButton;
 	SYDEClickableButton backItemButton;

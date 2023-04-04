@@ -602,13 +602,30 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 		m_MovesForTurn[0].move->resetAnimation();
 		m_BattleState = m_BS_Animation;
 	}
+	else if (m_BattleState == m_BS_StatChangeAnimation)
+	{
+		window = m_StatChanges[0].animation.draw_asset(window, m_StatChanges[0].isPlayer ? Vector2(46 , 11) : Vector2(17, 2));
+		window.setTextAtPoint(m_StatChanges[0].isPlayer ? Vector2(40, m_StatChanges[0].isIncrease? 15 : 14) : Vector2(28, m_StatChanges[0].isIncrease ? 6 : 5), to_string(m_StatChanges[0].amount) + " " + m_StatChanges[0].stat, BRIGHTWHITE);
+		if (m_StatChanges[0].animation.getFrame() >= m_StatChanges[0].animation.getFrameSize() - 1)
+		{
+			m_StatChanges.erase(m_StatChanges.begin());
+			if (m_StatChanges.size() == 0)
+			{
+				m_BattleState = m_BS_Prework;
+				return window;
+			}
+		}
+
+	}
 	else if (m_BattleState == m_BS_Animation)
 	{
 		window = m_MovesForTurn[0].move->drawAnimation(window, Vector2(20, 1));
 		if (m_MovesForTurn[0].move->getAnimation().getFrame() >= m_MovesForTurn[0].move->getAnimation().getFrameSize() - 1)
 		{
 			m_Player->validateCurrentJsonTag();
+			StoredStatsObj playStats = StoredStatsObj(m_Player->getAttack(), m_Player->getDefence(), m_Player->getMagicAttack(), m_Player->getMagicDefence(), m_Player->getSpeed());
 			m_Enemy->validateCurrentJsonTag();
+			StoredStatsObj enemStats = StoredStatsObj(m_Enemy->getAttack(), m_Enemy->getDefence(), m_Enemy->getMagicAttack(), m_Enemy->getMagicDefence(), m_Enemy->getSpeed());
 			std::string moveTag;
 			json player = m_Player->getJSONTag();
 			json enemy = m_Enemy->getJSONTag();
@@ -630,12 +647,22 @@ ConsoleWindow BattleScene::doMoves(ConsoleWindow window)
 			m_Player->validateFromJson(player);
 			m_Enemy->validateFromJson(enemy);
 
+			//CALCULATE ALL STAT CHANGES
+			//PUT THEM INTO A LIST OF STRINGS
+			addStatChanges(playStats, *m_Player, true);
+			addStatChanges(enemStats, *m_Enemy, false);
+
+
 			//IF ONE PLAYER DEAD
 			if (m_Player->getHealth() <= 0 || m_Enemy->getHealth() <= 0)
 			{
 				endBattle();
 				m_SceneState = m_BSS_EndFall;
 				return window;
+			}
+			else if (m_StatChanges.size() != 0)
+			{
+				m_BattleState = m_BS_StatChangeAnimation;
 			}
 			else
 			{
@@ -690,5 +717,35 @@ void BattleScene::ValidateUI()
 				setUIEnabled(m_Player->getMoveAtIndex(moveIndex)->getUsagesLeft() > 0, i);
 			}
 		}
+	}
+}
+
+void BattleScene::addStatChanges(StoredStatsObj obj, Character c, bool isPlayer)
+{
+	bool increase = false;
+	if (obj.atk != c.getAttack())
+	{
+		increase = obj.atk < c.getAttack();
+		m_StatChanges.push_back(StatChangeObj("Attack", abs(obj.atk - c.getAttack()), isPlayer, increase, increase ? m_StatUp : m_StatDown));
+	}
+	if (obj.def != c.getDefence())
+	{
+		increase = obj.def < c.getDefence();
+		m_StatChanges.push_back(StatChangeObj("Defence", abs(obj.def - c.getDefence()), isPlayer, increase, increase ? m_StatUp : m_StatDown));
+	}
+	if (obj.mAtk != c.getMagicAttack())
+	{
+		increase = obj.mAtk < c.getMagicAttack();
+		m_StatChanges.push_back(StatChangeObj("M Attack", abs(obj.mAtk - c.getMagicAttack()), isPlayer, increase, increase ? m_StatUp : m_StatDown));
+	}
+	if (obj.mDef != c.getMagicDefence())
+	{
+		increase = obj.mDef < c.getMagicDefence();
+		m_StatChanges.push_back(StatChangeObj("M Defence", abs(obj.mDef - c.getMagicDefence()), isPlayer, increase, increase ? m_StatUp : m_StatDown));
+	}
+	if (obj.spd != c.getSpeed())
+	{
+		increase = obj.spd < c.getSpeed();
+		m_StatChanges.push_back(StatChangeObj("Speed", abs(obj.spd - c.getSpeed()), isPlayer, increase, increase ? m_StatUp : m_StatDown));
 	}
 }

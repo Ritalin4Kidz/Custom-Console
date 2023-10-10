@@ -100,12 +100,48 @@ void SRLPlayer::generateHiddenStats()
 	m_AggressionStat = (rand() % 80) + 20;
 }
 
+void SRLPlayer::removeSpeed(int atk)
+{
+	m_BaseSpeed -= atk;
+	if (m_BaseSpeed < 20)
+	{
+		m_BaseSpeed = 20;
+	}
+}
+
 void SRLPlayer::addAttack(int atk)
 {
 	m_BaseAttack += atk; 
 	if (m_BaseAttack > 99) 
 	{
 		m_BaseAttack = 99; 
+	}
+}
+
+void SRLPlayer::removeAttack(int atk)
+{
+	m_BaseAttack -= atk;
+	if (m_BaseAttack < 20)
+	{
+		m_BaseAttack = 20;
+	}
+}
+
+void SRLPlayer::removeDefence(int atk)
+{
+	m_BaseDefence -= atk;
+	if (m_BaseDefence < 20)
+	{
+		m_BaseDefence = 20;
+	}
+}
+
+void SRLPlayer::removeKicking(int atk)
+{
+	m_BaseKicking -= atk;
+	if (m_BaseKicking < 20)
+	{
+		m_BaseKicking = 20;
 	}
 }
 
@@ -126,6 +162,15 @@ void SRLPlayer::affectAllStats(float mul)
 	m_BaseHandling = mf_BaseHandling;
 	m_BaseSpeed = mf_BaseSpeed;
 	m_BaseKicking = mf_BaseKicking;
+}
+
+void SRLPlayer::removeHandling(int atk)
+{
+	m_BaseHandling -= atk;
+	if (m_BaseHandling < 20)
+	{
+		m_BaseHandling = 20;
+	}
 }
 
 void SRLPlayer::loadPlayer(string path)

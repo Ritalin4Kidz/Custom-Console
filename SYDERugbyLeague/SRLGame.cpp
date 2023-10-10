@@ -981,7 +981,14 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 		int originalPos = m_BallPosition;
 		m_HomeTeam.addPlayerKickMetres(attacker.getName(), kickDistance);
 		m_HomeTeam.addPlayerKick(attacker.getName());
+		int m_OriginalPosition = m_BallPosition;
+		if (m_OriginalPosition > 50)
+		{
+			m_OriginalPosition = 100 - m_OriginalPosition;
+		}
 		m_BallPosition -= kickDistance;
+		addPlay("Kick - " + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m", attacker);
+		addSummary("Kick#" + to_string(kickDistance) + "m - kicked from " + to_string(m_OriginalPosition) + "m", attacker);
 		if (m_BallPosition < -10)
 		{
 			addPlay("20m Restart - " + m_AwayTeam.getName());
@@ -1015,7 +1022,14 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 		int originalPos = m_BallPosition;
 		m_AwayTeam.addPlayerKickMetres(attacker.getName(), kickDistance);
 		m_AwayTeam.addPlayerKick(attacker.getName());
+		int m_OriginalPosition = m_BallPosition;
+		if (m_OriginalPosition > 50)
+		{
+			m_OriginalPosition = 100 - m_OriginalPosition;
+		}
 		m_BallPosition += kickDistance;
+		addPlay("Kick - " + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m", attacker);
+		addSummary("Kick#" + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m", attacker);
 		if (m_BallPosition > 110)
 		{
 			addPlay("20m Restart - " + m_HomeTeam.getName());
@@ -1279,8 +1293,22 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 
 bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 {
+	int coverTackle = rand() % defender.getAggressionStat();
+	if (coverTackle >= 50)
+	{
+		if (defender.getDefence()> attacker.getAttack())
+		{
+			addPlay("NO TRY - Held Up", attacker);
+			addSummary("NO TRY#Held Up", attacker);
+			setPositionUniversal(10);
+			return true;
+		}
+	}
+
+
 	if (m_BallPosition < 0 && m_HomeTeamHasBall)
 	{
+
 		int chance1 = rand() % tryVideoRefChance;
 		if (chance1 == 0 || m_MinutesPassed > 77 || (m_MinutesPassed > 70 && homeTeamScore == awayTeamScore))
 		{

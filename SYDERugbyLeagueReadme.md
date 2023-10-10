@@ -15,6 +15,15 @@ SRL Simulation game made inside the SYDE Framework.
 
 - AI Coaching (Non-Coached Teams Will Properly Swap Around Starting Line-Up In The Season)
 
+## GOALS FOR NRL PREMIUM PLUS SEASON 2
+- Update interchanges to better reflect remaining stamina and performance
+- More stats in the export, make it an experimental setting
+- Ability to adjust stats in player view, including previously hidden stats
+- less incorrect play the balls
+- various little bug fixes
+- prioritize a forward taking the hitup when first 2 tackles
+
+
 ## ADDED IN 1.1.00
 - World Cup Tournament
 - More Management Features (Position Swapping)

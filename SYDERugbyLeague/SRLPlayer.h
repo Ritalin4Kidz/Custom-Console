@@ -40,16 +40,20 @@ public:
 	void setOrigin(string country) { m_CountryOfOrigin = country; }
 	int getSpeed() { return m_BaseSpeed; }
 	void addSpeed(int spd) { m_BaseSpeed += spd; if (m_BaseSpeed > 99) { m_BaseSpeed = 99; } }
+	void removeSpeed(int atk);
 
 	int getAttack() { return m_BaseAttack; }
 	void addAttack(int atk);
+	void removeAttack(int atk);
 
 	int getDefence() { return m_BaseDefence; }
 	void addDefence(int def) { m_BaseDefence += def; if (m_BaseDefence > 99) { m_BaseDefence = 99; } }
+	void removeDefence(int atk);
 
 
 	int getKicking() { return m_BaseKicking; }
 	void addKicking(int def) { m_BaseKicking += def; if (m_BaseKicking > 99) { m_BaseKicking = 99; } }
+	void removeKicking(int atk);
 
 	int getRating() { int rating = m_BaseAttack + m_BaseDefence + m_BaseSpeed + m_BaseKicking + m_BaseHandling; return rating / 5; }
 
@@ -60,14 +64,14 @@ public:
 
 	int getHandling() { return m_BaseHandling; }
 	void addHandling(int def) { m_BaseHandling += def; if (m_BaseHandling > 99) { m_BaseHandling = 99; } }
+	void removeHandling(int atk);
+
 	float getStamina() { return m_Stamina / 100; }
 	void addStamina(int stamina) { m_Stamina += stamina; }
 
 	int getID() { return id; }
 	void setID(int _id) { id = _id; }
 
-
-	int getGoalKicking() { return m_GoalKicking; }
 
 	void loadPlayer(string path);
 	void savePlayer();
@@ -154,10 +158,25 @@ public:
 	void setTeamname(string team) { m_Teamname = team; }
 
 	//HIDDEN STATS
+	int getGoalKicking() { return m_GoalKicking; }
+	void addGoalKicking(int spd) { m_GoalKicking += spd; if (m_GoalKicking > 99) { m_GoalKicking = 99; } }
+	void removeGoalKicking(int atk) { m_GoalKicking -= atk; if (m_GoalKicking < 20) { m_GoalKicking = 20; } }
+
 	int getInnovationStat() { return m_InnovationStat; }
+	void addInnovationStat(int spd) { m_InnovationStat += spd; if (m_InnovationStat > 99) { m_InnovationStat = 99; } }
+	void removeInnovationStat(int atk) { m_InnovationStat -= atk;if (m_InnovationStat < 20){ m_InnovationStat = 20;}}
+
 	int getExecutionStat() { return m_ExecutionStat; }
+	void addExecutionStat(int spd) { m_ExecutionStat += spd; if (m_ExecutionStat > 99) { m_ExecutionStat = 99; } }
+	void removeExecutionStat(int atk) { m_ExecutionStat -= atk; if (m_ExecutionStat < 20) { m_ExecutionStat = 20; } }
+
 	int getCunningStat() { return m_CunningStat; }
+	void addCunningStat(int spd) { m_CunningStat += spd; if (m_CunningStat > 99) { m_CunningStat = 99; } }
+	void removeCunningStat(int atk) { m_CunningStat -= atk; if (m_CunningStat < 20) { m_CunningStat = 20; } }
+
 	int getAggressionStat() { return m_AggressionStat; }
+	void addAggressionStat(int spd) { m_AggressionStat += spd; if (m_AggressionStat > 99) { m_AggressionStat = 99; } }
+	void removeAggressionStat(int atk) { m_AggressionStat -= atk; if (m_AggressionStat < 20) { m_AggressionStat = 20; } }
 
 	void setIsHalfBack(bool value) { m_HalfbackPos = value; }
 	bool isHalfBack() { return m_HalfbackPos; }

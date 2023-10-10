@@ -1,0 +1,250 @@
+----------LINE-UPS----------
+Home Team: Ademonia Freebee
+1: Terrance le Oreas
+2: Walt Tyrell
+3: Phoebe W. o. Cur
+4: Jay ti Pretyas
+5: Brenton Kelly
+6: Ali Imposia
+7: Charles I. Sadder
+8: Oliver Zeeka
+9: Tariq Dean
+10: Yuni Northson
+11: Tyrone Purplouis
+12: Brenton Osees
+13: Jack Fallon
+14: Castro O' Sullivan
+15: Terry le Treasdefa
+16: Pat ze Dera
+17: Dreka Shannel
+Away Team: Amazita City Farmers
+1: Ometage Tajtu
+2: Yuinamo ti Zyea
+3: Walter Dacus
+4: Norman o. Xae
+5: Ashton Kerr
+6: Georgio o. Dea
+7: Will Thrila
+8: Bert Stewart
+9: Oliver G. Caddington
+10: Maddison W. le Pore
+11: Ezzita az Iunodea
+12: Ometage az Lemoa
+13: Michael Penisini
+14: Yumi o. Ser
+15: Bretalano od Yuraste
+16: Isaak le Aaroba
+17: Leon Harris
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Ademonia Freebee: 0 v Amazita City Farmers: 0
+01:11 - Jay ti Pretyas - Kick - 48m, kicked from 24m
+01:37 - Ezzita az Iunodea - Forward Pass
+02:26 - Walt Tyrell - Incorrect Play The Ball
+02:26 - Walt Tyrell - Penalty
+03:25 - Yuinamo ti Zyea - Offload
+03:25 - Yuinamo ti Zyea - Knock On
+04:36 - Terrance le Oreas - NO TRY - Held Up
+05:08 - Jay ti Pretyas - 6th Tackle Changeover
+06:25 - Norman o. Xae - Kick - 37m, kicked from 18m
+07:20 - Terrance le Oreas - NO TRY - Held Up
+07:44 - Brenton Kelly - 6th Tackle Changeover
+07:57 - Norman o. Xae - Over The Sideline
+08:27 - Phoebe W. o. Cur - NO TRY - Held Up
+08:42 - Maddison W. le Pore - Ruck Infringement
+09:00 - Ali Imposia - TRY - Ademonia Freebee: 4 v Amazita City Farmers: 0
+10:21 - Phoebe W. o. Cur - GOAL - Ademonia Freebee: 6 v Amazita City Farmers: 0
+11:10 - Phoebe W. o. Cur - NO TRY - Held Up
+11:36 - Jay ti Pretyas - Offload
+11:49 - Bert Stewart - Penalty
+11:49 - Phoebe W. o. Cur - PENALTY GOAL MISSED
+13:21 - Jay ti Pretyas - NO TRY - Held Up
+13:38 - Yuni Northson - NO TRY - Held Up
+14:09 - Phoebe W. o. Cur - 6th Tackle Changeover
+14:45 - Ometage az Lemoa - NO TRY - Held Up
+15:01 - Yuinamo ti Zyea - TRY - Ademonia Freebee: 6 v Amazita City Farmers: 4
+15:31 - Ometage az Lemoa - GOAL - Ademonia Freebee: 6 v Amazita City Farmers: 6
+17:11 - Yuinamo ti Zyea - Intercepted Off A Ali Imposia Pass
+17:42 - Ometage Tajtu - Intercepted Off A Tyrone Purplouis Pass
+17:54 - Ashton Kerr - NO TRY - Held Up
+18:19 - Michael Penisini - Offload
+18:35 - Yuinamo ti Zyea - TRY - Ademonia Freebee: 6 v Amazita City Farmers: 10
+19:26 - Ometage az Lemoa - CONVERSION MISSED
+20:25 - Yuinamo ti Zyea - Offload
+20:37 - Bert Stewart - Intercepted Off A Tariq Dean Pass
+20:48 - Jay ti Pretyas - Penalty
+21:17 - Walter Dacus - NO TRY - Held Up
+21:49 - Yuinamo ti Zyea - TRY - Ademonia Freebee: 6 v Amazita City Farmers: 14
+22:55 - Ometage az Lemoa - CONVERSION MISSED
+24:32 - Ometage az Lemoa - Knock On
+25:15 - Jack Fallon - TRY - Ademonia Freebee: 10 v Amazita City Farmers: 14
+26:16 - Phoebe W. o. Cur - CONVERSION MISSED
+27:59 - Tyrone Purplouis - Kick - 64m, kicked from 11m
+28:33 - Walter Dacus - Forward Pass
+28:49 - Oliver Zeeka - Offload
+29:32 - Brenton Kelly - Knock On
+29:46 - Walter Dacus - NO TRY - Held Up
+30:09 - Bert Stewart - Over The Sideline
+30:22 - Ademonia Freebee Interchanged Players Phoebe W. o. Cur & Castro O' Sullivan
+31:04 - Norman o. Xae - Ruck Infringement
+31:32 - Charles I. Sadder - NO TRY - Held Up
+32:03 - ------VIDEO REFEREE------
+32:03 - Ali Imposia - TRY - Ademonia Freebee: 14 v Amazita City Farmers: 14
+33:18 - Brenton Osees - CONVERSION MISSED
+34:33 - Jay ti Pretyas - Forward Pass
+34:49 - Ometage az Lemoa - Intercepted Off A Tariq Dean Pass
+35:00 - Ademonia Freebee Interchanged Players Walt Tyrell & Terry le Treasdefa
+35:00 - Amazita City Farmers Interchanged Players Walter Dacus & Yumi o. Ser
+35:43 - Amazita City Farmers Interchanged Players Ometage Tajtu & Leon Harris
+36:00 - Oliver G. Caddington - 6th Tackle Changeover
+36:54 - Jay ti Pretyas - Over The Sideline
+38:24 - Maddison W. le Pore - Intercepted Off A Tyrone Purplouis Pass
+39:27 - Bert Stewart - Intercepted Off A Ali Imposia Pass
+39:27 - Bert Stewart - NO TRY - Held Up
+40:00 - HALF TIME - Ademonia Freebee: 14 v Amazita City Farmers: 14
+40:13 - Yuinamo ti Zyea - Offload
+40:13 - Yuinamo ti Zyea - Knock On
+40:30 - Castro O' Sullivan - TRY - Ademonia Freebee: 18 v Amazita City Farmers: 14
+41:51 - Brenton Osees - GOAL - Ademonia Freebee: 20 v Amazita City Farmers: 14
+43:40 - Terry le Treasdefa - Knock On
+43:56 - Will Thrila - Over The Sideline
+44:13 - Ali Imposia - Forward Pass
+44:31 - Brenton Kelly - Penalty
+44:47 - Michael Penisini - Intercepted Off A Tyrone Purplouis Pass
+45:22 - Ashton Kerr - Over The Sideline
+45:40 - Ademonia Freebee Interchanged Players Brenton Osees & Walt Tyrell
+45:40 - Amazita City Farmers Interchanged Players Ashton Kerr & Isaak le Aaroba
+46:23 - Ademonia Freebee Interchanged Players Yuni Northson & Pat ze Dera
+46:23 - Oliver Zeeka - Intercepted Off A Michael Penisini Pass
+46:23 - Oliver Zeeka - NO TRY - Held Up
+46:36 - ------VIDEO REFEREE------
+46:36 - Ali Imposia - TRY - Ademonia Freebee: 24 v Amazita City Farmers: 14
+47:53 - Brenton Kelly - GOAL - Ademonia Freebee: 26 v Amazita City Farmers: 14
+49:11 - Jay ti Pretyas - NO TRY - Held Up
+49:24 - Charles I. Sadder - NO TRY - Held Up
+50:13 - Oliver Zeeka - 6th Tackle Changeover
+50:40 - Amazita City Farmers Interchanged Players Will Thrila & Walter Dacus
+51:24 - Bert Stewart - Intercepted Off A Ali Imposia Pass
+51:36 - Walter Dacus - Chip Kick
+52:06 - Leon Harris - NO TRY - Held Up
+52:17 - Walter Dacus - Chip Kick
+52:17 - Maddison W. le Pore - Intercepted Off A Ali Imposia Pass
+53:16 - Georgio o. Dea - Forward Pass
+54:32 - Charles I. Sadder - Kick - 11m, kicked from 44m
+55:01 - Amazita City Farmers Interchanged Players Maddison W. le Pore & Bretalano od Yuraste
+55:34 - Yumi o. Ser - NO TRY - Held Up
+55:58 - Leon Harris - 6th Tackle Changeover
+57:20 - Brenton Kelly - Kick - 17m, kicked from 42m
+58:35 - Leon Harris - Kick - 58m, kicked from 45m
+58:35 - 20m Restart - Ademonia Freebee
+59:06 - Ometage az Lemoa - Penalty
+60:03 - Ademonia Freebee Interchanged Players Brenton Kelly & Phoebe W. o. Cur
+60:17 - Terrance le Oreas - FIELD GOAL - Ademonia Freebee: 27 v Amazita City Farmers: 14
+61:04 - Amazita City Farmers Interchanged Players Oliver G. Caddington & Will Thrila
+61:33 - Terry le Treasdefa - Kick - 73m, kicked from 30m
+61:55 - Bert Stewart - NO TRY - Held Up
+62:47 - Yuinamo ti Zyea - Intercepted Off A Pat ze Dera Pass
+63:28 - Yuinamo ti Zyea - TRY - Ademonia Freebee: 27 v Amazita City Farmers: 18
+64:28 - Ometage az Lemoa - GOAL - Ademonia Freebee: 27 v Amazita City Farmers: 20
+66:01 - Amazita City Farmers Interchanged Players Yumi o. Ser & Maddison W. le Pore
+66:15 - Walter Dacus - Kick - 22m, kicked from 4m
+66:32 - Terrance le Oreas - Knock On
+66:50 - Bretalano od Yuraste - Intercepted Off A Walt Tyrell Pass
+67:54 - Bert Stewart - Kick - 39m, kicked from 27m
+68:57 - Jay ti Pretyas - Forward Pass
+69:08 - Georgio o. Dea - Offload
+69:08 - Georgio o. Dea - Knock On
+70:49 - Oliver Zeeka - Intercepted Off A Michael Penisini Pass
+71:02 - Amazita City Farmers Interchanged Players Ometage az Lemoa & Ashton Kerr
+71:18 - Phoebe W. o. Cur - Offload
+71:52 - Charles I. Sadder - NO TRY - Held Up
+72:04 - Ali Imposia - 6th Tackle Changeover
+73:03 - Bert Stewart - NO TRY - Held Up
+73:27 - Norman o. Xae - 6th Tackle Changeover
+74:35 - Terry le Treasdefa - Kick - 48m, kicked from 13m
+75:47 - Maddison W. le Pore - Kick - 28m, kicked from 48m
+76:05 - Oliver Zeeka - Offload
+76:05 - Oliver Zeeka - Knock On
+76:22 - Ademonia Freebee Interchanged Players Oliver Zeeka & Brenton Osees
+77:23 - Charles I. Sadder - Penalty
+78:34 - ------VIDEO REFEREE------
+78:34 - Bretalano od Yuraste - TRY - Ademonia Freebee: 27 v Amazita City Farmers: 24
+79:46 - Norman o. Xae - GOAL - Ademonia Freebee: 27 v Amazita City Farmers: 26
+80:00 - FULL TIME - Ademonia Freebee: 27 v Amazita City Farmers: 26
+                             
+--------PLAYER STATS--------
+Home Team: Ademonia Freebee
+1: Terrance le Oreas |Time Played: 80:00 |Metres: 24 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 8
+2: Terry le Treasdefa |Time Played: 45:00 |Metres: 19 |Tackles: 5 |Kicks: 2 |Kick Metres: 121 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+3: Castro O' Sullivan |Time Played: 49:38 |Metres: 57 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+4: Jay ti Pretyas |Time Played: 80:00 |Metres: 20 |Tackles: 11 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 3 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+5: Phoebe W. o. Cur |Time Played: 50:19 |Metres: 8 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 9
+6: Ali Imposia |Time Played: 80:00 |Metres: 133 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 3 |Goals: 0 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 50
+7: Charles I. Sadder |Time Played: 80:00 |Metres: 45 |Tackles: 8 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+8: Brenton Osees |Time Played: 49:18 |Metres: 7 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 15
+9: Tariq Dean |Time Played: 80:00 |Metres: 31 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+10: Pat ze Dera |Time Played: 33:37 |Metres: 0 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+11: Tyrone Purplouis |Time Played: 80:00 |Metres: 24 |Tackles: 9 |Kicks: 1 |Kick Metres: 64 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+12: Walt Tyrell |Time Played: 69:20 |Metres: 25 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+13: Jack Fallon |Time Played: 80:00 |Metres: 67 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 50
+14: Brenton Kelly |Time Played: 60:03 |Metres: 65 |Tackles: 8 |Kicks: 1 |Kick Metres: 17 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 15
+15: Oliver Zeeka |Time Played: 76:22 |Metres: 27 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+16: Yuni Northson |Time Played: 46:23 |Metres: 35 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+17: Dreka Shannel |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Tariq Dean: 17
+Most Points: Ali Imposia: 12
+Most Metres: Ali Imposia: 133
+Most Errors: Jay ti Pretyas: 3
+                             
+Away Team: Amazita City Farmers
+1: Leon Harris |Time Played: 44:17 |Metres: 18 |Tackles: 2 |Kicks: 1 |Kick Metres: 58 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+2: Yuinamo ti Zyea |Time Played: 80:00 |Metres: 123 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 4 |Goals: 0 |Field Goals: 0 |Total Points: 16 |Fantasy Points: 31
+3: Maddison W. le Pore |Time Played: 69:00 |Metres: 4 |Tackles: 5 |Kicks: 1 |Kick Metres: 28 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+4: Norman o. Xae |Time Played: 80:00 |Metres: 27 |Tackles: 5 |Kicks: 1 |Kick Metres: 37 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 10
+5: Isaak le Aaroba |Time Played: 34:20 |Metres: 22 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+6: Georgio o. Dea |Time Played: 80:00 |Metres: 30 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Walter Dacus |Time Played: 64:20 |Metres: 32 |Tackles: 8 |Kicks: 3 |Kick Metres: 43 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+8: Bert Stewart |Time Played: 80:00 |Metres: 7 |Tackles: 15 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+9: Will Thrila |Time Played: 69:36 |Metres: 11 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+10: Bretalano od Yuraste |Time Played: 24:59 |Metres: 11 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 22
+11: Ezzita az Iunodea |Time Played: 80:00 |Metres: 22 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+12: Ashton Kerr |Time Played: 54:38 |Metres: 10 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+13: Michael Penisini |Time Played: 80:00 |Metres: 10 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+14: Oliver G. Caddington |Time Played: 61:04 |Metres: 4 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+15: Yumi o. Ser |Time Played: 31:01 |Metres: 12 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+16: Ometage az Lemoa |Time Played: 71:02 |Metres: 13 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 8
+17: Ometage Tajtu |Time Played: 35:43 |Metres: 13 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+Highlights:                 
+Most Tackles: Bert Stewart: 15
+Most Points: Yuinamo ti Zyea: 16
+Most Metres: Yuinamo ti Zyea: 123
+Most Errors: Yuinamo ti Zyea: 2
+                             
+---------TEAM STATS---------
+Home Team: Ademonia Freebee
+Total Metres: 587
+Total Kick Metres: 261
+Total Errors: 8
+Total Tackles: 125
+Total Tries: 5
+Total Goals: 3
+Total Field Goals: 1
+Interchanges Used: 6/8
+                             
+Away Team: Amazita City Farmers
+Total Metres: 369
+Total Kick Metres: 205
+Total Errors: 11
+Total Tackles: 119
+Total Tries: 5
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Ali Imposia
+2nd (2 Points) -- Jack Fallon
+3rd (1 Point) -- Tyrone Purplouis
+----------------------------

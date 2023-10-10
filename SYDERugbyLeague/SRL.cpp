@@ -48,6 +48,7 @@ bool SRLGame::m_SeasonEvents = true;
 bool SRLGame::headlineCall = false;
 bool SRLGame::keyPadCall = false;
 bool SRLGame::playerCall = false;
+bool SRLGame::statCall = false;
 bool SRLGame::performTradeCall = false;
 bool SRLGame::performTradeConfirmedCall = false;
 bool SRLGame::performTrainCall = false;
@@ -56,6 +57,7 @@ bool SRLGame::setUpPosShowcaseCall = false;
 bool SRLGame::TeamInDepthViewingJerseyAsset = true;
 bool SRLGame::isExhibitionMatch = false;
 int SRLGame::playerClicked = 0;
+string SRLGame::statClicked = "0:0";
 float SRLGame::m_ScrollingSpeed = 1.0f;
 float SRLGame::m_SimulationSpeed = 2.0f;
 string SRLGame::customAmountStr = "";
@@ -367,6 +369,12 @@ void PlayerClick()
 {
 	SRLGame::playerCall = true;
 	SRLGame::playerClicked = stoi(SYDEClickableButton::getLastButtonTag());
+}
+
+void PlayerStatClick()
+{
+	SRLGame::statCall = true;
+	SRLGame::statClicked = SYDEClickableButton::getLastButtonTag();
 }
 
 void InDepthTeamListViewClick()
@@ -1671,6 +1679,20 @@ void SRLGame::initInDepthViewButtons()
 		button.setTag(to_string(i));
 		button.SetFunc(PlayerClick);
 		m_PlayerButtons.push_back(button);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		SYDEClickableButton buttonUp = SYDEClickableButton("/\\", Vector2(25, i + 3), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+		buttonUp.setHighLight(RED);
+		buttonUp.setTag(to_string(i) + ":0");
+		buttonUp.SetFunc(PlayerStatClick);
+		SYDEClickableButton buttonDown = SYDEClickableButton("\\/", Vector2(29, i + 3), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+		buttonDown.setHighLight(RED);
+		buttonDown.setTag(to_string(i) + ":1");
+		buttonDown.SetFunc(PlayerStatClick);
+		m_PlayerStatButtons.push_back(buttonUp);
+		m_PlayerStatButtons.push_back(buttonDown);
 	}
 }
 
@@ -4434,6 +4456,54 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 	{
 		window.setTextAtPoint(Vector2(ii, 19), " ", BRIGHTWHITE_BRIGHTWHITE_BG);
 	}
+	for (int ii = 0; ii < m_PlayerStatButtons.size() ; ii++)
+	{
+		window = m_PlayerStatButtons[ii].draw_ui(window);
+	}
+
+	if (statCall)
+	{
+		statCall = false;
+		vector<string> calls = Split(statClicked, ':');
+		int callNo = stoi(calls[0]);
+		int callDir = stoi(calls[1]);
+		switch (callNo)
+		{
+			case 0:
+				callDir == 0 ? m_PlayerView.addAttack(1) : m_PlayerView.removeAttack(1);
+				break;
+			case 1:
+				callDir == 0 ? m_PlayerView.addDefence(1) : m_PlayerView.removeDefence(1);
+				break;
+			case 2:
+				callDir == 0 ? m_PlayerView.addSpeed(1) : m_PlayerView.removeSpeed(1);
+				break;
+			case 3:
+				callDir == 0 ? m_PlayerView.addKicking(1) : m_PlayerView.removeKicking(1);
+				break;
+			case 4:
+				callDir == 0 ? m_PlayerView.addHandling(1) : m_PlayerView.removeHandling(1);
+				break;
+			case 5:
+				callDir == 0 ? m_PlayerView.addGoalKicking(1) : m_PlayerView.removeGoalKicking(1);
+				break;
+			case 6:
+				callDir == 0 ? m_PlayerView.addInnovationStat(1) : m_PlayerView.removeInnovationStat(1);
+				break;
+			case 7:
+				callDir == 0 ? m_PlayerView.addAggressionStat(1) : m_PlayerView.removeAggressionStat(1);
+				break;
+			case 8:
+				callDir == 0 ? m_PlayerView.addCunningStat(1) : m_PlayerView.removeCunningStat(1);
+				break;
+			case 9:
+				callDir == 0 ? m_PlayerView.addExecutionStat(1) : m_PlayerView.removeExecutionStat(1);
+				break;
+			default:
+				break;
+		}
+	}
+
 	window = m_PlayerAsset.draw_asset(window, Vector2(30, 3));
 	window = m_TeamListInDepth.draw_ui(window, Vector2(0,19));
 
@@ -4442,8 +4512,13 @@ ConsoleWindow SRLGame::PlayerInDepthView(ConsoleWindow window, int windowWidth, 
 	window.setTextAtPoint(Vector2(2, 5), "Speed: " + to_string(m_PlayerView.getSpeed()), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(2, 6), "Kicking: " + to_string(m_PlayerView.getKicking()), BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(2, 7), "Handling: " + to_string(m_PlayerView.getHandling()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 8), "GoalKicking: " + to_string(m_PlayerView.getGoalKicking()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 9), "Innovation: " + to_string(m_PlayerView.getInnovationStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 10), "Aggression: " + to_string(m_PlayerView.getAggressionStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 11), "Deception: " + to_string(m_PlayerView.getCunningStat()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 12), "Execution: " + to_string(m_PlayerView.getExecutionStat()), BRIGHTWHITE);
 
-	window.setTextAtPoint(Vector2(2, 9), "Player Rating: " + to_string(m_PlayerView.getRating()), BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(2, 13), "Player Rating: " + to_string(m_PlayerView.getRating()), BRIGHTWHITE);
 
 	window = m_PrimaryColourBtn.draw_ui(window);
 	window = m_SecondaryColourBtn.draw_ui(window);

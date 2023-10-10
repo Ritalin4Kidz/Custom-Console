@@ -257,6 +257,9 @@ public:
 
 	static int playerClicked;
 	static bool playerCall;
+	static string statClicked;
+	static bool statCall;
+
 	static bool finalsSystemCall;
 	static bool RepRoundsOn;
 
@@ -469,6 +472,8 @@ private:
 	SYDEClickableButton m_RegeneratePlayerBtn = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerOKBtn = SYDEClickableButton();
 	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();
+
+	vector<SYDEClickableButton> m_PlayerStatButtons;
 
 	SYDEClickableButton m_ExhibitionMatchSimulateBtn = SYDEClickableButton();
 

@@ -126,9 +126,12 @@ public:
 	int checkStrip(SRLPlayer defender, SRLPlayer attacker);
 	int checkOffload(SRLPlayer defender, SRLPlayer attacker);
 	bool doFieldGoal(SRLPlayer defender, SRLPlayer attacker);
+	bool doTwoPointFieldGoal(SRLPlayer defender, SRLPlayer attacker);
 	bool doTry(SRLPlayer defender, SRLPlayer attacker);
 
 	bool doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam);
+
+	bool do2PointFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam);
 
 	void doInnovation(SRLPlayer attacker, SRLTeam& attackingTeam);
 	void doChipAndChase(SRLPlayer attacker, SRLTeam& attackingTeam, int execution);

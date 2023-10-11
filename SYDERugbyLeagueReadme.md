@@ -22,6 +22,7 @@ SRL Simulation game made inside the SYDE Framework.
 - less incorrect play the balls
 - various little bug fixes
 - prioritize a forward taking the hitup when first 2 tackles
+- export to show where plays happen, what side of field is on
 
 
 ## ADDED IN 1.1.00

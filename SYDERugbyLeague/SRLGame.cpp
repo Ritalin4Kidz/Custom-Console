@@ -666,6 +666,10 @@ void SRLGameManager::play()
 	{
 		return;
 	}
+	else if (doTwoPointFieldGoal(defender, attacker))
+	{
+		return;
+	}
 	else
 	{
 		int kick = checkKick(defender, attacker);
@@ -1122,6 +1126,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 		addPositionUniversal(metres);
 		if (metres >= 25)
 		{
+			addPlay("Linebreak", attacker);
 			addSummary("LINEBREAK#!", attacker);
 			attackingTeam.addPlayerLinebreak(attacker.getName());
 		}
@@ -1133,6 +1138,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 		addPositionUniversal(metres);
 		if (metres >= 25)
 		{
+			addPlay("Linebreak", attacker);
 			addSummary("LINEBREAK#!", attacker);
 			attackingTeam.addPlayerLinebreak(attacker.getName());
 		}
@@ -1288,6 +1294,45 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 			}
 		}
 	}
+	else if (m_MinutesPassed >= 38 && m_MinutesPassed < 40 || (m_MinutesPassed == 40 && m_SecondsPassed == 0))
+	{
+		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
+		{
+			if (m_HomeTeamHasBall)
+			{
+				return doFieldGoalAttempt(attacker, m_HomeTeam, m_AwayTeam);
+			}
+		}
+		else if ((m_Tackle == 5 && ((awayTeamScore - homeTeamScore >= 0) || awayTeamScore - homeTeamScore == -1)) || homeTeamScore == awayTeamScore)
+		{
+			if (!m_HomeTeamHasBall)
+			{
+				return doFieldGoalAttempt(attacker, m_AwayTeam, m_HomeTeam);
+			}
+		}
+	}
+	return false;
+}
+
+bool SRLGameManager::doTwoPointFieldGoal(SRLPlayer defender, SRLPlayer attacker)
+{
+	if (m_MinutesPassed >= 75 && m_MinutesPassed <= 80)
+	{
+		if (homeTeamScore - awayTeamScore == -2)
+		{
+			if (m_HomeTeamHasBall)
+			{
+				return do2PointFieldGoalAttempt(attacker, m_HomeTeam, m_AwayTeam);
+			}
+		}
+		else if (awayTeamScore - homeTeamScore == -2)
+		{
+			if (!m_HomeTeamHasBall)
+			{
+				return do2PointFieldGoalAttempt(attacker, m_AwayTeam, m_HomeTeam);
+			}
+		}
+	}
 	return false;
 }
 
@@ -1364,6 +1409,38 @@ bool SRLGameManager::doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTe
 			addPlay("FIELD GOAL MISSED", attacker);
 			addPlay("20m Restart - " + defendingTeam.getName());
 			addSummary("FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
+			setPositionUniversal(20);
+			changeOver(true);
+		}
+		m_Tackle = 0;
+		return true;
+	}
+	return false;
+}
+
+bool SRLGameManager::do2PointFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam)
+{
+	if (m_BallPosition < getPositionUniversal(50) && m_BallPosition > getPositionUniversal(39))
+	{
+		int chance1 = attacker.getGoalKicking();
+		if (m_Stamina)
+		{
+			chance1 *= attacker.getStamina();
+		}
+		int chance2 = rand() % defaultGoalChance * weatherGoalErrorBonus;
+		if (chance1 > chance2)
+		{
+			addScoreUniversal(2);
+			addPlay("2 POINT FIELD GOAL - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore), attacker);
+			addSummary("2 POINT FIELD GOAL#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
+			setPositionUniversal(100);
+			attackingTeam.addPlayerFieldGoal(attacker.getName());
+		}
+		else
+		{
+			addPlay("2 POINT FIELD GOAL MISSED", attacker);
+			addPlay("20m Restart - " + defendingTeam.getName());
+			addSummary("2 POINT FIELD GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 			setPositionUniversal(20);
 			changeOver(true);
 		}

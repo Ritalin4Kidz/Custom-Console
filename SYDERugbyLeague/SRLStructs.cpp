@@ -305,7 +305,7 @@ FeaturedGame::FeaturedGame(string home, string away, AssetsClass astVars,int gam
 GameSummaryText::GameSummaryText(string t, string p, string player, string s)
 {
 	Time = t; Play = p; Player = player; ScoreText = s;
-	if (Play == "TRY" || Play == "GOAL" || Play == "FIELD GOAL" || Play == "PENALTY GOAL")
+	if (Play == "TRY" || Play == "GOAL" || Play == "FIELD GOAL" || Play == "2 POINT FIELD GOAL" || Play == "PENALTY GOAL")
 	{
 		summaryTextType = GSTType_Points;
 	}
@@ -329,7 +329,7 @@ GameSummaryText::GameSummaryText(string t, string p, string player, string s)
 	{
 		summaryTextType = GSTType_VideoRef;
 	}
-	else if (Play == "FIELD GOAL MISSED" || Play == "GOAL MISSED" || Play == "PENALTY GOAL MISSED")
+	else if (Play == "FIELD GOAL MISSED" || Play == "GOAL MISSED" || Play == "PENALTY GOAL MISSED" || Play == "2 POINT FIELD GOAL MISSED")
 	{
 		summaryTextType = GSTType_MissedKick;
 	}

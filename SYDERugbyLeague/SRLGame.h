@@ -94,6 +94,8 @@ public:
 
 	void addTeamLineupsPlayByPlay();
 
+	string getHalfBallIn(int a_pos);
+
 	void addStartTimePlay();
 	void addFullTimePlay();
 
@@ -169,6 +171,7 @@ private:
 	const int tryVideoRefChance = SRLStatics::loadConstSetting("tryVideoRefChance", 4);
 	const int tryErrorChance = SRLStatics::loadConstSetting("tryErrorChance", 18);
 	const int incorrectPlayTheBallChance = SRLStatics::loadConstSetting("incorrectPlayTheBallChance", 1000);
+	const int braindeadPlayChance = SRLStatics::loadConstSetting("braindeadPlayChance", 200);
 	const int tryInfringementChance = SRLStatics::loadConstSetting("tryInfringementChance", 160);
 	const int minTimeSecondSkip = SRLStatics::loadConstSetting("minTimeSecondSkip", 11);
 	const int maxTimeSecondSkip = SRLStatics::loadConstSetting("maxTimeSecondSkip", 19);

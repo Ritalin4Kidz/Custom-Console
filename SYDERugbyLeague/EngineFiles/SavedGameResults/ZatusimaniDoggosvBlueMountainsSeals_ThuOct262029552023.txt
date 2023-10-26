@@ -1,0 +1,243 @@
+----------LINE-UPS----------
+Home Team: Zatusimani Doggos
+1: Ollie ti Minratse
+2: Fattoush Kay Normandy
+3: Ezzita Atoni
+4: Zach Quecea
+5: Uniko Q. Besti
+6: Jay Morrison
+7: Jon Cabatre
+8: Ashton Y. Latui
+9: Zasye Meddica
+10: Jim F. Farrell
+11: Fabby O' Sullivan
+12: Frankie vo Dereas
+13: Lizzy Dharo
+14: Dominic en Porea
+15: Kyle Thurston
+16: Nita Tuo
+17: Dani M. Elroii
+Away Team: Blue Mountains Seals
+1: Avery S. Oarst
+2: Davey Vianna
+3: Mitch Suatoma
+4: Bretalano en Onasre
+5: Huretio X. Port
+6: Cliff vo Burrea
+7: Sam Potter
+8: Bob Watt
+9: Bill R. May
+10: Cam en Zasde
+11: Abby Farrell
+12: Jill le Sasson
+13: Keith de Bactio
+14: Luna le Reastea
+15: Thom M. Nathring
+16: Bert Questa
+17: Mitchell Y. Worker
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Zatusimani Doggos: 0 v Blue Mountains Seals: 0
+01:16 - Ollie ti Minratse - Kick - 20m, kicked from 15m
+01:50 - Jay Morrison - Ruck Infringement
+03:22 - Sam Potter - 6th Tackle Changeover
+03:36 - Zasye Meddica - Forward Pass
+03:54 - ------VIDEO REFEREE------
+03:54 - Abby Farrell - NO TRY - Held Up
+04:23 - ------VIDEO REFEREE------
+04:23 - Cam en Zasde - TRY - Zatusimani Doggos: 0 v Blue Mountains Seals: 4
+05:22 - Sam Potter - GOAL - Zatusimani Doggos: 0 v Blue Mountains Seals: 6
+07:08 - Huretio X. Port - Kick - 61m, kicked from 16m
+07:21 - Ashton Y. Latui - Forward Pass
+08:08 - Bill R. May - TRY - Zatusimani Doggos: 0 v Blue Mountains Seals: 10
+09:08 - Sam Potter - GOAL - Zatusimani Doggos: 0 v Blue Mountains Seals: 12
+11:07 - Abby Farrell - Kick - 21m, kicked from 34m
+12:08 - Lizzy Dharo - Offload
+12:42 - Zach Quecea - Intercepted Off A Bretalano en Onasre Pass
+13:12 - Jay Morrison - Forward Pass
+13:25 - Jill le Sasson - NO TRY - Held Up
+13:40 - Keith de Bactio - Linebreak
+13:40 - Keith de Bactio - TRY - Zatusimani Doggos: 0 v Blue Mountains Seals: 16
+14:47 - Sam Potter - GOAL - Zatusimani Doggos: 0 v Blue Mountains Seals: 18
+16:49 - Avery S. Oarst - Kick - 30m, kicked from 49m
+17:04 - Jill le Sasson - Penalty
+18:03 - Zach Quecea - Offload
+18:03 - Zach Quecea - Knock On
+19:38 - Avery S. Oarst - 6th Tackle Changeover
+20:04 - Zatusimani Doggos Interchanged Players Ashton Y. Latui & Dani M. Elroii
+20:42 - Fattoush Kay Normandy - Offload
+21:11 - Ezzita Atoni - 6th Tackle Changeover
+21:45 - Jill le Sasson - Offload
+21:45 - Jill le Sasson - Knock On
+22:24 - Lizzy Dharo - Over The Sideline
+23:28 - Sam Potter - Kick - 11m, kicked from 48m
+24:28 - Uniko Q. Besti - Offload
+24:42 - Fabby O' Sullivan - Intercepted Off A Bill R. May Pass
+24:42 - Fabby O' Sullivan - NO TRY - Held Up
+25:23 - Blue Mountains Seals Interchanged Players Davey Vianna & Thom M. Nathring
+25:37 - Jon Cabatre - NO TRY - Held Up
+25:53 - Jay Morrison - 6th Tackle Changeover
+26:21 - Blue Mountains Seals Interchanged Players Cliff vo Burrea & Mitchell Y. Worker
+27:05 - Bretalano en Onasre - Forward Pass
+28:24 - Ollie ti Minratse - 6th Tackle Changeover
+28:37 - Bob Watt - Over The Sideline
+29:05 - Zasye Meddica - TRY - Zatusimani Doggos: 4 v Blue Mountains Seals: 18
+29:58 - Jim F. Farrell - GOAL - Zatusimani Doggos: 6 v Blue Mountains Seals: 18
+31:42 - Blue Mountains Seals Interchanged Players Thom M. Nathring & Bert Questa
+32:11 - Ollie ti Minratse - Forward Pass
+33:10 - ------VIDEO REFEREE------
+33:10 - Sam Potter - TRY - Zatusimani Doggos: 6 v Blue Mountains Seals: 22
+34:08 - Sam Potter - GOAL - Zatusimani Doggos: 6 v Blue Mountains Seals: 24
+35:26 - Bob Watt - Offload
+35:26 - Bob Watt - Knock On
+35:58 - Fabby O' Sullivan - TRY - Zatusimani Doggos: 10 v Blue Mountains Seals: 24
+37:26 - Jim F. Farrell - GOAL - Zatusimani Doggos: 12 v Blue Mountains Seals: 24
+39:01 - Ezzita Atoni - NO TRY - Held Up
+39:18 - Ollie ti Minratse - TRY - Zatusimani Doggos: 16 v Blue Mountains Seals: 24
+39:49 - Jim F. Farrell - GOAL - Zatusimani Doggos: 18 v Blue Mountains Seals: 24
+40:00 - HALF TIME - Zatusimani Doggos: 18 v Blue Mountains Seals: 24
+41:22 - Blue Mountains Seals Interchanged Players Mitch Suatoma & Thom M. Nathring
+41:22 - Thom M. Nathring - Kick - 14m, kicked from 23m
+41:38 - Bert Questa - Penalty
+41:56 - Bob Watt - Penalty
+42:37 - Keith de Bactio - Penalty
+43:21 - Keith de Bactio - Penalty
+44:56 - Fattoush Kay Normandy - 6th Tackle Changeover
+45:40 - Zatusimani Doggos Interchanged Players Uniko Q. Besti & Dominic en Porea
+45:40 - Blue Mountains Seals Interchanged Players Abby Farrell & Cliff vo Burrea
+46:09 - Bert Questa - Kick - 18m, kicked from 10m
+46:09 - Fattoush Kay Normandy - NO TRY - Held Up
+46:40 - Blue Mountains Seals Interchanged Players Cliff vo Burrea & Luna le Reastea
+46:40 - Lizzy Dharo - Over The Sideline
+47:53 - Mitchell Y. Worker - Over The Sideline
+49:11 - Zasye Meddica - Intercepted Off A Bill R. May Pass
+49:29 - Zasye Meddica - Linebreak
+49:29 - Zasye Meddica - TRY - Zatusimani Doggos: 22 v Blue Mountains Seals: 24
+50:01 - Jim F. Farrell - CONVERSION MISSED
+50:50 - Luna le Reastea - Ruck Infringement
+51:24 - Zatusimani Doggos Interchanged Players Zach Quecea & Ashton Y. Latui
+51:36 - Jon Cabatre - NO TRY - Held Up
+51:54 - Dominic en Porea - NO TRY - Held Up
+52:12 - Ashton Y. Latui - TRY - Zatusimani Doggos: 26 v Blue Mountains Seals: 24
+52:59 - Jim F. Farrell - GOAL - Zatusimani Doggos: 28 v Blue Mountains Seals: 24
+54:06 - Cam en Zasde - Ruck Infringement
+55:16 - Dominic en Porea - Intercepted Off A Sam Potter Pass
+55:31 - Fabby O' Sullivan - Over The Sideline
+56:13 - Thom M. Nathring - TRY - Zatusimani Doggos: 28 v Blue Mountains Seals: 28
+57:24 - Sam Potter - GOAL - Zatusimani Doggos: 28 v Blue Mountains Seals: 30
+59:09 - Bretalano en Onasre - NO TRY - Held Up
+59:39 - Luna le Reastea - 6th Tackle Changeover
+60:28 - Ashton Y. Latui - Intercepted Off A Bretalano en Onasre Pass
+60:57 - Ashton Y. Latui - Knock On
+61:08 - Bob Watt - TRY - Zatusimani Doggos: 28 v Blue Mountains Seals: 34
+62:09 - Sam Potter - GOAL - Zatusimani Doggos: 28 v Blue Mountains Seals: 36
+63:51 - Bill R. May - NO TRY - Held Up
+64:21 - Bert Questa - Offload
+64:21 - Bert Questa - Knock On
+64:34 - Jon Cabatre - Offload
+64:34 - Jon Cabatre - Knock On
+64:52 - Cam en Zasde - Offload
+65:31 - Luna le Reastea - TRY - Zatusimani Doggos: 28 v Blue Mountains Seals: 40
+66:26 - Sam Potter - GOAL - Zatusimani Doggos: 28 v Blue Mountains Seals: 42
+67:42 - Mitchell Y. Worker - Offload
+68:30 - Huretio X. Port - Kick - 26m, kicked from 36m
+68:45 - Fabby O' Sullivan - NO TRY - Held Up
+69:18 - Ezzita Atoni - Intercepted Off A Luna le Reastea Pass
+70:20 - Zatusimani Doggos Interchanged Players Ollie ti Minratse & Kyle Thurston
+70:20 - Ashton Y. Latui - TRY - Zatusimani Doggos: 32 v Blue Mountains Seals: 42
+70:54 - Jim F. Farrell - CONVERSION MISSED
+71:43 - Zatusimani Doggos Interchanged Players Jay Morrison & Zach Quecea
+71:43 - Blue Mountains Seals Interchanged Players Bill R. May & Mitch Suatoma
+72:39 - Jon Cabatre - Kick - 54m, kicked from 8m
+72:54 - Keith de Bactio - Linebreak
+73:24 - Thom M. Nathring - NO TRY - Held Up
+73:56 - Cam en Zasde - NO TRY - Held Up
+74:11 - Bert Questa - 6th Tackle Changeover
+74:26 - Thom M. Nathring - Ruck Infringement
+74:49 - Fattoush Kay Normandy - Intercepted Off A Cam en Zasde Pass
+75:18 - Lizzy Dharo - Over The Sideline
+75:36 - Keith de Bactio - TRY - Zatusimani Doggos: 32 v Blue Mountains Seals: 46
+76:15 - Sam Potter - GOAL - Zatusimani Doggos: 32 v Blue Mountains Seals: 48
+78:17 - Thom M. Nathring - Kick - 28m, kicked from 20m
+78:46 - Zasye Meddica - Linebreak
+79:33 - Jim F. Farrell - Intercepted Off A Keith de Bactio Pass
+79:44 - Lizzy Dharo - Knock On
+79:55 - Mitch Suatoma - NO TRY - Held Up
+80:00 - FULL TIME - Zatusimani Doggos: 32 v Blue Mountains Seals: 48
+                             
+--------PLAYER STATS--------
+Home Team: Zatusimani Doggos
+1: Kyle Thurston |Time Played: 09:40 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+2: Fattoush Kay Normandy |Time Played: 80:00 |Metres: 12 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+3: Ezzita Atoni |Time Played: 80:00 |Metres: 11 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+4: Ashton Y. Latui |Time Played: 48:40 |Metres: 38 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 10
+5: Dominic en Porea |Time Played: 34:20 |Metres: 2 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+6: Zach Quecea |Time Played: 59:41 |Metres: 30 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+7: Jon Cabatre |Time Played: 80:00 |Metres: 29 |Tackles: 5 |Kicks: 1 |Kick Metres: 54 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+8: Dani M. Elroii |Time Played: 59:56 |Metres: 16 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+9: Zasye Meddica |Time Played: 80:00 |Metres: 131 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 43
+10: Jim F. Farrell |Time Played: 80:00 |Metres: 14 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 4 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 32
+11: Fabby O' Sullivan |Time Played: 80:00 |Metres: 27 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+12: Frankie vo Dereas |Time Played: 80:00 |Metres: 36 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 36
+13: Lizzy Dharo |Time Played: 80:00 |Metres: 63 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+14: Uniko Q. Besti |Time Played: 45:40 |Metres: 11 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+15: Ollie ti Minratse |Time Played: 70:20 |Metres: 22 |Tackles: 5 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 14
+16: Nita Tuo |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Jay Morrison |Time Played: 71:43 |Metres: 31 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+Highlights:                 
+Most Tackles: Jim F. Farrell: 14
+Most Points: Ashton Y. Latui: 8
+Most Metres: Zasye Meddica: 131
+Most Errors: Lizzy Dharo: 4
+                             
+Away Team: Blue Mountains Seals
+1: Avery S. Oarst |Time Played: 80:00 |Metres: 106 |Tackles: 3 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 57
+2: Bert Questa |Time Played: 48:18 |Metres: 6 |Tackles: 8 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+3: Thom M. Nathring |Time Played: 44:57 |Metres: 43 |Tackles: 3 |Kicks: 2 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 20
+4: Bretalano en Onasre |Time Played: 80:00 |Metres: 8 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+5: Huretio X. Port |Time Played: 80:00 |Metres: 16 |Tackles: 3 |Kicks: 2 |Kick Metres: 87 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+6: Mitchell Y. Worker |Time Played: 53:39 |Metres: 14 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Sam Potter |Time Played: 80:00 |Metres: 48 |Tackles: 6 |Kicks: 1 |Kick Metres: 11 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 8 |Field Goals: 0 |Total Points: 20 |Fantasy Points: 48
+8: Bob Watt |Time Played: 80:00 |Metres: 10 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 6
+9: Mitch Suatoma |Time Played: 49:39 |Metres: 14 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+10: Cam en Zasde |Time Played: 80:00 |Metres: 43 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 24
+11: Luna le Reastea |Time Played: 33:20 |Metres: 40 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 17
+12: Jill le Sasson |Time Played: 80:00 |Metres: 45 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+13: Keith de Bactio |Time Played: 80:00 |Metres: 123 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 30
+14: Cliff vo Burrea |Time Played: 27:21 |Metres: 2 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+15: Davey Vianna |Time Played: 25:23 |Metres: 1 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Bill R. May |Time Played: 71:43 |Metres: 56 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 58
+17: Abby Farrell |Time Played: 45:40 |Metres: 29 |Tackles: 5 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+Highlights:                 
+Most Tackles: Jill le Sasson: 16
+Most Points: Sam Potter: 20
+Most Metres: Keith de Bactio: 123
+Most Errors: Bob Watt: 2
+                             
+---------TEAM STATS---------
+Home Team: Zatusimani Doggos
+Total Metres: 473
+Total Kick Metres: 74
+Total Errors: 12
+Total Tackles: 106
+Total Tries: 6
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 5/8
+                             
+Away Team: Blue Mountains Seals
+Total Metres: 604
+Total Kick Metres: 209
+Total Errors: 6
+Total Tackles: 119
+Total Tries: 8
+Total Goals: 8
+Total Field Goals: 0
+Interchanges Used: 7/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Sam Potter
+2nd (2 Points) -- Avery S. Oarst
+3rd (1 Point) -- Jim F. Farrell
+----------------------------

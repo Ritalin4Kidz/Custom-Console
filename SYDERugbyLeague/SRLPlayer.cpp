@@ -98,6 +98,7 @@ void SRLPlayer::generateHiddenStats()
 	m_InnovationStat = (rand() % 80) + 20;
 	m_ExecutionStat = (rand() % 80) + 20;
 	m_AggressionStat = (rand() % 80) + 20;
+	m_BrainDeadStat = (rand() % 80) + 20;
 }
 
 void SRLPlayer::removeSpeed(int atk)
@@ -238,6 +239,14 @@ void SRLPlayer::loadPlayer(string path)
 	{
 		m_AggressionStat = (rand() % 80) + 20;
 	}
+	if (save_file.contains("braindead"))
+	{
+		this->m_BrainDeadStat = save_file["braindead"];
+	}
+	else
+	{
+		m_BrainDeadStat = (rand() % 80) + 20;
+	}
 
 }
 
@@ -263,6 +272,7 @@ void SRLPlayer::savePlayer()
 	save_file["execution"] = m_ExecutionStat;
 	save_file["cunning"] = m_CunningStat;
 	save_file["aggression"] = m_AggressionStat;
+	save_file["braindead"] = m_BrainDeadStat;
 	if (id == 0)
 	{
 		id++;

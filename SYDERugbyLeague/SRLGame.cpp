@@ -393,6 +393,15 @@ void SRLGameManager::addTeamLineupsPlayByPlay()
 	addPlayNoMinutes("----------------------------");
 }
 
+string SRLGameManager::getHalfBallIn(int a_pos)
+{
+	if (a_pos > 50)
+	{
+		return m_HomeTeam.getName();
+	}
+	return m_AwayTeam.getName();
+}
+
 void SRLGameManager::addStartTimePlay()
 {
 	addPlay("KICK OFF - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
@@ -554,7 +563,7 @@ void SRLGameManager::play()
 	}
 	int attackerNumber = 0;
 	SRLPlayer defender = m_AwayTeam.getRandomPlayerDefender();
-	SRLPlayer attacker = m_HomeTeam.getRandomPlayerAttacker();
+	SRLPlayer attacker = m_HomeTeam.getRandomPlayerAttacker(m_Tackle);
 	if (!m_HomeTeamHasBall)
 	{
 		defender = m_HomeTeam.getRandomPlayerDefender();
@@ -567,10 +576,10 @@ void SRLGameManager::play()
 		{
 			defender.affectAllStats(playerSentDivision);
 		}
-		attacker = m_AwayTeam.getRandomPlayerAttacker();
+		attacker = m_AwayTeam.getRandomPlayerAttacker(m_Tackle);
 		while (attacker.getPlayerSent())
 		{
-			attacker = m_HomeTeam.getRandomPlayerAttacker();
+			attacker = m_HomeTeam.getRandomPlayerAttacker(m_Tackle);
 			attacker.setAllStats(5);
 		}
 		for (int i = 0; i < m_AwayTeam.getPlayerOffCount(); i++)
@@ -591,7 +600,7 @@ void SRLGameManager::play()
 		}
 		while (attacker.getPlayerSent())
 		{
-			attacker = m_HomeTeam.getRandomPlayerAttacker();
+			attacker = m_HomeTeam.getRandomPlayerAttacker(m_Tackle);
 			attacker.setAllStats(5);
 		}
 		for (int i = 0; i < m_HomeTeam.getPlayerOffCount(); i++)
@@ -645,6 +654,7 @@ void SRLGameManager::play()
 		{
 			addPlay("Stripped Ball Off " + attacker.getName(), defender);
 			addSummary("STRIP#!", defender);
+			addTimeRandom(2, 5, false);
 			attacker = defender;
 			if (m_HomeTeamHasBall)
 			{
@@ -694,7 +704,8 @@ void SRLGameManager::play()
 	//END OF SET, CHANGEOVER
 	if (m_Tackle == 6)
 	{
-		addPlay("6th Tackle Changeover", attacker);
+
+		addPlay("6th Tackle Changeover, " + to_string(getPositionUniversal(m_BallPosition)) + "m out from " + getHalfBallIn(m_BallPosition) + "'s goalline");
 		changeOver(false);
 		return;
 	}
@@ -991,7 +1002,7 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 			m_OriginalPosition = 100 - m_OriginalPosition;
 		}
 		m_BallPosition -= kickDistance;
-		addPlay("Kick - " + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m", attacker);
+		addPlay("Kick - Travelled " + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m out from " + getHalfBallIn(m_OriginalPosition) + "'s goalline", attacker);
 		addSummary("Kick#" + to_string(kickDistance) + "m - kicked from " + to_string(m_OriginalPosition) + "m", attacker);
 		if (m_BallPosition < -10)
 		{
@@ -1032,9 +1043,9 @@ int SRLGameManager::doKick(SRLPlayer defender, SRLPlayer attacker)
 			m_OriginalPosition = 100 - m_OriginalPosition;
 		}
 		m_BallPosition += kickDistance;
-		addPlay("Kick - " + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m", attacker);
+		addPlay("Kick - Travelled " + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m out from " + getHalfBallIn(m_OriginalPosition) + "'s goalline", attacker);
 		addSummary("Kick#" + to_string(kickDistance) + "m, kicked from " + to_string(m_OriginalPosition) + "m", attacker);
-		if (m_BallPosition > 110)
+		if (m_BallPosition >= 110)
 		{
 			addPlay("20m Restart - " + m_HomeTeam.getName());
 			m_BallPosition = 80;
@@ -1064,22 +1075,26 @@ bool SRLGameManager::doRegularMovement(SRLPlayer defender, SRLPlayer attacker)
 	int chance1 = rand() % incorrectPlayTheBallChance;
 	if (chance1 > attacker.getHandling() * 10)
 	{
-		int chance2 = rand() % 150;
+		int chance2 = rand() % 200;
 		if (chance2 == 0)
 		{
-			addPlay("Incorrect Play The Ball", attacker);
-			defender = attacker;
-			changeOver(false);
-			if (!m_HomeTeamHasBall)
+			int chance3 = rand() % braindeadPlayChance;
+			if (attacker.getBrainDeadStat() > chance3)
 			{
-				attacker = m_AwayTeam.getRandomPlayer();
+				addPlay("Incorrect Play The Ball", attacker);
+				defender = attacker;
+				changeOver(false);
+				if (!m_HomeTeamHasBall)
+				{
+					attacker = m_AwayTeam.getRandomPlayer();
+				}
+				else
+				{
+					attacker = m_HomeTeam.getRandomPlayer();
+				}
+				doPenalty(defender, attacker);
+				return false;
 			}
-			else
-			{
-				attacker = m_HomeTeam.getRandomPlayer();
-			}
-			doPenalty(defender, attacker);
-			return false;
 		}
 	}
 
@@ -1129,6 +1144,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 			addPlay("Linebreak", attacker);
 			addSummary("LINEBREAK#!", attacker);
 			attackingTeam.addPlayerLinebreak(attacker.getName());
+			addTimeRandom(1, 4, false);
 		}
 	}
 	else
@@ -1141,6 +1157,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 			addPlay("Linebreak", attacker);
 			addSummary("LINEBREAK#!", attacker);
 			attackingTeam.addPlayerLinebreak(attacker.getName());
+			addTimeRandom(1, 4, false);
 		}
 	}
 	int chanceOffload = rand() % offloadChance;
@@ -1162,10 +1179,7 @@ bool SRLGameManager::doRegularMovementPlay(SRLPlayer defender, SRLPlayer attacke
 	}
 	else if (offload == 2)
 	{
-		//ERROR
-		addPlay("Offload", attacker);
-		addSummary("OFFLOAD#", attacker);
-		addPlay("Knock On", attacker);
+		addPlay("Knock On (Offload)", attacker);
 		addSummary("KNOCK ON#", attacker);
 		addAttackerErrorStats(attacker.getName(), -2);
 		changeOver(true);
@@ -1261,6 +1275,7 @@ int SRLGameManager::checkOffload(SRLPlayer defender, SRLPlayer attacker)
 {
 	int data = rand() % attacker.getHandling();
 	int data2 = rand() % defender.getDefence();
+	int data3 = rand() % braindeadPlayChance;
 	if (m_Stamina)
 	{
 		data *= attacker.getStamina();
@@ -1271,13 +1286,17 @@ int SRLGameManager::checkOffload(SRLPlayer defender, SRLPlayer attacker)
 		//SUCCESS
 		return 1;
 	}
+	else if (attacker.getBrainDeadStat() > data3)
+	{
+		return 2;
+	}
 	else
-	return 2;
+	return 0;
 }
 
 bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 {
-	if (m_MinutesPassed > 50)
+	if (m_MinutesPassed > 64)
 	{
 		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0 && (homeTeamScore - awayTeamScore) % 6 == 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
@@ -1668,6 +1687,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 	{
 		m_AwayTeam.addPlayerPenalty(defender.getName());
 		m_AwayTeam.addPlayerStamina(attacker.getName(), -4);
+		addTimeRandom(3, 6, false);
 		if (m_BallPosition < 30 && (homeTeamScore - awayTeamScore) > -3)
 		{
 			//1 in 4 chance of error
@@ -1705,7 +1725,7 @@ void SRLGameManager::doPenalty(SRLPlayer defender, SRLPlayer attacker)
 	{
 		m_HomeTeam.addPlayerPenalty(defender.getName());
 		m_HomeTeam.addPlayerStamina(attacker.getName(), -4);
-
+		addTimeRandom(3, 6, false);
 		if (m_BallPosition > 70 && (awayTeamScore - homeTeamScore) > -3)
 		{
 
@@ -1782,7 +1802,7 @@ void SRLGameManager::saveSettings()
 	save_file["videoRefAutoSucceedChance"] = videoRefAutoSucceedChance;
 	save_file["InnovationSucceedChance"] = InnovationSucceedChance;
 	save_file["kickOutOnTheFullChance"] = kickOutOnTheFullChance;
-
+	save_file["braindeadPlayChance"] = braindeadPlayChance;
 
 	string filePath = string("EngineFiles\\Settings\\luckValues.json");
 	std::ofstream ofs(filePath);

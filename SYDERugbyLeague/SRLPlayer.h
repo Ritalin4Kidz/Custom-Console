@@ -178,6 +178,8 @@ public:
 	void addAggressionStat(int spd) { m_AggressionStat += spd; if (m_AggressionStat > 99) { m_AggressionStat = 99; } }
 	void removeAggressionStat(int atk) { m_AggressionStat -= atk; if (m_AggressionStat < 20) { m_AggressionStat = 20; } }
 
+	int getBrainDeadStat() { return m_BrainDeadStat; }
+
 	void setIsHalfBack(bool value) { m_HalfbackPos = value; }
 	bool isHalfBack() { return m_HalfbackPos; }
 
@@ -254,5 +256,6 @@ private:
 
 	//UNIVERSAL
 	int m_CunningStat = 0;
+	int m_BrainDeadStat = 0;
 	int m_AggressionStat = 0;
 };

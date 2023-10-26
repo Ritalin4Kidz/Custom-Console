@@ -144,10 +144,15 @@ SRLPlayer SRLTeam::getRandomPlayer()
 	return m_TeamList[player];
 }
 
-SRLPlayer SRLTeam::getRandomPlayerAttacker()
+SRLPlayer SRLTeam::getRandomPlayerAttacker(int tackle)
 {
 	int chanceOfFrontLine = rand() % 100;
-	if (chanceOfFrontLine > 75)
+	int chanceHitup = 10;
+	if (tackle >= 2)
+	{
+		chanceHitup = 75;
+	}
+	if (chanceOfFrontLine > chanceHitup)
 	{
 		int player = rand() % 6 + 7;
 		return m_TeamList[player];

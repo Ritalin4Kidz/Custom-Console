@@ -40,7 +40,7 @@ public:
 
 	SRLPlayer getRandomPlayer();
 
-	SRLPlayer getRandomPlayerAttacker();
+	SRLPlayer getRandomPlayerAttacker(int tackle);
 	SRLPlayer getRandomPlayerDefender();
 
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }

@@ -1,0 +1,251 @@
+----------LINE-UPS----------
+Home Team: Amazita City Farmers
+1: Ometage Tajtu
+2: Yuinamo ti Zyea
+3: Walter Dacus
+4: Norman o. Xae
+5: Ashton Kerr
+6: Georgio o. Dea
+7: Jakk Atoni
+8: Bert Stewart
+9: Oliver G. Caddington
+10: Maddison W. le Pore
+11: Ezzita az Iunodea
+12: Ometage az Lemoa
+13: Michael Penisini
+14: Yumi o. Ser
+15: Phillip Normandy
+16: Isaak le Aaroba
+17: Leon Harris
+Away Team: Blue Mountains Seals
+1: Avery S. Oarst
+2: Davey Vianna
+3: Mitch Suatoma
+4: Bretalano en Onasre
+5: Huretio X. Port
+6: Cliff vo Burrea
+7: Sam Potter
+8: Bob Watt
+9: Bill R. May
+10: Cam en Zasde
+11: Abby Farrell
+12: Jill le Sasson
+13: Keith de Bactio
+14: Luna le Reastea
+15: Thom M. Nathring
+16: Bert Questa
+17: Mitchell Y. Worker
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Amazita City Farmers: 0 v Blue Mountains Seals: 0
+00:11 - Jakk Atoni - Intercepted Off A Bretalano en Onasre Pass
+00:25 - Michael Penisini - Offload
+00:40 - Michael Penisini - Intercepted Off A Bill R. May Pass
+00:57 - Huretio X. Port - Ruck Infringement
+01:15 - Ometage az Lemoa - Intercepted Off A Mitch Suatoma Pass
+01:28 - Maddison W. le Pore - Intercepted Off A Keith de Bactio Pass
+02:34 - Yuinamo ti Zyea - Knock On
+02:45 - ------VIDEO REFEREE------
+02:45 - Jill le Sasson - TRY - Amazita City Farmers: 0 v Blue Mountains Seals: 4
+03:45 - Sam Potter - GOAL - Amazita City Farmers: 0 v Blue Mountains Seals: 6
+05:42 - Bretalano en Onasre - Kick - 58m, kicked from 22m
+06:26 - Jakk Atoni - Chip Kick
+07:13 - Ometage Tajtu - 6th Tackle Changeover
+07:24 - Ometage az Lemoa - Ruck Infringement
+07:37 - Jill le Sasson - NO TRY - Held Up
+07:55 - Bob Watt - NO TRY - Held Up
+08:26 - Cam en Zasde - TRY - Amazita City Farmers: 0 v Blue Mountains Seals: 10
+08:58 - Sam Potter - CONVERSION MISSED
+10:34 - Davey Vianna - Offload
+10:34 - Davey Vianna - Knock On
+11:16 - Ezzita az Iunodea - Knock On
+11:52 - Maddison W. le Pore - Ruck Infringement
+13:21 - Bob Watt - 6th Tackle Changeover
+13:56 - Bob Watt - Stripped Ball Off Oliver G. Caddington
+14:51 - Bretalano en Onasre - TRY - Amazita City Farmers: 0 v Blue Mountains Seals: 14
+15:51 - Sam Potter - GOAL - Amazita City Farmers: 0 v Blue Mountains Seals: 16
+17:49 - Mitch Suatoma - Kick - 23m, kicked from 21m
+19:11 - Michael Penisini - 6th Tackle Changeover
+19:23 - Keith de Bactio - Offload
+20:27 - Davey Vianna - Offload
+20:27 - Davey Vianna - Knock On
+20:42 - Amazita City Farmers Interchanged Players Norman o. Xae & Leon Harris
+21:40 - Blue Mountains Seals Interchanged Players Huretio X. Port & Thom M. Nathring
+21:40 - Ometage Tajtu - NO TRY - Held Up
+22:05 - Leon Harris - Offload
+22:05 - Leon Harris - Knock On
+22:20 - Jill le Sasson - Offload
+23:44 - Davey Vianna - Kick - 26m, kicked from 47m
+24:00 - Ometage az Lemoa - Intercepted Off A Avery S. Oarst Pass
+24:58 - Walter Dacus - Kick - 21m, kicked from 30m
+26:24 - Davey Vianna - 6th Tackle Changeover
+26:42 - Blue Mountains Seals Interchanged Players Sam Potter & Huretio X. Port
+26:57 - Michael Penisini - Offload
+26:57 - Michael Penisini - Knock On
+27:24 - Bill R. May - TRY - Amazita City Farmers: 0 v Blue Mountains Seals: 20
+28:09 - Davey Vianna - CONVERSION MISSED
+29:16 - Davey Vianna - Knock On
+29:52 - Oliver G. Caddington - TRY - Amazita City Farmers: 4 v Blue Mountains Seals: 20
+30:40 - Ometage az Lemoa - GOAL - Amazita City Farmers: 6 v Blue Mountains Seals: 20
+31:52 - Bert Stewart - Offload
+32:43 - Georgio o. Dea - Kick - 13m, kicked from 31m
+34:10 - Cliff vo Burrea - 6th Tackle Changeover
+34:52 - Bill R. May - Penalty
+35:04 - Amazita City Farmers Interchanged Players Michael Penisini & Isaak le Aaroba
+35:04 - Oliver G. Caddington - Incorrect Play The Ball
+35:04 - Oliver G. Caddington - Penalty
+36:09 - Thom M. Nathring - Offload
+36:09 - Thom M. Nathring - Knock On
+36:23 - Blue Mountains Seals Interchanged Players Jill le Sasson & Bert Questa
+36:37 - Ometage az Lemoa - NO TRY - Held Up
+37:52 - Ashton Kerr - 6th Tackle Changeover
+38:21 - Thom M. Nathring - Intercepted Off A Jakk Atoni Pass
+38:21 - Thom M. Nathring - NO TRY - Held Up
+39:01 - Thom M. Nathring - TRY - Amazita City Farmers: 6 v Blue Mountains Seals: 24
+39:53 - Davey Vianna - CONVERSION MISSED
+40:00 - HALF TIME - Amazita City Farmers: 6 v Blue Mountains Seals: 24
+41:18 - Thom M. Nathring - Kick - 48m, kicked from 27m
+42:19 - Cam en Zasde - Penalty
+43:45 - Jakk Atoni - 6th Tackle Changeover
+44:54 - Davey Vianna - Kick - 11m, kicked from 16m
+45:51 - Georgio o. Dea - Offload
+45:51 - Georgio o. Dea - Knock On
+46:24 - Yuinamo ti Zyea - Ruck Infringement
+46:54 - Huretio X. Port - NO TRY - Held Up
+47:42 - Davey Vianna - Offload
+47:42 - Davey Vianna - Knock On
+48:10 - Ezzita az Iunodea - Intercepted Off A Cam en Zasde Pass
+48:43 - Yuinamo ti Zyea - Offload
+48:43 - Yuinamo ti Zyea - Knock On
+49:22 - Cam en Zasde - NO TRY - Held Up
+49:36 - Mitch Suatoma - TRY - Amazita City Farmers: 6 v Blue Mountains Seals: 28
+51:03 - Davey Vianna - CONVERSION MISSED
+52:45 - Huretio X. Port - Offload
+53:00 - Bert Questa - Kick - 19m, kicked from 23m
+53:17 - Ashton Kerr - Intercepted Off A Bill R. May Pass
+54:19 - Ashton Kerr - Knock On
+54:30 - Davey Vianna - Intercepted Off A Isaak le Aaroba Pass
+55:13 - Avery S. Oarst - Knock On
+56:46 - Georgio o. Dea - 6th Tackle Changeover
+57:59 - Avery S. Oarst - Kick - 20m, kicked from 12m
+58:12 - Cliff vo Burrea - Penalty
+59:10 - Ometage Tajtu - TRY - Amazita City Farmers: 10 v Blue Mountains Seals: 28
+59:51 - Ometage az Lemoa - GOAL - Amazita City Farmers: 12 v Blue Mountains Seals: 28
+60:57 - Cam en Zasde - Penalty
+61:23 - Amazita City Farmers Interchanged Players Yuinamo ti Zyea & Yumi o. Ser
+62:12 - Georgio o. Dea - Kick - 15m, kicked from 49m
+62:23 - Keith de Bactio - Linebreak
+63:23 - Bob Watt - Over The Sideline
+64:26 - Georgio o. Dea - Offload
+64:49 - Ezzita az Iunodea - Kick - 27m, kicked from 37m
+65:00 - Blue Mountains Seals Interchanged Players Keith de Bactio & Luna le Reastea
+66:03 - Amazita City Farmers Interchanged Players Isaak le Aaroba & Michael Penisini
+66:03 - Blue Mountains Seals Interchanged Players Bill R. May & Mitchell Y. Worker
+66:20 - Amazita City Farmers Interchanged Players Ometage Tajtu & Yuinamo ti Zyea
+66:20 - Thom M. Nathring - 6th Tackle Changeover
+66:31 - Ometage az Lemoa - Offload
+66:59 - Oliver G. Caddington - NO TRY - Held Up
+67:14 - Maddison W. le Pore - NO TRY - Held Up
+67:56 - Ashton Kerr - 6th Tackle Changeover
+68:42 - Walter Dacus - Stripped Ball Off Thom M. Nathring
+69:13 - Maddison W. le Pore - Over The Sideline
+70:27 - Cliff vo Burrea - Kick - 40m, kicked from 35m
+70:41 - Amazita City Farmers Interchanged Players Jakk Atoni & Ometage Tajtu
+70:41 - Yumi o. Ser - NO TRY - Held Up
+71:17 - Yumi o. Ser - TRY - Amazita City Farmers: 16 v Blue Mountains Seals: 28
+72:29 - Ometage az Lemoa - GOAL - Amazita City Farmers: 18 v Blue Mountains Seals: 28
+73:25 - Maddison W. le Pore - Offload
+74:08 - Walter Dacus - Intercepted Off A Abby Farrell Pass
+74:26 - Oliver G. Caddington - Intercepted Off A Luna le Reastea Pass
+74:54 - Walter Dacus - NO TRY - Held Up
+75:24 - Blue Mountains Seals Interchanged Players Avery S. Oarst & Sam Potter
+75:24 - Leon Harris - Over The Sideline
+75:38 - Leon Harris - Penalty
+75:55 - Bert Questa - Offload
+75:55 - Bert Questa - Knock On
+76:25 - Oliver G. Caddington - Offload
+76:40 - Blue Mountains Seals Interchanged Players Mitch Suatoma & Jill le Sasson
+76:40 - Ashton Kerr - Intercepted Off A Abby Farrell Pass
+77:41 - Ometage Tajtu - Kick - 42m, kicked from 46m
+78:12 - Luna le Reastea - Offload
+78:12 - Luna le Reastea - Knock On
+79:23 - Georgio o. Dea - NO TRY - Held Up
+79:52 - Yuinamo ti Zyea - 6th Tackle Changeover
+80:00 - FULL TIME - Amazita City Farmers: 18 v Blue Mountains Seals: 28
+                             
+--------PLAYER STATS--------
+Home Team: Amazita City Farmers
+1: Yuinamo ti Zyea |Time Played: 75:03 |Metres: 91 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+2: Yumi o. Ser |Time Played: 18:37 |Metres: 10 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+3: Walter Dacus |Time Played: 80:00 |Metres: 4 |Tackles: 3 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+4: Leon Harris |Time Played: 59:18 |Metres: 14 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+5: Ashton Kerr |Time Played: 80:00 |Metres: 22 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+6: Georgio o. Dea |Time Played: 80:00 |Metres: 54 |Tackles: 6 |Kicks: 2 |Kick Metres: 28 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+7: Ometage Tajtu |Time Played: 75:39 |Metres: 40 |Tackles: 5 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 43
+8: Bert Stewart |Time Played: 80:00 |Metres: 14 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 32
+9: Oliver G. Caddington |Time Played: 80:00 |Metres: 25 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 19
+10: Maddison W. le Pore |Time Played: 80:00 |Metres: 28 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+11: Ezzita az Iunodea |Time Played: 80:00 |Metres: 30 |Tackles: 12 |Kicks: 1 |Kick Metres: 27 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 20
+12: Ometage az Lemoa |Time Played: 80:00 |Metres: 27 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 14
+13: Michael Penisini |Time Played: 49:01 |Metres: 92 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+14: Jakk Atoni |Time Played: 70:41 |Metres: 88 |Tackles: 6 |Kicks: 1 |Kick Metres: 17 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 53
+15: Phillip Normandy |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Isaak le Aaroba |Time Played: 30:59 |Metres: 20 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+17: Norman o. Xae |Time Played: 20:42 |Metres: 0 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+Highlights:                 
+Most Tackles: Bert Stewart: 16
+Most Points: Ometage az Lemoa: 6
+Most Metres: Michael Penisini: 92
+Most Errors: Yuinamo ti Zyea: 2
+                             
+Away Team: Blue Mountains Seals
+1: Sam Potter |Time Played: 31:18 |Metres: 10 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 5
+2: Davey Vianna |Time Played: 80:00 |Metres: 23 |Tackles: 5 |Kicks: 2 |Kick Metres: 37 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+3: Jill le Sasson |Time Played: 39:43 |Metres: 39 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 25
+4: Bretalano en Onasre |Time Played: 80:00 |Metres: 62 |Tackles: 7 |Kicks: 1 |Kick Metres: 58 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 62
+5: Thom M. Nathring |Time Played: 58:20 |Metres: 57 |Tackles: 4 |Kicks: 1 |Kick Metres: 48 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 25
+6: Cliff vo Burrea |Time Played: 80:00 |Metres: 12 |Tackles: 11 |Kicks: 1 |Kick Metres: 40 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+7: Huretio X. Port |Time Played: 74:58 |Metres: 18 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+8: Bob Watt |Time Played: 80:00 |Metres: 30 |Tackles: 20 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+9: Mitchell Y. Worker |Time Played: 13:57 |Metres: 2 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+10: Cam en Zasde |Time Played: 80:00 |Metres: 32 |Tackles: 22 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 19
+11: Abby Farrell |Time Played: 80:00 |Metres: 52 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+12: Bert Questa |Time Played: 43:37 |Metres: 6 |Tackles: 9 |Kicks: 1 |Kick Metres: 19 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+13: Luna le Reastea |Time Played: 15:00 |Metres: 8 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+14: Keith de Bactio |Time Played: 65:00 |Metres: 128 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 69
+15: Avery S. Oarst |Time Played: 75:24 |Metres: 54 |Tackles: 2 |Kicks: 1 |Kick Metres: 20 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+16: Mitch Suatoma |Time Played: 76:40 |Metres: 28 |Tackles: 6 |Kicks: 1 |Kick Metres: 23 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 36
+17: Bill R. May |Time Played: 66:03 |Metres: 122 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 41
+Highlights:                 
+Most Tackles: Cam en Zasde: 22
+Most Points: Sam Potter: 4
+Most Metres: Keith de Bactio: 128
+Most Errors: Davey Vianna: 4
+                             
+---------TEAM STATS---------
+Home Team: Amazita City Farmers
+Total Metres: 559
+Total Kick Metres: 135
+Total Errors: 9
+Total Tackles: 119
+Total Tries: 3
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 6/8
+                             
+Away Team: Blue Mountains Seals
+Total Metres: 683
+Total Kick Metres: 245
+Total Errors: 9
+Total Tackles: 133
+Total Tries: 6
+Total Goals: 2
+Total Field Goals: 0
+Interchanges Used: 7/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Bretalano en Onasre
+2nd (2 Points) -- Ometage Tajtu
+3rd (1 Point) -- Jill le Sasson
+----------------------------

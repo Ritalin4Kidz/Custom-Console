@@ -22,13 +22,32 @@ string SRLTeam::Interchange(string& summaryPlay)
 	{
 		return "";
 	}
-	int interchange1 = rand() % m_TeamList.size();
+	int interchange1 = 0;
 	int interchange2 = (rand() % 4) + 13;
-	if (interchange1 >= 13)
+
+	if (interchange2 >= 17)
 	{
 		return "";
 	}
-	if (interchange1 >= 17 || interchange2 >= 17)
+
+	if (m_TeamList[interchange2].getPreferredPos() == -1)
+	{
+		interchange1 = rand() % m_TeamList.size();
+	}
+	else if (m_TeamList[interchange2].getPreferredPos() == 0)
+	{
+		interchange1 = rand() % 5;
+	}
+	else if (m_TeamList[interchange2].getPreferredPos() == 1)
+	{
+		interchange1 = (rand() % 2) + 5;
+	}
+	if (m_TeamList[interchange2].getPreferredPos() == 2)
+	{
+		interchange1 = (rand() % 6) + 7;
+	}
+
+	if (interchange1 >= 13)
 	{
 		return "";
 	}
@@ -182,6 +201,36 @@ SRLPlayer SRLTeam::getRandomPlayerDefender()
 		int player = rand() % 7;
 		return m_TeamList[player];
 	}
+}
+
+void SRLTeam::setPlayerPreferredPosByStat(int index)
+{
+	int attack = (m_TeamList[index].getAttack() + m_TeamList[index].getSpeed()) / 2;
+	int defence = m_TeamList[index].getDefence();
+	int playmaking = (m_TeamList[index].getAttack() + m_TeamList[index].getKicking()) / 2;
+
+	if (m_TeamList[index].getRating() >= (attack - 8) &&
+		m_TeamList[index].getRating() >= (defence - 8) &&
+		m_TeamList[index].getRating() >= (playmaking - 8))
+	{
+		m_TeamList[index].setPreferredPos(-1); //UTILITY
+		return;
+	}
+
+	if (attack > defence && attack > playmaking)
+	{
+		m_TeamList[index].setPreferredPos(0); //BACKLINE
+		return;
+	}
+
+	if (defence > playmaking)
+	{
+		m_TeamList[index].setPreferredPos(2); //FORWARD PACK
+		return;
+	}
+
+	m_TeamList[index].setPreferredPos(1); //PLAYMAKER
+	return;
 }
 
 void SRLTeam::clearTeam()

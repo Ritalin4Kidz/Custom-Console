@@ -45,6 +45,9 @@ public:
 
 	int getRandomPlayerInt() { return rand() % m_TeamList.size(); }
 
+	void setPlayerPreferredPos(int index, int pos) { m_TeamList[index].setPreferredPos(pos); }
+	void setPlayerPreferredPosByStat(int index);
+
 	void clearTeam();
 	void setJersey(ColourClass p, ColourClass s, ColourClass b, int JerseyType) { primaryColour = p; secondaryColour = s; badgeColour = b; jerseryTypeInt = JerseyType; }
 	void setLogoCustom(string _Logo) { m_CustomLogo = _Logo; }

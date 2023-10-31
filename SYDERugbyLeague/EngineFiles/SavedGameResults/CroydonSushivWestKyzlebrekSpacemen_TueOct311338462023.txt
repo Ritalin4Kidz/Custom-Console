@@ -1,0 +1,262 @@
+----------LINE-UPS----------
+Home Team: Croydon Sushi
+1: Bam U. Quess
+2: Trent G. Cabbie
+3: Mitch Ratey
+4: Jeni ti Seaser
+5: Barb Ballsut
+6: Finn X. Obea
+7: Norman Maynard
+8: Turni az Grew
+9: Kirk Nathring
+10: Eduardo en Yu
+11: Tyrone vo Dereas
+12: Clinton Develo
+13: Norman T. Tyrell
+14: Mundi F. Vuderty
+15: Jeni ti Qeras
+16: David E. Brekston
+17: Arnole ti Indig
+Away Team: West Kyzlebrek Spacemen
+1: Chase Yemm
+2: Gordon Lammi
+3: Yuni o. Eya
+4: Earl Gurney
+5: Drodan Kat
+6: Valian Iyzzer
+7: Walter McMahon
+8: Pearl Penisini
+9: Isabel vo Klrita
+10: Adole Dharo
+11: Isabel Humm
+12: Kelin Stewart
+13: Clinton Zeal
+14: Lenny az Yutrea
+15: Jukesy Taylor
+16: Opus V. Papiai
+17: Dom az Betaset
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Croydon Sushi: 0 v West Kyzlebrek Spacemen: 0
+00:59 - Clinton Develo - Kick - Travelled 24m, kicked from 39m out from West Kyzlebrek Spacemen's goalline
+00:59 - Adole Dharo - NO TRY - Held Up
+01:08 - Adole Dharo - Knock On
+01:39 - Kirk Nathring - NO TRY - Held Up
+01:50 - Turni az Grew - NO TRY - Held Up
+02:01 - Bam U. Quess - NO TRY - Held Up
+02:30 - Jeni ti Seaser - TRY - Croydon Sushi: 4 v West Kyzlebrek Spacemen: 0
+03:57 - Norman Maynard - GOAL - Croydon Sushi: 6 v West Kyzlebrek Spacemen: 0
+04:41 - Isabel vo Klrita - Penalty
+05:43 - Norman Maynard - Kick - Travelled 12m, kicked from 47m out from West Kyzlebrek Spacemen's goalline
+06:18 - Earl Gurney - Intercepted Off A Norman T. Tyrell Pass
+06:27 - Isabel vo Klrita - Knock On
+06:40 - Turni az Grew - NO TRY - Held Up
+07:10 - Norman T. Tyrell - NO TRY - Held Up
+08:02 - 6th Tackle Changeover, 2m out from West Kyzlebrek Spacemen's goalline
+08:57 - Isabel Humm - Kick - Travelled 40m, kicked from 9m out from West Kyzlebrek Spacemen's goalline
+10:10 - 6th Tackle Changeover, 30m out from West Kyzlebrek Spacemen's goalline
+10:40 - Earl Gurney - Intercepted Off A Norman T. Tyrell Pass
+10:53 - Walter McMahon - NO TRY - Held Up
+11:45 - 6th Tackle Changeover, -2m out from Croydon Sushi's goalline
+12:32 - Bam U. Quess - NO TRY - Held Up
+12:57 - 6th Tackle Changeover, 6m out from West Kyzlebrek Spacemen's goalline
+14:13 - Trent G. Cabbie - Ruck Infringement
+14:48 - Tyrone vo Dereas - Ruck Infringement
+15:46 - Valian Iyzzer - Kick - Travelled 17m, kicked from 47m out from West Kyzlebrek Spacemen's goalline
+15:46 - Tyrone vo Dereas - NO TRY - Held Up
+16:13 - Kirk Nathring - NO TRY - Held Up
+16:29 - Kelin Stewart - Penalty
+16:33 - Norman Maynard - PENALTY GOAL MISSED
+18:13 - Mitch Ratey - Knock On
+19:31 - Drodan Kat - Kick - Travelled 38m, kicked from 43m out from West Kyzlebrek Spacemen's goalline
+20:12 - Norman T. Tyrell - Intercepted Off A Chase Yemm Pass
+20:23 - Croydon Sushi Interchanged Players Trent G. Cabbie & Mundi F. Vuderty
+20:23 - West Kyzlebrek Spacemen Interchanged Players Kelin Stewart & Lenny az Yutrea
+20:37 - Jeni ti Seaser - Linebreak
+20:50 - Barb Ballsut - Intercepted Off A Lenny az Yutrea Pass
+20:50 - Barb Ballsut - NO TRY - Held Up
+21:19 - Norman T. Tyrell - TRY - Croydon Sushi: 10 v West Kyzlebrek Spacemen: 0
+22:24 - Norman Maynard - CONVERSION MISSED
+23:23 - Turni az Grew - Over The Sideline
+23:47 - Drodan Kat - NO TRY - Held Up
+24:24 - Valian Iyzzer - NO TRY - Held Up
+24:38 - 6th Tackle Changeover, 4m out from Croydon Sushi's goalline
+24:52 - Kirk Nathring - Intercepted Off A Valian Iyzzer Pass
+25:05 - Turni az Grew - Knock On
+25:18 - Walter McMahon - Intercepted Off A Mitch Ratey Pass
+25:29 - Isabel vo Klrita - Knock On (Offload)
+25:44 - Croydon Sushi Interchanged Players Clinton Develo & Jeni ti Qeras
+26:11 - Tyrone vo Dereas - Over The Sideline
+26:27 - Clinton Zeal - Offload
+26:56 - Isabel vo Klrita - TRY - Croydon Sushi: 10 v West Kyzlebrek Spacemen: 4
+28:14 - Clinton Zeal - GOAL - Croydon Sushi: 10 v West Kyzlebrek Spacemen: 6
+29:53 - Drodan Kat - Kick - Travelled 16m, kicked from 20m out from West Kyzlebrek Spacemen's goalline
+30:02 - Croydon Sushi Interchanged Players Barb Ballsut & David E. Brekston
+30:15 - Adole Dharo - Penalty
+30:32 - Eduardo en Yu - TRY - Croydon Sushi: 14 v West Kyzlebrek Spacemen: 6
+31:33 - Norman Maynard - CONVERSION MISSED
+33:38 - David E. Brekston - Kick - Travelled 34m, kicked from 13m out from West Kyzlebrek Spacemen's goalline
+34:13 - Eduardo en Yu - Penalty
+34:26 - Isabel Humm - TRY - Croydon Sushi: 14 v West Kyzlebrek Spacemen: 10
+35:48 - Clinton Zeal - GOAL - Croydon Sushi: 14 v West Kyzlebrek Spacemen: 12
+37:27 - Drodan Kat - Forward Pass
+37:51 - Tyrone vo Dereas - NO TRY - Held Up
+38:23 - Norman Maynard - TRY - Croydon Sushi: 18 v West Kyzlebrek Spacemen: 12
+39:48 - Norman Maynard - GOAL - Croydon Sushi: 20 v West Kyzlebrek Spacemen: 12
+40:00 - HALF TIME - Croydon Sushi: 20 v West Kyzlebrek Spacemen: 12
+40:41 - Earl Gurney - Forward Pass
+40:55 - Norman T. Tyrell - NO TRY - Held Up
+41:21 - West Kyzlebrek Spacemen Interchanged Players Pearl Penisini & Opus V. Papiai
+41:21 - Kirk Nathring - TRY - Croydon Sushi: 24 v West Kyzlebrek Spacemen: 12
+42:14 - Norman Maynard - CONVERSION MISSED
+44:10 - Jeni ti Seaser - Intercepted Off A Adole Dharo Pass
+44:37 - Isabel Humm - Stripped Ball Off David E. Brekston
+44:51 - Opus V. Papiai - Forward Pass
+45:20 - Croydon Sushi Interchanged Players Tyrone vo Dereas & Arnole ti Indig
+45:20 - West Kyzlebrek Spacemen Interchanged Players Earl Gurney & Dom az Betaset
+45:45 - Norman Maynard - NO TRY - Held Up
+45:58 - Jeni ti Seaser - NO TRY - Held Up
+46:10 - 6th Tackle Changeover, 7m out from West Kyzlebrek Spacemen's goalline
+46:26 - Drodan Kat - Intercepted Off A Mundi F. Vuderty Pass
+47:08 - Yuni o. Eya - Kick - Travelled 29m, kicked from 22m out from West Kyzlebrek Spacemen's goalline
+47:21 - Jeni ti Qeras - Knock On
+48:11 - Drodan Kat - Intercepted Off A Mundi F. Vuderty Pass
+48:23 - Isabel vo Klrita - Forward Pass
+48:35 - Kirk Nathring - NO TRY - Held Up
+48:45 - Isabel Humm - Stripped Ball Off Kirk Nathring
+49:30 - Chase Yemm - NO TRY - Held Up
+49:42 - Drodan Kat - Over The Sideline
+50:16 - Bam U. Quess - NO TRY - Held Up
+50:26 - David E. Brekston - NO TRY - Held Up
+50:41 - Croydon Sushi Interchanged Players David E. Brekston & Trent G. Cabbie
+50:41 - West Kyzlebrek Spacemen Interchanged Players Gordon Lammi & Jukesy Taylor
+50:41 - Dom az Betaset - Penalty
+50:44 - Norman Maynard - PENALTY GOAL - Croydon Sushi: 26 v West Kyzlebrek Spacemen: 12
+52:21 - Mundi F. Vuderty - NO TRY - Held Up
+52:42 - 6th Tackle Changeover, 8m out from West Kyzlebrek Spacemen's goalline
+52:54 - Lenny az Yutrea - NO TRY - Held Up
+53:55 - 6th Tackle Changeover, -6m out from Croydon Sushi's goalline
+54:53 - Bam U. Quess - Kick - Travelled 21m, kicked from 15m out from West Kyzlebrek Spacemen's goalline
+54:53 - Walter McMahon - NO TRY - Held Up
+55:02 - West Kyzlebrek Spacemen Interchanged Players Clinton Zeal & Kelin Stewart
+55:02 - Opus V. Papiai - NO TRY - Held Up
+55:16 - Lenny az Yutrea - Intercepted Off A Arnole ti Indig Pass
+55:31 - Bam U. Quess - Ruck Infringement
+56:36 - 6th Tackle Changeover, 8m out from Croydon Sushi's goalline
+56:48 - Kirk Nathring - Linebreak
+56:51 - Kirk Nathring - Over The Sideline
+58:12 - 6th Tackle Changeover, 7m out from Croydon Sushi's goalline
+58:45 - Norman Maynard - Intercepted Off A Lenny az Yutrea Pass
+59:32 - Lenny az Yutrea - Penalty
+59:47 - Arnole ti Indig - Intercepted Off A Valian Iyzzer Pass
+60:36 - Bam U. Quess - Over The Sideline
+61:34 - Kelin Stewart - Kick - Travelled 41m, kicked from 48m out from West Kyzlebrek Spacemen's goalline
+61:46 - Norman T. Tyrell - NO TRY - Held Up
+62:00 - Arnole ti Indig - NO TRY - Held Up
+62:41 - Finn X. Obea - TRY - Croydon Sushi: 30 v West Kyzlebrek Spacemen: 12
+63:47 - Norman Maynard - GOAL - Croydon Sushi: 32 v West Kyzlebrek Spacemen: 12
+65:27 - Norman Maynard - NO TRY - Held Up
+65:56 - Norman Maynard - Offload
+66:05 - 6th Tackle Changeover, -15m out from West Kyzlebrek Spacemen's goalline
+67:09 - Eduardo en Yu - Stripped Ball Off Yuni o. Eya
+67:27 - Arnole ti Indig - Linebreak
+67:29 - Arnole ti Indig - TRY - Croydon Sushi: 36 v West Kyzlebrek Spacemen: 12
+68:48 - Norman Maynard - GOAL - Croydon Sushi: 38 v West Kyzlebrek Spacemen: 12
+69:43 - Eduardo en Yu - Over The Sideline
+69:59 - ------VIDEO REFEREE------
+69:59 - Isabel Humm - TRY - Croydon Sushi: 38 v West Kyzlebrek Spacemen: 16
+71:26 - Dom az Betaset - GOAL - Croydon Sushi: 38 v West Kyzlebrek Spacemen: 18
+72:35 - Kelin Stewart - Offload
+73:14 - Walter McMahon - Over The Sideline
+73:27 - Walter McMahon - Penalty
+73:32 - Norman Maynard - PENALTY GOAL - Croydon Sushi: 40 v West Kyzlebrek Spacemen: 18
+74:25 - Jeni ti Qeras - NO TRY - Held Up
+74:54 - Bam U. Quess - NO TRY - Held Up
+75:03 - Croydon Sushi Interchanged Players Eduardo en Yu & David E. Brekston
+75:03 - Kelin Stewart - Penalty
+75:06 - Norman Maynard - PENALTY GOAL MISSED
+76:10 - Arnole ti Indig - NO TRY - Held Up
+76:25 - Arnole ti Indig - NO TRY - Held Up
+76:56 - Norman T. Tyrell - TRY - Croydon Sushi: 44 v West Kyzlebrek Spacemen: 18
+78:07 - Norman Maynard - CONVERSION MISSED
+78:53 - Kirk Nathring - NO TRY - Held Up
+79:29 - Mundi F. Vuderty - NO TRY - Held Up
+79:54 - 6th Tackle Changeover, 1m out from West Kyzlebrek Spacemen's goalline
+80:00 - FULL TIME - Croydon Sushi: 44 v West Kyzlebrek Spacemen: 18
+                             
+--------PLAYER STATS--------
+Home Team: Croydon Sushi
+1: Bam U. Quess |Time Played: 80:00 |Metres: 20 |Tackles: 5 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+2: Mundi F. Vuderty |Time Played: 59:37 |Metres: 6 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+3: Mitch Ratey |Time Played: 80:00 |Metres: 16 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+4: Jeni ti Seaser |Time Played: 80:00 |Metres: 127 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 69
+5: Trent G. Cabbie |Time Played: 49:42 |Metres: 32 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+6: Finn X. Obea |Time Played: 80:00 |Metres: 9 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 21
+7: Norman Maynard |Time Played: 80:00 |Metres: 79 |Tackles: 7 |Kicks: 1 |Kick Metres: 12 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 6 |Field Goals: 0 |Total Points: 16 |Fantasy Points: 59
+8: Turni az Grew |Time Played: 80:00 |Metres: 37 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+9: Kirk Nathring |Time Played: 80:00 |Metres: 87 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 30
+10: David E. Brekston |Time Played: 25:36 |Metres: 8 |Tackles: 1 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+11: Arnole ti Indig |Time Played: 34:40 |Metres: 35 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 35
+12: Jeni ti Qeras |Time Played: 54:16 |Metres: 29 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+13: Norman T. Tyrell |Time Played: 80:00 |Metres: 76 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 73
+14: Eduardo en Yu |Time Played: 75:03 |Metres: 64 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 19
+15: Clinton Develo |Time Played: 25:44 |Metres: 17 |Tackles: 3 |Kicks: 1 |Kick Metres: 24 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+16: Barb Ballsut |Time Played: 30:02 |Metres: 4 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+17: Tyrone vo Dereas |Time Played: 45:20 |Metres: 12 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+Highlights:                 
+Most Tackles: Norman T. Tyrell: 14
+Most Points: Norman Maynard: 16
+Most Metres: Jeni ti Seaser: 127
+Most Errors: Turni az Grew: 2
+                             
+Away Team: West Kyzlebrek Spacemen
+1: Chase Yemm |Time Played: 80:00 |Metres: 28 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+2: Jukesy Taylor |Time Played: 29:19 |Metres: 2 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+3: Yuni o. Eya |Time Played: 80:00 |Metres: 74 |Tackles: 7 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 50
+4: Dom az Betaset |Time Played: 34:40 |Metres: 17 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 4
+5: Drodan Kat |Time Played: 80:00 |Metres: 9 |Tackles: 4 |Kicks: 2 |Kick Metres: 54 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+6: Valian Iyzzer |Time Played: 80:00 |Metres: 23 |Tackles: 9 |Kicks: 1 |Kick Metres: 17 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 33
+7: Walter McMahon |Time Played: 80:00 |Metres: 3 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+8: Opus V. Papiai |Time Played: 38:39 |Metres: 6 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+9: Isabel vo Klrita |Time Played: 80:00 |Metres: 58 |Tackles: 19 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 3 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+10: Adole Dharo |Time Played: 80:00 |Metres: 26 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+11: Isabel Humm |Time Played: 80:00 |Metres: 89 |Tackles: 17 |Kicks: 1 |Kick Metres: 40 |40/20: 0 |Errors: 0 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 94
+12: Lenny az Yutrea |Time Played: 59:37 |Metres: 10 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+13: Kelin Stewart |Time Played: 45:21 |Metres: 11 |Tackles: 7 |Kicks: 1 |Kick Metres: 41 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+14: Clinton Zeal |Time Played: 55:02 |Metres: 7 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 15
+15: Gordon Lammi |Time Played: 50:41 |Metres: 4 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+16: Pearl Penisini |Time Played: 41:21 |Metres: 14 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+17: Earl Gurney |Time Played: 45:20 |Metres: 39 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+Highlights:                 
+Most Tackles: Isabel vo Klrita: 19
+Most Points: Isabel Humm: 8
+Most Metres: Isabel Humm: 89
+Most Errors: Isabel vo Klrita: 3
+                             
+---------TEAM STATS---------
+Home Team: Croydon Sushi
+Total Metres: 658
+Total Kick Metres: 91
+Total Errors: 8
+Total Tackles: 113
+Total Tries: 8
+Total Goals: 6
+Total Field Goals: 0
+Interchanges Used: 6/8
+                             
+Away Team: West Kyzlebrek Spacemen
+Total Metres: 420
+Total Kick Metres: 181
+Total Errors: 9
+Total Tackles: 147
+Total Tries: 3
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 5/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Norman Maynard
+2nd (2 Points) -- Isabel Humm
+3rd (1 Point) -- Norman T. Tyrell
+----------------------------

@@ -1,0 +1,62 @@
+Fullback:
+A: 85
+D: 45
+S: 85
+K: 40
+H: 65
+
+Winger:
+A: 85
+D: 55
+S: 70
+K: 40
+H: 70
+
+Centre:
+A: 75
+D: 65
+S: 60
+K: 50
+H: 70
+
+5/8:
+A: 60
+D: 60
+S: 55
+K: 80
+H: 65
+
+Halfback:
+A: 70
+D: 60
+S: 40
+K: 85
+H: 65
+
+Hooker:
+A: 65
+D: 75
+S: 60
+K: 65
+H: 55
+
+Forward:
+A: 60
+D: 85
+S: 60
+K: 35
+H: 80
+
+Interchange (1):
+A: 64
+D: 64
+S: 64
+K: 64
+H: 64
+
+Interchange (2):
+A: 50
+D: 90
+S: 60
+K: 35
+H: 65

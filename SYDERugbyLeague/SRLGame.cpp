@@ -381,12 +381,44 @@ void SRLGameManager::addTeamLineupsPlayByPlay()
 	{
 		m_HomeTeam.setPlayerTeamName(m_HomeTeam.getName(), i);
 		addPlayNoMinutes(std::to_string(i+1) +": " + m_HomeTeam.getPlayers()[i].getName());
+		if (i < 5)
+		{
+			m_HomeTeam.setPlayerPreferredPos(i, 0);
+		}
+		else if (i < 7)
+		{
+			m_HomeTeam.setPlayerPreferredPos(i, 1);
+		}
+		else if (i < 13)
+		{
+			m_HomeTeam.setPlayerPreferredPos(i, 2);
+		}
+		else
+		{
+			m_HomeTeam.setPlayerPreferredPosByStat(i);
+		}
 	}
 	addPlayNoMinutes("Away Team: " + m_AwayTeam.getName());
 	for (int i = 0; i < m_AwayTeam.getPlayers().size(); i++)
 	{
 		m_AwayTeam.setPlayerTeamName(m_AwayTeam.getName(), i);
 		addPlayNoMinutes(std::to_string(i + 1) + ": " + m_AwayTeam.getPlayers()[i].getName());
+		if (i < 5)
+		{
+			m_AwayTeam.setPlayerPreferredPos(i, 0);
+		}
+		else if (i < 7)
+		{
+			m_AwayTeam.setPlayerPreferredPos(i, 1);
+		}
+		else if (i < 13)
+		{
+			m_AwayTeam.setPlayerPreferredPos(i, 2);
+		}
+		else
+		{
+			m_AwayTeam.setPlayerPreferredPosByStat(i);
+		}
 	}
 	addPlayNoMinutes("----------GAME-STAT---------");
 	generateWeather();
@@ -747,7 +779,7 @@ bool SRLGameManager::doVideoRef(SRLPlayer defender, SRLPlayer attacker, SRLTeam&
 	//HELD UP
 	else if (chance2 == 1)
 	{
-		addPlay("NO TRY - Held Up", attacker);
+		addPlay("NO TRY - Held Up on tackle " + to_string(m_Tackle + 1) , attacker);
 		addSummary("NO TRY#Held Up", attacker);
 		setPositionUniversal(10);
 		return true;
@@ -1226,7 +1258,7 @@ bool SRLGameManager::checkIntercept(SRLPlayer& defender, SRLPlayer& attacker)
 					m_BallPosition += (((attacker.getSpeed() / 20) + 1)) / 2;
 				}
 			}
-			m_Tackle++;
+			//m_Tackle = 0;
 			return true;
 		}
 	}
@@ -1362,7 +1394,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 	{
 		if (defender.getDefence()> attacker.getAttack())
 		{
-			addPlay("NO TRY - Held Up", attacker);
+			addPlay("NO TRY - Held Up on tackle " + to_string(m_Tackle + 1), attacker);
 			addSummary("NO TRY#Held Up", attacker);
 			setPositionUniversal(10);
 			return true;

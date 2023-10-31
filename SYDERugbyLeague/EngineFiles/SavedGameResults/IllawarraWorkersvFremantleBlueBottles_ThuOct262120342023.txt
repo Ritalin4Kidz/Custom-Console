@@ -1,0 +1,255 @@
+----------LINE-UPS----------
+Home Team: Illawarra Workers
+1: Opus Maxx
+2: Joseph Winger
+3: Tura Cabbie
+4: Jon az Oiuty
+5: Madison en Freatur
+6: Bobby cu Zeassa
+7: Jill Mortimer
+8: Oaketa Yacoub
+9: Kim Mahoney
+10: Opus Gillard
+11: Jack Claypool
+12: Blaine o. Aye
+13: Norea az Treaster
+14: Kev W. en Yu
+15: Jenny Brasi
+16: Peter mu Unase
+17: Evan G. en Masre
+Away Team: Fremantle Blue Bottles
+1: Kyle Sins
+2: Andy de Flatio
+3: Andrew en Zasde
+4: Declan Quess
+5: Velento Jay Worsent
+6: Ruzzie Xyer
+7: Burt R. Greenberg
+8: Billy Osees
+9: Imm Tyrell
+10: Jay May
+11: Jeffrey L. Ballsut
+12: Effi Atlas
+13: Daniel Ranger
+14: Allie Hannington
+15: Kirk Hurt
+16: Ollie Garfield
+17: Drodan Reynolds
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Illawarra Workers: 0 v Fremantle Blue Bottles: 0
+00:56 - Joseph Winger - Intercepted Off A Billy Osees Pass
+01:06 - Blaine o. Aye - NO TRY - Held Up
+01:50 - 6th Tackle Changeover, -13m out from Fremantle Blue Bottles's goalline
+02:16 - Jack Claypool - Penalty
+03:41 - 6th Tackle Changeover, 22m out from Illawarra Workers's goalline
+04:06 - Andy de Flatio - Ruck Infringement
+04:39 - Joseph Winger - Over The Sideline
+04:50 - Kim Mahoney - Penalty
+05:04 - Velento Jay Worsent - Intercepted Off A Oaketa Yacoub Pass
+05:31 - Jeffrey L. Ballsut - TRY - Illawarra Workers: 0 v Fremantle Blue Bottles: 4
+06:33 - Jay May - GOAL - Illawarra Workers: 0 v Fremantle Blue Bottles: 6
+07:44 - Jay May - Intercepted Off A Opus Gillard Pass
+08:14 - Burt R. Greenberg - Intercepted Off A Joseph Winger Pass
+09:21 - 6th Tackle Changeover, -9m out from Illawarra Workers's goalline
+10:17 - Madison en Freatur - Kick - Travelled 41m, kicked from 27m out from Fremantle Blue Bottles's goalline
+11:41 - Burt R. Greenberg - Chip Kick
+11:41 - 6th Tackle Changeover, -11m out from Illawarra Workers's goalline
+12:20 - Madison en Freatur - Forward Pass
+12:32 - Effi Atlas - Forward Pass
+12:54 - Kim Mahoney - NO TRY - Held Up
+13:14 - Madison en Freatur - Linebreak
+13:17 - ------VIDEO REFEREE------
+13:17 - Madison en Freatur - TRY - Illawarra Workers: 4 v Fremantle Blue Bottles: 6
+14:35 - Kim Mahoney - CONVERSION MISSED
+16:04 - Illawarra Workers Interchanged Players Bobby cu Zeassa & Evan G. en Masre
+16:19 - Joseph Winger - Kick - Travelled 52m, kicked from 50m out from Fremantle Blue Bottles's goalline
+17:25 - Declan Quess - Kick - Travelled 37m, kicked from 24m out from Fremantle Blue Bottles's goalline
+18:14 - Opus Maxx - Forward Pass
+19:30 - Norea az Treaster - Penalty
+19:34 - Jay May - PENALTY GOAL - Illawarra Workers: 4 v Fremantle Blue Bottles: 8
+20:43 - Illawarra Workers Interchanged Players Norea az Treaster & Kev W. en Yu
+21:24 - Jeffrey L. Ballsut - Kick - Travelled 36m, kicked from 46m out from Fremantle Blue Bottles's goalline
+22:40 - 6th Tackle Changeover, 15m out from Fremantle Blue Bottles's goalline
+22:49 - Declan Quess - Intercepted Off A Opus Gillard Pass
+23:01 - Billy Osees - Linebreak
+23:59 - 6th Tackle Changeover, -7m out from Illawarra Workers's goalline
+25:07 - Tura Cabbie - Linebreak
+25:08 - Tura Cabbie - Kick - Travelled 25m, kicked from 29m out from Fremantle Blue Bottles's goalline
+26:01 - Illawarra Workers Interchanged Players Kim Mahoney & Peter mu Unase
+26:01 - Fremantle Blue Bottles Interchanged Players Effi Atlas & Allie Hannington
+26:26 - Andy de Flatio - Intercepted Off A Oaketa Yacoub Pass
+27:08 - Jay May - Knock On
+27:17 - Opus Gillard - Linebreak
+28:32 - 6th Tackle Changeover, 5m out from Fremantle Blue Bottles's goalline
+28:56 - Jeffrey L. Ballsut - NO TRY - Held Up
+29:20 - Kyle Sins - TRY - Illawarra Workers: 4 v Fremantle Blue Bottles: 12
+30:10 - Jay May - GOAL - Illawarra Workers: 4 v Fremantle Blue Bottles: 14
+31:23 - Illawarra Workers Interchanged Players Opus Gillard & Norea az Treaster
+31:45 - Burt R. Greenberg - Kick - Travelled 24m, kicked from 35m out from Fremantle Blue Bottles's goalline
+32:00 - Imm Tyrell - Ruck Infringement
+32:50 - Opus Maxx - Linebreak
+32:53 - Opus Maxx - TRY - Illawarra Workers: 8 v Fremantle Blue Bottles: 14
+33:37 - Jack Claypool - GOAL - Illawarra Workers: 10 v Fremantle Blue Bottles: 14
+34:56 - Kev W. en Yu - Linebreak
+35:14 - Kev W. en Yu - Linebreak
+36:01 - Fremantle Blue Bottles Interchanged Players Billy Osees & Ollie Garfield
+36:01 - 6th Tackle Changeover, 24m out from Fremantle Blue Bottles's goalline
+36:10 - Andrew en Zasde - Intercepted Off A Opus Maxx Pass
+37:03 - Andy de Flatio - Kick Out On The Full
+38:15 - 6th Tackle Changeover, 11m out from Fremantle Blue Bottles's goalline
+39:07 - Velento Jay Worsent - Kick - Travelled 39m, kicked from 25m out from Fremantle Blue Bottles's goalline
+39:23 - Oaketa Yacoub - Knock On
+39:56 - Daniel Ranger - Forward Pass
+40:00 - HALF TIME - Illawarra Workers: 10 v Fremantle Blue Bottles: 14
+41:06 - Andrew en Zasde - Kick - Travelled 42m, kicked from 38m out from Fremantle Blue Bottles's goalline
+41:42 - Fremantle Blue Bottles Interchanged Players Ruzzie Xyer & Billy Osees
+42:12 - Joseph Winger - Kick - Travelled 59m, kicked from 40m out from Fremantle Blue Bottles's goalline
+42:59 - Billy Osees - NO TRY - Held Up
+43:25 - 6th Tackle Changeover, 7m out from Illawarra Workers's goalline
+44:38 - Jill Mortimer - Kick - Travelled 18m, kicked from 40m out from Fremantle Blue Bottles's goalline
+45:16 - Jack Claypool - Stripped Ball Off Ollie Garfield
+45:35 - Jill Mortimer - Forward Pass
+46:23 - Fremantle Blue Bottles Interchanged Players Imm Tyrell & Ruzzie Xyer
+46:45 - 6th Tackle Changeover, 19m out from Illawarra Workers's goalline
+47:48 - Jack Claypool - Kick - Travelled 38m, kicked from 47m out from Fremantle Blue Bottles's goalline
+48:02 - Kev W. en Yu - Penalty
+49:04 - Jack Claypool - Ruck Infringement
+49:28 - Ruzzie Xyer - NO TRY - Held Up
+49:37 - Billy Osees - NO TRY - Held Up
+50:06 - Andy de Flatio - Forward Pass
+50:44 - Fremantle Blue Bottles Interchanged Players Declan Quess & Drodan Reynolds
+51:29 - 6th Tackle Changeover, 38m out from Fremantle Blue Bottles's goalline
+51:41 - Illawarra Workers Interchanged Players Kev W. en Yu & Opus Gillard
+52:04 - Ruzzie Xyer - NO TRY - Held Up
+52:15 - Andy de Flatio - NO TRY - Held Up
+52:42 - Billy Osees - Linebreak
+52:44 - 6th Tackle Changeover, -21m out from Illawarra Workers's goalline
+53:44 - Jill Mortimer - NO TRY - Held Up
+54:04 - 6th Tackle Changeover, -1m out from Fremantle Blue Bottles's goalline
+54:27 - Ruzzie Xyer - Knock On
+54:42 - Madison en Freatur - TRY - Illawarra Workers: 14 v Fremantle Blue Bottles: 14
+55:35 - Jack Claypool - GOAL - Illawarra Workers: 16 v Fremantle Blue Bottles: 14
+57:37 - Jill Mortimer - Forward Pass
+57:48 - ------VIDEO REFEREE------
+57:48 - Jeffrey L. Ballsut - TRY - Illawarra Workers: 16 v Fremantle Blue Bottles: 18
+58:40 - Jay May - GOAL - Illawarra Workers: 16 v Fremantle Blue Bottles: 20
+60:28 - Drodan Reynolds - Kick - Travelled 61m, kicked from 33m out from Fremantle Blue Bottles's goalline
+61:00 - Madison en Freatur - Knock On
+61:52 - Ruzzie Xyer - NO TRY - Held Up
+62:02 - Andrew en Zasde - TRY - Illawarra Workers: 16 v Fremantle Blue Bottles: 24
+63:07 - Jay May - GOAL - Illawarra Workers: 16 v Fremantle Blue Bottles: 26
+65:04 - Billy Osees - Kick - Travelled 53m, kicked from 25m out from Fremantle Blue Bottles's goalline
+65:23 - Peter mu Unase - NO TRY - Held Up
+66:00 - Illawarra Workers Interchanged Players Jill Mortimer & Kev W. en Yu
+66:00 - Fremantle Blue Bottles Interchanged Players Jay May & Kirk Hurt
+66:00 - ------VIDEO REFEREE------
+66:00 - Joseph Winger - TRY - Illawarra Workers: 20 v Fremantle Blue Bottles: 26
+67:15 - Jack Claypool - CONVERSION MISSED
+68:03 - Kyle Sins - Ruck Infringement
+68:19 - Norea az Treaster - NO TRY - Held Up
+68:32 - ------VIDEO REFEREE------
+68:32 - Opus Gillard - NO TRY - Goal Line Dropout
+69:11 - Evan G. en Masre - Intercepted Off A Allie Hannington Pass
+70:09 - Kev W. en Yu - Linebreak
+70:10 - Kev W. en Yu - TRY - Illawarra Workers: 24 v Fremantle Blue Bottles: 26
+70:58 - Jack Claypool - GOAL - Illawarra Workers: 26 v Fremantle Blue Bottles: 26
+72:08 - Evan G. en Masre - Chip Kick
+73:16 - Drodan Reynolds - Penalty
+73:31 - Peter mu Unase - FIELD GOAL MISSED
+73:31 - 20m Restart - Fremantle Blue Bottles
+73:41 - Jeffrey L. Ballsut - Over The Sideline
+73:56 - Opus Gillard - FIELD GOAL MISSED
+73:56 - 20m Restart - Fremantle Blue Bottles
+74:53 - Kyle Sins - Kick - Travelled 10m, kicked from 47m out from Fremantle Blue Bottles's goalline
+75:24 - Illawarra Workers Interchanged Players Jack Claypool & Jenny Brasi
+75:24 - Fremantle Blue Bottles Interchanged Players Drodan Reynolds & Effi Atlas
+75:24 - Madison en Freatur - Linebreak
+75:27 - Madison en Freatur - FIELD GOAL MISSED
+75:27 - 20m Restart - Fremantle Blue Bottles
+76:22 - Burt R. Greenberg - NO TRY - Held Up
+76:37 - 6th Tackle Changeover, -5m out from Illawarra Workers's goalline
+77:19 - Opus Gillard - Linebreak
+77:48 - Opus Maxx - Kick - Travelled 14m, kicked from 40m out from Fremantle Blue Bottles's goalline
+78:27 - Ollie Garfield - NO TRY - Held Up
+78:39 - ------VIDEO REFEREE------
+78:39 - Daniel Ranger - TRY - Illawarra Workers: 26 v Fremantle Blue Bottles: 30
+79:26 - Kirk Hurt - GOAL - Illawarra Workers: 26 v Fremantle Blue Bottles: 32
+80:00 - FULL TIME - Illawarra Workers: 26 v Fremantle Blue Bottles: 32
+                             
+--------PLAYER STATS--------
+Home Team: Illawarra Workers
+1: Opus Maxx |Time Played: 80:00 |Metres: 107 |Tackles: 4 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 31
+2: Joseph Winger |Time Played: 80:00 |Metres: 71 |Tackles: 7 |Kicks: 2 |Kick Metres: 111 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 40
+3: Tura Cabbie |Time Played: 80:00 |Metres: 74 |Tackles: 12 |Kicks: 1 |Kick Metres: 25 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 57
+4: Jon az Oiuty |Time Played: 80:00 |Metres: 85 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 53
+5: Madison en Freatur |Time Played: 80:00 |Metres: 141 |Tackles: 7 |Kicks: 1 |Kick Metres: 41 |40/20: 0 |Errors: 2 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 31
+6: Evan G. en Masre |Time Played: 63:56 |Metres: 21 |Tackles: 8 |Kicks: 1 |Kick Metres: 14 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+7: Kev W. en Yu |Time Played: 44:58 |Metres: 139 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 37
+8: Oaketa Yacoub |Time Played: 80:00 |Metres: 116 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 35
+9: Peter mu Unase |Time Played: 53:59 |Metres: 3 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+10: Norea az Treaster |Time Played: 69:20 |Metres: 35 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+11: Jenny Brasi |Time Played: 04:36 |Metres: 0 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+12: Blaine o. Aye |Time Played: 80:00 |Metres: 13 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 26
+13: Opus Gillard |Time Played: 59:42 |Metres: 192 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 106
+14: Jill Mortimer |Time Played: 66:00 |Metres: 25 |Tackles: 8 |Kicks: 1 |Kick Metres: 18 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+15: Jack Claypool |Time Played: 75:24 |Metres: 37 |Tackles: 22 |Kicks: 1 |Kick Metres: 38 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 3 |Field Goals: 0 |Total Points: 6 |Fantasy Points: 22
+16: Kim Mahoney |Time Played: 26:01 |Metres: 34 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+17: Bobby cu Zeassa |Time Played: 16:04 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Jack Claypool: 22
+Most Points: Madison en Freatur: 8
+Most Metres: Opus Gillard: 192
+Most Errors: Madison en Freatur: 2
+                             
+Away Team: Fremantle Blue Bottles
+1: Kyle Sins |Time Played: 80:00 |Metres: 78 |Tackles: 11 |Kicks: 1 |Kick Metres: 10 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 30
+2: Andy de Flatio |Time Played: 80:00 |Metres: 61 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+3: Andrew en Zasde |Time Played: 80:00 |Metres: 101 |Tackles: 6 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 70
+4: Effi Atlas |Time Played: 30:37 |Metres: 65 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+5: Velento Jay Worsent |Time Played: 80:00 |Metres: 43 |Tackles: 10 |Kicks: 1 |Kick Metres: 39 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+6: Billy Osees |Time Played: 74:19 |Metres: 165 |Tackles: 10 |Kicks: 1 |Kick Metres: 53 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 101
+7: Burt R. Greenberg |Time Played: 80:00 |Metres: 39 |Tackles: 5 |Kicks: 2 |Kick Metres: 33 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 33
+8: Ollie Garfield |Time Played: 43:59 |Metres: 12 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+9: Ruzzie Xyer |Time Played: 75:19 |Metres: 22 |Tackles: 8 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+10: Kirk Hurt |Time Played: 14:00 |Metres: 17 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 9
+11: Jeffrey L. Ballsut |Time Played: 80:00 |Metres: 193 |Tackles: 15 |Kicks: 1 |Kick Metres: 36 |40/20: 0 |Errors: 1 |Tries: 2 |Goals: 0 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 64
+12: Allie Hannington |Time Played: 53:59 |Metres: 53 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 39
+13: Daniel Ranger |Time Played: 80:00 |Metres: 129 |Tackles: 18 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 45
+14: Drodan Reynolds |Time Played: 24:40 |Metres: 17 |Tackles: 1 |Kicks: 1 |Kick Metres: 61 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+15: Jay May |Time Played: 66:00 |Metres: 12 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 5 |Field Goals: 0 |Total Points: 10 |Fantasy Points: 15
+16: Imm Tyrell |Time Played: 46:23 |Metres: 41 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+17: Declan Quess |Time Played: 50:44 |Metres: 41 |Tackles: 4 |Kicks: 1 |Kick Metres: 37 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 33
+Highlights:                 
+Most Tackles: Daniel Ranger: 18
+Most Points: Jay May: 10
+Most Metres: Jeffrey L. Ballsut: 193
+Most Errors: Andy de Flatio: 2
+                             
+---------TEAM STATS---------
+Home Team: Illawarra Workers
+Total Metres: 1093
+Total Kick Metres: 261
+Total Errors: 7
+Total Tackles: 154
+Total Tries: 5
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 7/8
+                             
+Away Team: Fremantle Blue Bottles
+Total Metres: 1089
+Total Kick Metres: 311
+Total Errors: 7
+Total Tackles: 140
+Total Tries: 5
+Total Goals: 6
+Total Field Goals: 0
+Interchanges Used: 7/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Billy Osees
+2nd (2 Points) -- Opus Gillard
+3rd (1 Point) -- Andrew en Zasde
+----------------------------

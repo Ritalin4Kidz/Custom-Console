@@ -183,6 +183,9 @@ public:
 	void setIsHalfBack(bool value) { m_HalfbackPos = value; }
 	bool isHalfBack() { return m_HalfbackPos; }
 
+	void setPreferredPos(int p) { preferredPos = p; }
+	int getPreferredPos() { return preferredPos; }
+
 private:
 
 	string m_Teamname;
@@ -201,7 +204,7 @@ private:
 	int m_BaseKicking = 0;
 	//GENERAL HANDLING STAT
 	int m_BaseHandling = 0;
-
+	int preferredPos = -1;
 	float m_Stamina = 100;
 
 	int id = 0;

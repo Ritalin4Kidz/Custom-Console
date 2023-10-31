@@ -1,0 +1,266 @@
+----------LINE-UPS----------
+Home Team: Canberra Hawks
+1: Jameson cu Nonates
+2: Leon Quon
+3: Ashley Oertias
+4: Leon az Adereta
+5: Jon King
+6: Mike Naddeer
+7: Ometage Ramm
+8: Callum Vannder
+9: Cabberati le Jasde
+10: Lorenzo S. od Treasan
+11: Ann Dharo
+12: Lois W. ti Indig
+13: Terrance le Reastea
+14: Ezzita Purplouis
+15: Sully Hill
+16: Jimmy ze Dera
+17: Thomas az Treaster
+Away Team: Christville Zebras
+1: Zach B. Potter
+2: Kyuss H. Silwedel
+3: Sr. Nurtersamo
+4: Greta Reynolds
+5: Tura Vurp
+6: Louise Wott
+7: Brendan Clarke
+8: Barb Boeaste
+9: Nicki A. Denoa
+10: Jimmy Manfredi
+11: Billy Price
+12: Dan ti Deraste
+13: Suelen Fletch
+14: Kaiden Fallon
+15: Zoma Alexander
+16: Terry Zouma
+17: Robert ba Huias
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - Canberra Hawks: 0 v Christville Zebras: 0
+00:54 - Jameson cu Nonates - NO TRY - Held Up
+01:05 - Ometage Ramm - NO TRY - Held Up
+01:16 - 6th Tackle Changeover, 3m out from Christville Zebras's goalline
+01:41 - Jimmy Manfredi - NO TRY - Held Up
+02:02 - Louise Wott - TRY - Canberra Hawks: 0 v Christville Zebras: 4
+02:32 - Brendan Clarke - GOAL - Canberra Hawks: 0 v Christville Zebras: 6
+03:59 - Nicki A. Denoa - NO TRY - Held Up
+04:27 - 6th Tackle Changeover, -2m out from Canberra Hawks's goalline
+05:06 - Ometage Ramm - Over The Sideline
+05:22 - Jimmy Manfredi - TRY - Canberra Hawks: 0 v Christville Zebras: 10
+06:51 - Brendan Clarke - GOAL - Canberra Hawks: 0 v Christville Zebras: 12
+08:12 - Dan ti Deraste - NO TRY - Held Up
+08:52 - 6th Tackle Changeover, 5m out from Canberra Hawks's goalline
+09:05 - Lois W. ti Indig - NO TRY - Held Up
+09:15 - Leon az Adereta - Intercepted Off A Greta Reynolds Pass
+09:15 - Leon az Adereta - NO TRY - Held Up
+10:19 - 6th Tackle Changeover, 3m out from Christville Zebras's goalline
+10:35 - Tura Vurp - Knock On
+11:13 - Jon King - NO TRY - Held Up
+11:29 - Callum Vannder - NO TRY - Held Up
+12:07 - 6th Tackle Changeover, 1m out from Christville Zebras's goalline
+13:07 - Brendan Clarke - Over The Sideline
+13:47 - Ashley Oertias - NO TRY - Held Up
+14:02 - Lorenzo S. od Treasan - Offload
+14:13 - Ann Dharo - TRY - Canberra Hawks: 4 v Christville Zebras: 12
+15:05 - Mike Naddeer - CONVERSION MISSED
+16:03 - Canberra Hawks Interchanged Players Terrance le Reastea & Jimmy ze Dera
+16:03 - Christville Zebras Interchanged Players Zach B. Potter & Robert ba Huias
+16:03 - Ann Dharo - NO TRY - Held Up
+16:13 - Tura Vurp - Stripped Ball Off Leon Quon
+16:51 - Dan ti Deraste - NO TRY - Held Up
+17:26 - 6th Tackle Changeover, 4m out from Canberra Hawks's goalline
+17:35 - Ann Dharo - Forward Pass
+17:58 - Sr. Nurtersamo - TRY - Canberra Hawks: 4 v Christville Zebras: 16
+18:54 - Brendan Clarke - CONVERSION MISSED
+19:52 - Jameson cu Nonates - Penalty
+20:20 - Canberra Hawks Interchanged Players Jimmy ze Dera & Ezzita Purplouis
+20:42 - Christville Zebras Interchanged Players Tura Vurp & Zach B. Potter
+20:53 - Greta Reynolds - Kick - Travelled 73m, kicked from 48m out from Christville Zebras's goalline
+20:53 - 20m Restart - Canberra Hawks
+21:06 - Ann Dharo - NO TRY - Held Up
+21:31 - Suelen Fletch - Penalty
+21:48 - Lorenzo S. od Treasan - TRY - Canberra Hawks: 8 v Christville Zebras: 16
+23:17 - Mike Naddeer - GOAL - Canberra Hawks: 10 v Christville Zebras: 16
+25:07 - Lois W. ti Indig - Kick - Travelled 31m, kicked from 20m out from Christville Zebras's goalline
+25:23 - Canberra Hawks Interchanged Players Callum Vannder & Terrance le Reastea
+25:23 - Nicki A. Denoa - NO TRY - Held Up
+25:53 - Ashley Oertias - Penalty
+25:57 - Brendan Clarke - PENALTY GOAL MISSED
+27:21 - Suelen Fletch - NO TRY - Held Up
+27:35 - Robert ba Huias - NO TRY - Held Up
+28:11 - Zach B. Potter - Forward Pass
+28:34 - Ezzita Purplouis - NO TRY - Held Up
+29:31 - 6th Tackle Changeover, 5m out from Christville Zebras's goalline
+29:46 - Jimmy Manfredi - NO TRY - Held Up
+30:22 - Christville Zebras Interchanged Players Nicki A. Denoa & Kaiden Fallon
+30:36 - Kyuss H. Silwedel - TRY - Canberra Hawks: 10 v Christville Zebras: 20
+31:46 - Brendan Clarke - CONVERSION MISSED
+33:33 - Sr. Nurtersamo - Kick - Travelled 30m, kicked from 11m out from Christville Zebras's goalline
+34:16 - Terrance le Reastea - Injury - ACL
+34:16 - Canberra Hawks Interchanged Players Terrance le Reastea & Jimmy ze Dera
+34:53 - Cabberati le Jasde - Offload
+35:07 - Jimmy ze Dera - Intercepted Off A Billy Price Pass
+35:32 - Brendan Clarke - Stripped Ball Off Ometage Ramm
+35:45 - Dan ti Deraste - NO TRY - Held Up
+36:11 - Barb Boeaste - NO TRY - Held Up
+36:22 - Canberra Hawks Interchanged Players Cabberati le Jasde & Sully Hill
+36:22 - Barb Boeaste - NO TRY - Held Up
+36:50 - Zach B. Potter - Knock On
+38:13 - Ometage Ramm - Kick - Travelled 15m, kicked from 17m out from Christville Zebras's goalline
+38:39 - Suelen Fletch - Knock On
+39:56 - Ashley Oertias - Kick - Travelled 55m, kicked from 40m out from Christville Zebras's goalline
+39:56 - Jimmy Manfredi - NO TRY - Held Up
+40:00 - HALF TIME - Canberra Hawks: 10 v Christville Zebras: 20
+40:23 - Christville Zebras Interchanged Players Dan ti Deraste & Nicki A. Denoa
+40:50 - Kaiden Fallon - Intercepted Off A Jameson cu Nonates Pass
+41:06 - Lorenzo S. od Treasan - Stripped Ball Off Nicki A. Denoa
+41:22 - Canberra Hawks Interchanged Players Ezzita Purplouis & Cabberati le Jasde
+41:48 - ------VIDEO REFEREE------
+41:48 - Lorenzo S. od Treasan - NO TRY - 20m Restart
+42:55 - Greta Reynolds - Kick - Travelled 70m, kicked from 29m out from Christville Zebras's goalline
+43:20 - Lorenzo S. od Treasan - Offload
+44:04 - Lorenzo S. od Treasan - Kick - Travelled 42m, kicked from 34m out from Christville Zebras's goalline
+44:13 - Jimmy Manfredi - NO TRY - Held Up
+44:48 - Brendan Clarke - NO TRY - Held Up
+45:03 - Christville Zebras Interchanged Players Louise Wott & Terry Zouma
+45:19 - Billy Price - Over The Sideline
+46:01 - Christville Zebras Interchanged Players Robert ba Huias & Tura Vurp
+46:16 - Ashley Oertias - Kick - Travelled 51m, kicked from 17m out from Christville Zebras's goalline
+46:28 - Billy Price - NO TRY - Held Up
+46:37 - Nicki A. Denoa - Over The Sideline
+46:48 - Jimmy ze Dera - NO TRY - Held Up
+47:27 - Jimmy ze Dera - Over The Sideline
+47:41 - Billy Price - Offload
+48:13 - Sr. Nurtersamo - Knock On
+48:52 - Cabberati le Jasde - TRY - Canberra Hawks: 14 v Christville Zebras: 20
+49:53 - Mike Naddeer - GOAL - Canberra Hawks: 16 v Christville Zebras: 20
+51:11 - Jimmy ze Dera - NO TRY - Held Up
+51:21 - Canberra Hawks Interchanged Players Ann Dharo & Terrance le Reastea
+51:56 - 6th Tackle Changeover, 4m out from Christville Zebras's goalline
+52:58 - Greta Reynolds - Kick - Travelled 24m, kicked from 15m out from Christville Zebras's goalline
+53:26 - Lois W. ti Indig - NO TRY - Held Up
+53:51 - Lorenzo S. od Treasan - TRY - Canberra Hawks: 20 v Christville Zebras: 20
+55:10 - Mike Naddeer - GOAL - Canberra Hawks: 22 v Christville Zebras: 20
+56:23 - Canberra Hawks Interchanged Players Terrance le Reastea & Ann Dharo
+56:23 - Cabberati le Jasde - NO TRY - Held Up
+56:35 - Ometage Ramm - NO TRY - Held Up
+57:17 - 6th Tackle Changeover, 5m out from Christville Zebras's goalline
+57:33 - Barb Boeaste - NO TRY - Held Up
+57:56 - Brendan Clarke - Over The Sideline
+58:08 - Ann Dharo - NO TRY - Held Up
+58:57 - Ashley Oertias - Over The Sideline
+59:27 - Ann Dharo - Penalty
+60:25 - Tura Vurp - NO TRY - Held Up
+60:50 - 6th Tackle Changeover, 0m out from Canberra Hawks's goalline
+61:01 - Christville Zebras Interchanged Players Brendan Clarke & Louise Wott
+61:01 - Barb Boeaste - Penalty
+61:17 - Jimmy ze Dera - NO TRY - Held Up
+61:38 - Leon Quon - Offload
+62:18 - Leon Quon - NO TRY - Held Up
+62:32 - 6th Tackle Changeover, 8m out from Christville Zebras's goalline
+63:07 - Nicki A. Denoa - NO TRY - Held Up
+63:39 - 6th Tackle Changeover, 2m out from Canberra Hawks's goalline
+63:59 - Cabberati le Jasde - Offload
+64:15 - Jimmy ze Dera - NO TRY - Held Up
+65:00 - 6th Tackle Changeover, 1m out from Christville Zebras's goalline
+65:36 - Sully Hill - Stripped Ball Off Nicki A. Denoa
+66:29 - Lorenzo S. od Treasan - TRY - Canberra Hawks: 26 v Christville Zebras: 20
+67:44 - Mike Naddeer - GOAL - Canberra Hawks: 28 v Christville Zebras: 20
+68:43 - Lois W. ti Indig - Offload
+69:03 - Lois W. ti Indig - NO TRY - Held Up
+69:56 - 6th Tackle Changeover, 5m out from Christville Zebras's goalline
+70:21 - Christville Zebras Interchanged Players Kaiden Fallon & Dan ti Deraste
+70:47 - Dan ti Deraste - NO TRY - Held Up
+71:15 - 6th Tackle Changeover, 5m out from Canberra Hawks's goalline
+71:57 - Ashley Oertias - Knock On
+73:07 - Terry Zouma - TRY - Canberra Hawks: 28 v Christville Zebras: 24
+73:55 - Greta Reynolds - GOAL - Canberra Hawks: 28 v Christville Zebras: 26
+75:03 - Suelen Fletch - Forward Pass
+75:16 - Lois W. ti Indig - NO TRY - Held Up
+75:28 - Dan ti Deraste - Penalty
+75:32 - Mike Naddeer - PENALTY GOAL MISSED
+76:43 - Ann Dharo - Over The Sideline
+76:54 - Suelen Fletch - NO TRY - Held Up
+77:06 - Billy Price - NO TRY - Held Up
+77:52 - 6th Tackle Changeover, 0m out from Canberra Hawks's goalline
+78:57 - Mike Naddeer - Kick - Travelled 21m, kicked from 10m out from Christville Zebras's goalline
+79:46 - Dan ti Deraste - NO TRY - Held Up
+80:00 - FULL TIME - Canberra Hawks: 28 v Christville Zebras: 26
+                             
+--------PLAYER STATS--------
+Home Team: Canberra Hawks
+1: Jameson cu Nonates |Time Played: 80:00 |Metres: 23 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 13
+2: Leon Quon |Time Played: 80:00 |Metres: 6 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+3: Ashley Oertias |Time Played: 80:00 |Metres: 12 |Tackles: 8 |Kicks: 2 |Kick Metres: 106 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 11
+4: Leon az Adereta |Time Played: 80:00 |Metres: 35 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+5: Jon King |Time Played: 80:00 |Metres: 7 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+6: Mike Naddeer |Time Played: 80:00 |Metres: 14 |Tackles: 11 |Kicks: 1 |Kick Metres: 21 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 4 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 33
+7: Ometage Ramm |Time Played: 80:00 |Metres: 12 |Tackles: 7 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+8: Jimmy ze Dera |Time Played: 50:01 |Metres: 20 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+9: Sully Hill |Time Played: 43:38 |Metres: 6 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+10: Lorenzo S. od Treasan |Time Played: 80:00 |Metres: 176 |Tackles: 18 |Kicks: 1 |Kick Metres: 42 |40/20: 0 |Errors: 0 |Tries: 3 |Goals: 0 |Field Goals: 0 |Total Points: 12 |Fantasy Points: 137
+11: Ann Dharo |Time Played: 74:58 |Metres: 36 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 10
+12: Lois W. ti Indig |Time Played: 80:00 |Metres: 31 |Tackles: 12 |Kicks: 1 |Kick Metres: 31 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 40
+13: Cabberati le Jasde |Time Played: 75:00 |Metres: 31 |Tackles: 10 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 35
+14: Terrance le Reastea |Time Played: 29:58 |Metres: 4 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+15: Ezzita Purplouis |Time Played: 21:02 |Metres: 6 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+16: Callum Vannder |Time Played: 25:23 |Metres: 11 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+17: Thomas az Treaster |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Lorenzo S. od Treasan: 18
+Most Points: Lorenzo S. od Treasan: 12
+Most Metres: Lorenzo S. od Treasan: 176
+Most Errors: Ashley Oertias: 2
+                             
+Away Team: Christville Zebras
+1: Tura Vurp |Time Played: 54:41 |Metres: 18 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+2: Kyuss H. Silwedel |Time Played: 80:00 |Metres: 63 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 39
+3: Sr. Nurtersamo |Time Played: 80:00 |Metres: 57 |Tackles: 7 |Kicks: 1 |Kick Metres: 30 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 25
+4: Greta Reynolds |Time Played: 80:00 |Metres: 12 |Tackles: 12 |Kicks: 3 |Kick Metres: 167 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 1 |Field Goals: 0 |Total Points: 2 |Fantasy Points: 74
+5: Zach B. Potter |Time Played: 75:21 |Metres: 27 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+6: Terry Zouma |Time Played: 34:57 |Metres: 6 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 10
+7: Louise Wott |Time Played: 64:02 |Metres: 23 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 27
+8: Barb Boeaste |Time Played: 80:00 |Metres: 24 |Tackles: 16 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 18
+9: Dan ti Deraste |Time Played: 50:02 |Metres: 24 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+10: Jimmy Manfredi |Time Played: 80:00 |Metres: 58 |Tackles: 14 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 54
+11: Billy Price |Time Played: 80:00 |Metres: 24 |Tackles: 22 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 24
+12: Nicki A. Denoa |Time Played: 69:59 |Metres: 14 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+13: Suelen Fletch |Time Played: 80:00 |Metres: 18 |Tackles: 15 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+14: Kaiden Fallon |Time Played: 39:59 |Metres: 7 |Tackles: 12 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+15: Zoma Alexander |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Brendan Clarke |Time Played: 61:01 |Metres: 9 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 2 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 4
+17: Robert ba Huias |Time Played: 29:58 |Metres: 2 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Billy Price: 22
+Most Points: Kyuss H. Silwedel: 4
+Most Metres: Kyuss H. Silwedel: 63
+Most Errors: Zach B. Potter: 2
+                             
+---------TEAM STATS---------
+Home Team: Canberra Hawks
+Total Metres: 430
+Total Kick Metres: 215
+Total Errors: 6
+Total Tackles: 134
+Total Tries: 5
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+Away Team: Christville Zebras
+Total Metres: 386
+Total Kick Metres: 197
+Total Errors: 10
+Total Tackles: 141
+Total Tries: 5
+Total Goals: 3
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Lorenzo S. od Treasan
+2nd (2 Points) -- Greta Reynolds
+3rd (1 Point) -- Mike Naddeer
+----------------------------

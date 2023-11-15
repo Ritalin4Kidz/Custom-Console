@@ -737,7 +737,7 @@ void SRLGameManager::play()
 	if (m_Tackle == 6)
 	{
 
-		addPlay("6th Tackle Changeover, " + to_string(getPositionUniversal(m_BallPosition)) + "m out from " + getHalfBallIn(m_BallPosition) + "'s goalline");
+		addPlay(attacker.getName() + " - 6th Tackle Changeover, " + to_string(getPositionUniversal(m_BallPosition)) + "m out from " + getHalfBallIn(m_BallPosition) + "'s goalline");
 		changeOver(false);
 		return;
 	}

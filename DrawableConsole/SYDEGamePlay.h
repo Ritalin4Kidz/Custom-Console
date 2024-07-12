@@ -115,6 +115,8 @@ public:
 	/// <returns></returns>
 	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 
+	static ConsoleWindow play(SYDEWindowGame* SYDE_GAME, COORD start, const HANDLE hOut, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime, bool refreshWindowPos);
+
 	//THIS IS FOR TESTING PURPOSES ONLY, USE PLAY FUNCTION TO ACTUALLY RUN YOUR GAME TY
 	static ConsoleWindow play_test_func(SYDEWindowGame* SYDE_GAME, ConsoleWindow window, int windowWidth, int windowHeight, SYDETIME& deltaTime);
 

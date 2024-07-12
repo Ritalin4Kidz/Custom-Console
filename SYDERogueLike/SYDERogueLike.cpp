@@ -8,6 +8,7 @@
 #include "SydeRogueLikeMainControl.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <thread>
 #include <memory>
 
 extern char** environ;
@@ -36,6 +37,23 @@ COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 using namespace std;
+
+void drawConsoleThread()
+{
+	while (!SYDERogueLikeMainControl::exitGameCall)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		window.writeConsoleOptimized();
+	}
+}
+
+void playConsoleThread(SYDEWindowGame& m_MainControl, SYDETIME deltaTime)
+{
+	while (!SYDERogueLikeMainControl::exitGameCall)
+	{
+		window = SYDEGamePlay::play(&m_MainControl, start, hOut, window, windowWidth, windowHeight, deltaTime);
+	}
+}
 
 // MAIN FUNCTION
 int main(int argc, char* argv[])
@@ -103,17 +121,23 @@ int main(int argc, char* argv[])
 	CustomAnimationAsset::SetDeltatimeBasedAnimation(true);
 	CustomAnimationAsset::setStandardMaxFrameTime(0.03f);
 
+
 	window.setStartingLine(1);
 	SYDERogueLikeMainControl m_MainControl;
+	
+	std::thread drawingThread(drawConsoleThread);
 	while (!SYDERogueLikeMainControl::exitGameCall)
 	{
-		window = SYDEGamePlay::play(&m_MainControl, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		window.writeConsoleOptimized();
+		window = SYDEGamePlay::play(&m_MainControl, start, hOut, window, windowWidth, windowHeight, deltaTime, false);
 	}
+
 	EnableMenuItem(hmenu, SC_CLOSE, MF_ENABLED);
 	CONSOLE_CURSOR_INFO cInfo;
 	GetConsoleCursorInfo(hOut, &cInfo);
 	cInfo.bVisible = false;
 	SetConsoleCursorInfo(hOut, &cInfo);
 	cout.flush();
+
+	drawingThread.join();
+	//controlThread.join();
 }

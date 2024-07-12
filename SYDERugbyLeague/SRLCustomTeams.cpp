@@ -96,3 +96,56 @@ SRLTeam SRLCustomTeamGenerator::generateRandomCustomTeam(string& team)
 	}
 	return generateCustomTeamFreebeeNetwork(team);
 }
+
+SRLTeam SRLCustomTeamGenerator::generateNRLPPBaseRandomTeam()
+{
+	vector<SRLPlayer> TeamList;
+	//SPEED, ATTACK, DEFENCE, KICK, GOAL, HANDLE
+	TeamList.push_back(SRLPlayer("Fullback", "Australia", (rand() % 10 + 85), (rand() % 10 + 85), 45, 40, (rand() % 40 + 20), 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 59));
+	TeamList.push_back(SRLPlayer("Left Wing", "Australia", 70, (rand() % 10 + 85), 55, 40, (rand() % 40 + 20), 70, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 9));
+	TeamList.push_back(SRLPlayer("Left Centre", "Australia",60, 75, 65, 50, (rand() % 40 + 20), 70, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 8));
+	TeamList.push_back(SRLPlayer("Right Centre", "Australia", 60, 75, 65, 50, (rand() % 40 + 20), 70, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 14));
+	TeamList.push_back(SRLPlayer("Right Wing", "Australia", 70, (rand() % 10 + 85), 55, 40, (rand() % 40 + 20), 70, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 17));
+
+	TeamList.push_back(SRLPlayer("Five Eigth", "Australia", 55, 60, 60, 80, (rand() % 40 + 20), 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 23));
+	TeamList.push_back(SRLPlayer("Halfback", "Australia", 60, 65, 75, (rand() % 10 + 85), (rand() % 40 + 20), 65, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 27));
+
+	TeamList.push_back(SRLPlayer("Prop", "Australia", 60, 60, (rand() % 10 + 85), 35, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 30));
+	TeamList.push_back(SRLPlayer("Hooker", "Australia", 60, 65, 75, 65, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 6));
+	TeamList.push_back(SRLPlayer("Prop", "Australia", 60, 60, (rand() % 10 + 85), 35, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 50));
+	TeamList.push_back(SRLPlayer("Second Row", "Australia", 60, 60, (rand() % 10 + 85), 35, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 17));
+	TeamList.push_back(SRLPlayer("Second Row", "Australia", 60, 60, (rand() % 10 + 85), 35, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 1));
+	TeamList.push_back(SRLPlayer("Lock", "Australia", 60, 60, (rand() % 10 + 85), 35, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 2));
+
+	TeamList.push_back(generateNRLRandomInterchange("Interchange 1"));
+	TeamList.push_back(generateNRLRandomInterchange("Interchange 2"));
+	TeamList.push_back(generateNRLRandomInterchange("Interchange 3"));
+	TeamList.push_back(generateNRLRandomInterchange("Interchange 4"));
+
+	TeamList.push_back(SRLPlayer("Unknown", "Australia", 75, 48, 25, 29, (rand() % 40 + 20), 69, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 35));
+	TeamList.push_back(SRLPlayer("Unknown", "Australia", 75, 48, 25, 29, (rand() % 40 + 20), 69, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 42));
+	TeamList.push_back(SRLPlayer("Unknown", "Australia", 75, 48, 25, 29, (rand() % 40 + 20), 64, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 42));
+	return SRLTeam(TeamList, SRLNameGenerator::generateRandomTeamNameSafe(), SRLNameGenerator::generateRandomHomeGround());
+}
+
+SRLPlayer SRLCustomTeamGenerator::generateNRLRandomInterchange(string playerName)
+{
+	int num = rand() % 4;
+	if (num == 0)
+	{
+		return SRLPlayer(playerName, "Australia", 64, 64, 64, 64, (rand() % 40 + 20), 64, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 13);
+	}
+	if (num == 1)
+	{
+		return SRLPlayer(playerName, "Australia", 90, 75, 34, 34, (rand() % 40 + 20), 55, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 13);
+	}
+	if (num == 2)
+	{
+		return SRLPlayer(playerName, "Australia", 60, 60, 60, 90, (rand() % 40 + 20), 90, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 13);
+	}
+	if (num == 3)
+	{
+		return SRLPlayer(playerName, "Australia", 30, 40, 90, 20, (rand() % 40 + 20), 90, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 13);
+	}
+	return 	SRLPlayer(playerName, "Australia", 64, 64, 64, 64, (rand() % 40 + 20), 64, BRIGHTYELLOW_BRIGHTYELLOW_BG, BLUE_BLUE_BG, LIGHTGREY_LIGHTGREY_BG, 13);
+}

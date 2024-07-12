@@ -1,0 +1,243 @@
+----------LINE-UPS----------
+Home Team: NRLPP QLD Maroons
+1: Pokes
+2: Mango
+3: Sir Lightning
+4: Paps
+5: Jake3503
+6: Tunza
+7: Red Rooster Meal Deal
+8: Civic
+9: Eggcouncilcreeper
+10: Mason
+11: Amelia
+12: Velvet Herring
+13: Gravydice
+14: Casey
+15: Slasher
+16: Lil Tino
+17: Spurri
+Away Team: NRLPP NSW Blues
+1: Binjah
+2: Ritalin4Kidz
+3: Zombino
+4: Redanibu
+5: Ceramic
+6: TwoShitsTrev
+7: Elbow
+8: Trindall
+9: Clarkey
+10: BondiWall
+11: Beno
+12: Solaria
+13: Joel
+14: Bradd9
+15: Snicko
+16: Jegers
+17: Ace Larakin
+----------GAME-STAT---------
+Weather: Clear
+----------------------------
+00:00 - KICK OFF - NRLPP NSW Blues: 0 v NRLPP QLD Maroons: 0
+00:43 - Zombino - Kick - Travelled 15m, kicked from 12m out from NRLPP QLD Maroons's goalline
+02:02 - Jake3503 - 6th Tackle Changeover, 7m out from NRLPP NSW Blues's goalline
+03:00 - Clarkey - Kick - Travelled 20m, kicked from 26m out from NRLPP QLD Maroons's goalline
+03:57 - Tunza - NO TRY - Held Up on tackle 6
+04:10 - Paps - 6th Tackle Changeover, 9m out from NRLPP NSW Blues's goalline
+05:02 - BondiWall - Injury - Broken Leg
+05:02 - NRLPP NSW Blues Interchanged Players BondiWall & Bradd9
+05:17 - Ceramic - Kick - Travelled 54m, kicked from 19m out from NRLPP QLD Maroons's goalline
+05:58 - Paps - Kick - Travelled 36m, kicked from 34m out from NRLPP QLD Maroons's goalline
+06:59 - Ceramic - Kick - Travelled 36m, kicked from 50m out from NRLPP QLD Maroons's goalline
+07:13 - Amelia - Offload
+07:41 - Amelia - Incorrect Play The Ball
+07:41 - Amelia - Penalty
+07:45 - Ceramic - PENALTY GOAL - NRLPP NSW Blues: 2 v NRLPP QLD Maroons: 0
+09:38 - TwoShitsTrev - Forward Pass
+10:00 - Velvet Herring - Offload
+11:03 - Eggcouncilcreeper - 6th Tackle Changeover, 10m out from NRLPP NSW Blues's goalline
+12:01 - Solaria - Kick - Travelled 43m, kicked from 36m out from NRLPP QLD Maroons's goalline
+13:10 - Sir Lightning - Kick - Travelled 37m, kicked from 32m out from NRLPP QLD Maroons's goalline
+13:45 - Bradd9 - Forward Pass
+13:57 - Mason - NO TRY - Held Up on tackle 2
+14:10 - Eggcouncilcreeper - NO TRY - Held Up on tackle 3
+14:20 - Sir Lightning - Knock On
+15:30 - Solaria - Kick - Travelled 41m, kicked from 18m out from NRLPP QLD Maroons's goalline
+16:30 - Paps - Kick - Travelled 45m, kicked from 48m out from NRLPP QLD Maroons's goalline
+16:40 - NRLPP NSW Blues Interchanged Players TwoShitsTrev & Ace Larakin
+16:40 - NRLPP QLD Maroons Interchanged Players Tunza & Lil Tino
+17:28 - Solaria - Kick - Travelled 29m, kicked from 20m out from NRLPP QLD Maroons's goalline
+17:39 - Velvet Herring - Offload
+18:54 - Gravydice - 6th Tackle Changeover, 30m out from NRLPP NSW Blues's goalline
+19:05 - Beno - Offload
+20:25 - Redanibu - 6th Tackle Changeover, 32m out from NRLPP QLD Maroons's goalline
+21:04 - NRLPP NSW Blues Interchanged Players Trindall & Jegers
+21:04 - NRLPP QLD Maroons Interchanged Players Lil Tino & Tunza
+21:04 - Solaria - Stripped Ball Off Mason
+21:08 - Solaria - NO TRY - Held Up on tackle 1
+21:36 - Clarkey - Offload
+22:10 - Binjah - TRY - NRLPP NSW Blues: 6 v NRLPP QLD Maroons: 0
+23:04 - Ceramic - GOAL - NRLPP NSW Blues: 8 v NRLPP QLD Maroons: 0
+24:09 - Clarkey - Knock On
+24:45 - Mango - TRY - NRLPP NSW Blues: 8 v NRLPP QLD Maroons: 4
+25:23 - Mason - GOAL - NRLPP NSW Blues: 8 v NRLPP QLD Maroons: 6
+26:23 - NRLPP QLD Maroons Interchanged Players Civic & Spurri
+26:43 - NRLPP QLD Maroons Interchanged Players Gravydice & Lil Tino
+26:43 - Spurri - NO TRY - Held Up on tackle 4
+27:06 - Sir Lightning - TRY - NRLPP NSW Blues: 8 v NRLPP QLD Maroons: 10
+28:08 - Mason - CONVERSION MISSED
+29:46 - Eggcouncilcreeper - Kick - Travelled 54m, kicked from 18m out from NRLPP QLD Maroons's goalline
+30:41 - NRLPP NSW Blues Interchanged Players Bradd9 & Trindall
+30:41 - NRLPP QLD Maroons Interchanged Players Pokes & Casey
+30:52 - Ceramic - Kick - Travelled 51m, kicked from 47m out from NRLPP QLD Maroons's goalline
+31:24 - NRLPP QLD Maroons Interchanged Players Mango & Slasher
+31:52 - Red Rooster Meal Deal - Kick - Travelled 56m, kicked from 3m out from NRLPP QLD Maroons's goalline
+32:54 - Clarkey - Kick Out On The Full
+34:03 - Paps - 6th Tackle Changeover, 38m out from NRLPP NSW Blues's goalline
+34:48 - Velvet Herring - Stripped Ball Off Zombino
+36:02 - NRLPP NSW Blues Interchanged Players Ace Larakin & TwoShitsTrev
+36:02 - NRLPP QLD Maroons Interchanged Players Eggcouncilcreeper & Civic
+36:02 - Jake3503 - 6th Tackle Changeover, 26m out from NRLPP NSW Blues's goalline
+36:13 - Civic - Ruck Infringement
+37:33 - Solaria - 6th Tackle Changeover, 36m out from NRLPP QLD Maroons's goalline
+38:40 - Jake3503 - Kick - Travelled 48m, kicked from 42m out from NRLPP QLD Maroons's goalline
+39:43 - Elbow - Kick - Travelled 57m, kicked from 10m out from NRLPP QLD Maroons's goalline
+40:00 - HALF TIME - NRLPP NSW Blues: 8 v NRLPP QLD Maroons: 10
+40:53 - Jake3503 - Kick - Travelled 19m, kicked from 9m out from NRLPP QLD Maroons's goalline
+41:21 - NRLPP QLD Maroons Interchanged Players Velvet Herring & Eggcouncilcreeper
+42:16 - Jegers - 6th Tackle Changeover, 10m out from NRLPP QLD Maroons's goalline
+42:42 - Spurri - Over The Sideline
+42:52 - Trindall - Over The Sideline
+43:51 - Lil Tino - Knock On
+44:00 - Jegers - Over The Sideline
+44:25 - Eggcouncilcreeper - Knock On (Offload)
+44:53 - Trindall - NO TRY - Held Up on tackle 2
+45:02 - Clarkey - Knock On
+45:43 - NRLPP NSW Blues Interchanged Players TwoShitsTrev & Ace Larakin
+46:21 - Tunza - Kick Out On The Full
+46:30 - Joel - NO TRY - Held Up on tackle 2
+47:09 - Elbow - NO TRY - Held Up on tackle 5
+47:33 - Clarkey - 6th Tackle Changeover, 4m out from NRLPP QLD Maroons's goalline
+48:31 - Red Rooster Meal Deal - Kick - Travelled 51m, kicked from 14m out from NRLPP QLD Maroons's goalline
+48:42 - Solaria - NO TRY - Held Up on tackle 2
+48:52 - Beno - Offload
+49:04 - Eggcouncilcreeper - Penalty
+49:08 - Ceramic - PENALTY GOAL - NRLPP NSW Blues: 10 v NRLPP QLD Maroons: 10
+50:31 - Jegers - Forward Pass
+50:42 - NRLPP NSW Blues Interchanged Players Ace Larakin & TwoShitsTrev
+51:43 - Civic - 6th Tackle Changeover, -10m out from NRLPP NSW Blues's goalline
+52:46 - Jegers - Kick - Travelled 26m, kicked from 12m out from NRLPP QLD Maroons's goalline
+53:07 - Lil Tino - NO TRY - Held Up on tackle 3
+53:29 - Jake3503 - TRY - NRLPP NSW Blues: 10 v NRLPP QLD Maroons: 14
+54:32 - Mason - GOAL - NRLPP NSW Blues: 10 v NRLPP QLD Maroons: 16
+56:04 - NRLPP NSW Blues Interchanged Players Jegers & Snicko
+56:04 - Slasher - Kick - Travelled 29m, kicked from 28m out from NRLPP QLD Maroons's goalline
+57:00 - Redanibu - Kick - Travelled 15m, kicked from 45m out from NRLPP QLD Maroons's goalline
+58:00 - Paps - Kick - Travelled 46m, kicked from 39m out from NRLPP QLD Maroons's goalline
+59:02 - Solaria - Kick - Travelled 17m, kicked from 42m out from NRLPP QLD Maroons's goalline
+59:26 - Mason - NO TRY - Held Up on tackle 3
+60:15 - Amelia - 6th Tackle Changeover, 0m out from NRLPP NSW Blues's goalline
+61:15 - Binjah - Kick - Travelled 49m, kicked from 23m out from NRLPP QLD Maroons's goalline
+62:00 - Mason - NO TRY - Held Up on tackle 4
+62:40 - Paps - Knock On (Offload)
+63:02 - Joel - NO TRY - Held Up on tackle 2
+63:25 - Snicko - NO TRY - Held Up on tackle 4
+63:49 - Redanibu - TRY - NRLPP NSW Blues: 14 v NRLPP QLD Maroons: 16
+64:50 - Ceramic - GOAL - NRLPP NSW Blues: 16 v NRLPP QLD Maroons: 16
+66:36 - Elbow - Kick - Travelled 61m, kicked from 10m out from NRLPP QLD Maroons's goalline
+67:05 - Eggcouncilcreeper - NO TRY - Held Up on tackle 3
+67:55 - Slasher - 6th Tackle Changeover, -18m out from NRLPP NSW Blues's goalline
+68:58 - Solaria - Kick - Travelled 46m, kicked from -5m out from NRLPP QLD Maroons's goalline
+69:08 - Snicko - Penalty
+69:53 - Paps - TRY - NRLPP NSW Blues: 16 v NRLPP QLD Maroons: 20
+70:39 - Mason - GOAL - NRLPP NSW Blues: 16 v NRLPP QLD Maroons: 22
+71:57 - Red Rooster Meal Deal - NO TRY - Held Up on tackle 5
+72:17 - Tunza - 6th Tackle Changeover, 0m out from NRLPP NSW Blues's goalline
+73:09 - Elbow - Forward Pass
+74:24 - Eggcouncilcreeper - 6th Tackle Changeover, 1m out from NRLPP NSW Blues's goalline
+75:27 - Clarkey - Kick - Travelled 52m, kicked from 13m out from NRLPP QLD Maroons's goalline
+76:35 - Sir Lightning - Kick - Travelled 45m, kicked from 46m out from NRLPP QLD Maroons's goalline
+76:35 - Snicko - NO TRY - Held Up on tackle 1
+77:24 - Trindall - TRY - NRLPP NSW Blues: 20 v NRLPP QLD Maroons: 22
+78:18 - Ceramic - GOAL - NRLPP NSW Blues: 22 v NRLPP QLD Maroons: 22
+79:15 - Clarkey - Forward Pass
+79:59 - ------VIDEO REFEREE------
+79:59 - Slasher - TRY - NRLPP NSW Blues: 22 v NRLPP QLD Maroons: 26
+80:00 - Mason - GOAL - NRLPP NSW Blues: 22 v NRLPP QLD Maroons: 28
+80:00 - FULL TIME - NRLPP NSW Blues: 22 v NRLPP QLD Maroons: 28
+                             
+--------PLAYER STATS--------                             
+Home Team: NRLPP QLD Maroons
+1: Casey |Time Played: 50:15 |Metres: 16 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+2: Slasher |Time Played: 49:32 |Metres: 49 |Tackles: 7 |Kicks: 1 |Kick Metres: 29 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 45
+3: Sir Lightning |Time Played: 80:56 |Metres: 42 |Tackles: 11 |Kicks: 2 |Kick Metres: 82 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 32
+4: Paps |Time Played: 80:56 |Metres: 19 |Tackles: 11 |Kicks: 3 |Kick Metres: 127 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 33
+5: Jake3503 |Time Played: 80:56 |Metres: 78 |Tackles: 6 |Kicks: 2 |Kick Metres: 67 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 67
+6: Tunza |Time Played: 76:32 |Metres: 20 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+7: Red Rooster Meal Deal |Time Played: 80:56 |Metres: 8 |Tackles: 8 |Kicks: 2 |Kick Metres: 107 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+8: Spurri |Time Played: 54:33 |Metres: 36 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 15
+9: Civic |Time Played: 71:17 |Metres: 58 |Tackles: 18 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 27
+10: Mason |Time Played: 80:56 |Metres: 28 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 4 |Field Goals: 0 |Total Points: 8 |Fantasy Points: 25
+11: Amelia |Time Played: 80:56 |Metres: 26 |Tackles: 13 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 16
+12: Eggcouncilcreeper |Time Played: 75:37 |Metres: 50 |Tackles: 19 |Kicks: 1 |Kick Metres: 54 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 22
+13: Lil Tino |Time Played: 58:37 |Metres: 16 |Tackles: 19 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 19
+14: Pokes |Time Played: 30:41 |Metres: 4 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 8
+15: Mango |Time Played: 31:24 |Metres: 10 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 12
+16: Gravydice |Time Played: 26:43 |Metres: 15 |Tackles: 7 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 17
+17: Velvet Herring |Time Played: 41:21 |Metres: 20 |Tackles: 9 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 25
+Highlights:                 
+Most Tackles: Eggcouncilcreeper: 19
+Most Points: Mason: 8
+Most Metres: Jake3503: 78
+Most Errors: Sir Lightning: 1
+
+Away Team: NRLPP NSW Blues
+1: Binjah |Time Played: 80:56 |Metres: 70 |Tackles: 5 |Kicks: 1 |Kick Metres: 49 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 57
+2: Ritalin4Kidz |Time Played: 80:56 |Metres: 13 |Tackles: 11 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+3: Zombino |Time Played: 80:56 |Metres: 20 |Tackles: 10 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 29
+4: Redanibu |Time Played: 80:56 |Metres: 66 |Tackles: 6 |Kicks: 1 |Kick Metres: 15 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 48
+5: Ceramic |Time Played: 80:56 |Metres: 84 |Tackles: 10 |Kicks: 3 |Kick Metres: 141 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 5 |Field Goals: 0 |Total Points: 10 |Fantasy Points: 95
+6: TwoShitsTrev |Time Played: 56:35 |Metres: 5 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+7: Elbow |Time Played: 80:56 |Metres: 14 |Tackles: 5 |Kicks: 2 |Kick Metres: 118 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 23
+8: Snicko |Time Played: 24:52 |Metres: 6 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+9: Clarkey |Time Played: 80:56 |Metres: 58 |Tackles: 17 |Kicks: 2 |Kick Metres: 72 |40/20: 0 |Errors: 4 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 14
+10: Trindall |Time Played: 71:19 |Metres: 29 |Tackles: 18 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 24
+11: Beno |Time Played: 80:56 |Metres: 41 |Tackles: 17 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 45
+12: Solaria |Time Played: 80:56 |Metres: 49 |Tackles: 17 |Kicks: 5 |Kick Metres: 176 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 99
+13: Joel |Time Played: 80:56 |Metres: 30 |Tackles: 21 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 47
+14: BondiWall |Time Played: 05:02 |Metres: 12 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+15: Jegers |Time Played: 35:00 |Metres: 33 |Tackles: 10 |Kicks: 1 |Kick Metres: 26 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+16: Bradd9 |Time Played: 25:39 |Metres: 13 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+17: Ace Larakin |Time Played: 24:21 |Metres: 1 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+Highlights:                 
+Most Tackles: Joel: 21
+Most Points: Ceramic: 10
+Most Metres: Ceramic: 84
+Most Errors: Clarkey: 4
+                             
+---------TEAM STATS---------                         
+Home Team: NRLPP QLD Maroons
+Total Metres: 495
+Total Kick Metres: 466
+Total Errors: 6
+Total Tackles: 154
+Total Tries: 5
+Total Goals: 4
+Total Field Goals: 0
+Interchanges Used: 8/8
+
+Away Team: NRLPP NSW Blues
+Total Metres: 544
+Total Kick Metres: 612
+Total Errors: 10
+Total Tackles: 164
+Total Tries: 3
+Total Goals: 5
+Total Field Goals: 0
+Interchanges Used: 8/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Ceramic
+2nd (2 Points) -- Solaria
+3rd (1 Point) -- Jake3503
+----------------------------

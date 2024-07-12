@@ -1920,7 +1920,8 @@ void SRLGame::test()
 
 SRLTeam SRLGame::generateRandomTeam()
 {
-	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe(), SRLNameGenerator::generateRandomHomeGround());
+	return SRLCustomTeamGenerator::generateNRLPPBaseRandomTeam();
+	//return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe(), SRLNameGenerator::generateRandomHomeGround());
 }
 
 SRLTeam SRLGame::generateOffSeasonTeam()

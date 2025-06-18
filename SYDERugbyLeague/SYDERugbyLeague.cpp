@@ -163,6 +163,7 @@ void drawConsoleThread()
 	}
 }
 
+
 void controlThread()
 {
 	SYDETIME deltaTime;

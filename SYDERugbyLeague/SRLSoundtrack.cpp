@@ -146,6 +146,10 @@ float SRLSoundtrack::getDefaultSoundAsFloat()
 
 ConsoleWindow SRLSoundtrack::playWindow(ConsoleWindow window)
 {
+	if (m_Soundtrack.size() <= 0)
+	{
+		return window;
+	}
 	FMOD_RESULT result;
 	result = m_pChannel->setVolume(getDefaultSoundAsFloat());
 	m_pFmodSystem->update();

@@ -199,6 +199,7 @@ public:
 	static bool exportCall;
 	static bool exportConfirmedCall;
 	static bool formatCall;
+	static bool formatOldPlayersCall;
 	static bool formatConfirmedCall;
 	static bool exitCall;
 	static bool exitConfirmedCall;
@@ -420,6 +421,7 @@ private:
 	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
 	SYDECheckbox m_SettingsRepRoundsBtn = SYDECheckbox();
 	SYDEClickableButton m_SummaryFilterBtn = SYDEClickableButton();
+	SYDEClickableButton m_DeleteOffContractPlayersBtn = SYDEClickableButton();
 
 	//SUMMARY FILTER
 	SYDECheckbox m_FilterError = SYDECheckbox();

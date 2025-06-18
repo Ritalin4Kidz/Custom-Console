@@ -71,6 +71,7 @@ bool SRLGame::betCall = false;
 bool SRLGame::exportCall = false;
 bool SRLGame::exportConfirmedCall = false;
 bool SRLGame::formatCall = false;
+bool SRLGame::formatOldPlayersCall = false;
 bool SRLGame::SimulateSingleMatchCall = false;
 bool SRLGame::formatConfirmedCall = false;
 bool SRLGame::exitCall = false;
@@ -354,6 +355,11 @@ void ExportCNCLClick()
 void FormatButtonClick()
 {
 	SRLGame::formatCall = true;
+}
+
+void FormatOldPlayersButtonClick()
+{
+	SRLGame::formatOldPlayersCall = true;
 }
 
 void FormatOKClick()
@@ -1733,6 +1739,10 @@ void SRLGame::initGameSettingsButtons()
 	m_SummaryFilterBtn.setHighLight(RED);
 	m_SummaryFilterBtn.SetFunc(SummaryFilterClick);
 
+	m_DeleteOffContractPlayersBtn = SYDEClickableButton("Frmt Old Players", Vector2(5, 14), Vector2(16, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_DeleteOffContractPlayersBtn.setHighLight(RED);
+	m_DeleteOffContractPlayersBtn.SetFunc(FormatOldPlayersButtonClick);
+
 
 	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_FormatTeamsOKBtn.setHighLight(RED);
@@ -1968,7 +1978,7 @@ ConsoleWindow SRLGame::window_draw_game(ConsoleWindow window, int windowWidth, i
 	{
 		return ExitPopUp(window, windowWidth, windowHeight);
 	}
-	if (formatCall)
+	if (formatCall || formatOldPlayersCall)
 	{
 		return FormatPopUp(window, windowWidth, windowHeight);
 	}
@@ -4731,6 +4741,7 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		}
 		window = m_FormatTeamsBtn.draw_ui(window);
 		window = m_SummaryFilterBtn.draw_ui(window);
+		window = m_DeleteOffContractPlayersBtn.draw_ui(window);
 	}
 	else if (SummarySettings_STATE)
 	{
@@ -4791,7 +4802,7 @@ ConsoleWindow SRLGame::InfoView(ConsoleWindow window, int windowWidth, int windo
 	window.setTextAtPoint(Vector2(0, 2), "GAME INFORMATION", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 3), "Created by Callum Hands", BRIGHTWHITE);
 	window.setTextAtPoint(Vector2(0, 4), "In Association With Freebee Network", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(0, 5), "Version: 1.2.0.0", BRIGHTWHITE);
+	window.setTextAtPoint(Vector2(0, 5), "Version: 1.2.1.0", BRIGHTWHITE);
 	return window;
 }
 
@@ -4852,20 +4863,36 @@ ConsoleWindow SRLGame::FormatPopUp(ConsoleWindow window, int windowWidth, int wi
 {
 	if (formatConfirmedCall)
 	{
-		formatCall = false;
 		formatConfirmedCall = false;
-		AchievementStrings.push_back("SRL_FORMAT_TEAMS");
-		m_GameProfile.completeChallenge("Format The Teams And Start Over", AchievementStrings);
-		try
-		{
-			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Teams");
+		if (formatOldPlayersCall) {
+			formatOldPlayersCall = false;
+			SRLTeam offContract;
+			offContract.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");
+			for (int i = 0; i < offContract.getPlayers().size(); i++)
+			{
+				string fileName = string("EngineFiles\\GameResults\\Players\\") + to_string(offContract.getPlayers().at(i).getID()) + string(".json");
+				if (SYDEFileDefaults::exists(fileName.c_str()))
+				{
+					std::remove(fileName.c_str());
+				}
+			}
 			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\OffContract");
-			SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Players");
 		}
-		catch (exception e)
-		{
-			errorCall = true;
-			errorMessage = "Error Occured When Formatting";
+		else {
+			formatCall = false;
+			AchievementStrings.push_back("SRL_FORMAT_TEAMS");
+			m_GameProfile.completeChallenge("Format The Teams And Start Over", AchievementStrings);
+			try
+			{
+				SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Teams");
+				SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\OffContract");
+				SYDEFileDefaults::deleteAllFilesInFolder("EngineFiles\\GameResults\\Players");
+			}
+			catch (exception e)
+			{
+				errorCall = true;
+				errorMessage = "Error Occured When Formatting";
+			}
 		}
 	}
 	for (int i = 5; i < windowWidth - 5; i++)
@@ -8344,11 +8371,27 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 			}
 		}
 
+		std::sort(tempTeams.begin(), tempTeams.end(), greater<SRLTeam>());
+
 		//REMOVE ALL TEAMS THAT DON'T HAVE 17 PLAYERS
 		for (int j = 0; j < tempTeams.size(); j++)
 		{
 			if (tempTeams[j].getPlayers().size() >= 17)
 			{
+				repTeams.push_back(tempTeams[j]);
+			}
+			//WE HAVE REP ROUNDS ON, MAKE SURE WE ALWAYS HAVE SOME REP GAMES
+			else if (repTeams.size() < 2)
+			{
+				SRLTeam offContract;
+				offContract.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");
+				while (tempTeams[j].getPlayers().size() < 17)
+				{
+					SRLPlayer newPlayer = SRLPlayer(SRLNameGenerator::generateRandomName(), tempTeams[j].getName(), (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 80) + 20, (rand() % 20) + 17);
+					offContract.AddPlayer(newPlayer);
+					offContract.saveTeamOffContract();
+					tempTeams[j].AddPlayer(newPlayer);
+				}
 				repTeams.push_back(tempTeams[j]);
 			}
 		}

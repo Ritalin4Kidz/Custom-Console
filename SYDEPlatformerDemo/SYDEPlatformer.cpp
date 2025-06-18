@@ -263,9 +263,19 @@ ConsoleWindow SYDEPlatformer::draw_levelSelect(ConsoleWindow window, int windowW
 			window.setTextAtPoint(Vector2(l, m), " ", BLACK);
 		}
 	}
+	int windowPositionX = (windowWidth - 50) / 2;
+	if (windowPositionX < 0)
+	{
+		windowPositionX = 0;
+	}
+	int windowPositionY = (windowHeight - 25) / 2;
+	if (windowPositionY < 0)
+	{
+		windowPositionY = 0;
+	}
 	window.setTextAtPoint(Vector2(0, 1), "SELECT LEVEL", BRIGHTWHITE);
-	window.setTextAtPoint(Vector2(2, 5), m_Levels[SelectedLevel], BRIGHTWHITE);
-	window = m_MapPreview.draw_asset(window, Vector2(0, 7));
+	window.setTextAtPoint(Vector2(windowPositionX + 2, windowPositionY + 5), m_Levels[SelectedLevel], BRIGHTWHITE);
+	window = m_MapPreview.draw_asset(window, Vector2(windowPositionX, windowPositionY + 7));
 	if (SYDEKeyCode::get_key(VK_ESCAPE)._CompareState(KEYDOWN))
 	{
 		m_State = MainMenu_STATE;

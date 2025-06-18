@@ -379,6 +379,10 @@ public:
 	/// Optimized console write function
 	/// </summary>
 	void writeConsoleOptimized();
+
+
+	void writeConsoleOptimized(int startX, int startY, int endX, int endY);
+
 	/// <summary>
 	/// Determine the colour at a point if you want to place a character over a blank tile
 	/// </summary>

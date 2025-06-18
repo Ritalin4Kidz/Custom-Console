@@ -1920,8 +1920,7 @@ void SRLGame::test()
 
 SRLTeam SRLGame::generateRandomTeam()
 {
-	return SRLCustomTeamGenerator::generateNRLPPBaseRandomTeam();
-	//return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe(), SRLNameGenerator::generateRandomHomeGround());
+	return SRLTeam(createRandomTeam(""), SRLNameGenerator::generateRandomTeamNameSafe(), SRLNameGenerator::generateRandomHomeGround());
 }
 
 SRLTeam SRLGame::generateOffSeasonTeam()
@@ -8052,8 +8051,10 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 			}
 		}
 
+		std::sort(tempTeams.begin(), tempTeams.end(), greater<SRLTeam>());
+
 		//ADD PLAYER IF TEAM LESS THAN 17 PLAYERS
-		for (int j = 0; j < tempTeams.size(); j++)
+		for (int j = 0; j < tempTeams.size() && j < 16; j++)
 		{
 			while (tempTeams[j].getPlayers().size() < 17)
 			{

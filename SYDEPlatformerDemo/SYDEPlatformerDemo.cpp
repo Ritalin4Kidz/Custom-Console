@@ -8,10 +8,12 @@
 #include "SYDEEngineAssets.h"
 #include "SYDEMainDemos.h"
 #include "json.hpp"
+#include <thread>
 
 using namespace std;
 using namespace Gdiplus;
 using json = nlohmann::json;
+ConsoleWindow window;
 //INITIALIZING VARIABLES
 const string dir = "BrainFiles\\";
 Settings config("EngineFiles\\Settings\\configSettings.sc");
@@ -32,6 +34,16 @@ COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 using namespace std;
+
+void drawConsoleThread()
+{
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		window.writeConsoleOptimized();
+	}
+}
+
 
 std::string getConfigFrom(string key, string defaultKey)
 {
@@ -81,7 +93,7 @@ int main(int argc, char* argv[])
 	}
 	config.volumeControl(1);
 	config.ColourPalette(hOut);
-	ConsoleWindow window(config.getConsoleHeight());
+	window = ConsoleWindow(config.getConsoleHeight());
 	srand(time(NULL));
 	Font_Settings_Func::set_up_courier(16);
 	SYDEFPS::setAnchor(SLA_Right);
@@ -117,10 +129,10 @@ int main(int argc, char* argv[])
 	SYDEGamePlay::showFPS(true);
 	SYDEGamePlay::set_FPS_Position(Vector2(config.getConsoleWidth() - 6, 1));
 	window.setStartingLine(1);
+	std::thread drawingThread(drawConsoleThread);
 	while (true)
 	{
-		window = SYDEGamePlay::play(&m_Platformer, start, hOut, window, config.getConsoleWidth(), config.getConsoleHeight(), deltaTime);
-		window.writeConsoleOptimized();
+		window = SYDEGamePlay::play(&m_Platformer, start, hOut, window, config.getConsoleWidth(), config.getConsoleHeight(), deltaTime, false);
 	}
 	CONSOLE_CURSOR_INFO cInfo;
 	GetConsoleCursorInfo(hOut, &cInfo);

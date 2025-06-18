@@ -73,7 +73,7 @@ namespace SYDERugbyLeagueSeasonViewer
             public IList<Rounds> rounds { get; set; }
 
         }
-
+        List<Season> generatedSeasons = new List<Season>();
         Season _MainSeason;
         int maxRounds = 0;
         int currentRound = 0;
@@ -228,26 +228,32 @@ namespace SYDERugbyLeagueSeasonViewer
             openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\SavedSeasonData\\"; ;
             openFileDialog1.Filter = "Json files (*.json)|*.json|Text files (*.txt)|*.txt";
             openFileDialog1.FilterIndex = 0;
+            openFileDialog1.Multiselect = true;
             openFileDialog1.RestoreDirectory = true;
-            string selectedFileName = "";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                selectedFileName = openFileDialog1.FileName;
-            }
-            else
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
-            using (StreamReader sr = File.OpenText(selectedFileName))
+            generatedSeasons = new List<Season>();
+            foreach (String file in openFileDialog1.FileNames)
             {
-                jsonText = sr.ReadToEnd();
-                sr.Close();
+                using (StreamReader sr = File.OpenText(file))
+                {
+                    jsonText = sr.ReadToEnd();
+                    sr.Close();
+                }
+                generatedSeasons.Add(JsonSerializer.Deserialize<Season>(jsonText));
             }
-            _MainSeason = JsonSerializer.Deserialize<Season>(jsonText);
+            _MainSeason = generatedSeasons.ElementAt(0);
             maxRounds = _MainSeason.rounds.Count;
             currentRound = 0;
             RoundLabel.Text = (currentRound + 1).ToString();
             LoadRoundMatchups(currentRound);
+            seasonSelection.Items.Clear();
+            for (int i = 0; i < generatedSeasons.Count; i++)
+            {
+                seasonSelection.Items.Add("Season " + (i + 1));
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -812,6 +818,15 @@ namespace SYDERugbyLeagueSeasonViewer
                     }
                 }
             }
+        }
+
+        private void seasonSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _MainSeason = generatedSeasons.ElementAt(seasonSelection.SelectedIndex);
+            maxRounds = _MainSeason.rounds.Count;
+            currentRound = 0;
+            RoundLabel.Text = (currentRound + 1).ToString();
+            LoadRoundMatchups(currentRound);
         }
     }
 }

@@ -156,6 +156,11 @@ public:
 
 	void addPlayer(SRLPlayer player) { m_TeamList.push_back(player); }
 
+	bool operator > (const SRLTeam& team) const
+	{
+		return (m_TeamList.size() > team.m_TeamList.size());
+	}
+
 private:
 	ColourClass getRandomColour();
 	string m_Name;

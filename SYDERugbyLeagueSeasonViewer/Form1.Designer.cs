@@ -35,6 +35,7 @@ namespace SYDERugbyLeagueSeasonViewer
             this.RoundLabel = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.errorCheckBtn = new System.Windows.Forms.Button();
             this.nudieRunBtn = new System.Windows.Forms.Button();
             this.outscorersBtn = new System.Windows.Forms.Button();
             this.highFantasy = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@ namespace SYDERugbyLeagueSeasonViewer
             this.LdrBoardBtn = new System.Windows.Forms.Button();
             this.LadderBtn = new System.Windows.Forms.Button();
             this.hmePage = new System.Windows.Forms.Button();
-            this.errorCheckBtn = new System.Windows.Forms.Button();
+            this.seasonSelection = new System.Windows.Forms.ComboBox();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +122,16 @@ namespace SYDERugbyLeagueSeasonViewer
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1020, 74);
             this.MainPanel.TabIndex = 5;
+            // 
+            // errorCheckBtn
+            // 
+            this.errorCheckBtn.Location = new System.Drawing.Point(694, 35);
+            this.errorCheckBtn.Name = "errorCheckBtn";
+            this.errorCheckBtn.Size = new System.Drawing.Size(133, 34);
+            this.errorCheckBtn.TabIndex = 12;
+            this.errorCheckBtn.Text = "Error Check";
+            this.errorCheckBtn.UseVisualStyleBackColor = true;
+            this.errorCheckBtn.Click += new System.EventHandler(this.errorCheckBtn_Click);
             // 
             // nudieRunBtn
             // 
@@ -245,21 +256,21 @@ namespace SYDERugbyLeagueSeasonViewer
             this.hmePage.UseVisualStyleBackColor = true;
             this.hmePage.Click += new System.EventHandler(this.hmePage_Click);
             // 
-            // errorCheckBtn
+            // seasonSelection
             // 
-            this.errorCheckBtn.Location = new System.Drawing.Point(694, 35);
-            this.errorCheckBtn.Name = "errorCheckBtn";
-            this.errorCheckBtn.Size = new System.Drawing.Size(133, 34);
-            this.errorCheckBtn.TabIndex = 12;
-            this.errorCheckBtn.Text = "Error Check";
-            this.errorCheckBtn.UseVisualStyleBackColor = true;
-            this.errorCheckBtn.Click += new System.EventHandler(this.errorCheckBtn_Click);
+            this.seasonSelection.FormattingEnabled = true;
+            this.seasonSelection.Location = new System.Drawing.Point(152, 12);
+            this.seasonSelection.Name = "seasonSelection";
+            this.seasonSelection.Size = new System.Drawing.Size(223, 23);
+            this.seasonSelection.TabIndex = 6;
+            this.seasonSelection.SelectedIndexChanged += new System.EventHandler(this.seasonSelection_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 608);
+            this.Controls.Add(this.seasonSelection);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.RoundLabel);
@@ -295,6 +306,7 @@ namespace SYDERugbyLeagueSeasonViewer
         private System.Windows.Forms.Button outscorersBtn;
         private System.Windows.Forms.Button nudieRunBtn;
         private System.Windows.Forms.Button errorCheckBtn;
+        private System.Windows.Forms.ComboBox seasonSelection;
     }
 }
 

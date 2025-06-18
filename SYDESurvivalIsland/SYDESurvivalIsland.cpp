@@ -8,6 +8,7 @@
 #include "SYDESurvival.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <thread>
 
 extern char** environ;
 
@@ -35,6 +36,15 @@ COORD start = { (SHORT)0, (SHORT)0 };
 static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
 using namespace std;
+
+void drawConsoleThread()
+{
+	while (true)
+	{
+		SetConsoleCursorPosition(hOut, start);
+		window.writeConsoleOptimized();
+	}
+}
 
 // MAIN FUNCTION
 int main(int argc, char* argv[])
@@ -96,10 +106,10 @@ int main(int argc, char* argv[])
 	SYDEKeyCode::KeyCodes_Optimized.push_back(SYDEKey('D'));
 	window.setStartingLine(1);
 	SYDESurvival m_SRL;
+	std::thread drawingThread(drawConsoleThread);
 	while (true)
 	{
-		window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime);
-		window.writeConsoleOptimized();
+		window = SYDEGamePlay::play(&m_SRL, start, hOut, window, windowWidth, windowHeight, deltaTime, false);
 	}
 	EnableMenuItem(hmenu, SC_CLOSE, MF_ENABLED);
 	CONSOLE_CURSOR_INFO cInfo;

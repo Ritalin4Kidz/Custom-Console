@@ -1439,7 +1439,7 @@ bool SRLGameManager::doTry(SRLPlayer defender, SRLPlayer attacker)
 
 bool SRLGameManager::doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam)
 {
-	if (m_BallPosition < getPositionUniversal(30) && m_BallPosition > getPositionUniversal(0))
+	if (getPositionUniversal(m_BallPosition) < 30 && getPositionUniversal(m_BallPosition) > 0)
 	{
 		int chance1 = attacker.getGoalKicking();
 		if (m_Stamina)
@@ -1471,7 +1471,7 @@ bool SRLGameManager::doFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTe
 
 bool SRLGameManager::do2PointFieldGoalAttempt(SRLPlayer attacker, SRLTeam& attackingTeam, SRLTeam& defendingTeam)
 {
-	if (m_BallPosition < getPositionUniversal(50) && m_BallPosition > getPositionUniversal(39))
+	if (getPositionUniversal(m_BallPosition) < 50 && getPositionUniversal(m_BallPosition) > 39)
 	{
 		int chance1 = attacker.getGoalKicking();
 		if (m_Stamina)

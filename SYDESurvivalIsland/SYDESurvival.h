@@ -75,13 +75,13 @@ private:
 	//	SYDEOptionCyclerItem(3,"Lovers"),
 	//	}));
 
-	SYDEScrollViewer m_Viewer = SYDEScrollViewer(Vector2(6,2), Vector2(48,10), vector<SYDEScrollViewerElement>(
-		{
-			SYDEScrollViewerElement(new SYDECheckbox(string("This Is 1 Test"), Vector2(0,1), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
-			SYDEScrollViewerElement(new SYDECheckbox(string("This Is 2 Test"), Vector2(0,3), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
-			SYDEScrollViewerElement(new SYDECheckbox(string("This Is 3 Test"), Vector2(0,7), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
-		}),
-		BLACK);
+	//SYDEScrollViewer m_Viewer = SYDEScrollViewer(Vector2(6,2), Vector2(48,10), vector<SYDEScrollViewerElement>(
+	//	{
+	//		SYDEScrollViewerElement(new SYDECheckbox(string("This Is 1 Test"), Vector2(0,1), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
+	//		SYDEScrollViewerElement(new SYDECheckbox(string("This Is 2 Test"), Vector2(0,3), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
+	//		SYDEScrollViewerElement(new SYDECheckbox(string("This Is 3 Test"), Vector2(0,7), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false)),
+	//	}),
+	//	BLACK);
 
 	SYDERadioButtonMenu m_ButtonMenu = SYDERadioButtonMenu(Vector2(0, 1), vector<SYDERadioOption>({
 		SYDERadioOption(string("This Is 1 Test"), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG),

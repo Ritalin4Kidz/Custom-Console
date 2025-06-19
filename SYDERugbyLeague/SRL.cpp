@@ -259,6 +259,11 @@ void SummaryFilterClick()
 	SRLGame::settingsState = SummarySettings_STATE;
 }
 
+void SimulationOddsClick()
+{
+	SRLGame::settingsState = SimulationSettings_STATE;
+}
+
 void MainDrawViewClick()
 {
 	SRLGame::drawViewState = SeasonDrawMainView;
@@ -474,6 +479,18 @@ void KeypadClick0()
 void SaveDetailsClick()
 {
 	SRLGame::saveDetailsCall = true;
+}
+
+void DeleteSimOddsClick()
+{
+	try
+	{
+		std::remove("EngineFiles\\Settings\\luckValues.json");
+	}
+	catch (std::exception ex)
+	{
+
+	}
 }
 
 void KeypadClickDOT()
@@ -1700,6 +1717,28 @@ void SRLGame::initInDepthViewButtons()
 		m_PlayerStatButtons.push_back(buttonUp);
 		m_PlayerStatButtons.push_back(buttonDown);
 	}
+
+	for (int i = 0; i < 13; i++)
+	{
+		SYDEClickableButton buttonUp = SYDEClickableButton("/\\", Vector2(45, i + 5), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+		buttonUp.setHighLight(RED);
+		buttonUp.setTag(to_string(i) + ":0");
+		buttonUp.SetFunc(PlayerStatClick);
+		SYDEClickableButton buttonDown = SYDEClickableButton("\\/", Vector2(49, i + 5), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+		buttonDown.setHighLight(RED);
+		buttonDown.setTag(to_string(i) + ":1");
+		buttonDown.SetFunc(PlayerStatClick);
+		m_SimulationOddsEditButtons.push_back(buttonUp);
+		m_SimulationOddsEditButtons.push_back(buttonDown);
+	}
+
+	m_SaveDetailsSimOdds = SYDEClickableButton(" Save ", Vector2(52, 19), Vector2(6, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SaveDetailsSimOdds.setHighLight(RED);
+	m_SaveDetailsSimOdds.SetFunc(SaveDetailsClick);
+
+	m_DeleteSimOdds = SYDEClickableButton(" Reset ", Vector2(2, 19), Vector2(7, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_DeleteSimOdds.setHighLight(RED);
+	m_DeleteSimOdds.SetFunc(DeleteSimOddsClick);
 }
 
 void SRLGame::initGameSettingsButtons()
@@ -1742,6 +1781,10 @@ void SRLGame::initGameSettingsButtons()
 	m_DeleteOffContractPlayersBtn = SYDEClickableButton("Frmt Old Players", Vector2(5, 14), Vector2(16, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_DeleteOffContractPlayersBtn.setHighLight(RED);
 	m_DeleteOffContractPlayersBtn.SetFunc(FormatOldPlayersButtonClick);
+
+	m_SimulationOddsBtn = SYDEClickableButton("Simulation Odds", Vector2(6, 16), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SimulationOddsBtn.setHighLight(RED);
+	m_SimulationOddsBtn.SetFunc(SimulationOddsClick);
 
 
 	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -4742,8 +4785,9 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window = m_FormatTeamsBtn.draw_ui(window);
 		window = m_SummaryFilterBtn.draw_ui(window);
 		window = m_DeleteOffContractPlayersBtn.draw_ui(window);
+		window = m_SimulationOddsBtn.draw_ui(window);
 	}
-	else if (SummarySettings_STATE)
+	else if (settingsState == SummarySettings_STATE)
 	{
 		window = m_FilterError.draw_ui(window);
 		window =m_FilterPenalty.draw_ui(window);
@@ -4752,6 +4796,88 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window =m_FilterVideoRef.draw_ui(window);
 		window =m_FilterMissedKicks.draw_ui(window);
 		window =m_FilterMisc.draw_ui(window);
+	}
+	else if (settingsState == SimulationSettings_STATE)
+	{
+		window.setTextAtPoint(Vector2(2, 3), "NOTE: ALL CHANGES REQUIRE A RESTART", BRIGHTRED);
+
+		window.setTextAtPoint(Vector2(2, 5), "Simulation Speed: " + to_string(m_SimulationSpeed), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 6), "Attacking Errors: " + to_string(m_DefaultAttackErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 7), "Defensive Errors: " + to_string(m_DefaultDefenceErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 8), "Strip Chances:    " + to_string(m_DefaultStealChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 9), "Conversion Rates: " + to_string(m_ConversionErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 10), "Strip Penalties:  " + to_string(m_SecondaryStripChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 11), "Forty Twenties:   " + to_string(m_FortytwentyChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 12), "Video Ref Calls:  " + to_string(m_TryVideoRefChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 13), "Error On Tries:   " + to_string(m_TryErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 14), "Penalty On Tries: " + to_string(m_TryInfringementChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 15), "Kick Out On Full: " + to_string(m_OutOnFullErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 16), "Offload Chances:  " + to_string(m_OffloadChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 17), "Failed Kickoffs:  " + to_string(m_KickOutOnTheFullChance), BRIGHTWHITE);
+
+		window = m_SaveDetailsSimOdds.draw_ui(window);
+		window = m_DeleteSimOdds.draw_ui(window);
+		if (saveDetailsCall)
+		{
+			saveDetailsCall = false;
+			saveGameSettings();
+			saveLuckSettings();
+		}
+		for (int ii = 0; ii < m_SimulationOddsEditButtons.size(); ii++)
+		{
+			window = m_SimulationOddsEditButtons[ii].draw_ui(window);
+		}
+		if (statCall)
+		{
+			statCall = false;
+			vector<string> calls = Split(statClicked, ':');
+			int callNo = stoi(calls[0]);
+			int callDir = stoi(calls[1]);
+			switch (callNo)
+			{
+			case 0:
+				callDir == 0 ? m_SimulationSpeed += 0.25f : m_SimulationSpeed -= 0.25f;
+				break;
+			case 1:
+				callDir == 0 ? m_DefaultAttackErrorChance += 1 : m_DefaultAttackErrorChance -= 1;
+				break;
+			case 2:
+				callDir == 0 ? m_DefaultDefenceErrorChance += 1 : m_DefaultDefenceErrorChance -= 1;
+				break;
+			case 3:
+				callDir == 0 ? m_DefaultStealChance += 1 : m_DefaultStealChance -= 1;
+				break;
+			case 4:
+				callDir == 0 ? m_ConversionErrorChance += 1 : m_ConversionErrorChance -= 1;
+				break;
+			case 5:
+				callDir == 0 ? m_SecondaryStripChance += 1 : m_SecondaryStripChance -= 1;
+				break;
+			case 6:
+				callDir == 0 ? m_FortytwentyChance += 1 : m_FortytwentyChance -= 1;
+				break;
+			case 7:
+				callDir == 0 ? m_TryVideoRefChance += 1 : m_TryVideoRefChance -= 1;
+				break;
+			case 8:
+				callDir == 0 ? m_TryErrorChance += 1 : m_TryErrorChance -= 1;
+				break;
+			case 9:
+				callDir == 0 ? m_TryInfringementChance += 1 : m_TryInfringementChance -= 1;
+				break;
+			case 10:
+				callDir == 0 ? m_OutOnFullErrorChance += 1 : m_OutOnFullErrorChance -= 1;
+				break;
+			case 11:
+				callDir == 0 ? m_OffloadChance += 1 : m_OffloadChance -= 1;
+				break;
+			case 12:
+				callDir == 0 ? m_KickOutOnTheFullChance += 1 : m_KickOutOnTheFullChance -= 1;
+				break;
+			default:
+				break;
+			}
+		}
 	}
 	return window;
 }
@@ -6873,6 +6999,39 @@ void SRLGame::loadGameSettings()
 
 		}
 	}
+}
+
+void SRLGame::saveLuckSettings()
+{
+	json save_file;
+
+	save_file["defaultAttackErrorChance"] = (m_DefaultAttackErrorChance > 5) ? m_DefaultAttackErrorChance : 5;
+	save_file["defaultDefenceErrorChance"] = (m_DefaultDefenceErrorChance > 5) ? m_DefaultDefenceErrorChance : 5;
+	save_file["defaultStealChance"] = (m_DefaultStealChance > 5) ? m_DefaultStealChance : 5;
+	save_file["defaultGoalChance"] = SRLStatics::loadConstSetting("defaultGoalChance", 90);
+	save_file["secondaryErrorChance"] = SRLStatics::loadConstSetting("secondaryErrorChance", 19);
+	save_file["conversionErrorChance"] = (m_ConversionErrorChance > 0) ? m_ConversionErrorChance : 1;
+	save_file["secondaryStripChance"] = (m_SecondaryStripChance > 0) ? m_SecondaryStripChance : 1;
+	save_file["defaultEarlyKickChance"] = SRLStatics::loadConstSetting("defaultEarlyKickChance", 15);
+	save_file["fortytwentyChance"] = (m_FortytwentyChance > 0) ? m_FortytwentyChance : 1;
+	save_file["tryVideoRefChance"] = (m_TryVideoRefChance > 0) ? m_TryVideoRefChance : 1;
+	save_file["tryErrorChance"] = (m_TryErrorChance > 0) ? m_TryErrorChance : 1;
+	save_file["incorrectPlayTheBallChance"] = SRLStatics::loadConstSetting("incorrectPlayTheBallChance", 1000);
+	save_file["tryInfringementChance"] = (m_TryInfringementChance > 10) ? m_TryInfringementChance : 10;
+	save_file["minTimeSecondSkip"] = SRLStatics::loadConstSetting("minTimeSecondSkip", 11);
+	save_file["maxTimeSecondSkip"] = SRLStatics::loadConstSetting("maxTimeSecondSkip", 19);
+	save_file["outOnFullErrorChance"] = (m_OutOnFullErrorChance > 5) ? m_OutOnFullErrorChance : 5;
+	save_file["injuryChance"] = SRLStatics::loadConstSetting("injuryChance", 17500);
+	save_file["professionalFoulChance"] = SRLStatics::loadConstSetting("professionalFoulChance", 3);
+	save_file["offloadChance"] = (m_OffloadChance > 1) ? m_OffloadChance : 2;
+	save_file["videoRefAutoSucceedChance"] = SRLStatics::loadConstSetting("videoRefAutoSucceedChance", 50);
+	save_file["InnovationSucceedChance"] = SRLStatics::loadConstSetting("InnovationSucceedChance", 60);
+	save_file["kickOutOnTheFullChance"] = (m_KickOutOnTheFullChance > 100) ? m_KickOutOnTheFullChance : 100;
+	save_file["braindeadPlayChance"] = SRLStatics::loadConstSetting("braindeadPlayChance", 200);
+
+	string filePath = string("EngineFiles\\Settings\\luckValues.json");
+	std::ofstream ofs(filePath);
+	ofs << save_file;
 }
 
 void SRLGame::sortOutNews()

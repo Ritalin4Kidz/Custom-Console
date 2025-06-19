@@ -120,6 +120,7 @@ public:
 
 	static void saveGameSettings();
 	static void loadGameSettings();
+	void saveLuckSettings();
 
 	void sortOutNews();
 	void sortOutMatchButtons();
@@ -422,6 +423,7 @@ private:
 	SYDECheckbox m_SettingsRepRoundsBtn = SYDECheckbox();
 	SYDEClickableButton m_SummaryFilterBtn = SYDEClickableButton();
 	SYDEClickableButton m_DeleteOffContractPlayersBtn = SYDEClickableButton();
+	SYDEClickableButton m_SimulationOddsBtn = SYDEClickableButton();
 
 	//SUMMARY FILTER
 	SYDECheckbox m_FilterError = SYDECheckbox();
@@ -476,6 +478,9 @@ private:
 	SYDEClickableButton m_RegeneratePlayerCNCLBtn = SYDEClickableButton();
 
 	vector<SYDEClickableButton> m_PlayerStatButtons;
+	vector<SYDEClickableButton> m_SimulationOddsEditButtons;
+	SYDEClickableButton m_SaveDetailsSimOdds = SYDEClickableButton();
+	SYDEClickableButton m_DeleteSimOdds = SYDEClickableButton();
 
 	SYDEClickableButton m_ExhibitionMatchSimulateBtn = SYDEClickableButton();
 
@@ -657,5 +662,18 @@ private:
 
 	CustomAsset m_PlayerAssetHome;
 	CustomAsset m_PlayerAssetAway;
+
+	int m_DefaultAttackErrorChance = SRLStatics::loadConstSetting("defaultAttackErrorChance", 90);
+	int m_DefaultDefenceErrorChance = SRLStatics::loadConstSetting("defaultDefenceErrorChance", 90);
+	int m_DefaultStealChance = SRLStatics::loadConstSetting("defaultStealChance", 160);
+	int m_ConversionErrorChance = SRLStatics::loadConstSetting("conversionErrorChance", 3);
+	int m_SecondaryStripChance = SRLStatics::loadConstSetting("secondaryStripChance", 10);
+	int m_FortytwentyChance = SRLStatics::loadConstSetting("fortytwentyChance", 18);
+	int m_TryVideoRefChance = SRLStatics::loadConstSetting("tryVideoRefChance", 4);
+	int m_TryErrorChance = SRLStatics::loadConstSetting("tryErrorChance", 18);
+	int m_TryInfringementChance = SRLStatics::loadConstSetting("tryInfringementChance", 160);
+	int m_OutOnFullErrorChance = SRLStatics::loadConstSetting("outOnFullErrorChance", 35);
+	int m_OffloadChance = SRLStatics::loadConstSetting("offloadChance", 30);
+	int m_KickOutOnTheFullChance = SRLStatics::loadConstSetting("kickOutOnTheFullChance", 1000);
 #pragma endregion
 };

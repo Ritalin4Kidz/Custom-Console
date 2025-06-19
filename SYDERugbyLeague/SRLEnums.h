@@ -95,7 +95,8 @@ enum GameStateSettingsSYDE
 {
 	SeasonSettings_STATE,
 	NormalSettings_STATE,
-	SummarySettings_STATE
+	SummarySettings_STATE,
+	SimulationSettings_STATE
 };
 
 enum GameStateLeaderboardSYDE

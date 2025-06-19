@@ -3959,6 +3959,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.extraTimeEffect(m_ExtraTime);
 			m_SingleGameManager.addTeamLineupsPlayByPlay();
 			m_SingleGameManager.addStartTimePlay();
+			m_SingleGameManager.setTimePerHalf(m_HalfLength);
 			setUpPlayerMatchUp(0);
 			SimulateSingleMatchCall = false;
 			SRLGame::singleSimulationPaused = false;

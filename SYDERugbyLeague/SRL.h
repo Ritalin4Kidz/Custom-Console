@@ -178,6 +178,8 @@ public:
 	static SRLSeasonLength seasonLength;
 	SRLSeasonLength baseSeasonLength = Length_NormalSeason;
 
+	static SRLRepTeams minRepTeams;
+
 	static SRLSponsorTypeState sponsorState;
 
 	static bool SeasonStart;
@@ -421,9 +423,11 @@ private:
 	SYDECheckbox m_SettingsCoachBtn = SYDECheckbox();
 	SYDEClickableButton m_SettingsFinalsBtn = SYDEClickableButton();
 	SYDECheckbox m_SettingsRepRoundsBtn = SYDECheckbox();
+	SYDEClickableButton m_SettingsRepTeamsBtn = SYDEClickableButton();
 	SYDEClickableButton m_SummaryFilterBtn = SYDEClickableButton();
 	SYDEClickableButton m_DeleteOffContractPlayersBtn = SYDEClickableButton();
 	SYDEClickableButton m_SimulationOddsBtn = SYDEClickableButton();
+	SYDEClickableButton m_SimulationSettingsBtn = SYDEClickableButton();
 
 	//SUMMARY FILTER
 	SYDECheckbox m_FilterError = SYDECheckbox();
@@ -479,6 +483,7 @@ private:
 
 	vector<SYDEClickableButton> m_PlayerStatButtons;
 	vector<SYDEClickableButton> m_SimulationOddsEditButtons;
+	vector<SYDEClickableButton> m_SimulationSettingsEditButtons;
 	SYDEClickableButton m_SaveDetailsSimOdds = SYDEClickableButton();
 	SYDEClickableButton m_DeleteSimOdds = SYDEClickableButton();
 
@@ -547,6 +552,7 @@ private:
 
 	static float m_ScrollingSpeed;
 	static float m_SimulationSpeed;
+	static int m_HalfLength;
 
 	FinalsSeriesType fsType = Top8Normal;
 	int baseFsType = 0;

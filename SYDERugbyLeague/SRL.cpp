@@ -15,6 +15,7 @@ JerseySelectViewOptions SRLGame::jerseyViewState = JSV_Jersey;
 SRLPriorBets_State SRLGame::priorBetsState = IndividualGameBets_State;
 CoachingViewDrawState SRLGame::coachDrawState = CoachingMain_STATE;
 SRLSeasonLength SRLGame::seasonLength = Length_NormalSeason;
+SRLRepTeams SRLGame::minRepTeams = RepTeams_Short;
 SeasonConfigState SRLGame::seasCfgState = SelectSeasonTypeState;
 SRLSingleSimulationViewState SRLGame::sinSimViewState = SSV_SummaryViewState;
 bool SRLGame::SeasonStart = false;
@@ -60,6 +61,7 @@ int SRLGame::playerClicked = 0;
 string SRLGame::statClicked = "0:0";
 float SRLGame::m_ScrollingSpeed = 1.0f;
 float SRLGame::m_SimulationSpeed = 2.0f;
+int SRLGame::m_HalfLength = 40;
 string SRLGame::customAmountStr = "";
 SRLBetPrice SRLGame::m_BetAmount = SRLBetPrice(10, 0);
 int SRLGame::gameNumberBet = 0;
@@ -260,6 +262,11 @@ void SummaryFilterClick()
 }
 
 void SimulationOddsClick()
+{
+	SRLGame::settingsState = SimulationOdds_STATE;
+}
+
+void SimulationSettingsClick()
 {
 	SRLGame::settingsState = SimulationSettings_STATE;
 }
@@ -1069,6 +1076,22 @@ void SettingsLengthViewClick()
 	}
 }
 
+void RepTeamsViewClick()
+{
+	if (SRLGame::minRepTeams == RepTeams_Short)
+	{
+		SRLGame::minRepTeams = RepTeams_Double;
+	}
+	else if (SRLGame::minRepTeams == RepTeams_Double)
+	{
+		SRLGame::minRepTeams = RepTeams_Max;
+	}
+	else if (SRLGame::minRepTeams == RepTeams_Max)
+	{
+		SRLGame::minRepTeams = RepTeams_Short;
+	}
+}
+
 
 void InfoViewClick()
 {
@@ -1718,7 +1741,7 @@ void SRLGame::initInDepthViewButtons()
 		m_PlayerStatButtons.push_back(buttonDown);
 	}
 
-	for (int i = 0; i < 13; i++)
+	for (int i = 0; i < 12; i++)
 	{
 		SYDEClickableButton buttonUp = SYDEClickableButton("/\\", Vector2(45, i + 5), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
 		buttonUp.setHighLight(RED);
@@ -1730,6 +1753,20 @@ void SRLGame::initInDepthViewButtons()
 		buttonDown.SetFunc(PlayerStatClick);
 		m_SimulationOddsEditButtons.push_back(buttonUp);
 		m_SimulationOddsEditButtons.push_back(buttonDown);
+	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		SYDEClickableButton buttonUp = SYDEClickableButton("/\\", Vector2(45, i + 5), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+		buttonUp.setHighLight(RED);
+		buttonUp.setTag(to_string(i) + ":0");
+		buttonUp.SetFunc(PlayerStatClick);
+		SYDEClickableButton buttonDown = SYDEClickableButton("\\/", Vector2(49, i + 5), Vector2(2, 1), BLACK_BRIGHTWHITE_BG, false);
+		buttonDown.setHighLight(RED);
+		buttonDown.setTag(to_string(i) + ":1");
+		buttonDown.SetFunc(PlayerStatClick);
+		m_SimulationSettingsEditButtons.push_back(buttonUp);
+		m_SimulationSettingsEditButtons.push_back(buttonDown);
 	}
 
 	m_SaveDetailsSimOdds = SYDEClickableButton(" Save ", Vector2(52, 19), Vector2(6, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
@@ -1765,6 +1802,10 @@ void SRLGame::initGameSettingsButtons()
 
 	m_SettingsRepRoundsBtn = SYDECheckbox(" Rep Rounds:", Vector2(39, 8), BRIGHTWHITE, BLACK_BRIGHTWHITE_BG, false);
 
+	m_SettingsRepTeamsBtn = SYDEClickableButton(" Min Rep Teams:", Vector2(36, 10), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
+	m_SettingsRepTeamsBtn.setHighLight(RED);
+	m_SettingsRepTeamsBtn.SetFunc(RepTeamsViewClick);
+
 	m_SettingsFinalsBtn = SYDEClickableButton(" Finals Series:", Vector2(6, 18), Vector2(15, 1), BLACK_BRIGHTWHITE_BG, false);
 	m_SettingsFinalsBtn.setHighLight(RED);
 	m_SettingsFinalsBtn.SetFunc(FinalsSystemClick);
@@ -1785,6 +1826,10 @@ void SRLGame::initGameSettingsButtons()
 	m_SimulationOddsBtn = SYDEClickableButton("Simulation Odds", Vector2(6, 16), Vector2(15, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
 	m_SimulationOddsBtn.setHighLight(RED);
 	m_SimulationOddsBtn.SetFunc(SimulationOddsClick);
+
+	m_SimulationSettingsBtn = SYDEClickableButton("Simulation Settings", Vector2(2, 18), Vector2(19, 1), BRIGHTWHITE_BRIGHTRED_BG, false);
+	m_SimulationSettingsBtn.setHighLight(RED);
+	m_SimulationSettingsBtn.SetFunc(SimulationSettingsClick);
 
 
 	m_FormatTeamsOKBtn = SYDEClickableButton(" OK ", Vector2(44, 12), Vector2(4, 1), BLACK_BRIGHTWHITE_BG, false);
@@ -1954,8 +1999,9 @@ void SRLGame::test()
 	try
 	{
 		m_srlmanager.addTeamLineupsPlayByPlay();
+		m_srlmanager.setTimePerHalf(m_HalfLength);
 		m_srlmanager.addStartTimePlay();
-		while (m_srlmanager.getMinutesPassed() < 80 || m_srlmanager.isTied())
+		while (m_srlmanager.getMinutesPassed() < (m_HalfLength * 2) || m_srlmanager.isTied())
 		{
 			m_srlmanager.play();
 		}
@@ -3979,8 +4025,9 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 						m_SingleGameManager.extraTimeEffect(m_ExtraTime);
 						m_SingleGameManager.addTeamLineupsPlayByPlay();
 						m_SingleGameManager.addStartTimePlay();
+						m_SingleGameManager.setTimePerHalf(m_HalfLength);
 						bool continuePlay = finals || m_ExtraTime;
-						while (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
+						while (m_SingleGameManager.getMinutesPassed() < (m_HalfLength * 2) || (m_SingleGameManager.isTied() && continuePlay))
 						{
 							try
 							{
@@ -4044,6 +4091,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 			m_SingleGameManager.extraTimeEffect(m_ExtraTime);
 			m_SingleGameManager.addTeamLineupsPlayByPlay();
 			m_SingleGameManager.addStartTimePlay();
+			m_SingleGameManager.setTimePerHalf(m_HalfLength);
 			SimulateSingleMatchCall = false;
 			SRLGame::singleSimulationPaused = false;
 			return window;
@@ -4179,7 +4227,7 @@ ConsoleWindow SRLGame::SingleMatchSimulateView(ConsoleWindow window, int windowW
 		{
 			m_TimePassedSimulation += SYDEDefaults::getDeltaTime();
 		}
-		else if (m_SingleGameManager.getMinutesPassed() < 80 || (m_SingleGameManager.isTied() && continuePlay))
+		else if (m_SingleGameManager.getMinutesPassed() < (m_HalfLength*2) || (m_SingleGameManager.isTied() && continuePlay))
 		{
 			if (!SRLGame::singleSimulationPaused)
 			{
@@ -4734,6 +4782,19 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window = m_SettingsEventsBtn.draw_ui(window);
 		window = m_SettingsCoachBtn.draw_ui(window);
 		window = m_SettingsRepRoundsBtn.draw_ui(window);
+		window = m_SettingsRepTeamsBtn.draw_ui(window);
+		switch (minRepTeams)
+		{
+		case RepTeams_Short:
+			window.setTextAtPoint(Vector2(52, 10), "2", BRIGHTWHITE);
+			break;
+		case RepTeams_Double:
+			window.setTextAtPoint(Vector2(52, 10), "4", BRIGHTWHITE);
+			break;
+		case RepTeams_Max:
+			window.setTextAtPoint(Vector2(52, 10), "6", BRIGHTWHITE);
+			break;
+		}
 		window = m_SettingsFinalsBtn.draw_ui(window);
 		if (finalsSystemCall)
 		{
@@ -4786,6 +4847,7 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window = m_SummaryFilterBtn.draw_ui(window);
 		window = m_DeleteOffContractPlayersBtn.draw_ui(window);
 		window = m_SimulationOddsBtn.draw_ui(window);
+		window = m_SimulationSettingsBtn.draw_ui(window);
 	}
 	else if (settingsState == SummarySettings_STATE)
 	{
@@ -4797,23 +4859,23 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 		window =m_FilterMissedKicks.draw_ui(window);
 		window =m_FilterMisc.draw_ui(window);
 	}
-	else if (settingsState == SimulationSettings_STATE)
+	else if (settingsState == SimulationOdds_STATE)
 	{
 		window.setTextAtPoint(Vector2(2, 3), "NOTE: ALL CHANGES REQUIRE A RESTART", BRIGHTRED);
 
-		window.setTextAtPoint(Vector2(2, 5), "Simulation Speed: " + to_string(m_SimulationSpeed), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 6), "Attacking Errors: " + to_string(m_DefaultAttackErrorChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 7), "Defensive Errors: " + to_string(m_DefaultDefenceErrorChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 8), "Strip Chances:    " + to_string(m_DefaultStealChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 9), "Conversion Rates: " + to_string(m_ConversionErrorChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 10), "Strip Penalties:  " + to_string(m_SecondaryStripChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 11), "Forty Twenties:   " + to_string(m_FortytwentyChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 12), "Video Ref Calls:  " + to_string(m_TryVideoRefChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 13), "Error On Tries:   " + to_string(m_TryErrorChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 14), "Penalty On Tries: " + to_string(m_TryInfringementChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 15), "Kick Out On Full: " + to_string(m_OutOnFullErrorChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 16), "Offload Chances:  " + to_string(m_OffloadChance), BRIGHTWHITE);
-		window.setTextAtPoint(Vector2(2, 17), "Failed Kickoffs:  " + to_string(m_KickOutOnTheFullChance), BRIGHTWHITE);
+		//window.setTextAtPoint(Vector2(2, 5), "Simulation Speed: " + to_string(m_SimulationSpeed), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 5), "Attacking Errors: " + to_string(m_DefaultAttackErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 6), "Defensive Errors: " + to_string(m_DefaultDefenceErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 7), "Strip Chances:    " + to_string(m_DefaultStealChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 8), "Conversion Rates: " + to_string(m_ConversionErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 9), "Strip Penalties:  " + to_string(m_SecondaryStripChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 10), "Forty Twenties:   " + to_string(m_FortytwentyChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 11), "Video Ref Calls:  " + to_string(m_TryVideoRefChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 12), "Error On Tries:   " + to_string(m_TryErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 13), "Penalty On Tries: " + to_string(m_TryInfringementChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 14), "Kick Out On Full: " + to_string(m_OutOnFullErrorChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 15), "Offload Chances:  " + to_string(m_OffloadChance), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 16), "Failed Kickoffs:  " + to_string(m_KickOutOnTheFullChance), BRIGHTWHITE);
 
 		window = m_SaveDetailsSimOdds.draw_ui(window);
 		window = m_DeleteSimOdds.draw_ui(window);
@@ -4836,47 +4898,88 @@ ConsoleWindow SRLGame::SettingsView(ConsoleWindow window, int windowWidth, int w
 			switch (callNo)
 			{
 			case 0:
-				callDir == 0 ? m_SimulationSpeed += 0.25f : m_SimulationSpeed -= 0.25f;
-				break;
-			case 1:
 				callDir == 0 ? m_DefaultAttackErrorChance += 1 : m_DefaultAttackErrorChance -= 1;
 				break;
-			case 2:
+			case 1:
 				callDir == 0 ? m_DefaultDefenceErrorChance += 1 : m_DefaultDefenceErrorChance -= 1;
 				break;
-			case 3:
+			case 2:
 				callDir == 0 ? m_DefaultStealChance += 1 : m_DefaultStealChance -= 1;
 				break;
-			case 4:
+			case 3:
 				callDir == 0 ? m_ConversionErrorChance += 1 : m_ConversionErrorChance -= 1;
 				break;
-			case 5:
+			case 4:
 				callDir == 0 ? m_SecondaryStripChance += 1 : m_SecondaryStripChance -= 1;
 				break;
-			case 6:
+			case 5:
 				callDir == 0 ? m_FortytwentyChance += 1 : m_FortytwentyChance -= 1;
 				break;
-			case 7:
+			case 6:
 				callDir == 0 ? m_TryVideoRefChance += 1 : m_TryVideoRefChance -= 1;
 				break;
-			case 8:
+			case 7:
 				callDir == 0 ? m_TryErrorChance += 1 : m_TryErrorChance -= 1;
 				break;
-			case 9:
+			case 8:
 				callDir == 0 ? m_TryInfringementChance += 1 : m_TryInfringementChance -= 1;
 				break;
-			case 10:
+			case 9:
 				callDir == 0 ? m_OutOnFullErrorChance += 1 : m_OutOnFullErrorChance -= 1;
 				break;
-			case 11:
+			case 10:
 				callDir == 0 ? m_OffloadChance += 1 : m_OffloadChance -= 1;
 				break;
-			case 12:
+			case 11:
 				callDir == 0 ? m_KickOutOnTheFullChance += 1 : m_KickOutOnTheFullChance -= 1;
 				break;
 			default:
 				break;
 			}
+		}
+	}
+	else if (settingsState == SimulationSettings_STATE)
+	{
+		window.setTextAtPoint(Vector2(2, 3), "NOTE: SOME CHANGES MAY REQUIRE A RESTART, SOME DON'T SAVE", BRIGHTRED);
+
+		window.setTextAtPoint(Vector2(2, 5), "Simulation Speed: " + to_string(m_SimulationSpeed), BRIGHTWHITE);
+		window.setTextAtPoint(Vector2(2, 6), "Game Half Length: " + to_string(m_HalfLength), BRIGHTWHITE);
+
+		window = m_SaveDetailsSimOdds.draw_ui(window);
+		if (saveDetailsCall)
+		{
+			saveDetailsCall = false;
+			saveGameSettings();
+		}
+		for (int ii = 0; ii < m_SimulationSettingsEditButtons.size(); ii++)
+		{
+			window = m_SimulationSettingsEditButtons[ii].draw_ui(window);
+		}
+		if (statCall)
+		{
+			statCall = false;
+			vector<string> calls = Split(statClicked, ':');
+			int callNo = stoi(calls[0]);
+			int callDir = stoi(calls[1]);
+			switch (callNo)
+			{
+			case 0:
+				callDir == 0 ? m_SimulationSpeed += 0.25f : m_SimulationSpeed -= 0.25f;
+				break;
+			case 1:
+				callDir == 0 ? m_HalfLength += 5 : m_HalfLength -= 5;
+				break;
+			default:
+				break;
+			}
+		}
+		if (m_HalfLength < 5)
+		{
+			m_HalfLength = 5;
+		}
+		if (m_HalfLength > 40)
+		{
+			m_HalfLength = 40;
 		}
 	}
 	return window;
@@ -5921,12 +6024,13 @@ void SRLGame::SimulateGames()
 				m_srlmanager.injuriesEffect(m_Injuries);
 				m_srlmanager.sinBinsEffect(m_SinBins);
 				m_srlmanager.extraTimeEffect(m_ExtraTime);
+				m_srlmanager.setTimePerHalf(m_HalfLength);
 				try
 				{
 					m_srlmanager.addTeamLineupsPlayByPlay();
 					m_srlmanager.addStartTimePlay();
 					bool continuePlay = finals || m_ExtraTime;
-					while (m_srlmanager.getMinutesPassed() < 80 || (m_srlmanager.isTied() && continuePlay))
+					while (m_srlmanager.getMinutesPassed() < (m_HalfLength*2) || (m_srlmanager.isTied() && continuePlay))
 					{
 						try
 						{
@@ -5981,7 +6085,7 @@ void SRLGame::SimulateGameLadderAdjustment(int a_Round, int i, SRLGameManager m_
 	}
 	if (coachingMode)
 	{
-		if (m_Season.m_Draw.m_Rounds[a_Round].m_Games[i].WinningTeam == teamCoached && m_srlmanager.getMinutesPassed() > 80 && a_Round >= BaseSeasonGames)
+		if (m_Season.m_Draw.m_Rounds[a_Round].m_Games[i].WinningTeam == teamCoached && m_srlmanager.getMinutesPassed() > (m_HalfLength*2) && a_Round >= BaseSeasonGames)
 		{
 			m_GameProfile.completeChallenge("Win A Finals Game In Extra Time", AchievementStrings);
 		}
@@ -6968,6 +7072,10 @@ void SRLGame::CalculateTipMaster()
 void SRLGame::saveGameSettings()
 {
 	json save_file;
+	if (m_SimulationSpeed <= 0)
+	{
+		m_SimulationSpeed = 1;
+	}
 	//PlayerStats
 	save_file["soundvolume"] = static_cast<int>(BaseSYDESoundSettings::getDefaultVolumeState());
 	save_file["soundtrackon"] = static_cast<int>(soundTrackOn);
@@ -8540,7 +8648,7 @@ ConsoleWindow SRLGame::CreateSeason(ConsoleWindow window, bool isWorldCup)
 				repTeams.push_back(tempTeams[j]);
 			}
 			//WE HAVE REP ROUNDS ON, MAKE SURE WE ALWAYS HAVE SOME REP GAMES
-			else if (repTeams.size() < 2)
+			else if (repTeams.size() < minRepTeams)
 			{
 				SRLTeam offContract;
 				offContract.loadTeamOffContract("EngineFiles\\GameResults\\OffContract\\Off Contract Players.json");

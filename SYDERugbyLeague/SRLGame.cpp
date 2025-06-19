@@ -145,13 +145,13 @@ int SRLGameManager::getPositionUniversal(int metres)
 
 string SRLGameManager::getTimeString()
 {
-	if (!halfTimeHasPassed && m_MinutesPassed >= 40)
+	if (!halfTimeHasPassed && m_MinutesPassed >= m_TimePerHalf)
 	{
-		return "40:00";
+		return to_string(m_TimePerHalf) + ":00";
 	}
-	if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+	if (!fullTimeHasPassed && m_MinutesPassed >= (m_TimePerHalf *2))
 	{
-		return "80:00";
+		return to_string(m_TimePerHalf*2) + ":00";
 	}
 
 
@@ -177,15 +177,15 @@ void SRLGameManager::addMinute()
 {
 	m_MinutesPassed++;
 	int timeToAddPlayers = 60;
-	if (!halfTimeHasPassed && m_MinutesPassed >= 40)
+	if (!halfTimeHasPassed && m_MinutesPassed >= m_TimePerHalf)
 	{
-		m_MinutesPassed = 40;
+		m_MinutesPassed = m_TimePerHalf;
 		timeToAddPlayers -= m_SecondsPassed;
 		m_SecondsPassed = 0;
 	}
-	if (!fullTimeHasPassed && m_MinutesPassed >= 80)
+	if (!fullTimeHasPassed && m_MinutesPassed >= (m_TimePerHalf*2))
 	{
-		m_MinutesPassed = 80;
+		m_MinutesPassed = (m_TimePerHalf*2);
 		timeToAddPlayers -= m_SecondsPassed;
 		m_SecondsPassed = 0;
 	}
@@ -230,15 +230,15 @@ bool SRLGameManager::addTime(int seconds, bool allowBreak)
 		}
 		if (halfTimeHasPassed == false)
 		{
-			if (m_MinutesPassed >= 40)
+			if (m_MinutesPassed >= m_TimePerHalf)
 			{
-				m_MinutesPassed = 40;
+				m_MinutesPassed = m_TimePerHalf;
 				m_SecondsPassed = 0;
-				seconds = (2400 - currentTime);
+				seconds = ((m_TimePerHalf * 60) - currentTime);
 				if (allowBreak)
 				{
 					halfTimeHasPassed = true;
-					m_PlayByPlay.push_back("40:00 - HALF TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
+					m_PlayByPlay.push_back(to_string(m_TimePerHalf) +":00 - HALF TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
 					m_BallPosition = 0;
 					m_HomeTeamHasBall = false;
 					m_Tackle = 0;
@@ -249,16 +249,16 @@ bool SRLGameManager::addTime(int seconds, bool allowBreak)
 		}
 		else if (fullTimeHasPassed == false)
 		{
-			if (m_MinutesPassed >= 80)
+			if (m_MinutesPassed >= (m_TimePerHalf*2))
 			{
-				m_MinutesPassed = 80;
+				m_MinutesPassed = (m_TimePerHalf*2);
 				m_SecondsPassed = 0;
-				seconds = (4800 - currentTime);
+				seconds = ((m_TimePerHalf*2*60) - currentTime);
 				if (allowBreak)
 				{
 					if (m_ExtraTime && homeTeamScore == awayTeamScore)
 					{
-						m_PlayByPlay.push_back("80:00 - EXTRA TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
+						m_PlayByPlay.push_back(to_string(m_TimePerHalf*2) +":00 - EXTRA TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
 					}
 					fullTimeHasPassed = true;
 					m_BallPosition = 0;
@@ -1328,7 +1328,7 @@ int SRLGameManager::checkOffload(SRLPlayer defender, SRLPlayer attacker)
 
 bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 {
-	if (m_MinutesPassed > 64)
+	if (m_MinutesPassed > ((m_TimePerHalf * 2) - (((m_TimePerHalf*2)/10) * 2)))
 	{
 		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0 && (homeTeamScore - awayTeamScore) % 6 == 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
@@ -1345,7 +1345,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 			}
 		}
 	}
-	else if (m_MinutesPassed >= 38 && m_MinutesPassed < 40 || (m_MinutesPassed == 40 && m_SecondsPassed == 0))
+	else if (m_MinutesPassed >= (m_TimePerHalf-2) && m_MinutesPassed < m_TimePerHalf || (m_MinutesPassed == m_TimePerHalf && m_SecondsPassed == 0))
 	{
 		if ((m_Tackle == 5 && ((homeTeamScore - awayTeamScore >= 0) || homeTeamScore - awayTeamScore == -1)) || homeTeamScore == awayTeamScore)
 		{
@@ -1367,7 +1367,7 @@ bool SRLGameManager::doFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 
 bool SRLGameManager::doTwoPointFieldGoal(SRLPlayer defender, SRLPlayer attacker)
 {
-	if (m_MinutesPassed >= 75 && m_MinutesPassed <= 80)
+	if (m_MinutesPassed >= ((m_TimePerHalf*2) - 5) && m_MinutesPassed <= (m_TimePerHalf*2))
 	{
 		if (homeTeamScore - awayTeamScore == -2)
 		{
@@ -1582,10 +1582,10 @@ bool SRLGameManager::addTry(SRLTeam& m_AttackingTeam, SRLTeam& m_DefendingTeam, 
 		addSummary("GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 	}
 	addTimeRandom(30, 60, true);
-	if (m_MinutesPassed >= 40 && halfTimeHasPassed == false)
+	if (m_MinutesPassed >= m_TimePerHalf && halfTimeHasPassed == false)
 	{
 		halfTimeHasPassed = true;
-		m_PlayByPlay.push_back("40:00 - HALF TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
+		m_PlayByPlay.push_back(to_string(m_TimePerHalf) + ":00 - HALF TIME - " + m_HomeTeam.getName() + ": " + to_string(homeTeamScore) + " v " + m_AwayTeam.getName() + ": " + to_string(awayTeamScore));
 		//THIS IS A STRICT BALL POS
 		m_BallPosition = 0;
 		m_HomeTeamHasBall = false;

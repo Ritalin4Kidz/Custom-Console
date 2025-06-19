@@ -157,6 +157,11 @@ public:
 
 	void saveSettings();
 
+	void setTimePerHalf(int min)
+	{
+		m_TimePerHalf = min;
+	}
+
 private:
 	//CONSTANTS
 	const int defaultAttackErrorChance = SRLStatics::loadConstSetting("defaultAttackErrorChance", 90);
@@ -191,6 +196,9 @@ private:
 	//TIME
 	int m_SecondsPassed;
 	int m_MinutesPassed;
+
+	int m_TimePerHalf = 40;
+
 	//PLAYS
 	vector<string> m_PlayByPlay;
 	vector<string> m_Summary;

@@ -96,7 +96,8 @@ enum GameStateSettingsSYDE
 	SeasonSettings_STATE,
 	NormalSettings_STATE,
 	SummarySettings_STATE,
-	SimulationSettings_STATE
+	SimulationOdds_STATE,
+	SimulationSettings_STATE,
 };
 
 enum GameStateLeaderboardSYDE
@@ -129,6 +130,13 @@ enum SRLSeasonLength
 	Length_LongSeason = 40,
 	Length_ExtremeSeason = 66,
 	Length_EnduranceSeason = 100
+};
+
+enum SRLRepTeams
+{
+	RepTeams_Short =2,
+	RepTeams_Double = 4,
+	RepTeams_Max = 6
 };
 
 enum SRLPriorBets_State

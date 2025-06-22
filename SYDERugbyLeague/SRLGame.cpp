@@ -1552,7 +1552,15 @@ bool SRLGameManager::addTry(SRLTeam& m_AttackingTeam, SRLTeam& m_DefendingTeam, 
 	addSummary("TRY#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 	m_AttackingTeam.addPlayerTry(attacker.getName());
 	m_AttackingTeam.addPlayerStamina(attacker.getName(), 5);
-	addTimeRandom(30, 90, false);
+	if (((m_HomeTeamHasBall && homeTeamScore <= awayTeamScore - 3) || (!m_HomeTeamHasBall && awayTeamScore <= homeTeamScore - 3)) && (m_MinutesPassed >= ((m_TimePerHalf*2)-5)))
+	{
+		//MORE LIKELY TO HURRY UP THE KICK
+		addTimeRandom(5, 15, false);
+	}
+	else
+	{
+		addTimeRandom(30, 90, false);
+	}
 	if (m_MainGoalKickers)
 	{
 		attacker = m_AttackingTeam.getGoalKicker();
@@ -1581,7 +1589,15 @@ bool SRLGameManager::addTry(SRLTeam& m_AttackingTeam, SRLTeam& m_DefendingTeam, 
 		addPlay("CONVERSION MISSED", attacker);
 		addSummary("GOAL MISSED#" + to_string(homeTeamScore) + " v " + to_string(awayTeamScore), attacker);
 	}
-	addTimeRandom(30, 60, true);
+	if ((m_MinutesPassed >= ((m_TimePerHalf * 2) - 5)))
+	{
+		//WITH NO TIME LEFT, KICK OFF SHOULD COME BACK
+		addTimeRandom(1, 5, true);
+	}
+	else
+	{
+		addTimeRandom(30, 60, true);
+	}
 	if (m_MinutesPassed >= m_TimePerHalf && halfTimeHasPassed == false)
 	{
 		halfTimeHasPassed = true;

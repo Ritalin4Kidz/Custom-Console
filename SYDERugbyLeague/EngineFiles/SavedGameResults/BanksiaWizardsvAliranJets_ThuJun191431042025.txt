@@ -1,0 +1,143 @@
+----------LINE-UPS----------
+Home Team: Banksia Wizards
+1: Vitaliy L. Zillman
+2: Yuni Greenberg
+3: Gerald Rumming
+4: Nico ti Geriia
+5: Danni Sake
+6: Kyrsta Freit
+7: Jayden Jay Prisma
+8: Freya de Flatio
+9: Carl X. le Klas
+10: Klacesa Mallett
+11: Junior G. Winger
+12: Madison az Unionia
+13: Homer en Tortio
+14: Patrise Locke
+15: Reimis Silwedel
+16: Ashton Shannel
+17: Arnold le Ijok
+Away Team: Aliran Jets
+1: Mitch Dharo
+2: Jarrod Clarke
+3: Connor Waterhouse
+4: Greta Y. Cook
+5: Karl Johnson
+6: Ezzita en Basetru
+7: Gwen Belta
+8: Zavvi Fresh
+9: Jill Van en Kreay
+10: Yumi Eastra
+11: Michael de Faco
+12: Trent Dadrio
+13: Versa York
+14: Adam ze Treina
+15: Monty Robinson
+16: Albert ti Asdra
+17: George Waterhouse
+----------GAME-STAT---------
+Weather: Stormy
+----------------------------
+00:00 - KICK OFF - Banksia Wizards: 0 v Aliran Jets: 0
+00:24 - Nico ti Geriia - Over The Sideline
+00:42 - Trent Dadrio - TRY - Banksia Wizards: 0 v Aliran Jets: 4
+01:47 - Gwen Belta - CONVERSION MISSED
+03:26 - Jill Van en Kreay - Forward Pass
+04:21 - Yuni Greenberg - Over The Sideline
+5:00 - HALF TIME - Banksia Wizards: 0 v Aliran Jets: 4
+05:28 - Connor Waterhouse - Intercepted Off A Freya de Flatio Pass
+05:56 - Zavvi Fresh - Over The Sideline
+06:10 - Madison az Unionia - TRY - Banksia Wizards: 4 v Aliran Jets: 4
+07:38 - Vitaliy L. Zillman - CONVERSION MISSED
+09:31 - Zavvi Fresh - Ruck Infringement
+10:11 - Jill Van en Kreay - NO TRY - Held Up on tackle 2
+11:06 - Versa York - Forward Pass
+12:18 - Yuni Greenberg - Kick - Travelled 34m, kicked from 39m out from Aliran Jets's goalline
+12:34 - Jill Van en Kreay - Over The Sideline
+12:52 - Klacesa Mallett - FIELD GOAL MISSED
+12:52 - 20m Restart - Aliran Jets
+13:09 - Klacesa Mallett - Penalty
+13:29 - Zavvi Fresh - NO TRY - Held Up on tackle 2
+13:45 - Trent Dadrio - Knock On (Offload)
+14:30 - Gwen Belta - Ruck Infringement
+14:30 - Gwen Belta - Penalty
+14:33 - Gwen Belta - SIN BIN
+15:54 - Carl X. le Klas - Linebreak
+15:55 - Carl X. le Klas - FIELD GOAL - Banksia Wizards: 5 v Aliran Jets: 4
+15:55 - FULL TIME - Banksia Wizards: 5 v Aliran Jets: 4
+                             
+--------PLAYER STATS--------
+Home Team: Banksia Wizards
+1: Vitaliy L. Zillman |Time Played: 15:55 |Metres: 2 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+2: Yuni Greenberg |Time Played: 15:55 |Metres: 34 |Tackles: 1 |Kicks: 1 |Kick Metres: 34 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 12
+3: Gerald Rumming |Time Played: 15:55 |Metres: 4 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+4: Nico ti Geriia |Time Played: 15:55 |Metres: 2 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+5: Danni Sake |Time Played: 15:55 |Metres: 12 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 6
+6: Kyrsta Freit |Time Played: 15:55 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+7: Jayden Jay Prisma |Time Played: 15:55 |Metres: 1 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+8: Freya de Flatio |Time Played: 15:55 |Metres: 0 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 9
+9: Carl X. le Klas |Time Played: 15:55 |Metres: 43 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 1 |Total Points: 1 |Fantasy Points: 23
+10: Klacesa Mallett |Time Played: 15:55 |Metres: 23 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+11: Junior G. Winger |Time Played: 15:55 |Metres: 3 |Tackles: 4 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 7
+12: Madison az Unionia |Time Played: 15:55 |Metres: 4 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 10
+13: Homer en Tortio |Time Played: 15:55 |Metres: 4 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+14: Patrise Locke |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Reimis Silwedel |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Ashton Shannel |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: Arnold le Ijok |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Freya de Flatio: 4
+Most Points: Madison az Unionia: 4
+Most Metres: Carl X. le Klas: 43
+Most Errors: Yuni Greenberg: 1
+                             
+Away Team: Aliran Jets
+1: Mitch Dharo |Time Played: 15:55 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+2: Jarrod Clarke |Time Played: 15:55 |Metres: 0 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+3: Connor Waterhouse |Time Played: 15:55 |Metres: 1 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+4: Greta Y. Cook |Time Played: 15:55 |Metres: 7 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+5: Karl Johnson |Time Played: 15:55 |Metres: 2 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 2
+6: Ezzita en Basetru |Time Played: 15:55 |Metres: 5 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 3
+7: Gwen Belta |Time Played: 14:33 |Metres: 0 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+8: Zavvi Fresh |Time Played: 15:55 |Metres: 4 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+9: Jill Van en Kreay |Time Played: 15:55 |Metres: 4 |Tackles: 1 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 2 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 1
+10: Yumi Eastra |Time Played: 15:55 |Metres: 6 |Tackles: 2 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 5
+11: Michael de Faco |Time Played: 15:55 |Metres: 2 |Tackles: 6 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 10
+12: Trent Dadrio |Time Played: 15:55 |Metres: 17 |Tackles: 3 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 1 |Goals: 0 |Field Goals: 0 |Total Points: 4 |Fantasy Points: 9
+13: Versa York |Time Played: 15:55 |Metres: 3 |Tackles: 5 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 1 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 4
+14: Adam ze Treina |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+15: Monty Robinson |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+16: Albert ti Asdra |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+17: George Waterhouse |Time Played: 00:00 |Metres: 0 |Tackles: 0 |Kicks: 0 |Kick Metres: 0 |40/20: 0 |Errors: 0 |Tries: 0 |Goals: 0 |Field Goals: 0 |Total Points: 0 |Fantasy Points: 0
+Highlights:                 
+Most Tackles: Michael de Faco: 6
+Most Points: Trent Dadrio: 4
+Most Metres: Trent Dadrio: 17
+Most Errors: Jill Van en Kreay: 2
+                             
+---------TEAM STATS---------
+Home Team: Banksia Wizards
+Total Metres: 132
+Total Kick Metres: 34
+Total Errors: 2
+Total Tackles: 20
+Total Tries: 1
+Total Goals: 0
+Total Field Goals: 1
+Interchanges Used: 0/8
+                             
+Away Team: Aliran Jets
+Total Metres: 51
+Total Kick Metres: 0
+Total Errors: 5
+Total Tackles: 28
+Total Tries: 1
+Total Goals: 0
+Total Field Goals: 0
+Interchanges Used: 0/8
+                             
+----------DALLY M-----------
+1st (3 Points) -- Carl X. le Klas
+2nd (2 Points) -- Madison az Unionia
+3rd (1 Point) -- Trent Dadrio
+----------------------------

@@ -50,11 +50,13 @@ SRL Simulation game made inside the SYDE Framework.
 
 ## Release Notes
 
-### 1.2.1.0 18/06/2025
+### 1.3.0.0 23/06/2025
 - Field goals for away teams fix
 - FPS optimization
 - World cup generation speed ups
 - ability to delete only off contract data
+- settings for simulation odds and speeds
+- more names in generator
 
 ### 1.1.7.0 28/02/2023
 - Tabs inside single matchup infos
